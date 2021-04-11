@@ -10,108 +10,133 @@ final _widgetType = EvalType(
 final _statelessWidgetType =
     EvalType('StatelessWidget', 'StatelessWidget', 'package:flutter/src/widgets/framework.dart', [_widgetType], true);
 
+final _keyType = EvalType('Key', 'Key', 'package:flutter/src/widgets/framework.dart', [EvalType.objectType], true);
+
+final _textType = EvalType('Text', 'Text', 'package:flutter/src/widgets/text.dart', [_statelessWidgetType], true);
+
 final _buildContextType =
     EvalType('BuildContext', 'BuildContext', 'package:flutter/src/widgets/framework.dart', [EvalType.objectType], true);
 
-/// THE CURRENT ISSUE WE ARE FACING IS THAT
-/// We need to ensure you cannot instantiate a class that has not overridden a method from an abstract class
-/// Hard because: declarations have no real way of figuring out what they are, before they are declared
-/// However, they have no side effects, so maybe just declare them? idk
-
-final _evWidget = EvalBridgeAbstractClass(
-    [], EvalGenericsList([]), _widgetType, EvalScope.empty, Widget,
-    sourceFile: _statelessWidgetType.refSourceFile);
-
-final _evStatelessWidget = EvalBridgeClass<StatelessWidget>(
-    [], _statelessWidgetType, EvalScope.empty, EvalGenericsList([]), StatelessWidget, (constructor, pos, named) {
-  throw ArgumentError('Cannot construct an abstract class');
-}, sourceFile: _statelessWidgetType.refSourceFile, superclass: _evWidget);
-
-final _evKey = EvalAbstractClass([], generics, delegatedType, lexicalScope)
-class EvalKey extends Key with DartBridge<StatelessWidget>, EvalBridgeObjectMixin<StatelessWidget>, BridgeRectifier<StatelessWidget> {
-
-  @override
-  final EvalBridgeData evalBridgeData = EvalBridgeData();
-
-  @override
-  EvalValue getField(String name) {
-    throw ArgumentError('Key: no field with name $name');
-  }
-
-  @override
-  EvalAbstractClass get prototype => throw UnimplementedError();
-
-
-  @override
-  EvalValue setField(String name, EvalValue value) {
-    throw UnimplementedError();
-  }
-
-  @override
-  // TODO: implement type
-  EvalType get type => throw UnimplementedError();
-
-
+/// Eval [BuildContext] (wrapper)
+class EvalBuildContext extends EvalRealObject<BuildContext> {
+  /// Create an evalBuildContext
+  EvalBuildContext(BuildContext value)
+      : super(value,
+            cls: EvalBridgeAbstractClass([], EvalGenericsList([]), _buildContextType, EvalScope.empty, Widget,
+                sourceFile: _buildContextType.refSourceFile));
 }
 
-class EvalWidget extends Widget
-    with DartBridge<StatelessWidget>, EvalBridgeObjectMixin<StatelessWidget>, BridgeRectifier<StatelessWidget> {
+/// eval [Widget]
+/// ignore: must_be_immutable
+class EvalWidget extends Widget with ValueInterop<Widget>, EvalBridgeObjectMixin<Widget>, BridgeRectifier<Widget> {
+  /// eval Widget class
+  static final cls = EvalBridgeAbstractClass([], EvalGenericsList([]), _widgetType, EvalScope.empty, Widget,
+      sourceFile: _statelessWidgetType.refSourceFile);
+
+  /// Create wrapper
+  static EvalValue makeWrapper(Widget target) {
+    if (target == null) return EvalNull();
+    return EvalRealObject<Widget>(target, cls: cls, fields: {});
+  }
 
   @override
-  final EvalBridgeData evalBridgeData = EvalBridgeData();
+  EvalBridgeData evalBridgeData = EvalBridgeData(cls);
 
   @override
   Element createElement() => bridgeCall('createElement');
 
   @override
   EvalValue getField(String name) {
-    switch(name) {
-      case 'key':
-        return
-    }
+    return super.getField(name);
   }
 
   @override
-  EvalAbstractClass get prototype => _evWidget;
-
-
-  @override
-  EvalValue setField(String name, EvalValue value) {
+  EvalValue setField(String name, EvalValue value, {internalSet = false}) {
     throw ArgumentError();
   }
-
-  @override
-  EvalType get type => throw UnimplementedError();
 }
 
+/// eval [StatelessWidget]
+/// ignore: must_be_immutable
 class EvalStatelessWidget extends StatelessWidget
-    with DartBridge<StatelessWidget>, EvalBridgeObjectMixin<StatelessWidget>, BridgeRectifier<StatelessWidget> {
+    with ValueInterop<StatelessWidget>, EvalBridgeObjectMixin<StatelessWidget>, BridgeRectifier<StatelessWidget> {
+  /// Create an [EvalStatelessWidget]
+  EvalStatelessWidget({Key key}) : super(key: key);
+
+  static final cls = EvalBridgeClass<StatelessWidget>([
+    DartConstructorDeclaration('', [ParameterDefinition('key', _keyType, true, true, true, false, null)])
+  ], EvalGenericsList([]), _statelessWidgetType, EvalScope.empty, StatelessWidget, (constructor, pos, named) {
+    return EvalStatelessWidget(key: named.containsKey('key') ? named['key'] : null);
+  }, sourceFile: _statelessWidgetType.refSourceFile, superclassName: _statelessWidgetType);
+
   @override
-  Widget build(BuildContext context) {
-    return bridgeCall('build', []);
+  EvalBridgeData evalBridgeData = EvalBridgeData(cls);
+
+  @override
+  Widget build(BuildContext context) => bridgeCall('build', [EvalBuildContext(context)]);
+
+  @override
+  EvalValue getField(String name) {
+    return super.getField(name);
   }
+
+  @override
+  EvalValue setField(String name, EvalValue value, {bool internalSet = false}) {
+    return super.setField(name, value, internalSet: internalSet);
+  }
+}
+
+/// eval [StatelessWidget]
+/// ignore: must_be_immutable
+class EvalText extends Text
+    with ValueInterop<StatelessWidget>, EvalBridgeObjectMixin<StatelessWidget>, BridgeRectifier<StatelessWidget> {
+  /// Create an [EvalText]
+  EvalText(String data) : super(data);
+
+  /// Create wrapper
+  static EvalValue makeWrapper(EvalText target) {
+    if (target == null) return EvalNull();
+    return EvalRealObject(target, cls: cls, fields: {
+      'data': EvalField(
+          'data',
+          null,
+          null,
+          Getter(
+              EvalCallableImpl((lex, _1, _2, _3, {EvalValue target}) => EvalString((target.realValue as Text).data)))),
+    });
+  }
+
+  static final cls = EvalBridgeClass<Text>([
+    DartConstructorDeclaration('', [ParameterDefinition('data', EvalType.stringType, false, false, false, true, null)])
+  ], EvalGenericsList([]), _textType, EvalScope.empty, StatelessWidget, (constructor, pos, named) {
+    return EvalText((pos[0] as EvalString).realValue);
+  }, sourceFile: _textType.refSourceFile, superclassName: _statelessWidgetType);
+
+  @override
+  EvalBridgeData evalBridgeData = EvalBridgeData(cls);
+
+  @override
+  Widget build(BuildContext context) => bridgeCall('build', [EvalBuildContext(context)]);
 
   @override
   EvalValue getField(String name) {
     switch (name) {
+      case 'data':
+        return EvalString(data);
+      case 'build':
+        return getFieldOrNull('build') ?? EvalBridgeFunction(super.build, EvalWidget.makeWrapper);
     }
+    return super.getField(name);
   }
 
   @override
-  // TODO: implement prototype
-  EvalAbstractClass get prototype => throw UnimplementedError();
-
-  @override
-  EvalValue setField(String name, EvalValue value) {
-    // TODO: implement setField
+  EvalValue setField(String name, EvalValue value, {internalSet = false}) {
     throw UnimplementedError();
   }
-
-  @override
-  EvalType get type => throw UnimplementedError();
 }
 
 final flutterCore = <String, EvalField>{
-  'Widget': EvalField('Widget', _evWidget, Setter(null), Getter(null)),
-  'StatelessWidget': EvalField('StatelessWidget', _evStatelessWidget, Setter(null), Getter(null))
+  'Widget': EvalField('Widget', EvalWidget.cls, Setter(null), Getter(null)),
+  'StatelessWidget': EvalField('StatelessWidget', EvalStatelessWidget.cls, Setter(null), Getter(null)),
+  'Text': EvalField('Text', EvalText.cls, Setter(null), Getter(null)),
 };

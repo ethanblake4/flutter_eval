@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   dart_eval:
+    path: ../dart_eval
 
 dependency_overrides:
   dart_eval:
