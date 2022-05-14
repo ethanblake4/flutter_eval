@@ -1,142 +1,83 @@
 library flutter_eval;
 
 import 'package:dart_eval/dart_eval.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter_eval/foundation/diagnostics.dart';
+import 'package:dart_eval/src/eval/compiler/model/source.dart';
+import 'package:flutter_eval/src/foundation/key.dart';
+import 'package:flutter_eval/src/material.dart';
+import 'package:flutter_eval/src/material/app.dart';
+import 'package:flutter_eval/src/material/app_bar.dart';
+import 'package:flutter_eval/src/material/colors.dart';
+import 'package:flutter_eval/src/material/floating_action_button.dart';
+import 'package:flutter_eval/src/material/scaffold.dart';
+import 'package:flutter_eval/src/painting.dart';
+import 'package:flutter_eval/src/painting/basic_types.dart';
+import 'package:flutter_eval/src/painting/colors.dart';
+import 'package:flutter_eval/src/painting/edge_insets.dart';
+import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
+import 'package:flutter_eval/src/sky_engine/ui/ui.dart';
+import 'package:flutter_eval/src/widgets.dart';
+import 'package:flutter_eval/src/widgets/app.dart';
+import 'package:flutter_eval/src/widgets/basic.dart';
+import 'package:flutter_eval/src/widgets/container.dart';
+import 'package:flutter_eval/src/widgets/framework.dart';
+import 'package:flutter_eval/src/widgets/text.dart';
 
-final _widgetType = EvalType(
-    'Widget', 'Widget', 'package:flutter/src/widgets/framework.dart', [diagnosticsTypes['DiagnosticableTree']], true);
+void setupFlutterForCompile(Compiler compiler) {
+  compiler.defineBridgeClasses([
+    $Widget.$declaration,
+    $StatelessWidget$bridge.$declaration,
+    $StatefulWidget$bridge.$declaration,
+    $State$bridge.$declaration,
+    $BuildContext.$declaration,
+    $Text.$declaration,
+    $Container.$declaration,
+    $Key.$declaration,
+    $Color.$declaration,
+    $EdgeInsetsGeometry.$declaration,
+    $EdgeInsets.$declaration,
+    $ColorSwatch.$declaration,
+    $WidgetsApp.$declaration,
+    $MaterialApp.$declaration,
+    $MaterialColor.$declaration,
+    $MaterialAccentColor.$declaration,
+    $Scaffold.$declaration,
+    $AppBar.$declaration,
+    $Padding.$declaration,
+    $FloatingActionButton.$declaration
+  ]);
 
-final _statelessWidgetType =
-    EvalType('StatelessWidget', 'StatelessWidget', 'package:flutter/src/widgets/framework.dart', [_widgetType], true);
+  compiler.addSource(DartSource('dart:ui', dartUiSource));
 
-final _keyType = EvalType('Key', 'Key', 'package:flutter/src/widgets/framework.dart', [EvalType.objectType], true);
+  compiler.addSource(DartSource('package:flutter/painting.dart', paintingSource));
+  compiler.addSource(DartSource('package:flutter/src/painting/basic_types.dart', paintingBasicTypesSource));
 
-final _textType = EvalType('Text', 'Text', 'package:flutter/src/widgets/text.dart', [_statelessWidgetType], true);
+  compiler.addSource(DartSource('package:flutter/widgets.dart', widgetsSource));
+  compiler.addSource(DartSource('package:flutter/src/widgets/framework.dart', widgetsFrameworkSource));
+  compiler.addSource(DartSource('package:flutter/src/widgets/basic.dart', widgetsBasicSource));
 
-final _buildContextType =
-    EvalType('BuildContext', 'BuildContext', 'package:flutter/src/widgets/framework.dart', [EvalType.objectType], true);
-
-/// Eval [BuildContext] (wrapper)
-class EvalBuildContext extends EvalRealObject<BuildContext> {
-  /// Create an evalBuildContext
-  EvalBuildContext(BuildContext value)
-      : super(value,
-            cls: EvalBridgeAbstractClass([], EvalGenericsList([]), _buildContextType, EvalScope.empty, Widget,
-                sourceFile: _buildContextType.refSourceFile));
+  compiler.addSource(DartSource('package:flutter/material.dart', materialSource));
+  compiler.addSource(DartSource('package:flutter/src/material/colors.dart', materialColorsSource));
 }
 
-/// eval [Widget]
-/// ignore: must_be_immutable
-class EvalWidget extends Widget with ValueInterop<Widget>, EvalBridgeObjectMixin<Widget>, BridgeRectifier<Widget> {
-  /// eval Widget class
-  static final cls = EvalBridgeAbstractClass([], EvalGenericsList([]), _widgetType, EvalScope.empty, Widget,
-      sourceFile: _statelessWidgetType.refSourceFile);
-
-  /// Create wrapper
-  static EvalValue makeWrapper(Widget target) {
-    if (target == null) return EvalNull();
-    return EvalRealObject<Widget>(target, cls: cls, fields: {});
-  }
-
-  @override
-  EvalBridgeData evalBridgeData = EvalBridgeData(cls);
-
-  @override
-  Element createElement() => bridgeCall('createElement');
-
-  @override
-  EvalValue getField(String name) {
-    return super.getField(name);
-  }
-
-  @override
-  EvalValue setField(String name, EvalValue value, {internalSet = false}) {
-    throw ArgumentError();
-  }
+void setupFlutterForRuntime(Runtime runtime) {
+  runtime
+    ..registerBridgeFunc('dart:ui', 'Color.', $Color.$new)
+    ..registerBridgeFunc('package:flutter/src/widgets/framework.dart', 'StatelessWidget.', $StatelessWidget$bridge.$new,
+        isBridge: true)
+    ..registerBridgeFunc('package:flutter/src/widgets/framework.dart', 'StatefulWidget.', $StatefulWidget$bridge.$new,
+        isBridge: true)
+    ..registerBridgeFunc('package:flutter/src/widgets/framework.dart', 'State.', $State$bridge.$new, isBridge: true)
+    ..registerBridgeFunc('package:flutter/src/painting/edge_insets.dart', 'EdgeInsets.fromLTRB', $EdgeInsets.$fromLTRB)
+    ..registerBridgeFunc('package:flutter/src/painting/edge_insets.dart', 'EdgeInsets.all', $EdgeInsets.$all)
+    ..registerBridgeFunc('package:flutter/src/widgets/basic.dart', 'Padding.', $Padding.$new)
+    ..registerBridgeFunc('package:flutter/src/widgets/text.dart', 'Text.', $Text.$new)
+    ..registerBridgeFunc('package:flutter/src/widgets/container.dart', 'Container.', $Container.$new)
+    ..registerBridgeFunc('package:flutter/src/widgets/app.dart', 'WidgetsApp.', $WidgetsApp.$new)
+    ..registerBridgeFunc('package:flutter/src/material/app.dart', 'MaterialApp.', $MaterialApp.$new)
+    ..registerBridgeFunc('package:flutter/src/material/app_bar.dart', 'AppBar.', $AppBar.$new)
+    ..registerBridgeFunc('package:flutter/src/material/colors.dart', 'MaterialColor.', $MaterialColor.$new)
+    ..registerBridgeFunc('package:flutter/src/material/colors.dart', 'MaterialAccentColor.', $MaterialAccentColor.$new)
+    ..registerBridgeFunc('package:flutter/src/material/scaffold.dart', 'Scaffold.', $Scaffold.$new)
+    ..registerBridgeFunc('package:flutter/src/material/floating_action_button.dart', 'FloatingActionButton.',
+        $FloatingActionButton.$new);
 }
-
-/// eval [StatelessWidget]
-/// ignore: must_be_immutable
-class EvalStatelessWidget extends StatelessWidget
-    with ValueInterop<StatelessWidget>, EvalBridgeObjectMixin<StatelessWidget>, BridgeRectifier<StatelessWidget> {
-  /// Create an [EvalStatelessWidget]
-  EvalStatelessWidget({Key key}) : super(key: key);
-
-  static final cls = EvalBridgeClass<StatelessWidget>([
-    DartConstructorDeclaration('', [ParameterDefinition('key', _keyType, true, true, true, false, null)])
-  ], EvalGenericsList([]), _statelessWidgetType, EvalScope.empty, StatelessWidget, (constructor, pos, named) {
-    return EvalStatelessWidget(key: named.containsKey('key') ? named['key'] : null);
-  }, sourceFile: _statelessWidgetType.refSourceFile, superclassName: _statelessWidgetType);
-
-  @override
-  EvalBridgeData evalBridgeData = EvalBridgeData(cls);
-
-  @override
-  Widget build(BuildContext context) => bridgeCall('build', [EvalBuildContext(context)]);
-
-  @override
-  EvalValue getField(String name) {
-    return super.getField(name);
-  }
-
-  @override
-  EvalValue setField(String name, EvalValue value, {bool internalSet = false}) {
-    return super.setField(name, value, internalSet: internalSet);
-  }
-}
-
-/// eval [StatelessWidget]
-/// ignore: must_be_immutable
-class EvalText extends Text
-    with ValueInterop<StatelessWidget>, EvalBridgeObjectMixin<StatelessWidget>, BridgeRectifier<StatelessWidget> {
-  /// Create an [EvalText]
-  EvalText(String data) : super(data);
-
-  /// Create wrapper
-  static EvalValue makeWrapper(EvalText target) {
-    if (target == null) return EvalNull();
-    return EvalRealObject(target, cls: cls, fields: {
-      'data': EvalField(
-          'data',
-          null,
-          null,
-          Getter(
-              EvalCallableImpl((lex, _1, _2, _3, {EvalValue target}) => EvalString((target.realValue as Text).data)))),
-    });
-  }
-
-  static final cls = EvalBridgeClass<Text>([
-    DartConstructorDeclaration('', [ParameterDefinition('data', EvalType.stringType, false, false, false, true, null)])
-  ], EvalGenericsList([]), _textType, EvalScope.empty, StatelessWidget, (constructor, pos, named) {
-    return EvalText((pos[0] as EvalString).realValue);
-  }, sourceFile: _textType.refSourceFile, superclassName: _statelessWidgetType);
-
-  @override
-  EvalBridgeData evalBridgeData = EvalBridgeData(cls);
-
-  @override
-  Widget build(BuildContext context) => bridgeCall('build', [EvalBuildContext(context)]);
-
-  @override
-  EvalValue getField(String name) {
-    switch (name) {
-      case 'data':
-        return EvalString(data);
-      case 'build':
-        return getFieldOrNull('build') ?? EvalBridgeFunction(super.build, EvalWidget.makeWrapper);
-    }
-    return super.getField(name);
-  }
-
-  @override
-  EvalValue setField(String name, EvalValue value, {internalSet = false}) {
-    throw UnimplementedError();
-  }
-}
-
-final flutterCore = <String, EvalField>{
-  'Widget': EvalField('Widget', EvalWidget.cls, Setter(null), Getter(null)),
-  'StatelessWidget': EvalField('StatelessWidget', EvalStatelessWidget.cls, Setter(null), Getter(null)),
-  'Text': EvalField('Text', EvalText.cls, Setter(null), Getter(null)),
-};
