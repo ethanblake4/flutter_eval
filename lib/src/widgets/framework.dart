@@ -185,6 +185,8 @@ class $StatelessWidget implements StatelessWidget, $Instance {
 
 /// dart_eval bridge class for [StatelessWidget]
 class $StatelessWidget$bridge extends StatelessWidget with $Bridge<StatelessWidget> {
+  const $StatelessWidget$bridge({Key? key}) : super(key: key);
+
   /// [StatelessWidget] compile-type type definition for dart_eval
   static const $type =
       BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/framework.dart', 'StatelessWidget'));
@@ -199,6 +201,7 @@ class $StatelessWidget$bridge extends StatelessWidget with $Bridge<StatelessWidg
       bridge: true);
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
+    // ignore: prefer_const_constructors
     return $StatelessWidget$bridge();
   }
 
@@ -277,6 +280,8 @@ class $StatelessWidget$bridge extends StatelessWidget with $Bridge<StatelessWidg
 }
 
 class $StatefulWidget$bridge extends StatefulWidget with $Bridge<StatefulWidget> {
+  const $StatefulWidget$bridge({Key? key}) : super(key: key);
+
   /// [StatefulWidget] compile-type type definition for dart_eval
   static const $type =
       BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/framework.dart', 'StatefulWidget'));
@@ -291,6 +296,7 @@ class $StatefulWidget$bridge extends StatefulWidget with $Bridge<StatefulWidget>
       bridge: true);
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
+    // ignore: prefer_const_constructors
     return $StatefulWidget$bridge();
   }
 
