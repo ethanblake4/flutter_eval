@@ -2,6 +2,7 @@ import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_eval/src/painting/edge_insets.dart';
+import 'package:flutter_eval/src/rendering/flex.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 const widgetsBasicSource = '''
@@ -12,6 +13,9 @@ export 'package:flutter/foundation.dart' show
     TargetPlatform,
     ValueNotifier;
 export 'package:flutter/painting.dart';
+export 'package:flutter/rendering.dart' show
+  MainAxisAlignment,
+  CrossAxisAlignment;
 ''';
 
 class $Padding implements $Instance {
@@ -44,6 +48,54 @@ class $Padding implements $Instance {
 
   @override
   Padding get $reified => $value;
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    throw UnimplementedError();
+  }
+
+  @override
+  int get $runtimeType => throw UnimplementedError();
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    throw UnimplementedError();
+  }
+}
+
+class $Column implements $Instance {
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Column'));
+
+  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
+      constructors: {
+        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
+          BridgeParameter(
+              'children', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.listType, [$Widget.$type])), true),
+          BridgeParameter('mainAxisAlignment', BridgeTypeAnnotation($MainAxisAlignment.$type), true),
+          BridgeParameter('crossAxisAlignment', BridgeTypeAnnotation($CrossAxisAlignment.$type), true),
+        ]))
+      },
+      methods: {},
+      getters: {},
+      setters: {},
+      fields: {},
+      wrap: true);
+
+  const $Column.wrap(this.$value);
+
+  static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
+    return $Column.wrap(Column(
+      children: (args[0]?.$reified as List).cast(),
+      mainAxisAlignment: args[1]?.$value,
+      crossAxisAlignment: args[2]?.$value,
+    ));
+  }
+
+  @override
+  final Column $value;
+
+  @override
+  Column get $reified => $value;
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {

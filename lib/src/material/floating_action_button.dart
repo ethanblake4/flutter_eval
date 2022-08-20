@@ -43,7 +43,6 @@ class $FloatingActionButton implements $Instance {
   }
 
   @override
-  // TODO: implement $runtimeType
   int get $runtimeType => throw UnimplementedError();
 
   @override
