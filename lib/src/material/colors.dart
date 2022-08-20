@@ -1,9 +1,9 @@
+import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
-import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_eval/src/painting/colors.dart';
 
-final materialColorsSource = '''
+const materialColorsSource = '''
 import 'package:flutter/painting.dart';
 class Colors {
   // This class is not meant to be instantiated or extended; this constructor
@@ -1737,6 +1737,7 @@ class $MaterialColor implements $Instance {
 
   $MaterialColor.wrap(this.$value) : _superclass = $ColorSwatch.wrap($value);
 
+  @override
   final MaterialColor $value;
   final $Instance _superclass;
 
@@ -1781,6 +1782,7 @@ class $MaterialAccentColor implements $Instance {
 
   $MaterialAccentColor.wrap(this.$value) : _superclass = $ColorSwatch.wrap($value);
 
+  @override
   final MaterialAccentColor $value;
   final $Instance _superclass;
 

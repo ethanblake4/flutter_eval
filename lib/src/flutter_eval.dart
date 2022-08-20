@@ -84,16 +84,16 @@ class _CompilerWidgetState extends State<CompilerWidget> {
       _writeBytesToPath(widget.outputFile!, program.write());
     }
 
-    final _setupRuntime = () {
+    void setupRuntime() {
       runtime = Runtime.ofProgram(program);
       setupFlutterForRuntime(runtime);
       runtime.setup();
-    };
+    }
 
     if (!inBuild) {
-      setState(_setupRuntime);
+      setState(setupRuntime);
     } else {
-      _setupRuntime();
+      setupRuntime();
     }
   }
 
@@ -312,17 +312,17 @@ class _EvalWidgetState extends State<EvalWidget> {
       _writeBytesToPath(widget.assetPath, program.write());
     }
 
-    final _setupRuntime = () {
+    void setupRuntime() {
       runtime = Runtime.ofProgram(program);
       setupFlutterForRuntime(runtime!);
       runtime!.setup();
-    };
+    }
 
     if (!inBuild) {
       codeCache = widget.packages;
-      setState(_setupRuntime);
+      setState(setupRuntime);
     } else {
-      _setupRuntime();
+      setupRuntime();
     }
   }
 
@@ -370,15 +370,15 @@ Future<Uri> _writeBytesToPath(String path, Uint8List bytes) async {
   if (!file.existsSync()) {
     try {
       file.createSync(recursive: true);
-    } on FileSystemException catch (e) {
+    } on FileSystemException {
       final docDir = await getApplicationDocumentsDirectory();
-      file = File(docDir.path + '/' + path);
+      file = File('${docDir.path}/$path');
       if (!file.existsSync()) {
         file.createSync(recursive: true);
       }
     }
   }
   await file.writeAsBytes(bytes);
-  print('Wrote generated EVC bytecode to: ${file.absolute.uri}');
+  debugPrint('Wrote generated EVC bytecode to: ${file.absolute.uri}');
   return file.absolute.uri;
 }

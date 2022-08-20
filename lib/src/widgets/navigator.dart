@@ -27,7 +27,7 @@ class $Navigator implements $Instance {
   const $Navigator.wrap(this.$value);
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
-    return $Navigator.wrap(Navigator());
+    return const $Navigator.wrap(Navigator());
   }
 
   static $Value? $of(Runtime runtime, $Value? target, List<$Value?> args) {

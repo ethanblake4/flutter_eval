@@ -1,5 +1,5 @@
+import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
-import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import 'package:flutter/foundation.dart';
 
 class $DiagnosticLevel implements $Instance {
@@ -29,6 +29,7 @@ class $DiagnosticLevel implements $Instance {
 class $DiagnosticPropertiesBuilder implements $Instance {
   $DiagnosticPropertiesBuilder.wrap(this.$value);
 
+  @override
   final DiagnosticPropertiesBuilder $value;
 
   @override
@@ -51,6 +52,7 @@ class $DiagnosticPropertiesBuilder implements $Instance {
 class $DiagnosticsTreeStyle implements $Instance {
   $DiagnosticsTreeStyle.wrap(this.$value);
 
+  @override
   final DiagnosticsTreeStyle $value;
 
   @override
@@ -73,6 +75,7 @@ class $DiagnosticsTreeStyle implements $Instance {
 class $DiagnosticsNode implements $Instance {
   $DiagnosticsNode.wrap(this.$value);
 
+  @override
   final DiagnosticsNode $value;
 
   @override

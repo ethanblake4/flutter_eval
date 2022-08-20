@@ -1,5 +1,5 @@
+import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
-import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import 'package:dart_eval/stdlib/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
@@ -32,7 +32,8 @@ class $MaterialApp implements $Instance {
       builder: args[3] == null
           ? null
           : (ctx, widget) => (args[3] as EvalCallable)(
-              runtime, null, [$BuildContext.wrap(ctx), widget == null ? $null() : $Widget.wrap(widget)]) as Widget,
+                  runtime, null, [$BuildContext.wrap(ctx), widget == null ? const $null() : $Widget.wrap(widget)])
+              as Widget,
     ));
   }
 

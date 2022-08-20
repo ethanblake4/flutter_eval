@@ -207,7 +207,7 @@ class $StatelessWidget$bridge extends StatelessWidget with $Bridge<StatelessWidg
     switch (identifier) {
       case 'key':
         final key = super.key;
-        return key == null ? $null() : $Key.wrap(key);
+        return key == null ? const $null() : $Key.wrap(key);
       case 'createElement':
         return $Function((runtime, target, args) => $StatelessElement.wrap(super.createElement()));
       case 'toStringShort':
@@ -215,7 +215,7 @@ class $StatelessWidget$bridge extends StatelessWidget with $Bridge<StatelessWidg
       case 'debugFillProperties':
         return $Function((runtime, target, args) {
           super.debugFillProperties(args[1]!.$value);
-          return $null();
+          return const $null();
         });
       case 'toString':
         return $Function((runtime, target, args) => $String(super.toString()));
@@ -244,6 +244,7 @@ class $StatelessWidget$bridge extends StatelessWidget with $Bridge<StatelessWidg
   List<DiagnosticsNode> debugDescribeChildren() => ($_invoke('debugDescribeChildren', []) as List).cast();
 
   @override
+  // ignore: must_call_super
   void debugFillProperties(DiagnosticPropertiesBuilder properties) =>
       $_invoke('debugFillProperties', [$DiagnosticPropertiesBuilder.wrap(properties)]);
 
@@ -259,7 +260,7 @@ class $StatelessWidget$bridge extends StatelessWidget with $Bridge<StatelessWidg
           {String prefixLineOne = '', String? prefixOtherLines, DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
       $_invoke('toStringDeep', [
         $String(prefixLineOne),
-        prefixOtherLines == null ? $null() : $String(prefixOtherLines),
+        prefixOtherLines == null ? const $null() : $String(prefixOtherLines),
         $DiagnosticLevel.wrap(minLevel)
       ]);
 
@@ -298,7 +299,7 @@ class $StatefulWidget$bridge extends StatefulWidget with $Bridge<StatefulWidget>
     switch (identifier) {
       case 'key':
         final key = super.key;
-        return key == null ? $null() : $Key.wrap(key);
+        return key == null ? const $null() : $Key.wrap(key);
       case 'createElement':
         return $Function((runtime, target, args) => $StatefulElement.wrap(super.createElement()));
       case 'toStringShort':
@@ -306,7 +307,7 @@ class $StatefulWidget$bridge extends StatefulWidget with $Bridge<StatefulWidget>
       case 'debugFillProperties':
         return $Function((runtime, target, args) {
           super.debugFillProperties(args[1]!.$value);
-          return $null();
+          return const $null();
         });
       case 'toString':
         return $Function((runtime, target, args) => $String(super.toString()));
@@ -326,6 +327,7 @@ class $StatefulWidget$bridge extends StatefulWidget with $Bridge<StatefulWidget>
   }
 
   @override
+  // ignore: no_logic_in_create_state
   State<StatefulWidget> createState() => $_invoke('createState', []);
 }
 
@@ -709,6 +711,7 @@ class $StatelessElement implements StatelessElement, $Instance {
 class $StatefulElement implements $Instance {
   $StatefulElement.wrap(this.$value);
 
+  @override
   final StatefulElement $value;
 
   @override

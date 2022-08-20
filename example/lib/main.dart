@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_eval/flutter_eval.dart';
 
 void main() {
-  runApp(EvalExample());
+  runApp(const EvalExample());
 }
 
 class EvalExample extends StatelessWidget {
@@ -12,7 +12,7 @@ class EvalExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return EvalWidget(
-      packages: {
+      packages: const {
         'example': {
           'main.dart': '''
               import 'package:flutter/material.dart';

@@ -1,5 +1,5 @@
+import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
-import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import 'package:dart_eval/stdlib/core.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -12,6 +12,7 @@ class $EdgeInsetsGeometry implements EdgeInsetsGeometry, $Instance {
 
   $EdgeInsetsGeometry.wrap(this.$value);
 
+  @override
   final EdgeInsetsGeometry $value;
 
   @override
@@ -134,6 +135,7 @@ class $EdgeInsets implements EdgeInsets, $Instance {
     ));
   }
 
+  @override
   final EdgeInsets $value;
 
   @override

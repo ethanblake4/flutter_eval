@@ -1,5 +1,5 @@
+import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
-import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import 'package:dart_eval/stdlib/core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
@@ -27,6 +27,7 @@ class $ColorSwatch implements $Instance {
 
   $ColorSwatch.wrap(this.$value) : _superclass = $Color.wrap($value);
 
+  @override
   final ColorSwatch $value;
   final $Instance _superclass;
 
@@ -37,7 +38,7 @@ class $ColorSwatch implements $Instance {
         return $Function((runtime, target, args) {
           final res = target!.$value[args[0]!.$value];
           if (res == null) {
-            return $null();
+            return const $null();
           }
           return $Color.wrap(res as Color);
         });

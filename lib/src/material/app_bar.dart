@@ -40,7 +40,6 @@ class $AppBar implements $Instance {
   }
 
   @override
-  // TODO: implement $runtimeType
   int get $runtimeType => throw UnimplementedError();
 
   @override

@@ -9,7 +9,7 @@ import 'package:example/main.dart' as app;
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-//void main() => run(_testMain);
+void main() => _testMain();
 
 void _testMain() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
@@ -20,15 +20,15 @@ void _testMain() {
     await tester.pumpAndSettle();
 
     // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    expect(find.text('Current amount: 0'), findsOneWidget);
+    expect(find.text('Current amount: 1'), findsNothing);
 
     // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    await tester.tap(find.byType(FloatingActionButton));
     await tester.pump();
 
     // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('Current amount: 0'), findsNothing);
+    expect(find.text('Current amount: 1'), findsOneWidget);
   });
 }

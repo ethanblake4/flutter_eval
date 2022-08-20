@@ -3,7 +3,7 @@ library flutter_eval;
 export 'src/flutter_eval.dart';
 
 import 'package:dart_eval/dart_eval.dart';
-import 'package:dart_eval/src/eval/compiler/model/source.dart';
+import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter_eval/src/foundation/key.dart';
 import 'package:flutter_eval/src/material.dart';
 import 'package:flutter_eval/src/material/app.dart';
@@ -100,5 +100,4 @@ void setupFlutterForRuntime(Runtime runtime) {
         'package:flutter/src/rendering/flex.dart', 'MainAxisAlignment', $MainAxisAlignment.$values)
     ..registerBridgeEnumValues(
         'package:flutter/src/rendering/flex.dart', 'CrossAxisAlignment', $CrossAxisAlignment.$values);
-  ;
 }

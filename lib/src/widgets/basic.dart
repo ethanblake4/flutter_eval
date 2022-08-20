@@ -1,5 +1,5 @@
+import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
-import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_eval/src/painting/edge_insets.dart';
 import 'package:flutter_eval/src/rendering/flex.dart';
@@ -69,10 +69,10 @@ class $Column implements $Instance {
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
         '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter(
-              'children', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.listType, [$Widget.$type])), true),
           BridgeParameter('mainAxisAlignment', BridgeTypeAnnotation($MainAxisAlignment.$type), true),
           BridgeParameter('crossAxisAlignment', BridgeTypeAnnotation($CrossAxisAlignment.$type), true),
+          BridgeParameter(
+              'children', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.listType, [$Widget.$type])), true),
         ]))
       },
       methods: {},
@@ -85,9 +85,9 @@ class $Column implements $Instance {
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
     return $Column.wrap(Column(
-      children: (args[0]?.$reified as List).cast(),
-      mainAxisAlignment: args[1]?.$value,
-      crossAxisAlignment: args[2]?.$value,
+      mainAxisAlignment: args[0]?.$value,
+      crossAxisAlignment: args[1]?.$value,
+      children: (args[2]?.$reified as List).cast(),
     ));
   }
 
