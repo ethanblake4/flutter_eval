@@ -28,7 +28,7 @@ class $MaterialApp implements $Instance {
     return $MaterialApp.wrap(MaterialApp(
       color: args[0]?.$value,
       home: args[1]?.$value,
-      title: args[2]?.$value,
+      title: args[2]?.$value ?? '',
       builder: args[3] == null
           ? null
           : (ctx, widget) => (args[3] as EvalCallable)(

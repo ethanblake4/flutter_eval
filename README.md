@@ -76,6 +76,20 @@ flutter_eval includes two other helper Widgets for different use cases:
    is in debug or release mode.
 - `RuntimeWidget` will *always* load EVC bytecode and does not provide a
    parameter to specify Dart code.
+## Supported widgets and classes
+
+Currently supported widgets and classes include:
+- `Widget`, `StatelessWidget`, `StatefulWidget`, `State`, `Key`, `BuildContext`;
+- `ChangeNotifier`;
+- `WidgetsApp`, `Container`, `Padding`, `EdgeInsetsGeometry`, `EdgeInsets`;
+- `Column`;
+- `Color`,  `ColorSwatch`, `Colors`, `FontWeight`;
+- `MaterialApp`, `MaterialColor`, `MaterialAccentColor`;
+- `Scaffold`, `ScaffoldMessenger`, `AppBar`, `SnackBar`, `FloatingActionButton`;
+- `Navigator`, `NavigatorState`;
+- `Text`, `TextStyle`, `TextEditingController`, `TextField`;
+
+Note that many of these have only partial support.
 
 ## Advanced usage
 

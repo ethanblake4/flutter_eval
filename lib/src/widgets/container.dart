@@ -3,6 +3,7 @@ import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_eval/src/foundation/key.dart';
+import 'package:flutter_eval/src/painting/edge_insets.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 
 import 'framework.dart';
@@ -18,7 +19,12 @@ class $Container implements Container, $Instance {
         '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
           BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
           BridgeParameter('color', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('child', BridgeTypeAnnotation($Widget.$type, nullable: true), true)
+          BridgeParameter('child', BridgeTypeAnnotation($Widget.$type, nullable: true), true),
+          BridgeParameter('padding', BridgeTypeAnnotation($EdgeInsetsGeometry.$type, nullable: true), true),
+          BridgeParameter(
+              'width', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType), nullable: true), true),
+          BridgeParameter(
+              'height', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType), nullable: true), true),
         ]))
       },
       methods: {},
@@ -32,6 +38,9 @@ class $Container implements Container, $Instance {
       key: args[0]?.$value,
       color: args[1]?.$value,
       child: args[2]?.$value,
+      padding: args[3]?.$value,
+      width: args[4]?.$value,
+      height: args[5]?.$value,
     ));
   }
 

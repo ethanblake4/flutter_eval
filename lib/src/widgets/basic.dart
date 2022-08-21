@@ -85,8 +85,8 @@ class $Column implements $Instance {
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
     return $Column.wrap(Column(
-      mainAxisAlignment: args[0]?.$value,
-      crossAxisAlignment: args[1]?.$value,
+      mainAxisAlignment: args[0]?.$value ?? MainAxisAlignment.start,
+      crossAxisAlignment: args[1]?.$value ?? CrossAxisAlignment.center,
       children: (args[2]?.$reified as List).cast(),
     ));
   }

@@ -1,6 +1,6 @@
 name: flutter_eval
-description: Interpreter for Flutter, using dart_eval
-version: 0.4.0
+description: Flutter bridge library for dart_eval, enabling creation of fully dynamic Flutter apps and widgets that can be loaded from a file or the Internet at runtime.
+version: 0.4.1
 homepage: https://github.com/ethanblake4/flutter_eval
 
 environment:

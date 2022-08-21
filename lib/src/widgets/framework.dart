@@ -353,7 +353,12 @@ class $State$bridge<T extends StatefulWidget> extends State<T> with $Bridge<Stat
             returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.voidType)),
             params: [
               BridgeParameter('fn', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType)), false)
-            ]))
+            ])),
+        'initState': BridgeMethodDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.voidType)))),
+        'build': BridgeMethodDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($Widget.$type),
+            params: [BridgeParameter('context', BridgeTypeAnnotation($BuildContext.$type), false)])),
       },
       getters: {},
       setters: {},
@@ -374,6 +379,11 @@ class $State$bridge<T extends StatefulWidget> extends State<T> with $Bridge<Stat
           });
           return null;
         });
+      case 'initState':
+        return $Function((runtime, target, args) {
+          super.initState();
+          return null;
+        });
     }
 
     throw UnimplementedError();
@@ -383,6 +393,10 @@ class $State$bridge<T extends StatefulWidget> extends State<T> with $Bridge<Stat
   void $bridgeSet(String identifier, $Value value) {
     throw UnimplementedError();
   }
+
+  @override
+  // ignore: must_call_super
+  void initState() => $_invoke('initState', []);
 
   @override
   Widget build(BuildContext context) => $_invoke('build', [$BuildContext.wrap(context)]);

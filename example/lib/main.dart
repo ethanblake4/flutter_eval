@@ -70,7 +70,7 @@ class EvalExample extends StatelessWidget {
                         Container(
                           color: Colors.red,
                           child: Text('Some text')
-                        )
+                        ),
                       ],
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
