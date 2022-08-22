@@ -1,3 +1,6 @@
+## 0.4.2
+- Add ElevatedButton and TextButton
+
 ## 0.4.1
 - Support for SnackBar, ScaffoldMessenger, TextField, TextStyle, FontWeight, 
   TextEditingController, and ChangeNotifier

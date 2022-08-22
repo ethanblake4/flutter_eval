@@ -11,9 +11,11 @@ import 'package:flutter_eval/src/material.dart';
 import 'package:flutter_eval/src/material/app.dart';
 import 'package:flutter_eval/src/material/app_bar.dart';
 import 'package:flutter_eval/src/material/colors.dart';
+import 'package:flutter_eval/src/material/elevated_button.dart';
 import 'package:flutter_eval/src/material/floating_action_button.dart';
 import 'package:flutter_eval/src/material/scaffold.dart';
 import 'package:flutter_eval/src/material/snack_bar.dart';
+import 'package:flutter_eval/src/material/text_button.dart';
 import 'package:flutter_eval/src/material/text_field.dart';
 import 'package:flutter_eval/src/painting.dart';
 import 'package:flutter_eval/src/painting/basic_types.dart';
@@ -66,7 +68,9 @@ void setupFlutterForCompile(Compiler compiler) {
     $ScaffoldMessenger.$declaration,
     $ScaffoldMessengerState.$declaration,
     $SnackBar.$declaration,
-    $TextStyle.$declaration
+    $TextStyle.$declaration,
+    $TextButton.$declaration,
+    $ElevatedButton.$declaration
   ]);
 
   compiler.defineBridgeEnum($MainAxisAlignment.$declaration);
@@ -117,10 +121,12 @@ void setupFlutterForRuntime(Runtime runtime) {
     ..registerBridgeFunc('package:flutter/src/material/app_bar.dart', 'AppBar.', $AppBar.$new)
     ..registerBridgeFunc('package:flutter/src/material/colors.dart', 'MaterialColor.', $MaterialColor.$new)
     ..registerBridgeFunc('package:flutter/src/material/colors.dart', 'MaterialAccentColor.', $MaterialAccentColor.$new)
+    ..registerBridgeFunc('package:flutter/src/material/elevated_button.dart', 'ElevatedButton.', $ElevatedButton.$new)
     ..registerBridgeFunc('package:flutter/src/material/scaffold.dart', 'Scaffold.', $Scaffold.$new)
     ..registerBridgeFunc('package:flutter/src/material/scaffold.dart', 'ScaffoldMessenger.', $ScaffoldMessenger.$new)
     ..registerBridgeFunc('package:flutter/src/material/scaffold.dart', 'ScaffoldMessenger.of', $ScaffoldMessenger.$of)
     ..registerBridgeFunc('package:flutter/src/material/snack_bar.dart', 'SnackBar.', $SnackBar.$new)
+    ..registerBridgeFunc('package:flutter/src/material/text_button.dart', 'TextButton.', $TextButton.$new)
     ..registerBridgeFunc('package:flutter/src/material/text_field.dart', 'TextField.', $TextField.$new)
     ..registerBridgeFunc(
         'package:flutter/src/material/floating_action_button.dart', 'FloatingActionButton.', $FloatingActionButton.$new)
