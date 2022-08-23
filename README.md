@@ -82,10 +82,11 @@ Currently supported widgets and classes include:
 - `Widget`, `StatelessWidget`, `StatefulWidget`, `State`, `Key`, `BuildContext`;
 - `ChangeNotifier`;
 - `WidgetsApp`, `Container`, `Padding`, `EdgeInsetsGeometry`, `EdgeInsets`;
-- `Column`;
+- `Column`, `Row`, `MainAxisAlignment`, `MainAxisSize`, `CrossAxisAlignment`;
 - `Color`,  `ColorSwatch`, `Colors`, `FontWeight`;
 - `MaterialApp`, `MaterialColor`, `MaterialAccentColor`;
 - `Scaffold`, `ScaffoldMessenger`, `AppBar`, `SnackBar`, `FloatingActionButton`;
+- `TextButton`, `ElevatedButton`;
 - `Navigator`, `NavigatorState`;
 - `Text`, `TextStyle`, `TextEditingController`, `TextField`;
 

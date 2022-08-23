@@ -59,6 +59,7 @@ void setupFlutterForCompile(Compiler compiler) {
     $Scaffold.$declaration,
     $AppBar.$declaration,
     $Padding.$declaration,
+    $Row.$declaration,
     $Column.$declaration,
     $FloatingActionButton.$declaration,
     $Navigator.$declaration,
@@ -75,6 +76,7 @@ void setupFlutterForCompile(Compiler compiler) {
 
   compiler.defineBridgeEnum($MainAxisAlignment.$declaration);
   compiler.defineBridgeEnum($CrossAxisAlignment.$declaration);
+  compiler.defineBridgeEnum($MainAxisSize.$declaration);
   compiler.defineBridgeEnum($FontWeight.$declaration);
 
   compiler.addSource(DartSource('dart:ui', dartUiSource));
@@ -113,6 +115,7 @@ void setupFlutterForRuntime(Runtime runtime) {
     ..registerBridgeFunc('package:flutter/src/widgets/app.dart', 'WidgetsApp.', $WidgetsApp.$new)
     ..registerBridgeFunc('package:flutter/src/widgets/basic.dart', 'Padding.', $Padding.$new)
     ..registerBridgeFunc('package:flutter/src/widgets/basic.dart', 'Column.', $Column.$new)
+    ..registerBridgeFunc('package:flutter/src/widgets/basic.dart', 'Row.', $Row.$new)
     ..registerBridgeFunc('package:flutter/src/widgets/text.dart', 'Text.', $Text.$new)
     ..registerBridgeFunc('package:flutter/src/widgets/container.dart', 'Container.', $Container.$new)
     ..registerBridgeFunc(
@@ -133,6 +136,7 @@ void setupFlutterForRuntime(Runtime runtime) {
     ..registerBridgeFunc('package:flutter/src/widgets/navigator.dart', 'Navigator.', $Navigator.$new)
     ..registerBridgeFunc('package:flutter/src/widgets/navigator.dart', 'Navigator.of', $Navigator.$of)
     ..registerBridgeEnumValues('dart:ui', 'FontWeight', $FontWeight.$values)
+    ..registerBridgeEnumValues('package:flutter/src/rendering/flex.dart', 'MainAxisSize', $MainAxisSize.$values)
     ..registerBridgeEnumValues(
         'package:flutter/src/rendering/flex.dart', 'MainAxisAlignment', $MainAxisAlignment.$values)
     ..registerBridgeEnumValues(

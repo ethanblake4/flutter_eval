@@ -69,3 +69,33 @@ class $CrossAxisAlignment implements $Instance {
     throw UnimplementedError();
   }
 }
+
+class $MainAxisSize implements $Instance {
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/rendering/flex.dart', 'MainAxisSize'));
+
+  static const $declaration =
+      BridgeEnumDef($type, values: ['min', 'max'], methods: {}, getters: {}, setters: {}, fields: {});
+
+  static final $values = MainAxisSize.values.asNameMap().map((key, value) => MapEntry(key, $MainAxisSize.wrap(value)));
+
+  const $MainAxisSize.wrap(this.$value);
+
+  @override
+  final MainAxisSize $value;
+
+  @override
+  MainAxisSize get $reified => $value;
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    throw UnimplementedError();
+  }
+
+  @override
+  int get $runtimeType => throw UnimplementedError();
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    throw UnimplementedError();
+  }
+}

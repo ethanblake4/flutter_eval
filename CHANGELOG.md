@@ -1,3 +1,7 @@
+## 0.4.3
+- Add Row and MainAxisSize
+- Reduce min Dart SDK to 2.15
+
 ## 0.4.2
 - Add ElevatedButton and TextButton
 
