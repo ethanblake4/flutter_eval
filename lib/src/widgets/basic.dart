@@ -92,8 +92,8 @@ class $Column implements $Instance {
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
     return $Column.wrap(Column(
       key: args[0]?.$value,
-      mainAxisAlignment: args[1]?.$value ?? MainAxisAlignment.start,
-      mainAxisSize: args[2]?.$value ?? MainAxisSize.max,
+      mainAxisSize: args[1]?.$value ?? MainAxisSize.max,
+      mainAxisAlignment: args[2]?.$value ?? MainAxisAlignment.start,
       crossAxisAlignment: args[3]?.$value ?? CrossAxisAlignment.center,
       children: (args[4]?.$reified as List).cast(),
     ));
@@ -126,8 +126,8 @@ class $Row implements $Instance {
       constructors: {
         '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
           BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
-          BridgeParameter('mainAxisAlignment', BridgeTypeAnnotation($MainAxisAlignment.$type), true),
           BridgeParameter('mainAxisSize', BridgeTypeAnnotation($MainAxisSize.$type), true),
+          BridgeParameter('mainAxisAlignment', BridgeTypeAnnotation($MainAxisAlignment.$type), true),
           BridgeParameter('crossAxisAlignment', BridgeTypeAnnotation($CrossAxisAlignment.$type), true),
           BridgeParameter(
               'children', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.listType, [$Widget.$type])), true),
@@ -144,8 +144,8 @@ class $Row implements $Instance {
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
     return $Row.wrap(Row(
       key: args[0]?.$value,
-      mainAxisAlignment: args[1]?.$value ?? MainAxisAlignment.start,
-      mainAxisSize: args[2]?.$value ?? MainAxisSize.max,
+      mainAxisSize: args[1]?.$value ?? MainAxisSize.max,
+      mainAxisAlignment: args[2]?.$value ?? MainAxisAlignment.start,
       crossAxisAlignment: args[3]?.$value ?? CrossAxisAlignment.center,
       children: (args[4]?.$reified as List).cast(),
     ));
