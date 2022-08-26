@@ -1,3 +1,7 @@
+## 0.4.4
+- Fix ordering of mainAxisAlignment and mainAxisSize in Row and Column
+  (thanks to @g123k)
+
 ## 0.4.3
 - Add Row and MainAxisSize
 - Reduce min Dart SDK to 2.15
