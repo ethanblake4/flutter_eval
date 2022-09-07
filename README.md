@@ -76,19 +76,67 @@ flutter_eval includes two other helper Widgets for different use cases:
    is in debug or release mode.
 - `RuntimeWidget` will *always* load EVC bytecode and does not provide a
    parameter to specify Dart code.
+
+## Compiling with the dart_eval CLI
+
+flutter_eval allows you to compile an existing Flutter project using the dart_eval CLI;
+please note, however, that Pub packages are not currently supported.
+
+To get started, first install the dart_eval CLI:
+
+```bash
+dart pub global activate dart_eval
+```
+
+Next, head over to the flutter_eval [Releases page](https://github.com/ethanblake4/flutter_eval/releases)
+and find the release corresponding to the version of flutter_eval you are using. Under **Assets**,
+download `flutter_eval.json`.
+
+In the root of the project you wish to compile, create a folder called `.dart_eval` and
+a subfolder `bindings`. Place the downloaded `flutter_eval.json` file inside of this folder.
+
+Your project structure should look like this:
+```
+├── .dart_eval
+│   └── bindings
+│       └── flutter_eval.json.
+├── pubspec.yaml
+└── lib
+    └── main.dart
+```
+
+Finally, in the root of your project, run:
+```bash
+dart_eval compile -o program.evc
+```
+
+If the steps were performed correctly, you should see the following in the console output:
+
+`Found binding file: .dart_eval\bindings\flutter_eval.json`
+
+as well as
+
+`Compiled $x characters Dart to $y bytes EVC in $z ms: program.evc`
+
+The resulting `program.evc` file will be in the root of your project and you can use it
+in flutter_eval, as an asset or from a URL. The package name will be automatically inferred
+from your pubspec.yaml file.
+
 ## Supported widgets and classes
 
 Currently supported widgets and classes include:
 - `Widget`, `StatelessWidget`, `StatefulWidget`, `State`, `Key`, `BuildContext`;
 - `ChangeNotifier`;
-- `WidgetsApp`, `Container`, `Padding`, `EdgeInsetsGeometry`, `EdgeInsets`;
-- `Column`, `Row`, `MainAxisAlignment`, `MainAxisSize`, `CrossAxisAlignment`;
-- `Color`,  `ColorSwatch`, `Colors`, `FontWeight`;
+- `WidgetsApp`, `Container`, `Column`, `Row`, `Center`;
+- `Padding`, `EdgeInsetsGeometry`, `EdgeInsets`;
+- `MainAxisAlignment`, `MainAxisSize`, `CrossAxisAlignment`;
+- `Color`,  `ColorSwatch`, `Colors`, `FontWeight`, `FontStyle`;
 - `MaterialApp`, `MaterialColor`, `MaterialAccentColor`;
+- `Theme`, `ThemeData`, `TextTheme`;
+- `Text`, `TextStyle`, `TextEditingController`, `TextField`;
 - `Scaffold`, `ScaffoldMessenger`, `AppBar`, `SnackBar`, `FloatingActionButton`;
 - `TextButton`, `ElevatedButton`;
 - `Navigator`, `NavigatorState`;
-- `Text`, `TextStyle`, `TextEditingController`, `TextField`;
 
 Note that many of these have only partial support.
 

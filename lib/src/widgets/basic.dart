@@ -170,3 +170,48 @@ class $Row implements $Instance {
     throw UnimplementedError();
   }
 }
+
+class $Center implements $Instance {
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Center'));
+
+  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
+      constructors: {
+        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
+          BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
+          BridgeParameter('child', BridgeTypeAnnotation($Widget.$type), true),
+        ]))
+      },
+      methods: {},
+      getters: {},
+      setters: {},
+      fields: {},
+      wrap: true);
+
+  const $Center.wrap(this.$value);
+
+  static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
+    return $Center.wrap(Center(
+      key: args[0]?.$value,
+      child: args[1]?.$value,
+    ));
+  }
+
+  @override
+  final Center $value;
+
+  @override
+  Center get $reified => $value;
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    throw UnimplementedError();
+  }
+
+  @override
+  int get $runtimeType => throw UnimplementedError();
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    throw UnimplementedError();
+  }
+}

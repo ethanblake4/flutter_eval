@@ -11,4 +11,7 @@ export 'package:flutter/src/material/scaffold.dart';
 export 'package:flutter/src/material/snack_bar.dart';
 export 'package:flutter/src/material/text_button.dart';
 export 'package:flutter/src/material/text_field.dart';
+export 'package:flutter/src/material/text_theme.dart';
+export 'package:flutter/src/material/theme_data.dart';
+export 'package:flutter/src/material/theme.dart';
 ''';

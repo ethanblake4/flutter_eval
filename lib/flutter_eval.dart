@@ -17,6 +17,9 @@ import 'package:flutter_eval/src/material/scaffold.dart';
 import 'package:flutter_eval/src/material/snack_bar.dart';
 import 'package:flutter_eval/src/material/text_button.dart';
 import 'package:flutter_eval/src/material/text_field.dart';
+import 'package:flutter_eval/src/material/text_theme.dart';
+import 'package:flutter_eval/src/material/theme.dart';
+import 'package:flutter_eval/src/material/theme_data.dart';
 import 'package:flutter_eval/src/painting.dart';
 import 'package:flutter_eval/src/painting/basic_types.dart';
 import 'package:flutter_eval/src/painting/colors.dart';
@@ -38,7 +41,7 @@ import 'package:flutter_eval/src/widgets/text.dart';
 
 /// Setup flutter_eval classes for use in a dart_eval [Compiler].
 void setupFlutterForCompile(Compiler compiler) {
-  compiler.defineBridgeClasses([
+  final classes = [
     $Widget.$declaration,
     $StatelessWidget$bridge.$declaration,
     $StatefulWidget$bridge.$declaration,
@@ -60,6 +63,7 @@ void setupFlutterForCompile(Compiler compiler) {
     $AppBar.$declaration,
     $Padding.$declaration,
     $Row.$declaration,
+    $Center.$declaration,
     $Column.$declaration,
     $FloatingActionButton.$declaration,
     $Navigator.$declaration,
@@ -70,14 +74,20 @@ void setupFlutterForCompile(Compiler compiler) {
     $ScaffoldMessengerState.$declaration,
     $SnackBar.$declaration,
     $TextStyle.$declaration,
+    $TextTheme.$declaration,
     $TextButton.$declaration,
+    $ThemeData.$declaration,
+    $Theme.$declaration,
     $ElevatedButton.$declaration
-  ]);
+  ];
+
+  compiler.defineBridgeClasses(classes);
 
   compiler.defineBridgeEnum($MainAxisAlignment.$declaration);
   compiler.defineBridgeEnum($CrossAxisAlignment.$declaration);
   compiler.defineBridgeEnum($MainAxisSize.$declaration);
   compiler.defineBridgeEnum($FontWeight.$declaration);
+  compiler.defineBridgeEnum($FontStyle.$declaration);
 
   compiler.addSource(DartSource('dart:ui', dartUiSource));
 
@@ -94,6 +104,31 @@ void setupFlutterForCompile(Compiler compiler) {
   compiler.addSource(DartSource('package:flutter/widgets.dart', widgetsSource));
   compiler.addSource(DartSource('package:flutter/src/widgets/framework.dart', widgetsFrameworkSource));
   compiler.addSource(DartSource('package:flutter/src/widgets/basic.dart', widgetsBasicSource));
+
+  /*final outJson = json.encode({
+    'classes': classes.map((c) => c.toJson()).toList(),
+    'enums': [
+      $MainAxisAlignment.$declaration.toJson(),
+      $CrossAxisAlignment.$declaration.toJson(),
+      $MainAxisSize.$declaration.toJson(),
+      $FontWeight.$declaration.toJson(),
+      $FontStyle.$declaration.toJson(),
+    ],
+    'sources': [
+      {'uri': 'dart:ui', 'source': dartUiSource},
+      {'uri': 'package:flutter/foundation.dart', 'source': foundationSource},
+      {'uri': 'package:flutter/material.dart', 'source': materialSource},
+      {'uri': 'package:flutter/src/material/colors.dart', 'source': materialColorsSource},
+      {'uri': 'package:flutter/painting.dart', 'source': paintingSource},
+      {'uri': 'package:flutter/src/painting/basic_types.dart', 'source': paintingBasicTypesSource},
+      {'uri': 'package:flutter/rendering.dart', 'source': renderingSource},
+      {'uri': 'package:flutter/widgets.dart', 'source': widgetsSource},
+      {'uri': 'package:flutter/src/widgets/framework.dart', 'source': widgetsFrameworkSource},
+      {'uri': 'package:flutter/src/widgets/basic.dart', 'source': widgetsBasicSource}
+    ]
+  });
+
+  File('flutter_eval.json').writeAsStringSync(outJson);*/
 }
 
 /// Setup Flutter classes for use in a dart_eval [Runtime]. After
@@ -116,6 +151,7 @@ void setupFlutterForRuntime(Runtime runtime) {
     ..registerBridgeFunc('package:flutter/src/widgets/basic.dart', 'Padding.', $Padding.$new)
     ..registerBridgeFunc('package:flutter/src/widgets/basic.dart', 'Column.', $Column.$new)
     ..registerBridgeFunc('package:flutter/src/widgets/basic.dart', 'Row.', $Row.$new)
+    ..registerBridgeFunc('package:flutter/src/widgets/basic.dart', 'Center.', $Center.$new)
     ..registerBridgeFunc('package:flutter/src/widgets/text.dart', 'Text.', $Text.$new)
     ..registerBridgeFunc('package:flutter/src/widgets/container.dart', 'Container.', $Container.$new)
     ..registerBridgeFunc(
@@ -131,11 +167,16 @@ void setupFlutterForRuntime(Runtime runtime) {
     ..registerBridgeFunc('package:flutter/src/material/snack_bar.dart', 'SnackBar.', $SnackBar.$new)
     ..registerBridgeFunc('package:flutter/src/material/text_button.dart', 'TextButton.', $TextButton.$new)
     ..registerBridgeFunc('package:flutter/src/material/text_field.dart', 'TextField.', $TextField.$new)
+    ..registerBridgeFunc('package:flutter/src/material/text_theme.dart', 'TextTheme.', $TextTheme.$new)
+    ..registerBridgeFunc('package:flutter/src/material/theme_data.dart', 'ThemeData.', $ThemeData.$new)
+    ..registerBridgeFunc('package:flutter/src/material/theme.dart', 'Theme.of', $Theme.$of)
+    ..registerBridgeFunc('package:flutter/src/material/theme.dart', 'Theme.', $Theme.$new)
     ..registerBridgeFunc(
         'package:flutter/src/material/floating_action_button.dart', 'FloatingActionButton.', $FloatingActionButton.$new)
     ..registerBridgeFunc('package:flutter/src/widgets/navigator.dart', 'Navigator.', $Navigator.$new)
     ..registerBridgeFunc('package:flutter/src/widgets/navigator.dart', 'Navigator.of', $Navigator.$of)
     ..registerBridgeEnumValues('dart:ui', 'FontWeight', $FontWeight.$values)
+    ..registerBridgeEnumValues('dart:ui', 'FontStyle', $FontStyle.$values)
     ..registerBridgeEnumValues('package:flutter/src/rendering/flex.dart', 'MainAxisSize', $MainAxisSize.$values)
     ..registerBridgeEnumValues(
         'package:flutter/src/rendering/flex.dart', 'MainAxisAlignment', $MainAxisAlignment.$values)

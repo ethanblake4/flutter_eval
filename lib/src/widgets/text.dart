@@ -123,4 +123,7 @@ class $Text implements Text, $Instance {
 
   @override
   TextWidthBasis? get textWidthBasis => $value.textWidthBasis;
+
+  @override
+  Color? get selectionColor => $value.selectionColor;
 }

@@ -1,4 +1,3 @@
-import 'package:dart_eval/stdlib/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_eval/flutter_eval.dart';
 
@@ -11,73 +10,72 @@ class EvalExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return EvalWidget(
-      packages: const {
+    return const EvalWidget(
+      packages: {
         'example': {
           'main.dart': '''
               import 'package:flutter/material.dart';
-              
-              class MyApp extends StatefulWidget {
-                MyApp(this.name);
-                final String name;
-                
-                @override
-                State<MyApp> createState() {
-                  return MyAppState(name);
-                }
-              }
-              
-              class MyAppState extends State<MyApp> {
-                MyAppState(this.name);
-                final String name;
-                int number = 0;
-                
+
+              class MyApp extends StatelessWidget {
+                const MyApp({Key? key}) : super(key: key);
+
+                // This widget is the root of your application.
                 @override
                 Widget build(BuildContext context) {
                   return MaterialApp(
-                    title: "flutter_eval sample app",
-                    home: Scaffold(
-                      appBar: AppBar(
-                        title: Text("flutter_eval sample app")
-                      ),
-                      body: HomePage(number),
-                      floatingActionButton: FloatingActionButton(
-                        onPressed: () {
-                          setState(() {
-                          number++;
-                          });
-                        },
-                        child: Text("+")
-                      )
-                    )
+                    title: 'flutter_eval demo',
+                    home: const MyHomePage(title: 'flutter_eval demo home page'),
                   );
                 }
               }
-              
-              class HomePage extends StatelessWidget {
-                HomePage(this.number);
-                final int number;
-                
+
+              class MyHomePage extends StatefulWidget {
+                const MyHomePage({Key? key, required this.title}) : super(key: key);
+
+                final String title;
+
+                @override
+                State<MyHomePage> createState() => _MyHomePageState();
+              }
+
+              class _MyHomePageState extends State<MyHomePage> {
+                _MyHomePageState();
+                int _counter = 0;
+
                 @override
                 Widget build(BuildContext context) {
-                  return Padding(
-                    padding: EdgeInsets.all(2.3 * 5),
-                    child: Column(children: [
-                        Container(
-                         color: Colors.green,
-                         child: Text('Current amount: ' + number.toString())
-                        ),
-                        Container(
-                          color: Colors.red,
-                          child: Text('Some text')
-                        ),
-                      ],
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                    )
+                  return Scaffold(
+                    appBar: AppBar(
+                      title: Text(widget.title),
+                    ),
+                    body: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          const Text(
+                            'You have pushed the button this many times:',
+                          ),
+                          Text(
+                            '\$_counter',
+                            style: Theme.of(context).textTheme.headline4,
+                          ),
+                        ],
+                      )
+                    ),
+                    floatingActionButton: FloatingActionButton(
+                      onPressed: () {
+                        setState(() {
+                          _counter++;
+                        });
+                      },
+                      tooltip: 'Increment',
+                      child: Text('+'),
+                    ),
                   );
                 }
               }
+
             '''
         }
       },
@@ -102,7 +100,7 @@ class EvalExample extends StatelessWidget {
       /// should be dart_eval [$Value] objects, but when invoking a static or
       /// top-level function or constructor, [int]s, [double]s, and [bool]s
       /// should be passed directly.
-      args: [$String('Hello World')],
+      args: [null],
     );
   }
 }

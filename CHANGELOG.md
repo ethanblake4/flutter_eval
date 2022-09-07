@@ -1,3 +1,11 @@
+## 0.4.5
+- Support for Flutter 3.3
+- Update example to the Flutter counter example
+- Correct resolution of the State<T> `widget` type parameter
+- Generate JSON bindings for use in the dart_eval CLI
+- Add Theme, ThemeData, TextTheme, and FontStyle
+- Add Center
+
 ## 0.4.4
 - Fix ordering of mainAxisAlignment and mainAxisSize in Row and Column
   (thanks to @g123k)

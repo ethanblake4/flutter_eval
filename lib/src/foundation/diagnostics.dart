@@ -10,7 +10,6 @@ class $DiagnosticLevel implements $Instance {
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
-    // TODO: implement $getProperty
     throw UnimplementedError();
   }
 
@@ -22,7 +21,7 @@ class $DiagnosticLevel implements $Instance {
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
-    // TODO: implement $setProperty
+    throw UnimplementedError();
   }
 }
 

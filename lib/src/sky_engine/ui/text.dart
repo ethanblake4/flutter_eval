@@ -2,6 +2,36 @@ import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/painting.dart';
 
+class $FontStyle implements $Instance {
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('dart:ui', 'FontStyle'));
+
+  static const $declaration =
+      BridgeEnumDef($type, values: ['normal', 'italic'], methods: {}, getters: {}, setters: {}, fields: {});
+
+  static final $values = FontStyle.values.asNameMap().map((key, value) => MapEntry(key, $FontStyle.wrap(value)));
+
+  const $FontStyle.wrap(this.$value);
+
+  @override
+  final FontStyle $value;
+
+  @override
+  FontStyle get $reified => $value;
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    throw UnimplementedError();
+  }
+
+  @override
+  int get $runtimeType => throw UnimplementedError();
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    throw UnimplementedError();
+  }
+}
+
 class $FontWeight implements $Instance {
   static const $type = BridgeTypeRef.spec(BridgeTypeSpec('dart:ui', 'FontWeight'));
 

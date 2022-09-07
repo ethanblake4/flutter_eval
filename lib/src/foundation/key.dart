@@ -2,8 +2,8 @@ import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/widgets.dart';
 
-class $Key implements Key, $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/foundation.dart', 'Key'));
+class $Key implements $Instance {
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/foundation/key.dart', 'Key'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
       constructors: {}, methods: {}, getters: {}, setters: {}, fields: {}, wrap: true);
