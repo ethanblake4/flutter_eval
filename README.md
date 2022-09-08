@@ -151,6 +151,9 @@ These measurements were last updated for flutter_eval v0.4.5. They do not includ
 bytecode file, which is typically 20-100KB (or 6-30KB zipped) and may be downloaded post-install
 rather than packaged with the app.
 
+Note these measurements are for a generated combined APK which includes multiple architectures.
+APKs downloaded from the Play Store will be about half as large in both APK size and increase.
+
 ## Advanced usage
 
 Using flutter_eval requires two main steps: compiling the Dart code to EVC bytecode, and executing
