@@ -140,6 +140,17 @@ Currently supported widgets and classes include:
 
 Note that many of these have only partial support.
 
+## App size measurements
+
+| App              | Initial APK size | with EvalWidget     |
+| ---------------- | ---------------- | ------------------- |
+| Flutter Counter  | 16.5 MB          | 17.9 MB (+ 1.4 MB)  |
+| Flutter Gallery  | 110.2 MB         | 110.6 MB (+ 0.4 MB) |
+
+These measurements were last updated for flutter_eval v0.4.5. They do not include the size of an EVC
+bytecode file, which is typically 20-100KB (or 6-30KB zipped) and may be downloaded post-install
+rather than packaged with the app.
+
 ## Advanced usage
 
 Using flutter_eval requires two main steps: compiling the Dart code to EVC bytecode, and executing
