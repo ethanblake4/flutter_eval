@@ -407,6 +407,9 @@ class $State$bridge<T extends StatefulWidget> extends State<T> with $Bridge<Stat
 
   @override
   Widget build(BuildContext context) => $_invoke('build', [$BuildContext.wrap(context)]);
+
+  @override
+  T get widget => $_get('widget');
 }
 
 class $BuildContext implements BuildContext, $Instance {

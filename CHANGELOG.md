@@ -1,3 +1,13 @@
+## 0.4.6
+- Add Builder
+- Add AlignmentGeometry, Alignment, and BoxConstraints
+- Add alignment, margin, constraints, and transformAlignment on Container
+- Add widthFactor and heightFactor on Center
+- Add TextDirection, VerticalDirection, and TextBaseline
+- Add textDirection and verticalDirection on Row
+- Add verticalDirection and textBaseline on Column
+- Documentation improvements
+
 ## 0.4.5
 - Support for Flutter 3.3
 - Update example to the Flutter counter example

@@ -1,6 +1,7 @@
 import 'package:dart_eval/dart_eval.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_eval/flutter_eval.dart';
+import 'package:flutter_eval/src/painting/alignment.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -110,5 +111,29 @@ void main() {
     await tester.enterText(find.byType(TextField), 'Hello');
     await tester.pump();
     expect(find.text('Hello123'), findsOneWidget);
+  });
+
+  test('Alignment', () {
+    final compiler = Compiler();
+    setupFlutterForCompile(compiler);
+    final program = compiler.compile({
+      'example': {
+        'main.dart': '''
+        import 'package:flutter/material.dart';
+        
+        List<AlignmentGeometry> main() {
+          return [Alignment.topLeft, Alignment.topCenter];
+        }
+        '''
+      }
+    });
+    final runtime = Runtime(program.write().buffer.asByteData());
+    setupFlutterForRuntime(runtime);
+    runtime.setup();
+    final result = runtime.executeLib('package:example/main.dart', 'main');
+    expect(result, isNotNull);
+    expect(result[0], isA<$Alignment>());
+    expect((result[0] as $Alignment).$value.x, -1.0);
+    expect((result[0] as $Alignment).$value.y, -1.0);
   });
 }

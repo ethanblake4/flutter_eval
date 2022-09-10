@@ -105,6 +105,22 @@ Your project structure should look like this:
     └── main.dart
 ```
 
+You'll also have to change your entrypoint a bit. flutter_eval does not support 
+`runApp()` as it runs inside an existing Flutter app, which already calls runApp().
+Instead, you can change your main() function to look like this:
+
+```dart
+Widget main() {
+  // do any setup, then
+  return MyApp();
+}
+```
+
+Alternatively, you can simply comment out runApp() and reference Widget
+constructors directly from RuntimeWidget. This is recommended if your project
+has multiple widgets which are displayed at different times or in different
+parts of the app.
+
 Finally, in the root of your project, run:
 ```bash
 dart_eval compile -o program.evc
@@ -122,6 +138,37 @@ The resulting `program.evc` file will be in the root of your project and you can
 in flutter_eval, as an asset or from a URL. The package name will be automatically inferred
 from your pubspec.yaml file.
 
+## Calling functions and passing arguments
+
+To instantiate a class with its default constructor, append a '.' to the class name.
+
+When calling a dart_eval function or constructor externally, you must specify *all* 
+arguments - even optional and named ones - in order, using null to indicate the absence
+of an argument (whereas `$null()` indicates a null value).
+
+E.g. for the following class:
+
+```dart
+class MyApp extends SomeWidget {
+  MyApp(this.name, {Key? key, Color? color}) : super(key: key, color: color);
+
+  final String name;
+}
+```
+
+You could instantiate it in `RuntimeWidget` with:
+
+```dart
+return RuntimeWidget(
+  uri: Uri.parse('asset:assets/program.evc'),
+  library: 'package:example/main.dart',
+  function: 'MyApp.',
+  args: [$String('Jessica'), null, null]
+);
+```
+
+You can also pass callbacks with `$Function`.
+
 ## Supported widgets and classes
 
 Currently supported widgets and classes include:
@@ -130,10 +177,12 @@ Currently supported widgets and classes include:
 - `WidgetsApp`, `Container`, `Column`, `Row`, `Center`;
 - `Padding`, `EdgeInsetsGeometry`, `EdgeInsets`;
 - `MainAxisAlignment`, `MainAxisSize`, `CrossAxisAlignment`;
+- `AlignmentGeometry`, `Alignment`, `Constraints`, `BoxConstraints`;
 - `Color`,  `ColorSwatch`, `Colors`, `FontWeight`, `FontStyle`;
 - `MaterialApp`, `MaterialColor`, `MaterialAccentColor`;
 - `Theme`, `ThemeData`, `TextTheme`;
 - `Text`, `TextStyle`, `TextEditingController`, `TextField`;
+- `TextDirection`, `VerticalDirection`, `TextBaseline`
 - `Scaffold`, `ScaffoldMessenger`, `AppBar`, `SnackBar`, `FloatingActionButton`;
 - `TextButton`, `ElevatedButton`;
 - `Navigator`, `NavigatorState`;

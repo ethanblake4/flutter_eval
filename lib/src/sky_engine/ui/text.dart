@@ -75,3 +75,66 @@ class $FontWeight implements $Instance {
     throw UnimplementedError();
   }
 }
+
+class $TextDirection implements $Instance {
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('dart:ui', 'TextDirection'));
+
+  static const $declaration =
+      BridgeEnumDef($type, methods: {}, getters: {}, setters: {}, values: ['rtl', 'ltr'], fields: {});
+
+  static final $values = {'rtl': $TextDirection.wrap(TextDirection.rtl), 'ltr': $TextDirection.wrap(TextDirection.ltr)};
+
+  $TextDirection.wrap(this.$value);
+
+  @override
+  final TextDirection $value;
+
+  @override
+  get $reified => $value;
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    throw UnimplementedError();
+  }
+
+  @override
+  int get $runtimeType => throw UnimplementedError();
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    throw UnimplementedError();
+  }
+}
+
+class $TextBaseline implements $Instance {
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('dart:ui', 'TextBaseline'));
+
+  static const $declaration =
+      BridgeEnumDef($type, methods: {}, getters: {}, setters: {}, values: ['alphabetic', 'ideographic'], fields: {});
+
+  static final $values = {
+    'alphabetic': $TextBaseline.wrap(TextBaseline.alphabetic),
+    'ideographic': $TextBaseline.wrap(TextBaseline.ideographic)
+  };
+
+  $TextBaseline.wrap(this.$value);
+
+  @override
+  final TextBaseline $value;
+
+  @override
+  get $reified => $value;
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    throw UnimplementedError();
+  }
+
+  @override
+  int get $runtimeType => throw UnimplementedError();
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    throw UnimplementedError();
+  }
+}

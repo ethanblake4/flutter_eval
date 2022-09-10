@@ -123,3 +123,5 @@ app.*.symbols
 pubspec.lock
 **/*.evc
 **/pubspec_overrides.yaml
+
+flutter_eval.json

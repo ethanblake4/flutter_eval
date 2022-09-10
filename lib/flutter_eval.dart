@@ -21,12 +21,15 @@ import 'package:flutter_eval/src/material/text_theme.dart';
 import 'package:flutter_eval/src/material/theme.dart';
 import 'package:flutter_eval/src/material/theme_data.dart';
 import 'package:flutter_eval/src/painting.dart';
+import 'package:flutter_eval/src/painting/alignment.dart';
 import 'package:flutter_eval/src/painting/basic_types.dart';
 import 'package:flutter_eval/src/painting/colors.dart';
 import 'package:flutter_eval/src/painting/edge_insets.dart';
 import 'package:flutter_eval/src/painting/text_style.dart';
 import 'package:flutter_eval/src/rendering.dart';
+import 'package:flutter_eval/src/rendering/box.dart';
 import 'package:flutter_eval/src/rendering/flex.dart';
+import 'package:flutter_eval/src/rendering/object.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/sky_engine/ui/text.dart';
 import 'package:flutter_eval/src/sky_engine/ui/ui.dart';
@@ -78,7 +81,12 @@ void setupFlutterForCompile(Compiler compiler) {
     $TextButton.$declaration,
     $ThemeData.$declaration,
     $Theme.$declaration,
-    $ElevatedButton.$declaration
+    $ElevatedButton.$declaration,
+    $Builder.$declaration,
+    $AlignmentGeometry.$declaration,
+    $Alignment.$declaration,
+    $Constraints.$declaration,
+    $BoxConstraints.$declaration
   ];
 
   compiler.defineBridgeClasses(classes);
@@ -88,6 +96,9 @@ void setupFlutterForCompile(Compiler compiler) {
   compiler.defineBridgeEnum($MainAxisSize.$declaration);
   compiler.defineBridgeEnum($FontWeight.$declaration);
   compiler.defineBridgeEnum($FontStyle.$declaration);
+  compiler.defineBridgeEnum($TextDirection.$declaration);
+  compiler.defineBridgeEnum($VerticalDirection.$declaration);
+  compiler.defineBridgeEnum($TextBaseline.$declaration);
 
   compiler.addSource(DartSource('dart:ui', dartUiSource));
 
@@ -105,7 +116,7 @@ void setupFlutterForCompile(Compiler compiler) {
   compiler.addSource(DartSource('package:flutter/src/widgets/framework.dart', widgetsFrameworkSource));
   compiler.addSource(DartSource('package:flutter/src/widgets/basic.dart', widgetsBasicSource));
 
-  /*final outJson = json.encode({
+  /* final outJson = json.encode({
     'classes': classes.map((c) => c.toJson()).toList(),
     'enums': [
       $MainAxisAlignment.$declaration.toJson(),
@@ -128,7 +139,7 @@ void setupFlutterForCompile(Compiler compiler) {
     ]
   });
 
-  File('flutter_eval.json').writeAsStringSync(outJson);*/
+  File('flutter_eval.json').writeAsStringSync(outJson); */
 }
 
 /// Setup Flutter classes for use in a dart_eval [Runtime]. After
@@ -144,14 +155,35 @@ void setupFlutterForRuntime(Runtime runtime) {
     ..registerBridgeFunc('package:flutter/src/widgets/framework.dart', 'StatefulWidget.', $StatefulWidget$bridge.$new,
         isBridge: true)
     ..registerBridgeFunc('package:flutter/src/widgets/framework.dart', 'State.', $State$bridge.$new, isBridge: true)
+    ..registerBridgeFunc('package:flutter/src/painting/alignment.dart', 'Alignment.', $Alignment.$new)
+    ..registerBridgeFunc('package:flutter/src/painting/alignment.dart', 'Alignment.topLeft*g', $Alignment.$topLeft)
+    ..registerBridgeFunc('package:flutter/src/painting/alignment.dart', 'Alignment.topCenter*g', $Alignment.$topCenter)
+    ..registerBridgeFunc('package:flutter/src/painting/alignment.dart', 'Alignment.topRight*g', $Alignment.$topRight)
+    ..registerBridgeFunc(
+        'package:flutter/src/painting/alignment.dart', 'Alignment.centerLeft*g', $Alignment.$centerLeft)
+    ..registerBridgeFunc('package:flutter/src/painting/alignment.dart', 'Alignment.center*g', $Alignment.$center)
+    ..registerBridgeFunc(
+        'package:flutter/src/painting/alignment.dart', 'Alignment.centerRight*g', $Alignment.$centerRight)
+    ..registerBridgeFunc(
+        'package:flutter/src/painting/alignment.dart', 'Alignment.bottomLeft*g', $Alignment.$bottomLeft)
+    ..registerBridgeFunc(
+        'package:flutter/src/painting/alignment.dart', 'Alignment.bottomCenter*g', $Alignment.$bottomCenter)
+    ..registerBridgeFunc(
+        'package:flutter/src/painting/alignment.dart', 'Alignment.bottomRight*g', $Alignment.$bottomRight)
     ..registerBridgeFunc('package:flutter/src/painting/edge_insets.dart', 'EdgeInsets.fromLTRB', $EdgeInsets.$fromLTRB)
     ..registerBridgeFunc('package:flutter/src/painting/edge_insets.dart', 'EdgeInsets.all', $EdgeInsets.$all)
     ..registerBridgeFunc('package:flutter/src/painting/text_style.dart', 'TextStyle.', $TextStyle.$new)
+    ..registerBridgeFunc('package:flutter/src/rendering/box.dart', 'BoxConstraints.', $BoxConstraints.$new)
+    ..registerBridgeFunc('package:flutter/src/rendering/box.dart', 'BoxConstraints.tightFor', $BoxConstraints.$tightFor)
+    ..registerBridgeFunc(
+        'package:flutter/src/rendering/box.dart', 'BoxConstraints.tightForFinite', $BoxConstraints.$tightForFinite)
+    ..registerBridgeFunc('package:flutter/src/rendering/box.dart', 'BoxConstraints.expand', $BoxConstraints.$expand)
     ..registerBridgeFunc('package:flutter/src/widgets/app.dart', 'WidgetsApp.', $WidgetsApp.$new)
     ..registerBridgeFunc('package:flutter/src/widgets/basic.dart', 'Padding.', $Padding.$new)
     ..registerBridgeFunc('package:flutter/src/widgets/basic.dart', 'Column.', $Column.$new)
     ..registerBridgeFunc('package:flutter/src/widgets/basic.dart', 'Row.', $Row.$new)
     ..registerBridgeFunc('package:flutter/src/widgets/basic.dart', 'Center.', $Center.$new)
+    ..registerBridgeFunc('package:flutter/src/widgets/basic.dart', 'Builder.', $Builder.$new)
     ..registerBridgeFunc('package:flutter/src/widgets/text.dart', 'Text.', $Text.$new)
     ..registerBridgeFunc('package:flutter/src/widgets/container.dart', 'Container.', $Container.$new)
     ..registerBridgeFunc(

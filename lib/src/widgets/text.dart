@@ -2,6 +2,7 @@ import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_eval/src/foundation/key.dart';
 import 'package:flutter_eval/src/painting/text_style.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
@@ -13,6 +14,7 @@ class $Text implements Text, $Instance {
         '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
           BridgeParameter('data', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType)), false),
         ], namedParams: [
+          BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
           BridgeParameter('style', BridgeTypeAnnotation($TextStyle.$type, nullable: true), true),
         ]))
       },
@@ -27,7 +29,8 @@ class $Text implements Text, $Instance {
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
     return $Text.wrap(Text(
       args[0]!.$value,
-      style: args[1]?.$value,
+      key: args[1]?.$value,
+      style: args[2]?.$value,
     ));
   }
 
