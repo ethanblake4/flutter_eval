@@ -9,6 +9,7 @@ import 'package:flutter_eval/src/sky_engine/ui/text.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 const widgetsBasicSource = '''
+export 'package:flutter/animation.dart';
 export 'package:flutter/foundation.dart' show
     ChangeNotifier,
     FlutterErrorDetails,

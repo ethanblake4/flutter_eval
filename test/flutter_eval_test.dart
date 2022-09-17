@@ -1,6 +1,7 @@
 import 'package:dart_eval/dart_eval.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_eval/flutter_eval.dart';
+import 'package:flutter_eval/src/animation/curves.dart';
 import 'package:flutter_eval/src/painting/alignment.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -135,5 +136,36 @@ void main() {
     expect(result[0], isA<$Alignment>());
     expect((result[0] as $Alignment).$value.x, -1.0);
     expect((result[0] as $Alignment).$value.y, -1.0);
+  });
+
+  test('Curves', () {
+    final compiler = Compiler();
+    setupFlutterForCompile(compiler);
+    final program = compiler.compile({
+      'example': {
+        'main.dart': '''
+        import 'package:flutter/material.dart';
+        
+        List<Curve> main() {
+          return [Curves.easeIn, Curves.easeOut];
+        }
+        '''
+      }
+    });
+    final runtime = Runtime(program.write().buffer.asByteData());
+    setupFlutterForRuntime(runtime);
+    runtime.setup();
+    final result = runtime.executeLib('package:example/main.dart', 'main');
+    expect(result, isNotNull);
+    expect(result[0], isA<$Cubic>());
+    expect(((result[0] as $Cubic).$value).a, 0.41999998688697815);
+    expect(((result[0] as $Cubic).$value).b, 0.0);
+    expect(((result[0] as $Cubic).$value).c, 1.0);
+    expect(((result[0] as $Cubic).$value).d, 1.0);
+
+    expect(((result[1] as $Cubic).$value).a, 0.0);
+    expect(((result[1] as $Cubic).$value).b, 0.0);
+    expect(((result[1] as $Cubic).$value).c, 0.5799999833106995);
+    expect(((result[1] as $Cubic).$value).d, 1.0);
   });
 }

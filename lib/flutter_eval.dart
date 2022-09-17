@@ -4,6 +4,9 @@ export 'src/flutter_eval.dart';
 
 import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_eval/src/animation.dart';
+import 'package:flutter_eval/src/animation/curves.dart';
 import 'package:flutter_eval/src/foundation.dart';
 import 'package:flutter_eval/src/foundation/change_notifier.dart';
 import 'package:flutter_eval/src/foundation/key.dart';
@@ -30,6 +33,7 @@ import 'package:flutter_eval/src/rendering.dart';
 import 'package:flutter_eval/src/rendering/box.dart';
 import 'package:flutter_eval/src/rendering/flex.dart';
 import 'package:flutter_eval/src/rendering/object.dart';
+import 'package:flutter_eval/src/sky_engine/ui/geometry.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/sky_engine/ui/text.dart';
 import 'package:flutter_eval/src/sky_engine/ui/ui.dart';
@@ -86,7 +90,19 @@ void setupFlutterForCompile(Compiler compiler) {
     $AlignmentGeometry.$declaration,
     $Alignment.$declaration,
     $Constraints.$declaration,
-    $BoxConstraints.$declaration
+    $BoxConstraints.$declaration,
+    $ParametricCurve.$declaration,
+    $Curve.$declaration,
+    $_Linear.$declaration,
+    $SawTooth.$declaration,
+    $Interval.$declaration,
+    $Threshold.$declaration,
+    $Cubic.$declaration,
+    $_DecelerateCurve.$declaration,
+    $ElasticInCurve.$declaration,
+    $ElasticOutCurve.$declaration,
+    $ElasticInOutCurve.$declaration,
+    $Size.$declaration
   ];
 
   compiler.defineBridgeClasses(classes);
@@ -99,8 +115,12 @@ void setupFlutterForCompile(Compiler compiler) {
   compiler.defineBridgeEnum($TextDirection.$declaration);
   compiler.defineBridgeEnum($VerticalDirection.$declaration);
   compiler.defineBridgeEnum($TextBaseline.$declaration);
+  compiler.defineBridgeEnum($Axis.$declaration);
 
   compiler.addSource(DartSource('dart:ui', dartUiSource));
+
+  compiler.addSource(DartSource('package:flutter/animation.dart', animationSource));
+  compiler.addSource(DartSource('package:flutter/src/animation/curves.dart', animationCurvesSource));
 
   compiler.addSource(DartSource('package:flutter/foundation.dart', foundationSource));
 
@@ -116,7 +136,7 @@ void setupFlutterForCompile(Compiler compiler) {
   compiler.addSource(DartSource('package:flutter/src/widgets/framework.dart', widgetsFrameworkSource));
   compiler.addSource(DartSource('package:flutter/src/widgets/basic.dart', widgetsBasicSource));
 
-  /* final outJson = json.encode({
+/*  final outJson = json.encode({
     'classes': classes.map((c) => c.toJson()).toList(),
     'enums': [
       $MainAxisAlignment.$declaration.toJson(),
@@ -124,9 +144,15 @@ void setupFlutterForCompile(Compiler compiler) {
       $MainAxisSize.$declaration.toJson(),
       $FontWeight.$declaration.toJson(),
       $FontStyle.$declaration.toJson(),
+      $TextDirection.$declaration.toJson(),
+      $VerticalDirection.$declaration.toJson(),
+      $TextBaseline.$declaration.toJson(),
+      $Axis.$declaration.toJson()
     ],
     'sources': [
       {'uri': 'dart:ui', 'source': dartUiSource},
+      {'uri': 'package:flutter/animation.dart', 'source': animationSource},
+      {'uri': 'package:flutter/src/animation/curves.dart', 'source': animationCurvesSource},
       {'uri': 'package:flutter/foundation.dart', 'source': foundationSource},
       {'uri': 'package:flutter/material.dart', 'source': materialSource},
       {'uri': 'package:flutter/src/material/colors.dart', 'source': materialColorsSource},
@@ -139,7 +165,7 @@ void setupFlutterForCompile(Compiler compiler) {
     ]
   });
 
-  File('flutter_eval.json').writeAsStringSync(outJson); */
+  File('flutter_eval.json').writeAsStringSync(outJson);*/
 }
 
 /// Setup Flutter classes for use in a dart_eval [Runtime]. After
@@ -147,6 +173,7 @@ void setupFlutterForCompile(Compiler compiler) {
 void setupFlutterForRuntime(Runtime runtime) {
   runtime
     ..registerBridgeFunc('dart:ui', 'Color.', $Color.$new)
+    ..registerBridgeFunc('dart:ui', 'Size.', $Size.$new)
     ..registerBridgeFunc(
         'package:flutter/src/foundation/change_notifier.dart', 'ChangeNotifier.', $ChangeNotifier$bridge.$new,
         isBridge: true)
@@ -173,6 +200,15 @@ void setupFlutterForRuntime(Runtime runtime) {
     ..registerBridgeFunc('package:flutter/src/painting/edge_insets.dart', 'EdgeInsets.fromLTRB', $EdgeInsets.$fromLTRB)
     ..registerBridgeFunc('package:flutter/src/painting/edge_insets.dart', 'EdgeInsets.all', $EdgeInsets.$all)
     ..registerBridgeFunc('package:flutter/src/painting/text_style.dart', 'TextStyle.', $TextStyle.$new)
+    ..registerBridgeFunc('package:flutter/src/animation/curves.dart', '_Linear._', $_Linear.$_)
+    ..registerBridgeFunc('package:flutter/src/animation/curves.dart', 'SawTooth.', $SawTooth.$new)
+    ..registerBridgeFunc('package:flutter/src/animation/curves.dart', 'Interval.', $Interval.$new)
+    ..registerBridgeFunc('package:flutter/src/animation/curves.dart', 'Threshold.', $Threshold.$new)
+    ..registerBridgeFunc('package:flutter/src/animation/curves.dart', 'Cubic.', $Cubic.$new)
+    ..registerBridgeFunc('package:flutter/src/animation/curves.dart', '_DecelerateCurve._', $_DecelerateCurve.$_)
+    ..registerBridgeFunc('package:flutter/src/animation/curves.dart', 'ElasticInCurve.', $ElasticInCurve.$new)
+    ..registerBridgeFunc('package:flutter/src/animation/curves.dart', 'ElasticOutCurve.', $ElasticOutCurve.$new)
+    ..registerBridgeFunc('package:flutter/src/animation/curves.dart', 'ElasticInOutCurve.', $ElasticInOutCurve.$new)
     ..registerBridgeFunc('package:flutter/src/rendering/box.dart', 'BoxConstraints.', $BoxConstraints.$new)
     ..registerBridgeFunc('package:flutter/src/rendering/box.dart', 'BoxConstraints.tightFor', $BoxConstraints.$tightFor)
     ..registerBridgeFunc(
@@ -209,6 +245,11 @@ void setupFlutterForRuntime(Runtime runtime) {
     ..registerBridgeFunc('package:flutter/src/widgets/navigator.dart', 'Navigator.of', $Navigator.$of)
     ..registerBridgeEnumValues('dart:ui', 'FontWeight', $FontWeight.$values)
     ..registerBridgeEnumValues('dart:ui', 'FontStyle', $FontStyle.$values)
+    ..registerBridgeEnumValues('dart:ui', 'TextDirection', $TextDirection.$values)
+    ..registerBridgeEnumValues('dart:ui', 'TextBaseline', $TextBaseline.$values)
+    ..registerBridgeEnumValues(
+        'package:flutter/src/painting/basic_types.dart', 'VerticalDirection', $VerticalDirection.$values)
+    ..registerBridgeEnumValues('package:flutter/src/painting/basic_types.dart', 'Axis', $Axis.$values)
     ..registerBridgeEnumValues('package:flutter/src/rendering/flex.dart', 'MainAxisSize', $MainAxisSize.$values)
     ..registerBridgeEnumValues(
         'package:flutter/src/rendering/flex.dart', 'MainAxisAlignment', $MainAxisAlignment.$values)

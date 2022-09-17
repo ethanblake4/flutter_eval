@@ -1,3 +1,9 @@
+## 0.4.7
+- Add Axis and Size
+- Add Curve and Curves
+- Add curve classes: SawTooth, Interval, Threshold, Cubic, 
+  Elastic(In/Out/InOut)Curve
+
 ## 0.4.6
 - Add Builder
 - Add AlignmentGeometry, Alignment, and BoxConstraints
