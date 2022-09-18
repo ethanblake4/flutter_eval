@@ -73,9 +73,13 @@ loading widget with the `loading` parameter.
 flutter_eval includes two other helper Widgets for different use cases:
 - `CompilerWidget` will *always* compile and run provided Dart code,
    and never attempt to load EVC bytecode, regardless of whether the app 
-   is in debug or release mode.
+   is in debug or release mode. This is especially suitable for apps like
+   calculators, 'learn to code' platforms, or user-scriptable automation
+   tools. Though this mode is slower, the dart_eval compiler is very
+   fast and will generally compile simple Flutter programs in ~0.1 second.
 - `RuntimeWidget` will *always* load EVC bytecode and does not provide a
-   parameter to specify Dart code.
+   parameter to specify Dart code. This is recommended if you're compiling
+   with the CLI - see below.
 
 ## Compiling with the dart_eval CLI
 
