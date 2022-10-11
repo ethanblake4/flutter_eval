@@ -125,3 +125,5 @@ pubspec.lock
 **/pubspec_overrides.yaml
 
 flutter_eval.json
+.fvm/
+.vscode/settings.json

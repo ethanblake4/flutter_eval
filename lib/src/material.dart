@@ -7,6 +7,7 @@ export 'package:flutter/src/material/app_bar.dart';
 export 'package:flutter/src/material/colors.dart';
 export 'package:flutter/src/material/elevated_button.dart';
 export 'package:flutter/src/material/floating_action_button.dart';
+export 'package:flutter/src/material/icons.dart';
 export 'package:flutter/src/material/scaffold.dart';
 export 'package:flutter/src/material/snack_bar.dart';
 export 'package:flutter/src/material/text_button.dart';

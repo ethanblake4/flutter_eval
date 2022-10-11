@@ -1,3 +1,11 @@
+## 0.5.0
+- Switch to new EvalPlugin system
+- Enable incremental parsing in EvalWidget and CompilerWidget
+- Support for Icons (standard only for now, no outlined/sharp/rounded)
+- Support for EdgeInsets.only and EdgeInsets.symmetric
+- Improve support for AppBar and FloatingActionButton
+- Fix import error when using Flutter 3.0
+
 ## 0.4.7
 - Add Axis and Size
 - Add Curve and Curves

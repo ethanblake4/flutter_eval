@@ -128,5 +128,6 @@ class $Text implements Text, $Instance {
   TextWidthBasis? get textWidthBasis => $value.textWidthBasis;
 
   @override
-  Color? get selectionColor => $value.selectionColor;
+  // ignore: override_on_non_overriding_member
+  Color? get selectionColor => throw UnimplementedError();
 }

@@ -42,6 +42,12 @@ class EvalExample extends StatelessWidget {
                 _MyHomePageState();
                 int _counter = 0;
 
+                void _incrementCounter() {
+                  setState(() {
+                    _counter++;
+                  });
+                }
+
                 @override
                 Widget build(BuildContext context) {
                   return Scaffold(
@@ -64,13 +70,9 @@ class EvalExample extends StatelessWidget {
                       )
                     ),
                     floatingActionButton: FloatingActionButton(
-                      onPressed: () {
-                        setState(() {
-                          _counter++;
-                        });
-                      },
+                      onPressed: _incrementCounter,
                       tooltip: 'Increment',
-                      child: Text('+'),
+                      child: Icon(Icons.add),
                     ),
                   );
                 }

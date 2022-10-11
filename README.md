@@ -1,5 +1,6 @@
 [![Star on Github](https://img.shields.io/github/stars/ethanblake4/flutter_eval?logo=github&colorB=orange&label=stars)](https://github.com/ethanblake4/flutter_eval)
 [![License: BSD-3](https://img.shields.io/badge/license-BSD3-purple.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![Web example](https://img.shields.io/badge/web-example-blue.svg)](https://ethanblake.xyz/evalpad)
 
 `flutter_eval` is a Flutter bridge library for [dart_eval](https://pub.dev/packages/dart_eval), 
 enabling painless creation of fully dynamic Flutter apps and widgets that can be loaded
@@ -10,6 +11,7 @@ as well as runtime bridge classes and wrappers, with a seamless API that makes u
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
 | flutter_eval | [![pub package](https://img.shields.io/pub/v/flutter_eval.svg?label=flutter_eval&color=blue)](https://pub.dev/packages/flutter_eval) |
 
+For a live example, check out [EvalPad](https://ethanblake.xyz/evalpad).
 
 Although flutter_eval is already the best solution for native Dart Flutter code push,
 it's still very early for the project and you should not expect existing Flutter/Dart code
@@ -179,17 +181,19 @@ Currently supported widgets and classes include:
 - `Widget`, `StatelessWidget`, `StatefulWidget`, `State`, `Key`, `BuildContext`;
 - `ChangeNotifier`;
 - `WidgetsApp`, `Container`, `Column`, `Row`, `Center`;
-- `Padding`, `EdgeInsetsGeometry`, `EdgeInsets`;
+- `Padding`, `EdgeInsetsGeometry`, `EdgeInsets`, `Axis`, `Size`;
 - `MainAxisAlignment`, `MainAxisSize`, `CrossAxisAlignment`;
 - `AlignmentGeometry`, `Alignment`, `Constraints`, `BoxConstraints`;
 - `Color`,  `ColorSwatch`, `Colors`, `FontWeight`, `FontStyle`;
 - `MaterialApp`, `MaterialColor`, `MaterialAccentColor`;
 - `Theme`, `ThemeData`, `TextTheme`;
+- `IconData`, `Icons`, `Icon`;
+- `Curve`, `Curves`, `SawTooth`, `Interval`, `Threshold`, `Cubic`;
 - `Text`, `TextStyle`, `TextEditingController`, `TextField`;
 - `TextDirection`, `VerticalDirection`, `TextBaseline`
 - `Scaffold`, `ScaffoldMessenger`, `AppBar`, `SnackBar`, `FloatingActionButton`;
 - `TextButton`, `ElevatedButton`;
-- `Navigator`, `NavigatorState`;
+- `Navigator`, `NavigatorState`, `Builder`;
 
 Note that many of these have only partial support.
 
@@ -222,7 +226,7 @@ class ExampleState extends State<Example> {
     super.initState();
 
     final compiler = Compiler();
-    setupFlutterForCompile(compiler);
+    compiler.addPlugin(flutterEvalPlugin);
 
     final program = compiler.compile({
       'example': { 'main.dart': '''
@@ -251,7 +255,7 @@ class ExampleState extends State<Example> {
     print('Wrote out.evc to: ' + file.absolute.uri);
     
     runtime = Runtime.ofProgram(program);
-    setupFlutterForRuntime(runtime);
+    runtime.addPlugin(flutterEvalPlugin);
     runtime.setup();
   }
 
@@ -283,7 +287,7 @@ class ExampleState extends State<Example> {
     
     rootBundle.load('assets/out.evc').then((bytecode) => setState(() {
       runtime = Runtime(ByteData.sublistView(bytecode));
-      setupFlutterForRuntime(runtime!);
+      runtime.addPlugin(flutterEvalPlugin);
       runtime!.setup();
     }));
   }

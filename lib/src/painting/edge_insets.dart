@@ -135,6 +135,22 @@ class $EdgeInsets implements EdgeInsets, $Instance {
     ));
   }
 
+  static $Value? $only(Runtime runtime, $Value? target, List<$Value?> args) {
+    return $EdgeInsets.wrap(EdgeInsets.only(
+      left: args[0]?.$value ?? 0.0,
+      top: args[1]?.$value ?? 0.0,
+      right: args[2]?.$value ?? 0.0,
+      bottom: args[3]?.$value ?? 0.0,
+    ));
+  }
+
+  static $Value? $symmetric(Runtime runtime, $Value? target, List<$Value?> args) {
+    return $EdgeInsets.wrap(EdgeInsets.symmetric(
+      vertical: args[0]?.$value ?? 0.0,
+      horizontal: args[1]?.$value ?? 0.0,
+    ));
+  }
+
   @override
   final EdgeInsets $value;
 

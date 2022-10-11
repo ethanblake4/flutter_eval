@@ -1,4 +1,7 @@
 import 'dart:io';
+import 'dart:math';
+// ignore: unnecessary_import
+import 'dart:typed_data';
 
 import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
@@ -71,8 +74,7 @@ class _CompilerWidgetState extends State<CompilerWidget> {
   @override
   void initState() {
     super.initState();
-    compiler = Compiler();
-    setupFlutterForCompile(compiler);
+    compiler = Compiler()..addPlugin(flutterEvalPlugin);
     _recompile(false);
   }
 
@@ -90,6 +92,7 @@ class _CompilerWidgetState extends State<CompilerWidget> {
     }
 
     if (!inBuild) {
+      codeCache = widget.packages;
       setState(setupRuntime);
     } else {
       setupRuntime();
@@ -104,7 +107,7 @@ class _CompilerWidgetState extends State<CompilerWidget> {
     }
 
     final result = runtime.executeLib(widget.library, widget.function, widget.args);
-    return (result as $Value).$value;
+    return Container(child: (result as $Value).$value, key: ValueKey(Random().nextDouble()));
   }
 }
 
@@ -283,8 +286,7 @@ class _EvalWidgetState extends State<EvalWidget> {
     super.initState();
 
     if (!kReleaseMode) {
-      compiler = Compiler();
-      setupFlutterForCompile(compiler);
+      compiler = Compiler()..addPlugin(flutterEvalPlugin);
       _recompile(false);
     } else {
       if (widget.uri == null) {
