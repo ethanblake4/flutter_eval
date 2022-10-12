@@ -38,7 +38,7 @@ class $AppBar implements $Instance {
       leading: args[0]?.$value,
       automaticallyImplyLeading: args[1]?.$value ?? true,
       title: args[2]?.$value,
-      actions: args[3]?.$value,
+      actions: (args[3]?.$reified as List?)?.cast(),
       flexibleSpace: args[4]?.$value,
       bottom: args[5]?.$value,
       elevation: args[6]?.$value,

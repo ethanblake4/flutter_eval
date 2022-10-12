@@ -1,3 +1,9 @@
+## 0.5.1
+- Add IconButton
+- Fix AppBar actions
+- Fix NavigatorState methods
+- Support for routes in MaterialApp
+
 ## 0.5.0
 - Switch to new EvalPlugin system
 - Enable incremental parsing in EvalWidget and CompilerWidget

@@ -15,6 +15,7 @@ import 'package:flutter_eval/src/material/app_bar.dart';
 import 'package:flutter_eval/src/material/colors.dart';
 import 'package:flutter_eval/src/material/elevated_button.dart';
 import 'package:flutter_eval/src/material/floating_action_button.dart';
+import 'package:flutter_eval/src/material/icon_button.dart';
 import 'package:flutter_eval/src/material/icons.dart';
 import 'package:flutter_eval/src/material/scaffold.dart';
 import 'package:flutter_eval/src/material/snack_bar.dart';
@@ -104,6 +105,7 @@ class FlutterEvalPlugin implements EvalPlugin {
       $SnackBar.$declaration,
       $TextStyle.$declaration,
       $TextTheme.$declaration,
+      $IconButton.$declaration,
       $TextButton.$declaration,
       $ThemeData.$declaration,
       $Theme.$declaration,
@@ -268,6 +270,7 @@ class FlutterEvalPlugin implements EvalPlugin {
       ..registerBridgeFunc('package:flutter/src/material/scaffold.dart', 'ScaffoldMessenger.', $ScaffoldMessenger.$new)
       ..registerBridgeFunc('package:flutter/src/material/scaffold.dart', 'ScaffoldMessenger.of', $ScaffoldMessenger.$of)
       ..registerBridgeFunc('package:flutter/src/material/snack_bar.dart', 'SnackBar.', $SnackBar.$new)
+      ..registerBridgeFunc('package:flutter/src/material/icon_button.dart', 'IconButton.', $IconButton.$new)
       ..registerBridgeFunc('package:flutter/src/material/text_button.dart', 'TextButton.', $TextButton.$new)
       ..registerBridgeFunc('package:flutter/src/material/text_field.dart', 'TextField.', $TextField.$new)
       ..registerBridgeFunc('package:flutter/src/material/text_theme.dart', 'TextTheme.', $TextTheme.$new)

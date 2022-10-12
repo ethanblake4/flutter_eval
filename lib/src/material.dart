@@ -10,6 +10,7 @@ export 'package:flutter/src/material/floating_action_button.dart';
 export 'package:flutter/src/material/icons.dart';
 export 'package:flutter/src/material/scaffold.dart';
 export 'package:flutter/src/material/snack_bar.dart';
+export 'package:flutter/src/material/icon_button.dart';
 export 'package:flutter/src/material/text_button.dart';
 export 'package:flutter/src/material/text_field.dart';
 export 'package:flutter/src/material/text_theme.dart';

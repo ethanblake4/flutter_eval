@@ -61,27 +61,21 @@ class $NavigatorState implements $Instance {
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $State$bridge.$type),
       constructors: {},
       methods: {
-        'pushNamed': BridgeMethodDef(
-            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
-              BridgeParameter('name', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType)), false),
-            ], namedParams: [
-              BridgeParameter(
-                  'arguments', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.objectType), nullable: true), true),
-            ]),
-            isStatic: true),
-        'pushReplacementNamed': BridgeMethodDef(
-            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
-              BridgeParameter('name', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType)), false),
-            ], namedParams: [
-              BridgeParameter(
-                  'arguments', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.objectType), nullable: true), true),
-            ]),
-            isStatic: true),
-        'pop': BridgeMethodDef(
-            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
-              BridgeParameter('result', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.objectType)), true),
-            ]),
-            isStatic: true),
+        'pushNamed': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter('name', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType)), false),
+        ], namedParams: [
+          BridgeParameter(
+              'arguments', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.objectType), nullable: true), true),
+        ])),
+        'pushReplacementNamed': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter('name', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType)), false),
+        ], namedParams: [
+          BridgeParameter(
+              'arguments', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.objectType), nullable: true), true),
+        ])),
+        'pop': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter('result', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.objectType)), true),
+        ])),
       },
       getters: {},
       setters: {},

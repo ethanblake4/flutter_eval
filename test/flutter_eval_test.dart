@@ -168,4 +168,37 @@ void main() {
     expect(((result[1] as $Cubic).$value).c, 0.5799999833106995);
     expect(((result[1] as $Cubic).$value).d, 1.0);
   });
+
+  test('AppBar', () {
+    final compiler = Compiler();
+    setupFlutterForCompile(compiler);
+    final program = compiler.compile({
+      'example': {
+        'main.dart': '''
+        import 'package:flutter/material.dart';
+        
+        Widget main() {
+          return AppBar(
+            title: Text('Hello'),
+            actions: <Widget>[
+              TextButton(
+                child: Icon(Icons.add),
+                onPressed: () {
+                  print('ok');
+                },
+              )
+            ]
+          );
+        }
+        '''
+      }
+    });
+    final runtime = Runtime(program.write().buffer.asByteData());
+    setupFlutterForRuntime(runtime);
+    runtime.setup();
+    final result = runtime.executeLib('package:example/main.dart', 'main');
+    expect(result, isNotNull);
+    expect(result.$value, isA<AppBar>());
+    expect((result.$value as AppBar).title, isA<Text>());
+  });
 }
