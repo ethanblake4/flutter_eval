@@ -14,18 +14,22 @@ class $MaterialApp implements $Instance {
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $WidgetsApp.$type),
       constructors: {
         '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter('key', BridgeTypeAnnotation($Key.$type), true),
-          BridgeParameter('navigatorKey', BridgeTypeAnnotation($Key.$type), true),
-          BridgeParameter('home', BridgeTypeAnnotation($Widget.$type), true),
+          BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
+          BridgeParameter('navigatorKey', BridgeTypeAnnotation($Key.$type, nullable: true), true),
+          BridgeParameter('home', BridgeTypeAnnotation($Widget.$type, nullable: true), true),
           BridgeParameter('routes', BridgeTypeAnnotation(BridgeTypeRef.spec(BridgeTypeSpec('dart:core', 'Map'))), true),
-          BridgeParameter('initialRoute', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType)), true),
-          BridgeParameter('onUnknownRoute', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType)), true),
-          BridgeParameter('builder', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType)), true),
+          BridgeParameter(
+              'initialRoute', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType), nullable: true), true),
+          BridgeParameter('onUnknownRoute',
+              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType), nullable: true), true),
+          BridgeParameter(
+              'builder', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType), nullable: true), true),
           BridgeParameter('title', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType)), true),
-          BridgeParameter('onGenerateTitle', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType)), true),
-          BridgeParameter('color', BridgeTypeAnnotation($Color.$type), true),
-          BridgeParameter('theme', BridgeTypeAnnotation($ThemeData.$type), true),
-          BridgeParameter('darkTheme', BridgeTypeAnnotation($ThemeData.$type), true),
+          BridgeParameter('onGenerateTitle',
+              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType), nullable: true), true),
+          BridgeParameter('color', BridgeTypeAnnotation($Color.$type, nullable: true), true),
+          BridgeParameter('theme', BridgeTypeAnnotation($ThemeData.$type, nullable: true), true),
+          BridgeParameter('darkTheme', BridgeTypeAnnotation($ThemeData.$type, nullable: true), true),
           BridgeParameter(
               'debugShowMaterialGrid', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
           BridgeParameter(
@@ -58,7 +62,7 @@ class $MaterialApp implements $Instance {
           ? null
           : (context, child) => (args[6]! as EvalCallable).call(runtime, null,
               [$BuildContext.wrap(context), child == null ? const $null() : $Widget.wrap(child)])?.$value,
-      title: args[7]?.$value,
+      title: args[7]?.$value ?? '',
       onGenerateTitle: args[8] == null
           ? null
           : (context) => (args[8]! as EvalCallable).call(runtime, null, [$BuildContext.wrap(context)])?.$value,
