@@ -1,3 +1,6 @@
+## 0.5.2
+- Fix Flutter 3.0 incompatibility
+
 ## 0.5.1
 - Add IconButton
 - Fix AppBar actions

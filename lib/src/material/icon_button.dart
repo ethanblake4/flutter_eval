@@ -39,9 +39,6 @@ class $IconButton implements $Instance {
           BridgeParameter(
               'enableFeedback', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType), nullable: true), false),
           BridgeParameter('constraints', BridgeTypeAnnotation($BoxConstraints.$type, nullable: true), false),
-          BridgeParameter(
-              'isSelected', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType), nullable: true), false),
-          BridgeParameter('selectedIcon', BridgeTypeAnnotation($Widget.$type, nullable: true), false),
           BridgeParameter('icon', BridgeTypeAnnotation($Widget.$type, nullable: true), false),
         ]))
       },
@@ -73,9 +70,7 @@ class $IconButton implements $Instance {
       tooltip: args[13]?.$value,
       enableFeedback: args[14]?.$value ?? true,
       constraints: args[15]?.$value,
-      isSelected: args[16]?.$value ?? false,
-      selectedIcon: args[17]?.$value,
-      icon: args[18]?.$value,
+      icon: args[16]?.$value,
     ));
   }
 
