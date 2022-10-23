@@ -193,7 +193,11 @@ class $StatelessWidget$bridge extends StatelessWidget with $Bridge<StatelessWidg
 
   /// [StatelessWidget] compile-type class declaration for dart_eval
   static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Widget.$type, isAbstract: true),
-      constructors: {'': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type)))},
+      constructors: {
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            namedParams: [BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true)],
+            returns: BridgeTypeAnnotation($type)))
+      },
       methods: {},
       getters: {},
       setters: {},
@@ -288,7 +292,11 @@ class $StatefulWidget$bridge extends StatefulWidget with $Bridge<StatefulWidget>
 
   /// [StatefulWidget] compile-type class declaration for dart_eval
   static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Widget.$type, isAbstract: true),
-      constructors: {'': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type)))},
+      constructors: {
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            namedParams: [BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true)],
+            returns: BridgeTypeAnnotation($type)))
+      },
       methods: {},
       getters: {},
       setters: {},

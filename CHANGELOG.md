@@ -1,3 +1,8 @@
+## 0.5.3
+- Add Decoration, BoxDecoration, BoxBorder, Border, and BorderSide
+- Improve support for Container and TextField
+- Update example to use super constructor params
+
 ## 0.5.2
 - Fix Flutter 3.0 incompatibility
 

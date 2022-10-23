@@ -138,7 +138,7 @@ void main() {
     expect((result[0] as $Alignment).$value.y, -1.0);
   });
 
-  test('Curves', () {
+  test('Curves.easeIn and easeOut', () {
     final compiler = Compiler();
     setupFlutterForCompile(compiler);
     final program = compiler.compile({
@@ -169,7 +169,7 @@ void main() {
     expect(((result[1] as $Cubic).$value).d, 1.0);
   });
 
-  test('AppBar', () {
+  test('AppBar with title and actions', () {
     final compiler = Compiler();
     setupFlutterForCompile(compiler);
     final program = compiler.compile({
@@ -200,5 +200,35 @@ void main() {
     expect(result, isNotNull);
     expect(result.$value, isA<AppBar>());
     expect((result.$value as AppBar).title, isA<Text>());
+  });
+
+  test('BoxDecoration with Border.all', () {
+    final compiler = Compiler();
+    setupFlutterForCompile(compiler);
+    final program = compiler.compile({
+      'example': {
+        'main.dart': '''
+        import 'package:flutter/material.dart';
+        
+        BoxDecoration main() {
+          return BoxDecoration(
+            border: Border.all(
+              color: Colors.red,
+              width: 2.0,
+            ),
+          );
+        }
+        '''
+      }
+    });
+    final runtime = Runtime(program.write().buffer.asByteData());
+    setupFlutterForRuntime(runtime);
+    runtime.setup();
+    final result = runtime.executeLib('package:example/main.dart', 'main');
+    expect(result, isNotNull);
+    expect(result.$value, isA<BoxDecoration>());
+    expect((result.$value as BoxDecoration).border, isA<Border>());
+    expect((result.$value as BoxDecoration).border!.top.color, equals(Colors.red));
+    expect((result.$value as BoxDecoration).border!.top.width, equals(2.0));
   });
 }

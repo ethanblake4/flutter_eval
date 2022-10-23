@@ -187,6 +187,7 @@ Currently supported widgets and classes include:
 - `Color`,  `ColorSwatch`, `Colors`, `FontWeight`, `FontStyle`;
 - `MaterialApp`, `MaterialColor`, `MaterialAccentColor`;
 - `Theme`, `ThemeData`, `TextTheme`;
+- `Decoration`, `BoxDecoration`, `BoxBorder`, `Border`, `BorderSide`;
 - `IconData`, `Icons`, `Icon`;
 - `Curve`, `Curves`, `SawTooth`, `Interval`, `Threshold`, `Cubic`;
 - `Text`, `TextStyle`, `TextEditingController`, `TextField`;

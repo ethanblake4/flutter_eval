@@ -27,7 +27,11 @@ import 'package:flutter_eval/src/material/theme_data.dart';
 import 'package:flutter_eval/src/painting.dart';
 import 'package:flutter_eval/src/painting/alignment.dart';
 import 'package:flutter_eval/src/painting/basic_types.dart';
+import 'package:flutter_eval/src/painting/borders.dart';
+import 'package:flutter_eval/src/painting/box_border.dart';
+import 'package:flutter_eval/src/painting/box_decoration.dart';
 import 'package:flutter_eval/src/painting/colors.dart';
+import 'package:flutter_eval/src/painting/decoration.dart';
 import 'package:flutter_eval/src/painting/edge_insets.dart';
 import 'package:flutter_eval/src/painting/text_style.dart';
 import 'package:flutter_eval/src/rendering.dart';
@@ -128,7 +132,12 @@ class FlutterEvalPlugin implements EvalPlugin {
       $ElasticInOutCurve.$declaration,
       $Size.$declaration,
       $IconData.$declaration,
-      $Icon.$declaration
+      $Icon.$declaration,
+      $Decoration.$declaration,
+      $BoxDecoration.$declaration,
+      $BorderSide.$declaration,
+      $BoxBorder.$declaration,
+      $Border.$declaration,
     ];
 
     compiler.defineBridgeClasses(classes);
@@ -142,6 +151,7 @@ class FlutterEvalPlugin implements EvalPlugin {
     compiler.defineBridgeEnum($VerticalDirection.$declaration);
     compiler.defineBridgeEnum($TextBaseline.$declaration);
     compiler.defineBridgeEnum($Axis.$declaration);
+    compiler.defineBridgeEnum($BorderStyle.$declaration);
 
     compiler.addSource(DartSource('dart:ui', dartUiSource));
 
@@ -174,7 +184,8 @@ class FlutterEvalPlugin implements EvalPlugin {
       $TextDirection.$declaration.toJson(),
       $VerticalDirection.$declaration.toJson(),
       $TextBaseline.$declaration.toJson(),
-      $Axis.$declaration.toJson()
+      $Axis.$declaration.toJson(),
+      $BorderStyle.$declaration.toJson(),
     ],
     'sources': [
       {'uri': 'dart:ui', 'source': dartUiSource},
@@ -230,6 +241,13 @@ class FlutterEvalPlugin implements EvalPlugin {
           'package:flutter/src/painting/edge_insets.dart', 'EdgeInsets.fromLTRB', $EdgeInsets.$fromLTRB)
       ..registerBridgeFunc('package:flutter/src/painting/edge_insets.dart', 'EdgeInsets.all', $EdgeInsets.$all)
       ..registerBridgeFunc('package:flutter/src/painting/edge_insets.dart', 'EdgeInsets.only', $EdgeInsets.$only)
+      ..registerBridgeFunc('package:flutter/src/painting/borders.dart', 'BorderSide.', $BorderSide.$new)
+      ..registerBridgeFunc('package:flutter/src/painting/box_border.dart', 'Border.', $Border.$new)
+      ..registerBridgeFunc('package:flutter/src/painting/box_border.dart', 'Border.all', $Border.$all)
+      ..registerBridgeFunc(
+          'package:flutter/src/painting/box_border.dart', 'Border.fromBorderSide', $Border.$fromBorderSide)
+      ..registerBridgeFunc('package:flutter/src/painting/box_border.dart', 'Border.symmetric', $Border.$symmetric)
+      ..registerBridgeFunc('package:flutter/src/painting/box_decoration.dart', 'BoxDecoration.', $BoxDecoration.$new)
       ..registerBridgeFunc(
           'package:flutter/src/painting/edge_insets.dart', 'EdgeInsets.symmetric', $EdgeInsets.$symmetric)
       ..registerBridgeFunc('package:flutter/src/painting/text_style.dart', 'TextStyle.', $TextStyle.$new)
