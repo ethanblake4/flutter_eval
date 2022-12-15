@@ -51,6 +51,7 @@ import 'package:flutter_eval/src/widgets/framework.dart';
 import 'package:flutter_eval/src/widgets/icon.dart';
 import 'package:flutter_eval/src/widgets/icon_data.dart';
 import 'package:flutter_eval/src/widgets/navigator.dart';
+import 'package:flutter_eval/src/widgets/spacer.dart';
 import 'package:flutter_eval/src/widgets/text.dart';
 
 /// Global instance of [FlutterEvalPlugin]
@@ -133,6 +134,7 @@ class FlutterEvalPlugin implements EvalPlugin {
       $Size.$declaration,
       $IconData.$declaration,
       $Icon.$declaration,
+      $Spacer.$declaration,
       $Decoration.$declaration,
       $BoxDecoration.$declaration,
       $BorderSide.$declaration,
@@ -274,6 +276,7 @@ class FlutterEvalPlugin implements EvalPlugin {
       ..registerBridgeFunc('package:flutter/src/widgets/basic.dart', 'Builder.', $Builder.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/icon_data.dart', 'IconData.', $IconData.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/icon.dart', 'Icon.', $Icon.$new)
+      ..registerBridgeFunc('package:flutter/src/widgets/spacer.dart', 'Spacer.', $Spacer.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/text.dart', 'Text.', $Text.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/container.dart', 'Container.', $Container.$new)
       ..registerBridgeFunc(
