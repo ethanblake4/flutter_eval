@@ -509,6 +509,9 @@ class $BuildContext implements BuildContext, $Instance {
 
   @override
   Widget get widget => $value.widget;
+
+  @override
+  bool get mounted => $value.mounted;
 }
 
 class $StatelessElement implements $Instance {
