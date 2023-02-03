@@ -511,7 +511,14 @@ class $BuildContext implements BuildContext, $Instance {
   Widget get widget => $value.widget;
 
   @override
-  bool get mounted => $value.mounted;
+  bool get mounted {
+    try {
+      return ($value as dynamic).mounted;
+    } catch (e) {
+      return false;
+    }
+  }
+
 }
 
 class $StatelessElement implements $Instance {
