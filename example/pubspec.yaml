@@ -10,7 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
   dart_eval: ^0.5.1
-  flutter_eval: ^0.5.1
+  flutter_eval: 
+    path: ../
 
 dev_dependencies:
   flutter_test:
