@@ -309,7 +309,7 @@ class _EvalWidgetState extends State<EvalWidget> {
   void _recompile(bool inBuild) {
     final program = compiler.compile(widget.packages);
 
-    if (!kReleaseMode) {
+    if (!kReleaseMode && !kIsWeb) {
       _writeBytesToPath(widget.assetPath, program.write());
     }
 
