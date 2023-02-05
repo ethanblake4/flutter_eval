@@ -193,7 +193,7 @@ Currently supported widgets and classes include:
 - `Text`, `TextStyle`, `TextEditingController`, `TextField`;
 - `TextDirection`, `VerticalDirection`, `TextBaseline`
 - `Scaffold`, `ScaffoldMessenger`, `AppBar`, `SnackBar`, `FloatingActionButton`;
-- `TextButton`, `ElevatedButton`, `IconButton`;
+- `TextButton`, `ElevatedButton`, `IconButton`, `Spacer`;
 - `Navigator`, `NavigatorState`, `Builder`;
 
 Note that many of these have only partial support.

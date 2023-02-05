@@ -1,3 +1,7 @@
+## 0.5.4
+- Support for Flutter 3.7
+- Add Spacer (thanks to @canewsin)
+
 ## 0.5.3
 - Add Decoration, BoxDecoration, BoxBorder, Border, and BorderSide
 - Improve support for Container and TextField

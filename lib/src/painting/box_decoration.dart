@@ -16,7 +16,7 @@ class $BoxDecoration implements $Instance {
           //BridgeParameter('image', BridgeTypeAnnotation($DecorationImage.$type, nullable: true), true),
           BridgeParameter('border', BridgeTypeAnnotation($BoxBorder.$type, nullable: true), true),
           //BridgeParameter('borderRadius', BridgeTypeAnnotation($BorderRadius.$type, nullable: true), true),
-          BridgeParameter('boxShadow', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.listType)), true),
+          BridgeParameter('boxShadow', BridgeTypeAnnotation(BridgeTypeRef.spec(DartTypes.list)), true),
           //BridgeParameter('gradient', BridgeTypeAnnotation($Gradient.$type, nullable: true), true),
           //BridgeParameter('backgroundBlendMode', BridgeTypeAnnotation($BlendMode.$type, nullable: true), true),
           //BridgeParameter('shape', BridgeTypeAnnotation($BoxShape.$type, nullable: true), true)

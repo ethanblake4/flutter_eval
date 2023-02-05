@@ -180,9 +180,11 @@ class _RuntimeWidgetState extends State<RuntimeWidget> {
   void _loadFromFile() {
     final file = File(widget.uri.path);
     final bytecode = file.readAsBytesSync();
-    runtime = Runtime(ByteData.sublistView(bytecode));
-    setupFlutterForRuntime(runtime!);
-    runtime!.setup();
+    setState(() {
+      runtime = Runtime(ByteData.sublistView(bytecode));
+      setupFlutterForRuntime(runtime!);
+      runtime!.setup();
+    });
   }
 
   void _loadFromAsset() {
@@ -196,9 +198,11 @@ class _RuntimeWidgetState extends State<RuntimeWidget> {
 
   void _loadFromUrl() async {
     final bytecode = await http.get(widget.uri).then((response) => response.bodyBytes);
-    runtime = Runtime(ByteData.sublistView(bytecode));
-    setupFlutterForRuntime(runtime!);
-    runtime!.setup();
+    setState(() {
+      runtime = Runtime(ByteData.sublistView(bytecode));
+      setupFlutterForRuntime(runtime!);
+      runtime!.setup();
+    });
   }
 
   @override
@@ -330,9 +334,11 @@ class _EvalWidgetState extends State<EvalWidget> {
   void _loadFromFile() {
     final file = File(widget.uri!.path);
     final bytecode = file.readAsBytesSync();
-    runtime = Runtime(ByteData.sublistView(bytecode));
-    setupFlutterForRuntime(runtime!);
-    runtime!.setup();
+    setState(() {
+      runtime = Runtime(ByteData.sublistView(bytecode));
+      setupFlutterForRuntime(runtime!);
+      runtime!.setup();
+    });
   }
 
   void _loadFromAsset(String assetPath) {
@@ -345,9 +351,11 @@ class _EvalWidgetState extends State<EvalWidget> {
 
   void _loadFromUrl() async {
     final bytecode = await http.get(widget.uri!).then((response) => response.bodyBytes);
-    runtime = Runtime(ByteData.sublistView(bytecode));
-    setupFlutterForRuntime(runtime!);
-    runtime!.setup();
+    setState(() {
+      runtime = Runtime(ByteData.sublistView(bytecode));
+      setupFlutterForRuntime(runtime!);
+      runtime!.setup();
+    });
   }
 
   @override

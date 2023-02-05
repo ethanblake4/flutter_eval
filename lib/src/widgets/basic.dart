@@ -82,8 +82,7 @@ class $Column implements $Instance {
           BridgeParameter('crossAxisAlignment', BridgeTypeAnnotation($CrossAxisAlignment.$type), true),
           BridgeParameter('verticalDirection', BridgeTypeAnnotation($VerticalDirection.$type), true),
           BridgeParameter('textBaseline', BridgeTypeAnnotation($TextBaseline.$type), true),
-          BridgeParameter(
-              'children', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.listType, [$Widget.$type])), true),
+          BridgeParameter('children', BridgeTypeAnnotation(BridgeTypeRef.spec(DartTypes.list, [$Widget.$type])), true),
         ]))
       },
       methods: {},
@@ -138,8 +137,7 @@ class $Row implements $Instance {
           BridgeParameter('crossAxisAlignment', BridgeTypeAnnotation($CrossAxisAlignment.$type), true),
           BridgeParameter('textDirection', BridgeTypeAnnotation($TextDirection.$type), true),
           BridgeParameter('verticalDirection', BridgeTypeAnnotation($VerticalDirection.$type), true),
-          BridgeParameter(
-              'children', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.listType, [$Widget.$type])), true),
+          BridgeParameter('children', BridgeTypeAnnotation(BridgeTypeRef.spec(DartTypes.list, [$Widget.$type])), true),
         ]))
       },
       methods: {},
