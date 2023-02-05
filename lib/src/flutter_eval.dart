@@ -221,8 +221,8 @@ class _RuntimeWidgetState extends State<RuntimeWidget> {
 /// of package names to maps of filenames to String file contents. E.g.:
 /// { 'my_package': { 'main.dart': '''main() { ... }''' } }
 ///
-/// [assetPath] will be used to output a compiled EVC bytecode file in release
-/// mode, which will be loaded in debug mode as a Flutter asset if [uri] is
+/// [assetPath] will be used to output a compiled EVC bytecode file in debug
+/// mode, which will be loaded in release mode as a Flutter asset if [uri] is
 /// not specified.
 ///
 /// [uri] is the URI to the EVC bytecode to be executed in release mode. Use
