@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:dart_eval/stdlib/core.dart';
@@ -84,7 +86,6 @@ class $ThemeData implements $Instance {
       selectedRowColor: args[13]?.$value,
       unselectedWidgetColor: args[14]?.$value,
       disabledColor: args[15]?.$value,
-      // ignore: deprecated_member_use
       buttonColor: args[16]?.$value,
       secondaryHeaderColor: args[17]?.$value,
       textTheme: args[18]?.$value,
@@ -130,7 +131,6 @@ class $ThemeData implements $Instance {
       case 'disabledColor':
         return $Color.wrap($value.disabledColor);
       case 'buttonColor':
-        // ignore: deprecated_member_use
         return $Color.wrap($value.buttonColor);
       case 'secondaryHeaderColor':
         return $Color.wrap($value.secondaryHeaderColor);
