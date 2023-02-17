@@ -364,6 +364,8 @@ class $State$bridge<T extends StatefulWidget> extends State<T> with $Bridge<Stat
             ])),
         'initState': BridgeMethodDef(
             BridgeFunctionDef(returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.voidType)))),
+        'dispose': BridgeMethodDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.voidType)))),
         'build': BridgeMethodDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation($Widget.$type),
             params: [BridgeParameter('context', BridgeTypeAnnotation($BuildContext.$type), false)])),
@@ -394,6 +396,11 @@ class $State$bridge<T extends StatefulWidget> extends State<T> with $Bridge<Stat
           super.initState();
           return null;
         });
+      case 'dispose':
+        return $Function((runtime, target, args) {
+          super.dispose();
+          return null;
+        });
       case 'widget':
         if (super.widget is $Instance) {
           return super.widget as $Instance;
@@ -412,6 +419,10 @@ class $State$bridge<T extends StatefulWidget> extends State<T> with $Bridge<Stat
   @override
   // ignore: must_call_super
   void initState() => $_invoke('initState', []);
+
+  @override
+  // ignore: must_call_super
+  void dispose() => $_invoke('dispose', []);
 
   @override
   Widget build(BuildContext context) => $_invoke('build', [$BuildContext.wrap(context)]);
