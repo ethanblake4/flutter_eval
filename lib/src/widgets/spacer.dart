@@ -5,7 +5,7 @@ import 'package:flutter_eval/src/foundation/key.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $Spacer implements $Instance {
-  static const $type = BridgeTypeRef.spec(
+  static const $type = BridgeTypeRef(
     BridgeTypeSpec('package:flutter/src/widgets/spacer.dart', 'Spacer'),
   );
 

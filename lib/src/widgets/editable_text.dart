@@ -6,7 +6,7 @@ import 'package:flutter_eval/src/foundation/change_notifier.dart';
 
 class $TextEditingController implements $Instance {
   static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/editable_text.dart', 'TextEditingController'));
+      BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/editable_text.dart', 'TextEditingController'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $ChangeNotifier.$type),
       constructors: {

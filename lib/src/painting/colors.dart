@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 
 class $ColorSwatch implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/colors.dart', 'ColorSwatch'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/colors.dart', 'ColorSwatch'));
 
   static const $declaration =
       BridgeClassDef(BridgeClassType($type, generics: {'T': BridgeGenericParam()}, $extends: $Color.$type),

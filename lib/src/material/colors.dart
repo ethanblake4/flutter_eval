@@ -1715,7 +1715,7 @@ class Colors {
 ''';
 
 class $MaterialColor implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/colors.dart', 'MaterialColor'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/colors.dart', 'MaterialColor'));
 
   static const $declaration =
       BridgeClassDef(BridgeClassType($type, generics: {'T': BridgeGenericParam()}, $extends: $ColorSwatch.$type),
@@ -1759,8 +1759,7 @@ class $MaterialColor implements $Instance {
 }
 
 class $MaterialAccentColor implements $Instance {
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/colors.dart', 'MaterialAccentColor'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/colors.dart', 'MaterialAccentColor'));
 
   static const $declaration =
       BridgeClassDef(BridgeClassType($type, generics: {'T': BridgeGenericParam()}, $extends: $ColorSwatch.$type),

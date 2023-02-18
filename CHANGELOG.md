@@ -1,3 +1,6 @@
+## 0.6.0
+- Support for dart_eval v0.6.0
+
 ## 0.5.4
 - Support for Flutter 3.7
 - Add Spacer (thanks to @canewsin)

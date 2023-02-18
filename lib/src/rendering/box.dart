@@ -5,7 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_eval/src/rendering/object.dart';
 
 class $BoxConstraints implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/rendering/box.dart', 'BoxConstraints'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/rendering/box.dart', 'BoxConstraints'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
       constructors: {

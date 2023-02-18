@@ -9,7 +9,7 @@ import 'package:flutter_eval/src/widgets/app.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $MaterialApp implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/app.dart', 'MaterialApp'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/app.dart', 'MaterialApp'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $WidgetsApp.$type),
       constructors: {
@@ -17,7 +17,7 @@ class $MaterialApp implements $Instance {
           BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
           BridgeParameter('navigatorKey', BridgeTypeAnnotation($Key.$type, nullable: true), true),
           BridgeParameter('home', BridgeTypeAnnotation($Widget.$type, nullable: true), true),
-          BridgeParameter('routes', BridgeTypeAnnotation(BridgeTypeRef.spec(BridgeTypeSpec('dart:core', 'Map'))), true),
+          BridgeParameter('routes', BridgeTypeAnnotation(BridgeTypeRef(BridgeTypeSpec('dart:core', 'Map'))), true),
           BridgeParameter(
               'initialRoute', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType), nullable: true), true),
           BridgeParameter('onUnknownRoute',

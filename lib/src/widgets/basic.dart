@@ -24,7 +24,7 @@ export 'package:flutter/rendering.dart' show
 ''';
 
 class $Padding implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Padding'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Padding'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
@@ -71,7 +71,7 @@ class $Padding implements $Instance {
 }
 
 class $Column implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Column'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Column'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
@@ -82,7 +82,7 @@ class $Column implements $Instance {
           BridgeParameter('crossAxisAlignment', BridgeTypeAnnotation($CrossAxisAlignment.$type), true),
           BridgeParameter('verticalDirection', BridgeTypeAnnotation($VerticalDirection.$type), true),
           BridgeParameter('textBaseline', BridgeTypeAnnotation($TextBaseline.$type), true),
-          BridgeParameter('children', BridgeTypeAnnotation(BridgeTypeRef.spec(DartTypes.list, [$Widget.$type])), true),
+          BridgeParameter('children', BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.list, [$Widget.$type])), true),
         ]))
       },
       methods: {},
@@ -126,7 +126,7 @@ class $Column implements $Instance {
 }
 
 class $Row implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Row'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Row'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
@@ -137,7 +137,7 @@ class $Row implements $Instance {
           BridgeParameter('crossAxisAlignment', BridgeTypeAnnotation($CrossAxisAlignment.$type), true),
           BridgeParameter('textDirection', BridgeTypeAnnotation($TextDirection.$type), true),
           BridgeParameter('verticalDirection', BridgeTypeAnnotation($VerticalDirection.$type), true),
-          BridgeParameter('children', BridgeTypeAnnotation(BridgeTypeRef.spec(DartTypes.list, [$Widget.$type])), true),
+          BridgeParameter('children', BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.list, [$Widget.$type])), true),
         ]))
       },
       methods: {},
@@ -181,7 +181,7 @@ class $Row implements $Instance {
 }
 
 class $Center implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Center'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Center'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
@@ -230,7 +230,7 @@ class $Center implements $Instance {
 }
 
 class $Builder implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Builder'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Builder'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {

@@ -7,7 +7,7 @@ import 'package:flutter_eval/src/widgets/editable_text.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $TextField implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/text_field.dart', 'TextField'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/text_field.dart', 'TextField'));
 
   static const $declaration = BridgeClassDef(
       BridgeClassType($type, isAbstract: false, $extends: $StatefulWidget$bridge.$type),

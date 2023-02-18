@@ -10,8 +10,7 @@ import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $IconButton implements $Instance {
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/icon_button.dart', 'IconButton'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/icon_button.dart', 'IconButton'));
 
   static const $declaration = BridgeClassDef(
       BridgeClassType($type, isAbstract: false, $extends: $StatelessWidget$bridge.$type),

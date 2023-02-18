@@ -14,7 +14,7 @@ export 'package:flutter/foundation.dart' show FlutterError, ErrorSummary, ErrorD
 ''';
 
 class $Widget implements Widget, $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/widgets.dart', 'Widget'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/widgets.dart', 'Widget'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
       constructors: {}, methods: {}, getters: {}, setters: {}, fields: {}, wrap: true);
@@ -188,8 +188,7 @@ class $StatelessWidget$bridge extends StatelessWidget with $Bridge<StatelessWidg
   const $StatelessWidget$bridge({Key? key}) : super(key: key);
 
   /// [StatelessWidget] compile-type type definition for dart_eval
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/framework.dart', 'StatelessWidget'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/framework.dart', 'StatelessWidget'));
 
   /// [StatelessWidget] compile-type class declaration for dart_eval
   static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Widget.$type, isAbstract: true),
@@ -287,8 +286,7 @@ class $StatefulWidget$bridge extends StatefulWidget with $Bridge<StatefulWidget>
   const $StatefulWidget$bridge({Key? key}) : super(key: key);
 
   /// [StatefulWidget] compile-type type definition for dart_eval
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/framework.dart', 'StatefulWidget'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/framework.dart', 'StatefulWidget'));
 
   /// [StatefulWidget] compile-type class declaration for dart_eval
   static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Widget.$type, isAbstract: true),
@@ -347,7 +345,7 @@ class $StatefulWidget$bridge extends StatefulWidget with $Bridge<StatefulWidget>
 
 class $State$bridge<T extends StatefulWidget> extends State<T> with $Bridge<State<T>> {
   /// [State] compile-type type definition for dart_eval
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/framework.dart', 'State'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/framework.dart', 'State'));
 
   /// [State] compile-type class declaration for dart_eval
   static const $declaration = BridgeClassDef(
@@ -434,7 +432,7 @@ class $State$bridge<T extends StatefulWidget> extends State<T> with $Bridge<Stat
 class $BuildContext implements BuildContext, $Instance {
   const $BuildContext.wrap(this.$value);
 
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/widgets.dart', 'BuildContext'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/widgets.dart', 'BuildContext'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
       constructors: {}, methods: {}, getters: {}, setters: {}, fields: {}, wrap: true);
@@ -529,7 +527,6 @@ class $BuildContext implements BuildContext, $Instance {
       return false;
     }
   }
-
 }
 
 class $StatelessElement implements $Instance {

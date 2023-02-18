@@ -58,8 +58,8 @@ import 'package:flutter_eval/src/widgets/text.dart';
 const flutterEvalPlugin = FlutterEvalPlugin();
 
 /// Setup flutter_eval classes for use in a dart_eval [Compiler].
-void setupFlutterForCompile(Compiler compiler) {
-  compiler.addPlugin(flutterEvalPlugin);
+void setupFlutterForCompile(EvalPluginRegistry registry) {
+  registry.addPlugin(flutterEvalPlugin);
 }
 
 /// Setup Flutter classes for use in a dart_eval [Runtime]. After
@@ -75,7 +75,7 @@ class FlutterEvalPlugin implements EvalPlugin {
   String get identifier => 'package:flutter';
 
   @override
-  void configureForCompile(Compiler compiler) {
+  void configureForCompile(BridgeDeclarationRegistry registry) {
     final classes = [
       $Widget.$declaration,
       $StatelessWidget$bridge.$declaration,
@@ -142,38 +142,40 @@ class FlutterEvalPlugin implements EvalPlugin {
       $Border.$declaration,
     ];
 
-    compiler.defineBridgeClasses(classes);
+    for (final cls in classes) {
+      registry.defineBridgeClass(cls);
+    }
 
-    compiler.defineBridgeEnum($MainAxisAlignment.$declaration);
-    compiler.defineBridgeEnum($CrossAxisAlignment.$declaration);
-    compiler.defineBridgeEnum($MainAxisSize.$declaration);
-    compiler.defineBridgeEnum($FontWeight.$declaration);
-    compiler.defineBridgeEnum($FontStyle.$declaration);
-    compiler.defineBridgeEnum($TextDirection.$declaration);
-    compiler.defineBridgeEnum($VerticalDirection.$declaration);
-    compiler.defineBridgeEnum($TextBaseline.$declaration);
-    compiler.defineBridgeEnum($Axis.$declaration);
-    compiler.defineBridgeEnum($BorderStyle.$declaration);
+    registry.defineBridgeEnum($MainAxisAlignment.$declaration);
+    registry.defineBridgeEnum($CrossAxisAlignment.$declaration);
+    registry.defineBridgeEnum($MainAxisSize.$declaration);
+    registry.defineBridgeEnum($FontWeight.$declaration);
+    registry.defineBridgeEnum($FontStyle.$declaration);
+    registry.defineBridgeEnum($TextDirection.$declaration);
+    registry.defineBridgeEnum($VerticalDirection.$declaration);
+    registry.defineBridgeEnum($TextBaseline.$declaration);
+    registry.defineBridgeEnum($Axis.$declaration);
+    registry.defineBridgeEnum($BorderStyle.$declaration);
 
-    compiler.addSource(DartSource('dart:ui', dartUiSource));
+    registry.addSource(DartSource('dart:ui', dartUiSource));
 
-    compiler.addSource(DartSource('package:flutter/animation.dart', animationSource));
-    compiler.addSource(DartSource('package:flutter/src/animation/curves.dart', animationCurvesSource));
+    registry.addSource(DartSource('package:flutter/animation.dart', animationSource));
+    registry.addSource(DartSource('package:flutter/src/animation/curves.dart', animationCurvesSource));
 
-    compiler.addSource(DartSource('package:flutter/foundation.dart', foundationSource));
+    registry.addSource(DartSource('package:flutter/foundation.dart', foundationSource));
 
-    compiler.addSource(DartSource('package:flutter/material.dart', materialSource));
-    compiler.addSource(DartSource('package:flutter/src/material/colors.dart', materialColorsSource));
-    compiler.addSource(DartSource('package:flutter/src/material/icons.dart', materialIconsSource));
+    registry.addSource(DartSource('package:flutter/material.dart', materialSource));
+    registry.addSource(DartSource('package:flutter/src/material/colors.dart', materialColorsSource));
+    registry.addSource(DartSource('package:flutter/src/material/icons.dart', materialIconsSource));
 
-    compiler.addSource(DartSource('package:flutter/painting.dart', paintingSource));
-    compiler.addSource(DartSource('package:flutter/src/painting/basic_types.dart', paintingBasicTypesSource));
+    registry.addSource(DartSource('package:flutter/painting.dart', paintingSource));
+    registry.addSource(DartSource('package:flutter/src/painting/basic_types.dart', paintingBasicTypesSource));
 
-    compiler.addSource(DartSource('package:flutter/rendering.dart', renderingSource));
+    registry.addSource(DartSource('package:flutter/rendering.dart', renderingSource));
 
-    compiler.addSource(DartSource('package:flutter/widgets.dart', widgetsSource));
-    compiler.addSource(DartSource('package:flutter/src/widgets/framework.dart', widgetsFrameworkSource));
-    compiler.addSource(DartSource('package:flutter/src/widgets/basic.dart', widgetsBasicSource));
+    registry.addSource(DartSource('package:flutter/widgets.dart', widgetsSource));
+    registry.addSource(DartSource('package:flutter/src/widgets/framework.dart', widgetsFrameworkSource));
+    registry.addSource(DartSource('package:flutter/src/widgets/basic.dart', widgetsBasicSource));
 
 /*  final outJson = json.encode({
     'classes': classes.map((c) => c.toJson()).toList(),

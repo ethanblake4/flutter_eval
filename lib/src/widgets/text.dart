@@ -7,7 +7,7 @@ import 'package:flutter_eval/src/painting/text_style.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $Text implements Text, $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/text.dart', 'Text'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/text.dart', 'Text'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $StatelessWidget$bridge.$type),
       constructors: {
@@ -23,6 +23,9 @@ class $Text implements Text, $Instance {
       setters: {},
       fields: {},
       wrap: true);
+
+  /// Hot constructor for [$Text]
+  $Text(String id, Text Function() value) : $value = runtimeOverride(id) as Text? ?? value();
 
   $Text.wrap(this.$value);
 

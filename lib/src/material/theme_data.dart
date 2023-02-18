@@ -9,7 +9,7 @@ import 'package:flutter_eval/src/material/text_theme.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 
 class $ThemeData implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/theme_data.dart', 'ThemeData'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/theme_data.dart', 'ThemeData'));
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false),
       constructors: {
         '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [

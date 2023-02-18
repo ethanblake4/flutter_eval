@@ -7,7 +7,7 @@ import 'package:flutter_eval/src/widgets/text.dart';
 import '../widgets/framework.dart';
 
 class $AppBar implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/app_bar.dart', 'AppBar'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/app_bar.dart', 'AppBar'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
@@ -17,7 +17,7 @@ class $AppBar implements $Instance {
               'automaticallyImplyLeading', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
           BridgeParameter('title', BridgeTypeAnnotation($Text.$type), true),
           BridgeParameter('actions',
-              BridgeTypeAnnotation(BridgeTypeRef.spec(BridgeTypeSpec('dart:core', 'List'), [$Widget.$type])), true),
+              BridgeTypeAnnotation(BridgeTypeRef(BridgeTypeSpec('dart:core', 'List'), [$Widget.$type])), true),
           BridgeParameter('flexibleSpace', BridgeTypeAnnotation($Widget.$type), true),
           BridgeParameter('bottom', BridgeTypeAnnotation($Widget.$type), true),
           BridgeParameter('elevation', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),

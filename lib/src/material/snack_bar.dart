@@ -6,7 +6,7 @@ import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $SnackBar implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/snack_bar.dart', 'SnackBar'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/snack_bar.dart', 'SnackBar'));
 
   static const $declaration =
       BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $StatefulWidget$bridge.$type),

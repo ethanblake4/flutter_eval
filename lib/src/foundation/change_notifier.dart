@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 
 class $ChangeNotifier implements $Instance {
   static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/foundation/change_notifier.dart', 'ChangeNotifier'));
+      BridgeTypeRef(BridgeTypeSpec('package:flutter/src/foundation/change_notifier.dart', 'ChangeNotifier'));
 
   static const $methods = {
     'addListener': BridgeMethodDef(

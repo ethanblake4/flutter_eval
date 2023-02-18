@@ -6,8 +6,8 @@ import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import '../widgets/framework.dart';
 
 class $FloatingActionButton implements $Instance {
-  static const $type = BridgeTypeRef.spec(
-      BridgeTypeSpec('package:flutter/src/material/floating_action_button.dart', 'FloatingActionButton'));
+  static const $type =
+      BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/floating_action_button.dart', 'FloatingActionButton'));
 
   static const $declaration = BridgeClassDef(
       BridgeClassType($type, isAbstract: false, $extends: $StatelessWidget$bridge.$type),

@@ -57,8 +57,7 @@ class Curves {
 ''';
 
 class $ParametricCurve implements $Instance {
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'ParametricCurve'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'ParametricCurve'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
       constructors: {}, methods: {}, getters: {}, setters: {}, fields: {}, wrap: true);
@@ -86,7 +85,7 @@ class $ParametricCurve implements $Instance {
 /// dart_eval wrapper for [Curve]
 class $Curve implements $Instance {
   /// dart_eval type reference for [Curve]
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'Curve'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'Curve'));
 
   /// dart_eval class declaration for [Curve]
   static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $ParametricCurve.$type, isAbstract: true),
@@ -131,7 +130,7 @@ class $Curve implements $Instance {
 }
 
 class $_Linear implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/animation/curves.dart', '_Linear'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', '_Linear'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Curve.$type),
       constructors: {'_': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type)))},
@@ -170,7 +169,7 @@ class $_Linear implements $Instance {
 }
 
 class $SawTooth implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'SawTooth'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'SawTooth'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Curve.$type),
       constructors: {
@@ -213,7 +212,7 @@ class $SawTooth implements $Instance {
 }
 
 class $Interval implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'Interval'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'Interval'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Curve.$type),
       constructors: {
@@ -259,7 +258,7 @@ class $Interval implements $Instance {
 }
 
 class $Threshold implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'Threshold'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'Threshold'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Curve.$type),
       constructors: {
@@ -302,7 +301,7 @@ class $Threshold implements $Instance {
 }
 
 class $Cubic implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'Cubic'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'Cubic'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Curve.$type),
       constructors: {
@@ -349,8 +348,7 @@ class $Cubic implements $Instance {
 }
 
 class $_DecelerateCurve implements $Instance {
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/animation/curves.dart', '_DecelerateCurve'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', '_DecelerateCurve'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Curve.$type),
       constructors: {'_': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type)))},
@@ -389,8 +387,7 @@ class $_DecelerateCurve implements $Instance {
 }
 
 class $ElasticInCurve implements $Instance {
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'ElasticInCurve'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'ElasticInCurve'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Curve.$type),
       constructors: {
@@ -433,8 +430,7 @@ class $ElasticInCurve implements $Instance {
 }
 
 class $ElasticOutCurve implements $Instance {
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'ElasticOutCurve'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'ElasticOutCurve'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Curve.$type),
       constructors: {
@@ -477,8 +473,7 @@ class $ElasticOutCurve implements $Instance {
 }
 
 class $ElasticInOutCurve implements $Instance {
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'ElasticInOutCurve'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'ElasticInOutCurve'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Curve.$type),
       constructors: {

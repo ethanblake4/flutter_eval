@@ -10,6 +10,7 @@ as well as runtime bridge classes and wrappers, with a seamless API that makes u
 | dart_eval    | [![pub package](https://img.shields.io/pub/v/dart_eval.svg?label=dart_eval&color=teal)](https://pub.dev/packages/dart_eval)          |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
 | flutter_eval | [![pub package](https://img.shields.io/pub/v/flutter_eval.svg?label=flutter_eval&color=blue)](https://pub.dev/packages/flutter_eval) |
+| eval_annotation | [![pub package](https://img.shields.io/pub/v/eval_annotation.svg?label=eval_annotation&color=orange)](https://pub.dev/packages/eval_annotation) |
 
 For a live example, check out [EvalPad](https://ethanblake.xyz/evalpad).
 

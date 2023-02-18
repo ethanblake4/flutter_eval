@@ -8,7 +8,7 @@ import 'package:flutter_eval/src/material/snack_bar.dart';
 import '../widgets/framework.dart';
 
 class $Scaffold implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/scaffold.dart', 'Scaffold'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/scaffold.dart', 'Scaffold'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
@@ -55,8 +55,7 @@ class $Scaffold implements $Instance {
 }
 
 class $ScaffoldMessenger implements $Instance {
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/scaffold.dart', 'ScaffoldMessenger'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/scaffold.dart', 'ScaffoldMessenger'));
   static const $declaration =
       BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $StatefulWidget$bridge.$type),
           constructors: {
@@ -110,7 +109,7 @@ class $ScaffoldMessenger implements $Instance {
 
 class $ScaffoldMessengerState implements $Instance {
   static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/scaffold.dart', 'ScaffoldMessengerState'));
+      BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/scaffold.dart', 'ScaffoldMessengerState'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $State$bridge.$type),
       constructors: {},

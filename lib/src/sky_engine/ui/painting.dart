@@ -3,7 +3,7 @@ import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/painting.dart';
 
 class $Color implements Color, $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('dart:ui', 'Color'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Color'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type),
       constructors: {

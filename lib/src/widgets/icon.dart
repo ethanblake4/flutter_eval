@@ -8,7 +8,7 @@ import 'package:flutter_eval/src/widgets/framework.dart';
 import 'package:flutter_eval/src/widgets/icon_data.dart';
 
 class $Icon implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/icon.dart', 'Icon'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/icon.dart', 'Icon'));
 
   static const $declaration =
       BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $StatelessWidget$bridge.$type),

@@ -5,7 +5,7 @@ import 'package:flutter_eval/src/painting/borders.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 
 class $BoxBorder implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/box_border.dart', 'BoxBorder'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/box_border.dart', 'BoxBorder'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
       constructors: {}, methods: {}, getters: {}, setters: {}, fields: {}, wrap: true);
@@ -35,7 +35,7 @@ class $BoxBorder implements $Instance {
 }
 
 class $Border implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/box_border.dart', 'Border'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/box_border.dart', 'Border'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false),
       constructors: {

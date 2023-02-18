@@ -7,7 +7,7 @@ import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 
 class $BoxDecoration implements $Instance {
   static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/box_decoration.dart', 'BoxDecoration'));
+      BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/box_decoration.dart', 'BoxDecoration'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type),
       constructors: {
@@ -16,7 +16,7 @@ class $BoxDecoration implements $Instance {
           //BridgeParameter('image', BridgeTypeAnnotation($DecorationImage.$type, nullable: true), true),
           BridgeParameter('border', BridgeTypeAnnotation($BoxBorder.$type, nullable: true), true),
           //BridgeParameter('borderRadius', BridgeTypeAnnotation($BorderRadius.$type, nullable: true), true),
-          BridgeParameter('boxShadow', BridgeTypeAnnotation(BridgeTypeRef.spec(DartTypes.list)), true),
+          BridgeParameter('boxShadow', BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.list)), true),
           //BridgeParameter('gradient', BridgeTypeAnnotation($Gradient.$type, nullable: true), true),
           //BridgeParameter('backgroundBlendMode', BridgeTypeAnnotation($BlendMode.$type, nullable: true), true),
           //BridgeParameter('shape', BridgeTypeAnnotation($BoxShape.$type, nullable: true), true)

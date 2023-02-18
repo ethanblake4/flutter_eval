@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_eval/src/painting/text_style.dart';
 
 class $TextTheme implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/text_theme.dart', 'TextTheme'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/text_theme.dart', 'TextTheme'));
   static const _atTextStyle = BridgeTypeAnnotation($TextStyle.$type, nullable: true);
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false),
       constructors: {
