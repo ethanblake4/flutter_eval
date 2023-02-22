@@ -4,11 +4,17 @@ import 'package:dart_eval/stdlib/core.dart';
 import 'package:flutter/cupertino.dart';
 
 class $EdgeInsetsGeometry implements EdgeInsetsGeometry, $Instance {
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/edge_insets.dart', 'EdgeInsetsGeometry'));
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec(
+      'package:flutter/src/painting/edge_insets.dart', 'EdgeInsetsGeometry'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
-      constructors: {}, methods: {}, getters: {}, setters: {}, fields: {}, wrap: true);
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, isAbstract: true),
+      constructors: {},
+      methods: {},
+      getters: {},
+      setters: {},
+      fields: {},
+      wrap: true);
 
   $EdgeInsetsGeometry.wrap(this.$value);
 
@@ -50,7 +56,8 @@ class $EdgeInsetsGeometry implements EdgeInsetsGeometry, $Instance {
   double along(Axis axis) => $value.along(axis);
 
   @override
-  EdgeInsetsGeometry clamp(EdgeInsetsGeometry min, EdgeInsetsGeometry max) => $value.clamp(min, max);
+  EdgeInsetsGeometry clamp(EdgeInsetsGeometry min, EdgeInsetsGeometry max) =>
+      $value.clamp(min, max);
 
   @override
   Size get collapsedSize => $value.collapsedSize;
@@ -74,7 +81,8 @@ class $EdgeInsetsGeometry implements EdgeInsetsGeometry, $Instance {
   EdgeInsets resolve(TextDirection? direction) => $value.resolve(direction);
 
   @override
-  EdgeInsetsGeometry subtract(EdgeInsetsGeometry other) => $value.subtract(other);
+  EdgeInsetsGeometry subtract(EdgeInsetsGeometry other) =>
+      $value.subtract(other);
 
   @override
   double get vertical => $value.vertical;
@@ -84,43 +92,90 @@ class $EdgeInsetsGeometry implements EdgeInsetsGeometry, $Instance {
 }
 
 class $EdgeInsets implements EdgeInsets, $Instance {
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/edge_insets.dart', 'EdgeInsets'));
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec(
+      'package:flutter/src/painting/edge_insets.dart', 'EdgeInsets'));
 
-  static const $declaration =
-      BridgeClassDef(BridgeClassType($type, isAbstract: true, $extends: $EdgeInsetsGeometry.$type),
-          constructors: {
-            'fromLTRB': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
-              BridgeParameter('left', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), false),
-              BridgeParameter('top', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), false),
-              BridgeParameter('right', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), false),
-              BridgeParameter('bottom', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), false),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type,
+          isAbstract: true, $extends: $EdgeInsetsGeometry.$type),
+      constructors: {
+        'fromLTRB': BridgeConstructorDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter(
+              'left',
+              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)),
+              false),
+          BridgeParameter(
+              'top',
+              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)),
+              false),
+          BridgeParameter(
+              'right',
+              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)),
+              false),
+          BridgeParameter(
+              'bottom',
+              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)),
+              false),
+        ])),
+        'all': BridgeConstructorDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter(
+              'value',
+              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)),
+              false),
+        ])),
+        'only': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter(
+                  'left',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.doubleType)),
+                  true),
+              BridgeParameter(
+                  'top',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.doubleType)),
+                  true),
+              BridgeParameter(
+                  'right',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.doubleType)),
+                  true),
+              BridgeParameter(
+                  'bottom',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.doubleType)),
+                  true)
             ])),
-            'all': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
-              BridgeParameter('value', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), false),
-            ])),
-            'only': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-              BridgeParameter('left', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-              BridgeParameter('top', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-              BridgeParameter('right', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-              BridgeParameter('bottom', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true)
-            ])),
-            'symmetric': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-              BridgeParameter('vertical', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-              BridgeParameter('horizontal', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
+        'symmetric': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter(
+                  'vertical',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.doubleType)),
+                  true),
+              BridgeParameter(
+                  'horizontal',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.doubleType)),
+                  true),
             ]))
-          },
-          methods: {},
-          getters: {},
-          setters: {},
-          fields: {},
-          wrap: true);
+      },
+      methods: {},
+      getters: {},
+      setters: {},
+      fields: {},
+      wrap: true);
 
   late final $Instance _superclass = $Object(this);
 
   $EdgeInsets.wrap(this.$value);
 
-  static $Value? $fromLTRB(Runtime runtime, $Value? target, List<$Value?> args) {
+  static $Value? $fromLTRB(
+      Runtime runtime, $Value? target, List<$Value?> args) {
     return $EdgeInsets.wrap(EdgeInsets.fromLTRB(
       args[0]!.$value,
       args[1]?.$value,
@@ -144,7 +199,8 @@ class $EdgeInsets implements EdgeInsets, $Instance {
     ));
   }
 
-  static $Value? $symmetric(Runtime runtime, $Value? target, List<$Value?> args) {
+  static $Value? $symmetric(
+      Runtime runtime, $Value? target, List<$Value?> args) {
     return $EdgeInsets.wrap(EdgeInsets.symmetric(
       vertical: args[0]?.$value ?? 0.0,
       horizontal: args[1]?.$value ?? 0.0,
@@ -186,7 +242,8 @@ class $EdgeInsets implements EdgeInsets, $Instance {
   double along(Axis axis) => $value.along(axis);
 
   @override
-  EdgeInsetsGeometry clamp(EdgeInsetsGeometry min, EdgeInsetsGeometry max) => $value.clamp(min, max);
+  EdgeInsetsGeometry clamp(EdgeInsetsGeometry min, EdgeInsetsGeometry max) =>
+      $value.clamp(min, max);
 
   @override
   Size get collapsedSize => $value.collapsedSize;
@@ -210,7 +267,8 @@ class $EdgeInsets implements EdgeInsets, $Instance {
   EdgeInsets resolve(TextDirection? direction) => $value.resolve(direction);
 
   @override
-  EdgeInsetsGeometry subtract(EdgeInsetsGeometry other) => $value.subtract(other);
+  EdgeInsetsGeometry subtract(EdgeInsetsGeometry other) =>
+      $value.subtract(other);
 
   @override
   double get vertical => $value.vertical;
@@ -237,7 +295,8 @@ class $EdgeInsets implements EdgeInsets, $Instance {
   Offset get bottomRight => $value.bottomRight;
 
   @override
-  EdgeInsets copyWith({double? left, double? top, double? right, double? bottom}) {
+  EdgeInsets copyWith(
+      {double? left, double? top, double? right, double? bottom}) {
     return $value.copyWith(left: left, top: top, right: right, bottom: bottom);
   }
 

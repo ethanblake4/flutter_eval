@@ -49,11 +49,15 @@ export 'package:flutter/foundation.dart' show VoidCallback;
  ''';
 
 class $VerticalDirection implements $Instance {
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/basic_types.dart', 'VerticalDirection'));
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec(
+      'package:flutter/src/painting/basic_types.dart', 'VerticalDirection'));
 
-  static const $declaration =
-      BridgeEnumDef($type, methods: {}, getters: {}, setters: {}, values: ['up', 'down'], fields: {});
+  static const $declaration = BridgeEnumDef($type,
+      methods: {},
+      getters: {},
+      setters: {},
+      values: ['up', 'down'],
+      fields: {});
 
   static final $values = {
     'up': $VerticalDirection.wrap(VerticalDirection.up),
@@ -85,11 +89,16 @@ class $VerticalDirection implements $Instance {
 /// dart_eval wrapper for [Axis]
 class $Axis implements $Instance {
   /// dart_eval type definition for [Axis]
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/basic_types.dart', 'Axis'));
+  static const $type = BridgeTypeRef.spec(
+      BridgeTypeSpec('package:flutter/src/painting/basic_types.dart', 'Axis'));
 
   /// dart_eval class declaration for [Axis]
-  static const $declaration =
-      BridgeEnumDef($type, methods: {}, getters: {}, setters: {}, values: ['horizontal', 'vertical'], fields: {});
+  static const $declaration = BridgeEnumDef($type,
+      methods: {},
+      getters: {},
+      setters: {},
+      values: ['horizontal', 'vertical'],
+      fields: {});
 
   /// Runtime enum values
   static final $values = {

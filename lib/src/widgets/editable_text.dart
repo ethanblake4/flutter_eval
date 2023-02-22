@@ -5,24 +5,35 @@ import 'package:flutter/material.dart';
 import 'package:flutter_eval/src/foundation/change_notifier.dart';
 
 class $TextEditingController implements $Instance {
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/editable_text.dart', 'TextEditingController'));
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec(
+      'package:flutter/src/widgets/editable_text.dart',
+      'TextEditingController'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $ChangeNotifier.$type),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type,
+          isAbstract: false, $extends: $ChangeNotifier.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter(
-              'text', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType), nullable: true), true),
-        ]))
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter(
+                  'text',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.stringType),
+                      nullable: true),
+                  true),
+            ]))
       },
       methods: {
-        'clear':
-            BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.voidType))))
+        'clear': BridgeMethodDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation(
+                BridgeTypeRef.type(RuntimeTypes.voidType))))
       },
       getters: {},
       setters: {},
       fields: {
-        'text': BridgeFieldDef(BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType))),
+        'text': BridgeFieldDef(
+            BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType))),
       },
       wrap: true);
 
@@ -31,7 +42,8 @@ class $TextEditingController implements $Instance {
   $TextEditingController.wrap(this.$value);
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
-    return $TextEditingController.wrap(TextEditingController(text: args[0]?.$value));
+    return $TextEditingController
+        .wrap(TextEditingController(text: args[0]?.$value));
   }
 
   @override

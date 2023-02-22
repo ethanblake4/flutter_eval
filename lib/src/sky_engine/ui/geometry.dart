@@ -12,9 +12,16 @@ class $Size implements $Instance {
   /// dart_eval class declaration for [Size]
   static const $declaration = BridgeClassDef(BridgeClassType($type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
-          BridgeParameter('width', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), false),
-          BridgeParameter('height', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), false)
+        '': BridgeConstructorDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter(
+              'width',
+              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)),
+              false),
+          BridgeParameter(
+              'height',
+              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)),
+              false)
         ]))
       },
       methods: {},
@@ -31,7 +38,8 @@ class $Size implements $Instance {
   final $Instance _superclass;
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
-    return $Size.wrap(Size(args[0]!.$value as double, args[1]!.$value as double));
+    return $Size
+        .wrap(Size(args[0]!.$value as double, args[1]!.$value as double));
   }
 
   @override

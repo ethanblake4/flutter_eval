@@ -5,12 +5,19 @@ import 'package:flutter/painting.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 
 class $BorderStyle implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/borders.dart', 'BorderStyle'));
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec(
+      'package:flutter/src/painting/borders.dart', 'BorderStyle'));
 
-  static const $declaration =
-      BridgeEnumDef($type, values: ['solid', 'none'], methods: {}, getters: {}, setters: {}, fields: {});
+  static const $declaration = BridgeEnumDef($type,
+      values: ['solid', 'none'],
+      methods: {},
+      getters: {},
+      setters: {},
+      fields: {});
 
-  static final $values = BorderStyle.values.asNameMap().map((key, value) => MapEntry(key, $BorderStyle.wrap(value)));
+  static final $values = BorderStyle.values
+      .asNameMap()
+      .map((key, value) => MapEntry(key, $BorderStyle.wrap(value)));
 
   final $Instance _superclass;
 
@@ -37,10 +44,17 @@ class $BorderStyle implements $Instance {
 }
 
 class $ShapeBorder implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/borders.dart', 'ShapeBorder'));
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec(
+      'package:flutter/src/painting/borders.dart', 'ShapeBorder'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
-      constructors: {}, methods: {}, getters: {}, setters: {}, fields: {}, wrap: true);
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, isAbstract: true),
+      constructors: {},
+      methods: {},
+      getters: {},
+      setters: {},
+      fields: {},
+      wrap: true);
 
   $ShapeBorder.wrap(this.$value) : _superclass = $Object($value);
 
@@ -67,21 +81,31 @@ class $ShapeBorder implements $Instance {
 }
 
 class $BorderSide implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/borders.dart', 'BorderSide'));
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec(
+      'package:flutter/src/painting/borders.dart', 'BorderSide'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false),
-      constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter('color', BridgeTypeAnnotation($Color.$type), true),
-          BridgeParameter('width', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-          BridgeParameter('style', BridgeTypeAnnotation($BorderStyle.$type), true)
-        ]))
-      },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
-      wrap: true);
+  static const $declaration =
+      BridgeClassDef(BridgeClassType($type, isAbstract: false),
+          constructors: {
+            '': BridgeConstructorDef(BridgeFunctionDef(
+                returns: BridgeTypeAnnotation($type),
+                namedParams: [
+                  BridgeParameter(
+                      'color', BridgeTypeAnnotation($Color.$type), true),
+                  BridgeParameter(
+                      'width',
+                      BridgeTypeAnnotation(
+                          BridgeTypeRef.type(RuntimeTypes.doubleType)),
+                      true),
+                  BridgeParameter(
+                      'style', BridgeTypeAnnotation($BorderStyle.$type), true)
+                ]))
+          },
+          methods: {},
+          getters: {},
+          setters: {},
+          fields: {},
+          wrap: true);
 
   $BorderSide.wrap(this.$value) : _superclass = $Object($value);
 

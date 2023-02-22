@@ -14,27 +14,67 @@ import 'framework.dart';
 /// dart_eval wrapper for [Container]
 class $Container implements Container, $Instance {
   /// [Container] compile-type type definition for dart_eval
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/container.dart', 'Container'));
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec(
+      'package:flutter/src/widgets/container.dart', 'Container'));
 
   /// [Container] compile-type class declaration for dart_eval
-  static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $StatelessWidget$bridge.$type),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, $extends: $StatelessWidget$bridge.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
-          BridgeParameter('alignment', BridgeTypeAnnotation($AlignmentGeometry.$type, nullable: true), true),
-          BridgeParameter('padding', BridgeTypeAnnotation($EdgeInsetsGeometry.$type, nullable: true), true),
-          BridgeParameter('color', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('decoration', BridgeTypeAnnotation($Decoration.$type, nullable: true), true),
-          BridgeParameter('foregroundDecoration', BridgeTypeAnnotation($Decoration.$type, nullable: true), true),
-          BridgeParameter(
-              'width', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType), nullable: true), true),
-          BridgeParameter(
-              'height', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType), nullable: true), true),
-          BridgeParameter('constraints', BridgeTypeAnnotation($BoxConstraints.$type, nullable: true), true),
-          BridgeParameter('margin', BridgeTypeAnnotation($EdgeInsetsGeometry.$type, nullable: true), true),
-          BridgeParameter('transformAlignment', BridgeTypeAnnotation($AlignmentGeometry.$type, nullable: true), true),
-          BridgeParameter('child', BridgeTypeAnnotation($Widget.$type, nullable: true), true),
-        ]))
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter('key',
+                  BridgeTypeAnnotation($Key.$type, nullable: true), true),
+              BridgeParameter(
+                  'alignment',
+                  BridgeTypeAnnotation($AlignmentGeometry.$type,
+                      nullable: true),
+                  true),
+              BridgeParameter(
+                  'padding',
+                  BridgeTypeAnnotation($EdgeInsetsGeometry.$type,
+                      nullable: true),
+                  true),
+              BridgeParameter('color',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter(
+                  'decoration',
+                  BridgeTypeAnnotation($Decoration.$type, nullable: true),
+                  true),
+              BridgeParameter(
+                  'foregroundDecoration',
+                  BridgeTypeAnnotation($Decoration.$type, nullable: true),
+                  true),
+              BridgeParameter(
+                  'width',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.doubleType),
+                      nullable: true),
+                  true),
+              BridgeParameter(
+                  'height',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.doubleType),
+                      nullable: true),
+                  true),
+              BridgeParameter(
+                  'constraints',
+                  BridgeTypeAnnotation($BoxConstraints.$type, nullable: true),
+                  true),
+              BridgeParameter(
+                  'margin',
+                  BridgeTypeAnnotation($EdgeInsetsGeometry.$type,
+                      nullable: true),
+                  true),
+              BridgeParameter(
+                  'transformAlignment',
+                  BridgeTypeAnnotation($AlignmentGeometry.$type,
+                      nullable: true),
+                  true),
+              BridgeParameter('child',
+                  BridgeTypeAnnotation($Widget.$type, nullable: true), true),
+            ]))
       },
       methods: {},
       getters: {},
@@ -123,30 +163,41 @@ class $Container implements Container, $Instance {
   StatelessElement createElement() => $value.createElement();
 
   @override
-  List<DiagnosticsNode> debugDescribeChildren() => $value.debugDescribeChildren();
+  List<DiagnosticsNode> debugDescribeChildren() =>
+      $value.debugDescribeChildren();
 
   @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) => $value.debugFillProperties(properties);
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) =>
+      $value.debugFillProperties(properties);
 
   @override
   Key? get key => $value.key;
 
   @override
-  DiagnosticsNode toDiagnosticsNode({String? name, DiagnosticsTreeStyle? style}) =>
+  DiagnosticsNode toDiagnosticsNode(
+          {String? name, DiagnosticsTreeStyle? style}) =>
       $value.toDiagnosticsNode(name: name, style: style);
 
   @override
   String toStringDeep(
-          {String prefixLineOne = '', String? prefixOtherLines, DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
-      $value.toStringDeep(prefixLineOne: prefixLineOne, prefixOtherLines: prefixOtherLines, minLevel: minLevel);
+          {String prefixLineOne = '',
+          String? prefixOtherLines,
+          DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
+      $value.toStringDeep(
+          prefixLineOne: prefixLineOne,
+          prefixOtherLines: prefixOtherLines,
+          minLevel: minLevel);
 
   @override
-  String toStringShallow({String joiner = ', ', DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
+  String toStringShallow(
+          {String joiner = ', ',
+          DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
       $value.toStringShallow(joiner: joiner, minLevel: minLevel);
 
   @override
   String toStringShort() => $value.toStringShort();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) => $value.toString(minLevel: minLevel);
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) =>
+      $value.toString(minLevel: minLevel);
 }

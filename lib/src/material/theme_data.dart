@@ -9,58 +9,107 @@ import 'package:flutter_eval/src/material/text_theme.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 
 class $ThemeData implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/theme_data.dart', 'ThemeData'));
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false),
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec(
+      'package:flutter/src/material/theme_data.dart', 'ThemeData'));
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, isAbstract: false),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter(
-              'useMaterial3', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType), nullable: true), true),
-          // COLOR
-          BridgeParameter('colorSchemeSeed', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('primarySwatch', BridgeTypeAnnotation($MaterialColor.$type, nullable: true), true),
-          BridgeParameter('primaryColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('primaryColorLight', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('primaryColorDark', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('canvasColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('scaffoldBackgroundColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('bottomAppBarColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('cardColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('dividerColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('highlightColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('splashColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('selectedRowColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('unselectedWidgetColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('disabledColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('buttonColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('secondaryHeaderColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          // TYPOGRAPHY & ICONOGRAPHY
-          BridgeParameter('textTheme', BridgeTypeAnnotation($TextTheme.$type, nullable: true), true),
-          BridgeParameter('primaryTextTheme', BridgeTypeAnnotation($TextTheme.$type, nullable: true), true),
-        ]))
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter(
+                  'useMaterial3',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.boolType),
+                      nullable: true),
+                  true),
+              // COLOR
+              BridgeParameter('colorSchemeSeed',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter(
+                  'primarySwatch',
+                  BridgeTypeAnnotation($MaterialColor.$type, nullable: true),
+                  true),
+              BridgeParameter('primaryColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter('primaryColorLight',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter('primaryColorDark',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter('canvasColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter('scaffoldBackgroundColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter('bottomAppBarColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter('cardColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter('dividerColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter('highlightColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter('splashColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter('selectedRowColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter('unselectedWidgetColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter('disabledColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter('buttonColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter('secondaryHeaderColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              // TYPOGRAPHY & ICONOGRAPHY
+              BridgeParameter('textTheme',
+                  BridgeTypeAnnotation($TextTheme.$type, nullable: true), true),
+              BridgeParameter('primaryTextTheme',
+                  BridgeTypeAnnotation($TextTheme.$type, nullable: true), true),
+            ]))
       },
       methods: {},
       getters: {
-        'useMaterial3': BridgeMethodDef(
-            BridgeFunctionDef(returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)))),
-        'colorSchemeSeed': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
-        'primarySwatch': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($MaterialColor.$type))),
-        'primaryColor': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
-        'primaryColorLight': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
-        'primaryColorDark': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
-        'canvasColor': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
-        'scaffoldBackgroundColor': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
-        'bottomAppBarColor': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
-        'cardColor': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
-        'dividerColor': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
-        'highlightColor': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
-        'splashColor': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
-        'selectedRowColor': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
-        'unselectedWidgetColor': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
-        'disabledColor': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
-        'buttonColor': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
-        'secondaryHeaderColor': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
-        'textTheme': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($TextTheme.$type))),
-        'primaryTextTheme': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($TextTheme.$type))),
+        'useMaterial3': BridgeMethodDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation(
+                BridgeTypeRef.type(RuntimeTypes.boolType)))),
+        'colorSchemeSeed': BridgeMethodDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
+        'primarySwatch': BridgeMethodDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($MaterialColor.$type))),
+        'primaryColor': BridgeMethodDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
+        'primaryColorLight': BridgeMethodDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
+        'primaryColorDark': BridgeMethodDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
+        'canvasColor': BridgeMethodDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
+        'scaffoldBackgroundColor': BridgeMethodDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
+        'bottomAppBarColor': BridgeMethodDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
+        'cardColor': BridgeMethodDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
+        'dividerColor': BridgeMethodDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
+        'highlightColor': BridgeMethodDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
+        'splashColor': BridgeMethodDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
+        'selectedRowColor': BridgeMethodDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
+        'unselectedWidgetColor': BridgeMethodDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
+        'disabledColor': BridgeMethodDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
+        'buttonColor': BridgeMethodDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
+        'secondaryHeaderColor': BridgeMethodDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
+        'textTheme': BridgeMethodDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($TextTheme.$type))),
+        'primaryTextTheme': BridgeMethodDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($TextTheme.$type))),
       },
       setters: {},
       fields: {},

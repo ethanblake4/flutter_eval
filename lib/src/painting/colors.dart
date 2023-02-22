@@ -5,21 +5,30 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 
 class $ColorSwatch implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/colors.dart', 'ColorSwatch'));
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec(
+      'package:flutter/src/painting/colors.dart', 'ColorSwatch'));
 
-  static const $declaration =
-      BridgeClassDef(BridgeClassType($type, generics: {'T': BridgeGenericParam()}, $extends: $Color.$type),
-          constructors: {
-            '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
-              BridgeParameter('primary', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.intType)), false),
-              BridgeParameter('_swatch', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.mapType)), false)
-            ])),
-          },
-          methods: {},
-          getters: {},
-          setters: {},
-          fields: {},
-          wrap: true);
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type,
+          generics: {'T': BridgeGenericParam()}, $extends: $Color.$type),
+      constructors: {
+        '': BridgeConstructorDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter(
+              'primary',
+              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.intType)),
+              false),
+          BridgeParameter(
+              '_swatch',
+              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.mapType)),
+              false)
+        ])),
+      },
+      methods: {},
+      getters: {},
+      setters: {},
+      fields: {},
+      wrap: true);
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
     return $ColorSwatch.wrap(ColorSwatch(args[0]!.$value, args[1]!.$value));

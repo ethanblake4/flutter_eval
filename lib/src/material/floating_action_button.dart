@@ -6,31 +6,80 @@ import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import '../widgets/framework.dart';
 
 class $FloatingActionButton implements $Instance {
-  static const $type = BridgeTypeRef.spec(
-      BridgeTypeSpec('package:flutter/src/material/floating_action_button.dart', 'FloatingActionButton'));
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec(
+      'package:flutter/src/material/floating_action_button.dart',
+      'FloatingActionButton'));
 
   static const $declaration = BridgeClassDef(
-      BridgeClassType($type, isAbstract: false, $extends: $StatelessWidget$bridge.$type),
+      BridgeClassType($type,
+          isAbstract: false, $extends: $StatelessWidget$bridge.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter('onPressed', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType)), false),
-          BridgeParameter('child', BridgeTypeAnnotation($Widget.$type, nullable: true), true),
-          BridgeParameter('tooltip', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType)), true),
-          BridgeParameter('foregroundColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('backgroundColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('focusColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('hoverColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('splashColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('focusElevation', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-          BridgeParameter('hoverElevation', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-          BridgeParameter('elevation', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-          BridgeParameter(
-              'highlightElevation', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-          BridgeParameter('disabledElevation', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-          BridgeParameter('mini', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
-          BridgeParameter('autofocus', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
-          BridgeParameter('isExtended', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
-        ]))
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter(
+                  'onPressed',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.functionType)),
+                  false),
+              BridgeParameter('child',
+                  BridgeTypeAnnotation($Widget.$type, nullable: true), true),
+              BridgeParameter(
+                  'tooltip',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.stringType)),
+                  true),
+              BridgeParameter('foregroundColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter('backgroundColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter('focusColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter('hoverColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter('splashColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter(
+                  'focusElevation',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.doubleType)),
+                  true),
+              BridgeParameter(
+                  'hoverElevation',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.doubleType)),
+                  true),
+              BridgeParameter(
+                  'elevation',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.doubleType)),
+                  true),
+              BridgeParameter(
+                  'highlightElevation',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.doubleType)),
+                  true),
+              BridgeParameter(
+                  'disabledElevation',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.doubleType)),
+                  true),
+              BridgeParameter(
+                  'mini',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.boolType)),
+                  true),
+              BridgeParameter(
+                  'autofocus',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.boolType)),
+                  true),
+              BridgeParameter(
+                  'isExtended',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.boolType)),
+                  true),
+            ]))
       },
       methods: {},
       getters: {},

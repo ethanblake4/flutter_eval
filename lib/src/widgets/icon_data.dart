@@ -5,18 +5,33 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class $IconData implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/icon_data.dart', 'IconData'));
+  static const $type = BridgeTypeRef.spec(
+      BridgeTypeSpec('package:flutter/src/widgets/icon_data.dart', 'IconData'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, isAbstract: false),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
-          BridgeParameter('codePoint', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.intType)), false)
+        '': BridgeConstructorDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter(
+              'codePoint',
+              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.intType)),
+              false)
         ], namedParams: [
           BridgeParameter(
-              'fontFamily', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType), nullable: true), true),
+              'fontFamily',
+              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType),
+                  nullable: true),
+              true),
           BridgeParameter(
-              'fontPackage', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType), nullable: true), true),
-          BridgeParameter('matchTextDirection', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true)
+              'fontPackage',
+              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType),
+                  nullable: true),
+              true),
+          BridgeParameter(
+              'matchTextDirection',
+              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)),
+              true)
         ]))
       },
       methods: {},

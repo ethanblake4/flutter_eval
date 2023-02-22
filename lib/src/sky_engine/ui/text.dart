@@ -3,12 +3,19 @@ import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/painting.dart';
 
 class $FontStyle implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('dart:ui', 'FontStyle'));
+  static const $type =
+      BridgeTypeRef.spec(BridgeTypeSpec('dart:ui', 'FontStyle'));
 
-  static const $declaration =
-      BridgeEnumDef($type, values: ['normal', 'italic'], methods: {}, getters: {}, setters: {}, fields: {});
+  static const $declaration = BridgeEnumDef($type,
+      values: ['normal', 'italic'],
+      methods: {},
+      getters: {},
+      setters: {},
+      fields: {});
 
-  static final $values = FontStyle.values.asNameMap().map((key, value) => MapEntry(key, $FontStyle.wrap(value)));
+  static final $values = FontStyle.values
+      .asNameMap()
+      .map((key, value) => MapEntry(key, $FontStyle.wrap(value)));
 
   const $FontStyle.wrap(this.$value);
 
@@ -33,13 +40,24 @@ class $FontStyle implements $Instance {
 }
 
 class $FontWeight implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('dart:ui', 'FontWeight'));
+  static const $type =
+      BridgeTypeRef.spec(BridgeTypeSpec('dart:ui', 'FontWeight'));
 
   static const $declaration = BridgeEnumDef($type,
       methods: {},
       getters: {},
       setters: {},
-      values: ['w100', 'w200', 'w300', 'w400', 'w500', 'w600', 'w700', 'w800', 'w900'],
+      values: [
+        'w100',
+        'w200',
+        'w300',
+        'w400',
+        'w500',
+        'w600',
+        'w700',
+        'w800',
+        'w900'
+      ],
       fields: {});
 
   static final $values = {
@@ -77,12 +95,20 @@ class $FontWeight implements $Instance {
 }
 
 class $TextDirection implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('dart:ui', 'TextDirection'));
+  static const $type =
+      BridgeTypeRef.spec(BridgeTypeSpec('dart:ui', 'TextDirection'));
 
-  static const $declaration =
-      BridgeEnumDef($type, methods: {}, getters: {}, setters: {}, values: ['rtl', 'ltr'], fields: {});
+  static const $declaration = BridgeEnumDef($type,
+      methods: {},
+      getters: {},
+      setters: {},
+      values: ['rtl', 'ltr'],
+      fields: {});
 
-  static final $values = {'rtl': $TextDirection.wrap(TextDirection.rtl), 'ltr': $TextDirection.wrap(TextDirection.ltr)};
+  static final $values = {
+    'rtl': $TextDirection.wrap(TextDirection.rtl),
+    'ltr': $TextDirection.wrap(TextDirection.ltr)
+  };
 
   $TextDirection.wrap(this.$value);
 
@@ -107,10 +133,15 @@ class $TextDirection implements $Instance {
 }
 
 class $TextBaseline implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('dart:ui', 'TextBaseline'));
+  static const $type =
+      BridgeTypeRef.spec(BridgeTypeSpec('dart:ui', 'TextBaseline'));
 
-  static const $declaration =
-      BridgeEnumDef($type, methods: {}, getters: {}, setters: {}, values: ['alphabetic', 'ideographic'], fields: {});
+  static const $declaration = BridgeEnumDef($type,
+      methods: {},
+      getters: {},
+      setters: {},
+      values: ['alphabetic', 'ideographic'],
+      fields: {});
 
   static final $values = {
     'alphabetic': $TextBaseline.wrap(TextBaseline.alphabetic),

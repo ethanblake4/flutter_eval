@@ -12,4 +12,5 @@ export 'package:flutter/src/widgets/icon_data.dart';
 export 'package:flutter/src/widgets/spacer.dart';
 export 'package:flutter/src/widgets/text.dart';
 export 'package:flutter/src/widgets/navigator.dart';
+export 'package:flutter/src/widgets/scroll_view.dart';
 ''';

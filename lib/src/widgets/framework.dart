@@ -14,10 +14,17 @@ export 'package:flutter/foundation.dart' show FlutterError, ErrorSummary, ErrorD
 ''';
 
 class $Widget implements Widget, $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/widgets.dart', 'Widget'));
+  static const $type = BridgeTypeRef.spec(
+      BridgeTypeSpec('package:flutter/widgets.dart', 'Widget'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
-      constructors: {}, methods: {}, getters: {}, setters: {}, fields: {}, wrap: true);
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, isAbstract: true),
+      constructors: {},
+      methods: {},
+      getters: {},
+      setters: {},
+      fields: {},
+      wrap: true);
 
   $Widget.wrap(this.$value);
 
@@ -44,32 +51,43 @@ class $Widget implements Widget, $Instance {
   Element createElement() => $value.createElement();
 
   @override
-  List<DiagnosticsNode> debugDescribeChildren() => $value.debugDescribeChildren();
+  List<DiagnosticsNode> debugDescribeChildren() =>
+      $value.debugDescribeChildren();
 
   @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) => $value.debugFillProperties(properties);
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) =>
+      $value.debugFillProperties(properties);
 
   @override
   Key? get key => $value.key;
 
   @override
-  DiagnosticsNode toDiagnosticsNode({String? name, DiagnosticsTreeStyle? style}) =>
+  DiagnosticsNode toDiagnosticsNode(
+          {String? name, DiagnosticsTreeStyle? style}) =>
       $value.toDiagnosticsNode(name: name, style: style);
 
   @override
   String toStringDeep(
-          {String prefixLineOne = '', String? prefixOtherLines, DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
-      $value.toStringDeep(prefixLineOne: prefixLineOne, prefixOtherLines: prefixOtherLines, minLevel: minLevel);
+          {String prefixLineOne = '',
+          String? prefixOtherLines,
+          DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
+      $value.toStringDeep(
+          prefixLineOne: prefixLineOne,
+          prefixOtherLines: prefixOtherLines,
+          minLevel: minLevel);
 
   @override
-  String toStringShallow({String joiner = ', ', DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
+  String toStringShallow(
+          {String joiner = ', ',
+          DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
       $value.toStringShallow(joiner: joiner, minLevel: minLevel);
 
   @override
   String toStringShort() => $value.toStringShort();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) => $value.toString(minLevel: minLevel);
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) =>
+      $value.toString(minLevel: minLevel);
 }
 
 mixin $WidgetMixin implements Widget, $Value {
@@ -86,7 +104,8 @@ mixin $WidgetMixin implements Widget, $Value {
   @override
   int get $runtimeType => throw UnimplementedError();
 
-  void $widgetMixinSetProperty(Runtime runtime, String identifier, $Value value) {
+  void $widgetMixinSetProperty(
+      Runtime runtime, String identifier, $Value value) {
     throw UnimplementedError();
   }
 
@@ -94,32 +113,43 @@ mixin $WidgetMixin implements Widget, $Value {
   Element createElement() => $value.createElement();
 
   @override
-  List<DiagnosticsNode> debugDescribeChildren() => $value.debugDescribeChildren();
+  List<DiagnosticsNode> debugDescribeChildren() =>
+      $value.debugDescribeChildren();
 
   @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) => $value.debugFillProperties(properties);
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) =>
+      $value.debugFillProperties(properties);
 
   @override
   Key? get key => $value.key;
 
   @override
-  DiagnosticsNode toDiagnosticsNode({String? name, DiagnosticsTreeStyle? style}) =>
+  DiagnosticsNode toDiagnosticsNode(
+          {String? name, DiagnosticsTreeStyle? style}) =>
       $value.toDiagnosticsNode(name: name, style: style);
 
   @override
   String toStringDeep(
-          {String prefixLineOne = '', String? prefixOtherLines, DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
-      $value.toStringDeep(prefixLineOne: prefixLineOne, prefixOtherLines: prefixOtherLines, minLevel: minLevel);
+          {String prefixLineOne = '',
+          String? prefixOtherLines,
+          DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
+      $value.toStringDeep(
+          prefixLineOne: prefixLineOne,
+          prefixOtherLines: prefixOtherLines,
+          minLevel: minLevel);
 
   @override
-  String toStringShallow({String joiner = ', ', DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
+  String toStringShallow(
+          {String joiner = ', ',
+          DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
       $value.toStringShallow(joiner: joiner, minLevel: minLevel);
 
   @override
   String toStringShort() => $value.toStringShort();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) => $value.toString(minLevel: minLevel);
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) =>
+      $value.toString(minLevel: minLevel);
 }
 
 /// dart_eval wrapper for [StatelessWidget]
@@ -155,48 +185,62 @@ class $StatelessWidget implements StatelessWidget, $Instance {
   StatelessElement createElement() => $value.createElement();
 
   @override
-  List<DiagnosticsNode> debugDescribeChildren() => $value.debugDescribeChildren();
+  List<DiagnosticsNode> debugDescribeChildren() =>
+      $value.debugDescribeChildren();
 
   @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) => $value.debugFillProperties(properties);
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) =>
+      $value.debugFillProperties(properties);
 
   @override
   Key? get key => $value.key;
 
   @override
-  DiagnosticsNode toDiagnosticsNode({String? name, DiagnosticsTreeStyle? style}) =>
+  DiagnosticsNode toDiagnosticsNode(
+          {String? name, DiagnosticsTreeStyle? style}) =>
       $value.toDiagnosticsNode(name: name, style: style);
 
   @override
   String toStringDeep(
-          {String prefixLineOne = '', String? prefixOtherLines, DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
-      $value.toStringDeep(prefixLineOne: prefixLineOne, prefixOtherLines: prefixOtherLines, minLevel: minLevel);
+          {String prefixLineOne = '',
+          String? prefixOtherLines,
+          DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
+      $value.toStringDeep(
+          prefixLineOne: prefixLineOne,
+          prefixOtherLines: prefixOtherLines,
+          minLevel: minLevel);
 
   @override
-  String toStringShallow({String joiner = ', ', DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
+  String toStringShallow(
+          {String joiner = ', ',
+          DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
       $value.toStringShallow(joiner: joiner, minLevel: minLevel);
 
   @override
   String toStringShort() => $value.toStringShort();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) => $value.toString(minLevel: minLevel);
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) =>
+      $value.toString(minLevel: minLevel);
 }
 
 /// dart_eval bridge class for [StatelessWidget]
-class $StatelessWidget$bridge extends StatelessWidget with $Bridge<StatelessWidget> {
+class $StatelessWidget$bridge extends StatelessWidget
+    with $Bridge<StatelessWidget> {
   const $StatelessWidget$bridge({Key? key}) : super(key: key);
 
   /// [StatelessWidget] compile-type type definition for dart_eval
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/framework.dart', 'StatelessWidget'));
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec(
+      'package:flutter/src/widgets/framework.dart', 'StatelessWidget'));
 
   /// [StatelessWidget] compile-type class declaration for dart_eval
-  static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Widget.$type, isAbstract: true),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, $extends: $Widget.$type, isAbstract: true),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(
-            namedParams: [BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true)],
-            returns: BridgeTypeAnnotation($type)))
+        '': BridgeConstructorDef(BridgeFunctionDef(namedParams: [
+          BridgeParameter(
+              'key', BridgeTypeAnnotation($Key.$type, nullable: true), true)
+        ], returns: BridgeTypeAnnotation($type)))
       },
       methods: {},
       getters: {},
@@ -216,9 +260,11 @@ class $StatelessWidget$bridge extends StatelessWidget with $Bridge<StatelessWidg
         final key = super.key;
         return key == null ? const $null() : $Key.wrap(key);
       case 'createElement':
-        return $Function((runtime, target, args) => $StatelessElement.wrap(super.createElement()));
+        return $Function((runtime, target, args) =>
+            $StatelessElement.wrap(super.createElement()));
       case 'toStringShort':
-        return $Function((runtime, target, args) => $String(super.toStringShort()));
+        return $Function(
+            (runtime, target, args) => $String(super.toStringShort()));
       case 'debugFillProperties':
         return $Function((runtime, target, args) {
           super.debugFillProperties(args[1]!.$value);
@@ -227,44 +273,55 @@ class $StatelessWidget$bridge extends StatelessWidget with $Bridge<StatelessWidg
       case 'toString':
         return $Function((runtime, target, args) => $String(super.toString()));
       case 'toDiagnosticsNode':
-        return $Function((runtime, target, args) =>
-            $DiagnosticsNode.wrap(super.toDiagnosticsNode(name: args[1]?.$value, style: args[2]?.$value)));
+        return $Function((runtime, target, args) => $DiagnosticsNode.wrap(super
+            .toDiagnosticsNode(name: args[1]?.$value, style: args[2]?.$value)));
       case 'debugDescribeChildren':
-        return $Function(((runtime, target, args) =>
-            $List.wrap(super.debugDescribeChildren().map((e) => $DiagnosticsNode.wrap(e)).toList())));
+        return $Function(((runtime, target, args) => $List.wrap(super
+            .debugDescribeChildren()
+            .map((e) => $DiagnosticsNode.wrap(e))
+            .toList())));
     }
     throw UnimplementedError('Property does not exist: "$identifier"');
   }
 
   @override
   void $bridgeSet(String identifier, $Value value) {
-    throw UnimplementedError('Cannot set "$identifier" of abstract class StatelessWidget');
+    throw UnimplementedError(
+        'Cannot set "$identifier" of abstract class StatelessWidget');
   }
 
   @override
-  Widget build(BuildContext context) => $_invoke('build', [$BuildContext.wrap(context)]);
+  Widget build(BuildContext context) =>
+      $_invoke('build', [$BuildContext.wrap(context)]);
 
   @override
   StatelessElement createElement() => $_invoke('createElement', []);
 
   @override
-  List<DiagnosticsNode> debugDescribeChildren() => ($_invoke('debugDescribeChildren', []) as List).cast();
+  List<DiagnosticsNode> debugDescribeChildren() =>
+      ($_invoke('debugDescribeChildren', []) as List).cast();
 
   @override
   // ignore: must_call_super
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) =>
-      $_invoke('debugFillProperties', [$DiagnosticPropertiesBuilder.wrap(properties)]);
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) => $_invoke(
+      'debugFillProperties', [$DiagnosticPropertiesBuilder.wrap(properties)]);
 
   @override
   Key? get key => $_get('key');
 
   @override
-  DiagnosticsNode toDiagnosticsNode({String? name, DiagnosticsTreeStyle? style}) => $_invoke('toDiagnosticsNode',
-      [name == null ? null : $String(name), style == null ? null : $DiagnosticsTreeStyle.wrap(style)]);
+  DiagnosticsNode toDiagnosticsNode(
+          {String? name, DiagnosticsTreeStyle? style}) =>
+      $_invoke('toDiagnosticsNode', [
+        name == null ? null : $String(name),
+        style == null ? null : $DiagnosticsTreeStyle.wrap(style)
+      ]);
 
   @override
   String toStringDeep(
-          {String prefixLineOne = '', String? prefixOtherLines, DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
+          {String prefixLineOne = '',
+          String? prefixOtherLines,
+          DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
       $_invoke('toStringDeep', [
         $String(prefixLineOne),
         prefixOtherLines == null ? const $null() : $String(prefixOtherLines),
@@ -272,8 +329,11 @@ class $StatelessWidget$bridge extends StatelessWidget with $Bridge<StatelessWidg
       ]);
 
   @override
-  String toStringShallow({String joiner = ', ', DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
-      $_invoke('toStringShallow', [$String(joiner), $DiagnosticLevel.wrap(minLevel)]);
+  String toStringShallow(
+          {String joiner = ', ',
+          DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
+      $_invoke('toStringShallow',
+          [$String(joiner), $DiagnosticLevel.wrap(minLevel)]);
 
   @override
   String toStringShort() => $_invoke('toStringShort', []);
@@ -283,19 +343,22 @@ class $StatelessWidget$bridge extends StatelessWidget with $Bridge<StatelessWidg
       $_invoke('toString', [$DiagnosticLevel.wrap(minLevel)]);
 }
 
-class $StatefulWidget$bridge extends StatefulWidget with $Bridge<StatefulWidget> {
+class $StatefulWidget$bridge extends StatefulWidget
+    with $Bridge<StatefulWidget> {
   const $StatefulWidget$bridge({Key? key}) : super(key: key);
 
   /// [StatefulWidget] compile-type type definition for dart_eval
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/framework.dart', 'StatefulWidget'));
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec(
+      'package:flutter/src/widgets/framework.dart', 'StatefulWidget'));
 
   /// [StatefulWidget] compile-type class declaration for dart_eval
-  static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Widget.$type, isAbstract: true),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, $extends: $Widget.$type, isAbstract: true),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(
-            namedParams: [BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true)],
-            returns: BridgeTypeAnnotation($type)))
+        '': BridgeConstructorDef(BridgeFunctionDef(namedParams: [
+          BridgeParameter(
+              'key', BridgeTypeAnnotation($Key.$type, nullable: true), true)
+        ], returns: BridgeTypeAnnotation($type)))
       },
       methods: {},
       getters: {},
@@ -315,9 +378,11 @@ class $StatefulWidget$bridge extends StatefulWidget with $Bridge<StatefulWidget>
         final key = super.key;
         return key == null ? const $null() : $Key.wrap(key);
       case 'createElement':
-        return $Function((runtime, target, args) => $StatefulElement.wrap(super.createElement()));
+        return $Function((runtime, target, args) =>
+            $StatefulElement.wrap(super.createElement()));
       case 'toStringShort':
-        return $Function((runtime, target, args) => $String(super.toStringShort()));
+        return $Function(
+            (runtime, target, args) => $String(super.toStringShort()));
       case 'debugFillProperties':
         return $Function((runtime, target, args) {
           super.debugFillProperties(args[1]!.$value);
@@ -326,11 +391,13 @@ class $StatefulWidget$bridge extends StatefulWidget with $Bridge<StatefulWidget>
       case 'toString':
         return $Function((runtime, target, args) => $String(super.toString()));
       case 'toDiagnosticsNode':
-        return $Function((runtime, target, args) =>
-            $DiagnosticsNode.wrap(super.toDiagnosticsNode(name: args[1]?.$value, style: args[2]?.$value)));
+        return $Function((runtime, target, args) => $DiagnosticsNode.wrap(super
+            .toDiagnosticsNode(name: args[1]?.$value, style: args[2]?.$value)));
       case 'debugDescribeChildren':
-        return $Function(((runtime, target, args) =>
-            $List.wrap(super.debugDescribeChildren().map((e) => $DiagnosticsNode.wrap(e)).toList())));
+        return $Function(((runtime, target, args) => $List.wrap(super
+            .debugDescribeChildren()
+            .map((e) => $DiagnosticsNode.wrap(e))
+            .toList())));
     }
     throw UnimplementedError('Property does not exist: "$identifier"');
   }
@@ -345,33 +412,51 @@ class $StatefulWidget$bridge extends StatefulWidget with $Bridge<StatefulWidget>
   State<StatefulWidget> createState() => $_invoke('createState', []);
 }
 
-class $State$bridge<T extends StatefulWidget> extends State<T> with $Bridge<State<T>> {
+class $State$bridge<T extends StatefulWidget> extends State<T>
+    with $Bridge<State<T>> {
   /// [State] compile-type type definition for dart_eval
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/framework.dart', 'State'));
+  static const $type = BridgeTypeRef.spec(
+      BridgeTypeSpec('package:flutter/src/widgets/framework.dart', 'State'));
 
   /// [State] compile-type class declaration for dart_eval
   static const $declaration = BridgeClassDef(
       BridgeClassType($type,
           $extends: $Widget.$type,
           isAbstract: true,
-          generics: {'T': BridgeGenericParam($extends: $StatefulWidget$bridge.$type)}),
-      constructors: {'': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type)))},
+          generics: {
+            'T': BridgeGenericParam($extends: $StatefulWidget$bridge.$type)
+          }),
+      constructors: {
+        '': BridgeConstructorDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($type)))
+      },
       methods: {
         'setState': BridgeMethodDef(BridgeFunctionDef(
-            returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.voidType)),
+            returns:
+                BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.voidType)),
             params: [
-              BridgeParameter('fn', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType)), false)
+              BridgeParameter(
+                  'fn',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.functionType)),
+                  false)
             ])),
-        'initState': BridgeMethodDef(
-            BridgeFunctionDef(returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.voidType)))),
-        'dispose': BridgeMethodDef(
-            BridgeFunctionDef(returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.voidType)))),
+        'initState': BridgeMethodDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation(
+                BridgeTypeRef.type(RuntimeTypes.voidType)))),
+        'dispose': BridgeMethodDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation(
+                BridgeTypeRef.type(RuntimeTypes.voidType)))),
         'build': BridgeMethodDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation($Widget.$type),
-            params: [BridgeParameter('context', BridgeTypeAnnotation($BuildContext.$type), false)])),
+            params: [
+              BridgeParameter(
+                  'context', BridgeTypeAnnotation($BuildContext.$type), false)
+            ])),
       },
       getters: {
-        'widget': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation(BridgeTypeRef.ref('T')))),
+        'widget': BridgeMethodDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation(BridgeTypeRef.ref('T')))),
       },
       setters: {},
       fields: {},
@@ -425,7 +510,8 @@ class $State$bridge<T extends StatefulWidget> extends State<T> with $Bridge<Stat
   void dispose() => $_invoke('dispose', []);
 
   @override
-  Widget build(BuildContext context) => $_invoke('build', [$BuildContext.wrap(context)]);
+  Widget build(BuildContext context) =>
+      $_invoke('build', [$BuildContext.wrap(context)]);
 
   @override
   T get widget => $_get('widget');
@@ -434,10 +520,17 @@ class $State$bridge<T extends StatefulWidget> extends State<T> with $Bridge<Stat
 class $BuildContext implements BuildContext, $Instance {
   const $BuildContext.wrap(this.$value);
 
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/widgets.dart', 'BuildContext'));
+  static const $type = BridgeTypeRef.spec(
+      BridgeTypeSpec('package:flutter/widgets.dart', 'BuildContext'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
-      constructors: {}, methods: {}, getters: {}, setters: {}, fields: {}, wrap: true);
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, isAbstract: true),
+      constructors: {},
+      methods: {},
+      getters: {},
+      setters: {},
+      fields: {},
+      wrap: true);
 
   @override
   final BuildContext $value;
@@ -462,49 +555,62 @@ class $BuildContext implements BuildContext, $Instance {
   bool get debugDoingBuild => throw UnimplementedError();
 
   @override
-  InheritedWidget dependOnInheritedElement(InheritedElement ancestor, {Object? aspect}) =>
+  InheritedWidget dependOnInheritedElement(InheritedElement ancestor,
+          {Object? aspect}) =>
       $value.dependOnInheritedElement(ancestor, aspect: aspect ?? this);
 
   @override
-  T? dependOnInheritedWidgetOfExactType<T extends InheritedWidget>({Object? aspect}) =>
+  T? dependOnInheritedWidgetOfExactType<T extends InheritedWidget>(
+          {Object? aspect}) =>
       $value.dependOnInheritedWidgetOfExactType(aspect: aspect);
 
   @override
-  DiagnosticsNode describeElement(String name, {DiagnosticsTreeStyle style = DiagnosticsTreeStyle.errorProperty}) =>
+  DiagnosticsNode describeElement(String name,
+          {DiagnosticsTreeStyle style = DiagnosticsTreeStyle.errorProperty}) =>
       $value.describeElement(name, style: style);
 
   @override
-  List<DiagnosticsNode> describeMissingAncestor({required Type expectedAncestorType}) =>
-      $value.describeMissingAncestor(expectedAncestorType: expectedAncestorType);
+  List<DiagnosticsNode> describeMissingAncestor(
+          {required Type expectedAncestorType}) =>
+      $value.describeMissingAncestor(
+          expectedAncestorType: expectedAncestorType);
 
   @override
-  DiagnosticsNode describeOwnershipChain(String name) => $value.describeOwnershipChain(name);
+  DiagnosticsNode describeOwnershipChain(String name) =>
+      $value.describeOwnershipChain(name);
 
   @override
-  DiagnosticsNode describeWidget(String name, {DiagnosticsTreeStyle style = DiagnosticsTreeStyle.errorProperty}) =>
+  DiagnosticsNode describeWidget(String name,
+          {DiagnosticsTreeStyle style = DiagnosticsTreeStyle.errorProperty}) =>
       $value.describeWidget(name, style: style);
 
   @override
-  void dispatchNotification(Notification notification) => $value.dispatchNotification(notification);
+  void dispatchNotification(Notification notification) =>
+      $value.dispatchNotification(notification);
 
   @override
-  T? findAncestorRenderObjectOfType<T extends RenderObject>() => $value.findAncestorRenderObjectOfType<T>();
+  T? findAncestorRenderObjectOfType<T extends RenderObject>() =>
+      $value.findAncestorRenderObjectOfType<T>();
 
   @override
-  T? findAncestorStateOfType<T extends State<StatefulWidget>>() => $value.findAncestorStateOfType<T>();
+  T? findAncestorStateOfType<T extends State<StatefulWidget>>() =>
+      $value.findAncestorStateOfType<T>();
 
   @override
-  T? findAncestorWidgetOfExactType<T extends Widget>() => $value.findAncestorWidgetOfExactType<T>();
+  T? findAncestorWidgetOfExactType<T extends Widget>() =>
+      $value.findAncestorWidgetOfExactType<T>();
 
   @override
   RenderObject? findRenderObject() => $value.findRenderObject();
 
   @override
-  T? findRootAncestorStateOfType<T extends State<StatefulWidget>>() => $value.findRootAncestorStateOfType<T>();
+  T? findRootAncestorStateOfType<T extends State<StatefulWidget>>() =>
+      $value.findRootAncestorStateOfType<T>();
 
   @override
-  InheritedElement? getElementForInheritedWidgetOfExactType<T extends InheritedWidget>() =>
-      $value.getElementForInheritedWidgetOfExactType<T>();
+  InheritedElement?
+      getElementForInheritedWidgetOfExactType<T extends InheritedWidget>() =>
+          $value.getElementForInheritedWidgetOfExactType<T>();
 
   @override
   BuildOwner? get owner => $value.owner;
@@ -513,10 +619,12 @@ class $BuildContext implements BuildContext, $Instance {
   Size? get size => $value.size;
 
   @override
-  void visitAncestorElements(bool Function(Element element) visitor) => $value.visitAncestorElements(visitor);
+  void visitAncestorElements(bool Function(Element element) visitor) =>
+      $value.visitAncestorElements(visitor);
 
   @override
-  void visitChildElements(ElementVisitor visitor) => $value.visitChildElements(visitor);
+  void visitChildElements(ElementVisitor visitor) =>
+      $value.visitChildElements(visitor);
 
   @override
   Widget get widget => $value.widget;
@@ -529,7 +637,6 @@ class $BuildContext implements BuildContext, $Instance {
       return false;
     }
   }
-
 }
 
 class $StatelessElement implements $Instance {

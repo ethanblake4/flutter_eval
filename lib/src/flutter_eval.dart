@@ -106,8 +106,10 @@ class _CompilerWidgetState extends State<CompilerWidget> {
       _recompile(false);
     }
 
-    final result = runtime.executeLib(widget.library, widget.function, widget.args);
-    return Container(child: (result as $Value).$value, key: ValueKey(Random().nextDouble()));
+    final result =
+        runtime.executeLib(widget.library, widget.function, widget.args);
+    return Container(
+        child: (result as $Value).$value, key: ValueKey(Random().nextDouble()));
   }
 }
 
@@ -145,7 +147,12 @@ class _CompilerWidgetState extends State<CompilerWidget> {
 ///
 class RuntimeWidget extends StatefulWidget {
   const RuntimeWidget(
-      {required this.uri, required this.library, required this.function, this.args = const [], this.loading, Key? key})
+      {required this.uri,
+      required this.library,
+      required this.function,
+      this.args = const [],
+      this.loading,
+      Key? key})
       : super(key: key);
 
   final Uri uri;
@@ -197,7 +204,8 @@ class _RuntimeWidgetState extends State<RuntimeWidget> {
   }
 
   void _loadFromUrl() async {
-    final bytecode = await http.get(widget.uri).then((response) => response.bodyBytes);
+    final bytecode =
+        await http.get(widget.uri).then((response) => response.bodyBytes);
     setState(() {
       runtime = Runtime(ByteData.sublistView(bytecode));
       setupFlutterForRuntime(runtime!);
@@ -208,7 +216,8 @@ class _RuntimeWidgetState extends State<RuntimeWidget> {
   @override
   Widget build(BuildContext context) {
     if (runtime == null) return widget.loading ?? Container();
-    final result = runtime!.executeLib(widget.library, widget.function, widget.args);
+    final result =
+        runtime!.executeLib(widget.library, widget.function, widget.args);
     return (result as $Value).$value;
   }
 }
@@ -350,7 +359,8 @@ class _EvalWidgetState extends State<EvalWidget> {
   }
 
   void _loadFromUrl() async {
-    final bytecode = await http.get(widget.uri!).then((response) => response.bodyBytes);
+    final bytecode =
+        await http.get(widget.uri!).then((response) => response.bodyBytes);
     setState(() {
       runtime = Runtime(ByteData.sublistView(bytecode));
       setupFlutterForRuntime(runtime!);
@@ -369,7 +379,8 @@ class _EvalWidgetState extends State<EvalWidget> {
       if (runtime == null) return widget.loading ?? Container();
     }
 
-    final result = runtime!.executeLib(widget.library, widget.function, widget.args);
+    final result =
+        runtime!.executeLib(widget.library, widget.function, widget.args);
     return (result as $Value).$value;
   }
 }

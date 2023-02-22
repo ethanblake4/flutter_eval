@@ -4,20 +4,24 @@ import 'package:dart_eval/stdlib/core.dart';
 import 'package:flutter/rendering.dart';
 
 class $Constraints implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/rendering/object.dart', 'Constraints'));
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec(
+      'package:flutter/src/rendering/object.dart', 'Constraints'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
-      constructors: {},
-      methods: {},
-      getters: {
-        'isTight': BridgeMethodDef(
-            BridgeFunctionDef(returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)))),
-        'isNormalized': BridgeMethodDef(
-            BridgeFunctionDef(returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)))),
-      },
-      setters: {},
-      fields: {},
-      wrap: true);
+  static const $declaration =
+      BridgeClassDef(BridgeClassType($type, isAbstract: true),
+          constructors: {},
+          methods: {},
+          getters: {
+            'isTight': BridgeMethodDef(BridgeFunctionDef(
+                returns: BridgeTypeAnnotation(
+                    BridgeTypeRef.type(RuntimeTypes.boolType)))),
+            'isNormalized': BridgeMethodDef(BridgeFunctionDef(
+                returns: BridgeTypeAnnotation(
+                    BridgeTypeRef.type(RuntimeTypes.boolType)))),
+          },
+          setters: {},
+          fields: {},
+          wrap: true);
 
   $Constraints.wrap(this.$value);
 
@@ -32,7 +36,8 @@ class $Constraints implements $Instance {
       case 'isNormalized':
         return $bool($value.isNormalized);
       default:
-        throw UnimplementedError('Property not found $identifier on Constraints');
+        throw UnimplementedError(
+            'Property not found $identifier on Constraints');
     }
   }
 
@@ -44,6 +49,7 @@ class $Constraints implements $Instance {
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
-    throw UnimplementedError('Property not found or cannot set $identifier on Constraints');
+    throw UnimplementedError(
+        'Property not found or cannot set $identifier on Constraints');
   }
 }

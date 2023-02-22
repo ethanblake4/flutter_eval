@@ -5,22 +5,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $TextButton implements $Instance {
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/text_button.dart', 'TextButton'));
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec(
+      'package:flutter/src/material/text_button.dart', 'TextButton'));
 
-  static const $declaration =
-      BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $StatelessWidget$bridge.$type),
-          constructors: {
-            '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-              BridgeParameter('onPressed', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType)), false),
-              BridgeParameter('child', BridgeTypeAnnotation($Widget.$type, nullable: true), false),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type,
+          isAbstract: false, $extends: $StatelessWidget$bridge.$type),
+      constructors: {
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter(
+                  'onPressed',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef.type(RuntimeTypes.functionType)),
+                  false),
+              BridgeParameter('child',
+                  BridgeTypeAnnotation($Widget.$type, nullable: true), false),
             ]))
-          },
-          methods: {},
-          getters: {},
-          setters: {},
-          fields: {},
-          wrap: true);
+      },
+      methods: {},
+      getters: {},
+      setters: {},
+      fields: {},
+      wrap: true);
 
   late final _superclass = $Object($value);
 
@@ -28,7 +36,9 @@ class $TextButton implements $Instance {
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
     return $TextButton.wrap(TextButton(
-      onPressed: args[0] == null ? null : () => (args[0]! as EvalCallable).call(runtime, null, []),
+      onPressed: args[0] == null
+          ? null
+          : () => (args[0]! as EvalCallable).call(runtime, null, []),
       child: args[1]?.$value,
     ));
   }
