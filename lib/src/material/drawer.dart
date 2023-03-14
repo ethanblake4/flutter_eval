@@ -1,5 +1,5 @@
+import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
-import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_eval/src/foundation/key.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
@@ -10,7 +10,7 @@ class $Drawer implements $Instance {
       BridgeTypeSpec('package:flutter/src/material/drawer.dart', 'Drawer'));
 
   static const $declaration = BridgeClassDef(
-      BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
+      BridgeClassType($type, isAbstract: false, $extends: $StatelessWidget$bridge.$type),
       constructors: {
         '': BridgeConstructorDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation($type),
