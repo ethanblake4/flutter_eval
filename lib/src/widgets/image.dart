@@ -11,31 +11,40 @@ class $Image implements $Instance {
   static const $type = BridgeTypeRef.spec(
       BridgeTypeSpec('package:flutter/src/widgets/image.dart', 'Image'));
 
-  static const $declaration =
-      BridgeClassDef(BridgeClassType($type), constructors: {
-    '': BridgeConstructorDef(
-      BridgeFunctionDef(
-        returns: BridgeTypeAnnotation($type),
-        namedParams: [
-          BridgeParameter(
-              'image', BridgeTypeAnnotation($ImageProvider.$type), false),
-          BridgeParameter('key', BridgeTypeAnnotation($Key.$type), true),
-          BridgeParameter(
-              'width',
-              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)),
-              true),
-          BridgeParameter(
-              'height',
-              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)),
-              true),
-          BridgeParameter('color', BridgeTypeAnnotation($Color.$type), true),
-          BridgeParameter('fit', BridgeTypeAnnotation($BoxFit.$type), true),
-          BridgeParameter(
-              'alignment', BridgeTypeAnnotation($Alignment.$type), true),
-        ],
+  static const $declaration = BridgeClassDef(
+    BridgeClassType($type),
+    constructors: {
+      '': BridgeConstructorDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation($type),
+          namedParams: [
+            BridgeParameter(
+                'image', BridgeTypeAnnotation($ImageProvider.$type), false),
+            BridgeParameter('key', BridgeTypeAnnotation($Key.$type), true),
+            BridgeParameter(
+                'width',
+                BridgeTypeAnnotation(
+                    BridgeTypeRef.type(RuntimeTypes.doubleType)),
+                true),
+            BridgeParameter(
+                'height',
+                BridgeTypeAnnotation(
+                    BridgeTypeRef.type(RuntimeTypes.doubleType)),
+                true),
+            BridgeParameter('color', BridgeTypeAnnotation($Color.$type), true),
+            BridgeParameter('fit', BridgeTypeAnnotation($BoxFit.$type), true),
+            BridgeParameter(
+                'alignment', BridgeTypeAnnotation($Alignment.$type), true),
+          ],
+        ),
       ),
-    ),
-  }, fields: {}, getters: {}, methods: {}, setters: {});
+    },
+    fields: {},
+    getters: {},
+    methods: {},
+    setters: {},
+    wrap: true,
+  );
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
@@ -76,5 +85,3 @@ class $Image implements $Instance {
   // TODO: implement $value
   final Image $value;
 }
-
-

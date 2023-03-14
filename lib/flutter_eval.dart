@@ -152,11 +152,11 @@ class FlutterEvalPlugin implements EvalPlugin {
       $ListTile.$declaration,
       $ListView.$declaration,
       $Card.$declaration,
-      $ImageProvider.$declaration,
       $Image.$declaration,
+      $ImageProvider.$declaration,
+      $NetworkImage.$declaration,
       $MemoryImage.$declaration,
       $ResizeImage.$declaration,
-      $NetworkImage.$declaration,
     ];
 
     compiler.defineBridgeClasses(classes);
@@ -171,8 +171,8 @@ class FlutterEvalPlugin implements EvalPlugin {
     compiler.defineBridgeEnum($TextBaseline.$declaration);
     compiler.defineBridgeEnum($Axis.$declaration);
     compiler.defineBridgeEnum($BorderStyle.$declaration);
-		compiler.defineBridgeEnum($BoxFit.$declaration);
-		compiler.defineBridgeEnum($FilterQuality.$declaration);
+    compiler.defineBridgeEnum($BoxFit.$declaration);
+    compiler.defineBridgeEnum($FilterQuality.$declaration);
 
     compiler.addSource(DartSource('dart:ui', dartUiSource));
 
@@ -389,6 +389,8 @@ class FlutterEvalPlugin implements EvalPlugin {
       ..registerBridgeFunc(
           'package:flutter/src/material/drawer.dart', 'Drawer.', $Drawer.$new)
       ..registerBridgeFunc(
+          'package:flutter/src/widgets/image.dart', 'Image.', $Image.$new)
+      ..registerBridgeFunc(
           'package:flutter/src/material/theme.dart', 'Theme.of', $Theme.$of)
       ..registerBridgeFunc(
           'package:flutter/src/material/theme.dart', 'Theme.', $Theme.$new)
@@ -396,22 +398,18 @@ class FlutterEvalPlugin implements EvalPlugin {
           'package:flutter/src/material/floating_action_button.dart',
           'FloatingActionButton.',
           $FloatingActionButton.$new)
-      ..registerBridgeFunc(
-          'package:flutter/src/widgets/image.dart', 'Image', $Image.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/navigator.dart',
           'Navigator.', $Navigator.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/navigator.dart',
           'Navigator.of', $Navigator.$of)
-      ..registerBridgeFunc('package:flutter/src/widgets/image_provider.dart',
-          'NetworkImage', $NetworkImage.$new)
-      ..registerBridgeFunc('package:flutter/src/widgets/image_provider.dart',
-          'ResizeImage', $ResizeImage.$new)
-      ..registerBridgeFunc('package:flutter/src/widgets/image_provider.dart',
-          'MemoryImage', $MemoryImage.$new)
+      ..registerBridgeFunc('package:flutter/src/painting/image_provider.dart',
+          'NetworkImage.', $NetworkImage.$new)
+      ..registerBridgeFunc('package:flutter/src/painting/image_provider.dart',
+          'MemoryImage.', $MemoryImage.$new)
+      ..registerBridgeFunc('package:flutter/src/painting/image_provider.dart',
+          'ResizeImage.', $ResizeImage.$new)
       ..registerBridgeEnumValues('dart:ui', 'FontWeight', $FontWeight.$values)
       ..registerBridgeEnumValues('dart:ui', 'FontStyle', $FontStyle.$values)
-      ..registerBridgeEnumValues(
-          'dart:ui', 'FilterQuality', $FilterQuality.$values)
       ..registerBridgeEnumValues(
           'dart:ui', 'TextDirection', $TextDirection.$values)
       ..registerBridgeEnumValues(
@@ -424,13 +422,15 @@ class FlutterEvalPlugin implements EvalPlugin {
           'package:flutter/src/painting/basic_types.dart',
           'Axis',
           $Axis.$values)
+      ..registerBridgeEnumValues('package:flutter/src/painting/box_fit.dart',
+          'BoxFit', $BoxFit.$values)
+      ..registerBridgeEnumValues(
+          'dart:ui', 'FilterQuality', $FilterQuality.$values)
       ..registerBridgeEnumValues('package:flutter/src/rendering/flex.dart',
           'MainAxisSize', $MainAxisSize.$values)
       ..registerBridgeEnumValues('package:flutter/src/rendering/flex.dart',
           'MainAxisAlignment', $MainAxisAlignment.$values)
       ..registerBridgeEnumValues('package:flutter/src/rendering/flex.dart',
-          'CrossAxisAlignment', $CrossAxisAlignment.$values)
-      ..registerBridgeEnumValues('package:flutter/src/painting/box_fit.dart',
-          'BoxFit', $BoxFit.$values);
+          'CrossAxisAlignment', $CrossAxisAlignment.$values);
   }
 }

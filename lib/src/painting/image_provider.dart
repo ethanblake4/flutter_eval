@@ -9,19 +9,21 @@ class $ImageProvider implements ImageProvider, $Instance {
       'package:flutter/src/painting/image_provider.dart', 'ImageProvider'));
 
   static const $declaration = BridgeClassDef(
-      BridgeClassType(
-        $type,
-        isAbstract: true,
-        generics: {
-          'T': BridgeGenericParam(
-              $extends: BridgeTypeRef.type(RuntimeTypes.objectType)),
-        },
-      ),
-      constructors: {},
-      fields: {},
-      getters: {},
-      methods: {},
-      setters: {});
+    BridgeClassType(
+      $type,
+      isAbstract: true,
+      generics: {
+        'T': BridgeGenericParam(
+            $extends: BridgeTypeRef.type(RuntimeTypes.objectType)),
+      },
+    ),
+    constructors: {},
+    fields: {},
+    getters: {},
+    methods: {},
+    setters: {},
+    wrap: true,
+  );
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
@@ -163,33 +165,42 @@ mixin $ImageProviderMixin implements ImageProvider, $Instance {
 }
 
 class $NetworkImage implements $Instance {
-  static const $type = BridgeTypeRef.spec(
-      BridgeTypeSpec('package:flutter/src/widgets/image.dart', 'NetworkImage'));
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec(
+      'package:flutter/src/painting/image_provider.dart', 'NetworkImage'));
 
-  static const $declaration =
-      BridgeClassDef(BridgeClassType($type), constructors: {
-    '': BridgeConstructorDef(
-      BridgeFunctionDef(
-        returns: BridgeTypeAnnotation($type),
-        params: [
-          BridgeParameter(
-              'src',
-              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType)),
-              false),
-        ],
-        namedParams: [
-          BridgeParameter(
-              'scale',
-              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)),
-              true),
-          BridgeParameter(
-              'headers',
-              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.mapType)),
-              true),
-        ],
+  static const $declaration = BridgeClassDef(
+    BridgeClassType($type),
+    constructors: {
+      '': BridgeConstructorDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation($type),
+          params: [
+            BridgeParameter(
+                'src',
+                BridgeTypeAnnotation(
+                    BridgeTypeRef.type(RuntimeTypes.stringType)),
+                false),
+          ],
+          namedParams: [
+            BridgeParameter(
+                'scale',
+                BridgeTypeAnnotation(
+                    BridgeTypeRef.type(RuntimeTypes.doubleType)),
+                true),
+            BridgeParameter(
+                'headers',
+                BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.mapType)),
+                true),
+          ],
+        ),
       ),
-    ),
-  }, fields: {}, getters: {}, methods: {}, setters: {});
+    },
+    fields: {},
+    getters: {},
+    methods: {},
+    setters: {},
+    wrap: true,
+  );
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
@@ -227,88 +238,9 @@ class $NetworkImage implements $Instance {
   final NetworkImage $value;
 }
 
-class $ResizeImage implements $Instance {
-  static const $type = BridgeTypeRef.spec(
-      BridgeTypeSpec('package:flutter/src/widgets/image.dart', 'ResizeImage'));
-
-  static const $declaration = BridgeClassDef(
-    BridgeClassType($type),
-    constructors: {
-      '': BridgeConstructorDef(
-        BridgeFunctionDef(
-          returns: BridgeTypeAnnotation($type),
-          params: [
-            BridgeParameter(
-              'imageProvider',
-              BridgeTypeAnnotation($ImageProvider.$type),
-              false,
-            ),
-          ],
-          namedParams: [
-            BridgeParameter(
-              'width',
-              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.intType)),
-              true,
-            ),
-            BridgeParameter(
-              'height',
-              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.intType)),
-              true,
-            ),
-            BridgeParameter(
-              'allowUpscaling',
-              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)),
-              true,
-            ),
-          ],
-        ),
-      ),
-    },
-    fields: {},
-    getters: {},
-    methods: {},
-    setters: {},
-  );
-
-  @override
-  $Value? $getProperty(Runtime runtime, String identifier) {
-    // TODO: implement $getProperty
-    throw UnimplementedError();
-  }
-
-  static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
-    return $ResizeImage.wrap(
-      ResizeImage(
-        args[0]?.$value ?? '',
-        width: args[1]?.$value,
-        height: args[2]?.$value,
-        allowUpscaling: args[3]?.$value ?? false,
-      ),
-    );
-  }
-
-  @override
-  // TODO: implement $reified
-  get $reified => throw UnimplementedError();
-
-  @override
-  // TODO: implement $runtimeType
-  int get $runtimeType => throw UnimplementedError();
-
-  @override
-  void $setProperty(Runtime runtime, String identifier, $Value value) {
-    // TODO: implement $setProperty
-  }
-
-  $ResizeImage.wrap(this.$value);
-
-  @override
-  final ResizeImage $value;
-}
-
 class $MemoryImage implements $Instance {
-  static const $type = BridgeTypeRef.spec(
-      BridgeTypeSpec('package:flutter/src/widgets/image.dart', 'ResizeImage'));
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec(
+      'package:flutter/src/painting/image_provider.dart', 'MemoryImage'));
 
   static const $declaration = BridgeClassDef(
     BridgeClassType($type),
@@ -338,6 +270,7 @@ class $MemoryImage implements $Instance {
     getters: {},
     methods: {},
     setters: {},
+    wrap: true,
   );
 
   @override
@@ -372,4 +305,72 @@ class $MemoryImage implements $Instance {
 
   @override
   final MemoryImage $value;
+}
+
+class $ResizeImage implements $Instance {
+  static const $type = BridgeTypeRef.spec(BridgeTypeSpec(
+      'package:flutter/src/painting/image_provider.dart', 'ResizeImage'));
+
+  static const $declaration = BridgeClassDef(
+    BridgeClassType($type),
+    constructors: {
+      '': BridgeConstructorDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation($type),
+          params: [
+            BridgeParameter(
+              'imageProvider',
+              BridgeTypeAnnotation($ImageProvider.$type),
+              false,
+            ),
+          ],
+          namedParams: [
+            BridgeParameter(
+              'allowUpscaling',
+              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)),
+              true,
+            ),
+          ],
+        ),
+      ),
+    },
+    fields: {},
+    getters: {},
+    methods: {},
+    setters: {},
+    wrap: true,
+  );
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    // TODO: implement $getProperty
+    throw UnimplementedError();
+  }
+
+  static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
+    return $ResizeImage.wrap(
+      ResizeImage(
+        args[0]!.$value,
+        allowUpscaling: args[1]?.$value ?? false,
+      ),
+    );
+  }
+
+  @override
+  // TODO: implement $reified
+  get $reified => throw UnimplementedError();
+
+  @override
+  // TODO: implement $runtimeType
+  int get $runtimeType => throw UnimplementedError();
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    // TODO: implement $setProperty
+  }
+
+  $ResizeImage.wrap(this.$value);
+
+  @override
+  final ResizeImage $value;
 }

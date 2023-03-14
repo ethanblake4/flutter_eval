@@ -10,7 +10,8 @@ class $Drawer implements $Instance {
       BridgeTypeSpec('package:flutter/src/material/drawer.dart', 'Drawer'));
 
   static const $declaration = BridgeClassDef(
-      BridgeClassType($type, isAbstract: false, $extends: $StatelessWidget$bridge.$type),
+      BridgeClassType($type,
+          isAbstract: false, $extends: $StatelessWidget$bridge.$type),
       constructors: {
         '': BridgeConstructorDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation($type),
