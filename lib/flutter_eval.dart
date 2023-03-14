@@ -405,9 +405,9 @@ class FlutterEvalPlugin implements EvalPlugin {
       ..registerBridgeFunc('package:flutter/src/widgets/image_provider.dart',
           'NetworkImage', $NetworkImage.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/image_provider.dart',
-          'NetworkImage', $ResizeImage.$new)
+          'ResizeImage', $ResizeImage.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/image_provider.dart',
-          'NetworkImage', $MemoryImage.$new)
+          'MemoryImage', $MemoryImage.$new)
       ..registerBridgeEnumValues('dart:ui', 'FontWeight', $FontWeight.$values)
       ..registerBridgeEnumValues('dart:ui', 'FontStyle', $FontStyle.$values)
       ..registerBridgeEnumValues(
