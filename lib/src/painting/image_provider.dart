@@ -169,7 +169,7 @@ class $NetworkImage implements $Instance {
       'package:flutter/src/painting/image_provider.dart', 'NetworkImage'));
 
   static const $declaration = BridgeClassDef(
-    BridgeClassType($type),
+    BridgeClassType($type, isAbstract: false, $extends: $ImageProvider.$type),
     constructors: {
       '': BridgeConstructorDef(
         BridgeFunctionDef(
@@ -243,7 +243,7 @@ class $MemoryImage implements $Instance {
       'package:flutter/src/painting/image_provider.dart', 'MemoryImage'));
 
   static const $declaration = BridgeClassDef(
-    BridgeClassType($type),
+    BridgeClassType($type, isAbstract: false, $extends: $ImageProvider.$type),
     constructors: {
       '': BridgeConstructorDef(
         BridgeFunctionDef(

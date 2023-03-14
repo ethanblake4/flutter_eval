@@ -21,7 +21,8 @@ class $BoxFit implements $Instance {
         'none',
         'scaleDown'
       ],
-      fields: {});
+      fields: {},
+			);
 
   /// Runtime enum values
   static final $values = {

@@ -5,14 +5,16 @@ import 'package:flutter_eval/src/foundation/key.dart';
 import 'package:flutter_eval/src/painting/alignment.dart';
 import 'package:flutter_eval/src/painting/box_fit.dart';
 import 'package:flutter_eval/src/painting/image_provider.dart';
+import 'package:flutter_eval/src/sky_engine/ui/image.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
+import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $Image implements $Instance {
   static const $type = BridgeTypeRef.spec(
       BridgeTypeSpec('package:flutter/src/widgets/image.dart', 'Image'));
 
   static const $declaration = BridgeClassDef(
-    BridgeClassType($type),
+    BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
     constructors: {
       '': BridgeConstructorDef(
         BridgeFunctionDef(
@@ -35,6 +37,11 @@ class $Image implements $Instance {
             BridgeParameter('fit', BridgeTypeAnnotation($BoxFit.$type), true),
             BridgeParameter(
                 'alignment', BridgeTypeAnnotation($Alignment.$type), true),
+            BridgeParameter(
+              'filterQuality',
+              BridgeTypeAnnotation($FilterQuality.$type),
+              true,
+            ),
           ],
         ),
       ),
@@ -62,6 +69,7 @@ class $Image implements $Instance {
         color: args[4]?.$value,
         fit: args[5]?.$value,
         alignment: args[6]?.$value ?? Alignment.center,
+        filterQuality: args[7]?.$value ?? FilterQuality.low,
       ),
     );
   }
