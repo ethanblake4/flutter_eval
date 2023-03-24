@@ -57,7 +57,7 @@ class $TextStyle implements $Instance {
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
     return $TextStyle.wrap(TextStyle(
-      inherit: args[0]!.$value,
+      inherit: args[0]?.$value ?? true,
       color: args[1]?.$value,
       backgroundColor: args[2]?.$value,
       fontSize: args[3]?.$value,

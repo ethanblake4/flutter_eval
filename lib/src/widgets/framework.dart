@@ -13,12 +13,16 @@ export 'package:flutter/foundation.dart' show FlutterError, ErrorSummary, ErrorD
                     Key, LocalKey, ValueKey;
 ''';
 
+/// dart_eval wrapper for [Widget]
 class $Widget implements Widget, $Instance {
+  /// Compile-time type reference to [$Widget]
   static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/widgets.dart', 'Widget'));
 
+  /// Compile-time wrapper declaration for [$Widget]
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
       constructors: {}, methods: {}, getters: {}, setters: {}, fields: {}, wrap: true);
 
+  /// Wrap a [Widget] in a [$Widget]
   $Widget.wrap(this.$value);
 
   @override
@@ -37,56 +41,6 @@ class $Widget implements Widget, $Instance {
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
-    throw UnimplementedError();
-  }
-
-  @override
-  Element createElement() => $value.createElement();
-
-  @override
-  List<DiagnosticsNode> debugDescribeChildren() => $value.debugDescribeChildren();
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) => $value.debugFillProperties(properties);
-
-  @override
-  Key? get key => $value.key;
-
-  @override
-  DiagnosticsNode toDiagnosticsNode({String? name, DiagnosticsTreeStyle? style}) =>
-      $value.toDiagnosticsNode(name: name, style: style);
-
-  @override
-  String toStringDeep(
-          {String prefixLineOne = '', String? prefixOtherLines, DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
-      $value.toStringDeep(prefixLineOne: prefixLineOne, prefixOtherLines: prefixOtherLines, minLevel: minLevel);
-
-  @override
-  String toStringShallow({String joiner = ', ', DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
-      $value.toStringShallow(joiner: joiner, minLevel: minLevel);
-
-  @override
-  String toStringShort() => $value.toStringShort();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) => $value.toString(minLevel: minLevel);
-}
-
-mixin $WidgetMixin implements Widget, $Value {
-  @override
-  Widget get $value;
-
-  $Value? $widgetMixinGetProperty(Runtime runtime, String identifier) {
-    throw UnimplementedError();
-  }
-
-  @override
-  get $reified => $value;
-
-  @override
-  int get $runtimeType => throw UnimplementedError();
-
-  void $widgetMixinSetProperty(Runtime runtime, String identifier, $Value value) {
     throw UnimplementedError();
   }
 
@@ -429,11 +383,14 @@ class $State$bridge<T extends StatefulWidget> extends State<T> with $Bridge<Stat
   T get widget => $_get('widget');
 }
 
+/// dart_eval wrapper for BuildContext
 class $BuildContext implements BuildContext, $Instance {
   const $BuildContext.wrap(this.$value);
 
+  /// Compile-time type reference for [$BuildContext]
   static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/widgets.dart', 'BuildContext'));
 
+  /// Compile-time bridge declaration for [$BuildContext]
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
       constructors: {}, methods: {}, getters: {}, setters: {}, fields: {}, wrap: true);
 

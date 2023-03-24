@@ -70,9 +70,12 @@ class $Padding implements $Instance {
   }
 }
 
+/// dart_eval bridge wrapper for [Column]
 class $Column implements $Instance {
+  /// Bridge type reference for [$Column]
   static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Column'));
 
+  /// Bridge class definition for [$Column]
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
         '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
@@ -91,6 +94,7 @@ class $Column implements $Instance {
       fields: {},
       wrap: true);
 
+  /// Wraps a [Column] instance in a [$Column] bridge wrapper
   const $Column.wrap(this.$value);
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
@@ -125,9 +129,12 @@ class $Column implements $Instance {
   }
 }
 
+/// dart_eval bridge wrapper for [Row]
 class $Row implements $Instance {
+  /// Bridge type reference for [$Row]
   static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Row'));
 
+  /// Bridge class definition for [$Row]
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
         '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
@@ -146,6 +153,7 @@ class $Row implements $Instance {
       fields: {},
       wrap: true);
 
+  /// Wraps a [Row] instance in a [$Row] bridge wrapper
   const $Row.wrap(this.$value);
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {

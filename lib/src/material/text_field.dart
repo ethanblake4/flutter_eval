@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_eval/src/painting/text_style.dart';
 import 'package:flutter_eval/src/widgets/editable_text.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
-
 class $TextField implements $Instance {
   static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/text_field.dart', 'TextField'));
 

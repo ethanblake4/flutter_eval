@@ -24,9 +24,6 @@ class $Text implements Text, $Instance {
       fields: {},
       wrap: true);
 
-  /// Hot constructor for [$Text]
-  $Text(String id, Text Function() value) : $value = runtimeOverride(id) as Text? ?? value();
-
   $Text.wrap(this.$value);
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {

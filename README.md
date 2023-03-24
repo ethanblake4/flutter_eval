@@ -3,9 +3,10 @@
 [![Web example](https://img.shields.io/badge/web-example-blue.svg)](https://ethanblake.xyz/evalpad)
 
 `flutter_eval` is a Flutter bridge library for [dart_eval](https://pub.dev/packages/dart_eval), 
-enabling painless creation of fully dynamic Flutter apps and widgets that can be loaded
-from a file or the Internet at runtime. It provides both a set of compile-time descriptors and directives,
-as well as runtime bridge classes and wrappers, with a seamless API that makes usage easy.
+and a solution enabling both fully dynamic runtime code-push and runtime evaluation of Flutter code.
+It can be used to enable hot-swapping parts of your app with an over-the-air update, or for dynamically
+evaluating code based on user input such as in a calculator. flutter_eval supports all platforms
+including iOS and is built on dart_eval's custom bytecode interpreter, making it very fast.
 
 | dart_eval    | [![pub package](https://img.shields.io/pub/v/dart_eval.svg?label=dart_eval&color=teal)](https://pub.dev/packages/dart_eval)          |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
@@ -15,12 +16,117 @@ as well as runtime bridge classes and wrappers, with a seamless API that makes u
 For a live example, check out [EvalPad](https://ethanblake.xyz/evalpad).
 
 Although flutter_eval is already the best solution for native Dart Flutter code push,
-it's still very early for the project and you should not expect existing Flutter/Dart code
-to work without modification. Many classes and methods have not yet been implemented.
+the project is still in development and you should not expect all existing Flutter/Dart code
+to work without modification, as various standard library classes and Dart features
+have yet to be implemented.
 
-## Getting started
+## Quickstart for code push
 
 Run `flutter pub add flutter_eval` to install the package.
+
+At the root of your app, add a HotSwapLoader widget with a URI 
+pointing to where you'll host the update file:
+
+```dart
+class MyApp extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return HotSwapLoader(
+        uri: 'https://mysite.com/app_update/version_xxx.evc',
+        child: MaterialApp(
+          ...
+```
+
+Then, add HotSwap widgets throughout your app at every location
+you'd like to be able to dynamically update:
+
+```dart
+class MyHomePage extends StatelessWidget {
+  
+  @override
+  Widget build(BuildContext context) {
+    return HotSwap(
+      id: '#myHomePage',
+      args: [$BuildContext.wrap(context)],
+      childBuilder: (context) => Scaffold(
+        ...
+```
+
+Next, create a new Flutter package using `flutter create --template=package`. 
+This can be nested inside your app's folder or located separately. Name it 
+something appropriate, such as my_app_hot_update. We'll refer to this
+as the "hot update package" from now on.
+
+Head over to the flutter_eval [Releases page](https://github.com/ethanblake4/flutter_eval/releases)
+and find the release corresponding to the version of flutter_eval you are using. Under **Assets**,
+download `flutter_eval.json`. (Or [click here](https://github.com/ethanblake4/flutter_eval/releases/latest/download/flutter_eval.json) to download the latest version.)
+
+In the root of the hot update package, create a folder called `.dart_eval` and
+a subfolder `bindings`. Place the downloaded `flutter_eval.json` file inside of 
+this folder.
+
+Your project structure should look like this:
+```
+├── .dart_eval
+│   └── bindings
+│       └── flutter_eval.json.
+├── pubspec.yaml
+└── lib
+    └── hot_update.dart
+```
+
+At the root of the hot update package, run `flutter pub add eval_annotation`.
+
+Delete all the code from main.dart, including the main() function. 
+For every HotSwap widget you'd like to update (you can update all, 
+or just a few, or just one), create a top-level function with the 
+@RuntimeOverride annotation referencing its ID:
+
+```dart
+@RuntimeOverride('#myHomePage')
+Widget myHomePageUpdate(BuildContext context) {
+  return Scaffold(
+    ...
+  )
+}
+```
+Finally, we'll need to install the dart_eval CLI:
+
+```bash
+dart pub global activate dart_eval
+```
+
+After installing, you can run:
+```bash
+dart_eval compile -o version_xxx.evc
+```
+
+If the steps were performed correctly, you should see the following in the console output:
+
+`Found binding file: .dart_eval\bindings\flutter_eval.json`
+
+as well as
+
+`Compiled $x characters Dart to $y bytes EVC in $z ms: version_xxx.evc`
+
+The resulting `version_xxx.evc` file will be in the root of the project and
+you can now upload it to the previously referenced server path. 
+
+If you run the app, you should see the contents of the HotSwap widgets
+replaced with the contents of their corresponding @RuntimeOverride functions.
+
+HotSwap widgets can optionally specify a strategy to use when loading/applying updates, 
+one of _immediate_, _cache_, or _cacheApplyOnRestart_. By default, HotSwapLoader
+uses immediate in debug/profile mode and cacheApplyOnRestart in release mode. You
+can also specify a placeholder widget to display when loading from the cache via
+the _loading_ parameter.
+
+For a more sophisticated example of code push, see 
+[examples/code_push_app](https://github.com/ethanblake4/flutter_eval/tree/master/examples/code_push_app)
+and its subfolder [hot_update](https://github.com/ethanblake4/flutter_eval/tree/master/examples/code_push_app/hot_update).
+
+## Quickstart for dynamic execution and manual updates
 
 To create a simple dynamic stateless widget, add and modify the following inside a 
 build() method or as a child parameter:
@@ -83,69 +189,8 @@ flutter_eval includes two other helper Widgets for different use cases:
 - `RuntimeWidget` will *always* load EVC bytecode and does not provide a
    parameter to specify Dart code. This is recommended if you're compiling
    with the CLI - see below.
-
-## Compiling with the dart_eval CLI
-
-flutter_eval allows you to compile an existing Flutter project using the dart_eval CLI;
-please note, however, that Pub packages are not currently supported.
-
-To get started, first install the dart_eval CLI:
-
-```bash
-dart pub global activate dart_eval
-```
-
-Next, head over to the flutter_eval [Releases page](https://github.com/ethanblake4/flutter_eval/releases)
-and find the release corresponding to the version of flutter_eval you are using. Under **Assets**,
-download `flutter_eval.json`.
-
-In the root of the project you wish to compile, create a folder called `.dart_eval` and
-a subfolder `bindings`. Place the downloaded `flutter_eval.json` file inside of this folder.
-
-Your project structure should look like this:
-```
-├── .dart_eval
-│   └── bindings
-│       └── flutter_eval.json.
-├── pubspec.yaml
-└── lib
-    └── main.dart
-```
-
-You'll also have to change your entrypoint a bit. flutter_eval does not support 
-`runApp()` as it runs inside an existing Flutter app, which already calls runApp().
-Instead, you can change your main() function to look like this:
-
-```dart
-Widget main() {
-  // do any setup, then
-  return MyApp();
-}
-```
-
-Alternatively, you can simply comment out runApp() and reference Widget
-constructors directly from RuntimeWidget. This is recommended if your project
-has multiple widgets which are displayed at different times or in different
-parts of the app.
-
-Finally, in the root of your project, run:
-```bash
-dart_eval compile -o program.evc
-```
-
-If the steps were performed correctly, you should see the following in the console output:
-
-`Found binding file: .dart_eval\bindings\flutter_eval.json`
-
-as well as
-
-`Compiled $x characters Dart to $y bytes EVC in $z ms: program.evc`
-
-The resulting `program.evc` file will be in the root of your project and you can use it
-in flutter_eval, as an asset or from a URL. The package name will be automatically inferred
-from your pubspec.yaml file.
-
-## Calling functions and passing arguments
+   
+### Calling functions and passing arguments
 
 To instantiate a class with its default constructor, append a '.' to the class name.
 
@@ -194,7 +239,8 @@ Currently supported widgets and classes include:
 - `Text`, `TextStyle`, `TextEditingController`, `TextField`;
 - `TextDirection`, `VerticalDirection`, `TextBaseline`
 - `Scaffold`, `ScaffoldMessenger`, `AppBar`, `SnackBar`, `FloatingActionButton`;
-- `TextButton`, `ElevatedButton`, `IconButton`, `Spacer`;
+- `InkWell`, `TextButton`, `ElevatedButton`, `IconButton`;
+- `ListView`, `Spacer`;
 - `Navigator`, `NavigatorState`, `Builder`;
 
 Note that many of these have only partial support.

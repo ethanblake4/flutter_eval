@@ -17,6 +17,7 @@ import 'package:flutter_eval/src/material/elevated_button.dart';
 import 'package:flutter_eval/src/material/floating_action_button.dart';
 import 'package:flutter_eval/src/material/icon_button.dart';
 import 'package:flutter_eval/src/material/icons.dart';
+import 'package:flutter_eval/src/material/ink_well.dart';
 import 'package:flutter_eval/src/material/scaffold.dart';
 import 'package:flutter_eval/src/material/snack_bar.dart';
 import 'package:flutter_eval/src/material/text_button.dart';
@@ -51,6 +52,7 @@ import 'package:flutter_eval/src/widgets/framework.dart';
 import 'package:flutter_eval/src/widgets/icon.dart';
 import 'package:flutter_eval/src/widgets/icon_data.dart';
 import 'package:flutter_eval/src/widgets/navigator.dart';
+import 'package:flutter_eval/src/widgets/scroll_view.dart';
 import 'package:flutter_eval/src/widgets/spacer.dart';
 import 'package:flutter_eval/src/widgets/text.dart';
 
@@ -140,6 +142,8 @@ class FlutterEvalPlugin implements EvalPlugin {
       $BorderSide.$declaration,
       $BoxBorder.$declaration,
       $Border.$declaration,
+      $InkWell.$declaration,
+      $ListView.$declaration
     ];
 
     for (final cls in classes) {
@@ -176,39 +180,6 @@ class FlutterEvalPlugin implements EvalPlugin {
     registry.addSource(DartSource('package:flutter/widgets.dart', widgetsSource));
     registry.addSource(DartSource('package:flutter/src/widgets/framework.dart', widgetsFrameworkSource));
     registry.addSource(DartSource('package:flutter/src/widgets/basic.dart', widgetsBasicSource));
-
-/*  final outJson = json.encode({
-    'classes': classes.map((c) => c.toJson()).toList(),
-    'enums': [
-      $MainAxisAlignment.$declaration.toJson(),
-      $CrossAxisAlignment.$declaration.toJson(),
-      $MainAxisSize.$declaration.toJson(),
-      $FontWeight.$declaration.toJson(),
-      $FontStyle.$declaration.toJson(),
-      $TextDirection.$declaration.toJson(),
-      $VerticalDirection.$declaration.toJson(),
-      $TextBaseline.$declaration.toJson(),
-      $Axis.$declaration.toJson(),
-      $BorderStyle.$declaration.toJson(),
-    ],
-    'sources': [
-      {'uri': 'dart:ui', 'source': dartUiSource},
-      {'uri': 'package:flutter/animation.dart', 'source': animationSource},
-      {'uri': 'package:flutter/src/animation/curves.dart', 'source': animationCurvesSource},
-      {'uri': 'package:flutter/foundation.dart', 'source': foundationSource},
-      {'uri': 'package:flutter/material.dart', 'source': materialSource},
-      {'uri': 'package:flutter/src/material/colors.dart', 'source': materialColorsSource},
-      {'uri': 'package:flutter/src/material/icons.dart', 'source': materialIconsSource},
-      {'uri': 'package:flutter/painting.dart', 'source': paintingSource},
-      {'uri': 'package:flutter/src/painting/basic_types.dart', 'source': paintingBasicTypesSource},
-      {'uri': 'package:flutter/rendering.dart', 'source': renderingSource},
-      {'uri': 'package:flutter/widgets.dart', 'source': widgetsSource},
-      {'uri': 'package:flutter/src/widgets/framework.dart', 'source': widgetsFrameworkSource},
-      {'uri': 'package:flutter/src/widgets/basic.dart', 'source': widgetsBasicSource}
-    ]
-  });
-
-  File('flutter_eval.json').writeAsStringSync(outJson);*/
   }
 
   @override

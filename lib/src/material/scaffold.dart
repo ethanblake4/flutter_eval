@@ -7,9 +7,12 @@ import 'package:flutter_eval/src/material/snack_bar.dart';
 
 import '../widgets/framework.dart';
 
+/// dart_eval bridge wrapper for [Scaffold]
 class $Scaffold implements $Instance {
+  /// Bridge type reference for [$Scaffold]
   static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/scaffold.dart', 'Scaffold'));
 
+  /// Bridge class definition for [$Scaffold]
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
         '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
@@ -32,6 +35,7 @@ class $Scaffold implements $Instance {
     ));
   }
 
+  /// Wrap a [Scaffold] in a [$Scaffold]
   $Scaffold.wrap(this.$value);
 
   @override

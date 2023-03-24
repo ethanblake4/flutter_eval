@@ -6,9 +6,12 @@ import 'package:flutter_eval/src/widgets/text.dart';
 
 import '../widgets/framework.dart';
 
+/// dart_eval bridge wrapper for [AppBar]
 class $AppBar implements $Instance {
+  /// Bridge type reference for [$AppBar]
   static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/app_bar.dart', 'AppBar'));
 
+  /// Bridge class definition for [$AppBar]
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
         '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
@@ -31,6 +34,7 @@ class $AppBar implements $Instance {
       fields: {},
       wrap: true);
 
+  /// Wrap a [AppBar] in a [$AppBar]
   $AppBar.wrap(this.$value);
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {

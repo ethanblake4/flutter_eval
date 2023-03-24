@@ -9,7 +9,7 @@ class $BoxDecoration implements $Instance {
   static const $type =
       BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/box_decoration.dart', 'BoxDecoration'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type),
+  static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Decoration.$type),
       constructors: {
         '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
           BridgeParameter('color', BridgeTypeAnnotation($Color.$type, nullable: true), true),

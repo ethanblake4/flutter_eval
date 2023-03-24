@@ -8,9 +8,12 @@ import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/widgets/app.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
+/// dart_eval bridge wrapper for [MaterialApp]
 class $MaterialApp implements $Instance {
+  /// Bridge type reference for [$MaterialApp]
   static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/app.dart', 'MaterialApp'));
 
+  /// Bridge class definition for [$MaterialApp]
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $WidgetsApp.$type),
       constructors: {
         '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
@@ -53,7 +56,7 @@ class $MaterialApp implements $Instance {
       key: args[0]?.$value,
       navigatorKey: args[1]?.$value,
       home: args[2]?.$value,
-      routes: args[3] == null ? const {} : $reifyRoutes(runtime, args[3] as $Map),
+      routes: args[3] == null ? const {} : _$reifyRoutes(runtime, args[3] as $Map),
       initialRoute: args[4]?.$value,
       onUnknownRoute: args[5] == null
           ? null
@@ -77,11 +80,12 @@ class $MaterialApp implements $Instance {
     ));
   }
 
-  static Map<String, Widget Function(BuildContext)> $reifyRoutes(Runtime runtime, $Map routes) {
+  static Map<String, Widget Function(BuildContext)> _$reifyRoutes(Runtime runtime, $Map routes) {
     return routes.$value.map((key, value) => MapEntry(
         key.$value, (context) => (value as EvalCallable).call(runtime, null, [$BuildContext.wrap(context)])!.$value));
   }
 
+  /// Wrap a [MaterialApp] in a [$MaterialApp]
   $MaterialApp.wrap(this.$value);
 
   @override
