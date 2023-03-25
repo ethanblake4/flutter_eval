@@ -5,6 +5,7 @@ import 'dart:typed_data';
 
 import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
+import 'package:dart_eval/dart_eval_security.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -73,6 +74,7 @@ class CompilerWidget extends StatefulWidget {
       this.args = const [],
       this.outputFile,
       this.onError,
+      this.permissions = const [],
       Key? key})
       : super(key: key);
 
@@ -82,6 +84,9 @@ class CompilerWidget extends StatefulWidget {
   final List<dynamic> args;
   final String? outputFile;
   final EvalErrorBuilder? onError;
+
+  /// Permissions to be granted to the dart_eval runtime
+  final List<Permission> permissions;
 
   @override
   State<CompilerWidget> createState() => _CompilerWidgetState();
@@ -119,6 +124,9 @@ class _CompilerWidgetState extends State<CompilerWidget> {
 
     void setupRuntime() {
       runtime = Runtime.ofProgram(program);
+      for (final permission in widget.permissions) {
+        runtime.grant(permission);
+      }
       setupFlutterForRuntime(runtime);
       runtime.setup();
     }
@@ -208,6 +216,7 @@ class RuntimeWidget extends StatefulWidget {
       this.args = const [],
       this.loading,
       this.onError,
+      this.permissions = const [],
       Key? key})
       : super(key: key);
 
@@ -217,6 +226,9 @@ class RuntimeWidget extends StatefulWidget {
   final List<dynamic> args;
   final Widget? loading;
   final EvalErrorBuilder? onError;
+
+  /// Permissions to be granted to the dart_eval runtime
+  final List<Permission> permissions;
 
   @override
   State<RuntimeWidget> createState() => _RuntimeWidgetState();
@@ -282,6 +294,9 @@ class _RuntimeWidgetState extends State<RuntimeWidget> {
     setState(() {
       try {
         runtime = Runtime(ByteData.sublistView(bytecode));
+        for (final permission in widget.permissions) {
+          runtime!.grant(permission);
+        }
         setupFlutterForRuntime(runtime!);
         runtime!.setup();
         setupError = null;
@@ -363,6 +378,8 @@ class _RuntimeWidgetState extends State<RuntimeWidget> {
 ///
 /// [loading] is a widget that is displayed while the EVC bytecode is loading.
 ///
+/// You can grant permissions to the dart_eval runtime using [permissions].
+///
 class EvalWidget extends StatefulWidget {
   const EvalWidget(
       {required this.packages,
@@ -373,6 +390,7 @@ class EvalWidget extends StatefulWidget {
       this.args = const [],
       this.loading,
       this.onError,
+      this.permissions = const [],
       Key? key})
       : super(key: key);
 
@@ -384,6 +402,9 @@ class EvalWidget extends StatefulWidget {
   final Widget? loading;
   final List<dynamic> args;
   final EvalErrorBuilder? onError;
+
+  /// Permissions to be granted to the dart_eval runtime
+  final List<Permission> permissions;
 
   @override
   State<EvalWidget> createState() => _EvalWidgetState();
@@ -485,6 +506,9 @@ class _EvalWidgetState extends State<EvalWidget> {
     setState(() {
       try {
         runtime = Runtime(ByteData.sublistView(bytecode));
+        for (final permission in widget.permissions) {
+          runtime!.grant(permission);
+        }
         setupFlutterForRuntime(runtime!);
         runtime!.setup();
         setupError = null;
@@ -566,6 +590,7 @@ class HotSwapLoader extends StatefulWidget {
       this.cacheFilePath,
       this.loading,
       this.onError,
+      this.permissions = const [],
       final Key? key})
       : assert(globalRuntime == null,
             'A global runtime already exists. You may be trying to use multiple HotSwapLoaders in your app.'),
@@ -590,6 +615,9 @@ class HotSwapLoader extends StatefulWidget {
   /// Widget to display when loading a cached update. By default, it will display
   /// [child] which can lead to flashing artifacts and other issues.
   final Widget? loading;
+
+  /// Permissions to grant to the dart_eval runtime
+  final List<Permission> permissions;
 
   @override
   State<StatefulWidget> createState() => _HotSwapLoaderState();
@@ -724,6 +752,9 @@ class _HotSwapLoaderState extends State<HotSwapLoader> {
     setState(() {
       try {
         runtime = Runtime(ByteData.sublistView(bytecode));
+        for (final permission in widget.permissions) {
+          runtime!.grant(permission);
+        }
         setupFlutterForRuntime(runtime!);
         runtime!.setup();
         runtime!.loadGlobalOverrides();
@@ -763,6 +794,8 @@ class _HotSwapLoaderState extends State<HotSwapLoader> {
   }
 }
 
+/// A widget that can be hot-swapped at runtime via flutter_eval code push.
+/// Requires a [HotSwapLoader] ancestor.
 class HotSwap extends StatelessWidget {
   const HotSwap({required this.id, required this.childBuilder, this.args = const [], final Key? key}) : super(key: key);
 

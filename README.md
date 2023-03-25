@@ -122,7 +122,7 @@ uses immediate in debug/profile mode and cacheApplyOnRestart in release mode. Yo
 can also specify a placeholder widget to display when loading from the cache via
 the _loading_ parameter.
 
-For a more sophisticated example of code push, see 
+For a complete example of code push, see 
 [examples/code_push_app](https://github.com/ethanblake4/flutter_eval/tree/master/examples/code_push_app)
 and its subfolder [hot_update](https://github.com/ethanblake4/flutter_eval/tree/master/examples/code_push_app/hot_update).
 
@@ -240,7 +240,9 @@ Currently supported widgets and classes include:
 - `TextDirection`, `VerticalDirection`, `TextBaseline`
 - `Scaffold`, `ScaffoldMessenger`, `AppBar`, `SnackBar`, `FloatingActionButton`;
 - `InkWell`, `TextButton`, `ElevatedButton`, `IconButton`;
-- `ListView`, `Spacer`;
+- `Card`, `Drawer`;
+- `Image`, `ImageProvider`, `NetworkImage`, `MemoryImage`;
+- `ListView`, `ListTile`, `Spacer`;
 - `Navigator`, `NavigatorState`, `Builder`;
 
 Note that many of these have only partial support.

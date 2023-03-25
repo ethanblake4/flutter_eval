@@ -12,12 +12,15 @@ import 'package:flutter_eval/src/foundation/key.dart';
 import 'package:flutter_eval/src/material.dart';
 import 'package:flutter_eval/src/material/app.dart';
 import 'package:flutter_eval/src/material/app_bar.dart';
+import 'package:flutter_eval/src/material/card.dart';
 import 'package:flutter_eval/src/material/colors.dart';
+import 'package:flutter_eval/src/material/drawer.dart';
 import 'package:flutter_eval/src/material/elevated_button.dart';
 import 'package:flutter_eval/src/material/floating_action_button.dart';
 import 'package:flutter_eval/src/material/icon_button.dart';
 import 'package:flutter_eval/src/material/icons.dart';
 import 'package:flutter_eval/src/material/ink_well.dart';
+import 'package:flutter_eval/src/material/list_tile.dart';
 import 'package:flutter_eval/src/material/scaffold.dart';
 import 'package:flutter_eval/src/material/snack_bar.dart';
 import 'package:flutter_eval/src/material/text_button.dart';
@@ -31,15 +34,18 @@ import 'package:flutter_eval/src/painting/basic_types.dart';
 import 'package:flutter_eval/src/painting/borders.dart';
 import 'package:flutter_eval/src/painting/box_border.dart';
 import 'package:flutter_eval/src/painting/box_decoration.dart';
+import 'package:flutter_eval/src/painting/box_fit.dart';
 import 'package:flutter_eval/src/painting/colors.dart';
 import 'package:flutter_eval/src/painting/decoration.dart';
 import 'package:flutter_eval/src/painting/edge_insets.dart';
+import 'package:flutter_eval/src/painting/image_provider.dart';
 import 'package:flutter_eval/src/painting/text_style.dart';
 import 'package:flutter_eval/src/rendering.dart';
 import 'package:flutter_eval/src/rendering/box.dart';
 import 'package:flutter_eval/src/rendering/flex.dart';
 import 'package:flutter_eval/src/rendering/object.dart';
 import 'package:flutter_eval/src/sky_engine/ui/geometry.dart';
+import 'package:flutter_eval/src/sky_engine/ui/image.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/sky_engine/ui/text.dart';
 import 'package:flutter_eval/src/sky_engine/ui/ui.dart';
@@ -51,6 +57,7 @@ import 'package:flutter_eval/src/widgets/editable_text.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 import 'package:flutter_eval/src/widgets/icon.dart';
 import 'package:flutter_eval/src/widgets/icon_data.dart';
+import 'package:flutter_eval/src/widgets/image.dart';
 import 'package:flutter_eval/src/widgets/navigator.dart';
 import 'package:flutter_eval/src/widgets/scroll_view.dart';
 import 'package:flutter_eval/src/widgets/spacer.dart';
@@ -143,7 +150,15 @@ class FlutterEvalPlugin implements EvalPlugin {
       $BoxBorder.$declaration,
       $Border.$declaration,
       $InkWell.$declaration,
-      $ListView.$declaration
+      $ListView.$declaration,
+      $Card.$declaration,
+      $Drawer.$declaration,
+      $ListTile.$declaration,
+      $Image.$declaration,
+      $ImageProvider.$declaration,
+      $NetworkImage.$declaration,
+      $MemoryImage.$declaration,
+      $ResizeImage.$declaration,
     ];
 
     for (final cls in classes) {
@@ -160,6 +175,8 @@ class FlutterEvalPlugin implements EvalPlugin {
     registry.defineBridgeEnum($TextBaseline.$declaration);
     registry.defineBridgeEnum($Axis.$declaration);
     registry.defineBridgeEnum($BorderStyle.$declaration);
+    registry.defineBridgeEnum($BoxFit.$declaration);
+    registry.defineBridgeEnum($FilterQuality.$declaration);
 
     registry.addSource(DartSource('dart:ui', dartUiSource));
 
@@ -249,6 +266,7 @@ class FlutterEvalPlugin implements EvalPlugin {
       ..registerBridgeFunc('package:flutter/src/widgets/basic.dart', 'Builder.', $Builder.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/icon_data.dart', 'IconData.', $IconData.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/icon.dart', 'Icon.', $Icon.$new)
+      ..registerBridgeFunc('package:flutter/src/widgets/scroll_view.dart', 'ListView.', $ListView.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/spacer.dart', 'Spacer.', $Spacer.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/text.dart', 'Text.', $Text.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/container.dart', 'Container.', $Container.$new)
@@ -269,12 +287,19 @@ class FlutterEvalPlugin implements EvalPlugin {
       ..registerBridgeFunc('package:flutter/src/material/text_field.dart', 'TextField.', $TextField.$new)
       ..registerBridgeFunc('package:flutter/src/material/text_theme.dart', 'TextTheme.', $TextTheme.$new)
       ..registerBridgeFunc('package:flutter/src/material/theme_data.dart', 'ThemeData.', $ThemeData.$new)
+      ..registerBridgeFunc('package:flutter/src/material/list_tile.dart', 'ListTile.', $ListTile.$new)
+      ..registerBridgeFunc('package:flutter/src/material/drawer.dart', 'Drawer.', $Drawer.$new)
+      ..registerBridgeFunc('package:flutter/src/material/card.dart', 'Card.', $Card.$new)
+      ..registerBridgeFunc('package:flutter/src/widgets/image.dart', 'Image.', $Image.$new)
       ..registerBridgeFunc('package:flutter/src/material/theme.dart', 'Theme.of', $Theme.$of)
       ..registerBridgeFunc('package:flutter/src/material/theme.dart', 'Theme.', $Theme.$new)
       ..registerBridgeFunc('package:flutter/src/material/floating_action_button.dart', 'FloatingActionButton.',
           $FloatingActionButton.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/navigator.dart', 'Navigator.', $Navigator.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/navigator.dart', 'Navigator.of', $Navigator.$of)
+      ..registerBridgeFunc('package:flutter/src/painting/image_provider.dart', 'NetworkImage.', $NetworkImage.$new)
+      ..registerBridgeFunc('package:flutter/src/painting/image_provider.dart', 'MemoryImage.', $MemoryImage.$new)
+      ..registerBridgeFunc('package:flutter/src/painting/image_provider.dart', 'ResizeImage.', $ResizeImage.$new)
       ..registerBridgeEnumValues('dart:ui', 'FontWeight', $FontWeight.$values)
       ..registerBridgeEnumValues('dart:ui', 'FontStyle', $FontStyle.$values)
       ..registerBridgeEnumValues('dart:ui', 'TextDirection', $TextDirection.$values)
@@ -282,6 +307,8 @@ class FlutterEvalPlugin implements EvalPlugin {
       ..registerBridgeEnumValues(
           'package:flutter/src/painting/basic_types.dart', 'VerticalDirection', $VerticalDirection.$values)
       ..registerBridgeEnumValues('package:flutter/src/painting/basic_types.dart', 'Axis', $Axis.$values)
+      ..registerBridgeEnumValues('package:flutter/src/painting/box_fit.dart', 'BoxFit', $BoxFit.$values)
+      ..registerBridgeEnumValues('dart:ui', 'FilterQuality', $FilterQuality.$values)
       ..registerBridgeEnumValues('package:flutter/src/rendering/flex.dart', 'MainAxisSize', $MainAxisSize.$values)
       ..registerBridgeEnumValues(
           'package:flutter/src/rendering/flex.dart', 'MainAxisAlignment', $MainAxisAlignment.$values)

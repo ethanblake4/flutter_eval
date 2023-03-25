@@ -20,7 +20,7 @@ Widget scaffoldUpdate(BuildContext context, int counter, void Function() _increm
           ),
           Text(
             '$counter',
-            style: Theme.of(context).textTheme.headline4,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
         ],
       ),

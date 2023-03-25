@@ -22,6 +22,8 @@ class $Widget implements Widget, $Instance {
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
       constructors: {}, methods: {}, getters: {}, setters: {}, fields: {}, wrap: true);
 
+  late final _superclass = $Object($value);
+
   /// Wrap a [Widget] in a [$Widget]
   $Widget.wrap(this.$value);
 
@@ -30,7 +32,7 @@ class $Widget implements Widget, $Instance {
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
-    throw UnimplementedError('Unknown property "$identifier"');
+    return _superclass.$getProperty(runtime, identifier);
   }
 
   @override
@@ -41,7 +43,7 @@ class $Widget implements Widget, $Instance {
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
-    throw UnimplementedError();
+    return _superclass.$setProperty(runtime, identifier, value);
   }
 
   @override
@@ -78,6 +80,8 @@ class $Widget implements Widget, $Instance {
 
 /// dart_eval wrapper for [StatelessWidget]
 class $StatelessWidget implements StatelessWidget, $Instance {
+  late final _superclass = $Widget.wrap($value);
+
   /// Create a [$StatelessWidget] that wraps a [StatelessWidget]
   $StatelessWidget.wrap(this.$value);
 
@@ -94,12 +98,12 @@ class $StatelessWidget implements StatelessWidget, $Instance {
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
-    throw UnimplementedError();
+    return _superclass.$getProperty(runtime, identifier);
   }
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
-    throw UnimplementedError();
+    return _superclass.$setProperty(runtime, identifier, value);
   }
 
   @override

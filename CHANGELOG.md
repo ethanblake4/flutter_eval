@@ -5,8 +5,8 @@
 - CompilerWidget, EvalWidget, and RuntimeWidget now support an `onError` callback
   that is called when an error occurs during compilation or evaluation. You can
   use this to display a custom error fallback.
-- Support for ListView
-- Support for InkWell
+- Add ListView and InkWell
+- Add Card, Drawer, and ListTile (thanks to @DevAdalat)
 - Fix BoxDecoration not extending Decoration
 - Fix error when constructing a TextStyle without the `inherit` property
 ## 0.5.4
