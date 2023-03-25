@@ -35,7 +35,7 @@ class $ImageProvider implements ImageProvider, $Instance {
 
   @override
   // TODO: implement $runtimeType
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -137,7 +137,7 @@ class $NetworkImage implements $Instance {
   get $reified => throw UnimplementedError();
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -201,7 +201,7 @@ class $MemoryImage implements $Instance {
   get $reified => throw UnimplementedError();
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -265,7 +265,7 @@ class $ResizeImage implements $Instance {
   get $reified => throw UnimplementedError();
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

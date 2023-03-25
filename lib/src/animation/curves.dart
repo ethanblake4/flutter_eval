@@ -71,7 +71,7 @@ class $ParametricCurve implements $Instance {
   get $reified => throw UnimplementedError();
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -121,7 +121,7 @@ class $Curve implements $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -160,7 +160,7 @@ class $_Linear implements $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -203,7 +203,7 @@ class $SawTooth implements $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -249,7 +249,7 @@ class $Interval implements $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -292,7 +292,7 @@ class $Threshold implements $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -339,7 +339,7 @@ class $Cubic implements $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -378,7 +378,7 @@ class $_DecelerateCurve implements $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -421,7 +421,7 @@ class $ElasticInCurve implements $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -464,7 +464,7 @@ class $ElasticOutCurve implements $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -507,7 +507,7 @@ class $ElasticInOutCurve implements $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

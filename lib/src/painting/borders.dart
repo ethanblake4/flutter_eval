@@ -28,7 +28,7 @@ class $BorderStyle implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -53,7 +53,7 @@ class $ShapeBorder implements $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
@@ -94,7 +94,7 @@ class $BorderSide implements $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
     return $BorderSide.wrap(BorderSide(

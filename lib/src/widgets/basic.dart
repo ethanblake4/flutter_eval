@@ -62,7 +62,7 @@ class $Padding implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -121,7 +121,7 @@ class $Column implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -180,7 +180,7 @@ class $Row implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -229,7 +229,7 @@ class $Center implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -274,7 +274,7 @@ class $Builder implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

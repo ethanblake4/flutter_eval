@@ -21,7 +21,7 @@ class $BoxBorder implements $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
@@ -105,7 +105,7 @@ class $Border implements $Instance {
   Border get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {

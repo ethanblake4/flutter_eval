@@ -39,7 +39,7 @@ class $Widget implements Widget, $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -94,7 +94,7 @@ class $StatelessWidget implements StatelessWidget, $Instance {
   StatelessWidget get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($StatelessWidget$bridge.$type.spec!);
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
@@ -415,7 +415,7 @@ class $BuildContext implements BuildContext, $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   bool get debugDoingBuild => throw UnimplementedError();
@@ -505,7 +505,7 @@ class $StatelessElement implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => throw UnimplementedError();
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -528,7 +528,7 @@ class $StatefulElement implements $Instance {
   StatefulElement get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => throw UnimplementedError();
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
