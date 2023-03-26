@@ -30,11 +30,9 @@ class $ImageProvider implements ImageProvider, $Instance {
   }
 
   @override
-  // TODO: implement $reified
-  get $reified => throw UnimplementedError();
+  ImageProvider get $reified => $value;
 
   @override
-  // TODO: implement $runtimeType
   int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
@@ -45,7 +43,6 @@ class $ImageProvider implements ImageProvider, $Instance {
   $ImageProvider.wrap(this.$value);
 
   @override
-  // TODO: implement $value
   final ImageProvider $value;
 
   @override

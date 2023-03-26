@@ -36,7 +36,7 @@ class $Widget implements Widget, $Instance {
   }
 
   @override
-  get $reified => $value;
+  Widget get $reified => $value;
 
   @override
   int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
@@ -532,6 +532,6 @@ class $StatefulElement implements $Instance {
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
-    // TODO: implement $setProperty
+    throw UnimplementedError();
   }
 }
