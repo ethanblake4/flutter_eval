@@ -9,7 +9,7 @@ import 'package:flutter_eval/src/material/text_theme.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 
 class $ThemeData implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/theme_data.dart', 'ThemeData'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/theme_data.dart', 'ThemeData'));
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false),
       constructors: {
         '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
@@ -143,7 +143,7 @@ class $ThemeData implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

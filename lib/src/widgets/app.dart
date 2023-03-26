@@ -6,7 +6,7 @@ import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $WidgetsApp implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/app.dart', 'WidgetsApp'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/app.dart', 'WidgetsApp'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
@@ -50,7 +50,7 @@ class $WidgetsApp implements $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

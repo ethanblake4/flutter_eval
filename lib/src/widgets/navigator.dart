@@ -5,7 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $Navigator implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/navigator.dart', 'Navigator'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/navigator.dart', 'Navigator'));
 
   static const $declaration = BridgeClassDef(
       BridgeClassType($type, isAbstract: false, $extends: $StatefulWidget$bridge.$type),
@@ -46,7 +46,7 @@ class $Navigator implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -55,8 +55,7 @@ class $Navigator implements $Instance {
 }
 
 class $NavigatorState implements $Instance {
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/navigator.dart', 'NavigatorState'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/navigator.dart', 'NavigatorState'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $State$bridge.$type),
       constructors: {},
@@ -95,13 +94,13 @@ class $NavigatorState implements $Instance {
     switch (identifier) {
       case 'pushNamed':
         return $Function((runtime, target, args) => $Future.wrap(
-            (target!.$value as NavigatorState).pushNamed(args[0]!.$value as String, arguments: args[1]?.$reified),
-            (value) => $Object($value)));
+              (target!.$value as NavigatorState).pushNamed(args[0]!.$value as String, arguments: args[1]?.$reified),
+            ));
       case 'pushReplacementNamed':
         return $Function((runtime, target, args) => $Future.wrap(
-            (target!.$value as NavigatorState)
-                .pushReplacementNamed(args[0]!.$value as String, arguments: args[1]?.$reified),
-            (value) => $Object($value)));
+              (target!.$value as NavigatorState)
+                  .pushReplacementNamed(args[0]!.$value as String, arguments: args[1]?.$reified),
+            ));
       case 'pop':
         return $Function((runtime, target, args) {
           (target!.$value as NavigatorState).pop(args[0]?.$reified);
@@ -112,7 +111,7 @@ class $NavigatorState implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

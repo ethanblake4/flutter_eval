@@ -17,7 +17,7 @@ class $DiagnosticLevel implements $Instance {
   DiagnosticLevel get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => throw UnimplementedError();
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -40,7 +40,7 @@ class $DiagnosticPropertiesBuilder implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => throw UnimplementedError();
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -63,7 +63,7 @@ class $DiagnosticsTreeStyle implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => throw UnimplementedError();
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -86,7 +86,7 @@ class $DiagnosticsNode implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => throw UnimplementedError();
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

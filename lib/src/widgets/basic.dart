@@ -24,7 +24,7 @@ export 'package:flutter/rendering.dart' show
 ''';
 
 class $Padding implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Padding'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Padding'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
@@ -62,7 +62,7 @@ class $Padding implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -70,9 +70,12 @@ class $Padding implements $Instance {
   }
 }
 
+/// dart_eval bridge wrapper for [Column]
 class $Column implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Column'));
+  /// Bridge type reference for [$Column]
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Column'));
 
+  /// Bridge class definition for [$Column]
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
         '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
@@ -82,7 +85,7 @@ class $Column implements $Instance {
           BridgeParameter('crossAxisAlignment', BridgeTypeAnnotation($CrossAxisAlignment.$type), true),
           BridgeParameter('verticalDirection', BridgeTypeAnnotation($VerticalDirection.$type), true),
           BridgeParameter('textBaseline', BridgeTypeAnnotation($TextBaseline.$type), true),
-          BridgeParameter('children', BridgeTypeAnnotation(BridgeTypeRef.spec(DartTypes.list, [$Widget.$type])), true),
+          BridgeParameter('children', BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.list, [$Widget.$type])), true),
         ]))
       },
       methods: {},
@@ -91,6 +94,7 @@ class $Column implements $Instance {
       fields: {},
       wrap: true);
 
+  /// Wraps a [Column] instance in a [$Column] bridge wrapper
   const $Column.wrap(this.$value);
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
@@ -117,7 +121,7 @@ class $Column implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -125,9 +129,12 @@ class $Column implements $Instance {
   }
 }
 
+/// dart_eval bridge wrapper for [Row]
 class $Row implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Row'));
+  /// Bridge type reference for [$Row]
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Row'));
 
+  /// Bridge class definition for [$Row]
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
         '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
@@ -137,7 +144,7 @@ class $Row implements $Instance {
           BridgeParameter('crossAxisAlignment', BridgeTypeAnnotation($CrossAxisAlignment.$type), true),
           BridgeParameter('textDirection', BridgeTypeAnnotation($TextDirection.$type), true),
           BridgeParameter('verticalDirection', BridgeTypeAnnotation($VerticalDirection.$type), true),
-          BridgeParameter('children', BridgeTypeAnnotation(BridgeTypeRef.spec(DartTypes.list, [$Widget.$type])), true),
+          BridgeParameter('children', BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.list, [$Widget.$type])), true),
         ]))
       },
       methods: {},
@@ -146,6 +153,7 @@ class $Row implements $Instance {
       fields: {},
       wrap: true);
 
+  /// Wraps a [Row] instance in a [$Row] bridge wrapper
   const $Row.wrap(this.$value);
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
@@ -172,7 +180,7 @@ class $Row implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -181,7 +189,7 @@ class $Row implements $Instance {
 }
 
 class $Center implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Center'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Center'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
@@ -221,7 +229,7 @@ class $Center implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -230,7 +238,7 @@ class $Center implements $Instance {
 }
 
 class $Builder implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Builder'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Builder'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
@@ -266,7 +274,7 @@ class $Builder implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

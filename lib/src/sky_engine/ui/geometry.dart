@@ -7,7 +7,7 @@ import 'package:dart_eval/stdlib/core.dart';
 /// dart_eval wrapper for [Size]
 class $Size implements $Instance {
   /// dart_eval type definition for [Size]
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('dart:ui', 'Size'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Size'));
 
   /// dart_eval class declaration for [Size]
   static const $declaration = BridgeClassDef(BridgeClassType($type),
@@ -43,7 +43,7 @@ class $Size implements $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

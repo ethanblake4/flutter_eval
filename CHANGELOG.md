@@ -1,3 +1,15 @@
+## 0.6.0
+- Upgrade to dart_eval v0.6.0
+- Add HotSwap and HotSwapLoader widgets to facilitate easy partial app
+  updates
+- CompilerWidget, EvalWidget, and RuntimeWidget now support an `onError` callback
+  that is called when an error occurs during compilation or evaluation. You can
+  use this to display a custom error fallback.
+- Add ListView and InkWell
+- Add Card, Drawer, and ListTile (thanks to @DevAdalat)
+- Add Image, ImageProvider, and NetworkImage (thanks to @DevAdalat)
+- Fix BoxDecoration not extending Decoration
+- Fix error when constructing a TextStyle without the `inherit` property
 ## 0.5.4
 - Support for Flutter 3.7
 - Add Spacer (thanks to @canewsin)

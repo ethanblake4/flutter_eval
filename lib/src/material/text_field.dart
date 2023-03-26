@@ -7,7 +7,7 @@ import 'package:flutter_eval/src/widgets/editable_text.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $TextField implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/text_field.dart', 'TextField'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/text_field.dart', 'TextField'));
 
   static const $declaration = BridgeClassDef(
       BridgeClassType($type, isAbstract: false, $extends: $StatefulWidget$bridge.$type),
@@ -53,7 +53,7 @@ class $TextField implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

@@ -5,7 +5,7 @@ import 'package:flutter/painting.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 
 class $BorderStyle implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/borders.dart', 'BorderStyle'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/borders.dart', 'BorderStyle'));
 
   static const $declaration =
       BridgeEnumDef($type, values: ['solid', 'none'], methods: {}, getters: {}, setters: {}, fields: {});
@@ -28,7 +28,7 @@ class $BorderStyle implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -37,7 +37,7 @@ class $BorderStyle implements $Instance {
 }
 
 class $ShapeBorder implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/borders.dart', 'ShapeBorder'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/borders.dart', 'ShapeBorder'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
       constructors: {}, methods: {}, getters: {}, setters: {}, fields: {}, wrap: true);
@@ -53,7 +53,7 @@ class $ShapeBorder implements $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
@@ -67,7 +67,7 @@ class $ShapeBorder implements $Instance {
 }
 
 class $BorderSide implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/borders.dart', 'BorderSide'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/borders.dart', 'BorderSide'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false),
       constructors: {
@@ -94,7 +94,7 @@ class $BorderSide implements $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
     return $BorderSide.wrap(BorderSide(

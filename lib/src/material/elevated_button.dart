@@ -5,7 +5,7 @@ import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $ElevatedButton implements $Instance {
   static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/elevated_button.dart', 'ElevatedButton'));
+      BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/elevated_button.dart', 'ElevatedButton'));
   static const $declaration =
       BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $StatefulWidget$bridge.$type),
           constructors: {
@@ -41,7 +41,7 @@ class $ElevatedButton implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

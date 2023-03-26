@@ -14,7 +14,7 @@ import 'framework.dart';
 /// dart_eval wrapper for [Container]
 class $Container implements Container, $Instance {
   /// [Container] compile-type type definition for dart_eval
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/container.dart', 'Container'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/container.dart', 'Container'));
 
   /// [Container] compile-type class declaration for dart_eval
   static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $StatelessWidget$bridge.$type),
@@ -76,7 +76,7 @@ class $Container implements Container, $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

@@ -3,8 +3,7 @@ import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/material.dart';
 
 class $MainAxisAlignment implements $Instance {
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/rendering/flex.dart', 'MainAxisAlignment'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/rendering/flex.dart', 'MainAxisAlignment'));
 
   static const $declaration = BridgeEnumDef($type,
       values: ['start', 'end', 'center', 'spaceBetween', 'spaceAround', 'spaceEvenly'],
@@ -30,7 +29,7 @@ class $MainAxisAlignment implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -39,8 +38,7 @@ class $MainAxisAlignment implements $Instance {
 }
 
 class $CrossAxisAlignment implements $Instance {
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/rendering/flex.dart', 'CrossAxisAlignment'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/rendering/flex.dart', 'CrossAxisAlignment'));
 
   static const $declaration = BridgeEnumDef($type,
       values: ['start', 'end', 'center', 'stretch', 'baseline'], methods: {}, getters: {}, setters: {}, fields: {});
@@ -62,7 +60,7 @@ class $CrossAxisAlignment implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -71,7 +69,7 @@ class $CrossAxisAlignment implements $Instance {
 }
 
 class $MainAxisSize implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/rendering/flex.dart', 'MainAxisSize'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/rendering/flex.dart', 'MainAxisSize'));
 
   static const $declaration =
       BridgeEnumDef($type, values: ['min', 'max'], methods: {}, getters: {}, setters: {}, fields: {});
@@ -92,7 +90,7 @@ class $MainAxisSize implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

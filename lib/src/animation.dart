@@ -1,5 +1,5 @@
 const animationSource = '''
 library animation;
 
-export 'package:flutter/src/animation/curves.dart';
+export 'src/animation/curves.dart';
 ''';

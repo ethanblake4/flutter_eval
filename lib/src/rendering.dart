@@ -1,5 +1,5 @@
 const renderingSource = '''
-export 'package:flutter/src/rendering/box.dart';
-export 'package:flutter/src/rendering/flex.dart';
-export 'package:flutter/src/rendering/object.dart';
+export 'src/rendering/box.dart';
+export 'src/rendering/flex.dart';
+export 'src/rendering/object.dart';
 ''';

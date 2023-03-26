@@ -3,7 +3,7 @@ import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/painting.dart';
 
 class $FontStyle implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('dart:ui', 'FontStyle'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('dart:ui', 'FontStyle'));
 
   static const $declaration =
       BridgeEnumDef($type, values: ['normal', 'italic'], methods: {}, getters: {}, setters: {}, fields: {});
@@ -24,7 +24,7 @@ class $FontStyle implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -33,7 +33,7 @@ class $FontStyle implements $Instance {
 }
 
 class $FontWeight implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('dart:ui', 'FontWeight'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('dart:ui', 'FontWeight'));
 
   static const $declaration = BridgeEnumDef($type,
       methods: {},
@@ -68,7 +68,7 @@ class $FontWeight implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -77,7 +77,7 @@ class $FontWeight implements $Instance {
 }
 
 class $TextDirection implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('dart:ui', 'TextDirection'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('dart:ui', 'TextDirection'));
 
   static const $declaration =
       BridgeEnumDef($type, methods: {}, getters: {}, setters: {}, values: ['rtl', 'ltr'], fields: {});
@@ -98,7 +98,7 @@ class $TextDirection implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -107,7 +107,7 @@ class $TextDirection implements $Instance {
 }
 
 class $TextBaseline implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('dart:ui', 'TextBaseline'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('dart:ui', 'TextBaseline'));
 
   static const $declaration =
       BridgeEnumDef($type, methods: {}, getters: {}, setters: {}, values: ['alphabetic', 'ideographic'], fields: {});
@@ -131,7 +131,7 @@ class $TextBaseline implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

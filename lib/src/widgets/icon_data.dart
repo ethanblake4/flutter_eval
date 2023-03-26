@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class $IconData implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/icon_data.dart', 'IconData'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/icon_data.dart', 'IconData'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false),
       constructors: {
@@ -60,7 +60,7 @@ class $IconData implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

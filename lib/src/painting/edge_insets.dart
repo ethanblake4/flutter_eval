@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 
 class $EdgeInsetsGeometry implements EdgeInsetsGeometry, $Instance {
   static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/edge_insets.dart', 'EdgeInsetsGeometry'));
+      BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/edge_insets.dart', 'EdgeInsetsGeometry'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
       constructors: {}, methods: {}, getters: {}, setters: {}, fields: {}, wrap: true);
@@ -19,7 +19,7 @@ class $EdgeInsetsGeometry implements EdgeInsetsGeometry, $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
@@ -84,8 +84,7 @@ class $EdgeInsetsGeometry implements EdgeInsetsGeometry, $Instance {
 }
 
 class $EdgeInsets implements EdgeInsets, $Instance {
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/edge_insets.dart', 'EdgeInsets'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/edge_insets.dart', 'EdgeInsets'));
 
   static const $declaration =
       BridgeClassDef(BridgeClassType($type, isAbstract: true, $extends: $EdgeInsetsGeometry.$type),
@@ -158,7 +157,7 @@ class $EdgeInsets implements EdgeInsets, $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {

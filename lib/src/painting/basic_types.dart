@@ -50,7 +50,7 @@ export 'package:flutter/foundation.dart' show VoidCallback;
 
 class $VerticalDirection implements $Instance {
   static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/basic_types.dart', 'VerticalDirection'));
+      BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/basic_types.dart', 'VerticalDirection'));
 
   static const $declaration =
       BridgeEnumDef($type, methods: {}, getters: {}, setters: {}, values: ['up', 'down'], fields: {});
@@ -74,7 +74,7 @@ class $VerticalDirection implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -85,7 +85,7 @@ class $VerticalDirection implements $Instance {
 /// dart_eval wrapper for [Axis]
 class $Axis implements $Instance {
   /// dart_eval type definition for [Axis]
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/basic_types.dart', 'Axis'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/basic_types.dart', 'Axis'));
 
   /// dart_eval class declaration for [Axis]
   static const $declaration =
@@ -111,7 +111,7 @@ class $Axis implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

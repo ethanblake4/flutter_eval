@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $TextButton implements $Instance {
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/text_button.dart', 'TextButton'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/text_button.dart', 'TextButton'));
 
   static const $declaration =
       BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $StatelessWidget$bridge.$type),
@@ -45,7 +44,7 @@ class $TextButton implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

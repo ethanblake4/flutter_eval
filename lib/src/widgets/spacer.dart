@@ -5,7 +5,7 @@ import 'package:flutter_eval/src/foundation/key.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $Spacer implements $Instance {
-  static const $type = BridgeTypeRef.spec(
+  static const $type = BridgeTypeRef(
     BridgeTypeSpec('package:flutter/src/widgets/spacer.dart', 'Spacer'),
   );
 
@@ -62,7 +62,7 @@ class $Spacer implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

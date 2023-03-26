@@ -5,7 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_eval/src/rendering/object.dart';
 
 class $BoxConstraints implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/rendering/box.dart', 'BoxConstraints'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/rendering/box.dart', 'BoxConstraints'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
       constructors: {
@@ -104,7 +104,7 @@ class $BoxConstraints implements $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

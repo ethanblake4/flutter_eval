@@ -6,7 +6,7 @@ import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/sky_engine/ui/text.dart';
 
 class $TextStyle implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/text_style.dart', 'TextStyle'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/text_style.dart', 'TextStyle'));
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false),
       constructors: {
         '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
@@ -57,7 +57,7 @@ class $TextStyle implements $Instance {
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
     return $TextStyle.wrap(TextStyle(
-      inherit: args[0]!.$value,
+      inherit: args[0]?.$value ?? true,
       color: args[1]?.$value,
       backgroundColor: args[2]?.$value,
       fontSize: args[3]?.$value,
@@ -113,7 +113,7 @@ class $TextStyle implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

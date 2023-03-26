@@ -1,12 +1,12 @@
 {
-    "name": "example",
-    "short_name": "example",
+    "name": "flutter_eval example",
+    "short_name": "flutter_eval example",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
-    "orientation": "portrait-primary",
+    "description": "A flutter_eval example project.",
+    "orientation": "any",
     "prefer_related_applications": false,
     "icons": [
         {

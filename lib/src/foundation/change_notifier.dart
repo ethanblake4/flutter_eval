@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 
 class $ChangeNotifier implements $Instance {
   static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/foundation/change_notifier.dart', 'ChangeNotifier'));
+      BridgeTypeRef(BridgeTypeSpec('package:flutter/src/foundation/change_notifier.dart', 'ChangeNotifier'));
 
   static const $methods = {
     'addListener': BridgeMethodDef(
@@ -78,7 +78,7 @@ class $ChangeNotifier implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

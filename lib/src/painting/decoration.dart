@@ -4,7 +4,7 @@ import 'package:dart_eval/stdlib/core.dart';
 import 'package:flutter/painting.dart';
 
 class $Decoration implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/decoration.dart', 'Decoration'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/decoration.dart', 'Decoration'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
       constructors: {}, methods: {}, getters: {}, setters: {}, fields: {}, wrap: true);
@@ -20,7 +20,7 @@ class $Decoration implements $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {

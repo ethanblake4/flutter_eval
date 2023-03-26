@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 
 class $ColorSwatch implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/colors.dart', 'ColorSwatch'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/colors.dart', 'ColorSwatch'));
 
   static const $declaration =
       BridgeClassDef(BridgeClassType($type, generics: {'T': BridgeGenericParam()}, $extends: $Color.$type),
@@ -50,7 +50,7 @@ class $ColorSwatch implements $Instance {
   ColorSwatch get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

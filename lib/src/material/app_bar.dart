@@ -6,9 +6,12 @@ import 'package:flutter_eval/src/widgets/text.dart';
 
 import '../widgets/framework.dart';
 
+/// dart_eval bridge wrapper for [AppBar]
 class $AppBar implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/app_bar.dart', 'AppBar'));
+  /// Bridge type reference for [$AppBar]
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/app_bar.dart', 'AppBar'));
 
+  /// Bridge class definition for [$AppBar]
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
         '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
@@ -17,7 +20,7 @@ class $AppBar implements $Instance {
               'automaticallyImplyLeading', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
           BridgeParameter('title', BridgeTypeAnnotation($Text.$type), true),
           BridgeParameter('actions',
-              BridgeTypeAnnotation(BridgeTypeRef.spec(BridgeTypeSpec('dart:core', 'List'), [$Widget.$type])), true),
+              BridgeTypeAnnotation(BridgeTypeRef(BridgeTypeSpec('dart:core', 'List'), [$Widget.$type])), true),
           BridgeParameter('flexibleSpace', BridgeTypeAnnotation($Widget.$type), true),
           BridgeParameter('bottom', BridgeTypeAnnotation($Widget.$type), true),
           BridgeParameter('elevation', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
@@ -31,6 +34,7 @@ class $AppBar implements $Instance {
       fields: {},
       wrap: true);
 
+  /// Wrap a [AppBar] in a [$AppBar]
   $AppBar.wrap(this.$value);
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
@@ -59,7 +63,7 @@ class $AppBar implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

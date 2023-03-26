@@ -4,7 +4,7 @@ import 'package:dart_eval/stdlib/core.dart';
 import 'package:flutter/rendering.dart';
 
 class $Constraints implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/rendering/object.dart', 'Constraints'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/rendering/object.dart', 'Constraints'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
       constructors: {},
@@ -40,7 +40,7 @@ class $Constraints implements $Instance {
   get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

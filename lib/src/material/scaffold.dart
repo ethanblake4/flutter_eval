@@ -7,9 +7,12 @@ import 'package:flutter_eval/src/material/snack_bar.dart';
 
 import '../widgets/framework.dart';
 
+/// dart_eval bridge wrapper for [Scaffold]
 class $Scaffold implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/scaffold.dart', 'Scaffold'));
+  /// Bridge type reference for [$Scaffold]
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/scaffold.dart', 'Scaffold'));
 
+  /// Bridge class definition for [$Scaffold]
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
         '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
@@ -32,6 +35,7 @@ class $Scaffold implements $Instance {
     ));
   }
 
+  /// Wrap a [Scaffold] in a [$Scaffold]
   $Scaffold.wrap(this.$value);
 
   @override
@@ -46,7 +50,7 @@ class $Scaffold implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -55,8 +59,7 @@ class $Scaffold implements $Instance {
 }
 
 class $ScaffoldMessenger implements $Instance {
-  static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/scaffold.dart', 'ScaffoldMessenger'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/scaffold.dart', 'ScaffoldMessenger'));
   static const $declaration =
       BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $StatefulWidget$bridge.$type),
           constructors: {
@@ -100,7 +103,7 @@ class $ScaffoldMessenger implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -110,7 +113,7 @@ class $ScaffoldMessenger implements $Instance {
 
 class $ScaffoldMessengerState implements $Instance {
   static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/material/scaffold.dart', 'ScaffoldMessengerState'));
+      BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/scaffold.dart', 'ScaffoldMessengerState'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $State$bridge.$type),
       constructors: {},
@@ -140,7 +143,7 @@ class $ScaffoldMessengerState implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {

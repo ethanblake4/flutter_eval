@@ -7,7 +7,7 @@ import 'package:flutter_eval/src/painting/text_style.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $Text implements Text, $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/widgets/text.dart', 'Text'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/text.dart', 'Text'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $StatelessWidget$bridge.$type),
       constructors: {
@@ -46,7 +46,7 @@ class $Text implements Text, $Instance {
   Text get $reified => $value;
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {}

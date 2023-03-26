@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class $AlignmentGeometry implements $Instance {
   static const $type =
-      BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/alignment.dart', 'AlignmentGeometry'));
+      BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/alignment.dart', 'AlignmentGeometry'));
 
   static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
       constructors: {}, methods: {}, getters: {}, setters: {}, fields: {}, wrap: true);
@@ -26,7 +26,7 @@ class $AlignmentGeometry implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -35,7 +35,7 @@ class $AlignmentGeometry implements $Instance {
 }
 
 class $Alignment implements $Instance {
-  static const $type = BridgeTypeRef.spec(BridgeTypeSpec('package:flutter/src/painting/alignment.dart', 'Alignment'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/alignment.dart', 'Alignment'));
 
   static const _stValueType =
       BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Alignment.$type)), isStatic: true);
@@ -132,7 +132,7 @@ class $Alignment implements $Instance {
   }
 
   @override
-  int get $runtimeType => throw UnimplementedError();
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
