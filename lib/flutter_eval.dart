@@ -59,6 +59,7 @@ import 'package:flutter_eval/src/widgets/icon.dart';
 import 'package:flutter_eval/src/widgets/icon_data.dart';
 import 'package:flutter_eval/src/widgets/image.dart';
 import 'package:flutter_eval/src/widgets/navigator.dart';
+import 'package:flutter_eval/src/widgets/scroll_controller.dart';
 import 'package:flutter_eval/src/widgets/scroll_view.dart';
 import 'package:flutter_eval/src/widgets/spacer.dart';
 import 'package:flutter_eval/src/widgets/text.dart';
@@ -151,6 +152,7 @@ class FlutterEvalPlugin implements EvalPlugin {
       $Border.$declaration,
       $InkWell.$declaration,
       $ListView.$declaration,
+      $ScrollController.$declaration,
       $Card.$declaration,
       $Drawer.$declaration,
       $ListTile.$declaration,
@@ -267,6 +269,7 @@ class FlutterEvalPlugin implements EvalPlugin {
       ..registerBridgeFunc('package:flutter/src/widgets/icon_data.dart', 'IconData.', $IconData.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/icon.dart', 'Icon.', $Icon.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/scroll_view.dart', 'ListView.', $ListView.$new)
+      ..registerBridgeFunc('package:flutter/src/widgets/scroll_view.dart', 'ListView.builder', $ListView.$builder)
       ..registerBridgeFunc('package:flutter/src/widgets/spacer.dart', 'Spacer.', $Spacer.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/text.dart', 'Text.', $Text.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/container.dart', 'Container.', $Container.$new)
@@ -291,6 +294,8 @@ class FlutterEvalPlugin implements EvalPlugin {
       ..registerBridgeFunc('package:flutter/src/material/drawer.dart', 'Drawer.', $Drawer.$new)
       ..registerBridgeFunc('package:flutter/src/material/card.dart', 'Card.', $Card.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/image.dart', 'Image.', $Image.$new)
+      ..registerBridgeFunc('package:flutter/src/widgets/image.dart', 'Image.network', $Image.$network)
+      ..registerBridgeFunc('package:flutter/src/widgets/image.dart', 'Image.asset', $Image.$asset)
       ..registerBridgeFunc('package:flutter/src/material/theme.dart', 'Theme.of', $Theme.$of)
       ..registerBridgeFunc('package:flutter/src/material/theme.dart', 'Theme.', $Theme.$new)
       ..registerBridgeFunc('package:flutter/src/material/floating_action_button.dart', 'FloatingActionButton.',

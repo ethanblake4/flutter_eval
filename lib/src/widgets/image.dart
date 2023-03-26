@@ -25,7 +25,51 @@ class $Image implements $Instance {
             BridgeParameter('height', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
             BridgeParameter('color', BridgeTypeAnnotation($Color.$type), true),
             BridgeParameter('fit', BridgeTypeAnnotation($BoxFit.$type), true),
-            BridgeParameter('alignment', BridgeTypeAnnotation($Alignment.$type), true),
+            BridgeParameter('alignment', BridgeTypeAnnotation($AlignmentGeometry.$type), true),
+            BridgeParameter(
+              'filterQuality',
+              BridgeTypeAnnotation($FilterQuality.$type),
+              true,
+            ),
+          ],
+        ),
+      ),
+      'network': BridgeConstructorDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation($type),
+          params: [
+            BridgeParameter('src', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType)), false),
+          ],
+          namedParams: [
+            BridgeParameter('key', BridgeTypeAnnotation($Key.$type), true),
+            BridgeParameter('scale', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
+            BridgeParameter('width', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
+            BridgeParameter('height', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
+            BridgeParameter('color', BridgeTypeAnnotation($Color.$type), true),
+            BridgeParameter('fit', BridgeTypeAnnotation($BoxFit.$type), true),
+            BridgeParameter('alignment', BridgeTypeAnnotation($AlignmentGeometry.$type), true),
+            BridgeParameter(
+              'filterQuality',
+              BridgeTypeAnnotation($FilterQuality.$type),
+              true,
+            ),
+          ],
+        ),
+      ),
+      'asset': BridgeConstructorDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation($type),
+          params: [
+            BridgeParameter('name', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType)), false),
+          ],
+          namedParams: [
+            BridgeParameter('key', BridgeTypeAnnotation($Key.$type), true),
+            BridgeParameter('scale', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
+            BridgeParameter('width', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
+            BridgeParameter('height', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
+            BridgeParameter('color', BridgeTypeAnnotation($Color.$type), true),
+            BridgeParameter('fit', BridgeTypeAnnotation($BoxFit.$type), true),
+            BridgeParameter('alignment', BridgeTypeAnnotation($AlignmentGeometry.$type), true),
             BridgeParameter(
               'filterQuality',
               BridgeTypeAnnotation($FilterQuality.$type),
@@ -62,8 +106,44 @@ class $Image implements $Instance {
     );
   }
 
+  static $Value? $network(Runtime runtime, $Value? target, List<$Value?> args) {
+    final url = args[0]!.$value;
+    runtime.assertPermission('network', url);
+    return $Image.wrap(
+      Image.network(
+        args[0]!.$value,
+        key: args[1]?.$value,
+        scale: args[2]?.$value,
+        width: args[3]?.$value,
+        height: args[4]?.$value,
+        color: args[5]?.$value,
+        fit: args[6]?.$value,
+        alignment: args[7]?.$value ?? Alignment.center,
+        filterQuality: args[8]?.$value ?? FilterQuality.low,
+      ),
+    );
+  }
+
+  static $Value? $asset(Runtime runtime, $Value? target, List<$Value?> args) {
+    final name = args[0]!.$value;
+    runtime.assertPermission('asset', name);
+    return $Image.wrap(
+      Image.asset(
+        args[0]!.$value,
+        key: args[1]?.$value,
+        scale: args[2]?.$value,
+        width: args[3]?.$value,
+        height: args[4]?.$value,
+        color: args[5]?.$value,
+        fit: args[6]?.$value,
+        alignment: args[7]?.$value ?? Alignment.center,
+        filterQuality: args[8]?.$value ?? FilterQuality.low,
+      ),
+    );
+  }
+
   @override
-  get $reified => throw UnimplementedError();
+  get $reified => $value;
 
   @override
   int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);

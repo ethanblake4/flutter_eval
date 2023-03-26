@@ -11,6 +11,8 @@ export 'src/widgets/icon.dart';
 export 'src/widgets/icon_data.dart';
 export 'src/widgets/image.dart';
 export 'src/widgets/spacer.dart';
+export 'src/widgets/scroll_controller.dart';
+export 'src/widgets/scroll_view.dart';
 export 'src/widgets/text.dart';
 export 'src/widgets/navigator.dart';
 ''';

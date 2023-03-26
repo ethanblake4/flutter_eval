@@ -7,6 +7,7 @@
   use this to display a custom error fallback.
 - Add ListView and InkWell
 - Add Card, Drawer, and ListTile (thanks to @DevAdalat)
+- Add Image, ImageProvider, and NetworkImage (thanks to @DevAdalat)
 - Fix BoxDecoration not extending Decoration
 - Fix error when constructing a TextStyle without the `inherit` property
 ## 0.5.4
