@@ -54,6 +54,7 @@ import 'package:flutter_eval/src/widgets/app.dart';
 import 'package:flutter_eval/src/widgets/basic.dart';
 import 'package:flutter_eval/src/widgets/container.dart';
 import 'package:flutter_eval/src/widgets/editable_text.dart';
+import 'package:flutter_eval/src/widgets/focus_manager.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 import 'package:flutter_eval/src/widgets/icon.dart';
 import 'package:flutter_eval/src/widgets/icon_data.dart';
@@ -167,18 +168,19 @@ class FlutterEvalPlugin implements EvalPlugin {
       registry.defineBridgeClass(cls);
     }
 
-    registry.defineBridgeEnum($MainAxisAlignment.$declaration);
-    registry.defineBridgeEnum($CrossAxisAlignment.$declaration);
-    registry.defineBridgeEnum($MainAxisSize.$declaration);
-    registry.defineBridgeEnum($FontWeight.$declaration);
-    registry.defineBridgeEnum($FontStyle.$declaration);
-    registry.defineBridgeEnum($TextDirection.$declaration);
-    registry.defineBridgeEnum($VerticalDirection.$declaration);
-    registry.defineBridgeEnum($TextBaseline.$declaration);
     registry.defineBridgeEnum($Axis.$declaration);
     registry.defineBridgeEnum($BorderStyle.$declaration);
     registry.defineBridgeEnum($BoxFit.$declaration);
+    registry.defineBridgeEnum($CrossAxisAlignment.$declaration);
     registry.defineBridgeEnum($FilterQuality.$declaration);
+    registry.defineBridgeEnum($FontStyle.$declaration);
+    registry.defineBridgeEnum($FontWeight.$declaration);
+    registry.defineBridgeEnum($KeyEventResult.$declaration);
+    registry.defineBridgeEnum($MainAxisAlignment.$declaration);
+    registry.defineBridgeEnum($MainAxisSize.$declaration);
+    registry.defineBridgeEnum($TextBaseline.$declaration);
+    registry.defineBridgeEnum($TextDirection.$declaration);
+    registry.defineBridgeEnum($VerticalDirection.$declaration);
 
     registry.addSource(DartSource('dart:ui', dartUiSource));
 
@@ -313,6 +315,8 @@ class FlutterEvalPlugin implements EvalPlugin {
           'package:flutter/src/painting/basic_types.dart', 'VerticalDirection', $VerticalDirection.$values)
       ..registerBridgeEnumValues('package:flutter/src/painting/basic_types.dart', 'Axis', $Axis.$values)
       ..registerBridgeEnumValues('package:flutter/src/painting/box_fit.dart', 'BoxFit', $BoxFit.$values)
+      ..registerBridgeEnumValues(
+          'package:flutter/src/widgets/focus_manager.dart', 'KeyEventResult', $KeyEventResult.$values)
       ..registerBridgeEnumValues('dart:ui', 'FilterQuality', $FilterQuality.$values)
       ..registerBridgeEnumValues('package:flutter/src/rendering/flex.dart', 'MainAxisSize', $MainAxisSize.$values)
       ..registerBridgeEnumValues(
