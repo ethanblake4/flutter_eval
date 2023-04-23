@@ -44,6 +44,7 @@ import 'package:flutter_eval/src/rendering.dart';
 import 'package:flutter_eval/src/rendering/box.dart';
 import 'package:flutter_eval/src/rendering/flex.dart';
 import 'package:flutter_eval/src/rendering/object.dart';
+import 'package:flutter_eval/src/services/raw_keyboard.dart';
 import 'package:flutter_eval/src/sky_engine/ui/geometry.dart';
 import 'package:flutter_eval/src/sky_engine/ui/image.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
@@ -162,6 +163,7 @@ class FlutterEvalPlugin implements EvalPlugin {
       $NetworkImage.$declaration,
       $MemoryImage.$declaration,
       $ResizeImage.$declaration,
+      $RawKeyEvent.$declaration,
     ];
 
     for (final cls in classes) {
