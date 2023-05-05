@@ -17,7 +17,13 @@ class $TextEditingController implements $Instance {
       },
       methods: {
         'clear':
-            BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.voidType))))
+            BridgeMethodDef(
+          BridgeFunctionDef(
+            returns: BridgeTypeAnnotation(
+              BridgeTypeRef.type(RuntimeTypes.voidType),
+            ),
+          ),
+        )
       },
       getters: {},
       setters: {},

@@ -42,6 +42,7 @@ import 'package:flutter_eval/src/painting/image_provider.dart';
 import 'package:flutter_eval/src/painting/text_style.dart';
 import 'package:flutter_eval/src/rendering.dart';
 import 'package:flutter_eval/src/rendering/box.dart';
+import 'package:flutter_eval/src/rendering/custom_paint.dart';
 import 'package:flutter_eval/src/rendering/flex.dart';
 import 'package:flutter_eval/src/rendering/object.dart';
 import 'package:flutter_eval/src/services/raw_keyboard.dart';
@@ -93,6 +94,12 @@ class FlutterEvalPlugin implements EvalPlugin {
       $StatelessWidget$bridge.$declaration,
       $StatefulWidget$bridge.$declaration,
       $ChangeNotifier$bridge.$declaration,
+      $CustomPaint$bridge.$declaration,
+      $ValueNotifier.$declaration,
+      $Canvas.$declaration,
+      $CustomPainter$bridge.$declaration,
+      $Paint.$declaration,
+      $Path.$declaration,
       $State$bridge.$declaration,
       $BuildContext.$declaration,
       $Text.$declaration,
@@ -209,16 +216,26 @@ class FlutterEvalPlugin implements EvalPlugin {
   void configureForRuntime(Runtime runtime) {
     runtime
       ..registerBridgeFunc('dart:ui', 'Color.', $Color.$new)
+      ..registerBridgeFunc('dart:ui', 'Paint.', $Paint.$new)
+      ..registerBridgeFunc('dart:ui', 'Path.', $Path.$new)
       ..registerBridgeFunc('dart:ui', 'Size.', $Size.$new)
       ..registerBridgeFunc(
           'package:flutter/src/foundation/change_notifier.dart', 'ChangeNotifier.', $ChangeNotifier$bridge.$new,
           isBridge: true)
       ..registerBridgeFunc(
+          'package:flutter/src/foundation/change_notifier.dart', 'ValueNotifier.', $ValueNotifier.$new,
+          isBridge: true)
+      ..registerBridgeFunc(
           'package:flutter/src/widgets/framework.dart', 'StatelessWidget.', $StatelessWidget$bridge.$new,
+          isBridge: true)
+      ..registerBridgeFunc('package:flutter/src/widgets/rendering.dart', 'CustomPainter.', $CustomPainter$bridge.$new,
+          isBridge: true)
+      ..registerBridgeFunc('package:flutter/src/widgets/basic.dart', 'CustomPaint.', $CustomPaint$bridge.$new,
           isBridge: true)
       ..registerBridgeFunc('package:flutter/src/widgets/framework.dart', 'StatefulWidget.', $StatefulWidget$bridge.$new,
           isBridge: true)
       ..registerBridgeFunc('package:flutter/src/widgets/framework.dart', 'State.', $State$bridge.$new, isBridge: true)
+      ..registerBridgeFunc('package:flutter/src/widgets/painting.dart', 'Canvas.', $Canvas.$new, isBridge: true)
       ..registerBridgeFunc('package:flutter/src/painting/alignment.dart', 'Alignment.', $Alignment.$new)
       ..registerBridgeFunc('package:flutter/src/painting/alignment.dart', 'Alignment.topLeft*g', $Alignment.$topLeft)
       ..registerBridgeFunc(

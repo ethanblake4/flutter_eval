@@ -162,3 +162,103 @@ class $ChangeNotifier$bridge extends ChangeNotifier with $Bridge<ChangeNotifier>
     $_invoke('removeListener', [_$listenerNativeCache[listener]!]);
   }
 }
+
+class $ValueNotifier implements $Instance {
+  static const $type = BridgeTypeRef(
+    BridgeTypeSpec('package:flutter/src/foundation/change_notifier.dart', 'ValueNotifier'),
+  );
+
+  static const $declaration = BridgeClassDef(
+    BridgeClassType(
+      $type,
+      generics: {
+        'T': BridgeGenericParam(),
+      },
+      isAbstract: false,
+    ),
+    constructors: {
+      '': BridgeConstructorDef(
+        BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter('_value', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.dynamicType)), false),
+        ]),
+      ),
+    },
+    methods: {
+      'toString': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef.type(RuntimeTypes.stringType),
+          ),
+        ),
+      ),
+    },
+    getters: {
+      'value': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef.ref('T'),
+          ),
+        ),
+      ),
+    },
+    setters: {
+      'value': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef.type(RuntimeTypes.voidType),
+          ),
+          params: [
+            BridgeParameter(
+              'newValue',
+              BridgeTypeAnnotation(
+                BridgeTypeRef.ref(
+                  'T',
+                ),
+              ),
+              false,
+            ),
+          ],
+        ),
+      ),
+    },
+    fields: {
+      '_value': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef.ref('T'),
+        ),
+      ),
+    },
+    wrap: true,
+  );
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    switch (identifier) {
+      case 'value':
+        return $Function((runtime, target, args) {
+          return (target!.$value as ValueNotifier).value;
+        });
+    }
+    throw StateError('');
+  }
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
+
+  @override
+  get $reified => $value;
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    throw UnimplementedError();
+  }
+
+  @override
+  final ValueNotifier $value;
+
+  $ValueNotifier.wrap(this.$value);
+
+  static $Value $new(Runtime runtime, $Value? target, List<$Value?> args) {
+    return $ValueNotifier.wrap(ValueNotifier(args[0]!.$value));
+  }
+}
