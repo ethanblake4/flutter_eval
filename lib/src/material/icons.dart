@@ -956,7 +956,7 @@ class Icons {
   static const IconData home = IconData(0xe318, fontFamily: 'MaterialIcons');
   static const IconData home_filled = IconData(0xe319, fontFamily: 'MaterialIcons');
 
-    static const IconData home_max = IconData(0xe31a, fontFamily: 'MaterialIcons');
+  static const IconData home_max = IconData(0xe31a, fontFamily: 'MaterialIcons');
   static const IconData home_mini = IconData(0xe31b, fontFamily: 'MaterialIcons');
   static const IconData home_repair_service = IconData(0xe31c, fontFamily: 'MaterialIcons');
   static const IconData home_work = IconData(0xe31d, fontFamily: 'MaterialIcons');

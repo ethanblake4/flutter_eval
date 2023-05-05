@@ -6,6 +6,8 @@ import 'package:flutter_eval/src/painting/basic_types.dart';
 import 'package:flutter_eval/src/painting/edge_insets.dart';
 import 'package:flutter_eval/src/rendering/flex.dart';
 import 'package:flutter_eval/src/sky_engine/ui/text.dart';
+import 'package:flutter_eval/src/sky_engine/ui/geometry.dart';
+import 'package:flutter_eval/src/rendering/custom_paint.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 const widgetsBasicSource = '''
@@ -280,4 +282,38 @@ class $Builder implements $Instance {
   void $setProperty(Runtime runtime, String identifier, $Value value) {
     throw UnimplementedError();
   }
+}
+
+class $CustomPaint$bridge extends CustomPaint with $Bridge<CustomPaint> {
+  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'CustomPaint'));
+
+  static const $declaration = BridgeClassDef(
+    BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
+    constructors: {
+      '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
+        BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
+        BridgeParameter('painter', BridgeTypeAnnotation($CustomPainter.$type), true),
+        BridgeParameter('foregroundPainter', BridgeTypeAnnotation($CustomPainter.$type), true),
+        BridgeParameter('size', BridgeTypeAnnotation($Size.$type), true),
+        BridgeParameter('isComplex', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
+        BridgeParameter('willChange', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
+        BridgeParameter('child', BridgeTypeAnnotation($Widget.$type), true),
+      ]))
+    },
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {},
+    wrap: true,
+  );
+
+  static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
+    return $CustomPaint$bridge();
+  }
+
+  @override
+  $Value? $bridgeGet(String identifier) => throw UnimplementedError();
+
+  @override
+  void $bridgeSet(String identifier, $Value value) => throw UnimplementedError();
 }
