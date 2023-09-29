@@ -64,7 +64,7 @@ class $Widget implements Widget, $Instance {
 
   @override
   String toStringDeep(
-          {String prefixLineOne = '', String? prefixOtherLines, DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
+      {String prefixLineOne = '', String? prefixOtherLines, DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
       $value.toStringDeep(prefixLineOne: prefixLineOne, prefixOtherLines: prefixOtherLines, minLevel: minLevel);
 
   @override
@@ -127,7 +127,7 @@ class $StatelessWidget implements StatelessWidget, $Instance {
 
   @override
   String toStringDeep(
-          {String prefixLineOne = '', String? prefixOtherLines, DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
+      {String prefixLineOne = '', String? prefixOtherLines, DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
       $value.toStringDeep(prefixLineOne: prefixLineOne, prefixOtherLines: prefixOtherLines, minLevel: minLevel);
 
   @override
@@ -221,7 +221,7 @@ class $StatelessWidget$bridge extends StatelessWidget with $Bridge<StatelessWidg
 
   @override
   String toStringDeep(
-          {String prefixLineOne = '', String? prefixOtherLines, DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
+      {String prefixLineOne = '', String? prefixOtherLines, DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
       $_invoke('toStringDeep', [
         $String(prefixLineOne),
         prefixOtherLines == null ? const $null() : $String(prefixOtherLines),
@@ -487,6 +487,11 @@ class $BuildContext implements BuildContext, $Instance {
     } catch (e) {
       return false;
     }
+  }
+
+  @override
+  T? getInheritedWidgetOfExactType<T extends InheritedWidget>() {
+    return $value.getInheritedWidgetOfExactType();
   }
 }
 
