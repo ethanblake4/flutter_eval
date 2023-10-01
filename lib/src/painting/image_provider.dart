@@ -6,7 +6,7 @@ import 'package:flutter/painting.dart';
 
 class $ImageProvider implements ImageProvider, $Instance {
   static const $type =
-      BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/image_provider.dart', 'ImageProvider'));
+  BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/image_provider.dart', 'ImageProvider'));
 
   static const $declaration = BridgeClassDef(
     BridgeClassType(
@@ -88,11 +88,16 @@ class $ImageProvider implements ImageProvider, $Instance {
     // ignore: deprecated_member_use
     return $value.load(key, decode);
   }
+
+  @override
+  ImageStreamCompleter loadImage(Object key, ImageDecoderCallback decode) {
+    return $value.loadImage(key, decode);
+  }
 }
 
 class $NetworkImage implements $Instance {
   static const $type =
-      BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/image_provider.dart', 'NetworkImage'));
+  BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/image_provider.dart', 'NetworkImage'));
 
   static const $declaration = BridgeClassDef(
     BridgeClassType($type, isAbstract: false, $extends: $ImageProvider.$type),

@@ -86,7 +86,7 @@ class $ThemeData implements $Instance {
       selectedRowColor: args[13]?.$value,
       unselectedWidgetColor: args[14]?.$value,
       disabledColor: args[15]?.$value,
-      buttonColor: args[16]?.$value,
+      buttonTheme: ButtonThemeData(buttonColor: args[16]?.$value),
       secondaryHeaderColor: args[17]?.$value,
       textTheme: args[18]?.$value,
       primaryTextTheme: args[19]?.$value,
@@ -131,7 +131,7 @@ class $ThemeData implements $Instance {
       case 'disabledColor':
         return $Color.wrap($value.disabledColor);
       case 'buttonColor':
-        return $Color.wrap($value.buttonColor);
+        return $Color.wrap($value.buttonTheme.colorScheme?.primary ?? Colors.transparent);
       case 'secondaryHeaderColor':
         return $Color.wrap($value.secondaryHeaderColor);
       case 'textTheme':
