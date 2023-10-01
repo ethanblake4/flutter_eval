@@ -1,3 +1,8 @@
+## 0.6.1
+- Upgrade to dart_eval v0.6.1
+- Support for Flutter 3.13
+- Fix deprecations (thanks to @FabrizioBilleciUNICT)
+
 ## 0.6.0
 - Upgrade to dart_eval v0.6.0
 - Add HotSwap and HotSwapLoader widgets to facilitate easy partial app
