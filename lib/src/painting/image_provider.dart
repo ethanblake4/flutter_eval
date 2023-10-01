@@ -56,7 +56,9 @@ class $ImageProvider implements ImageProvider, $Instance {
   }
 
   @override
+  // ignore: deprecated_member_use
   ImageStreamCompleter loadBuffer(Object key, DecoderBufferCallback decode) {
+    // ignore: deprecated_member_use
     return $value.loadBuffer(key, decode);
   }
 
@@ -87,6 +89,11 @@ class $ImageProvider implements ImageProvider, $Instance {
   ImageStreamCompleter load(Object key, DecoderCallback decode) {
     // ignore: deprecated_member_use
     return $value.load(key, decode);
+  }
+
+  @override
+  ImageStreamCompleter loadImage(Object key, ImageDecoderCallback decode) {
+    return $value.loadImage(key, decode);
   }
 }
 

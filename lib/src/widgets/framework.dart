@@ -488,6 +488,11 @@ class $BuildContext implements BuildContext, $Instance {
       return false;
     }
   }
+
+  @override
+  T? getInheritedWidgetOfExactType<T extends InheritedWidget>() {
+    return $value.getInheritedWidgetOfExactType();
+  }
 }
 
 class $StatelessElement implements $Instance {
