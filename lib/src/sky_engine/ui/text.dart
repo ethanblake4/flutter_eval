@@ -35,19 +35,12 @@ class $FontStyle implements $Instance {
 class $FontWeight implements $Instance {
   static const $type = BridgeTypeRef(BridgeTypeSpec('dart:ui', 'FontWeight'));
 
-  static const $declaration = BridgeEnumDef($type, methods: {}, getters: {}, setters: {}, values: [
-    'normal',
-    'bold'
-        'w100',
-    'w200',
-    'w300',
-    'w400',
-    'w500',
-    'w600',
-    'w700',
-    'w800',
-    'w900'
-  ], fields: {});
+  static const $declaration = BridgeEnumDef($type,
+      methods: {},
+      getters: {},
+      setters: {},
+      values: ['normal', 'bold', 'w100', 'w200', 'w300', 'w400', 'w500', 'w600', 'w700', 'w800', 'w900'],
+      fields: {});
 
   static final $values = {
     'normal': $FontWeight.wrap(FontWeight.normal),

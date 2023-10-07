@@ -1,3 +1,6 @@
+## 0.6.1+1
+- Fix FontWeight enum mappings
+
 ## 0.6.1
 - Upgrade to dart_eval v0.6.1
 - Support for Flutter 3.13
