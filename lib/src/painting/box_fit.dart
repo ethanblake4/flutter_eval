@@ -4,16 +4,21 @@ import 'package:flutter/material.dart';
 
 class $BoxFit implements $Instance {
   /// dart_eval type definition for [BoxFit]
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/box_fit.dart', 'BoxFit'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/painting/box_fit.dart', 'BoxFit'));
 
   /// dart_eval class declaration for [BoxFit]
   static const $declaration = BridgeEnumDef(
     $type,
-    methods: {},
-    getters: {},
-    setters: {},
-    values: ['contain', 'cover', 'fill', 'fitHeight', 'fitWidth', 'none', 'scaleDown'],
-    fields: {},
+    values: [
+      'contain',
+      'cover',
+      'fill',
+      'fitHeight',
+      'fitWidth',
+      'none',
+      'scaleDown'
+    ],
   );
 
   /// Runtime enum values

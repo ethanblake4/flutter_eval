@@ -9,29 +9,38 @@ import '../widgets/framework.dart';
 /// dart_eval bridge wrapper for [AppBar]
 class $AppBar implements $Instance {
   /// Bridge type reference for [$AppBar]
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/app_bar.dart', 'AppBar'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/material/app_bar.dart', 'AppBar'));
 
   /// Bridge class definition for [$AppBar]
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter('leading', BridgeTypeAnnotation($Widget.$type), true),
-          BridgeParameter(
-              'automaticallyImplyLeading', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
-          BridgeParameter('title', BridgeTypeAnnotation($Text.$type), true),
-          BridgeParameter('actions',
-              BridgeTypeAnnotation(BridgeTypeRef(BridgeTypeSpec('dart:core', 'List'), [$Widget.$type])), true),
-          BridgeParameter('flexibleSpace', BridgeTypeAnnotation($Widget.$type), true),
-          BridgeParameter('bottom', BridgeTypeAnnotation($Widget.$type), true),
-          BridgeParameter('elevation', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-          BridgeParameter('shadowColor', BridgeTypeAnnotation($Color.$type), true),
-          BridgeParameter('backgroundColor', BridgeTypeAnnotation($Color.$type), true),
-        ]))
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter(
+                  'leading', BridgeTypeAnnotation($Widget.$type), true),
+              BridgeParameter('automaticallyImplyLeading',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)), true),
+              BridgeParameter('title', BridgeTypeAnnotation($Text.$type), true),
+              BridgeParameter(
+                  'actions',
+                  BridgeTypeAnnotation(BridgeTypeRef(
+                      BridgeTypeSpec('dart:core', 'List'), [$Widget.$type])),
+                  true),
+              BridgeParameter(
+                  'flexibleSpace', BridgeTypeAnnotation($Widget.$type), true),
+              BridgeParameter(
+                  'bottom', BridgeTypeAnnotation($Widget.$type), true),
+              BridgeParameter('elevation',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
+              BridgeParameter(
+                  'shadowColor', BridgeTypeAnnotation($Color.$type), true),
+              BridgeParameter(
+                  'backgroundColor', BridgeTypeAnnotation($Color.$type), true),
+            ]))
       },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   /// Wrap a [AppBar] in a [$AppBar]

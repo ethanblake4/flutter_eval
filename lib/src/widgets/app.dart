@@ -6,21 +6,27 @@ import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $WidgetsApp implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/app.dart', 'WidgetsApp'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/widgets/app.dart', 'WidgetsApp'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter('color', BridgeTypeAnnotation($Color.$type), false),
-          BridgeParameter('home', BridgeTypeAnnotation($Widget.$type), true),
-          BridgeParameter('title', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType)), true),
-          BridgeParameter('builder', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType)), true),
-        ]))
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter(
+                  'color', BridgeTypeAnnotation($Color.$type), false),
+              BridgeParameter(
+                  'home', BridgeTypeAnnotation($Widget.$type), true),
+              BridgeParameter('title',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.string)), true),
+              BridgeParameter(
+                  'builder',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.function)),
+                  true),
+            ]))
       },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
@@ -30,9 +36,10 @@ class $WidgetsApp implements $Instance {
       title: args[2]?.$value,
       builder: args[3] == null
           ? null
-          : (ctx, widget) => (args[3] as EvalCallable)(
-                  runtime, null, [$BuildContext.wrap(ctx), widget == null ? const $null() : $Widget.wrap(widget)])
-              as Widget,
+          : (ctx, widget) => (args[3] as EvalCallable)(runtime, null, [
+                $BuildContext.wrap(ctx),
+                widget == null ? const $null() : $Widget.wrap(widget)
+              ]) as Widget,
     ));
   }
 

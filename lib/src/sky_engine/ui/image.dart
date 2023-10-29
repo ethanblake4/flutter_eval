@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 
 class $FilterQuality implements $Instance {
   /// dart_eval type definition for [FilterQuality]
-  static const $type = BridgeTypeRef(BridgeTypeSpec('dart:ui', 'FilterQuality'));
+  static const $type =
+      BridgeTypeRef(BridgeTypeSpec('dart:ui', 'FilterQuality'));
 
   /// dart_eval class declaration for [FilterQuality]
   static const $declaration = BridgeEnumDef($type,
-      methods: {}, getters: {}, setters: {}, values: ['none', 'low', 'medium', 'high'], fields: {});
+      values: ['none', 'low', 'medium', 'high'], fields: {});
 
   /// Runtime enum values
   static final $values = {

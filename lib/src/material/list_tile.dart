@@ -7,39 +7,65 @@ import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $ListTile implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/list_tile.dart', 'ListTile'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/material/list_tile.dart', 'ListTile'));
 
-  static const $declaration =
-      BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $StatelessWidget$bridge.$type),
-          constructors: {
-            '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type,
+          isAbstract: false, $extends: $StatelessWidget$bridge.$type),
+      constructors: {
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
               BridgeParameter('key', BridgeTypeAnnotation($Key.$type), true),
-              BridgeParameter('leading', BridgeTypeAnnotation($Widget.$type), true),
-              BridgeParameter('title', BridgeTypeAnnotation($Widget.$type), true),
-              BridgeParameter('subtitle', BridgeTypeAnnotation($Widget.$type), true),
-              BridgeParameter('trailing', BridgeTypeAnnotation($Widget.$type), true),
-              BridgeParameter('isThreeLine', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
-              BridgeParameter('dense', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
-              BridgeParameter('contentPadding', BridgeTypeAnnotation($EdgeInsetsGeometry.$type), true),
-              BridgeParameter('enabled', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
-              BridgeParameter('onTap', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType)), true),
-              BridgeParameter('onLongPress', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType)), true),
-              BridgeParameter('selected', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
-              BridgeParameter('focusColor', BridgeTypeAnnotation($Color.$type), true),
-              BridgeParameter('hoverColor', BridgeTypeAnnotation($Color.$type), true),
-              BridgeParameter('horizontalTitleGap',
-                  BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType), nullable: true), true),
-              BridgeParameter('minVerticalPadding',
-                  BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType), nullable: true), true),
-              BridgeParameter('minLeadingWidth',
-                  BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType), nullable: true), true),
+              BridgeParameter(
+                  'leading', BridgeTypeAnnotation($Widget.$type), true),
+              BridgeParameter(
+                  'title', BridgeTypeAnnotation($Widget.$type), true),
+              BridgeParameter(
+                  'subtitle', BridgeTypeAnnotation($Widget.$type), true),
+              BridgeParameter(
+                  'trailing', BridgeTypeAnnotation($Widget.$type), true),
+              BridgeParameter('isThreeLine',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)), true),
+              BridgeParameter('dense',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)), true),
+              BridgeParameter('contentPadding',
+                  BridgeTypeAnnotation($EdgeInsetsGeometry.$type), true),
+              BridgeParameter('enabled',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)), true),
+              BridgeParameter(
+                  'onTap',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.function)),
+                  true),
+              BridgeParameter(
+                  'onLongPress',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.function)),
+                  true),
+              BridgeParameter('selected',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)), true),
+              BridgeParameter(
+                  'focusColor', BridgeTypeAnnotation($Color.$type), true),
+              BridgeParameter(
+                  'hoverColor', BridgeTypeAnnotation($Color.$type), true),
+              BridgeParameter(
+                  'horizontalTitleGap',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double),
+                      nullable: true),
+                  true),
+              BridgeParameter(
+                  'minVerticalPadding',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double),
+                      nullable: true),
+                  true),
+              BridgeParameter(
+                  'minLeadingWidth',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double),
+                      nullable: true),
+                  true),
             ]))
-          },
-          methods: {},
-          getters: {},
-          setters: {},
-          fields: {},
-          wrap: true);
+      },
+      wrap: true);
 
   late final _superclass = $StatelessWidget.wrap($value);
 
@@ -59,8 +85,12 @@ class $ListTile implements $Instance {
       dense: args[6]?.$value ?? false,
       contentPadding: args[7]?.$value,
       enabled: args[8]?.$value ?? true,
-      onTap: args[9] == null ? null : () => (args[9] as EvalCallable).call(runtime, null, []),
-      onLongPress: args[10] == null ? null : () => (args[10] as EvalCallable).call(runtime, null, []),
+      onTap: args[9] == null
+          ? null
+          : () => (args[9] as EvalCallable).call(runtime, null, []),
+      onLongPress: args[10] == null
+          ? null
+          : () => (args[10] as EvalCallable).call(runtime, null, []),
       selected: args[11]?.$value ?? false,
       focusColor: args[12]?.$value,
       hoverColor: args[13]?.$value,

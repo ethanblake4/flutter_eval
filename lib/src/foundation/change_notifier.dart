@@ -4,31 +4,36 @@ import 'package:dart_eval/stdlib/core.dart';
 import 'package:flutter/cupertino.dart';
 
 class $ChangeNotifier implements $Instance {
-  static const $type =
-      BridgeTypeRef(BridgeTypeSpec('package:flutter/src/foundation/change_notifier.dart', 'ChangeNotifier'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/foundation/change_notifier.dart', 'ChangeNotifier'));
 
   static const $methods = {
-    'addListener': BridgeMethodDef(
-        BridgeFunctionDef(returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.voidType)), params: [
-      BridgeParameter('listener', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType)), false),
-    ])),
-    'dispose':
-        BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.voidType)))),
-    'notifyListeners':
-        BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.voidType)))),
-    'removeListener': BridgeMethodDef(
-        BridgeFunctionDef(returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.voidType)), params: [
-      BridgeParameter('listener', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType)), false),
-    ])),
+    'addListener': BridgeMethodDef(BridgeFunctionDef(
+        returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
+        params: [
+          BridgeParameter('listener',
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.function)), false),
+        ])),
+    'dispose': BridgeMethodDef(BridgeFunctionDef(
+        returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)))),
+    'notifyListeners': BridgeMethodDef(BridgeFunctionDef(
+        returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)))),
+    'removeListener': BridgeMethodDef(BridgeFunctionDef(
+        returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
+        params: [
+          BridgeParameter('listener',
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.function)), false),
+        ])),
   };
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false),
-      constructors: {'': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type)))},
-      methods: $methods,
-      getters: {},
-      setters: {},
-      fields: {},
-      wrap: true);
+  static const $declaration =
+      BridgeClassDef(BridgeClassType($type, isAbstract: false),
+          constructors: {
+            '': BridgeConstructorDef(
+                BridgeFunctionDef(returns: BridgeTypeAnnotation($type)))
+          },
+          methods: $methods,
+          wrap: true);
 
   late final $Instance _superclass = $Object(this);
 
@@ -70,7 +75,8 @@ class $ChangeNotifier implements $Instance {
         });
       case 'removeListener':
         return $Function((runtime, target, args) {
-          (target!.$value as ChangeNotifier).removeListener(_$listenerCache[args[0] as EvalCallable]!);
+          (target!.$value as ChangeNotifier)
+              .removeListener(_$listenerCache[args[0] as EvalCallable]!);
           return null;
         });
     }
@@ -86,14 +92,16 @@ class $ChangeNotifier implements $Instance {
   }
 }
 
-class $ChangeNotifier$bridge extends ChangeNotifier with $Bridge<ChangeNotifier> {
-  static const $declaration = BridgeClassDef(BridgeClassType($ChangeNotifier.$type, isAbstract: false),
-      constructors: {'': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($ChangeNotifier.$type)))},
-      methods: $ChangeNotifier.$methods,
-      getters: {},
-      setters: {},
-      fields: {},
-      bridge: true);
+class $ChangeNotifier$bridge extends ChangeNotifier
+    with $Bridge<ChangeNotifier> {
+  static const $declaration =
+      BridgeClassDef(BridgeClassType($ChangeNotifier.$type, isAbstract: false),
+          constructors: {
+            '': BridgeConstructorDef(BridgeFunctionDef(
+                returns: BridgeTypeAnnotation($ChangeNotifier.$type)))
+          },
+          methods: $ChangeNotifier.$methods,
+          bridge: true);
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
     // ignore: prefer_const_constructors

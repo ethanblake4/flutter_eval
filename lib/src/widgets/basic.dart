@@ -24,20 +24,23 @@ export 'package:flutter/rendering.dart' show
 ''';
 
 class $Padding implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Padding'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Padding'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
-          BridgeParameter('padding', BridgeTypeAnnotation($EdgeInsetsGeometry.$type), false),
-          BridgeParameter('child', BridgeTypeAnnotation($Widget.$type), true),
-        ]))
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter('key',
+                  BridgeTypeAnnotation($Key.$type, nullable: true), true),
+              BridgeParameter('padding',
+                  BridgeTypeAnnotation($EdgeInsetsGeometry.$type), false),
+              BridgeParameter(
+                  'child', BridgeTypeAnnotation($Widget.$type), true),
+            ]))
       },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   const $Padding.wrap(this.$value);
@@ -73,25 +76,35 @@ class $Padding implements $Instance {
 /// dart_eval bridge wrapper for [Column]
 class $Column implements $Instance {
   /// Bridge type reference for [$Column]
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Column'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Column'));
 
   /// Bridge class definition for [$Column]
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
-          BridgeParameter('mainAxisAlignment', BridgeTypeAnnotation($MainAxisAlignment.$type), true),
-          BridgeParameter('mainAxisSize', BridgeTypeAnnotation($MainAxisSize.$type), true),
-          BridgeParameter('crossAxisAlignment', BridgeTypeAnnotation($CrossAxisAlignment.$type), true),
-          BridgeParameter('verticalDirection', BridgeTypeAnnotation($VerticalDirection.$type), true),
-          BridgeParameter('textBaseline', BridgeTypeAnnotation($TextBaseline.$type), true),
-          BridgeParameter('children', BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.list, [$Widget.$type])), true),
-        ]))
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter('key',
+                  BridgeTypeAnnotation($Key.$type, nullable: true), true),
+              BridgeParameter('mainAxisAlignment',
+                  BridgeTypeAnnotation($MainAxisAlignment.$type), true),
+              BridgeParameter('mainAxisSize',
+                  BridgeTypeAnnotation($MainAxisSize.$type), true),
+              BridgeParameter('crossAxisAlignment',
+                  BridgeTypeAnnotation($CrossAxisAlignment.$type), true),
+              BridgeParameter('verticalDirection',
+                  BridgeTypeAnnotation($VerticalDirection.$type), true),
+              BridgeParameter('textBaseline',
+                  BridgeTypeAnnotation($TextBaseline.$type), true),
+              BridgeParameter(
+                  'children',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef(CoreTypes.list, [$Widget.$type])),
+                  true),
+            ]))
       },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   /// Wraps a [Column] instance in a [$Column] bridge wrapper
@@ -132,25 +145,35 @@ class $Column implements $Instance {
 /// dart_eval bridge wrapper for [Row]
 class $Row implements $Instance {
   /// Bridge type reference for [$Row]
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Row'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Row'));
 
   /// Bridge class definition for [$Row]
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
-          BridgeParameter('mainAxisAlignment', BridgeTypeAnnotation($MainAxisAlignment.$type), true),
-          BridgeParameter('mainAxisSize', BridgeTypeAnnotation($MainAxisSize.$type), true),
-          BridgeParameter('crossAxisAlignment', BridgeTypeAnnotation($CrossAxisAlignment.$type), true),
-          BridgeParameter('textDirection', BridgeTypeAnnotation($TextDirection.$type), true),
-          BridgeParameter('verticalDirection', BridgeTypeAnnotation($VerticalDirection.$type), true),
-          BridgeParameter('children', BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.list, [$Widget.$type])), true),
-        ]))
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter('key',
+                  BridgeTypeAnnotation($Key.$type, nullable: true), true),
+              BridgeParameter('mainAxisAlignment',
+                  BridgeTypeAnnotation($MainAxisAlignment.$type), true),
+              BridgeParameter('mainAxisSize',
+                  BridgeTypeAnnotation($MainAxisSize.$type), true),
+              BridgeParameter('crossAxisAlignment',
+                  BridgeTypeAnnotation($CrossAxisAlignment.$type), true),
+              BridgeParameter('textDirection',
+                  BridgeTypeAnnotation($TextDirection.$type), true),
+              BridgeParameter('verticalDirection',
+                  BridgeTypeAnnotation($VerticalDirection.$type), true),
+              BridgeParameter(
+                  'children',
+                  BridgeTypeAnnotation(
+                      BridgeTypeRef(CoreTypes.list, [$Widget.$type])),
+                  true),
+            ]))
       },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   /// Wraps a [Row] instance in a [$Row] bridge wrapper
@@ -189,21 +212,25 @@ class $Row implements $Instance {
 }
 
 class $Center implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Center'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Center'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
-          BridgeParameter('widthFactor', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-          BridgeParameter('heightFactor', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-          BridgeParameter('child', BridgeTypeAnnotation($Widget.$type), true),
-        ]))
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter('key',
+                  BridgeTypeAnnotation($Key.$type, nullable: true), true),
+              BridgeParameter('widthFactor',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
+              BridgeParameter('heightFactor',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
+              BridgeParameter(
+                  'child', BridgeTypeAnnotation($Widget.$type), true),
+            ]))
       },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   const $Center.wrap(this.$value);
@@ -238,19 +265,23 @@ class $Center implements $Instance {
 }
 
 class $Builder implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Builder'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Builder'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
-          BridgeParameter('builder', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType)), true),
-        ]))
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter('key',
+                  BridgeTypeAnnotation($Key.$type, nullable: true), true),
+              BridgeParameter(
+                  'builder',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.function)),
+                  true),
+            ]))
       },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   const $Builder.wrap(this.$value);

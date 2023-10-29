@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
+import 'package:dart_eval/stdlib/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_eval/flutter_eval.dart';
 import 'package:flutter_eval/src/animation/curves.dart';
@@ -69,7 +70,8 @@ void main() {
     final runtime = Runtime(program.write().buffer.asByteData());
     setupFlutterForRuntime(runtime);
     runtime.setup();
-    expect(() => runtime.executeLib('package:example/main.dart', 'main'), prints('listener\n'));
+    expect(() => runtime.executeLib('package:example/main.dart', 'main'),
+        prints('listener\n'));
   });
 
   testWidgets('TextField test', (WidgetTester tester) async {
@@ -120,7 +122,8 @@ void main() {
     final runtime = Runtime(program.write().buffer.asByteData());
     setupFlutterForRuntime(runtime);
     runtime.setup();
-    await tester.pumpWidget(runtime.executeLib('package:example/main.dart', 'MyWidget.'));
+    await tester.pumpWidget(
+        runtime.executeLib('package:example/main.dart', 'MyWidget.'));
     await tester.enterText(find.byType(TextField), 'Hello');
     await tester.pump();
     expect(find.text('Hello123'), findsOneWidget);
@@ -240,7 +243,89 @@ void main() {
     expect(result, isNotNull);
     expect(result.$value, isA<BoxDecoration>());
     expect((result.$value as BoxDecoration).border, isA<Border>());
-    expect((result.$value as BoxDecoration).border!.top.color, equals(Colors.red));
+    expect(
+        (result.$value as BoxDecoration).border!.top.color, equals(Colors.red));
     expect((result.$value as BoxDecoration).border!.top.width, equals(2.0));
+  });
+
+  testWidgets('Passing a Map', (WidgetTester tester) async {
+    final compiler = Compiler();
+    setupFlutterForCompile(compiler);
+    final program = compiler.compile({
+      'example': {
+        'main.dart': '''
+        import 'package:flutter/material.dart';
+        class MyWidget extends StatelessWidget {
+          Map<String, dynamic> map;
+
+          MyWidget(this.map, {super.key});
+
+          @override
+          Widget build(BuildContext context) {
+            return MaterialApp(home: Scaffold(
+              body: Center(
+                child: Text(
+                  map['title'],
+                  style: const TextStyle(fontSize: 50),
+                ),
+              ),
+            ));
+          }
+        }
+        '''
+      }
+    });
+    final runtime = Runtime(program.write().buffer.asByteData());
+    setupFlutterForRuntime(runtime);
+    runtime.setup();
+    final Map<$String, $Value> map = {$String('title'): $String('Hello World')};
+    final result = runtime.executeLib(
+        'package:example/main.dart', 'MyWidget.', [$Map.wrap(map), null]);
+    await tester.pumpWidget(result);
+    expect(find.text('Hello World'), findsOneWidget);
+  });
+
+  testWidgets('Callback onClick', (WidgetTester tester) async {
+    final compiler = Compiler();
+    setupFlutterForCompile(compiler);
+    final program = compiler.compile({
+      'example': {
+        'main.dart': '''
+        import 'package:flutter/material.dart';
+        class MyWidget extends StatelessWidget {
+          final void Function(String) onClick;
+
+          MyWidget(this.onClick, {super.key});
+
+          @override
+          Widget build(BuildContext context) {
+            return MaterialApp(home: Scaffold(
+              body: Center(
+                child: TextButton(
+                  child: Text('Click me'),
+                  onPressed: () => onClick('Hello!'),
+                ),
+              ),
+            ));
+          }
+        }
+        '''
+      }
+    });
+    final runtime = Runtime(program.write().buffer.asByteData());
+    setupFlutterForRuntime(runtime);
+    runtime.setup();
+    String strval = '';
+    final result =
+        runtime.executeLib('package:example/main.dart', 'MyWidget.', [
+      $Closure((runtime, target, args) {
+        strval = args[0]!.$value;
+        return null;
+      }),
+      Null
+    ]);
+    await tester.pumpWidget(result);
+    await tester.tap(find.text('Click me'));
+    expect(strval, 'Hello!');
   });
 }

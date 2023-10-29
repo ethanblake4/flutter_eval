@@ -27,17 +27,13 @@ class $Spacer implements $Instance {
             ),
             BridgeParameter(
               'flex',
-              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.intType)),
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.int)),
               false,
             ),
           ],
         ),
       )
     },
-    methods: {},
-    getters: {},
-    setters: {},
-    fields: {},
     wrap: true,
   );
 

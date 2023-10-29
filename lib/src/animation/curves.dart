@@ -57,10 +57,13 @@ class Curves {
 ''';
 
 class $ParametricCurve implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'ParametricCurve'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/animation/curves.dart', 'ParametricCurve'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
-      constructors: {}, methods: {}, getters: {}, setters: {}, fields: {}, wrap: true);
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, isAbstract: true),
+      constructors: {},
+      wrap: true);
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
@@ -85,19 +88,22 @@ class $ParametricCurve implements $Instance {
 /// dart_eval wrapper for [Curve]
 class $Curve implements $Instance {
   /// dart_eval type reference for [Curve]
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'Curve'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'Curve'));
 
   /// dart_eval class declaration for [Curve]
-  static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $ParametricCurve.$type, isAbstract: true),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type,
+          $extends: $ParametricCurve.$type, isAbstract: true),
       constructors: {},
       methods: {
         'transform': BridgeMethodDef(BridgeFunctionDef(
-            returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)),
-            params: [BridgeParameter('t', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), false)]))
+            returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)),
+            params: [
+              BridgeParameter('t',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), false)
+            ]))
       },
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   @override
@@ -111,7 +117,8 @@ class $Curve implements $Instance {
   $Value? $getProperty(Runtime runtime, String identifier) {
     switch (identifier) {
       case 'transform':
-        return $Function(((runtime, target, args) => $double($value.transform(args[0]!.$value as double))));
+        return $Function(((runtime, target, args) =>
+            $double($value.transform(args[0]!.$value as double))));
       default:
         return _superclass.$getProperty(runtime, identifier);
     }
@@ -130,15 +137,16 @@ class $Curve implements $Instance {
 }
 
 class $_Linear implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', '_Linear'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/animation/curves.dart', '_Linear'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Curve.$type),
-      constructors: {'_': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type)))},
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
-      wrap: true);
+  static const $declaration =
+      BridgeClassDef(BridgeClassType($type, $extends: $Curve.$type),
+          constructors: {
+            '_': BridgeConstructorDef(
+                BridgeFunctionDef(returns: BridgeTypeAnnotation($type)))
+          },
+          wrap: true);
 
   @override
   final Curve $value;
@@ -169,18 +177,18 @@ class $_Linear implements $Instance {
 }
 
 class $SawTooth implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'SawTooth'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'SawTooth'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Curve.$type),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, $extends: $Curve.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
-          BridgeParameter('count', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.intType)), false),
+        '': BridgeConstructorDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter('count',
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.int)), false),
         ]))
       },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   @override
@@ -212,20 +220,21 @@ class $SawTooth implements $Instance {
 }
 
 class $Interval implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'Interval'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'Interval'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Curve.$type),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, $extends: $Curve.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
-          BridgeParameter('begin', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), false),
-          BridgeParameter('end', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), false),
+        '': BridgeConstructorDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter('begin',
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), false),
+          BridgeParameter('end',
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), false),
           BridgeParameter('curve', BridgeTypeAnnotation($Curve.$type), true),
         ]))
       },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   @override
@@ -236,8 +245,9 @@ class $Interval implements $Instance {
   final $Curve _superclass;
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
-    return $Interval
-        .wrap(Interval(args[0]!.$value as double, args[1]!.$value as double, curve: args[2]?.$value ?? Curves.linear));
+    return $Interval.wrap(Interval(
+        args[0]!.$value as double, args[1]!.$value as double,
+        curve: args[2]?.$value ?? Curves.linear));
   }
 
   @override
@@ -258,18 +268,18 @@ class $Interval implements $Instance {
 }
 
 class $Threshold implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'Threshold'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'Threshold'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Curve.$type),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, $extends: $Curve.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
-          BridgeParameter('threshold', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), false),
+        '': BridgeConstructorDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter('threshold',
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), false),
         ]))
       },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   @override
@@ -301,21 +311,24 @@ class $Threshold implements $Instance {
 }
 
 class $Cubic implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'Cubic'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'Cubic'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Curve.$type),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, $extends: $Curve.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
-          BridgeParameter('a', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), false),
-          BridgeParameter('b', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), false),
-          BridgeParameter('c', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), false),
-          BridgeParameter('d', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), false),
+        '': BridgeConstructorDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter('a',
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), false),
+          BridgeParameter('b',
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), false),
+          BridgeParameter('c',
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), false),
+          BridgeParameter('d',
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), false),
         ]))
       },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   @override
@@ -327,7 +340,10 @@ class $Cubic implements $Instance {
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
     return $Cubic.wrap(Cubic(
-        args[0]!.$value as double, args[1]!.$value as double, args[2]!.$value as double, args[3]!.$value as double));
+        args[0]!.$value as double,
+        args[1]!.$value as double,
+        args[2]!.$value as double,
+        args[3]!.$value as double));
   }
 
   @override
@@ -348,15 +364,16 @@ class $Cubic implements $Instance {
 }
 
 class $_DecelerateCurve implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', '_DecelerateCurve'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/animation/curves.dart', '_DecelerateCurve'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Curve.$type),
-      constructors: {'_': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type)))},
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
-      wrap: true);
+  static const $declaration =
+      BridgeClassDef(BridgeClassType($type, $extends: $Curve.$type),
+          constructors: {
+            '_': BridgeConstructorDef(
+                BridgeFunctionDef(returns: BridgeTypeAnnotation($type)))
+          },
+          wrap: true);
 
   @override
   final Curve $value;
@@ -387,18 +404,18 @@ class $_DecelerateCurve implements $Instance {
 }
 
 class $ElasticInCurve implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'ElasticInCurve'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/animation/curves.dart', 'ElasticInCurve'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Curve.$type),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, $extends: $Curve.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
-          BridgeParameter('period', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
+        '': BridgeConstructorDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter('period',
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
         ]))
       },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   @override
@@ -430,18 +447,18 @@ class $ElasticInCurve implements $Instance {
 }
 
 class $ElasticOutCurve implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'ElasticOutCurve'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/animation/curves.dart', 'ElasticOutCurve'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Curve.$type),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, $extends: $Curve.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
-          BridgeParameter('period', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
+        '': BridgeConstructorDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter('period',
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
         ]))
       },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   @override
@@ -473,18 +490,18 @@ class $ElasticOutCurve implements $Instance {
 }
 
 class $ElasticInOutCurve implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/animation/curves.dart', 'ElasticInOutCurve'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/animation/curves.dart', 'ElasticInOutCurve'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $Curve.$type),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, $extends: $Curve.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
-          BridgeParameter('period', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
+        '': BridgeConstructorDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter('period',
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
         ]))
       },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   @override

@@ -5,26 +5,32 @@ import 'package:flutter_eval/src/material/theme_data.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $Theme implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/theme.dart', 'Theme'));
-  static const $declaration =
-      BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $StatelessWidget$bridge.$type),
-          constructors: {
-            '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-              BridgeParameter('data', BridgeTypeAnnotation($ThemeData.$type), false),
-              BridgeParameter('child', BridgeTypeAnnotation($Widget.$type), false),
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/material/theme.dart', 'Theme'));
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type,
+          isAbstract: false, $extends: $StatelessWidget$bridge.$type),
+      constructors: {
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter(
+                  'data', BridgeTypeAnnotation($ThemeData.$type), false),
+              BridgeParameter(
+                  'child', BridgeTypeAnnotation($Widget.$type), false),
             ]))
-          },
-          methods: {
-            'of': BridgeMethodDef(
-                BridgeFunctionDef(returns: BridgeTypeAnnotation($ThemeData.$type), params: [
-                  BridgeParameter('context', BridgeTypeAnnotation($BuildContext.$type), true),
+      },
+      methods: {
+        'of': BridgeMethodDef(
+            BridgeFunctionDef(
+                returns: BridgeTypeAnnotation($ThemeData.$type),
+                params: [
+                  BridgeParameter('context',
+                      BridgeTypeAnnotation($BuildContext.$type), true),
                 ]),
-                isStatic: true)
-          },
-          getters: {},
-          setters: {},
-          fields: {},
-          wrap: true);
+            isStatic: true)
+      },
+      wrap: true);
 
   $Theme.wrap(this.$value);
 

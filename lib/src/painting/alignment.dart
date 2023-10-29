@@ -4,11 +4,13 @@ import 'package:dart_eval/stdlib/core.dart';
 import 'package:flutter/material.dart';
 
 class $AlignmentGeometry implements $Instance {
-  static const $type =
-      BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/alignment.dart', 'AlignmentGeometry'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/painting/alignment.dart', 'AlignmentGeometry'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
-      constructors: {}, methods: {}, getters: {}, setters: {}, fields: {}, wrap: true);
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, isAbstract: true),
+      constructors: {},
+      wrap: true);
 
   $AlignmentGeometry.wrap(this.$value);
 
@@ -35,37 +37,41 @@ class $AlignmentGeometry implements $Instance {
 }
 
 class $Alignment implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/alignment.dart', 'Alignment'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/painting/alignment.dart', 'Alignment'));
 
-  static const _stValueType =
-      BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Alignment.$type)), isStatic: true);
-  static const $declaration =
-      BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $AlignmentGeometry.$type),
-          constructors: {
-            '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-              BridgeParameter('x', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), false),
-              BridgeParameter('y', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), false),
+  static const _stValueType = BridgeMethodDef(
+      BridgeFunctionDef(returns: BridgeTypeAnnotation($Alignment.$type)),
+      isStatic: true);
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type,
+          isAbstract: false, $extends: $AlignmentGeometry.$type),
+      constructors: {
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter('x',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), false),
+              BridgeParameter('y',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), false),
             ]))
-          },
-          methods: {},
-          getters: {
-            'x': BridgeMethodDef(
-                BridgeFunctionDef(returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)))),
-            'y': BridgeMethodDef(
-                BridgeFunctionDef(returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)))),
-            'topLeft': _stValueType,
-            'topCenter': _stValueType,
-            'topRight': _stValueType,
-            'centerLeft': _stValueType,
-            'center': _stValueType,
-            'centerRight': _stValueType,
-            'bottomLeft': _stValueType,
-            'bottomCenter': _stValueType,
-            'bottomRight': _stValueType,
-          },
-          setters: {},
-          fields: {},
-          wrap: true);
+      },
+      getters: {
+        'x': BridgeMethodDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)))),
+        'y': BridgeMethodDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)))),
+        'topLeft': _stValueType,
+        'topCenter': _stValueType,
+        'topRight': _stValueType,
+        'centerLeft': _stValueType,
+        'center': _stValueType,
+        'centerRight': _stValueType,
+        'bottomLeft': _stValueType,
+        'bottomCenter': _stValueType,
+        'bottomRight': _stValueType,
+      },
+      wrap: true);
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
     return $Alignment.wrap(Alignment(
@@ -78,15 +84,18 @@ class $Alignment implements $Instance {
     return $Alignment.wrap(Alignment.topLeft);
   }
 
-  static $Value? $topCenter(Runtime runtime, $Value? target, List<$Value?> args) {
+  static $Value? $topCenter(
+      Runtime runtime, $Value? target, List<$Value?> args) {
     return $Alignment.wrap(Alignment.topCenter);
   }
 
-  static $Value? $topRight(Runtime runtime, $Value? target, List<$Value?> args) {
+  static $Value? $topRight(
+      Runtime runtime, $Value? target, List<$Value?> args) {
     return $Alignment.wrap(Alignment.topRight);
   }
 
-  static $Value? $centerLeft(Runtime runtime, $Value? target, List<$Value?> args) {
+  static $Value? $centerLeft(
+      Runtime runtime, $Value? target, List<$Value?> args) {
     return $Alignment.wrap(Alignment.centerLeft);
   }
 
@@ -94,19 +103,23 @@ class $Alignment implements $Instance {
     return $Alignment.wrap(Alignment.center);
   }
 
-  static $Value? $centerRight(Runtime runtime, $Value? target, List<$Value?> args) {
+  static $Value? $centerRight(
+      Runtime runtime, $Value? target, List<$Value?> args) {
     return $Alignment.wrap(Alignment.centerRight);
   }
 
-  static $Value? $bottomLeft(Runtime runtime, $Value? target, List<$Value?> args) {
+  static $Value? $bottomLeft(
+      Runtime runtime, $Value? target, List<$Value?> args) {
     return $Alignment.wrap(Alignment.bottomLeft);
   }
 
-  static $Value? $bottomCenter(Runtime runtime, $Value? target, List<$Value?> args) {
+  static $Value? $bottomCenter(
+      Runtime runtime, $Value? target, List<$Value?> args) {
     return $Alignment.wrap(Alignment.bottomCenter);
   }
 
-  static $Value? $bottomRight(Runtime runtime, $Value? target, List<$Value?> args) {
+  static $Value? $bottomRight(
+      Runtime runtime, $Value? target, List<$Value?> args) {
     return $Alignment.wrap(Alignment.bottomRight);
   }
 

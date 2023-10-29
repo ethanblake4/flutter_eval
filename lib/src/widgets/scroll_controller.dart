@@ -6,36 +6,49 @@ import 'package:flutter_eval/animation.dart';
 import 'package:flutter_eval/src/foundation/change_notifier.dart';
 
 class $ScrollController implements $Instance {
-  static const $type =
-      BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/scroll_controller.dart', 'ScrollController'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/widgets/scroll_controller.dart',
+      'ScrollController'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $ChangeNotifier.$type),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type,
+          isAbstract: false, $extends: $ChangeNotifier.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter(
-              'initialScrollOffset', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-          BridgeParameter('keepScrollOffset', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
-          BridgeParameter('debugLabel', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType)), true),
-        ]))
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter('initialScrollOffset',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
+              BridgeParameter('keepScrollOffset',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)), true),
+              BridgeParameter('debugLabel',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.string)), true),
+            ]))
       },
       methods: {
-        'animateTo': BridgeMethodDef(
-            BridgeFunctionDef(returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.future)), namedParams: [
-          BridgeParameter('offset', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), false),
-          BridgeParameter('duration', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.durationType)), true),
-          BridgeParameter('curve', BridgeTypeAnnotation($Curve.$type), true),
-        ])),
-        'jumpTo': BridgeMethodDef(
-            BridgeFunctionDef(returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.voidType)), namedParams: [
-          BridgeParameter('offset', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), false),
-        ])),
+        'animateTo': BridgeMethodDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.future)),
+            namedParams: [
+              BridgeParameter('offset',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), false),
+              BridgeParameter(
+                  'duration',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.duration)),
+                  true),
+              BridgeParameter(
+                  'curve', BridgeTypeAnnotation($Curve.$type), true),
+            ])),
+        'jumpTo': BridgeMethodDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
+            namedParams: [
+              BridgeParameter('offset',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), false),
+            ])),
       },
       getters: {
-        'offset': BridgeMethodDef(
-            BridgeFunctionDef(returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType))))
+        'offset': BridgeMethodDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double))))
       },
-      setters: {},
-      fields: {},
       wrap: true);
 
   late final $Instance _superclass = $ChangeNotifier.wrap($value);
@@ -66,7 +79,8 @@ class $ScrollController implements $Instance {
   }
 
   static const $Function __animateTo = $Function(_animateTo);
-  static $Value? _animateTo(Runtime runtime, $Value? target, List<$Value?> args) {
+  static $Value? _animateTo(
+      Runtime runtime, $Value? target, List<$Value?> args) {
     return $Future.wrap(target!.$value.animateTo(
       args[0]!.$value,
       duration: args[1]?.$value,

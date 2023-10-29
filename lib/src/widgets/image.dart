@@ -10,7 +10,8 @@ import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $Image implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/image.dart', 'Image'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/widgets/image.dart', 'Image'));
 
   static const $declaration = BridgeClassDef(
     BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
@@ -19,13 +20,17 @@ class $Image implements $Instance {
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation($type),
           namedParams: [
-            BridgeParameter('image', BridgeTypeAnnotation($ImageProvider.$type), false),
+            BridgeParameter(
+                'image', BridgeTypeAnnotation($ImageProvider.$type), false),
             BridgeParameter('key', BridgeTypeAnnotation($Key.$type), true),
-            BridgeParameter('width', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-            BridgeParameter('height', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
+            BridgeParameter('width',
+                BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
+            BridgeParameter('height',
+                BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
             BridgeParameter('color', BridgeTypeAnnotation($Color.$type), true),
             BridgeParameter('fit', BridgeTypeAnnotation($BoxFit.$type), true),
-            BridgeParameter('alignment', BridgeTypeAnnotation($AlignmentGeometry.$type), true),
+            BridgeParameter('alignment',
+                BridgeTypeAnnotation($AlignmentGeometry.$type), true),
             BridgeParameter(
               'filterQuality',
               BridgeTypeAnnotation($FilterQuality.$type),
@@ -38,16 +43,21 @@ class $Image implements $Instance {
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation($type),
           params: [
-            BridgeParameter('src', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType)), false),
+            BridgeParameter('src',
+                BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.string)), false),
           ],
           namedParams: [
             BridgeParameter('key', BridgeTypeAnnotation($Key.$type), true),
-            BridgeParameter('scale', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-            BridgeParameter('width', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-            BridgeParameter('height', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
+            BridgeParameter('scale',
+                BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
+            BridgeParameter('width',
+                BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
+            BridgeParameter('height',
+                BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
             BridgeParameter('color', BridgeTypeAnnotation($Color.$type), true),
             BridgeParameter('fit', BridgeTypeAnnotation($BoxFit.$type), true),
-            BridgeParameter('alignment', BridgeTypeAnnotation($AlignmentGeometry.$type), true),
+            BridgeParameter('alignment',
+                BridgeTypeAnnotation($AlignmentGeometry.$type), true),
             BridgeParameter(
               'filterQuality',
               BridgeTypeAnnotation($FilterQuality.$type),
@@ -60,16 +70,21 @@ class $Image implements $Instance {
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation($type),
           params: [
-            BridgeParameter('name', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType)), false),
+            BridgeParameter('name',
+                BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.string)), false),
           ],
           namedParams: [
             BridgeParameter('key', BridgeTypeAnnotation($Key.$type), true),
-            BridgeParameter('scale', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-            BridgeParameter('width', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-            BridgeParameter('height', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
+            BridgeParameter('scale',
+                BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
+            BridgeParameter('width',
+                BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
+            BridgeParameter('height',
+                BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
             BridgeParameter('color', BridgeTypeAnnotation($Color.$type), true),
             BridgeParameter('fit', BridgeTypeAnnotation($BoxFit.$type), true),
-            BridgeParameter('alignment', BridgeTypeAnnotation($AlignmentGeometry.$type), true),
+            BridgeParameter('alignment',
+                BridgeTypeAnnotation($AlignmentGeometry.$type), true),
             BridgeParameter(
               'filterQuality',
               BridgeTypeAnnotation($FilterQuality.$type),
@@ -79,10 +94,6 @@ class $Image implements $Instance {
         ),
       ),
     },
-    fields: {},
-    getters: {},
-    methods: {},
-    setters: {},
     wrap: true,
   );
 

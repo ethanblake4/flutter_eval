@@ -7,21 +7,23 @@ import 'package:flutter_eval/src/painting/text_style.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $Text implements Text, $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/text.dart', 'Text'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/widgets/text.dart', 'Text'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, $extends: $StatelessWidget$bridge.$type),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, $extends: $StatelessWidget$bridge.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
-          BridgeParameter('data', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType)), false),
+        '': BridgeConstructorDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter('data',
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.string)), false),
         ], namedParams: [
-          BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
-          BridgeParameter('style', BridgeTypeAnnotation($TextStyle.$type, nullable: true), true),
+          BridgeParameter(
+              'key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
+          BridgeParameter('style',
+              BridgeTypeAnnotation($TextStyle.$type, nullable: true), true),
         ]))
       },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   $Text.wrap(this.$value);
@@ -58,32 +60,43 @@ class $Text implements Text, $Instance {
   StatelessElement createElement() => $value.createElement();
 
   @override
-  List<DiagnosticsNode> debugDescribeChildren() => $value.debugDescribeChildren();
+  List<DiagnosticsNode> debugDescribeChildren() =>
+      $value.debugDescribeChildren();
 
   @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) => $value.debugFillProperties(properties);
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) =>
+      $value.debugFillProperties(properties);
 
   @override
   Key? get key => $value.key;
 
   @override
-  DiagnosticsNode toDiagnosticsNode({String? name, DiagnosticsTreeStyle? style}) =>
+  DiagnosticsNode toDiagnosticsNode(
+          {String? name, DiagnosticsTreeStyle? style}) =>
       $value.toDiagnosticsNode(name: name, style: style);
 
   @override
   String toStringDeep(
-          {String prefixLineOne = '', String? prefixOtherLines, DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
-      $value.toStringDeep(prefixLineOne: prefixLineOne, prefixOtherLines: prefixOtherLines, minLevel: minLevel);
+          {String prefixLineOne = '',
+          String? prefixOtherLines,
+          DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
+      $value.toStringDeep(
+          prefixLineOne: prefixLineOne,
+          prefixOtherLines: prefixOtherLines,
+          minLevel: minLevel);
 
   @override
-  String toStringShallow({String joiner = ', ', DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
+  String toStringShallow(
+          {String joiner = ', ',
+          DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
       $value.toStringShallow(joiner: joiner, minLevel: minLevel);
 
   @override
   String toStringShort() => $value.toStringShort();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) => $value.toString(minLevel: minLevel);
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) =>
+      $value.toString(minLevel: minLevel);
 
   @override
   String? get data => $value.data;

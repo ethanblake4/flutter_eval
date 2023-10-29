@@ -16,10 +16,12 @@ import 'package:path_provider/path_provider.dart';
 import '../flutter_eval.dart';
 
 /// Builds an error widget for a given [error].
-typedef EvalErrorBuilder = Widget Function(BuildContext context, Object error, StackTrace? stackTrace);
+typedef EvalErrorBuilder = Widget Function(
+    BuildContext context, Object error, StackTrace? stackTrace);
 
 /// An error callback for [HotSwapLoader]
-typedef EvalErrorCallback = Widget Function(Object error, StackTrace? stackTrace);
+typedef EvalErrorCallback = Widget Function(
+    Object error, StackTrace? stackTrace);
 
 /// Strategies for applying hot-swap updates
 enum HotSwapStrategy {
@@ -114,7 +116,8 @@ class _CompilerWidgetState extends State<CompilerWidget> {
     final program = compiler.compile(widget.packages);
 
     if (!kReleaseMode && widget.outputFile != null) {
-      _writeBytesToPath(widget.outputFile!, program.write()).catchError((error, StackTrace stackTrace) {
+      _writeBytesToPath(widget.outputFile!, program.write())
+          .catchError((error, StackTrace stackTrace) {
         if (!_setError(error, stackTrace)) {
           throw error;
         }
@@ -139,7 +142,8 @@ class _CompilerWidgetState extends State<CompilerWidget> {
     }
   }
 
-  bool _setError(dynamic error, StackTrace? stackTrace, [bool doSetState = false]) {
+  bool _setError(dynamic error, StackTrace? stackTrace,
+      [bool doSetState = false]) {
     if (widget.onError != null) {
       if (doSetState) {
         setState(() {
@@ -165,8 +169,11 @@ class _CompilerWidgetState extends State<CompilerWidget> {
         codeCache = widget.packages;
         _recompile(false);
       }
-      final result = runtime.executeLib(widget.library, widget.function, widget.args);
-      return Container(child: (result as $Value).$value, key: ValueKey(Random().nextDouble()));
+      final result =
+          runtime.executeLib(widget.library, widget.function, widget.args);
+      return Container(
+          child: (result as $Value).$value,
+          key: ValueKey(Random().nextDouble()));
     } catch (e, stackTrace) {
       if (widget.onError != null) {
         return widget.onError!(context, e, stackTrace);
@@ -308,7 +315,8 @@ class _RuntimeWidgetState extends State<RuntimeWidget> {
     });
   }
 
-  bool _setError(dynamic error, StackTrace? stackTrace, [bool doSetState = false]) {
+  bool _setError(dynamic error, StackTrace? stackTrace,
+      [bool doSetState = false]) {
     if (widget.onError != null) {
       if (doSetState) {
         setState(() {
@@ -330,7 +338,8 @@ class _RuntimeWidgetState extends State<RuntimeWidget> {
       return widget.onError!(context, setupError!, setupErrorTrace);
     }
     if (runtime == null) return widget.loading ?? Container();
-    final result = runtime!.executeLib(widget.library, widget.function, widget.args);
+    final result =
+        runtime!.executeLib(widget.library, widget.function, widget.args);
     return (result as $Value).$value;
   }
 }
@@ -452,7 +461,8 @@ class _EvalWidgetState extends State<EvalWidget> {
     final program = compiler.compile(widget.packages);
 
     if (!kReleaseMode && !kIsWeb) {
-      _writeBytesToPath(widget.assetPath, program.write()).catchError((error, StackTrace stackTrace) {
+      _writeBytesToPath(widget.assetPath, program.write())
+          .catchError((error, StackTrace stackTrace) {
         if (!_setError(error, stackTrace)) {
           throw error;
         }
@@ -520,7 +530,8 @@ class _EvalWidgetState extends State<EvalWidget> {
     });
   }
 
-  bool _setError(dynamic error, StackTrace? stackTrace, [bool doSetState = false]) {
+  bool _setError(dynamic error, StackTrace? stackTrace,
+      [bool doSetState = false]) {
     if (widget.onError != null) {
       if (doSetState) {
         setState(() {
@@ -551,7 +562,8 @@ class _EvalWidgetState extends State<EvalWidget> {
         if (runtime == null) return widget.loading ?? Container();
       }
 
-      final result = runtime!.executeLib(widget.library, widget.function, widget.args);
+      final result =
+          runtime!.executeLib(widget.library, widget.function, widget.args);
       return (result as $Value).$value;
     } catch (e, stackTrace) {
       if (widget.onError != null) {
@@ -665,10 +677,14 @@ class _HotSwapLoaderState extends State<HotSwapLoader> {
   }
 
   Future<String> get _cacheFilePath async =>
-      widget.cacheFilePath ?? '${(await getApplicationDocumentsDirectory()).path}/hot_swap000.evc';
+      widget.cacheFilePath ??
+      '${(await getApplicationDocumentsDirectory()).path}/hot_swap000.evc';
 
   HotSwapStrategy get _strategy =>
-      widget.strategy ?? (kReleaseMode ? HotSwapStrategy.cacheApplyOnRestart : HotSwapStrategy.immediate);
+      widget.strategy ??
+      (kReleaseMode
+          ? HotSwapStrategy.cacheApplyOnRestart
+          : HotSwapStrategy.immediate);
 
   void _loadFromCache() async {
     try {
@@ -710,7 +726,8 @@ class _HotSwapLoaderState extends State<HotSwapLoader> {
   void _loadFromAsset() async {
     try {
       debugPrint('Loading hot update from ${widget.uri}');
-      final asset = Uri.parse(widget.uri).path;
+      final uri = Uri.parse(widget.uri);
+      final asset = uri.host + uri.path;
       final bytecode = await rootBundle.load(asset);
       _setup(bytecode);
     } catch (e, stackTrace) {
@@ -744,7 +761,8 @@ class _HotSwapLoaderState extends State<HotSwapLoader> {
       debugPrint('Cacheing hot update');
       _saveToCache(bytecode);
     }
-    if (fromCache == false && _strategy == HotSwapStrategy.cacheApplyOnRestart) {
+    if (fromCache == false &&
+        _strategy == HotSwapStrategy.cacheApplyOnRestart) {
       debugPrint('Will apply hot update on next app restart');
       return;
     }
@@ -768,10 +786,12 @@ class _HotSwapLoaderState extends State<HotSwapLoader> {
 
   void _saveToCache(TypedData bytecode) async {
     final cacheFile = File(await _cacheFilePath);
-    await cacheFile.writeAsBytes(bytecode is Uint8List ? bytecode : bytecode.buffer.asUint8List());
+    await cacheFile.writeAsBytes(
+        bytecode is Uint8List ? bytecode : bytecode.buffer.asUint8List());
   }
 
-  bool _setError(dynamic error, StackTrace? stackTrace, [bool doSetState = false]) {
+  bool _setError(dynamic error, StackTrace? stackTrace,
+      [bool doSetState = false]) {
     if (widget.onError != null) {
       widget.onError!(error, stackTrace);
       return true;
@@ -781,7 +801,9 @@ class _HotSwapLoaderState extends State<HotSwapLoader> {
 
   @override
   Widget build(BuildContext context) {
-    final child = (_strategy != HotSwapStrategy.immediate && globalRuntime == null && widget.loading != null)
+    final child = (_strategy != HotSwapStrategy.immediate &&
+            globalRuntime == null &&
+            widget.loading != null)
         ? widget.loading!
         : widget.child;
 
@@ -797,7 +819,12 @@ class _HotSwapLoaderState extends State<HotSwapLoader> {
 /// A widget that can be hot-swapped at runtime via flutter_eval code push.
 /// Requires a [HotSwapLoader] ancestor.
 class HotSwap extends StatelessWidget {
-  const HotSwap({required this.id, required this.childBuilder, this.args = const [], final Key? key}) : super(key: key);
+  const HotSwap(
+      {required this.id,
+      required this.childBuilder,
+      this.args = const [],
+      final Key? key})
+      : super(key: key);
 
   final WidgetBuilder childBuilder;
   final Iterable<Object?> args;
@@ -805,7 +832,8 @@ class HotSwap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final scope = context.dependOnInheritedWidgetOfExactType<_HotSwapLoaderScope>();
+    final scope =
+        context.dependOnInheritedWidgetOfExactType<_HotSwapLoaderScope>();
 
     if (scope != null) {
       return runtimeOverride(id, args) as Widget? ?? childBuilder(context);

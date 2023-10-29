@@ -3,10 +3,10 @@
 [![Web example](https://img.shields.io/badge/web-example-blue.svg)](https://ethanblake.xyz/evalpad)
 
 `flutter_eval` is a Flutter bridge library for [dart_eval](https://pub.dev/packages/dart_eval), 
-and a solution enabling both fully dynamic runtime code-push and runtime evaluation of Flutter code.
-It can be used to enable hot-swapping parts of your app with an over-the-air update, or for dynamically
-evaluating code based on user input such as in a calculator. flutter_eval supports all platforms
-including iOS and is built on dart_eval's custom bytecode interpreter, making it very fast.
+and a solution enabling code-push, dynamic widgets, and runtime evaluation of Flutter code.
+It can be used to enable hot-swapping parts of your app with an over-the-air update, dynamically loading UI from a server, or evaluating code based on user input such as in a calculator. 
+flutter_eval supports all platforms including iOS and is built on dart_eval's
+custom bytecode interpreter, making it very fast.
 
 | dart_eval    | [![pub package](https://img.shields.io/pub/v/dart_eval.svg?label=dart_eval&color=teal)](https://pub.dev/packages/dart_eval)          |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
@@ -15,10 +15,11 @@ including iOS and is built on dart_eval's custom bytecode interpreter, making it
 
 For a live example, check out [EvalPad](https://ethanblake.xyz/evalpad).
 
-Although flutter_eval is already the best solution for native Dart Flutter code push,
-the project is still in development and you should not expect all existing Flutter/Dart code
-to work without modification, as various standard library classes and Dart features
-have yet to be implemented.
+Note: While flutter_eval supports most Flutter and Dart features, it does not support all of them. Existing code may need modification to work. You can
+see a list of supported widgets and classes [here](#supported-widgets-and-classes)
+and a list of supported Dart features on the [dart_eval Pub page](https://pub.dev/packages/dart_eval/#language-feature-support-table).
+
+See: [Quickstart for code push](#quickstart-for-code-push) | [Quickstart for dynamic execution and server-driven UI](#quickstart-for-dynamic-execution-and-server-driven-ui) | [Supported widgets and classes](#supported-widgets-and-classes)
 
 ## Quickstart for code push
 
@@ -126,7 +127,7 @@ For a complete example of code push, see
 [examples/code_push_app](https://github.com/ethanblake4/flutter_eval/tree/master/examples/code_push_app)
 and its subfolder [hot_update](https://github.com/ethanblake4/flutter_eval/tree/master/examples/code_push_app/hot_update).
 
-## Quickstart for dynamic execution and manual updates
+## Quickstart for dynamic execution and server-driven UI
 
 To create a simple dynamic stateless widget, add and modify the following inside a 
 build() method or as a child parameter:

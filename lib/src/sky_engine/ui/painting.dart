@@ -7,26 +7,34 @@ class $Color implements Color, $Instance {
 
   static const $declaration = BridgeClassDef(BridgeClassType($type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(
-            returns: BridgeTypeAnnotation($type),
-            params: [BridgeParameter('value', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.intType)), false)])),
-        'fromARGB': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
-          BridgeParameter('a', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.intType)), false),
-          BridgeParameter('r', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.intType)), false),
-          BridgeParameter('g', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.intType)), false),
-          BridgeParameter('b', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.intType)), false)
+        '': BridgeConstructorDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter('value',
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.int)), false)
         ])),
-        'fromRGBO': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
-          BridgeParameter('r', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.intType)), false),
-          BridgeParameter('g', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.intType)), false),
-          BridgeParameter('b', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.intType)), false),
-          BridgeParameter('o', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.intType)), false)
+        'fromARGB': BridgeConstructorDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter(
+              'a', BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.int)), false),
+          BridgeParameter(
+              'r', BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.int)), false),
+          BridgeParameter(
+              'g', BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.int)), false),
+          BridgeParameter(
+              'b', BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.int)), false)
+        ])),
+        'fromRGBO': BridgeConstructorDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter(
+              'r', BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.int)), false),
+          BridgeParameter(
+              'g', BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.int)), false),
+          BridgeParameter(
+              'b', BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.int)), false),
+          BridgeParameter(
+              'o', BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.int)), false)
         ]))
       },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {

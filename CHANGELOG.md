@@ -1,3 +1,7 @@
+## 0.7.0
+- Upgrade to dart_eval v0.7.0
+- Documentation improvements
+
 ## 0.6.1+1
 - Fix FontWeight enum mappings
 

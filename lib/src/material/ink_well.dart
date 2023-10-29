@@ -7,43 +7,85 @@ import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $InkWell implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/ink_well.dart', 'InkWell'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/material/ink_well.dart', 'InkWell'));
   static const $declaration = BridgeClassDef(
-      BridgeClassType($type, $extends: $StatelessWidget$bridge.$type, isAbstract: false),
+      BridgeClassType($type,
+          $extends: $StatelessWidget$bridge.$type, isAbstract: false),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
-          BridgeParameter(
-              'onTap', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType), nullable: true), true),
-          BridgeParameter(
-              'onDoubleTap', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType), nullable: true), true),
-          BridgeParameter(
-              'onLongPress', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType), nullable: true), true),
-          BridgeParameter('onHighlightChanged',
-              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType), nullable: true), true),
-          BridgeParameter(
-              'onHover', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType), nullable: true), true),
-          BridgeParameter(
-              'enableFeedback', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType), nullable: true), true),
-          BridgeParameter('excludeFromSemantics',
-              BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType), nullable: true), true),
-          BridgeParameter(
-              'canRequestFocus', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType), nullable: true), true),
-          BridgeParameter('focusColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('hoverColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('highlightColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('splashColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter(
-              'radius', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType), nullable: true), true),
-          BridgeParameter('customBorder', BridgeTypeAnnotation($ShapeBorder.$type, nullable: true), true),
-          //BridgeParameter('focusNode', BridgeTypeAnnotation($FocusNode.$type, nullable: true), true),
-          BridgeParameter(
-              'autofocus', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType), nullable: true), true),
-          //BridgeParameter('mouseCursor', BridgeTypeAnnotation($MouseCursor.$type, nullable: true), true),
-          BridgeParameter('child', BridgeTypeAnnotation($Widget.$type), false),
-        ]))
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter('key',
+                  BridgeTypeAnnotation($Key.$type, nullable: true), true),
+              BridgeParameter(
+                  'onTap',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.function),
+                      nullable: true),
+                  true),
+              BridgeParameter(
+                  'onDoubleTap',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.function),
+                      nullable: true),
+                  true),
+              BridgeParameter(
+                  'onLongPress',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.function),
+                      nullable: true),
+                  true),
+              BridgeParameter(
+                  'onHighlightChanged',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.function),
+                      nullable: true),
+                  true),
+              BridgeParameter(
+                  'onHover',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.function),
+                      nullable: true),
+                  true),
+              BridgeParameter(
+                  'enableFeedback',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool),
+                      nullable: true),
+                  true),
+              BridgeParameter(
+                  'excludeFromSemantics',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool),
+                      nullable: true),
+                  true),
+              BridgeParameter(
+                  'canRequestFocus',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool),
+                      nullable: true),
+                  true),
+              BridgeParameter('focusColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter('hoverColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter('highlightColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter('splashColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
+              BridgeParameter(
+                  'radius',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double),
+                      nullable: true),
+                  true),
+              BridgeParameter(
+                  'customBorder',
+                  BridgeTypeAnnotation($ShapeBorder.$type, nullable: true),
+                  true),
+              //BridgeParameter('focusNode', BridgeTypeAnnotation($FocusNode.$type, nullable: true), true),
+              BridgeParameter(
+                  'autofocus',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool),
+                      nullable: true),
+                  true),
+              //BridgeParameter('mouseCursor', BridgeTypeAnnotation($MouseCursor.$type, nullable: true), true),
+              BridgeParameter(
+                  'child', BridgeTypeAnnotation($Widget.$type), false),
+            ]))
       },
-      methods: {},
       wrap: true);
 
   $InkWell.wrap(this.$value);

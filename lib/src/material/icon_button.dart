@@ -10,41 +10,72 @@ import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $IconButton implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/icon_button.dart', 'IconButton'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/material/icon_button.dart', 'IconButton'));
 
   static const $declaration = BridgeClassDef(
-      BridgeClassType($type, isAbstract: false, $extends: $StatelessWidget$bridge.$type),
+      BridgeClassType($type,
+          isAbstract: false, $extends: $StatelessWidget$bridge.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), false),
-          BridgeParameter(
-              'iconSize', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType), nullable: true), false),
-          BridgeParameter('padding', BridgeTypeAnnotation($EdgeInsetsGeometry.$type), false),
-          BridgeParameter('alignment', BridgeTypeAnnotation($AlignmentGeometry.$type), false),
-          BridgeParameter(
-              'splashRadius', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType), nullable: true), false),
-          BridgeParameter('color', BridgeTypeAnnotation($Color.$type, nullable: true), false),
-          BridgeParameter('focusColor', BridgeTypeAnnotation($Color.$type, nullable: true), false),
-          BridgeParameter('hoverColor', BridgeTypeAnnotation($Color.$type, nullable: true), false),
-          BridgeParameter('highlightColor', BridgeTypeAnnotation($Color.$type, nullable: true), false),
-          BridgeParameter('splashColor', BridgeTypeAnnotation($Color.$type, nullable: true), false),
-          BridgeParameter('disabledColor', BridgeTypeAnnotation($Color.$type, nullable: true), false),
-          BridgeParameter(
-              'onPressed', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType), nullable: true), false),
-          BridgeParameter(
-              'autofocus', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType), nullable: true), false),
-          BridgeParameter(
-              'tooltip', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType), nullable: true), false),
-          BridgeParameter(
-              'enableFeedback', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType), nullable: true), false),
-          BridgeParameter('constraints', BridgeTypeAnnotation($BoxConstraints.$type, nullable: true), false),
-          BridgeParameter('icon', BridgeTypeAnnotation($Widget.$type, nullable: true), false),
-        ]))
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter('key',
+                  BridgeTypeAnnotation($Key.$type, nullable: true), false),
+              BridgeParameter(
+                  'iconSize',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double),
+                      nullable: true),
+                  false),
+              BridgeParameter('padding',
+                  BridgeTypeAnnotation($EdgeInsetsGeometry.$type), false),
+              BridgeParameter('alignment',
+                  BridgeTypeAnnotation($AlignmentGeometry.$type), false),
+              BridgeParameter(
+                  'splashRadius',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double),
+                      nullable: true),
+                  false),
+              BridgeParameter('color',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), false),
+              BridgeParameter('focusColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), false),
+              BridgeParameter('hoverColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), false),
+              BridgeParameter('highlightColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), false),
+              BridgeParameter('splashColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), false),
+              BridgeParameter('disabledColor',
+                  BridgeTypeAnnotation($Color.$type, nullable: true), false),
+              BridgeParameter(
+                  'onPressed',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.function),
+                      nullable: true),
+                  false),
+              BridgeParameter(
+                  'autofocus',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool),
+                      nullable: true),
+                  false),
+              BridgeParameter(
+                  'tooltip',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.string),
+                      nullable: true),
+                  false),
+              BridgeParameter(
+                  'enableFeedback',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool),
+                      nullable: true),
+                  false),
+              BridgeParameter(
+                  'constraints',
+                  BridgeTypeAnnotation($BoxConstraints.$type, nullable: true),
+                  false),
+              BridgeParameter('icon',
+                  BridgeTypeAnnotation($Widget.$type, nullable: true), false),
+            ]))
       },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   late final _superclass = $Object($value);
@@ -64,7 +95,9 @@ class $IconButton implements $Instance {
       highlightColor: args[8]?.$value,
       splashColor: args[9]?.$value,
       disabledColor: args[10]?.$value,
-      onPressed: args[11] == null ? null : () => (args[11]! as EvalCallable).call(runtime, null, []),
+      onPressed: args[11] == null
+          ? null
+          : () => (args[11]! as EvalCallable).call(runtime, null, []),
       autofocus: args[12]?.$value ?? false,
       tooltip: args[13]?.$value,
       enableFeedback: args[14]?.$value ?? true,

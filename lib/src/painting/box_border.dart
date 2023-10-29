@@ -5,10 +5,13 @@ import 'package:flutter_eval/src/painting/borders.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 
 class $BoxBorder implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/box_border.dart', 'BoxBorder'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/painting/box_border.dart', 'BoxBorder'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
-      constructors: {}, methods: {}, getters: {}, setters: {}, fields: {}, wrap: true);
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, isAbstract: true),
+      constructors: {},
+      wrap: true);
 
   $BoxBorder.wrap(this.$value) : _superclass = $ShapeBorder.wrap($value);
 
@@ -35,35 +38,53 @@ class $BoxBorder implements $Instance {
 }
 
 class $Border implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/box_border.dart', 'Border'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/painting/box_border.dart', 'Border'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, isAbstract: false),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter('top', BridgeTypeAnnotation($BorderSide.$type), true),
-          BridgeParameter('right', BridgeTypeAnnotation($BorderSide.$type), true),
-          BridgeParameter('bottom', BridgeTypeAnnotation($BorderSide.$type), true),
-          BridgeParameter('left', BridgeTypeAnnotation($BorderSide.$type), true)
-        ])),
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter(
+                  'top', BridgeTypeAnnotation($BorderSide.$type), true),
+              BridgeParameter(
+                  'right', BridgeTypeAnnotation($BorderSide.$type), true),
+              BridgeParameter(
+                  'bottom', BridgeTypeAnnotation($BorderSide.$type), true),
+              BridgeParameter(
+                  'left', BridgeTypeAnnotation($BorderSide.$type), true)
+            ])),
         'all': BridgeConstructorDef(
-            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-              BridgeParameter('color', BridgeTypeAnnotation($Color.$type), true),
-              BridgeParameter('width', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-              BridgeParameter('style', BridgeTypeAnnotation($BorderStyle.$type), true)
-            ]),
+            BridgeFunctionDef(
+                returns: BridgeTypeAnnotation($type),
+                namedParams: [
+                  BridgeParameter(
+                      'color', BridgeTypeAnnotation($Color.$type), true),
+                  BridgeParameter(
+                      'width',
+                      BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)),
+                      true),
+                  BridgeParameter(
+                      'style', BridgeTypeAnnotation($BorderStyle.$type), true)
+                ]),
             isFactory: true),
         'fromBorderSide': BridgeConstructorDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation($type),
-            namedParams: [BridgeParameter('side', BridgeTypeAnnotation($BorderSide.$type), true)])),
-        'symmetric': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter('vertical', BridgeTypeAnnotation($BorderSide.$type), true),
-          BridgeParameter('horizontal', BridgeTypeAnnotation($BorderSide.$type), true)
-        ]))
+            namedParams: [
+              BridgeParameter(
+                  'side', BridgeTypeAnnotation($BorderSide.$type), true)
+            ])),
+        'symmetric': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter(
+                  'vertical', BridgeTypeAnnotation($BorderSide.$type), true),
+              BridgeParameter(
+                  'horizontal', BridgeTypeAnnotation($BorderSide.$type), true)
+            ]))
       },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   $Border.wrap(this.$value) : _superclass = $BoxBorder.wrap($value);
@@ -87,11 +108,14 @@ class $Border implements $Instance {
     ));
   }
 
-  static $Value? $fromBorderSide(Runtime runtime, $Value? target, List<$Value?> args) {
-    return $Border.wrap(Border.fromBorderSide(args[0]?.$value ?? BorderSide.none));
+  static $Value? $fromBorderSide(
+      Runtime runtime, $Value? target, List<$Value?> args) {
+    return $Border
+        .wrap(Border.fromBorderSide(args[0]?.$value ?? BorderSide.none));
   }
 
-  static $Value? $symmetric(Runtime runtime, $Value? target, List<$Value?> args) {
+  static $Value? $symmetric(
+      Runtime runtime, $Value? target, List<$Value?> args) {
     return $Border.wrap(Border.symmetric(
       vertical: args[0]?.$value ?? BorderSide.none,
       horizontal: args[1]?.$value ?? BorderSide.none,

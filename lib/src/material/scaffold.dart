@@ -10,21 +10,24 @@ import '../widgets/framework.dart';
 /// dart_eval bridge wrapper for [Scaffold]
 class $Scaffold implements $Instance {
   /// Bridge type reference for [$Scaffold]
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/scaffold.dart', 'Scaffold'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/material/scaffold.dart', 'Scaffold'));
 
   /// Bridge class definition for [$Scaffold]
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter('appBar', BridgeTypeAnnotation($AppBar.$type), true),
-          BridgeParameter('body', BridgeTypeAnnotation($Widget.$type), true),
-          BridgeParameter('floatingActionButton', BridgeTypeAnnotation($FloatingActionButton.$type), true),
-        ]))
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter(
+                  'appBar', BridgeTypeAnnotation($AppBar.$type), true),
+              BridgeParameter(
+                  'body', BridgeTypeAnnotation($Widget.$type), true),
+              BridgeParameter('floatingActionButton',
+                  BridgeTypeAnnotation($FloatingActionButton.$type), true),
+            ]))
       },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
@@ -59,25 +62,30 @@ class $Scaffold implements $Instance {
 }
 
 class $ScaffoldMessenger implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/scaffold.dart', 'ScaffoldMessenger'));
-  static const $declaration =
-      BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $StatefulWidget$bridge.$type),
-          constructors: {
-            '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-              BridgeParameter('child', BridgeTypeAnnotation($Widget.$type), false),
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/material/scaffold.dart', 'ScaffoldMessenger'));
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type,
+          isAbstract: false, $extends: $StatefulWidget$bridge.$type),
+      constructors: {
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter(
+                  'child', BridgeTypeAnnotation($Widget.$type), false),
             ]))
-          },
-          methods: {
-            'of': BridgeMethodDef(
-                BridgeFunctionDef(returns: BridgeTypeAnnotation($ScaffoldMessengerState.$type), namedParams: [
-                  BridgeParameter('context', BridgeTypeAnnotation($BuildContext.$type), true),
+      },
+      methods: {
+        'of': BridgeMethodDef(
+            BridgeFunctionDef(
+                returns: BridgeTypeAnnotation($ScaffoldMessengerState.$type),
+                namedParams: [
+                  BridgeParameter('context',
+                      BridgeTypeAnnotation($BuildContext.$type), true),
                 ]),
-                isStatic: true)
-          },
-          getters: {},
-          setters: {},
-          fields: {},
-          wrap: true);
+            isStatic: true)
+      },
+      wrap: true);
 
   $ScaffoldMessenger.wrap(this.$value);
 
@@ -112,21 +120,23 @@ class $ScaffoldMessenger implements $Instance {
 }
 
 class $ScaffoldMessengerState implements $Instance {
-  static const $type =
-      BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/scaffold.dart', 'ScaffoldMessengerState'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/material/scaffold.dart', 'ScaffoldMessengerState'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $State$bridge.$type),
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, isAbstract: false, $extends: $State$bridge.$type),
       constructors: {},
       methods: {
         'showSnackBar': BridgeMethodDef(
-            BridgeFunctionDef(returns: BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.voidType)), namedParams: [
-              BridgeParameter('snackBar', BridgeTypeAnnotation($SnackBar.$type), true),
-            ]),
+            BridgeFunctionDef(
+                returns:
+                    BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
+                namedParams: [
+                  BridgeParameter(
+                      'snackBar', BridgeTypeAnnotation($SnackBar.$type), true),
+                ]),
             isStatic: true)
       },
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   $ScaffoldMessengerState.wrap(this.$value);

@@ -4,10 +4,13 @@ import 'package:dart_eval/stdlib/core.dart';
 import 'package:flutter/painting.dart';
 
 class $Decoration implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/decoration.dart', 'Decoration'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/painting/decoration.dart', 'Decoration'));
 
-  static const $declaration = BridgeClassDef(BridgeClassType($type, isAbstract: true),
-      constructors: {}, methods: {}, getters: {}, setters: {}, fields: {}, wrap: true);
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type, isAbstract: true),
+      constructors: {},
+      wrap: true);
 
   $Decoration.wrap(this.$value) : _superclass = $Object($value);
 

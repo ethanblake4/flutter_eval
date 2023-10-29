@@ -8,27 +8,33 @@ import 'package:flutter_eval/src/widgets/framework.dart';
 import 'package:flutter_eval/src/widgets/icon_data.dart';
 
 class $Icon implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/icon.dart', 'Icon'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/widgets/icon.dart', 'Icon'));
 
-  static const $declaration =
-      BridgeClassDef(BridgeClassType($type, isAbstract: false, $extends: $StatelessWidget$bridge.$type),
-          constructors: {
-            '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
-              BridgeParameter('icon', BridgeTypeAnnotation($IconData.$type), false),
-            ], namedParams: [
-              BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
-              BridgeParameter('size', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-              BridgeParameter('color', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-              BridgeParameter('semanticLabel',
-                  BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType), nullable: true), true),
-              BridgeParameter('textDirection', BridgeTypeAnnotation($TextDirection.$type, nullable: true), true),
-            ]))
-          },
-          methods: {},
-          getters: {},
-          setters: {},
-          fields: {},
-          wrap: true);
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type,
+          isAbstract: false, $extends: $StatelessWidget$bridge.$type),
+      constructors: {
+        '': BridgeConstructorDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter('icon', BridgeTypeAnnotation($IconData.$type), false),
+        ], namedParams: [
+          BridgeParameter(
+              'key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
+          BridgeParameter('size',
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
+          BridgeParameter('color',
+              BridgeTypeAnnotation($Color.$type, nullable: true), true),
+          BridgeParameter(
+              'semanticLabel',
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.string),
+                  nullable: true),
+              true),
+          BridgeParameter('textDirection',
+              BridgeTypeAnnotation($TextDirection.$type, nullable: true), true),
+        ]))
+      },
+      wrap: true);
 
   const $Icon.wrap(this.$value);
 

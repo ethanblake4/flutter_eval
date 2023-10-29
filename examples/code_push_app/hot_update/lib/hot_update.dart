@@ -1,11 +1,12 @@
+// ignore_for_file: no_leading_underscores_for_local_identifiers
 library hot_update;
 
 import 'package:eval_annotation/eval_annotation.dart';
 import 'package:flutter/material.dart';
 
 @RuntimeOverride('#myapp_main_scaffold_1')
-// ignore: no_leading_underscores_for_local_identifiers
-Widget scaffoldUpdate(BuildContext context, int counter, void Function() _incrementCounter) {
+Widget scaffoldUpdate(
+    BuildContext context, int counter, void Function() _incrementCounter) {
   return Scaffold(
     appBar: AppBar(
       title: const Text("Time counter"),

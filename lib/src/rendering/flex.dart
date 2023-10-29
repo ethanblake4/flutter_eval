@@ -3,17 +3,21 @@ import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/material.dart';
 
 class $MainAxisAlignment implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/rendering/flex.dart', 'MainAxisAlignment'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/rendering/flex.dart', 'MainAxisAlignment'));
 
-  static const $declaration = BridgeEnumDef($type,
-      values: ['start', 'end', 'center', 'spaceBetween', 'spaceAround', 'spaceEvenly'],
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {});
+  static const $declaration = BridgeEnumDef($type, values: [
+    'start',
+    'end',
+    'center',
+    'spaceBetween',
+    'spaceAround',
+    'spaceEvenly'
+  ], fields: {});
 
-  static final $values =
-      MainAxisAlignment.values.asNameMap().map((key, value) => MapEntry(key, $MainAxisAlignment.wrap(value)));
+  static final $values = MainAxisAlignment.values
+      .asNameMap()
+      .map((key, value) => MapEntry(key, $MainAxisAlignment.wrap(value)));
 
   const $MainAxisAlignment.wrap(this.$value);
 
@@ -38,13 +42,15 @@ class $MainAxisAlignment implements $Instance {
 }
 
 class $CrossAxisAlignment implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/rendering/flex.dart', 'CrossAxisAlignment'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/rendering/flex.dart', 'CrossAxisAlignment'));
 
   static const $declaration = BridgeEnumDef($type,
-      values: ['start', 'end', 'center', 'stretch', 'baseline'], methods: {}, getters: {}, setters: {}, fields: {});
+      values: ['start', 'end', 'center', 'stretch', 'baseline'], fields: {});
 
-  static final $values =
-      CrossAxisAlignment.values.asNameMap().map((key, value) => MapEntry(key, $CrossAxisAlignment.wrap(value)));
+  static final $values = CrossAxisAlignment.values
+      .asNameMap()
+      .map((key, value) => MapEntry(key, $CrossAxisAlignment.wrap(value)));
 
   const $CrossAxisAlignment.wrap(this.$value);
 
@@ -69,12 +75,15 @@ class $CrossAxisAlignment implements $Instance {
 }
 
 class $MainAxisSize implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/rendering/flex.dart', 'MainAxisSize'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/rendering/flex.dart', 'MainAxisSize'));
 
   static const $declaration =
-      BridgeEnumDef($type, values: ['min', 'max'], methods: {}, getters: {}, setters: {}, fields: {});
+      BridgeEnumDef($type, values: ['min', 'max'], fields: {});
 
-  static final $values = MainAxisSize.values.asNameMap().map((key, value) => MapEntry(key, $MainAxisSize.wrap(value)));
+  static final $values = MainAxisSize.values
+      .asNameMap()
+      .map((key, value) => MapEntry(key, $MainAxisSize.wrap(value)));
 
   const $MainAxisSize.wrap(this.$value);
 

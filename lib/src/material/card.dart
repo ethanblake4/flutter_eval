@@ -7,26 +7,33 @@ import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
 class $Card implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/material/card.dart', 'Card'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/material/card.dart', 'Card'));
 
   static const $declaration = BridgeClassDef(
-      BridgeClassType($type, isAbstract: false, $extends: $StatelessWidget$bridge.$type),
+      BridgeClassType($type,
+          isAbstract: false, $extends: $StatelessWidget$bridge.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter('key', BridgeTypeAnnotation($Key.$type), true),
-          BridgeParameter('color', BridgeTypeAnnotation($Color.$type), true),
-          BridgeParameter('shadowColor', BridgeTypeAnnotation($Color.$type), true),
-          BridgeParameter('surfaceTintColor', BridgeTypeAnnotation($Color.$type), true),
-          BridgeParameter('elevation', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-          BridgeParameter('margin', BridgeTypeAnnotation($EdgeInsetsGeometry.$type), true),
-          BridgeParameter('semanticContainer', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
-          BridgeParameter('child', BridgeTypeAnnotation($Widget.$type), true),
-        ]))
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter('key', BridgeTypeAnnotation($Key.$type), true),
+              BridgeParameter(
+                  'color', BridgeTypeAnnotation($Color.$type), true),
+              BridgeParameter(
+                  'shadowColor', BridgeTypeAnnotation($Color.$type), true),
+              BridgeParameter(
+                  'surfaceTintColor', BridgeTypeAnnotation($Color.$type), true),
+              BridgeParameter('elevation',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
+              BridgeParameter('margin',
+                  BridgeTypeAnnotation($EdgeInsetsGeometry.$type), true),
+              BridgeParameter('semanticContainer',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)), true),
+              BridgeParameter(
+                  'child', BridgeTypeAnnotation($Widget.$type), true),
+            ]))
       },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   late final _superclass = $StatelessWidget.wrap($value);

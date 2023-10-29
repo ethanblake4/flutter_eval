@@ -12,60 +12,105 @@ import 'package:flutter_eval/src/widgets/scroll_controller.dart';
 /// dart_eval wrapper for [ListView]
 class $ListView implements $Instance {
   /// Bridge type reference for [$ListView]
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/scroll_view.dart', 'ListView'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/widgets/scroll_view.dart', 'ListView'));
 
   /// Bridge class definition for [$ListView]
   static const $declaration = BridgeClassDef(
-      BridgeClassType($type, isAbstract: false, $extends: $StatelessWidget$bridge.$type),
+      BridgeClassType($type,
+          isAbstract: false, $extends: $StatelessWidget$bridge.$type),
       constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
-          BridgeParameter('scrollDirection', BridgeTypeAnnotation($Axis.$type), true),
-          BridgeParameter('reverse', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
-          BridgeParameter('controller', BridgeTypeAnnotation($ScrollController.$type), true),
-          BridgeParameter(
-              'primary', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType), nullable: true), true),
-          //BridgeParameter('physics', BridgeTypeAnnotation($ScrollPhysics.$type), true),
-          BridgeParameter('shrinkWrap', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
-          BridgeParameter('padding', BridgeTypeAnnotation($EdgeInsetsGeometry.$type, nullable: true), true),
-          BridgeParameter(
-              'itemExtent', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType), nullable: true), true),
-          BridgeParameter(
-              'addAutomaticKeepAlives', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
-          BridgeParameter(
-              'addRepaintBoundaries', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
-          BridgeParameter('addSemanticIndexes', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
-          BridgeParameter(
-              'cacheExtent', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType), nullable: true), true),
-          BridgeParameter('children', BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.list)), false),
-        ])),
-        'builder': BridgeConstructorDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($type), namedParams: [
-          BridgeParameter('key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
-          BridgeParameter('scrollDirection', BridgeTypeAnnotation($Axis.$type), true),
-          BridgeParameter('reverse', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
-          BridgeParameter('controller', BridgeTypeAnnotation($ScrollController.$type), true),
-          BridgeParameter(
-              'primary', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType), nullable: true), true),
-          //BridgeParameter('physics', BridgeTypeAnnotation($ScrollPhysics.$type), true),
-          BridgeParameter('shrinkWrap', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
-          BridgeParameter('padding', BridgeTypeAnnotation($EdgeInsetsGeometry.$type, nullable: true), true),
-          BridgeParameter(
-              'itemExtent', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType), nullable: true), true),
-          BridgeParameter(
-              'addAutomaticKeepAlives', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
-          BridgeParameter(
-              'addRepaintBoundaries', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
-          BridgeParameter('addSemanticIndexes', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.boolType)), true),
-          BridgeParameter(
-              'cacheExtent', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType), nullable: true), true),
-          BridgeParameter('itemBuilder', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.functionType)), false),
-          BridgeParameter('itemCount', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.intType)), true),
-        ])),
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter('key',
+                  BridgeTypeAnnotation($Key.$type, nullable: true), true),
+              BridgeParameter(
+                  'scrollDirection', BridgeTypeAnnotation($Axis.$type), true),
+              BridgeParameter('reverse',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)), true),
+              BridgeParameter('controller',
+                  BridgeTypeAnnotation($ScrollController.$type), true),
+              BridgeParameter(
+                  'primary',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool),
+                      nullable: true),
+                  true),
+              //BridgeParameter('physics', BridgeTypeAnnotation($ScrollPhysics.$type), true),
+              BridgeParameter('shrinkWrap',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)), true),
+              BridgeParameter(
+                  'padding',
+                  BridgeTypeAnnotation($EdgeInsetsGeometry.$type,
+                      nullable: true),
+                  true),
+              BridgeParameter(
+                  'itemExtent',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double),
+                      nullable: true),
+                  true),
+              BridgeParameter('addAutomaticKeepAlives',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)), true),
+              BridgeParameter('addRepaintBoundaries',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)), true),
+              BridgeParameter('addSemanticIndexes',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)), true),
+              BridgeParameter(
+                  'cacheExtent',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double),
+                      nullable: true),
+                  true),
+              BridgeParameter('children',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.list)), false),
+            ])),
+        'builder': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter('key',
+                  BridgeTypeAnnotation($Key.$type, nullable: true), true),
+              BridgeParameter(
+                  'scrollDirection', BridgeTypeAnnotation($Axis.$type), true),
+              BridgeParameter('reverse',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)), true),
+              BridgeParameter('controller',
+                  BridgeTypeAnnotation($ScrollController.$type), true),
+              BridgeParameter(
+                  'primary',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool),
+                      nullable: true),
+                  true),
+              //BridgeParameter('physics', BridgeTypeAnnotation($ScrollPhysics.$type), true),
+              BridgeParameter('shrinkWrap',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)), true),
+              BridgeParameter(
+                  'padding',
+                  BridgeTypeAnnotation($EdgeInsetsGeometry.$type,
+                      nullable: true),
+                  true),
+              BridgeParameter(
+                  'itemExtent',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double),
+                      nullable: true),
+                  true),
+              BridgeParameter('addAutomaticKeepAlives',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)), true),
+              BridgeParameter('addRepaintBoundaries',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)), true),
+              BridgeParameter('addSemanticIndexes',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)), true),
+              BridgeParameter(
+                  'cacheExtent',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double),
+                      nullable: true),
+                  true),
+              BridgeParameter(
+                  'itemBuilder',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.function)),
+                  false),
+              BridgeParameter('itemCount',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.int)), true),
+            ])),
       },
-      methods: {},
-      getters: {},
-      setters: {},
-      fields: {},
       wrap: true);
 
   late final $Instance _superclass = $StatelessWidget.wrap($value);
@@ -110,8 +155,8 @@ class $ListView implements $Instance {
       addRepaintBoundaries: args[9]?.$value as bool? ?? true,
       addSemanticIndexes: args[10]?.$value as bool? ?? true,
       cacheExtent: args[11]?.$value as double?,
-      itemBuilder: (context, index) =>
-          (args[12] as EvalCallable).call(runtime, target, [$BuildContext.wrap(context), $int(index)])?.$value,
+      itemBuilder: (context, index) => (args[12] as EvalCallable).call(
+          runtime, target, [$BuildContext.wrap(context), $int(index)])?.$value,
       itemCount: args[13]?.$value as int?,
     ));
   }
