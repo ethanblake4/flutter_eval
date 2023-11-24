@@ -170,7 +170,7 @@ class $StatelessWidget implements StatelessWidget, $Instance {
 /// dart_eval bridge class for [StatelessWidget]
 class $StatelessWidget$bridge extends StatelessWidget
     with $Bridge<StatelessWidget> {
-  const $StatelessWidget$bridge({Key? key}) : super(key: key);
+  const $StatelessWidget$bridge({super.key});
 
   /// [StatelessWidget] compile-type type definition for dart_eval
   static const $type = BridgeTypeRef(BridgeTypeSpec(
@@ -284,7 +284,7 @@ class $StatelessWidget$bridge extends StatelessWidget
 
 class $StatefulWidget$bridge extends StatefulWidget
     with $Bridge<StatefulWidget> {
-  const $StatefulWidget$bridge({Key? key}) : super(key: key);
+  const $StatefulWidget$bridge({super.key});
 
   /// [StatefulWidget] compile-type type definition for dart_eval
   static const $type = BridgeTypeRef(BridgeTypeSpec(

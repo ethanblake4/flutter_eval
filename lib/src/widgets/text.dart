@@ -132,7 +132,7 @@ class $Text implements Text, $Instance {
   TextHeightBehavior? get textHeightBehavior => $value.textHeightBehavior;
 
   @override
-  double? get textScaleFactor => $value.textScaleFactor;
+  double? get textScaleFactor => ($value as dynamic).textScaleFactor;
 
   @override
   InlineSpan? get textSpan => $value.textSpan;
@@ -143,4 +143,7 @@ class $Text implements Text, $Instance {
   @override
   // ignore: override_on_non_overriding_member
   Color? get selectionColor => throw UnimplementedError();
+
+  @override
+  TextScaler? get textScaler => ($value as dynamic).textScaler;
 }

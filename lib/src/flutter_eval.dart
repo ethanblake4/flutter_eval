@@ -77,8 +77,7 @@ class CompilerWidget extends StatefulWidget {
       this.outputFile,
       this.onError,
       this.permissions = const [],
-      Key? key})
-      : super(key: key);
+      super.key});
 
   final Map<String, Map<String, String>> packages;
   final String library;
@@ -131,7 +130,6 @@ class _CompilerWidgetState extends State<CompilerWidget> {
         runtime.grant(permission);
       }
       setupFlutterForRuntime(runtime);
-      runtime.setup();
     }
 
     if (!inBuild) {
@@ -224,8 +222,7 @@ class RuntimeWidget extends StatefulWidget {
       this.loading,
       this.onError,
       this.permissions = const [],
-      Key? key})
-      : super(key: key);
+      super.key});
 
   final Uri uri;
   final String library;
@@ -305,7 +302,6 @@ class _RuntimeWidgetState extends State<RuntimeWidget> {
           runtime!.grant(permission);
         }
         setupFlutterForRuntime(runtime!);
-        runtime!.setup();
         setupError = null;
       } catch (e, stackTrace) {
         if (!_setError(e, stackTrace, false)) {
@@ -400,8 +396,7 @@ class EvalWidget extends StatefulWidget {
       this.loading,
       this.onError,
       this.permissions = const [],
-      Key? key})
-      : super(key: key);
+      super.key});
 
   final Map<String, Map<String, String>> packages;
   final String assetPath;
@@ -473,7 +468,6 @@ class _EvalWidgetState extends State<EvalWidget> {
     void setupRuntime() {
       runtime = Runtime.ofProgram(program);
       setupFlutterForRuntime(runtime!);
-      runtime!.setup();
     }
 
     if (!inBuild) {
@@ -520,7 +514,6 @@ class _EvalWidgetState extends State<EvalWidget> {
           runtime!.grant(permission);
         }
         setupFlutterForRuntime(runtime!);
-        runtime!.setup();
         setupError = null;
       } catch (e, stackTrace) {
         if (!_setError(e, stackTrace, false)) {
@@ -603,10 +596,9 @@ class HotSwapLoader extends StatefulWidget {
       this.loading,
       this.onError,
       this.permissions = const [],
-      final Key? key})
+      super.key})
       : assert(globalRuntime == null,
-            'A global runtime already exists. You may be trying to use multiple HotSwapLoaders in your app.'),
-        super(key: key);
+            'A global runtime already exists. You may be trying to use multiple HotSwapLoaders in your app.');
 
   final Widget child;
 
@@ -637,10 +629,9 @@ class HotSwapLoader extends StatefulWidget {
 
 class _HotSwapLoaderScope extends InheritedWidget {
   const _HotSwapLoaderScope({
-    required Widget child,
+    required super.child,
     required Runtime? runtime,
-  })  : _runtime = runtime,
-        super(child: child);
+  }) : _runtime = runtime;
 
   final Runtime? _runtime;
 
@@ -774,7 +765,6 @@ class _HotSwapLoaderState extends State<HotSwapLoader> {
           runtime!.grant(permission);
         }
         setupFlutterForRuntime(runtime!);
-        runtime!.setup();
         runtime!.loadGlobalOverrides();
       } catch (e, stackTrace) {
         if (!_setError(e, stackTrace, false)) {
@@ -823,8 +813,7 @@ class HotSwap extends StatelessWidget {
       {required this.id,
       required this.childBuilder,
       this.args = const [],
-      final Key? key})
-      : super(key: key);
+      super.key});
 
   final WidgetBuilder childBuilder;
   final Iterable<Object?> args;

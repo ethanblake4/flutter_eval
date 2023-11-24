@@ -1,3 +1,6 @@
+## 0.7.1
+- Support for Flutter 3.16
+
 ## 0.7.0
 - Upgrade to dart_eval v0.7.0
 - Documentation improvements

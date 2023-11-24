@@ -46,7 +46,7 @@ class $ChangeNotifier implements $Instance {
   @override
   final ChangeNotifier $value;
 
-  final _$listenerCache = <Function, void Function()>{};
+  final _$listenerCache = <EvalCallable, void Function()>{};
 
   @override
   ChangeNotifier get $reified => $value;

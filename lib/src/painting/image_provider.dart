@@ -84,11 +84,8 @@ class $ImageProvider implements ImageProvider, $Instance {
     $value.resolveStreamForKey(configuration, stream, key, handleError);
   }
 
-  @override
-  // ignore: deprecated_member_use
-  ImageStreamCompleter load(Object key, DecoderCallback decode) {
-    // ignore: deprecated_member_use
-    return $value.load(key, decode);
+  ImageStreamCompleter load(Object key, dynamic decode) {
+    return ($value as dynamic).load(key, decode);
   }
 
   @override

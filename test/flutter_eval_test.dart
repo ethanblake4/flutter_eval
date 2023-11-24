@@ -40,7 +40,6 @@ void main() {
     });
     final runtime = Runtime(program.write().buffer.asByteData());
     setupFlutterForRuntime(runtime);
-    runtime.setup();
     final result = runtime.executeLib('package:example/main.dart', 'MyApp.');
     expect(result, isNotNull);
     expect(result, isA<StatelessWidget>());
@@ -69,7 +68,6 @@ void main() {
     });
     final runtime = Runtime(program.write().buffer.asByteData());
     setupFlutterForRuntime(runtime);
-    runtime.setup();
     expect(() => runtime.executeLib('package:example/main.dart', 'main'),
         prints('listener\n'));
   });
@@ -121,7 +119,6 @@ void main() {
     });
     final runtime = Runtime(program.write().buffer.asByteData());
     setupFlutterForRuntime(runtime);
-    runtime.setup();
     await tester.pumpWidget(
         runtime.executeLib('package:example/main.dart', 'MyWidget.'));
     await tester.enterText(find.byType(TextField), 'Hello');
@@ -145,7 +142,6 @@ void main() {
     });
     final runtime = Runtime(program.write().buffer.asByteData());
     setupFlutterForRuntime(runtime);
-    runtime.setup();
     final result = runtime.executeLib('package:example/main.dart', 'main');
     expect(result, isNotNull);
     expect(result[0], isA<$Alignment>());
@@ -169,7 +165,6 @@ void main() {
     });
     final runtime = Runtime(program.write().buffer.asByteData());
     setupFlutterForRuntime(runtime);
-    runtime.setup();
     final result = runtime.executeLib('package:example/main.dart', 'main');
     expect(result, isNotNull);
     expect(result[0], isA<$Cubic>());
@@ -210,7 +205,6 @@ void main() {
     });
     final runtime = Runtime(program.write().buffer.asByteData());
     setupFlutterForRuntime(runtime);
-    runtime.setup();
     final result = runtime.executeLib('package:example/main.dart', 'main');
     expect(result, isNotNull);
     expect(result.$value, isA<AppBar>());
@@ -238,7 +232,6 @@ void main() {
     });
     final runtime = Runtime(program.write().buffer.asByteData());
     setupFlutterForRuntime(runtime);
-    runtime.setup();
     final result = runtime.executeLib('package:example/main.dart', 'main');
     expect(result, isNotNull);
     expect(result.$value, isA<BoxDecoration>());
@@ -277,7 +270,6 @@ void main() {
     });
     final runtime = Runtime(program.write().buffer.asByteData());
     setupFlutterForRuntime(runtime);
-    runtime.setup();
     final Map<$String, $Value> map = {$String('title'): $String('Hello World')};
     final result = runtime.executeLib(
         'package:example/main.dart', 'MyWidget.', [$Map.wrap(map), null]);
@@ -314,7 +306,6 @@ void main() {
     });
     final runtime = Runtime(program.write().buffer.asByteData());
     setupFlutterForRuntime(runtime);
-    runtime.setup();
     String strval = '';
     final result =
         runtime.executeLib('package:example/main.dart', 'MyWidget.', [
@@ -322,7 +313,7 @@ void main() {
         strval = args[0]!.$value;
         return null;
       }),
-      Null
+      null
     ]);
     await tester.pumpWidget(result);
     await tester.tap(find.text('Click me'));
