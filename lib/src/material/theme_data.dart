@@ -49,8 +49,6 @@ class $ThemeData implements $Instance {
                   BridgeTypeAnnotation($Color.$type, nullable: true), true),
               BridgeParameter('splashColor',
                   BridgeTypeAnnotation($Color.$type, nullable: true), true),
-              BridgeParameter('selectedRowColor',
-                  BridgeTypeAnnotation($Color.$type, nullable: true), true),
               BridgeParameter('unselectedWidgetColor',
                   BridgeTypeAnnotation($Color.$type, nullable: true), true),
               BridgeParameter('disabledColor',
@@ -127,13 +125,12 @@ class $ThemeData implements $Instance {
       dividerColor: args[10]?.$value,
       highlightColor: args[11]?.$value,
       splashColor: args[12]?.$value,
-      selectedRowColor: args[13]?.$value,
-      unselectedWidgetColor: args[14]?.$value,
-      disabledColor: args[15]?.$value,
-      buttonTheme: ButtonThemeData(buttonColor: args[16]?.$value),
-      secondaryHeaderColor: args[17]?.$value,
-      textTheme: args[18]?.$value,
-      primaryTextTheme: args[19]?.$value,
+      unselectedWidgetColor: args[13]?.$value,
+      disabledColor: args[14]?.$value,
+      buttonTheme: ButtonThemeData(buttonColor: args[15]?.$value),
+      secondaryHeaderColor: args[16]?.$value,
+      textTheme: args[17]?.$value,
+      primaryTextTheme: args[18]?.$value,
     ));
   }
 
@@ -169,7 +166,7 @@ class $ThemeData implements $Instance {
       case 'splashColor':
         return $Color.wrap($value.splashColor);
       case 'selectedRowColor':
-        return $Color.wrap($value.selectedRowColor);
+        return $Color.wrap(($value as dynamic).selectedRowColor);
       case 'unselectedWidgetColor':
         return $Color.wrap($value.unselectedWidgetColor);
       case 'disabledColor':

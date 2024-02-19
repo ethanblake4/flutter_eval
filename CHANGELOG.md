@@ -1,5 +1,6 @@
 ## 0.7.2
 - Add GestureDetector, Offset, Velocity, and related classes
+- Support for Flutter 3.19
 
 ## 0.7.1
 - Support for Flutter 3.16

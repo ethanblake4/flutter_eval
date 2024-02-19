@@ -6,7 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_eval/src/foundation/diagnostics.dart';
 import 'package:flutter_eval/src/foundation/key.dart';
 
-const widgetsFrameworkSource = ''' 
+const widgetsFrameworkSource = '''
 export 'package:flutter/foundation.dart' show FlutterError, ErrorSummary, ErrorDescription, ErrorHint,
                     debugPrint, debugPrintStack, VoidCallback, ValueChanged, 
                     ValueGetter, ValueSetter, DiagnosticsNode, DiagnosticLevel, 
