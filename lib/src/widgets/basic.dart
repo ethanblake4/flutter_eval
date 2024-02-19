@@ -18,11 +18,14 @@ export 'package:flutter/foundation.dart' show
     ValueNotifier;
 export 'package:flutter/painting.dart';
 export 'package:flutter/rendering.dart' show
+  BoxConstraints,
+  CrossAxisAlignment,
   MainAxisSize,
   MainAxisAlignment,
-  CrossAxisAlignment;
+  HitTestBehavior;
 ''';
 
+/// dart_eval bridge wrapper for [Padding]
 class $Padding implements $Instance {
   static const $type = BridgeTypeRef(
       BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Padding'));

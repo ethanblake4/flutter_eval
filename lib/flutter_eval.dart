@@ -9,6 +9,11 @@ import 'package:flutter_eval/src/animation/curves.dart';
 import 'package:flutter_eval/src/foundation.dart';
 import 'package:flutter_eval/src/foundation/change_notifier.dart';
 import 'package:flutter_eval/src/foundation/key.dart';
+import 'package:flutter_eval/src/gestures.dart';
+import 'package:flutter_eval/src/gestures/drag_details.dart';
+import 'package:flutter_eval/src/gestures/long_press.dart';
+import 'package:flutter_eval/src/gestures/tap.dart';
+import 'package:flutter_eval/src/gestures/velocity_tracker.dart';
 import 'package:flutter_eval/src/material.dart';
 import 'package:flutter_eval/src/material/app.dart';
 import 'package:flutter_eval/src/material/app_bar.dart';
@@ -44,9 +49,11 @@ import 'package:flutter_eval/src/rendering.dart';
 import 'package:flutter_eval/src/rendering/box.dart';
 import 'package:flutter_eval/src/rendering/flex.dart';
 import 'package:flutter_eval/src/rendering/object.dart';
+import 'package:flutter_eval/src/rendering/proxy_box.dart';
 import 'package:flutter_eval/src/sky_engine/ui/geometry.dart';
 import 'package:flutter_eval/src/sky_engine/ui/image.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
+import 'package:flutter_eval/src/sky_engine/ui/pointer.dart';
 import 'package:flutter_eval/src/sky_engine/ui/text.dart';
 import 'package:flutter_eval/src/sky_engine/ui/ui.dart';
 import 'package:flutter_eval/src/widgets.dart';
@@ -55,6 +62,7 @@ import 'package:flutter_eval/src/widgets/basic.dart';
 import 'package:flutter_eval/src/widgets/container.dart';
 import 'package:flutter_eval/src/widgets/editable_text.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
+import 'package:flutter_eval/src/widgets/gesture_detector.dart';
 import 'package:flutter_eval/src/widgets/icon.dart';
 import 'package:flutter_eval/src/widgets/icon_data.dart';
 import 'package:flutter_eval/src/widgets/image.dart';
@@ -161,6 +169,18 @@ class FlutterEvalPlugin implements EvalPlugin {
       $NetworkImage.$declaration,
       $MemoryImage.$declaration,
       $ResizeImage.$declaration,
+      $Offset.$declaration,
+      $Velocity.$declaration,
+      $GestureDetector.$declaration,
+      $TapDownDetails.$declaration,
+      $TapUpDetails.$declaration,
+      $LongPressStartDetails.$declaration,
+      $LongPressMoveUpdateDetails.$declaration,
+      $LongPressEndDetails.$declaration,
+      $DragStartDetails.$declaration,
+      $DragUpdateDetails.$declaration,
+      $DragEndDetails.$declaration,
+      $DragDownDetails.$declaration,
     ];
 
     for (final cls in classes) {
@@ -179,6 +199,8 @@ class FlutterEvalPlugin implements EvalPlugin {
     registry.defineBridgeEnum($BorderStyle.$declaration);
     registry.defineBridgeEnum($BoxFit.$declaration);
     registry.defineBridgeEnum($FilterQuality.$declaration);
+    registry.defineBridgeEnum($PointerDeviceKind.$declaration);
+    registry.defineBridgeEnum($HitTestBehavior.$declaration);
 
     registry.addSource(DartSource('dart:ui', dartUiSource));
 
@@ -189,6 +211,12 @@ class FlutterEvalPlugin implements EvalPlugin {
 
     registry.addSource(
         DartSource('package:flutter/foundation.dart', foundationSource));
+
+    registry
+        .addSource(DartSource('package:flutter/gestures.dart', gesturesSource));
+    registry.addSource(DartSource(
+        'package:flutter/src/widgets/gesture_detector.dart',
+        gestureDetectorSource));
 
     registry
         .addSource(DartSource('package:flutter/material.dart', materialSource));
@@ -219,6 +247,7 @@ class FlutterEvalPlugin implements EvalPlugin {
     runtime
       ..registerBridgeFunc('dart:ui', 'Color.', $Color.$new)
       ..registerBridgeFunc('dart:ui', 'Size.', $Size.$new)
+      ..registerBridgeFunc('dart:ui', 'Offset.', $Offset.$new)
       ..registerBridgeFunc(
           'package:flutter/src/foundation/change_notifier.dart',
           'ChangeNotifier.',
@@ -387,12 +416,36 @@ class FlutterEvalPlugin implements EvalPlugin {
           'MemoryImage.', $MemoryImage.$new)
       ..registerBridgeFunc('package:flutter/src/painting/image_provider.dart',
           'ResizeImage.', $ResizeImage.$new)
+      ..registerBridgeFunc('package:flutter/src/widgets/gesture_detector.dart',
+          'GestureDetector.', $GestureDetector.$new)
+      ..registerBridgeFunc('package:flutter/src/gestures/tap.dart',
+          'TapDownDetails.', $TapDownDetails.$new)
+      ..registerBridgeFunc('package:flutter/src/gestures/tap.dart',
+          'TapUpDetails.', $TapUpDetails.$new)
+      ..registerBridgeFunc('package:flutter/src/gestures/long_press.dart',
+          'LongPressStartDetails.', $LongPressStartDetails.$new)
+      ..registerBridgeFunc('package:flutter/src/gestures/long_press.dart',
+          'LongPressMoveUpdateDetails.', $LongPressMoveUpdateDetails.$new)
+      ..registerBridgeFunc('package:flutter/src/gestures/long_press.dart',
+          'LongPressEndDetails.', $LongPressEndDetails.$new)
+      ..registerBridgeFunc('package:flutter/src/gestures/drag_details.dart',
+          'DragStartDetails.', $DragStartDetails.$new)
+      ..registerBridgeFunc('package:flutter/src/gestures/drag_details.dart',
+          'DragUpdateDetails.', $DragUpdateDetails.$new)
+      ..registerBridgeFunc('package:flutter/src/gestures/drag_details.dart',
+          'DragEndDetails.', $DragEndDetails.$new)
+      ..registerBridgeFunc('package:flutter/src/gestures/drag_details.dart',
+          'DragDownDetails.', $DragDownDetails.$new)
+      ..registerBridgeFunc('package:flutter/src/gestures/velocity_tracker.dart',
+          'Velocity.', $Velocity.$new)
       ..registerBridgeEnumValues('dart:ui', 'FontWeight', $FontWeight.$values)
       ..registerBridgeEnumValues('dart:ui', 'FontStyle', $FontStyle.$values)
       ..registerBridgeEnumValues(
           'dart:ui', 'TextDirection', $TextDirection.$values)
       ..registerBridgeEnumValues(
           'dart:ui', 'TextBaseline', $TextBaseline.$values)
+      ..registerBridgeEnumValues(
+          'dart:ui', 'PointerDeviceKind', $PointerDeviceKind.$values)
       ..registerBridgeEnumValues(
           'package:flutter/src/painting/basic_types.dart',
           'VerticalDirection',
@@ -410,6 +463,8 @@ class FlutterEvalPlugin implements EvalPlugin {
       ..registerBridgeEnumValues('package:flutter/src/rendering/flex.dart',
           'MainAxisAlignment', $MainAxisAlignment.$values)
       ..registerBridgeEnumValues('package:flutter/src/rendering/flex.dart',
-          'CrossAxisAlignment', $CrossAxisAlignment.$values);
+          'CrossAxisAlignment', $CrossAxisAlignment.$values)
+      ..registerBridgeEnumValues('package:flutter/src/rendering/proxy_box.dart',
+          'HitTestBehavior', $HitTestBehavior.$values);
   }
 }

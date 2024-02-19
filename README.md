@@ -229,6 +229,7 @@ Currently supported widgets and classes include:
 - `ChangeNotifier`;
 - `WidgetsApp`, `Container`, `Column`, `Row`, `Center`;
 - `Padding`, `EdgeInsetsGeometry`, `EdgeInsets`, `Axis`, `Size`;
+- `Offset`, `Velocity`;
 - `MainAxisAlignment`, `MainAxisSize`, `CrossAxisAlignment`;
 - `AlignmentGeometry`, `Alignment`, `Constraints`, `BoxConstraints`;
 - `Color`,  `ColorSwatch`, `Colors`, `FontWeight`, `FontStyle`;
@@ -245,6 +246,10 @@ Currently supported widgets and classes include:
 - `Image`, `ImageProvider`, `NetworkImage`, `MemoryImage`;
 - `ListView`, `ListTile`, `Spacer`;
 - `Navigator`, `NavigatorState`, `Builder`;
+- `PointerDeviceKind`, `HitTestBehavior`;
+- `GestureDetector`, `TapDownDetails`, `TapUpDetails`;
+- `LongPressStartDetails`, `LongPressMoveUpdateDetails`, `LongPressEndDetails`;
+- `DragStartDetails`, `DragUpdateDetails`, `DragEndDetails`, `DragDownDetails`;
 
 Note that many of these have only partial support.
 

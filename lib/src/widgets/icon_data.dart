@@ -4,10 +4,13 @@ import 'package:dart_eval/stdlib/core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+/// dart_eval wrapper for [IconData]
 class $IconData implements $Instance {
+  /// dart_eval compile-time type definition for [IconData]
   static const $type = BridgeTypeRef(
       BridgeTypeSpec('package:flutter/src/widgets/icon_data.dart', 'IconData'));
 
+  /// dart_eval compile-time class declaration
   static const $declaration = BridgeClassDef(
       BridgeClassType($type, isAbstract: false),
       constructors: {
@@ -32,8 +35,10 @@ class $IconData implements $Instance {
       },
       wrap: true);
 
+  /// Wrap a [IconData] in a [$IconData]
   const $IconData.wrap(this.$value);
 
+  /// Instantiate a new [$IconData] from [args]
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
     return $IconData.wrap(IconData(
       args[0]!.$value,

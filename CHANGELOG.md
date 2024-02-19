@@ -1,3 +1,6 @@
+## 0.7.2
+- Add GestureDetector, Offset, Velocity, and related classes
+
 ## 0.7.1
 - Support for Flutter 3.16
 
@@ -25,6 +28,7 @@
 - Add Image, ImageProvider, and NetworkImage (thanks to @DevAdalat)
 - Fix BoxDecoration not extending Decoration
 - Fix error when constructing a TextStyle without the `inherit` property
+
 ## 0.5.4
 - Support for Flutter 3.7
 - Add Spacer (thanks to @canewsin)

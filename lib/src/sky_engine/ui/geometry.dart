@@ -50,3 +50,63 @@ class $Size implements $Instance {
     return _superclass.$setProperty(runtime, identifier, value);
   }
 }
+
+/// dart_eval wrapper for [Offset]
+class $Offset implements $Instance {
+  /// dart_eval type definition for [Offset]
+  static const $type = BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'));
+
+  /// dart_eval class declaration for [Offset]
+  static const $declaration = BridgeClassDef(BridgeClassType($type),
+      constructors: {
+        '': BridgeConstructorDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter('dx',
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), false),
+          BridgeParameter('dy',
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), false)
+        ]))
+      },
+      wrap: true);
+
+  @override
+  final Offset $value;
+
+  $Offset.wrap(this.$value) : _superclass = $Object($value);
+
+  final $Instance _superclass;
+
+  static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
+    return $Offset
+        .wrap(Offset(args[0]!.$value as double, args[1]!.$value as double));
+  }
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    switch (identifier) {
+      case 'dx':
+        return $double($value.dx);
+      case 'dy':
+        return $double($value.dy);
+      case 'distance':
+        return $double($value.distance);
+      case 'distanceSquared':
+        return $double($value.distanceSquared);
+      case 'direction':
+        return $double($value.direction);
+      default:
+        return _superclass.$getProperty(runtime, identifier);
+    }
+  }
+
+  @override
+  get $reified => $value;
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}

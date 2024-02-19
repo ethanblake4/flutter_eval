@@ -9,10 +9,13 @@ import 'package:flutter_eval/src/sky_engine/ui/image.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
+/// dart_eval bridge wrapper for [Image]
 class $Image implements $Instance {
+  /// dart_eval compile-time type definition for [$Image]
   static const $type = BridgeTypeRef(
       BridgeTypeSpec('package:flutter/src/widgets/image.dart', 'Image'));
 
+  /// dart_eval compile-time class declaration for [$Image]
   static const $declaration = BridgeClassDef(
     BridgeClassType($type, isAbstract: false, $extends: $Widget.$type),
     constructors: {
@@ -102,6 +105,7 @@ class $Image implements $Instance {
     throw UnimplementedError();
   }
 
+  /// Instantiate a new [$Image] from [args]
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
     return $Image.wrap(
       Image(
@@ -117,6 +121,7 @@ class $Image implements $Instance {
     );
   }
 
+  /// Instantiate a new [$Image] using [Image.network] from [args]
   static $Value? $network(Runtime runtime, $Value? target, List<$Value?> args) {
     final url = args[0]!.$value;
     runtime.assertPermission('network', url);
@@ -135,6 +140,7 @@ class $Image implements $Instance {
     );
   }
 
+  /// Instantiate a new [$Image] using [Image.asset] from [args]
   static $Value? $asset(Runtime runtime, $Value? target, List<$Value?> args) {
     final name = args[0]!.$value;
     runtime.assertPermission('asset', name);

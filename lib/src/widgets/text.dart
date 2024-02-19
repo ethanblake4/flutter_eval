@@ -6,10 +6,13 @@ import 'package:flutter_eval/src/foundation/key.dart';
 import 'package:flutter_eval/src/painting/text_style.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
+/// dart_eval bridge wrapper for [Text]
 class $Text implements Text, $Instance {
+  /// dart_eval compile-time type definition for [Text]
   static const $type = BridgeTypeRef(
       BridgeTypeSpec('package:flutter/src/widgets/text.dart', 'Text'));
 
+  /// dart_eval compile-time class declaration for [Text]
   static const $declaration = BridgeClassDef(
       BridgeClassType($type, $extends: $StatelessWidget$bridge.$type),
       constructors: {
@@ -26,8 +29,10 @@ class $Text implements Text, $Instance {
       },
       wrap: true);
 
+  /// Wrap a [Text] in a [$Text]
   $Text.wrap(this.$value);
 
+  /// Instantiate a new [$Text] from [args]
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
     return $Text.wrap(Text(
       args[0]!.$value,

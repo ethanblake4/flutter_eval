@@ -319,4 +319,47 @@ void main() {
     await tester.tap(find.text('Click me'));
     expect(strval, 'Hello!');
   });
+
+  testWidgets('GestureDetector onTap', (WidgetTester tester) async {
+    final compiler = Compiler();
+    setupFlutterForCompile(compiler);
+    final program = compiler.compile({
+      'example': {
+        'main.dart': '''
+        import 'package:flutter/material.dart';
+        class MyWidget extends StatelessWidget {
+          final void Function() onTap;
+
+          MyWidget(this.onTap, {super.key});
+
+          @override
+          Widget build(BuildContext context) {
+            return MaterialApp(home: Scaffold(
+              body: Center(
+                child: GestureDetector(
+                  onTap: onTap,
+                  child: Text('Click me'),
+                ),
+              ),
+            ));
+          }
+        }
+        '''
+      }
+    });
+    final runtime = Runtime(program.write().buffer.asByteData());
+    setupFlutterForRuntime(runtime);
+    bool tapped = false;
+    final result =
+        runtime.executeLib('package:example/main.dart', 'MyWidget.', [
+      $Function((runtime, target, args) {
+        tapped = true;
+        return null;
+      }),
+      null
+    ]);
+    await tester.pumpWidget(result);
+    await tester.tap(find.text('Click me'));
+    expect(tapped, isTrue);
+  });
 }

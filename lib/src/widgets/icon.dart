@@ -7,10 +7,13 @@ import 'package:flutter_eval/src/sky_engine/ui/text.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 import 'package:flutter_eval/src/widgets/icon_data.dart';
 
+/// dart_eval bridge wrapper for [Icon]
 class $Icon implements $Instance {
+  /// dart_eval compile-time type definition for [Icon]
   static const $type = BridgeTypeRef(
       BridgeTypeSpec('package:flutter/src/widgets/icon.dart', 'Icon'));
 
+  /// dart_eval compile-time class declaration for [Icon]
   static const $declaration = BridgeClassDef(
       BridgeClassType($type,
           isAbstract: false, $extends: $StatelessWidget$bridge.$type),
@@ -36,8 +39,10 @@ class $Icon implements $Instance {
       },
       wrap: true);
 
+  /// Wrap a [Icon] in a [$Icon]
   const $Icon.wrap(this.$value);
 
+  /// Instantiate a new [$Icon] from [args]
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
     return $Icon.wrap(Icon(
       args[0]!.$value,
