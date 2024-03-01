@@ -6,10 +6,13 @@ import 'package:flutter_eval/src/painting/edge_insets.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
+/// dart_eval wrapper for [Card]
 class $Card implements $Instance {
+  /// Compile-type type reference for [Card]
   static const $type = BridgeTypeRef(
       BridgeTypeSpec('package:flutter/src/material/card.dart', 'Card'));
 
+  /// Compile-type class declaration for [Card]
   static const $declaration = BridgeClassDef(
       BridgeClassType($type,
           isAbstract: false, $extends: $StatelessWidget$bridge.$type),
@@ -38,11 +41,13 @@ class $Card implements $Instance {
 
   late final _superclass = $StatelessWidget.wrap($value);
 
+  /// Wrap a [Card] in a [$Card]
   $Card.wrap(this.$value);
 
   @override
   final Card $value;
 
+  /// Wrapper for [Card.new] using [args]
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
     return $Card.wrap(Card(
       key: args[0]?.$value,

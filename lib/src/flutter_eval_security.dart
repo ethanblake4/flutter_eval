@@ -39,3 +39,34 @@ class AssetPermission implements Permission {
   @override
   int get hashCode => matchPattern.hashCode ^ domains.hashCode;
 }
+
+/// A permission that allows access to a Flutter method channel.
+class MethodChannelPermission implements Permission {
+  /// The name of the method channel.
+  final String channel;
+
+  /// Create a new method channel permission.
+  const MethodChannelPermission(this.channel);
+
+  @override
+  List<String> get domains => ['method_channel'];
+
+  @override
+  bool match([Object? data]) {
+    if (data is String) {
+      return data == channel;
+    }
+    return false;
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (other is MethodChannelPermission) {
+      return other.channel == channel && other.domains == domains;
+    }
+    return false;
+  }
+
+  @override
+  int get hashCode => channel.hashCode ^ domains.hashCode;
+}

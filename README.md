@@ -222,6 +222,14 @@ return RuntimeWidget(
 
 You can also pass callbacks with `$Function`.
 
+## Security and permissions
+
+flutter_eval inherits dart_eval's 
+[secure execution model](https://pub.dev/packages/dart_eval#security-and-permissions)
+which restricts access to the filesystem, network, and other sensitive APIs by default.
+flutter_eval extends this with security controls for MethodChannel and related APIs.
+To allow access to a MethodChannel, add a `MethodChannelPermission` to the `permissions` parameter of `EvalWidget`, `CompilerWidget`, or `RuntimeWidget`.
+
 ## Supported widgets and classes
 
 Currently supported widgets and classes include:
@@ -312,7 +320,6 @@ class ExampleState extends State<Example> {
     
     runtime = Runtime.ofProgram(program);
     runtime.addPlugin(flutterEvalPlugin);
-    runtime.setup();
   }
 
   @override
@@ -344,7 +351,6 @@ class ExampleState extends State<Example> {
     rootBundle.load('assets/out.evc').then((bytecode) => setState(() {
       runtime = Runtime(ByteData.sublistView(bytecode));
       runtime.addPlugin(flutterEvalPlugin);
-      runtime!.setup();
     }));
   }
 

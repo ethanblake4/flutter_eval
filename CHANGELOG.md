@@ -1,3 +1,6 @@
+## 0.7.3
+- Add MethodChannel and related wrappers
+
 ## 0.7.2
 - Add GestureDetector, Offset, Velocity, and related classes
 - Support for Flutter 3.19

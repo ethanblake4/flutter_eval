@@ -50,6 +50,10 @@ import 'package:flutter_eval/src/rendering/box.dart';
 import 'package:flutter_eval/src/rendering/flex.dart';
 import 'package:flutter_eval/src/rendering/object.dart';
 import 'package:flutter_eval/src/rendering/proxy_box.dart';
+import 'package:flutter_eval/src/services.dart';
+import 'package:flutter_eval/src/services/binary_messenger.dart';
+import 'package:flutter_eval/src/services/message_codec.dart';
+import 'package:flutter_eval/src/services/platform_channel.dart';
 import 'package:flutter_eval/src/sky_engine/ui/geometry.dart';
 import 'package:flutter_eval/src/sky_engine/ui/image.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
@@ -181,6 +185,10 @@ class FlutterEvalPlugin implements EvalPlugin {
       $DragUpdateDetails.$declaration,
       $DragEndDetails.$declaration,
       $DragDownDetails.$declaration,
+      $BinaryMessenger.$declaration,
+      $MethodCodec.$declaration,
+      $MethodChannel.$declaration,
+      $MethodCall.$declaration,
     ];
 
     for (final cls in classes) {
@@ -233,6 +241,9 @@ class FlutterEvalPlugin implements EvalPlugin {
 
     registry.addSource(
         DartSource('package:flutter/rendering.dart', renderingSource));
+
+    registry
+        .addSource(DartSource('package:flutter/services.dart', servicesSource));
 
     registry
         .addSource(DartSource('package:flutter/widgets.dart', widgetsSource));
@@ -438,6 +449,8 @@ class FlutterEvalPlugin implements EvalPlugin {
           'DragDownDetails.', $DragDownDetails.$new)
       ..registerBridgeFunc('package:flutter/src/gestures/velocity_tracker.dart',
           'Velocity.', $Velocity.$new)
+      ..registerBridgeFunc('package:flutter/src/services/platform_channel.dart',
+          'MethodChannel.', $MethodChannel.$new)
       ..registerBridgeEnumValues('dart:ui', 'FontWeight', $FontWeight.$values)
       ..registerBridgeEnumValues('dart:ui', 'FontStyle', $FontStyle.$values)
       ..registerBridgeEnumValues(
