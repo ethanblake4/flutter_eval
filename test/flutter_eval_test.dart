@@ -241,6 +241,70 @@ void main() {
     expect((result.$value as BoxDecoration).border!.top.width, equals(2.0));
   });
 
+  test('Stack and Positioned', () {
+    final compiler = Compiler();
+    setupFlutterForCompile(compiler);
+    final program = compiler.compile({
+      'example': {
+        'main.dart': '''
+        import 'package:flutter/material.dart';
+        
+        Widget main() {
+          return Stack(
+            children: <Widget>[
+              Positioned(
+                left: 10.0,
+                top: 20.0,
+                child: Text('Hello'),
+              ),
+              Positioned(
+                left: 30.0,
+                top: 40.0,
+                child: Text('World'),
+              ),
+            ],
+          );
+        }
+        '''
+      }
+    });
+    final runtime = Runtime(program.write().buffer.asByteData());
+    setupFlutterForRuntime(runtime);
+    final result = runtime.executeLib('package:example/main.dart', 'main');
+    expect(result, isNotNull);
+    expect(result.$value, isA<Stack>());
+    expect((result.$value as Stack).children.length, equals(2));
+    expect((result.$value as Stack).children[0], isA<Positioned>());
+    expect((result.$value as Stack).children[1], isA<Positioned>());
+  });
+
+  test('ClipRRect', () {
+    final compiler = Compiler();
+    setupFlutterForCompile(compiler);
+    final program = compiler.compile({
+      'example': {
+        'main.dart': '''
+        import 'package:flutter/material.dart';
+        
+        Widget main() {
+          return ClipRRect(
+            borderRadius: BorderRadius.circular(10.0),
+            clipBehavior: Clip.antiAlias,
+            child: Text('Hello'),
+          );
+        }
+        '''
+      }
+    });
+    final runtime = Runtime(program.write().buffer.asByteData());
+    setupFlutterForRuntime(runtime);
+    final result = runtime.executeLib('package:example/main.dart', 'main');
+    expect(result, isNotNull);
+    expect(result.$value, isA<ClipRRect>());
+    expect((result.$value as ClipRRect).borderRadius, isA<BorderRadius>());
+    expect((result.$value as ClipRRect).child, isA<Text>());
+  });
+
   testWidgets('Passing a Map', (WidgetTester tester) async {
     final compiler = Compiler();
     setupFlutterForCompile(compiler);

@@ -6,7 +6,7 @@ import 'package:flutter_eval/src/painting/edge_insets.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
-/// dart_eval wrapper for [Card]
+/// dart_eval bridge wrapper for [Card]
 class $Card implements $Instance {
   /// Compile-type type reference for [Card]
   static const $type = BridgeTypeRef(
@@ -29,8 +29,13 @@ class $Card implements $Instance {
                   'surfaceTintColor', BridgeTypeAnnotation($Color.$type), true),
               BridgeParameter('elevation',
                   BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
-              BridgeParameter('margin',
-                  BridgeTypeAnnotation($EdgeInsetsGeometry.$type), true),
+              BridgeParameter(
+                  'margin',
+                  BridgeTypeAnnotation($EdgeInsetsGeometry.$type,
+                      nullable: true),
+                  true),
+              BridgeParameter('clipBehavior',
+                  BridgeTypeAnnotation($Clip.$type, nullable: true), true),
               BridgeParameter('semanticContainer',
                   BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)), true),
               BridgeParameter(
@@ -56,8 +61,9 @@ class $Card implements $Instance {
       surfaceTintColor: args[3]?.$value,
       elevation: args[4]?.$value,
       margin: args[5]?.$value,
-      semanticContainer: args[6]?.$value ?? true,
-      child: args[7]?.$value,
+      clipBehavior: args[6]?.$value,
+      semanticContainer: args[7]?.$value ?? true,
+      child: args[8]?.$value,
     ));
   }
 

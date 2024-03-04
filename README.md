@@ -233,16 +233,20 @@ To allow access to a MethodChannel, add a `MethodChannelPermission` to the `perm
 ## Supported widgets and classes
 
 Currently supported widgets and classes include:
-- `Widget`, `StatelessWidget`, `StatefulWidget`, `State`, `Key`, `BuildContext`;
-- `ChangeNotifier`;
+- `Widget`, `StatelessWidget`, `StatefulWidget`, `State`;
+- `ChangeNotifier`, `Key`, `BuildContext`;
 - `WidgetsApp`, `Container`, `Column`, `Row`, `Center`;
+- `Alignment`, `Align`, `AspectRatio`, `Baseline`;
+- `Radius`, `BorderRadius`, `BorderRadiusGeometry`, `Clip`, `ClipRRect`;
+- `SizedBox`, `FittedBox`, `FractionallySizedBox`, `ColoredBox`;
+- `Stack`, `Positioned`, `StackFit`;
 - `Padding`, `EdgeInsetsGeometry`, `EdgeInsets`, `Axis`, `Size`;
 - `Offset`, `Velocity`;
 - `MainAxisAlignment`, `MainAxisSize`, `CrossAxisAlignment`;
 - `AlignmentGeometry`, `Alignment`, `Constraints`, `BoxConstraints`;
 - `Color`,  `ColorSwatch`, `Colors`, `FontWeight`, `FontStyle`;
 - `MaterialApp`, `MaterialColor`, `MaterialAccentColor`;
-- `Theme`, `ThemeData`, `TextTheme`;
+- `Theme`, `ThemeData`, `TextTheme`, `Directionality`;
 - `Decoration`, `BoxDecoration`, `BoxBorder`, `Border`, `BorderSide`;
 - `IconData`, `Icons`, `Icon`;
 - `Curve`, `Curves`, `SawTooth`, `Interval`, `Threshold`, `Cubic`;
@@ -250,9 +254,8 @@ Currently supported widgets and classes include:
 - `TextDirection`, `VerticalDirection`, `TextBaseline`
 - `Scaffold`, `ScaffoldMessenger`, `AppBar`, `SnackBar`, `FloatingActionButton`;
 - `InkWell`, `TextButton`, `ElevatedButton`, `IconButton`;
-- `Card`, `Drawer`;
+- `Card`, `Drawer`, `ListView`, `ListTile`, `Spacer`;
 - `Image`, `ImageProvider`, `NetworkImage`, `MemoryImage`;
-- `ListView`, `ListTile`, `Spacer`;
 - `Navigator`, `NavigatorState`, `Builder`;
 - `PointerDeviceKind`, `HitTestBehavior`;
 - `GestureDetector`, `TapDownDetails`, `TapUpDetails`;

@@ -150,5 +150,5 @@ class $Text implements Text, $Instance {
   Color? get selectionColor => throw UnimplementedError();
 
   @override
-  TextScaler? get textScaler => ($value as dynamic).textScaler;
+  get textScaler => ($value as dynamic).textScaler;
 }

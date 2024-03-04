@@ -1,3 +1,9 @@
+## 0.7.4
+- Add Alignment, AspectRatio, Align, Radius, BorderRadiusGeometry,
+  BorderRadius, Baseline, ClipRRect, ColoredBox, Directionality, 
+  Expanded, FittedBox, FractionallySizedBox, Stack, Positioned,
+  SizedBox, Clip, and StackFit
+
 ## 0.7.3
 - Add MethodChannel and related wrappers
 

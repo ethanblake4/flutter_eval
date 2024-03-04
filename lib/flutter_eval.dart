@@ -36,6 +36,7 @@ import 'package:flutter_eval/src/material/theme_data.dart';
 import 'package:flutter_eval/src/painting.dart';
 import 'package:flutter_eval/src/painting/alignment.dart';
 import 'package:flutter_eval/src/painting/basic_types.dart';
+import 'package:flutter_eval/src/painting/border_radius.dart';
 import 'package:flutter_eval/src/painting/borders.dart';
 import 'package:flutter_eval/src/painting/box_border.dart';
 import 'package:flutter_eval/src/painting/box_decoration.dart';
@@ -50,6 +51,7 @@ import 'package:flutter_eval/src/rendering/box.dart';
 import 'package:flutter_eval/src/rendering/flex.dart';
 import 'package:flutter_eval/src/rendering/object.dart';
 import 'package:flutter_eval/src/rendering/proxy_box.dart';
+import 'package:flutter_eval/src/rendering/stack.dart';
 import 'package:flutter_eval/src/services.dart';
 import 'package:flutter_eval/src/services/binary_messenger.dart';
 import 'package:flutter_eval/src/services/message_codec.dart';
@@ -189,6 +191,22 @@ class FlutterEvalPlugin implements EvalPlugin {
       $MethodCodec.$declaration,
       $MethodChannel.$declaration,
       $MethodCall.$declaration,
+      $Alignment.$declaration,
+      $AspectRatio.$declaration,
+      $Align.$declaration,
+      $Radius.$declaration,
+      $BorderRadiusGeometry.$declaration,
+      $BorderRadius.$declaration,
+      $Baseline.$declaration,
+      $ClipRRect.$declaration,
+      $ColoredBox.$declaration,
+      $Directionality.$declaration,
+      $Expanded.$declaration,
+      $FittedBox.$declaration,
+      $FractionallySizedBox.$declaration,
+      $Stack.$declaration,
+      $Positioned.$declaration,
+      $SizedBox.$declaration
     ];
 
     for (final cls in classes) {
@@ -209,6 +227,8 @@ class FlutterEvalPlugin implements EvalPlugin {
     registry.defineBridgeEnum($FilterQuality.$declaration);
     registry.defineBridgeEnum($PointerDeviceKind.$declaration);
     registry.defineBridgeEnum($HitTestBehavior.$declaration);
+    registry.defineBridgeEnum($Clip.$declaration);
+    registry.defineBridgeEnum($StackFit.$declaration);
 
     registry.addSource(DartSource('dart:ui', dartUiSource));
 
@@ -259,6 +279,8 @@ class FlutterEvalPlugin implements EvalPlugin {
       ..registerBridgeFunc('dart:ui', 'Color.', $Color.$new)
       ..registerBridgeFunc('dart:ui', 'Size.', $Size.$new)
       ..registerBridgeFunc('dart:ui', 'Offset.', $Offset.$new)
+      ..registerBridgeFunc('dart:ui', 'Radius.circular', $Radius.$circular)
+      ..registerBridgeFunc('dart:ui', 'Radius.elliptical', $Radius.$elliptical)
       ..registerBridgeFunc(
           'package:flutter/src/foundation/change_notifier.dart',
           'ChangeNotifier.',
@@ -311,6 +333,16 @@ class FlutterEvalPlugin implements EvalPlugin {
           'Border.symmetric', $Border.$symmetric)
       ..registerBridgeFunc('package:flutter/src/painting/box_decoration.dart',
           'BoxDecoration.', $BoxDecoration.$new)
+      ..registerBridgeFunc('package:flutter/src/painting/border_radius.dart',
+          'BorderRadius.all', $BorderRadius.$all)
+      ..registerBridgeFunc('package:flutter/src/painting/border_radius.dart',
+          'BorderRadius.only', $BorderRadius.$only)
+      ..registerBridgeFunc('package:flutter/src/painting/border_radius.dart',
+          'BorderRadius.circular', $BorderRadius.$circular)
+      ..registerBridgeFunc('package:flutter/src/painting/border_radius.dart',
+          'BorderRadius.vertical', $BorderRadius.$vertical)
+      ..registerBridgeFunc('package:flutter/src/painting/border_radius.dart',
+          'BorderRadius.horizontal', $BorderRadius.$horizontal)
       ..registerBridgeFunc('package:flutter/src/painting/edge_insets.dart',
           'EdgeInsets.symmetric', $EdgeInsets.$symmetric)
       ..registerBridgeFunc('package:flutter/src/painting/text_style.dart',
@@ -343,6 +375,34 @@ class FlutterEvalPlugin implements EvalPlugin {
           'BoxConstraints.expand', $BoxConstraints.$expand)
       ..registerBridgeFunc('package:flutter/src/widgets/app.dart',
           'WidgetsApp.', $WidgetsApp.$new)
+      ..registerBridgeFunc('package:flutter/src/widgets/basic.dart',
+          'Alignment.', $Alignment.$new)
+      ..registerBridgeFunc('package:flutter/src/widgets/basic.dart',
+          'AspectRatio.', $AspectRatio.$new)
+      ..registerBridgeFunc(
+          'package:flutter/src/widgets/basic.dart', 'Baseline.', $Baseline.$new)
+      ..registerBridgeFunc('package:flutter/src/widgets/basic.dart',
+          'ClipRRect.', $ClipRRect.$new)
+      ..registerBridgeFunc('package:flutter/src/widgets/basic.dart',
+          'ColoredBox.', $ColoredBox.$new)
+      ..registerBridgeFunc('package:flutter/src/widgets/basic.dart',
+          'Directionality.', $Directionality.$new)
+      ..registerBridgeFunc(
+          'package:flutter/src/widgets/basic.dart', 'Expanded.', $Expanded.$new)
+      ..registerBridgeFunc('package:flutter/src/widgets/basic.dart',
+          'FittedBox.', $FittedBox.$new)
+      ..registerBridgeFunc('package:flutter/src/widgets/basic.dart',
+          'FractionallySizedBox.', $FractionallySizedBox.$new)
+      ..registerBridgeFunc('package:flutter/src/widgets/basic.dart',
+          'Positioned.', $Positioned.$new)
+      ..registerBridgeFunc(
+          'package:flutter/src/widgets/basic.dart', 'SizedBox.', $SizedBox.$new)
+      ..registerBridgeFunc('package:flutter/src/widgets/basic.dart',
+          'SizedBox.expand', $SizedBox.$expand)
+      ..registerBridgeFunc('package:flutter/src/widgets/basic.dart',
+          'SizedBox.shrink', $SizedBox.$shrink)
+      ..registerBridgeFunc(
+          'package:flutter/src/widgets/basic.dart', 'Stack.', $Stack.$new)
       ..registerBridgeFunc(
           'package:flutter/src/widgets/basic.dart', 'Padding.', $Padding.$new)
       ..registerBridgeFunc(
@@ -459,6 +519,7 @@ class FlutterEvalPlugin implements EvalPlugin {
           'dart:ui', 'TextBaseline', $TextBaseline.$values)
       ..registerBridgeEnumValues(
           'dart:ui', 'PointerDeviceKind', $PointerDeviceKind.$values)
+      ..registerBridgeEnumValues('dart:ui', 'Clip', $Clip.$values)
       ..registerBridgeEnumValues(
           'package:flutter/src/painting/basic_types.dart',
           'VerticalDirection',

@@ -72,6 +72,8 @@ class $Container implements Container, $Instance {
                   true),
               BridgeParameter('child',
                   BridgeTypeAnnotation($Widget.$type, nullable: true), true),
+              BridgeParameter('clipBehavior',
+                  BridgeTypeAnnotation($Clip.$type, nullable: true), true),
             ]))
       },
       wrap: true);
@@ -90,6 +92,7 @@ class $Container implements Container, $Instance {
       margin: args[9]?.$value,
       transformAlignment: args[10]?.$value,
       child: args[11]?.$value,
+      clipBehavior: args[12]?.$value ?? Clip.none,
     ));
   }
 

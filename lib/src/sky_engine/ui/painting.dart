@@ -2,9 +2,12 @@ import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/painting.dart';
 
+/// dart_eval bridge wrapper for [Color]
 class $Color implements Color, $Instance {
+  /// dart_eval type definition for [Color]
   static const $type = BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Color'));
 
+  /// dart_eval class declaration for [Color]
   static const $declaration = BridgeClassDef(BridgeClassType($type),
       constructors: {
         '': BridgeConstructorDef(
@@ -37,6 +40,7 @@ class $Color implements Color, $Instance {
       },
       wrap: true);
 
+  /// Wrap a [Color] in an [$Color]
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
     return $Color.wrap(Color(args[0]!.$value));
   }
@@ -97,4 +101,47 @@ class $Color implements Color, $Instance {
 
   @override
   Color withRed(int r) => $value.withRed(r);
+}
+
+/// dart_eval bridge wrapper for [Clip]
+class $Clip implements $Instance {
+  /// dart_eval type definition for [Clip]
+  static const $type = BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Clip'));
+
+  /// dart_eval enum declaration for [Clip]
+  static const $declaration = BridgeEnumDef($type, values: [
+    'none',
+    'hardEdge',
+    'antiAlias',
+    'antiAliasWithSaveLayer',
+  ]);
+
+  /// Runtime enum values
+  static final $values = {
+    'none': $Clip.wrap(Clip.none),
+    'hardEdge': $Clip.wrap(Clip.hardEdge),
+    'antiAlias': $Clip.wrap(Clip.antiAlias),
+    'antiAliasWithSaveLayer': $Clip.wrap(Clip.antiAliasWithSaveLayer),
+  };
+
+  $Clip.wrap(this.$value);
+
+  @override
+  final Clip $value;
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Clip get $reified => $value;
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    throw UnimplementedError();
+  }
 }

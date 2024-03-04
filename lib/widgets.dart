@@ -1,8 +1,8 @@
 /// Bridge classes and wrappers for Flutter's basic widget library
 library flutter_eval.widgets;
 
-export 'src/widgets/basic.dart' show $Row, $Column;
-export 'src/widgets/container.dart' show $Container;
+export 'src/widgets/basic.dart';
+export 'src/widgets/container.dart';
 export 'src/widgets/framework.dart' hide $StatelessElement;
 export 'src/widgets/gesture_detector.dart';
 export 'src/widgets/icon.dart';
