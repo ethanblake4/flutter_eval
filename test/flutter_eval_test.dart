@@ -1,6 +1,3 @@
-import 'dart:convert';
-import 'dart:io';
-
 import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:dart_eval/stdlib/core.dart';
@@ -11,14 +8,6 @@ import 'package:flutter_eval/src/painting/alignment.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  // This is not actually a test, it just generates the flutter_eval.json file.
-  test('Generate flutter_eval.json', () {
-    final serializer = BridgeSerializer();
-    serializer.addPlugin(const FlutterEvalPlugin());
-    final output = serializer.serialize();
-    File('flutter_eval.json').writeAsStringSync(json.encode(output));
-  });
-
   test('Can extend StatelessWidget', () {
     final compiler = Compiler();
     setupFlutterForCompile(compiler);
