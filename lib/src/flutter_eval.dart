@@ -588,17 +588,16 @@ Future<Uri> _writeBytesToPath(String path, Uint8List bytes) async {
 /// A widget that loads dart_eval hot-swap updates. Place this at the
 /// root of your app.
 class HotSwapLoader extends StatefulWidget {
-  HotSwapLoader(
-      {required this.uri,
-      required this.child,
-      this.strategy,
-      this.cacheFilePath,
-      this.loading,
-      this.onError,
-      this.permissions = const [],
-      super.key})
-      : assert(globalRuntime == null,
-            'A global runtime already exists. You may be trying to use multiple HotSwapLoaders in your app.');
+  const HotSwapLoader({
+    required this.uri,
+    required this.child,
+    this.strategy,
+    this.cacheFilePath,
+    this.loading,
+    this.onError,
+    this.permissions = const [],
+    super.key,
+  });
 
   final Widget child;
 
@@ -645,6 +644,20 @@ class _HotSwapLoaderState extends State<HotSwapLoader> {
   @override
   void initState() {
     super.initState();
+    assert(
+      globalRuntime == null,
+      '''
+Global runtime was already initialized. Make sure your HotSwapLoader does have
+a constant key assigned to avoid recreating the HotSwapLoader state on each hot reload, e.g.:
+
+  HotSwapLoader(
+    key: const Key('hot_swap_loader'),
+    ...
+  )
+
+Multiple HotSwapLoaders in the widget tree are not supported.
+''',
+    );
 
     try {
       if (_strategy != HotSwapStrategy.immediate) {
