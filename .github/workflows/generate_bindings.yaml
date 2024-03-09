@@ -1,0 +1,19 @@
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  generate_bindings:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+      - run: make flutter_bindings
+      - name: Archive generated flutter_eval.json
+        uses: actions/upload-artifact@v4
+        with:
+          name: flutter_eval.json
+          path: flutter_eval.json
