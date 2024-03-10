@@ -15,16 +15,18 @@ class MyApp extends StatelessWidget {
     // Load a potential hot-swap update to be used by our app. If the URI responds with
     // an error, it will be treated as no update present.
     return HotSwapLoader(
-        // Updates can be loaded from the network using http:// and https://,
-        // or from local files/Flutter assets using file:// and asset:// respectively.
-        uri: 'https://storage.googleapis.com/eval-files/update4.evc',
-        child: MaterialApp(
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
-          home: const MyHomePage(title: 'Flutter Demo Home Page'),
-        ));
+      // Updates can be loaded from the network using http:// and https://,
+      // or from local files/Flutter assets using file:// and asset:// respectively.
+      uri: 'asset://assets/hot_update.evc',
+      strategy: HotSwapStrategy.immediate,
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      ),
+    );
   }
 }
 
@@ -89,14 +91,16 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-            onPressed: _incrementCounter,
-            tooltip: 'Increment',
+          onPressed: _incrementCounter,
+          tooltip: 'Increment',
 
-            /// Hot-swaps can be nested, so smaller updates can be made with
-            /// minimal performance impact
-            child: HotSwap(
-                id: '#myapp_fab_icon',
-                childBuilder: (context) => const Icon(Icons.add))),
+          /// Hot-swaps can be nested, so smaller updates can be made with
+          /// minimal performance impact
+          child: HotSwap(
+            id: '#myapp_fab_icon',
+            childBuilder: (context) => const Icon(Icons.add),
+          ),
+        ),
       ),
     );
   }

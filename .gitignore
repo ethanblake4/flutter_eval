@@ -122,8 +122,10 @@ app.*.symbols
 !/dev/ci/**/Gemfile.lock
 pubspec.lock
 **/*.evc
+!examples/code_push_app/assets/hot_update.evc
 **/pubspec_overrides.yaml
 
 flutter_eval.json
+!examples/code_push_app/hot_update/.dart_eval/bindings/flutter_eval.json
 .fvm/
 .vscode/settings.json
