@@ -1,4 +1,3 @@
-import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_eval/src/foundation/key.dart';
@@ -6,7 +5,7 @@ import 'package:flutter_eval/src/painting/edge_insets.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
-/// dart_eval bridge wrapper for [Card]
+/// dart_eval wrapper for [Card]
 class $Card implements $Instance {
   /// Compile-type type reference for [Card]
   static const $type = BridgeTypeRef(

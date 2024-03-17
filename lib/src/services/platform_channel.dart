@@ -1,4 +1,3 @@
-import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:dart_eval/stdlib/core.dart';
 import 'package:flutter/services.dart';
@@ -135,7 +134,7 @@ class $MethodChannel implements $Instance {
     final arguments = args[1];
     return $Future.wrap(self.$value
         .invokeMethod(method.$value, arguments?.$value)
-        .then(runtime.wrapRecursive));
+        .then(runtime.wrap));
   }
 
   static const $Function __invokeListMethod = $Function(_invokeListMethod);
@@ -147,7 +146,7 @@ class $MethodChannel implements $Instance {
     final arguments = args[1];
     return $Future.wrap(self.$value
         .invokeListMethod(method.$value, arguments?.$value)
-        .then(runtime.wrapRecursive));
+        .then(runtime.wrap));
   }
 
   static const $Function __invokeMapMethod = $Function(_invokeMapMethod);
@@ -159,7 +158,7 @@ class $MethodChannel implements $Instance {
     final arguments = args[1];
     return $Future.wrap(self.$value
         .invokeMapMethod(method.$value, arguments?.$value)
-        .then(runtime.wrapRecursive));
+        .then(runtime.wrap));
   }
 
   static const $Function __setMethodCallHandler =
@@ -229,7 +228,7 @@ class $MethodCall implements $Instance {
       case 'arguments':
         return $value.arguments == null
             ? const $null()
-            : runtime.wrapRecursive($value.arguments);
+            : runtime.wrap($value.arguments, recursive: true);
       default:
         return _superclass.$getProperty(runtime, identifier);
     }

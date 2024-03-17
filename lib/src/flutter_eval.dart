@@ -129,7 +129,7 @@ class _CompilerWidgetState extends State<CompilerWidget> {
       for (final permission in widget.permissions) {
         runtime.grant(permission);
       }
-      setupFlutterForRuntime(runtime);
+      runtime.addPlugin(flutterEvalPlugin);
     }
 
     if (!inBuild) {
@@ -301,7 +301,7 @@ class _RuntimeWidgetState extends State<RuntimeWidget> {
         for (final permission in widget.permissions) {
           runtime!.grant(permission);
         }
-        setupFlutterForRuntime(runtime!);
+        runtime!.addPlugin(flutterEvalPlugin);
         setupError = null;
       } catch (e, stackTrace) {
         if (!_setError(e, stackTrace, false)) {
@@ -467,7 +467,7 @@ class _EvalWidgetState extends State<EvalWidget> {
 
     void setupRuntime() {
       runtime = Runtime.ofProgram(program);
-      setupFlutterForRuntime(runtime!);
+      runtime!.addPlugin(flutterEvalPlugin);
     }
 
     if (!inBuild) {
@@ -513,7 +513,7 @@ class _EvalWidgetState extends State<EvalWidget> {
         for (final permission in widget.permissions) {
           runtime!.grant(permission);
         }
-        setupFlutterForRuntime(runtime!);
+        runtime!.addPlugin(flutterEvalPlugin);
         setupError = null;
       } catch (e, stackTrace) {
         if (!_setError(e, stackTrace, false)) {
@@ -777,7 +777,7 @@ Multiple HotSwapLoaders in the widget tree are not supported.
         for (final permission in widget.permissions) {
           runtime!.grant(permission);
         }
-        setupFlutterForRuntime(runtime!);
+        runtime!.addPlugin(flutterEvalPlugin);
         runtime!.loadGlobalOverrides();
       } catch (e, stackTrace) {
         if (!_setError(e, stackTrace, false)) {

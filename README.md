@@ -233,36 +233,36 @@ To allow access to a MethodChannel, add a `MethodChannelPermission` to the `perm
 ## Supported widgets and classes
 
 Currently supported widgets and classes include:
-- `Widget`, `StatelessWidget`, `StatefulWidget`, `State`;
-- `ChangeNotifier`, `Key`, `BuildContext`;
-- `WidgetsApp`, `Container`, `Column`, `Row`, `Center`;
-- `Alignment`, `Align`, `AspectRatio`, `Baseline`;
-- `Radius`, `BorderRadius`, `BorderRadiusGeometry`, `Clip`, `ClipRRect`;
-- `SizedBox`, `FittedBox`, `FractionallySizedBox`, `ColoredBox`;
-- `Stack`, `Positioned`, `StackFit`;
-- `Padding`, `EdgeInsetsGeometry`, `EdgeInsets`, `Axis`, `Size`;
-- `Offset`, `Velocity`;
-- `MainAxisAlignment`, `MainAxisSize`, `CrossAxisAlignment`;
-- `AlignmentGeometry`, `Alignment`, `Constraints`, `BoxConstraints`;
-- `Color`,  `ColorSwatch`, `Colors`, `FontWeight`, `FontStyle`;
-- `MaterialApp`, `MaterialColor`, `MaterialAccentColor`;
-- `Theme`, `ThemeData`, `TextTheme`, `Directionality`;
-- `Decoration`, `BoxDecoration`, `BoxBorder`, `Border`, `BorderSide`;
-- `IconData`, `Icons`, `Icon`;
-- `Curve`, `Curves`, `SawTooth`, `Interval`, `Threshold`, `Cubic`;
-- `Text`, `TextStyle`, `TextEditingController`, `TextField`;
-- `TextDirection`, `VerticalDirection`, `TextBaseline`
-- `Scaffold`, `ScaffoldMessenger`, `AppBar`, `SnackBar`, `FloatingActionButton`;
-- `InkWell`, `TextButton`, `ElevatedButton`, `IconButton`;
-- `Card`, `Drawer`, `ListView`, `ListTile`, `Spacer`;
-- `Image`, `ImageProvider`, `NetworkImage`, `MemoryImage`;
-- `Navigator`, `NavigatorState`, `Builder`;
-- `PointerDeviceKind`, `HitTestBehavior`;
-- `GestureDetector`, `TapDownDetails`, `TapUpDetails`;
-- `LongPressStartDetails`, `LongPressMoveUpdateDetails`, `LongPressEndDetails`;
-- `DragStartDetails`, `DragUpdateDetails`, `DragEndDetails`, `DragDownDetails`;
+- Widget, StatelessWidget, StatefulWidget, State;
+- ChangeNotifier, Key, BuildContext;
+- WidgetsApp, Container, Column, Row, Center;
+- Alignment, Align, AspectRatio, Baseline;
+- Radius, BorderRadius, BorderRadiusGeometry, Clip, ClipRRect;
+- SizedBox, FittedBox, FractionallySizedBox, ColoredBox;
+- Stack, Positioned, StackFit;
+- Padding, EdgeInsetsGeometry, EdgeInsets, Axis, Size;
+- Offset, Velocity;
+- MainAxisAlignment, MainAxisSize, CrossAxisAlignment;
+- AlignmentGeometry, Alignment, Constraints, BoxConstraints;
+- Color,  ColorSwatch, Colors, FontWeight, FontStyle;
+- MaterialApp, MaterialColor, MaterialAccentColor;
+- Theme, ThemeData, TextTheme, Directionality;
+- Decoration, BoxDecoration, BoxBorder, Border, BorderSide;
+- IconData, Icons, Icon;
+- Curve, Curves, SawTooth, Interval, Threshold, Cubic;
+- Text, TextStyle, TextEditingController, TextField;
+- TextDirection, VerticalDirection, TextBaseline
+- Scaffold, ScaffoldMessenger, AppBar, SnackBar, FloatingActionButton;
+- InkWell, TextButton, ElevatedButton, IconButton;
+- Card, Drawer, ListView, ListTile, Spacer;
+- Image, ImageProvider, NetworkImage, MemoryImage;
+- Navigator, NavigatorState, Builder;
+- PointerDeviceKind, HitTestBehavior;
+- GestureDetector, TapDownDetails, TapUpDetails;
+- LongPressStartDetails, LongPressMoveUpdateDetails, LongPressEndDetails;
+- DragStartDetails, DragUpdateDetails, DragEndDetails, DragDownDetails;
 
-Note that many of these have only partial support.
+Note that some of these have only partial support.
 
 ## App size measurements
 

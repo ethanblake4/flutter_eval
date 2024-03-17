@@ -1,4 +1,3 @@
-import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_eval/src/foundation/key.dart';
@@ -9,7 +8,7 @@ import 'package:flutter_eval/src/sky_engine/ui/image.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
-/// dart_eval bridge wrapper for [Image]
+/// dart_eval wrapper for [Image]
 class $Image implements $Instance {
   /// dart_eval compile-time type definition for [$Image]
   static const $type = BridgeTypeRef(

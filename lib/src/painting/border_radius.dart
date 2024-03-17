@@ -1,10 +1,9 @@
-import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:dart_eval/stdlib/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_eval/src/sky_engine/ui/geometry.dart';
 
-/// dart_eval bridge wrapper for [BorderRadiusGeometry]
+/// dart_eval wrapper for [BorderRadiusGeometry]
 class $BorderRadiusGeometry implements $Instance {
   /// dart_eval type definition for [BorderRadiusGeometry]
   static const $type = BridgeTypeRef(BridgeTypeSpec(
@@ -41,7 +40,7 @@ class $BorderRadiusGeometry implements $Instance {
   }
 }
 
-/// dart_eval bridge wrapper for [BorderRadius]
+/// dart_eval wrapper for [BorderRadius]
 class $BorderRadius implements $Instance {
   /// dart_eval type definition for [BorderRadius]
   static const $type = BridgeTypeRef(BridgeTypeSpec(

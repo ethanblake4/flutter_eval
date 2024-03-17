@@ -1,8 +1,7 @@
-import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/painting.dart';
 
-/// dart_eval bridge wrapper for [Color]
+/// dart_eval wrapper for [Color]
 class $Color implements Color, $Instance {
   /// dart_eval type definition for [Color]
   static const $type = BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Color'));
@@ -103,7 +102,7 @@ class $Color implements Color, $Instance {
   Color withRed(int r) => $value.withRed(r);
 }
 
-/// dart_eval bridge wrapper for [Clip]
+/// dart_eval wrapper for [Clip]
 class $Clip implements $Instance {
   /// dart_eval type definition for [Clip]
   static const $type = BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Clip'));

@@ -1,4 +1,3 @@
-import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
@@ -6,7 +5,7 @@ import 'package:flutter_eval/src/widgets/text.dart';
 
 import '../widgets/framework.dart';
 
-/// dart_eval bridge wrapper for [AppBar]
+/// dart_eval wrapper for [AppBar]
 class $AppBar implements $Instance {
   /// Bridge type reference for [$AppBar]
   static const $type = BridgeTypeRef(

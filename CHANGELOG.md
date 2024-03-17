@@ -1,3 +1,16 @@
+## 0.7.5
+- Support for hot reload when using HotSwapLoader (thanks @wrbl606)
+- Update example project (thanks @wrbl606)
+- Move JSON binding generation to a separate `tool/` directory (thanks 
+  @wrbl606)
+- Add OverlayEntry, Animation, AnimationController, Route, OverlayRoute,
+  TransitionRoute, PageRoute, MaterialPageRoute, Listenable, 
+  ValueListenable, Ticker, TickerProvider, TickerFuture, and RouteSettings
+- Support for most Navigator methods
+- Fix for runtime error when using Align
+- Deprecated `setupFlutterForCompile` / `setupFlutterForRuntime` in favor of
+  Compiler.addPlugin / Runtime.addPlugin()
+
 ## 0.7.4
 - Add Alignment, AspectRatio, Align, Radius, BorderRadiusGeometry,
   BorderRadius, Baseline, ClipRRect, ColoredBox, Directionality, 

@@ -1,5 +1,5 @@
-import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_eval/src/foundation/key.dart';
 import 'package:flutter_eval/src/painting/alignment.dart';
@@ -23,6 +23,7 @@ export 'package:flutter/foundation.dart' show
     ValueNotifier;
 export 'package:flutter/painting.dart';
 export 'package:flutter/rendering.dart' show
+  Axis,
   BoxConstraints,
   CrossAxisAlignment,
   MainAxisSize,
@@ -31,7 +32,7 @@ export 'package:flutter/rendering.dart' show
   HitTestBehavior;
 ''';
 
-/// dart_eval bridge wrapper for [Align]
+/// dart_eval wrapper for [Align]
 class $Align implements $Instance {
   /// Compile-time type definition for [$Align]
   static const $type = BridgeTypeRef(
@@ -94,7 +95,7 @@ class $Align implements $Instance {
   }
 }
 
-/// dart_eval bridge wrapper for [AspectRatio]
+/// dart_eval wrapper for [AspectRatio]
 class $AspectRatio implements $Instance {
   /// Compile-time type definition for [$AspectRatio]
   static const $type = BridgeTypeRef(
@@ -151,7 +152,7 @@ class $AspectRatio implements $Instance {
   }
 }
 
-/// dart_eval bridge wrapper for [Baseline]
+/// dart_eval wrapper for [Baseline]
 class $Baseline implements $Instance {
   /// Compile-time type definition for [$Baseline]
   static const $type = BridgeTypeRef(
@@ -211,7 +212,7 @@ class $Baseline implements $Instance {
   }
 }
 
-/// dart_eval bridge wrapper for [Builder]
+/// dart_eval wrapper for [Builder]
 class $Builder implements $Instance {
   static const $type = BridgeTypeRef(
       BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Builder'));
@@ -261,7 +262,7 @@ class $Builder implements $Instance {
   }
 }
 
-/// dart_eval bridge wrapper for [Center]
+/// dart_eval wrapper for [Center]
 class $Center implements $Instance {
   /// Compile-time type definition for [$Center]
   static const $type = BridgeTypeRef(
@@ -321,7 +322,7 @@ class $Center implements $Instance {
   }
 }
 
-/// dart_eval bridge wrapper for [Column]
+/// dart_eval wrapper for [Column]
 class $Column implements $Instance {
   /// Bridge type reference for [$Column]
   static const $type = BridgeTypeRef(
@@ -393,7 +394,7 @@ class $Column implements $Instance {
   }
 }
 
-/// dart_eval bridge wrapper for [ClipRRect]
+/// dart_eval wrapper for [ClipRRect]
 class $ClipRRect implements $Instance {
   /// Compile-time type definition for [$ClipRRect]
   static const $type = BridgeTypeRef(
@@ -453,7 +454,7 @@ class $ClipRRect implements $Instance {
   }
 }
 
-/// dart_eval bridge wrapper for [ColoredBox]
+/// dart_eval wrapper for [ColoredBox]
 class $ColoredBox implements $Instance {
   /// Compile-time type definition for [$ColoredBox]
   static const $type = BridgeTypeRef(
@@ -510,7 +511,7 @@ class $ColoredBox implements $Instance {
   }
 }
 
-/// dart_eval bridge wrapper for [Directionality]
+/// dart_eval wrapper for [Directionality]
 class $Directionality implements $Instance {
   /// Compile-time type definition for [$Directionality]
   static const $type = BridgeTypeRef(BridgeTypeSpec(
@@ -567,7 +568,7 @@ class $Directionality implements $Instance {
   }
 }
 
-/// dart_eval bridge wrapper for [Expanded]
+/// dart_eval wrapper for [Expanded]
 class $Expanded implements $Instance {
   /// Compile-time type definition for [$Expanded]
   static const $type = BridgeTypeRef(
@@ -624,7 +625,7 @@ class $Expanded implements $Instance {
   }
 }
 
-/// dart_eval bridge wrapper for [FittedBox]
+/// dart_eval wrapper for [FittedBox]
 class $FittedBox implements $Instance {
   /// Compile-time type definition for [$FittedBox]
   static const $type = BridgeTypeRef(
@@ -686,7 +687,7 @@ class $FittedBox implements $Instance {
   }
 }
 
-/// dart_eval bridge wrapper for [FractionallySizedBox]
+/// dart_eval wrapper for [FractionallySizedBox]
 class $FractionallySizedBox implements $Instance {
   /// Compile-time type definition for [$FractionallySizedBox]
   static const $type = BridgeTypeRef(BridgeTypeSpec(
@@ -749,7 +750,7 @@ class $FractionallySizedBox implements $Instance {
   }
 }
 
-/// dart_eval bridge wrapper for [Padding]
+/// dart_eval wrapper for [Padding]
 class $Padding implements $Instance {
   static const $type = BridgeTypeRef(
       BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Padding'));
@@ -802,7 +803,7 @@ class $Padding implements $Instance {
   }
 }
 
-/// dart_eval bridge wrapper for [Positioned]
+/// dart_eval wrapper for [Positioned]
 class $Positioned implements $Instance {
   static const $type = BridgeTypeRef(
       BridgeTypeSpec('package:flutter/src/widgets/basic.dart', 'Positioned'));
@@ -867,7 +868,7 @@ class $Positioned implements $Instance {
   }
 }
 
-/// dart_eval bridge wrapper for [Row]
+/// dart_eval wrapper for [Row]
 class $Row implements $Instance {
   /// Bridge type reference for [$Row]
   static const $type = BridgeTypeRef(
@@ -901,7 +902,7 @@ class $Row implements $Instance {
       },
       wrap: true);
 
-  /// Wraps a [Row] instance in a [$Row] bridge wrapper
+  /// Wraps a [Row] instance in a [$Row] wrapper
   $Row.wrap(this.$value) : _superclass = $Widget.wrap($value);
 
   final $Instance _superclass;
@@ -939,7 +940,7 @@ class $Row implements $Instance {
   }
 }
 
-/// dart_eval bridge wrapper for [Stack]
+/// dart_eval wrapper for [Stack]
 class $Stack implements $Instance {
   /// Compile-time type definition for [$Stack]
   static const $type = BridgeTypeRef(
@@ -1005,7 +1006,7 @@ class $Stack implements $Instance {
   }
 }
 
-/// dart_eval bridge wrapper for [SizedBox]
+/// dart_eval wrapper for [SizedBox]
 class $SizedBox implements $Instance {
   /// Compile-time type definition for [$SizedBox]
   static const $type = BridgeTypeRef(

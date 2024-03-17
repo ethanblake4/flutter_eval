@@ -1,3 +1,5 @@
+/// Provides a bridge between the Flutter framework and the dart_eval library,
+/// as well as helper classes to enable code-push and server-driven UI.
 library flutter_eval;
 
 export 'src/flutter_eval.dart';
@@ -5,6 +7,8 @@ export 'src/flutter_eval.dart';
 import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter_eval/src/animation.dart';
+import 'package:flutter_eval/src/animation/animation.dart';
+import 'package:flutter_eval/src/animation/animation_controller.dart';
 import 'package:flutter_eval/src/animation/curves.dart';
 import 'package:flutter_eval/src/foundation.dart';
 import 'package:flutter_eval/src/foundation/change_notifier.dart';
@@ -26,6 +30,7 @@ import 'package:flutter_eval/src/material/icon_button.dart';
 import 'package:flutter_eval/src/material/icons.dart';
 import 'package:flutter_eval/src/material/ink_well.dart';
 import 'package:flutter_eval/src/material/list_tile.dart';
+import 'package:flutter_eval/src/material/page.dart';
 import 'package:flutter_eval/src/material/scaffold.dart';
 import 'package:flutter_eval/src/material/snack_bar.dart';
 import 'package:flutter_eval/src/material/text_button.dart';
@@ -52,6 +57,8 @@ import 'package:flutter_eval/src/rendering/flex.dart';
 import 'package:flutter_eval/src/rendering/object.dart';
 import 'package:flutter_eval/src/rendering/proxy_box.dart';
 import 'package:flutter_eval/src/rendering/stack.dart';
+import 'package:flutter_eval/src/scheduler.dart';
+import 'package:flutter_eval/src/scheduler/ticker.dart';
 import 'package:flutter_eval/src/services.dart';
 import 'package:flutter_eval/src/services/binary_messenger.dart';
 import 'package:flutter_eval/src/services/message_codec.dart';
@@ -73,6 +80,9 @@ import 'package:flutter_eval/src/widgets/icon.dart';
 import 'package:flutter_eval/src/widgets/icon_data.dart';
 import 'package:flutter_eval/src/widgets/image.dart';
 import 'package:flutter_eval/src/widgets/navigator.dart';
+import 'package:flutter_eval/src/widgets/overlay.dart';
+import 'package:flutter_eval/src/widgets/pages.dart';
+import 'package:flutter_eval/src/widgets/routes.dart';
 import 'package:flutter_eval/src/widgets/scroll_controller.dart';
 import 'package:flutter_eval/src/widgets/scroll_view.dart';
 import 'package:flutter_eval/src/widgets/spacer.dart';
@@ -82,12 +92,14 @@ import 'package:flutter_eval/src/widgets/text.dart';
 const flutterEvalPlugin = FlutterEvalPlugin();
 
 /// Setup flutter_eval classes for use in a dart_eval [Compiler].
+@Deprecated("Use compiler.addPlugin(flutterEvalPlugin) instead.")
 void setupFlutterForCompile(EvalPluginRegistry registry) {
   registry.addPlugin(flutterEvalPlugin);
 }
 
 /// Setup Flutter classes for use in a dart_eval [Runtime]. After
 /// calling this function, you must call `runtime.setup()`.
+@Deprecated("Use runtime.addPlugin(flutterEvalPlugin) instead.")
 void setupFlutterForRuntime(Runtime runtime) {
   runtime.addPlugin(flutterEvalPlugin);
 }
@@ -104,6 +116,11 @@ class FlutterEvalPlugin implements EvalPlugin {
       $Widget.$declaration,
       $StatelessWidget$bridge.$declaration,
       $StatefulWidget$bridge.$declaration,
+      $Listenable.$declaration,
+      $ValueListenable.$declaration,
+      $Ticker.$declaration,
+      $TickerProvider.$declaration,
+      $TickerFuture.$declaration,
       $ChangeNotifier$bridge.$declaration,
       $State$bridge.$declaration,
       $BuildContext.$declaration,
@@ -206,7 +223,16 @@ class FlutterEvalPlugin implements EvalPlugin {
       $FractionallySizedBox.$declaration,
       $Stack.$declaration,
       $Positioned.$declaration,
-      $SizedBox.$declaration
+      $SizedBox.$declaration,
+      $OverlayEntry.$declaration,
+      $Animation.$declaration,
+      $AnimationController.$declaration,
+      $Route.$declaration,
+      $OverlayRoute.$declaration,
+      $TransitionRoute.$declaration,
+      $PageRoute$bridge.$declaration,
+      $MaterialPageRoute.$declaration,
+      $RouteSettings.$declaration,
     ];
 
     for (final cls in classes) {
@@ -229,11 +255,15 @@ class FlutterEvalPlugin implements EvalPlugin {
     registry.defineBridgeEnum($HitTestBehavior.$declaration);
     registry.defineBridgeEnum($Clip.$declaration);
     registry.defineBridgeEnum($StackFit.$declaration);
+    registry.defineBridgeEnum($AnimationStatus.$declaration);
 
     registry.addSource(DartSource('dart:ui', dartUiSource));
 
     registry.addSource(
         DartSource('package:flutter/animation.dart', animationSource));
+    registry.addSource(DartSource(
+        'package:flutter/src/animation/animation_controller.dart',
+        animationControllerSource));
     registry.addSource(DartSource(
         'package:flutter/src/animation/curves.dart', animationCurvesSource));
 
@@ -261,6 +291,9 @@ class FlutterEvalPlugin implements EvalPlugin {
 
     registry.addSource(
         DartSource('package:flutter/rendering.dart', renderingSource));
+
+    registry.addSource(
+        DartSource('package:flutter/scheduler.dart', schedulerSource));
 
     registry
         .addSource(DartSource('package:flutter/services.dart', servicesSource));
@@ -348,6 +381,10 @@ class FlutterEvalPlugin implements EvalPlugin {
       ..registerBridgeFunc('package:flutter/src/painting/text_style.dart',
           'TextStyle.', $TextStyle.$new)
       ..registerBridgeFunc(
+          'package:flutter/src/animation/animation_controller.dart',
+          'AnimationController.',
+          $AnimationController.$new)
+      ..registerBridgeFunc(
           'package:flutter/src/animation/curves.dart', '_Linear._', $_Linear.$_)
       ..registerBridgeFunc('package:flutter/src/animation/curves.dart',
           'SawTooth.', $SawTooth.$new)
@@ -373,10 +410,12 @@ class FlutterEvalPlugin implements EvalPlugin {
           'BoxConstraints.tightForFinite', $BoxConstraints.$tightForFinite)
       ..registerBridgeFunc('package:flutter/src/rendering/box.dart',
           'BoxConstraints.expand', $BoxConstraints.$expand)
+      ..registerBridgeFunc(
+          'package:flutter/src/scheduler/ticker.dart', 'Ticker.', $Ticker.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/app.dart',
           'WidgetsApp.', $WidgetsApp.$new)
-      ..registerBridgeFunc('package:flutter/src/widgets/basic.dart',
-          'Alignment.', $Alignment.$new)
+      ..registerBridgeFunc(
+          'package:flutter/src/widgets/basic.dart', 'Align.', $Align.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/basic.dart',
           'AspectRatio.', $AspectRatio.$new)
       ..registerBridgeFunc(
@@ -433,12 +472,32 @@ class FlutterEvalPlugin implements EvalPlugin {
           'MaterialApp.', $MaterialApp.$new)
       ..registerBridgeFunc(
           'package:flutter/src/material/app_bar.dart', 'AppBar.', $AppBar.$new)
+      ..registerBridgeFunc(
+          'package:flutter/src/material/card.dart', 'Card.', $Card.$new)
+      ..registerBridgeFunc(
+          'package:flutter/src/material/drawer.dart', 'Drawer.', $Drawer.$new)
       ..registerBridgeFunc('package:flutter/src/material/colors.dart',
           'MaterialColor.', $MaterialColor.$new)
       ..registerBridgeFunc('package:flutter/src/material/colors.dart',
           'MaterialAccentColor.', $MaterialAccentColor.$new)
       ..registerBridgeFunc('package:flutter/src/material/elevated_button.dart',
           'ElevatedButton.', $ElevatedButton.$new)
+      ..registerBridgeFunc(
+          'package:flutter/src/material/floating_action_button.dart',
+          'FloatingActionButton.',
+          $FloatingActionButton.$new)
+      ..registerBridgeFunc('package:flutter/src/material/icon_button.dart',
+          'IconButton.', $IconButton.$new)
+      ..registerBridgeFunc(
+          'package:flutter/src/widgets/image.dart', 'Image.', $Image.$new)
+      ..registerBridgeFunc('package:flutter/src/widgets/image.dart',
+          'Image.network', $Image.$network)
+      ..registerBridgeFunc('package:flutter/src/widgets/image.dart',
+          'Image.asset', $Image.$asset)
+      ..registerBridgeFunc('package:flutter/src/material/list_tile.dart',
+          'ListTile.', $ListTile.$new)
+      ..registerBridgeFunc('package:flutter/src/material/page.dart',
+          'MaterialPageRoute.', $MaterialPageRoute.$new)
       ..registerBridgeFunc('package:flutter/src/material/scaffold.dart',
           'Scaffold.', $Scaffold.$new)
       ..registerBridgeFunc('package:flutter/src/material/scaffold.dart',
@@ -447,8 +506,6 @@ class FlutterEvalPlugin implements EvalPlugin {
           'ScaffoldMessenger.of', $ScaffoldMessenger.$of)
       ..registerBridgeFunc('package:flutter/src/material/snack_bar.dart',
           'SnackBar.', $SnackBar.$new)
-      ..registerBridgeFunc('package:flutter/src/material/icon_button.dart',
-          'IconButton.', $IconButton.$new)
       ..registerBridgeFunc('package:flutter/src/material/text_button.dart',
           'TextButton.', $TextButton.$new)
       ..registerBridgeFunc('package:flutter/src/material/text_field.dart',
@@ -457,26 +514,10 @@ class FlutterEvalPlugin implements EvalPlugin {
           'TextTheme.', $TextTheme.$new)
       ..registerBridgeFunc('package:flutter/src/material/theme_data.dart',
           'ThemeData.', $ThemeData.$new)
-      ..registerBridgeFunc('package:flutter/src/material/list_tile.dart',
-          'ListTile.', $ListTile.$new)
-      ..registerBridgeFunc(
-          'package:flutter/src/material/drawer.dart', 'Drawer.', $Drawer.$new)
-      ..registerBridgeFunc(
-          'package:flutter/src/material/card.dart', 'Card.', $Card.$new)
-      ..registerBridgeFunc(
-          'package:flutter/src/widgets/image.dart', 'Image.', $Image.$new)
-      ..registerBridgeFunc('package:flutter/src/widgets/image.dart',
-          'Image.network', $Image.$network)
-      ..registerBridgeFunc('package:flutter/src/widgets/image.dart',
-          'Image.asset', $Image.$asset)
       ..registerBridgeFunc(
           'package:flutter/src/material/theme.dart', 'Theme.of', $Theme.$of)
       ..registerBridgeFunc(
           'package:flutter/src/material/theme.dart', 'Theme.', $Theme.$new)
-      ..registerBridgeFunc(
-          'package:flutter/src/material/floating_action_button.dart',
-          'FloatingActionButton.',
-          $FloatingActionButton.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/navigator.dart',
           'Navigator.', $Navigator.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/navigator.dart',

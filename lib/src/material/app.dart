@@ -1,4 +1,3 @@
-import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:dart_eval/stdlib/core.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +7,7 @@ import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/widgets/app.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
-/// dart_eval bridge wrapper for [MaterialApp]
+/// dart_eval wrapper for [MaterialApp]
 class $MaterialApp implements $Instance {
   /// Bridge type reference for [$MaterialApp]
   static const $type = BridgeTypeRef(

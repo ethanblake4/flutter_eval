@@ -1,4 +1,3 @@
-import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
@@ -6,7 +5,7 @@ import 'package:flutter_eval/src/foundation/key.dart';
 import 'package:flutter_eval/src/painting/text_style.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
-/// dart_eval bridge wrapper for [Text]
+/// dart_eval wrapper for [Text]
 class $Text implements Text, $Instance {
   /// dart_eval compile-time type definition for [Text]
   static const $type = BridgeTypeRef(

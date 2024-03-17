@@ -1,4 +1,3 @@
-import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_eval/src/material/app_bar.dart';
@@ -7,7 +6,7 @@ import 'package:flutter_eval/src/material/snack_bar.dart';
 
 import '../widgets/framework.dart';
 
-/// dart_eval bridge wrapper for [Scaffold]
+/// dart_eval wrapper for [Scaffold]
 class $Scaffold implements $Instance {
   /// Bridge type reference for [$Scaffold]
   static const $type = BridgeTypeRef(

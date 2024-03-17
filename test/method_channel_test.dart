@@ -14,7 +14,7 @@ void main() {
       return 'result';
     });
     final compiler = Compiler();
-    setupFlutterForCompile(compiler);
+    compiler.addPlugin(flutterEvalPlugin);
     final program = compiler.compile({
       'example': {
         'main.dart': '''
@@ -29,7 +29,7 @@ void main() {
     });
     final runtime = Runtime(program.write().buffer.asByteData());
     runtime.grant(const MethodChannelPermission('test_channel'));
-    setupFlutterForRuntime(runtime);
+    runtime.addPlugin(flutterEvalPlugin);
     expect(
         () async =>
             await runtime.executeLib('package:example/main.dart', 'main'),

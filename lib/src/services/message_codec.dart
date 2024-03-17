@@ -1,4 +1,3 @@
-import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:dart_eval/stdlib/core.dart';
 import 'package:dart_eval/stdlib/typed_data.dart';
@@ -131,7 +130,8 @@ class $MethodCodec implements $Instance {
       Runtime runtime, $Value? target, List<$Value?> args) {
     final self = target as $MethodCodec;
     final data = args[0] as $ByteData;
-    return runtime.wrapRecursive(self.$value.decodeEnvelope(data.$value));
+    return runtime.wrap(self.$value.decodeEnvelope(data.$value),
+        recursive: true);
   }
 
   @override
