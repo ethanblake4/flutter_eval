@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v2
+      - uses: monterail/flutter-action@v1
         with:
           channel: 'stable'
       - run: make flutter_bindings

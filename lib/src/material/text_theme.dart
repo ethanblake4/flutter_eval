@@ -105,19 +105,6 @@ class $TextTheme implements $Instance {
       labelLarge: args[12]?.$value,
       labelMedium: args[13]?.$value,
       labelSmall: args[14]?.$value,
-      headline1: args[15]?.$value,
-      headline2: args[16]?.$value,
-      headline3: args[17]?.$value,
-      headline4: args[18]?.$value,
-      headline5: args[19]?.$value,
-      headline6: args[20]?.$value,
-      subtitle1: args[21]?.$value,
-      subtitle2: args[22]?.$value,
-      bodyText1: args[23]?.$value,
-      bodyText2: args[24]?.$value,
-      caption: args[25]?.$value,
-      button: args[26]?.$value,
-      overline: args[27]?.$value,
     ));
   }
 
@@ -191,36 +178,6 @@ class $TextTheme implements $Instance {
       case 'labelSmall':
         final labelSmall = $value.labelSmall;
         return labelSmall == null ? const $null() : $TextStyle.wrap(labelSmall);
-      case 'headline1':
-        final headline1 = $value.headline1;
-        return headline1 == null ? const $null() : $TextStyle.wrap(headline1);
-      case 'headline2':
-        final headline2 = $value.headline2;
-        return headline2 == null ? const $null() : $TextStyle.wrap(headline2);
-      case 'headline3':
-        final headline3 = $value.headline3;
-        return headline3 == null ? const $null() : $TextStyle.wrap(headline3);
-      case 'headline4':
-        final headline4 = $value.headline4;
-        return headline4 == null ? const $null() : $TextStyle.wrap(headline4);
-      case 'headline5':
-        final headline5 = $value.headline5;
-        return headline5 == null ? const $null() : $TextStyle.wrap(headline5);
-      case 'headline6':
-        final headline6 = $value.headline6;
-        return headline6 == null ? const $null() : $TextStyle.wrap(headline6);
-      case 'subtitle1':
-        final subtitle1 = $value.subtitle1;
-        return subtitle1 == null ? const $null() : $TextStyle.wrap(subtitle1);
-      case 'subtitle2':
-        final subtitle2 = $value.subtitle2;
-        return subtitle2 == null ? const $null() : $TextStyle.wrap(subtitle2);
-      case 'bodyText1':
-        final bodyText1 = $value.bodyText1;
-        return bodyText1 == null ? const $null() : $TextStyle.wrap(bodyText1);
-      case 'bodyText2':
-        final bodyText2 = $value.bodyText2;
-        return bodyText2 == null ? const $null() : $TextStyle.wrap(bodyText2);
     }
 
     throw UnimplementedError();
