@@ -1,7 +1,7 @@
 part of '../flutter_eval.dart';
 
 abstract class EvcLoader {
-  Future<TypedData> get bytecode;
+  FutureOr<TypedData> get bytecode;
 }
 
 class EvcLoaderException implements Exception {
