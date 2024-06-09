@@ -14,6 +14,10 @@ import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
 
 import '../flutter_eval.dart';
+part 'loaders/evc_loader.dart';
+part 'loaders/file_evc_loader.dart';
+part 'loaders/asset_evc_loader.dart';
+part 'loaders/http_evc_loader.dart';
 
 /// Builds an error widget for a given [error].
 typedef EvalErrorBuilder = Widget Function(
@@ -705,34 +709,11 @@ Multiple HotSwapLoaders in the widget tree are not supported.
     }
   }
 
-  void _loadFromFile() async {
+  Future<void> _loadFromFile() async {
     try {
       debugPrint('Loading hot update from ${widget.uri}');
-      final file = File(Uri.parse(widget.uri).path);
-      if (_strategy == HotSwapStrategy.immediate) {
-        if (file.existsSync()) {
-          final bytecode = file.readAsBytesSync();
-          _setup(bytecode);
-        }
-      } else {
-        if (await file.exists()) {
-          final bytecode = await file.readAsBytes();
-          _setup(bytecode);
-        }
-      }
-    } catch (e, stackTrace) {
-      if (!_setError(e, stackTrace)) {
-        rethrow;
-      }
-    }
-  }
-
-  void _loadFromAsset() async {
-    try {
-      debugPrint('Loading hot update from ${widget.uri}');
-      final uri = Uri.parse(widget.uri);
-      final asset = uri.host + uri.path;
-      final bytecode = await rootBundle.load(asset);
+      final loader = FileEvcLoader.fromString(widget.uri);
+      final bytecode = await loader.bytecode;
       _setup(bytecode);
     } catch (e, stackTrace) {
       if (!_setError(e, stackTrace)) {
@@ -741,15 +722,25 @@ Multiple HotSwapLoaders in the widget tree are not supported.
     }
   }
 
-  void _loadFromUrl() async {
+  Future<void> _loadFromAsset() async {
+    try {
+      debugPrint('Loading hot update from ${widget.uri}');
+      final loader = AssetEvcLoader.fromString(widget.uri);
+      final bytecode = await loader.bytecode;
+      _setup(bytecode);
+    } catch (e, stackTrace) {
+      if (!_setError(e, stackTrace)) {
+        rethrow;
+      }
+    }
+  }
+
+  Future<void> _loadFromUrl() async {
     try {
       debugPrint('Attempting to load hot update from ${widget.uri}');
-      final response = await http.get(Uri.parse(widget.uri));
-      if (response.statusCode < 200 || response.statusCode >= 300) {
-        debugPrint('No update found at address (network request failed)');
-        return;
-      }
-      _setup(response.bodyBytes);
+      final loader = HttpEvcLoader(uri: Uri.parse(widget.uri));
+      final bytecode = await loader.bytecode;
+      _setup(bytecode);
     } on http.ClientException catch (_) {
       debugPrint('No update found at address (network request failed)');
       // ignored
