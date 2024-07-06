@@ -10,7 +10,7 @@ class EvalExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const EvalWidget(
+    return const CompilerWidget(
       packages: {
         'example': {
           'main.dart': '''
@@ -64,7 +64,7 @@ class EvalExample extends StatelessWidget {
                           ),
                           Text(
                             '\$_counter',
-                            style: Theme.of(context).textTheme.headline4,
+                            style: Theme.of(context).textTheme.titleSmall,
                           ),
                         ],
                       )
@@ -81,13 +81,6 @@ class EvalExample extends StatelessWidget {
             '''
         }
       },
-
-      /// In debug mode, flutter_eval will continually re-generate a compiled
-      /// EVC bytecode file for the given program, and save it to the specified
-      /// assetPath. During runtime, it will instead load the compiled EVC file.
-      /// To ensure this works, you must add the file path to the assets section of
-      /// your pubspec.yaml file.
-      assetPath: 'assets/program.evc',
 
       /// Specify which library (i.e. which file) to use as an entrypoint.
       library: 'package:example/main.dart',

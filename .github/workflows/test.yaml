@@ -1,5 +1,5 @@
 on:
-  push:
+  pull_request:
     branches:
       - master
 
@@ -11,9 +11,4 @@ jobs:
       - uses: monterail/flutter-action@v1
         with:
           channel: 'stable'
-      - run: make flutter_bindings
-      - name: Archive generated flutter_eval.json
-        uses: actions/upload-artifact@v4
-        with:
-          name: flutter_eval.json
-          path: flutter_eval.json
+      - run: flutter test
