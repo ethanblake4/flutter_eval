@@ -1,3 +1,6 @@
+## 0.7.6
+- Support for Flutter 3.22 (thanks @wrbl606)
+
 ## 0.7.5
 - Support for hot reload when using HotSwapLoader (thanks @wrbl606)
 - Update example project (thanks @wrbl606)
