@@ -71,11 +71,13 @@ class $Widget implements Widget, $Instance {
   String toStringDeep(
           {String prefixLineOne = '',
           String? prefixOtherLines,
-          DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
+          DiagnosticLevel minLevel = DiagnosticLevel.debug,
+          int wrapWidth = 65}) =>
       $value.toStringDeep(
           prefixLineOne: prefixLineOne,
           prefixOtherLines: prefixOtherLines,
-          minLevel: minLevel);
+          minLevel: minLevel,
+          wrapWidth: wrapWidth);
 
   @override
   String toStringShallow(
@@ -146,11 +148,13 @@ class $StatelessWidget implements StatelessWidget, $Instance {
   String toStringDeep(
           {String prefixLineOne = '',
           String? prefixOtherLines,
-          DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
+          DiagnosticLevel minLevel = DiagnosticLevel.debug,
+          int wrapWidth = 65}) =>
       $value.toStringDeep(
           prefixLineOne: prefixLineOne,
           prefixOtherLines: prefixOtherLines,
-          minLevel: minLevel);
+          minLevel: minLevel,
+          wrapWidth: wrapWidth);
 
   @override
   String toStringShallow(
@@ -259,11 +263,13 @@ class $StatelessWidget$bridge extends StatelessWidget
   String toStringDeep(
           {String prefixLineOne = '',
           String? prefixOtherLines,
-          DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
+          DiagnosticLevel minLevel = DiagnosticLevel.debug,
+          int wrapWidth = 65}) =>
       $_invoke('toStringDeep', [
         $String(prefixLineOne),
         prefixOtherLines == null ? const $null() : $String(prefixOtherLines),
-        $DiagnosticLevel.wrap(minLevel)
+        $DiagnosticLevel.wrap(minLevel),
+        $int(wrapWidth)
       ]);
 
   @override
