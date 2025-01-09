@@ -494,6 +494,10 @@ class FlutterEvalPlugin implements EvalPlugin {
           'Image.network', $Image.$network)
       ..registerBridgeFunc('package:flutter/src/widgets/image.dart',
           'Image.asset', $Image.$asset)
+      ..registerBridgeFunc('package:flutter/src/widgets/image.dart',
+          'Image.file', $Image.$file)
+      ..registerBridgeFunc('package:flutter/src/widgets/image.dart',
+          'Image.memory', $Image.$memory)
       ..registerBridgeFunc('package:flutter/src/material/list_tile.dart',
           'ListTile.', $ListTile.$new)
       ..registerBridgeFunc('package:flutter/src/material/page.dart',
