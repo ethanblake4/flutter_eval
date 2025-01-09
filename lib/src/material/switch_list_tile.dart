@@ -1,4 +1,5 @@
 import 'package:dart_eval/dart_eval_bridge.dart';
+import 'package:dart_eval/stdlib/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_eval/src/foundation/key.dart';
 import 'package:flutter_eval/src/painting/edge_insets.dart';
@@ -55,7 +56,10 @@ class $SwitchListTile implements $Instance {
     return $SwitchListTile.wrap(SwitchListTile(
       key: args[0]?.$value,
       value: args[1]!.$value,
-      onChanged: args[2]!.$value,
+      onChanged: args[2] == null
+          ? null
+          : (value) =>
+              (args[2] as EvalCallable).call(runtime, null, [$bool(value)]),
       title: args[3]?.$value,
       subtitle: args[4]?.$value,
       isThreeLine: args[5]?.$value ?? false,
