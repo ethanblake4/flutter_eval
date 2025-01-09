@@ -184,7 +184,7 @@ class $Image implements $Instance {
       Image.network(
         args[0]!.$value,
         key: args[1]?.$value,
-        scale: args[2]?.$value,
+        scale: args[2]?.$value ?? 1.0,
         width: args[3]?.$value,
         height: args[4]?.$value,
         color: args[5]?.$value,
@@ -203,7 +203,7 @@ class $Image implements $Instance {
       Image.asset(
         args[0]!.$value,
         key: args[1]?.$value,
-        scale: args[2]?.$value,
+        scale: args[2]?.$value ?? 1.0,
         width: args[3]?.$value,
         height: args[4]?.$value,
         color: args[5]?.$value,
@@ -214,7 +214,7 @@ class $Image implements $Instance {
     );
   }
 
-  /// Instantiate a new [$Image] using [Image.asset] from [args]
+  /// Instantiate a new [$Image] using [Image.file] from [args]
   static $Value? $file(Runtime runtime, $Value? target, List<$Value?> args) {
     final file = args[0]!.$value;
     runtime.assertPermission('filesystem:read', file.path);
@@ -222,7 +222,7 @@ class $Image implements $Instance {
       Image.file(
         args[0]!.$value,
         key: args[1]?.$value,
-        scale: args[2]?.$value,
+        scale: args[2]?.$value ?? 1.0,
         width: args[3]?.$value,
         height: args[4]?.$value,
         color: args[5]?.$value,
@@ -233,13 +233,13 @@ class $Image implements $Instance {
     );
   }
 
-  /// Instantiate a new [$Image] using [Image.asset] from [args]
+  /// Instantiate a new [$Image] using [Image.memory] from [args]
   static $Value? $memory(Runtime runtime, $Value? target, List<$Value?> args) {
     return $Image.wrap(
       Image.memory(
         args[0]!.$value,
         key: args[1]?.$value,
-        scale: args[2]?.$value,
+        scale: args[2]?.$value ?? 1.0,
         width: args[3]?.$value,
         height: args[4]?.$value,
         color: args[5]?.$value,
