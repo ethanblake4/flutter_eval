@@ -188,6 +188,7 @@ class FlutterEvalPlugin implements EvalPlugin {
       $Card.$declaration,
       $Drawer.$declaration,
       $ListTile.$declaration,
+      $SwitchListTile.$declaration,
       $Image.$declaration,
       $ImageProvider.$declaration,
       $NetworkImage.$declaration,
