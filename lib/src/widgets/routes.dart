@@ -479,7 +479,6 @@ class $PopEntry implements $Instance {
     switch (identifier) {
       case 'onPopInvoked':
         final onPopInvoked = $value.onPopInvoked;
-        if (onPopInvoked == null) return const $null();
         return $Function((runtime, target, args) {
           onPopInvoked(args[0]!.$value);
           return const $null();

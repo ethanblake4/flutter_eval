@@ -1,3 +1,6 @@
+## 0.7.7
+- Support for Flutter 3.29 (thanks @Zverik)
+
 ## 0.7.6
 - Support for Flutter 3.22 (thanks @wrbl606)
 

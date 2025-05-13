@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:dart_eval/dart_eval_bridge.dart';
-import 'package:flutter/painting.dart';
 
 /// dart_eval wrapper for [Color]
 class $Color implements Color, $Instance {
@@ -127,6 +126,9 @@ class $Color implements Color, $Instance {
 
   @override
   int get value => $value.value;
+
+  @override
+  int toARGB32() => $value.toARGB32();
 
   @override
   Color withAlpha(int a) => $value.withAlpha(a);
