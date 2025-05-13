@@ -95,6 +95,62 @@ class $Image implements $Instance {
           ],
         ),
       ),
+      'file': BridgeConstructorDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation($type),
+          params: [
+            BridgeParameter('file',
+                BridgeTypeAnnotation(BridgeTypeRef(IoTypes.file)), false),
+          ],
+          namedParams: [
+            BridgeParameter('key', BridgeTypeAnnotation($Key.$type), true),
+            BridgeParameter('scale',
+                BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
+            BridgeParameter('width',
+                BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
+            BridgeParameter('height',
+                BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
+            BridgeParameter('color', BridgeTypeAnnotation($Color.$type), true),
+            BridgeParameter('fit', BridgeTypeAnnotation($BoxFit.$type), true),
+            BridgeParameter('alignment',
+                BridgeTypeAnnotation($AlignmentGeometry.$type), true),
+            BridgeParameter(
+              'filterQuality',
+              BridgeTypeAnnotation($FilterQuality.$type),
+              true,
+            ),
+          ],
+        ),
+      ),
+      'memory': BridgeConstructorDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation($type),
+          params: [
+            BridgeParameter(
+                'bytes',
+                BridgeTypeAnnotation(BridgeTypeRef(TypedDataTypes.uint8List)),
+                false),
+          ],
+          namedParams: [
+            BridgeParameter('key', BridgeTypeAnnotation($Key.$type), true),
+            BridgeParameter('scale',
+                BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
+            BridgeParameter('width',
+                BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
+            BridgeParameter('height',
+                BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
+            BridgeParameter('color', BridgeTypeAnnotation($Color.$type), true),
+            BridgeParameter('fit', BridgeTypeAnnotation($BoxFit.$type), true),
+            BridgeParameter('alignment',
+                BridgeTypeAnnotation($AlignmentGeometry.$type), true),
+            BridgeParameter(
+              'filterQuality',
+              BridgeTypeAnnotation($FilterQuality.$type),
+              true,
+            ),
+          ],
+        ),
+      ),
     },
     wrap: true,
   );
@@ -128,7 +184,7 @@ class $Image implements $Instance {
       Image.network(
         args[0]!.$value,
         key: args[1]?.$value,
-        scale: args[2]?.$value,
+        scale: args[2]?.$value ?? 1.0,
         width: args[3]?.$value,
         height: args[4]?.$value,
         color: args[5]?.$value,
@@ -147,7 +203,43 @@ class $Image implements $Instance {
       Image.asset(
         args[0]!.$value,
         key: args[1]?.$value,
-        scale: args[2]?.$value,
+        scale: args[2]?.$value ?? 1.0,
+        width: args[3]?.$value,
+        height: args[4]?.$value,
+        color: args[5]?.$value,
+        fit: args[6]?.$value,
+        alignment: args[7]?.$value ?? Alignment.center,
+        filterQuality: args[8]?.$value ?? FilterQuality.low,
+      ),
+    );
+  }
+
+  /// Instantiate a new [$Image] using [Image.file] from [args]
+  static $Value? $file(Runtime runtime, $Value? target, List<$Value?> args) {
+    final file = args[0]!.$value;
+    runtime.assertPermission('filesystem:read', file.path);
+    return $Image.wrap(
+      Image.file(
+        args[0]!.$value,
+        key: args[1]?.$value,
+        scale: args[2]?.$value ?? 1.0,
+        width: args[3]?.$value,
+        height: args[4]?.$value,
+        color: args[5]?.$value,
+        fit: args[6]?.$value,
+        alignment: args[7]?.$value ?? Alignment.center,
+        filterQuality: args[8]?.$value ?? FilterQuality.low,
+      ),
+    );
+  }
+
+  /// Instantiate a new [$Image] using [Image.memory] from [args]
+  static $Value? $memory(Runtime runtime, $Value? target, List<$Value?> args) {
+    return $Image.wrap(
+      Image.memory(
+        args[0]!.$value,
+        key: args[1]?.$value,
+        scale: args[2]?.$value ?? 1.0,
         width: args[3]?.$value,
         height: args[4]?.$value,
         color: args[5]?.$value,

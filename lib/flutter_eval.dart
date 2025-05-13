@@ -33,6 +33,7 @@ import 'package:flutter_eval/src/material/list_tile.dart';
 import 'package:flutter_eval/src/material/page.dart';
 import 'package:flutter_eval/src/material/scaffold.dart';
 import 'package:flutter_eval/src/material/snack_bar.dart';
+import 'package:flutter_eval/src/material/switch_list_tile.dart';
 import 'package:flutter_eval/src/material/text_button.dart';
 import 'package:flutter_eval/src/material/text_field.dart';
 import 'package:flutter_eval/src/material/text_theme.dart';
@@ -187,6 +188,7 @@ class FlutterEvalPlugin implements EvalPlugin {
       $Card.$declaration,
       $Drawer.$declaration,
       $ListTile.$declaration,
+      $SwitchListTile.$declaration,
       $Image.$declaration,
       $ImageProvider.$declaration,
       $NetworkImage.$declaration,
@@ -494,8 +496,14 @@ class FlutterEvalPlugin implements EvalPlugin {
           'Image.network', $Image.$network)
       ..registerBridgeFunc('package:flutter/src/widgets/image.dart',
           'Image.asset', $Image.$asset)
+      ..registerBridgeFunc('package:flutter/src/widgets/image.dart',
+          'Image.file', $Image.$file)
+      ..registerBridgeFunc('package:flutter/src/widgets/image.dart',
+          'Image.memory', $Image.$memory)
       ..registerBridgeFunc('package:flutter/src/material/list_tile.dart',
           'ListTile.', $ListTile.$new)
+      ..registerBridgeFunc('package:flutter/src/material/switch_list_tile.dart',
+          'SwitchListTile.', $SwitchListTile.$new)
       ..registerBridgeFunc('package:flutter/src/material/page.dart',
           'MaterialPageRoute.', $MaterialPageRoute.$new)
       ..registerBridgeFunc('package:flutter/src/material/scaffold.dart',

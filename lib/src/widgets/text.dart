@@ -83,11 +83,13 @@ class $Text implements Text, $Instance {
   String toStringDeep(
           {String prefixLineOne = '',
           String? prefixOtherLines,
-          DiagnosticLevel minLevel = DiagnosticLevel.debug}) =>
+          DiagnosticLevel minLevel = DiagnosticLevel.debug,
+          int wrapWidth = 65}) =>
       $value.toStringDeep(
           prefixLineOne: prefixLineOne,
           prefixOtherLines: prefixOtherLines,
-          minLevel: minLevel);
+          minLevel: minLevel,
+          wrapWidth: wrapWidth);
 
   @override
   String toStringShallow(

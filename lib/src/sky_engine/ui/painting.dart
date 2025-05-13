@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/painting.dart';
 
@@ -14,6 +16,20 @@ class $Color implements Color, $Instance {
           BridgeParameter('value',
               BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.int)), false)
         ])),
+        'from': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            namedParams: [
+              BridgeParameter('alpha',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.int)), false),
+              BridgeParameter('red',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.int)), false),
+              BridgeParameter('green',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.int)), false),
+              BridgeParameter('blue',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.int)), false),
+              BridgeParameter(
+                  'colorSpace', BridgeTypeAnnotation($ColorSpace.$type), true)
+            ])),
         'fromARGB': BridgeConstructorDef(
             BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
           BridgeParameter(
@@ -36,6 +52,17 @@ class $Color implements Color, $Instance {
           BridgeParameter(
               'o', BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.int)), false)
         ]))
+      },
+      fields: {
+        'a': BridgeFieldDef(
+            BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double))),
+        'r': BridgeFieldDef(
+            BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double))),
+        'g': BridgeFieldDef(
+            BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double))),
+        'b': BridgeFieldDef(
+            BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double))),
+        'colorSpace': BridgeFieldDef(BridgeTypeAnnotation($ColorSpace.$type))
       },
       wrap: true);
 
@@ -64,6 +91,21 @@ class $Color implements Color, $Instance {
   void $setProperty(Runtime runtime, String identifier, $Value value) {
     throw UnimplementedError();
   }
+
+  @override
+  double get a => $value.a;
+
+  @override
+  double get r => $value.r;
+
+  @override
+  double get g => $value.g;
+
+  @override
+  double get b => $value.b;
+
+  @override
+  ColorSpace get colorSpace => $value.colorSpace;
 
   @override
   int get alpha => $value.alpha;
@@ -100,6 +142,21 @@ class $Color implements Color, $Instance {
 
   @override
   Color withRed(int r) => $value.withRed(r);
+
+  @override
+  Color withValues(
+          {double? alpha,
+          double? red,
+          double? green,
+          double? blue,
+          ColorSpace? colorSpace}) =>
+      $value.withValues(
+        alpha: alpha,
+        red: red,
+        green: green,
+        blue: blue,
+        colorSpace: colorSpace,
+      );
 }
 
 /// dart_eval wrapper for [Clip]
@@ -135,6 +192,38 @@ class $Clip implements $Instance {
 
   @override
   Clip get $reified => $value;
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    throw UnimplementedError();
+  }
+}
+
+class $ColorSpace implements $Instance {
+  static const $type = BridgeTypeRef(BridgeTypeSpec('dart:ui', 'ColorSpace'));
+
+  static const $declaration = BridgeEnumDef($type,
+      values: ['sRGB', 'extendedSRGB', 'displayP3'], fields: {});
+
+  static final $values = ColorSpace.values
+      .asNameMap()
+      .map((key, value) => MapEntry(key, $ColorSpace.wrap(value)));
+
+  const $ColorSpace.wrap(this.$value);
+
+  @override
+  final ColorSpace $value;
+
+  @override
+  ColorSpace get $reified => $value;
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    throw UnimplementedError();
+  }
 
   @override
   int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
