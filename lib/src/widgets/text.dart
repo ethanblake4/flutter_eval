@@ -44,6 +44,9 @@ class $Text implements Text, $Instance {
   final Text $value;
 
   @override
+  String? get semanticsIdentifier => this.semanticsIdentifier;
+
+  @override
   $Value? $getProperty(Runtime runtime, String identifier) {
     throw UnimplementedError();
   }

@@ -25,7 +25,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  dart_eval: ^0.7.9
+  dart_eval:
+    path: ../dart_eval/
   path_provider: ^2.1.0
   http: ^1.1.0
 
