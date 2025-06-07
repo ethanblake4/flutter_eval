@@ -147,9 +147,12 @@ class $Text implements Text, $Instance {
   TextWidthBasis? get textWidthBasis => $value.textWidthBasis;
 
   @override
-  // ignore: override_on_non_overriding_member
-  Color? get selectionColor => throw UnimplementedError();
+  Color? get selectionColor => ($value as dynamic).selectionColor;
 
   @override
   get textScaler => ($value as dynamic).textScaler;
+  
+  @override
+  // ignore: override_on_non_overriding_member
+  String? get semanticsIdentifier => ($value as dynamic).semanticsIdentifier;
 }

@@ -478,9 +478,16 @@ class $PopEntry implements $Instance {
   $Value? $getProperty(Runtime runtime, String identifier) {
     switch (identifier) {
       case 'onPopInvoked':
+        // ignore: deprecated_member_use
         final onPopInvoked = $value.onPopInvoked;
         return $Function((runtime, target, args) {
           onPopInvoked(args[0]!.$value);
+          return const $null();
+        });
+      case 'onPopInvokedWithResult':
+        final onPopInvokedWithResult = $value.onPopInvokedWithResult;
+        return $Function((runtime, target, args) {
+          onPopInvokedWithResult(args[0]!.$value, args[1]!.$value);
           return const $null();
         });
       case 'canPopNotifier':

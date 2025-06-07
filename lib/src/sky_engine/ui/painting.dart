@@ -107,24 +107,30 @@ class $Color implements Color, $Instance {
   ColorSpace get colorSpace => $value.colorSpace;
 
   @override
+  // ignore: deprecated_member_use
   int get alpha => $value.alpha;
 
   @override
+  // ignore: deprecated_member_use
   int get blue => $value.blue;
 
   @override
   double computeLuminance() => $value.computeLuminance();
 
   @override
+  // ignore: deprecated_member_use
   int get green => $value.green;
 
   @override
+  // ignore: deprecated_member_use
   double get opacity => $value.opacity;
 
   @override
+  // ignore: deprecated_member_use
   int get red => $value.red;
 
   @override
+  // ignore: deprecated_member_use
   int get value => $value.value;
 
   @override
@@ -140,6 +146,7 @@ class $Color implements Color, $Instance {
   Color withGreen(int g) => $value.withGreen(g);
 
   @override
+  // ignore: deprecated_member_use
   Color withOpacity(double opacity) => $value.withOpacity(opacity);
 
   @override

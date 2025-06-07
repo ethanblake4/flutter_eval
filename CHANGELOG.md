@@ -1,3 +1,9 @@
+## 0.7.8
+- Support for Flutter 3.32
+- Export the Foundation library to allow using `$Key` and other classes
+- Add binding for `Navigator.onPopInvokedWithResult`
+- Add GitHub Sponsors button to README
+
 ## 0.7.7
 - Support for Flutter 3.29 (thanks @Zverik)
 

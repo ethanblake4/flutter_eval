@@ -1,6 +1,7 @@
 [![Star on Github](https://img.shields.io/github/stars/ethanblake4/flutter_eval?logo=github&colorB=orange&label=stars)](https://github.com/ethanblake4/flutter_eval)
 [![License: BSD-3](https://img.shields.io/badge/license-BSD3-purple.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![Web example](https://img.shields.io/badge/web-example-blue.svg)](https://ethanblake.xyz/evalpad)
+[![Github-sponsors](https://img.shields.io/badge/sponsor-30363D?logo=GitHub-Sponsors&logoColor=#EA4AAA)](https://github.com/sponsors/ethanblake4)
 
 `flutter_eval` is a Flutter bridge library for [dart_eval](https://pub.dev/packages/dart_eval), 
 and a solution enabling code-push, dynamic widgets, and runtime evaluation of Flutter code.

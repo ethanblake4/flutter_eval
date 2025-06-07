@@ -161,6 +161,8 @@ class _CompilerWidgetState extends State<CompilerWidget> {
   Widget build(BuildContext context) {
     if (setupError != null && widget.onError != null) {
       return widget.onError!(context, setupError!, setupErrorTrace);
+    } else if (setupError != null) {
+      throw setupError;
     }
     try {
       if (widget.packages != codeCache) {
