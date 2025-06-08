@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 import 'dart:math';
 // ignore: unnecessary_import
@@ -14,6 +15,10 @@ import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
 
 import '../flutter_eval.dart';
+part 'loaders/evc_loader.dart';
+part 'loaders/file_evc_loader.dart';
+part 'loaders/asset_evc_loader.dart';
+part 'loaders/http_evc_loader.dart';
 
 /// Builds an error widget for a given [error].
 typedef EvalErrorBuilder = Widget Function(
@@ -186,7 +191,7 @@ class _CompilerWidgetState extends State<CompilerWidget> {
 /// A [RuntimeWidget] loads and runs EVC bytecode from a file, asset, or URL
 /// at runtime and displays the returned [Widget].
 ///
-/// [uri] is the URI to the EVC bytecode. Use the file:// scheme to load
+/// [loader] is the URI to the EVC bytecode. Use the file:// scheme to load
 /// from a local file, the asset:// scheme to load from an asset, or the http://
 /// or https:// scheme to load from a URL.
 ///
@@ -216,17 +221,18 @@ class _CompilerWidgetState extends State<CompilerWidget> {
 /// [loading] is a widget that is displayed while the EVC bytecode is loading.
 ///
 class RuntimeWidget extends StatefulWidget {
-  const RuntimeWidget(
-      {required this.uri,
-      required this.library,
-      required this.function,
-      this.args = const [],
-      this.loading,
-      this.onError,
-      this.permissions = const [],
-      super.key});
+  const RuntimeWidget({
+    required this.loader,
+    required this.library,
+    required this.function,
+    this.args = const [],
+    this.loading,
+    this.onError,
+    this.permissions = const [],
+    super.key,
+  });
 
-  final Uri uri;
+  final EvcLoader loader;
   final String library;
   final String function;
   final List<dynamic> args;
@@ -250,16 +256,7 @@ class _RuntimeWidgetState extends State<RuntimeWidget> {
     super.initState();
 
     try {
-      final scheme = widget.uri.scheme;
-      if (scheme == 'file') {
-        _loadFromFile();
-      } else if (scheme == 'asset') {
-        _loadFromAsset();
-      } else if (scheme == 'http' || scheme == 'https') {
-        _loadFromUrl();
-      } else {
-        throw 'Unsupported scheme: ${widget.uri.scheme}';
-      }
+      _loadFrom(widget.loader);
     } catch (e, stackTrace) {
       if (!_setError(e, stackTrace, false)) {
         rethrow;
@@ -267,30 +264,11 @@ class _RuntimeWidgetState extends State<RuntimeWidget> {
     }
   }
 
-  void _loadFromFile() {
-    final file = File(widget.uri.path);
-    final bytecode = file.readAsBytesSync();
-    _setup(bytecode);
-  }
-
-  void _loadFromAsset() async {
+  Future<void> _loadFrom(EvcLoader loader) async {
     try {
-      final asset = widget.uri.path;
-      final bytecode = await rootBundle.load(asset);
-      _setup(bytecode);
-    } catch (e, stackTrace) {
-      if (!_setError(e, stackTrace)) {
-        rethrow;
-      }
-    }
-  }
-
-  void _loadFromUrl() async {
-    try {
-      final response = await http.get(widget.uri);
-      _setup(response.bodyBytes);
-    } catch (e, stackTrace) {
-      if (!_setError(e, stackTrace)) {
+      _setup(await loader.bytecode);
+    } catch (e, s) {
+      if (!_setError(e, s)) {
         rethrow;
       }
     }
@@ -388,23 +366,24 @@ class _RuntimeWidgetState extends State<RuntimeWidget> {
 /// You can grant permissions to the dart_eval runtime using [permissions].
 ///
 class EvalWidget extends StatefulWidget {
-  const EvalWidget(
-      {required this.packages,
-      required this.assetPath,
-      required this.library,
-      this.uri,
-      this.function = 'main',
-      this.args = const [],
-      this.loading,
-      this.onError,
-      this.permissions = const [],
-      super.key});
+  const EvalWidget({
+    required this.packages,
+    required this.assetPath,
+    required this.library,
+    this.loader,
+    this.function = 'main',
+    this.args = const [],
+    this.loading,
+    this.onError,
+    this.permissions = const [],
+    super.key,
+  });
 
   final Map<String, Map<String, String>> packages;
   final String assetPath;
   final String library;
   final String function;
-  final Uri? uri;
+  final EvcLoader? loader;
   final Widget? loading;
   final List<dynamic> args;
   final EvalErrorBuilder? onError;
@@ -432,20 +411,10 @@ class _EvalWidgetState extends State<EvalWidget> {
         compiler = Compiler()..addPlugin(flutterEvalPlugin);
         _recompile(false);
       } else {
-        if (widget.uri == null) {
-          _loadFromAsset(widget.assetPath);
-        } else {
-          final scheme = widget.uri!.scheme;
-          if (scheme == 'file') {
-            _loadFromFile();
-          } else if (scheme == 'asset') {
-            _loadFromAsset(widget.uri!.toString());
-          } else if (scheme == 'http' || scheme == 'https') {
-            _loadFromUrl();
-          } else {
-            throw 'Unsupported scheme: ${widget.uri!.scheme}';
-          }
-        }
+        final loader = widget.loader != null
+            ? widget.loader!
+            : AssetEvcLoader.fromString(widget.assetPath);
+        _loadFrom(loader);
       }
     } catch (e, stackTrace) {
       if (!_setError(e, stackTrace, false)) {
@@ -480,29 +449,11 @@ class _EvalWidgetState extends State<EvalWidget> {
     }
   }
 
-  void _loadFromFile() {
-    final file = File(widget.uri!.path);
-    final bytecode = file.readAsBytesSync();
-    _setup(bytecode);
-  }
-
-  void _loadFromAsset(String assetPath) async {
+  Future<void> _loadFrom(EvcLoader loader) async {
     try {
-      final bytecode = await rootBundle.load(assetPath);
-      _setup(bytecode);
-    } catch (e, stackTrace) {
-      if (!_setError(e, stackTrace)) {
-        rethrow;
-      }
-    }
-  }
-
-  void _loadFromUrl() async {
-    try {
-      final response = await http.get(widget.uri!);
-      _setup(response.bodyBytes);
-    } catch (e, stackTrace) {
-      if (!_setError(e, stackTrace)) {
+      _setup(await loader.bytecode);
+    } catch (e, s) {
+      if (!_setError(e, s)) {
         rethrow;
       }
     }
@@ -591,7 +542,7 @@ Future<Uri> _writeBytesToPath(String path, Uint8List bytes) async {
 /// root of your app.
 class HotSwapLoader extends StatefulWidget {
   const HotSwapLoader({
-    required this.uri,
+    required this.loader,
     required this.child,
     this.strategy,
     this.cacheFilePath,
@@ -603,8 +554,9 @@ class HotSwapLoader extends StatefulWidget {
 
   final Widget child;
 
-  /// URI of the bytecode to load. This can be a http/https, file, or asset URI.
-  final String uri;
+  /// Loader of the bytecode. See [EvcLoader], [FileEvcLoader],
+  /// [AssetEvcLoader], [HttpEvcLoader].
+  final EvcLoader loader;
 
   /// Callback to run if an error occurs. Network errors do not call this.
   final EvalErrorCallback? onError;
@@ -665,16 +617,7 @@ Multiple HotSwapLoaders in the widget tree are not supported.
       if (_strategy != HotSwapStrategy.immediate) {
         _loadFromCache();
       }
-      final scheme = Uri.parse(widget.uri).scheme;
-      if (scheme == 'file') {
-        _loadFromFile();
-      } else if (scheme == 'asset') {
-        _loadFromAsset();
-      } else if (scheme == 'http' || scheme == 'https') {
-        _loadFromUrl();
-      } else {
-        throw 'Unsupported scheme: ${Uri.parse(widget.uri).scheme}';
-      }
+      _loadFrom(widget.loader);
     } catch (e, stackTrace) {
       if (!_setError(e, stackTrace, false)) {
         rethrow;
@@ -707,56 +650,11 @@ Multiple HotSwapLoaders in the widget tree are not supported.
     }
   }
 
-  void _loadFromFile() async {
+  Future<void> _loadFrom(EvcLoader loader) async {
     try {
-      debugPrint('Loading hot update from ${widget.uri}');
-      final file = File(Uri.parse(widget.uri).path);
-      if (_strategy == HotSwapStrategy.immediate) {
-        if (file.existsSync()) {
-          final bytecode = file.readAsBytesSync();
-          _setup(bytecode);
-        }
-      } else {
-        if (await file.exists()) {
-          final bytecode = await file.readAsBytes();
-          _setup(bytecode);
-        }
-      }
-    } catch (e, stackTrace) {
-      if (!_setError(e, stackTrace)) {
-        rethrow;
-      }
-    }
-  }
-
-  void _loadFromAsset() async {
-    try {
-      debugPrint('Loading hot update from ${widget.uri}');
-      final uri = Uri.parse(widget.uri);
-      final asset = uri.host + uri.path;
-      final bytecode = await rootBundle.load(asset);
-      _setup(bytecode);
-    } catch (e, stackTrace) {
-      if (!_setError(e, stackTrace)) {
-        rethrow;
-      }
-    }
-  }
-
-  void _loadFromUrl() async {
-    try {
-      debugPrint('Attempting to load hot update from ${widget.uri}');
-      final response = await http.get(Uri.parse(widget.uri));
-      if (response.statusCode < 200 || response.statusCode >= 300) {
-        debugPrint('No update found at address (network request failed)');
-        return;
-      }
-      _setup(response.bodyBytes);
-    } on http.ClientException catch (_) {
-      debugPrint('No update found at address (network request failed)');
-      // ignored
-    } catch (e, stackTrace) {
-      if (!_setError(e, stackTrace)) {
+      _setup(await loader.bytecode);
+    } catch (e, s) {
+      if (!_setError(e, s)) {
         rethrow;
       }
     }
@@ -764,7 +662,7 @@ Multiple HotSwapLoaders in the widget tree are not supported.
 
   void _setup(TypedData bytecode, {bool fromCache = false}) {
     if (fromCache == false && _strategy != HotSwapStrategy.immediate) {
-      debugPrint('Cacheing hot update');
+      debugPrint('Caching hot update');
       _saveToCache(bytecode);
     }
     if (fromCache == false &&
