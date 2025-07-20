@@ -72,7 +72,7 @@ class $Animation implements $Instance {
                 BridgeTypeSpec(
                     'package:flutter/src/foundation/change_notifier.dart',
                     'ValueListenable'),
-                [BridgeTypeRef.ref('T')])
+                [BridgeTypeAnnotation(BridgeTypeRef.ref('T'))])
           ],
           $extends: $Listenable.$type),
       constructors: {},

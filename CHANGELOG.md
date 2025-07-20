@@ -1,3 +1,8 @@
+## 0.8.0
+- Support for dart_eval v0.8.0
+- Add exported library mappings to allow referencing flutter_eval classes
+  in the dart_eval binding generator
+
 ## 0.7.8
 - Support for Flutter 3.32
 - Export the Foundation library to allow using `$Key` and other classes

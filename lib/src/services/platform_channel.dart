@@ -35,8 +35,8 @@ class $MethodChannel implements $Instance {
       },
       methods: {
         'invokeMethod': BridgeMethodDef(BridgeFunctionDef(
-            returns: BridgeTypeAnnotation(
-                BridgeTypeRef(CoreTypes.future, [BridgeTypeRef.ref('T')])),
+            returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.future,
+                [BridgeTypeAnnotation(BridgeTypeRef.ref('T'))])),
             generics: {
               'T': BridgeGenericParam()
             },
@@ -48,7 +48,8 @@ class $MethodChannel implements $Instance {
             ])),
         'invokeListMethod': BridgeMethodDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.future, [
-              BridgeTypeRef(CoreTypes.list, [BridgeTypeRef.ref('T')])
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.list,
+                  [BridgeTypeAnnotation(BridgeTypeRef.ref('T'))]))
             ])),
             generics: {
               'T': BridgeGenericParam()
@@ -61,8 +62,10 @@ class $MethodChannel implements $Instance {
             ])),
         'invokeMapMethod': BridgeMethodDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.future, [
-              BridgeTypeRef(CoreTypes.map,
-                  [BridgeTypeRef.ref('K'), BridgeTypeRef.ref('V')])
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.map, [
+                BridgeTypeAnnotation(BridgeTypeRef.ref('K')),
+                BridgeTypeAnnotation(BridgeTypeRef.ref('V'))
+              ]))
             ])),
             generics: {
               'K': BridgeGenericParam(),

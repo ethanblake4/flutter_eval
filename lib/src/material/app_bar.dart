@@ -26,7 +26,8 @@ class $AppBar implements $Instance {
               BridgeParameter(
                   'actions',
                   BridgeTypeAnnotation(BridgeTypeRef(
-                      BridgeTypeSpec('dart:core', 'List'), [$Widget.$type])),
+                      BridgeTypeSpec('dart:core', 'List'),
+                      [BridgeTypeAnnotation($Widget.$type)])),
                   true),
               BridgeParameter(
                   'flexibleSpace', BridgeTypeAnnotation($Widget.$type), true),

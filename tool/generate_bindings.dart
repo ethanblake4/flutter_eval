@@ -12,4 +12,6 @@ void main() {
   serializer.addPlugin(const FlutterEvalPlugin());
   final output = serializer.serialize();
   File('flutter_eval.json').writeAsStringSync(json.encode(output));
+  // ignore: avoid_print
+  print('SUCCESS: Bindings generated and written to flutter_eval.json\n');
 }

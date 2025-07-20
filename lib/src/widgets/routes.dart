@@ -72,14 +72,14 @@ class $Route implements $Instance {
                 BridgeTypeSpec(
                     'package:flutter/src/foundation/change_notifier.dart',
                     'ValueListenable'),
-                [BridgeTypeRef(CoreTypes.string)])))),
+                [BridgeTypeAnnotation(BridgeTypeRef((CoreTypes.string)))])))),
         'willHandlePopInternally': BridgeMethodDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)))),
         'currentResult': BridgeMethodDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation(BridgeTypeRef.ref('T')))),
         'popped': BridgeMethodDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation(
-                BridgeTypeRef(CoreTypes.future, [BridgeTypeRef.ref('T')])))),
+                BridgeTypeRef(CoreTypes.future, [BridgeTypeAnnotation(BridgeTypeRef.ref('T'))])))),
         'isCurrent': BridgeMethodDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)))),
         'isFirst': BridgeMethodDef(BridgeFunctionDef(
@@ -263,12 +263,12 @@ class $OverlayRoute implements $Instance {
       methods: {
         'createOverlayEntries': BridgeMethodDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation(
-                BridgeTypeRef(CoreTypes.iterable, [$OverlayEntry.$type])))),
+                BridgeTypeRef(CoreTypes.iterable, [BridgeTypeAnnotation($OverlayEntry.$type)])))),
       },
       getters: {
         'overlayEntries': BridgeMethodDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation(
-                BridgeTypeRef(CoreTypes.iterable, [$OverlayEntry.$type])))),
+                BridgeTypeRef(CoreTypes.iterable, [BridgeTypeAnnotation($OverlayEntry.$type)])))),
       },
       fields: {},
       wrap: true);
@@ -323,13 +323,13 @@ class $TransitionRoute implements $Instance {
             'T': BridgeGenericParam(),
           },
           $extends: BridgeTypeRef($OverlayRoute.$spec, [
-            BridgeTypeRef.ref('T'),
+            BridgeTypeAnnotation(BridgeTypeRef.ref('T')),
           ])),
       constructors: {},
       methods: {
         'createAnimation': BridgeMethodDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation(BridgeTypeRef($Animation.$spec, [
-          BridgeTypeRef(CoreTypes.double),
+          BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)),
         ])))),
         'createAnimationController': BridgeMethodDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation($AnimationController.$type))),
@@ -352,7 +352,7 @@ class $TransitionRoute implements $Instance {
         'animation': BridgeMethodDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation(
                 BridgeTypeRef($Animation.$spec, [
-                  BridgeTypeRef(CoreTypes.double),
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)),
                 ]),
                 nullable: true))),
         'controller': BridgeMethodDef(BridgeFunctionDef(
@@ -361,7 +361,7 @@ class $TransitionRoute implements $Instance {
         'secondaryAnimation': BridgeMethodDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation(
                 BridgeTypeRef($Animation.$spec, [
-                  BridgeTypeRef(CoreTypes.double),
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)),
                 ]),
                 nullable: true))),
       },
@@ -458,7 +458,7 @@ class $PopEntry implements $Instance {
             )),
             'canPopNotifier': BridgeMethodDef(BridgeFunctionDef(
               returns: BridgeTypeAnnotation(BridgeTypeRef(
-                  $ValueListenable.$spec, [BridgeTypeRef(CoreTypes.bool)])),
+                  $ValueListenable.$spec, [BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool))])),
             )),
           },
           methods: {},

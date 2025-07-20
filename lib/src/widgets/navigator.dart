@@ -344,7 +344,7 @@ class $NavigatorState implements $Instance {
           ],
           returns: BridgeTypeAnnotation(
             BridgeTypeRef(CoreTypes.future, [
-              BridgeTypeRef(CoreTypes.bool),
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)),
             ]),
           ),
         )),

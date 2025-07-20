@@ -4,7 +4,6 @@ library flutter_eval;
 
 export 'src/flutter_eval.dart';
 
-import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter_eval/src/animation.dart';
 import 'package:flutter_eval/src/animation/animation.dart';
@@ -91,19 +90,6 @@ import 'package:flutter_eval/src/widgets/text.dart';
 
 /// Global instance of [FlutterEvalPlugin]
 const flutterEvalPlugin = FlutterEvalPlugin();
-
-/// Setup flutter_eval classes for use in a dart_eval [Compiler].
-@Deprecated("Use compiler.addPlugin(flutterEvalPlugin) instead.")
-void setupFlutterForCompile(EvalPluginRegistry registry) {
-  registry.addPlugin(flutterEvalPlugin);
-}
-
-/// Setup Flutter classes for use in a dart_eval [Runtime]. After
-/// calling this function, you must call `runtime.setup()`.
-@Deprecated("Use runtime.addPlugin(flutterEvalPlugin) instead.")
-void setupFlutterForRuntime(Runtime runtime) {
-  runtime.addPlugin(flutterEvalPlugin);
-}
 
 /// A [EvalPlugin] for dart_eval that provides Flutter classes.
 class FlutterEvalPlugin implements EvalPlugin {
@@ -306,6 +292,17 @@ class FlutterEvalPlugin implements EvalPlugin {
         'package:flutter/src/widgets/framework.dart', widgetsFrameworkSource));
     registry.addSource(DartSource(
         'package:flutter/src/widgets/basic.dart', widgetsBasicSource));
+
+    registry.addExportedLibraryMapping('package:flutter/src/animation', 'package:flutter_eval/animation.dart');
+    registry.addExportedLibraryMapping('package:flutter/src/foundation', 'package:flutter_eval/foundation.dart');
+    registry.addExportedLibraryMapping('package:flutter/src/gestures', 'package:flutter_eval/gestures.dart');
+    registry.addExportedLibraryMapping('package:flutter/src/material', 'package:flutter_eval/material.dart');
+    registry.addExportedLibraryMapping('package:flutter/src/painting', 'package:flutter_eval/painting.dart');
+    registry.addExportedLibraryMapping('package:flutter/src/rendering', 'package:flutter_eval/rendering.dart');
+    registry.addExportedLibraryMapping('package:flutter/src/scheduler', 'package:flutter_eval/scheduler.dart');
+    registry.addExportedLibraryMapping('package:flutter/src/services', 'package:flutter_eval/services.dart');
+    registry.addExportedLibraryMapping('package:flutter/src/widgets', 'package:flutter_eval/widgets.dart');
+    registry.addExportedLibraryMapping('dart:ui', 'package:flutter_eval/ui.dart');
   }
 
   @override

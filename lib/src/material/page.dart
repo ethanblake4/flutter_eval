@@ -15,8 +15,8 @@ class $MaterialPageRoute implements $Instance {
       BridgeClassType($type,
           isAbstract: true,
           generics: {'T': BridgeGenericParam()},
-          $extends:
-              BridgeTypeRef($PageRoute$bridge.$spec, [BridgeTypeRef.ref('T')])),
+          $extends: BridgeTypeRef($PageRoute$bridge.$spec,
+              [BridgeTypeAnnotation(BridgeTypeRef.ref('T'))])),
       constructors: {
         '': BridgeConstructorDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation($type),

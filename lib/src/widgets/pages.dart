@@ -26,7 +26,7 @@ class $PageRoute$bridge extends PageRoute with $Bridge<PageRoute> {
         isAbstract: true,
         generics: {'T': BridgeGenericParam()},
         $extends: BridgeTypeRef($TransitionRoute.$spec, [
-          BridgeTypeRef.ref('T'),
+          BridgeTypeAnnotation(BridgeTypeRef.ref('T')),
         ]),
       ),
       constructors: {},
