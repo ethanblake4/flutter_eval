@@ -4,7 +4,7 @@ on:
       - master
 
 jobs:
-  generate_bindings:
+  run_tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
