@@ -77,6 +77,7 @@ class CompilerWidget extends StatefulWidget {
       this.outputFile,
       this.onError,
       this.permissions = const [],
+      this.plugins = const [],
       super.key});
 
   final Map<String, Map<String, String>> packages;
@@ -85,6 +86,7 @@ class CompilerWidget extends StatefulWidget {
   final List<dynamic> args;
   final String? outputFile;
   final EvalErrorBuilder? onError;
+  final List<EvalPlugin> plugins;
 
   /// Permissions to be granted to the dart_eval runtime
   final List<Permission> permissions;
@@ -104,6 +106,7 @@ class _CompilerWidgetState extends State<CompilerWidget> {
   void initState() {
     super.initState();
     compiler = Compiler()..addPlugin(flutterEvalPlugin);
+    widget.plugins.forEach(compiler.addPlugin);
     try {
       _recompile(false);
     } catch (e, stackTrace) {
@@ -130,6 +133,7 @@ class _CompilerWidgetState extends State<CompilerWidget> {
         runtime.grant(permission);
       }
       runtime.addPlugin(flutterEvalPlugin);
+      widget.plugins.forEach(runtime.addPlugin);
     }
 
     if (!inBuild) {
@@ -224,6 +228,7 @@ class RuntimeWidget extends StatefulWidget {
       this.loading,
       this.onError,
       this.permissions = const [],
+      this.plugins = const [],
       super.key});
 
   final Uri uri;
@@ -232,6 +237,7 @@ class RuntimeWidget extends StatefulWidget {
   final List<dynamic> args;
   final Widget? loading;
   final EvalErrorBuilder? onError;
+  final List<EvalPlugin> plugins;
 
   /// Permissions to be granted to the dart_eval runtime
   final List<Permission> permissions;
@@ -304,6 +310,7 @@ class _RuntimeWidgetState extends State<RuntimeWidget> {
           runtime!.grant(permission);
         }
         runtime!.addPlugin(flutterEvalPlugin);
+        widget.plugins.forEach(runtime!.addPlugin);
         setupError = null;
       } catch (e, stackTrace) {
         if (!_setError(e, stackTrace, false)) {
@@ -398,6 +405,7 @@ class EvalWidget extends StatefulWidget {
       this.loading,
       this.onError,
       this.permissions = const [],
+      this.plugins = const [],
       super.key});
 
   final Map<String, Map<String, String>> packages;
@@ -408,6 +416,7 @@ class EvalWidget extends StatefulWidget {
   final Widget? loading;
   final List<dynamic> args;
   final EvalErrorBuilder? onError;
+  final List<EvalPlugin> plugins;
 
   /// Permissions to be granted to the dart_eval runtime
   final List<Permission> permissions;
@@ -430,6 +439,7 @@ class _EvalWidgetState extends State<EvalWidget> {
     try {
       if (!kReleaseMode) {
         compiler = Compiler()..addPlugin(flutterEvalPlugin);
+        widget.plugins.forEach(compiler.addPlugin);
         _recompile(false);
       } else {
         if (widget.uri == null) {
@@ -470,6 +480,7 @@ class _EvalWidgetState extends State<EvalWidget> {
     void setupRuntime() {
       runtime = Runtime.ofProgram(program);
       runtime!.addPlugin(flutterEvalPlugin);
+      widget.plugins.forEach(runtime!.addPlugin);
     }
 
     if (!inBuild) {
@@ -516,6 +527,7 @@ class _EvalWidgetState extends State<EvalWidget> {
           runtime!.grant(permission);
         }
         runtime!.addPlugin(flutterEvalPlugin);
+        widget.plugins.forEach(runtime!.addPlugin);
         setupError = null;
       } catch (e, stackTrace) {
         if (!_setError(e, stackTrace, false)) {
@@ -598,6 +610,7 @@ class HotSwapLoader extends StatefulWidget {
     this.loading,
     this.onError,
     this.permissions = const [],
+    this.plugins = const [],
     super.key,
   });
 
@@ -623,6 +636,9 @@ class HotSwapLoader extends StatefulWidget {
 
   /// Permissions to grant to the dart_eval runtime
   final List<Permission> permissions;
+
+  /// Plugins to add to the dart_eval runtime
+  final List<EvalPlugin> plugins;
 
   @override
   State<StatefulWidget> createState() => _HotSwapLoaderState();
@@ -780,6 +796,7 @@ Multiple HotSwapLoaders in the widget tree are not supported.
           runtime!.grant(permission);
         }
         runtime!.addPlugin(flutterEvalPlugin);
+        widget.plugins.forEach(runtime!.addPlugin);
         runtime!.loadGlobalOverrides();
       } catch (e, stackTrace) {
         if (!_setError(e, stackTrace, false)) {

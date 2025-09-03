@@ -1,3 +1,3 @@
-library flutter_eval.animation;
+library;
 
 export 'src/animation/curves.dart' show $Curve;

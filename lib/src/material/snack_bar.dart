@@ -4,6 +4,7 @@ import 'package:flutter_eval/src/painting/edge_insets.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
+/// Bridge class for Flutter's SnackBar widget
 class $SnackBar implements $Instance {
   static const $type = BridgeTypeRef(BridgeTypeSpec(
       'package:flutter/src/material/snack_bar.dart', 'SnackBar'));

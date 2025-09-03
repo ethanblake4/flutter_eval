@@ -1,3 +1,15 @@
+## 0.8.1
+- Support for Flutter 3.35
+- Support for adding plugins to EvalWidget, CompilerWidget, RuntimeWidget,
+  and HotSwapLoader
+- Add Rect, WidgetStateProperty, KeyEventResult, FocusNode, FocusScopeNode,
+  FocusHighlightMode, KeyboardKey, LogicalKeyboardKey, PhysicalKeyboardKey, 
+  KeyEvent, KeyUpEvent, KeyDownEvent, KeyRepeatEvent,
+  MaterialTapTargetSize, VisualDensity, ButtonStyle, IconAlignment, ButtonStyleButton, 
+  TextTreeConfiguration, DiagnosticsTreeStyle, DiagnosticsNode, DiagnosticsProperty,
+  DiagnosticPropertiesBuilder, DiagnosticsSerializationDelegate, ValueNotifier,
+  and CupertinoDynamicColor
+
 ## 0.8.0
 - Support for dart_eval v0.8.0
 - Add exported library mappings to allow referencing flutter_eval classes

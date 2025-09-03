@@ -66,6 +66,7 @@ class $SwitchListTile implements $Instance {
       dense: args[6]?.$value ?? false,
       contentPadding: args[7]?.$value,
       selected: args[8]?.$value ?? false,
+      // ignore: deprecated_member_use
       activeColor: args[9]?.$value,
       secondary: args[10]?.$value,
     ));

@@ -1,16 +1,18 @@
 /// Provides a bridge between the Flutter framework and the dart_eval library,
 /// as well as helper classes to enable code-push and server-driven UI.
-library flutter_eval;
+library;
 
 export 'src/flutter_eval.dart';
 
 import 'package:dart_eval/dart_eval_bridge.dart';
+import 'package:flutter_eval/services.dart';
 import 'package:flutter_eval/src/animation.dart';
 import 'package:flutter_eval/src/animation/animation.dart';
 import 'package:flutter_eval/src/animation/animation_controller.dart';
 import 'package:flutter_eval/src/animation/curves.dart';
 import 'package:flutter_eval/src/foundation.dart';
 import 'package:flutter_eval/src/foundation/change_notifier.dart';
+import 'package:flutter_eval/src/foundation/diagnostics.dart';
 import 'package:flutter_eval/src/foundation/key.dart';
 import 'package:flutter_eval/src/gestures.dart';
 import 'package:flutter_eval/src/gestures/drag_details.dart';
@@ -20,6 +22,8 @@ import 'package:flutter_eval/src/gestures/velocity_tracker.dart';
 import 'package:flutter_eval/src/material.dart';
 import 'package:flutter_eval/src/material/app.dart';
 import 'package:flutter_eval/src/material/app_bar.dart';
+import 'package:flutter_eval/src/material/button_style.dart';
+import 'package:flutter_eval/src/material/button_style_button.dart';
 import 'package:flutter_eval/src/material/card.dart';
 import 'package:flutter_eval/src/material/colors.dart';
 import 'package:flutter_eval/src/material/drawer.dart';
@@ -60,9 +64,6 @@ import 'package:flutter_eval/src/rendering/stack.dart';
 import 'package:flutter_eval/src/scheduler.dart';
 import 'package:flutter_eval/src/scheduler/ticker.dart';
 import 'package:flutter_eval/src/services.dart';
-import 'package:flutter_eval/src/services/binary_messenger.dart';
-import 'package:flutter_eval/src/services/message_codec.dart';
-import 'package:flutter_eval/src/services/platform_channel.dart';
 import 'package:flutter_eval/src/sky_engine/ui/geometry.dart';
 import 'package:flutter_eval/src/sky_engine/ui/image.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
@@ -74,6 +75,7 @@ import 'package:flutter_eval/src/widgets/app.dart';
 import 'package:flutter_eval/src/widgets/basic.dart';
 import 'package:flutter_eval/src/widgets/container.dart';
 import 'package:flutter_eval/src/widgets/editable_text.dart';
+import 'package:flutter_eval/src/widgets/focus_manager.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 import 'package:flutter_eval/src/widgets/gesture_detector.dart';
 import 'package:flutter_eval/src/widgets/icon.dart';
@@ -87,6 +89,7 @@ import 'package:flutter_eval/src/widgets/scroll_controller.dart';
 import 'package:flutter_eval/src/widgets/scroll_view.dart';
 import 'package:flutter_eval/src/widgets/spacer.dart';
 import 'package:flutter_eval/src/widgets/text.dart';
+import 'package:flutter_eval/src/widgets/widget_state.dart';
 
 /// Global instance of [FlutterEvalPlugin]
 const flutterEvalPlugin = FlutterEvalPlugin();
@@ -160,6 +163,7 @@ class FlutterEvalPlugin implements EvalPlugin {
       $ElasticOutCurve.$declaration,
       $ElasticInOutCurve.$declaration,
       $Size.$declaration,
+      $Rect.$declaration,
       $IconData.$declaration,
       $Icon.$declaration,
       $Spacer.$declaration,
@@ -221,6 +225,26 @@ class FlutterEvalPlugin implements EvalPlugin {
       $PageRoute$bridge.$declaration,
       $MaterialPageRoute.$declaration,
       $RouteSettings.$declaration,
+      $DiagnosticsNode.$declaration,
+      $DiagnosticsProperty.$declaration,
+      $TextTreeConfiguration.$declaration,
+      $DiagnosticPropertiesBuilder.$declaration,
+      $DiagnosticsSerializationDelegate.$declaration,
+      $KeyboardKey.$declaration,
+      $PhysicalKeyboardKey.$declaration,
+      $LogicalKeyboardKey.$declaration,
+      $FocusNode.$declaration,
+      $FocusScopeNode.$declaration,
+      $VisualDensity.$declaration,
+      $ButtonStyle.$declaration,
+      $ButtonStyleButton.$declaration,
+      $WidgetStateProperty.$declaration,
+      $WidgetStatesController.$declaration,
+      $ValueNotifier.$declaration,
+      $KeyEvent.$declaration,
+      $KeyUpEvent.$declaration,
+      $KeyDownEvent.$declaration,
+      $KeyRepeatEvent.$declaration
     ];
 
     for (final cls in classes) {
@@ -244,6 +268,15 @@ class FlutterEvalPlugin implements EvalPlugin {
     registry.defineBridgeEnum($Clip.$declaration);
     registry.defineBridgeEnum($StackFit.$declaration);
     registry.defineBridgeEnum($AnimationStatus.$declaration);
+    registry.defineBridgeEnum($ColorSpace.$declaration);
+    registry.defineBridgeEnum($DiagnosticLevel.$declaration);
+    registry.defineBridgeEnum($DiagnosticsTreeStyle.$declaration);
+    registry.defineBridgeEnum($KeyEventResult.$declaration);
+    registry.defineBridgeEnum($FocusHighlightMode.$declaration);
+    registry.defineBridgeEnum($MaterialTapTargetSize.$declaration);
+    registry.defineBridgeEnum($IconAlignment.$declaration);
+    registry.defineBridgeEnum($WidgetState.$declaration);
+    registry.defineBridgeEnum($KeyEventResult.$declaration);
 
     registry.addSource(DartSource('dart:ui', dartUiSource));
 
@@ -293,24 +326,62 @@ class FlutterEvalPlugin implements EvalPlugin {
     registry.addSource(DartSource(
         'package:flutter/src/widgets/basic.dart', widgetsBasicSource));
 
-    registry.addExportedLibraryMapping('package:flutter/src/animation', 'package:flutter_eval/animation.dart');
-    registry.addExportedLibraryMapping('package:flutter/src/foundation', 'package:flutter_eval/foundation.dart');
-    registry.addExportedLibraryMapping('package:flutter/src/gestures', 'package:flutter_eval/gestures.dart');
-    registry.addExportedLibraryMapping('package:flutter/src/material', 'package:flutter_eval/material.dart');
-    registry.addExportedLibraryMapping('package:flutter/src/painting', 'package:flutter_eval/painting.dart');
-    registry.addExportedLibraryMapping('package:flutter/src/rendering', 'package:flutter_eval/rendering.dart');
-    registry.addExportedLibraryMapping('package:flutter/src/scheduler', 'package:flutter_eval/scheduler.dart');
-    registry.addExportedLibraryMapping('package:flutter/src/services', 'package:flutter_eval/services.dart');
-    registry.addExportedLibraryMapping('package:flutter/src/widgets', 'package:flutter_eval/widgets.dart');
-    registry.addExportedLibraryMapping('dart:ui', 'package:flutter_eval/ui.dart');
+    registry.addExportedLibraryMapping(
+        'package:flutter/src/animation', 'package:flutter_eval/animation.dart');
+    registry.addExportedLibraryMapping('package:flutter/src/foundation',
+        'package:flutter_eval/foundation.dart');
+    registry.addExportedLibraryMapping(
+        'package:flutter/src/gestures', 'package:flutter_eval/gestures.dart');
+    registry.addExportedLibraryMapping(
+        'package:flutter/src/material', 'package:flutter_eval/material.dart');
+    registry.addExportedLibraryMapping(
+        'package:flutter/src/painting', 'package:flutter_eval/painting.dart');
+    registry.addExportedLibraryMapping(
+        'package:flutter/src/rendering', 'package:flutter_eval/rendering.dart');
+    registry.addExportedLibraryMapping(
+        'package:flutter/src/scheduler', 'package:flutter_eval/scheduler.dart');
+    registry.addExportedLibraryMapping(
+        'package:flutter/src/services', 'package:flutter_eval/services.dart');
+    registry.addExportedLibraryMapping(
+        'package:flutter/src/widgets', 'package:flutter_eval/widgets.dart');
+    registry.addExportedLibraryMapping(
+        'dart:ui', 'package:flutter_eval/ui.dart');
   }
 
   @override
   void configureForRuntime(Runtime runtime) {
+    $ColorSpace.configureForRuntime(runtime);
+    $DiagnosticsNode.configureForRuntime(runtime);
+    $DiagnosticsProperty.configureForRuntime(runtime);
+    $DiagnosticPropertiesBuilder.configureForRuntime(runtime);
+    $DiagnosticsSerializationDelegate.configureForRuntime(runtime);
+    $TextTreeConfiguration.configureForRuntime(runtime);
+    $DiagnosticLevel.configureForRuntime(runtime);
+    $DiagnosticsTreeStyle.configureForRuntime(runtime);
+    $KeyboardKey.configureForRuntime(runtime);
+    $PhysicalKeyboardKey.configureForRuntime(runtime);
+    $LogicalKeyboardKey.configureForRuntime(runtime);
+    $FocusNode.configureForRuntime(runtime);
+    $FocusScopeNode.configureForRuntime(runtime);
+    $FocusHighlightMode.configureForRuntime(runtime);
+    $KeyEvent.configureForRuntime(runtime);
+    $KeyDownEvent.configureForRuntime(runtime);
+    $KeyUpEvent.configureForRuntime(runtime);
+    $KeyRepeatEvent.configureForRuntime(runtime);
+    $KeyEventResult.configureForRuntime(runtime);
+    $VisualDensity.configureForRuntime(runtime);
+    $MaterialTapTargetSize.configureForRuntime(runtime);
+    $ButtonStyle.configureForRuntime(runtime);
+    $ButtonStyleButton.configureForRuntime(runtime);
+    $IconAlignment.configureForRuntime(runtime);
     runtime
       ..registerBridgeFunc('dart:ui', 'Color.', $Color.$new)
       ..registerBridgeFunc('dart:ui', 'Size.', $Size.$new)
       ..registerBridgeFunc('dart:ui', 'Offset.', $Offset.$new)
+      ..registerBridgeFunc('dart:ui', 'Rect.fromLTRB', $Rect.$fromLTRB)
+      ..registerBridgeFunc('dart:ui', 'Rect.fromCenter', $Rect.$fromCenter)
+      ..registerBridgeFunc('dart:ui', 'Rect.fromLTWH', $Rect.$fromLTWH)
+      ..registerBridgeFunc('dart:ui', 'Rect.fromPoints', $Rect.$fromPoints)
       ..registerBridgeFunc('dart:ui', 'Radius.circular', $Radius.$circular)
       ..registerBridgeFunc('dart:ui', 'Radius.elliptical', $Radius.$elliptical)
       ..registerBridgeFunc(
@@ -493,8 +564,8 @@ class FlutterEvalPlugin implements EvalPlugin {
           'Image.network', $Image.$network)
       ..registerBridgeFunc('package:flutter/src/widgets/image.dart',
           'Image.asset', $Image.$asset)
-      ..registerBridgeFunc('package:flutter/src/widgets/image.dart',
-          'Image.file', $Image.$file)
+      ..registerBridgeFunc(
+          'package:flutter/src/widgets/image.dart', 'Image.file', $Image.$file)
       ..registerBridgeFunc('package:flutter/src/widgets/image.dart',
           'Image.memory', $Image.$memory)
       ..registerBridgeFunc('package:flutter/src/material/list_tile.dart',

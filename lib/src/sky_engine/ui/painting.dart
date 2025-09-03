@@ -2,6 +2,87 @@ import 'dart:ui';
 
 import 'package:dart_eval/dart_eval_bridge.dart';
 
+// ignore_for_file: unused_import, unnecessary_import
+// ignore_for_file: always_specify_types, avoid_redundant_argument_values
+// ignore_for_file: sort_constructors_first
+// ignore_for_file: no_leading_underscores_for_local_identifiers
+
+import 'package:dart_eval/dart_eval.dart';
+import 'package:dart_eval/stdlib/core.dart';
+
+/// dart_eval enum wrapper binding for [ColorSpace]
+class $ColorSpace implements $Instance {
+  /// Configure this enum for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {
+    runtime.registerBridgeEnumValues(
+      'dart:ui',
+      'ColorSpace',
+      $ColorSpace._$values,
+    );
+
+    runtime.registerBridgeFunc(
+      'dart:ui',
+      'ColorSpace.values*g',
+      $ColorSpace.$values,
+    );
+  }
+
+  /// Compile-time type specification of [$ColorSpace]
+  static const $spec = BridgeTypeSpec(
+    'dart:ui',
+    'ColorSpace',
+  );
+
+  /// Compile-time type declaration of [$ColorSpace]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$ColorSpace]
+  static const $declaration = BridgeEnumDef(
+    $type,
+    values: ['sRGB', 'extendedSRGB', 'displayP3'],
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {},
+  );
+
+  static final _$values = {
+    'sRGB': $ColorSpace.wrap(ColorSpace.sRGB),
+    'extendedSRGB': $ColorSpace.wrap(ColorSpace.extendedSRGB),
+    'displayP3': $ColorSpace.wrap(ColorSpace.displayP3),
+  };
+
+  /// Wrapper for the [ColorSpace.values] getter
+  static $Value? $values(Runtime runtime, $Value? target, List<$Value?> args) {
+    const value = ColorSpace.values;
+    return $List.view(value, (e) => $ColorSpace.wrap(e));
+  }
+
+  final $Instance _superclass;
+
+  @override
+  final ColorSpace $value;
+
+  @override
+  ColorSpace get $reified => $value;
+
+  /// Wrap a [ColorSpace] in a [$ColorSpace]
+  $ColorSpace.wrap(this.$value) : _superclass = $Object($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
 /// dart_eval wrapper for [Color]
 class $Color implements Color, $Instance {
   /// dart_eval type definition for [Color]
@@ -201,38 +282,6 @@ class $Clip implements $Instance {
 
   @override
   Clip get $reified => $value;
-
-  @override
-  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
-
-  @override
-  void $setProperty(Runtime runtime, String identifier, $Value value) {
-    throw UnimplementedError();
-  }
-}
-
-class $ColorSpace implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('dart:ui', 'ColorSpace'));
-
-  static const $declaration = BridgeEnumDef($type,
-      values: ['sRGB', 'extendedSRGB', 'displayP3'], fields: {});
-
-  static final $values = ColorSpace.values
-      .asNameMap()
-      .map((key, value) => MapEntry(key, $ColorSpace.wrap(value)));
-
-  const $ColorSpace.wrap(this.$value);
-
-  @override
-  final ColorSpace $value;
-
-  @override
-  ColorSpace get $reified => $value;
-
-  @override
-  $Value? $getProperty(Runtime runtime, String identifier) {
-    throw UnimplementedError();
-  }
 
   @override
   int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);

@@ -1,3 +1,3 @@
-library flutter_eval.painting;
+library;
 
 export 'src/painting/basic_types.dart' show $Axis;

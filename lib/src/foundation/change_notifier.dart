@@ -171,6 +171,63 @@ class $ChangeNotifier implements $Instance {
   }
 }
 
+class $ValueNotifier implements $Instance {
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/foundation/change_notifier.dart', 'ValueNotifier'));
+
+  static const $methods = {
+    'value': BridgeMethodDef(BridgeFunctionDef(
+        returns: BridgeTypeAnnotation(BridgeTypeRef.ref('T')))),
+  };
+
+  static const $declaration = BridgeClassDef(
+      BridgeClassType($type,
+          isAbstract: false,
+          generics: {'T': BridgeGenericParam()},
+          $extends: $ChangeNotifier.$type),
+      constructors: {
+        '': BridgeConstructorDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation($type),
+            params: [
+              BridgeParameter(
+                  'value', BridgeTypeAnnotation(BridgeTypeRef.ref('T')), false)
+            ]))
+      },
+      methods: $methods,
+      wrap: true);
+
+  late final $Instance _superclass = $ChangeNotifier.wrap($value);
+
+  $ValueNotifier.wrap(this.$value);
+
+  @override
+  final ValueNotifier $value;
+
+  @override
+  ValueNotifier get $reified => $value;
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    switch (identifier) {
+      case 'value':
+        return runtime.wrap($value.value);
+    }
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    if (identifier == 'value') {
+      $value.value = value.$value;
+      return;
+    }
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
 class $ChangeNotifier$bridge extends ChangeNotifier
     with $Bridge<ChangeNotifier> {
   static const $declaration = BridgeClassDef(

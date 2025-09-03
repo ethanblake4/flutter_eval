@@ -1,5 +1,5 @@
 /// Bridge classes and wrappers for Flutter's gestures library
-library flutter_eval.gestures;
+library;
 
 export 'src/gestures/drag_details.dart';
 export 'src/gestures/long_press.dart';

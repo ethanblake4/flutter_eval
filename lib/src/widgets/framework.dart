@@ -15,8 +15,8 @@ export 'package:flutter/foundation.dart' show FlutterError, ErrorSummary, ErrorD
 /// dart_eval wrapper for [Widget]
 class $Widget implements Widget, $Instance {
   /// Compile-time type reference to [$Widget]
-  static const $type =
-      BridgeTypeRef(BridgeTypeSpec('package:flutter/src/widgets/framework.dart', 'Widget'));
+  static const $type = BridgeTypeRef(
+      BridgeTypeSpec('package:flutter/src/widgets/framework.dart', 'Widget'));
 
   /// Compile-time wrapper declaration for [$Widget]
   static const $declaration = BridgeClassDef(

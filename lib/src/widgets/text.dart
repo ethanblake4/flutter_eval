@@ -151,7 +151,7 @@ class $Text implements Text, $Instance {
 
   @override
   get textScaler => ($value as dynamic).textScaler;
-  
+
   @override
   // ignore: override_on_non_overriding_member
   String? get semanticsIdentifier => ($value as dynamic).semanticsIdentifier;

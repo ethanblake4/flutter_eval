@@ -78,8 +78,8 @@ class $Route implements $Instance {
         'currentResult': BridgeMethodDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation(BridgeTypeRef.ref('T')))),
         'popped': BridgeMethodDef(BridgeFunctionDef(
-            returns: BridgeTypeAnnotation(
-                BridgeTypeRef(CoreTypes.future, [BridgeTypeAnnotation(BridgeTypeRef.ref('T'))])))),
+            returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.future,
+                [BridgeTypeAnnotation(BridgeTypeRef.ref('T'))])))),
         'isCurrent': BridgeMethodDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool)))),
         'isFirst': BridgeMethodDef(BridgeFunctionDef(
@@ -262,13 +262,13 @@ class $OverlayRoute implements $Instance {
       constructors: {},
       methods: {
         'createOverlayEntries': BridgeMethodDef(BridgeFunctionDef(
-            returns: BridgeTypeAnnotation(
-                BridgeTypeRef(CoreTypes.iterable, [BridgeTypeAnnotation($OverlayEntry.$type)])))),
+            returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.iterable,
+                [BridgeTypeAnnotation($OverlayEntry.$type)])))),
       },
       getters: {
         'overlayEntries': BridgeMethodDef(BridgeFunctionDef(
-            returns: BridgeTypeAnnotation(
-                BridgeTypeRef(CoreTypes.iterable, [BridgeTypeAnnotation($OverlayEntry.$type)])))),
+            returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.iterable,
+                [BridgeTypeAnnotation($OverlayEntry.$type)])))),
       },
       fields: {},
       wrap: true);
@@ -458,7 +458,8 @@ class $PopEntry implements $Instance {
             )),
             'canPopNotifier': BridgeMethodDef(BridgeFunctionDef(
               returns: BridgeTypeAnnotation(BridgeTypeRef(
-                  $ValueListenable.$spec, [BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool))])),
+                  $ValueListenable.$spec,
+                  [BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool))])),
             )),
           },
           methods: {},

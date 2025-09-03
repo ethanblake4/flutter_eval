@@ -1,3 +1,3 @@
-library flutter_eval.ui;
+library;
 
 export 'src/sky_engine/ui/geometry.dart';

@@ -23,7 +23,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter_eval:
     path: ../../
-  dart_eval: ^0.7.9
+  dart_eval: ^0.8.1
   
 dev_dependencies:
   flutter_test:

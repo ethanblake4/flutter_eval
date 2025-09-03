@@ -163,8 +163,8 @@ class $MemoryImage implements $Instance {
           params: [
             BridgeParameter(
               'data',
-              BridgeTypeAnnotation(BridgeTypeRef(
-                  CoreTypes.list, [BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.int))])),
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.list,
+                  [BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.int))])),
               false,
             ),
           ],

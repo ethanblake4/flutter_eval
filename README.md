@@ -235,19 +235,21 @@ To allow access to a MethodChannel, add a `MethodChannelPermission` to the `perm
 
 Currently supported widgets and classes include:
 - Widget, StatelessWidget, StatefulWidget, State;
-- ChangeNotifier, Key, BuildContext;
+- ChangeNotifier, ValueNotifier, Key, BuildContext;
 - WidgetsApp, Container, Column, Row, Center;
 - Alignment, Align, AspectRatio, Baseline;
 - Radius, BorderRadius, BorderRadiusGeometry, Clip, ClipRRect;
 - SizedBox, FittedBox, FractionallySizedBox, ColoredBox;
 - Stack, Positioned, StackFit;
 - Padding, EdgeInsetsGeometry, EdgeInsets, Axis, Size;
-- Offset, Velocity;
+- Rect, Offset, Velocity;
 - MainAxisAlignment, MainAxisSize, CrossAxisAlignment;
 - AlignmentGeometry, Alignment, Constraints, BoxConstraints;
-- Color,  ColorSwatch, Colors, FontWeight, FontStyle;
+- Color, ColorSpace, ColorSwatch, Colors, FontWeight, FontStyle;
 - MaterialApp, MaterialColor, MaterialAccentColor;
+- MaterialTapTargetSize, VisualDensity, WidgetStateProperty;
 - Theme, ThemeData, TextTheme, Directionality;
+- ButtonStyle, IconAlignment, ButtonStyleButton;
 - Decoration, BoxDecoration, BoxBorder, Border, BorderSide;
 - IconData, Icons, Icon;
 - Curve, Curves, SawTooth, Interval, Threshold, Cubic;
@@ -262,6 +264,12 @@ Currently supported widgets and classes include:
 - GestureDetector, TapDownDetails, TapUpDetails;
 - LongPressStartDetails, LongPressMoveUpdateDetails, LongPressEndDetails;
 - DragStartDetails, DragUpdateDetails, DragEndDetails, DragDownDetails;
+- KeyEvent, KeyUpEvent, KeyDownEvent, KeyRepeatEvent;
+- KeyEventResult, KeyboardKey, LogicalKeyboardKey, PhysicalKeyboardKey;
+- FocusNode, FocusScopeNode, FocusHighlightMode;
+- DiagnosticsTreeStyle, DiagnosticsNode, DiagnosticsProperty;
+- DiagnosticPropertiesBuilder, DiagnosticsSerializationDelegate;
+- CupertinoDynamicColor;
 
 Note that some of these have only partial support.
 

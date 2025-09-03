@@ -349,8 +349,8 @@ class $Column implements $Instance {
                   BridgeTypeAnnotation($TextBaseline.$type), true),
               BridgeParameter(
                   'children',
-                  BridgeTypeAnnotation(
-                      BridgeTypeRef(CoreTypes.list, [BridgeTypeAnnotation($Widget.$type)])),
+                  BridgeTypeAnnotation(BridgeTypeRef(
+                      CoreTypes.list, [BridgeTypeAnnotation($Widget.$type)])),
                   true),
             ]))
       },
@@ -895,8 +895,8 @@ class $Row implements $Instance {
                   BridgeTypeAnnotation($VerticalDirection.$type), true),
               BridgeParameter(
                   'children',
-                  BridgeTypeAnnotation(
-                      BridgeTypeRef(CoreTypes.list, [BridgeTypeAnnotation($Widget.$type)])),
+                  BridgeTypeAnnotation(BridgeTypeRef(
+                      CoreTypes.list, [BridgeTypeAnnotation($Widget.$type)])),
                   true),
             ]))
       },
@@ -963,8 +963,8 @@ class $Stack implements $Instance {
                   'fit', BridgeTypeAnnotation($StackFit.$type), true),
               BridgeParameter(
                   'children',
-                  BridgeTypeAnnotation(
-                      BridgeTypeRef(CoreTypes.list, [BridgeTypeAnnotation($Widget.$type)])),
+                  BridgeTypeAnnotation(BridgeTypeRef(
+                      CoreTypes.list, [BridgeTypeAnnotation($Widget.$type)])),
                   true),
             ]))
       },
