@@ -10,8 +10,6 @@ platforms:
   macos:
   web:
   windows:
-  # ignore: unknown_platform
-  wasm:
 
 topics:
   - flutter
