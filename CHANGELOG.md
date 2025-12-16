@@ -1,6 +1,7 @@
 ## 0.8.2
 - Support for Flutter 3.38
-- Exported multiple wrappers.
+- Exported multiple wrappers (thanks @Zverik)
+- Fix typo in example code (thanks @chan150)
 
 ## 0.8.1
 - Support for Flutter 3.35
