@@ -565,7 +565,7 @@ class $BuildContext implements BuildContext, $Instance {
   @override
   bool get mounted {
     try {
-      return ($value as dynamic).mounted;
+      return $value.mounted;
     } catch (e) {
       return false;
     }

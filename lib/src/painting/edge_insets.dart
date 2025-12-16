@@ -270,10 +270,12 @@ class $EdgeInsets implements EdgeInsets, $Instance {
   Rect inflateRect(Rect rect) => $value.inflateRect(rect);
 
   @override
-  RRect deflateRRect(RRect rect) => $value.deflateRRect(rect);
+  // ignore: override_on_non_overriding_member
+  RRect deflateRRect(RRect rect) => ($value as dynamic).deflateRRect(rect);
 
   @override
-  RRect inflateRRect(RRect rect) => $value.inflateRRect(rect);
+  // ignore: override_on_non_overriding_member
+  RRect inflateRRect(RRect rect) => ($value as dynamic).inflateRRect(rect);
 
   @override
   double get left => $value.left;
