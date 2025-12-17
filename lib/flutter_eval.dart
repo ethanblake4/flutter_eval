@@ -86,6 +86,7 @@ import 'package:flutter_eval/src/widgets/navigator.dart';
 import 'package:flutter_eval/src/widgets/overlay.dart';
 import 'package:flutter_eval/src/widgets/pages.dart';
 import 'package:flutter_eval/src/widgets/routes.dart';
+import 'package:flutter_eval/src/widgets/safe_area.dart';
 import 'package:flutter_eval/src/widgets/scroll_controller.dart';
 import 'package:flutter_eval/src/widgets/scroll_view.dart';
 import 'package:flutter_eval/src/widgets/spacer.dart';
@@ -247,6 +248,7 @@ class FlutterEvalPlugin implements EvalPlugin {
       $KeyDownEvent.$declaration,
       $KeyRepeatEvent.$declaration,
       $BottomSheet.$declaration,
+      $SafeArea.$declaration,
     ];
 
     for (final cls in classes) {
@@ -379,7 +381,10 @@ class FlutterEvalPlugin implements EvalPlugin {
     $ButtonStyleButton.configureForRuntime(runtime);
     $IconAlignment.configureForRuntime(runtime);
     $BottomSheet.configureForRuntime(runtime);
+    $SafeArea.configureForRuntime(runtime);
+
     $showModalBottomSheetFn.configureForRuntime(runtime);
+
     runtime
       ..registerBridgeFunc('dart:ui', 'Color.', $Color.$new)
       ..registerBridgeFunc('dart:ui', 'Size.', $Size.$new)
