@@ -3,6 +3,7 @@ library;
 
 export 'src/material/app.dart';
 export 'src/material/app_bar.dart';
+export 'src/material/bottom_sheet.dart';
 export 'src/material/button_style.dart';
 export 'src/material/button_style_button.dart';
 export 'src/material/card.dart';
