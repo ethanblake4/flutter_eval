@@ -174,6 +174,7 @@ class FlutterEvalPlugin implements EvalPlugin {
       $BorderSide.$declaration,
       $BoxBorder.$declaration,
       $Border.$declaration,
+      $ShapeBorder.$declaration,
       $InkWell.$declaration,
       $ListView.$declaration,
       $ScrollController.$declaration,
