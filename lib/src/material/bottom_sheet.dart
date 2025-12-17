@@ -294,7 +294,7 @@ class $BottomSheet implements $Instance {
   BottomSheet get $reified => $value;
 
   /// Wrap a [BottomSheet] in a [$BottomSheet]
-  $BottomSheet.wrap(this.$value) : _superclass = $Object($value);
+  $BottomSheet.wrap(this.$value) : _superclass = $Widget.wrap($value);
 
   @override
   int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
