@@ -204,7 +204,7 @@ void main() {
         BoxDecoration main() {
           return BoxDecoration(
             border: Border.all(
-              color: Colors.red,
+              color: Colors.red.withValues(alpha: 0.8),
               width: 2.0,
             ),
           );
@@ -218,8 +218,9 @@ void main() {
     expect(result, isNotNull);
     expect(result.$value, isA<BoxDecoration>());
     expect((result.$value as BoxDecoration).border, isA<Border>());
-    expect(
-        (result.$value as BoxDecoration).border!.top.color, equals(Colors.red));
+    // Comparing colors directly fails for some reason.
+    expect((result.$value as BoxDecoration).border!.top.color.toARGB32(),
+        equals(Colors.red.withValues(alpha: 0.8).toARGB32()));
     expect((result.$value as BoxDecoration).border!.top.width, equals(2.0));
   });
 
