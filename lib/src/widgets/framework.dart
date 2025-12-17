@@ -457,7 +457,7 @@ class $BuildContext implements BuildContext, $Instance {
 
   /// Compile-time type reference for [$BuildContext]
   static const $type = BridgeTypeRef(
-      BridgeTypeSpec('package:flutter/widgets.dart', 'BuildContext'));
+      BridgeTypeSpec('package:flutter/src/widgets/framework.dart', 'BuildContext'));
 
   /// Compile-time bridge declaration for [$BuildContext]
   static const $declaration = BridgeClassDef(
