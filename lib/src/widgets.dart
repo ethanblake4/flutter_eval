@@ -16,6 +16,7 @@ export 'src/widgets/navigator.dart';
 export 'src/widgets/overlay.dart';
 export 'src/widgets/pages.dart';
 export 'src/widgets/routes.dart';
+export 'src/widgets/safe_area.dart';
 export 'src/widgets/spacer.dart';
 export 'src/widgets/scroll_controller.dart';
 export 'src/widgets/scroll_view.dart';

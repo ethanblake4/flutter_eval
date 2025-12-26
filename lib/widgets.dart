@@ -11,6 +11,7 @@ export 'src/widgets/icon.dart';
 export 'src/widgets/icon_data.dart';
 export 'src/widgets/image.dart';
 export 'src/widgets/navigator.dart';
+export 'src/widgets/safe_area.dart';
 export 'src/widgets/scroll_controller.dart';
 export 'src/widgets/scroll_view.dart' show $ListView;
 export 'src/widgets/spacer.dart';

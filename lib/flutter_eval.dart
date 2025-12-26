@@ -22,6 +22,7 @@ import 'package:flutter_eval/src/gestures/velocity_tracker.dart';
 import 'package:flutter_eval/src/material.dart';
 import 'package:flutter_eval/src/material/app.dart';
 import 'package:flutter_eval/src/material/app_bar.dart';
+import 'package:flutter_eval/src/material/bottom_sheet.dart';
 import 'package:flutter_eval/src/material/button_style.dart';
 import 'package:flutter_eval/src/material/button_style_button.dart';
 import 'package:flutter_eval/src/material/card.dart';
@@ -85,6 +86,7 @@ import 'package:flutter_eval/src/widgets/navigator.dart';
 import 'package:flutter_eval/src/widgets/overlay.dart';
 import 'package:flutter_eval/src/widgets/pages.dart';
 import 'package:flutter_eval/src/widgets/routes.dart';
+import 'package:flutter_eval/src/widgets/safe_area.dart';
 import 'package:flutter_eval/src/widgets/scroll_controller.dart';
 import 'package:flutter_eval/src/widgets/scroll_view.dart';
 import 'package:flutter_eval/src/widgets/spacer.dart';
@@ -172,6 +174,7 @@ class FlutterEvalPlugin implements EvalPlugin {
       $BorderSide.$declaration,
       $BoxBorder.$declaration,
       $Border.$declaration,
+      $ShapeBorder.$declaration,
       $InkWell.$declaration,
       $ListView.$declaration,
       $ScrollController.$declaration,
@@ -244,7 +247,9 @@ class FlutterEvalPlugin implements EvalPlugin {
       $KeyEvent.$declaration,
       $KeyUpEvent.$declaration,
       $KeyDownEvent.$declaration,
-      $KeyRepeatEvent.$declaration
+      $KeyRepeatEvent.$declaration,
+      $BottomSheet.$declaration,
+      $SafeArea.$declaration,
     ];
 
     for (final cls in classes) {
@@ -277,6 +282,8 @@ class FlutterEvalPlugin implements EvalPlugin {
     registry.defineBridgeEnum($IconAlignment.$declaration);
     registry.defineBridgeEnum($WidgetState.$declaration);
     registry.defineBridgeEnum($KeyEventResult.$declaration);
+
+    registry.defineBridgeTopLevelFunction($showModalBottomSheetFn.$declaration);
 
     registry.addSource(DartSource('dart:ui', dartUiSource));
 
@@ -374,6 +381,11 @@ class FlutterEvalPlugin implements EvalPlugin {
     $ButtonStyle.configureForRuntime(runtime);
     $ButtonStyleButton.configureForRuntime(runtime);
     $IconAlignment.configureForRuntime(runtime);
+    $BottomSheet.configureForRuntime(runtime);
+    $SafeArea.configureForRuntime(runtime);
+
+    $showModalBottomSheetFn.configureForRuntime(runtime);
+
     runtime
       ..registerBridgeFunc('dart:ui', 'Color.', $Color.$new)
       ..registerBridgeFunc('dart:ui', 'Size.', $Size.$new)
