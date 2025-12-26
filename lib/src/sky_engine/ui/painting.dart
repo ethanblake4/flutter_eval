@@ -144,6 +144,67 @@ class $Color implements Color, $Instance {
             BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double))),
         'colorSpace': BridgeFieldDef(BridgeTypeAnnotation($ColorSpace.$type))
       },
+      methods: {
+        'toARGB32': BridgeMethodDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.int)))),
+        'withValues': BridgeMethodDef(BridgeFunctionDef(
+          returns: BridgeTypeAnnotation($Color.$type),
+          namedParams: [
+            BridgeParameter('alpha',
+                BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
+            BridgeParameter('red',
+                BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
+            BridgeParameter('green',
+                BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
+            BridgeParameter('blue',
+                BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)), true),
+            BridgeParameter(
+                'colorSpace', BridgeTypeAnnotation($ColorSpace.$type), true),
+          ],
+        )),
+        'withAlpha': BridgeMethodDef(
+          BridgeFunctionDef(
+              returns: BridgeTypeAnnotation($Color.$type),
+              params: [
+                BridgeParameter(
+                    'a',
+                    BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)),
+                    false)
+              ]),
+        ),
+        'withGreen': BridgeMethodDef(
+          BridgeFunctionDef(
+              returns: BridgeTypeAnnotation($Color.$type),
+              params: [
+                BridgeParameter(
+                    'g',
+                    BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)),
+                    false)
+              ]),
+        ),
+        'withRed': BridgeMethodDef(
+          BridgeFunctionDef(
+              returns: BridgeTypeAnnotation($Color.$type),
+              params: [
+                BridgeParameter(
+                    'r',
+                    BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)),
+                    false)
+              ]),
+        ),
+        'withBlue': BridgeMethodDef(
+          BridgeFunctionDef(
+              returns: BridgeTypeAnnotation($Color.$type),
+              params: [
+                BridgeParameter(
+                    'b',
+                    BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)),
+                    false)
+              ]),
+        ),
+        'computeLuminance': BridgeMethodDef(BridgeFunctionDef(
+            returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double)))),
+      },
       wrap: true);
 
   /// Wrap a [Color] in an [$Color]
@@ -158,6 +219,57 @@ class $Color implements Color, $Instance {
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
+    switch (identifier) {
+      case 'a':
+        return $double($value.a);
+      case 'r':
+        return $double($value.r);
+      case 'g':
+        return $double($value.g);
+      case 'b':
+        return $double($value.b);
+      case 'colorSpace':
+        return $ColorSpace.wrap($value.colorSpace);
+      case 'toARGB32':
+        return $Function((runtime, target, args) {
+          return $int((target!.$value as Color).toARGB32());
+        });
+      case 'withValues':
+        return $Function((runtime, target, args) {
+          final result = (target!.$value as Color).withValues(
+            alpha: args[0]?.$value,
+            red: args[1]?.$value,
+            green: args[2]?.$value,
+            blue: args[3]?.$value,
+            colorSpace: args[4]?.$value,
+          );
+          return $Color.wrap(result);
+        });
+      case 'withAlpha':
+        return $Function((runtime, target, args) {
+          final result = (target!.$value as Color).withAlpha(args[0]!.$value);
+          return $Color.wrap(result);
+        });
+      case 'withRed':
+        return $Function((runtime, target, args) {
+          final result = (target!.$value as Color).withRed(args[0]!.$value);
+          return $Color.wrap(result);
+        });
+      case 'withGreen':
+        return $Function((runtime, target, args) {
+          final result = (target!.$value as Color).withGreen(args[0]!.$value);
+          return $Color.wrap(result);
+        });
+      case 'withBlue':
+        return $Function((runtime, target, args) {
+          final result = (target!.$value as Color).withBlue(args[0]!.$value);
+          return $Color.wrap(result);
+        });
+      case 'computeLuminance':
+        return $Function((runtime, target, args) {
+          return $double((target!.$value as Color).computeLuminance());
+        });
+    }
     throw UnimplementedError();
   }
 
