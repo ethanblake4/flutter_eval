@@ -55,6 +55,8 @@ import 'package:flutter_eval/src/painting/colors.dart';
 import 'package:flutter_eval/src/painting/decoration.dart';
 import 'package:flutter_eval/src/painting/edge_insets.dart';
 import 'package:flutter_eval/src/painting/image_provider.dart';
+import 'package:flutter_eval/src/painting/inline_span.dart';
+import 'package:flutter_eval/src/painting/text_span.dart';
 import 'package:flutter_eval/src/painting/text_style.dart';
 import 'package:flutter_eval/src/rendering.dart';
 import 'package:flutter_eval/src/rendering/box.dart';
@@ -67,6 +69,7 @@ import 'package:flutter_eval/src/scheduler/ticker.dart';
 import 'package:flutter_eval/src/services.dart';
 import 'package:flutter_eval/src/sky_engine/ui/geometry.dart';
 import 'package:flutter_eval/src/sky_engine/ui/image.dart';
+import 'package:flutter_eval/src/sky_engine/ui/locale.dart';
 import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
 import 'package:flutter_eval/src/sky_engine/ui/pointer.dart';
 import 'package:flutter_eval/src/sky_engine/ui/text.dart';
@@ -250,6 +253,9 @@ class FlutterEvalPlugin implements EvalPlugin {
       $KeyRepeatEvent.$declaration,
       $BottomSheet.$declaration,
       $SafeArea.$declaration,
+      $Locale.$declaration,
+      $InlineSpan.$declaration,
+      $TextSpan.$declaration,
     ];
 
     for (final cls in classes) {
@@ -383,6 +389,8 @@ class FlutterEvalPlugin implements EvalPlugin {
     $IconAlignment.configureForRuntime(runtime);
     $BottomSheet.configureForRuntime(runtime);
     $SafeArea.configureForRuntime(runtime);
+    $TextSpan.configureForRuntime(runtime);
+    $Locale.configureForRuntime(runtime);
 
     $showModalBottomSheetFn.configureForRuntime(runtime);
 
@@ -546,6 +554,8 @@ class FlutterEvalPlugin implements EvalPlugin {
           'package:flutter/src/widgets/spacer.dart', 'Spacer.', $Spacer.$new)
       ..registerBridgeFunc(
           'package:flutter/src/widgets/text.dart', 'Text.', $Text.$new)
+      ..registerBridgeFunc(
+          'package:flutter/src/widgets/text.dart', 'Text.rich', $Text.$rich)
       ..registerBridgeFunc('package:flutter/src/widgets/container.dart',
           'Container.', $Container.$new)
       ..registerBridgeFunc('package:flutter/src/widgets/editable_text.dart',

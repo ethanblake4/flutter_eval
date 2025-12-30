@@ -2,6 +2,7 @@ import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_eval/src/foundation/key.dart';
+import 'package:flutter_eval/src/painting/inline_span.dart';
 import 'package:flutter_eval/src/painting/text_style.dart';
 import 'package:flutter_eval/src/widgets/framework.dart';
 
@@ -24,7 +25,17 @@ class $Text implements Text, $Instance {
               'key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
           BridgeParameter('style',
               BridgeTypeAnnotation($TextStyle.$type, nullable: true), true),
-        ]))
+        ])),
+        'rich': BridgeConstructorDef(
+            BridgeFunctionDef(returns: BridgeTypeAnnotation($type), params: [
+          BridgeParameter(
+              'textSpan', BridgeTypeAnnotation($InlineSpan.$type), false),
+        ], namedParams: [
+          BridgeParameter(
+              'key', BridgeTypeAnnotation($Key.$type, nullable: true), true),
+          BridgeParameter('style',
+              BridgeTypeAnnotation($TextStyle.$type, nullable: true), true),
+        ])),
       },
       wrap: true);
 
@@ -34,6 +45,14 @@ class $Text implements Text, $Instance {
   /// Instantiate a new [$Text] from [args]
   static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
     return $Text.wrap(Text(
+      args[0]!.$value,
+      key: args[1]?.$value,
+      style: args[2]?.$value,
+    ));
+  }
+
+  static $Value? $rich(Runtime runtime, $Value? target, List<$Value?> args) {
+    return $Text.wrap(Text.rich(
       args[0]!.$value,
       key: args[1]?.$value,
       style: args[2]?.$value,

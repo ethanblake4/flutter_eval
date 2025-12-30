@@ -259,6 +259,38 @@ void main() {
     expect((result.$value as Stack).children[1], isA<Positioned>());
   });
 
+  test('Rich text', () {
+    final program = compiler.compile({
+      'example': {
+        'main.dart': '''
+        import 'package:flutter/material.dart';
+
+        Widget main() {
+          return Text.rich(
+            TextSpan(children: [
+              TextSpan(text: 'first'),
+              TextSpan(text: 'second', style: TextStyle(color: Colors.red)),
+            ]),
+          );
+        }
+        '''
+      }
+    });
+    final runtime = Runtime(program.write().buffer.asByteData());
+    runtime.addPlugin(flutterEvalPlugin);
+    final result = runtime.executeLib('package:example/main.dart', 'main');
+    expect(result, isNotNull);
+    expect(result.$value, isA<Text>());
+    final text = result.$value as Text;
+    expect(text.textSpan, isNotNull);
+    expect(text.textSpan, isA<TextSpan>());
+    expect(text.textSpan!.toPlainText(), equals('firstsecond'));
+    final span = text.textSpan as TextSpan;
+    expect(span.children, isNotNull);
+    expect(span.children!.length, equals(2));
+    expect(span.children![1].style, isNotNull);
+  });
+
   test('ClipRRect', () {
     final program = compiler.compile({
       'example': {
