@@ -5,4 +5,5 @@ export 'src/sky_engine/ui/image.dart';
 export 'src/sky_engine/ui/key.dart';
 export 'src/sky_engine/ui/painting.dart';
 export 'src/sky_engine/ui/pointer.dart';
+export 'src/sky_engine/ui/locale.dart';
 export 'src/sky_engine/ui/text.dart';
