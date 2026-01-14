@@ -441,4 +441,97 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('Hello'), findsOneWidget);
   });
+
+  testWidgets('Material button and Autocomplete', (WidgetTester tester) async {
+    final program = compiler.compile({
+      'example': {
+        'main.dart': '''
+        import 'package:flutter/material.dart';
+        class MyWidget extends StatelessWidget {
+          final _options = [
+            Option(1, 'Alice'),
+            Option(2, 'Bob'),
+            Option(3, 'Charlie'),
+          ];
+          
+          final void Function(int) onSelect;
+          
+          MyWidget(this.onSelect, {super.key});
+          
+          Iterable<Option> filterByString(String text) {
+            return List.of(_options.where((o) => o.title.toLowerCase().contains(text)));
+          }
+
+          @override
+          Widget build(BuildContext context) {
+            return MaterialApp(home: Scaffold(
+              body: Center(
+                child: Column(children: [
+                  Autocomplete<Option>(
+                    onTap: onTap,
+                    child: Text('Click me'),
+                    optionsBuilder: (value) async {
+                      final text = value.text.toLowerCase();
+                      // return _options; works; nothing of this ↓ does
+                      return _options.where((o) => o.title.toLowerCase().contains(text));
+                      print(1);
+                      return filterByString(text);
+                      print(2);
+                      final opt = _options.where((o) => true);
+                      print(3);
+                      final opt2 = _options.where((o) => o.title.toLowerCase().contains(text));
+                      print(4);
+                      return _options; // .where((o) => o.title.toLowerCase().contains(text));
+                    },
+                    displayStringForOption: (o) => o.title,
+                    onSelected: (value) {
+                      onSelect(value.id);
+                    }
+                  ),
+                  MaterialButton(
+                    child: Text('Submit'),
+                    onPressed: () {
+                      // do nothing, we're not testing this
+                    },
+                  ),
+                ]),
+              ),
+            ));
+          }
+        }
+        
+        class Option {
+          final int id;
+          final String title;
+          
+          const Option(this.id, this.title);
+        }
+        '''
+      }
+    });
+    final runtime = Runtime(program.write().buffer.asByteData());
+    runtime.addPlugin(flutterEvalPlugin);
+    int? selected;
+    final result =
+    runtime.executeLib('package:example/main.dart', 'MyWidget.', [
+      $Function((runtime, target, args) {
+        // I do not know why args[3].
+        // args = [[0], [], [], $int(3)].
+        selected = args[3]!.$value;
+        return null;
+      }),
+      null
+    ]);
+    await tester.pumpWidget(result);
+    // Check for the MaterialButton.
+    expect(find.text('Submit'), findsOneWidget);
+    // Type an autocomplete string
+    await tester.enterText(find.byType(Autocomplete), 'har');
+    await tester.pump();
+    expect(find.text('Alice'), findsNothing);
+    expect(find.text('Charlie'), findsOneWidget);
+    await tester.tap(find.text('Charlie'));
+    expect(selected, 3);
+  });
+
 }

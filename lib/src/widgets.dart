@@ -3,6 +3,7 @@ library widgets;
     
 export 'foundation.dart' show UniqueKey;
 export 'src/widgets/app.dart';
+export 'src/widgets/autocomplete.dart';
 export 'src/widgets/basic.dart';
 export 'src/widgets/container.dart';
 export 'src/widgets/editable_text.dart';
