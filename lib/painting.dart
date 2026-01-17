@@ -12,3 +12,5 @@ export 'src/painting/decoration.dart';
 export 'src/painting/edge_insets.dart';
 export 'src/painting/image_provider.dart';
 export 'src/painting/text_style.dart';
+export 'src/painting/inline_span.dart';
+export 'src/painting/text_span.dart';
