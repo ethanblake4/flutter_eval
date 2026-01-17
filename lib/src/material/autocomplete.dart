@@ -357,8 +357,8 @@ class $Autocomplete implements $Instance {
             final future = (args[1]! as EvalCallable)(runtime, null, [
               $TextEditingValue.wrap(textEditingValue),
             ]);
-            final value = await (future as Future<dynamic>);
-            return value;
+            final value = await future!.$value;
+            return (value?.$value as Iterable<dynamic>).cast();
           },
           displayStringForOption: args[2] == null
               ? RawAutocomplete.defaultStringForOption

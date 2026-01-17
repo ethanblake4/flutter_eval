@@ -448,7 +448,7 @@ void main() {
         'main.dart': '''
         import 'package:flutter/material.dart';
         class MyWidget extends StatelessWidget {
-          final _options = [
+          final List<Option> _options = [
             Option(1, 'Alice'),
             Option(2, 'Bob'),
             Option(3, 'Charlie'),
@@ -458,10 +458,6 @@ void main() {
           
           MyWidget(this.onSelect, {super.key});
           
-          Iterable<Option> filterByString(String text) {
-            return List.of(_options.where((o) => o.title.toLowerCase().contains(text)));
-          }
-
           @override
           Widget build(BuildContext context) {
             return MaterialApp(home: Scaffold(
@@ -472,16 +468,7 @@ void main() {
                     child: Text('Click me'),
                     optionsBuilder: (value) async {
                       final text = value.text.toLowerCase();
-                      // return _options; works; nothing of this ↓ does
-                      return _options.where((o) => o.title.toLowerCase().contains(text));
-                      print(1);
-                      return filterByString(text);
-                      print(2);
-                      final opt = _options.where((o) => true);
-                      print(3);
-                      final opt2 = _options.where((o) => o.title.toLowerCase().contains(text));
-                      print(4);
-                      return _options; // .where((o) => o.title.toLowerCase().contains(text));
+                      return _options.where((Option o) => o.title.toLowerCase().contains(text));
                     },
                     displayStringForOption: (o) => o.title,
                     onSelected: (value) {
