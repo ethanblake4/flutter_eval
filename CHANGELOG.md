@@ -2,6 +2,7 @@
 - Support for Flutter 3.38
 - Added `Color` methods, `SafeArea` widget, and `showBottomSheet` function.
 - Added `MaterialButton`, `Autocomplete`, and related classes.
+- Added `Locale`, `TextSpan`, and `Text.rich()` constructor.
 - Exported multiple wrappers (thanks @Zverik)
 - Fix typo in example code (thanks @chan150)
 
