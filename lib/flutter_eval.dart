@@ -22,9 +22,11 @@ import 'package:flutter_eval/src/gestures/velocity_tracker.dart';
 import 'package:flutter_eval/src/material.dart';
 import 'package:flutter_eval/src/material/app.dart';
 import 'package:flutter_eval/src/material/app_bar.dart';
+import 'package:flutter_eval/src/material/autocomplete.dart';
 import 'package:flutter_eval/src/material/bottom_sheet.dart';
 import 'package:flutter_eval/src/material/button_style.dart';
 import 'package:flutter_eval/src/material/button_style_button.dart';
+import 'package:flutter_eval/src/material/button_theme.dart';
 import 'package:flutter_eval/src/material/card.dart';
 import 'package:flutter_eval/src/material/colors.dart';
 import 'package:flutter_eval/src/material/drawer.dart';
@@ -34,6 +36,7 @@ import 'package:flutter_eval/src/material/icon_button.dart';
 import 'package:flutter_eval/src/material/icons.dart';
 import 'package:flutter_eval/src/material/ink_well.dart';
 import 'package:flutter_eval/src/material/list_tile.dart';
+import 'package:flutter_eval/src/material/material_button.dart';
 import 'package:flutter_eval/src/material/page.dart';
 import 'package:flutter_eval/src/material/scaffold.dart';
 import 'package:flutter_eval/src/material/snack_bar.dart';
@@ -73,6 +76,7 @@ import 'package:flutter_eval/src/sky_engine/ui/text.dart';
 import 'package:flutter_eval/src/sky_engine/ui/ui.dart';
 import 'package:flutter_eval/src/widgets.dart';
 import 'package:flutter_eval/src/widgets/app.dart';
+import 'package:flutter_eval/src/widgets/autocomplete.dart';
 import 'package:flutter_eval/src/widgets/basic.dart';
 import 'package:flutter_eval/src/widgets/container.dart';
 import 'package:flutter_eval/src/widgets/editable_text.dart';
@@ -104,7 +108,7 @@ class FlutterEvalPlugin implements EvalPlugin {
 
   @override
   void configureForCompile(BridgeDeclarationRegistry registry) {
-    final classes = [
+    final classes = <BridgeClassDef>[
       $Widget.$declaration,
       $StatelessWidget$bridge.$declaration,
       $StatefulWidget$bridge.$declaration,
@@ -250,38 +254,54 @@ class FlutterEvalPlugin implements EvalPlugin {
       $KeyRepeatEvent.$declaration,
       $BottomSheet.$declaration,
       $SafeArea.$declaration,
+      $TextRange.$declaration,
+      $RawAutocomplete.$declaration,
+      $TextInputType.$declaration,
+      $TextEditingValue.$declaration,
+      $Autocomplete.$declaration,
+      $MaterialButton.$declaration,
     ];
 
     for (final cls in classes) {
       registry.defineBridgeClass(cls);
     }
 
-    registry.defineBridgeEnum($MainAxisAlignment.$declaration);
-    registry.defineBridgeEnum($CrossAxisAlignment.$declaration);
-    registry.defineBridgeEnum($MainAxisSize.$declaration);
-    registry.defineBridgeEnum($FontWeight.$declaration);
-    registry.defineBridgeEnum($FontStyle.$declaration);
-    registry.defineBridgeEnum($TextDirection.$declaration);
-    registry.defineBridgeEnum($VerticalDirection.$declaration);
-    registry.defineBridgeEnum($TextBaseline.$declaration);
-    registry.defineBridgeEnum($Axis.$declaration);
-    registry.defineBridgeEnum($BorderStyle.$declaration);
-    registry.defineBridgeEnum($BoxFit.$declaration);
-    registry.defineBridgeEnum($FilterQuality.$declaration);
-    registry.defineBridgeEnum($PointerDeviceKind.$declaration);
-    registry.defineBridgeEnum($HitTestBehavior.$declaration);
-    registry.defineBridgeEnum($Clip.$declaration);
-    registry.defineBridgeEnum($StackFit.$declaration);
-    registry.defineBridgeEnum($AnimationStatus.$declaration);
-    registry.defineBridgeEnum($ColorSpace.$declaration);
-    registry.defineBridgeEnum($DiagnosticLevel.$declaration);
-    registry.defineBridgeEnum($DiagnosticsTreeStyle.$declaration);
-    registry.defineBridgeEnum($KeyEventResult.$declaration);
-    registry.defineBridgeEnum($FocusHighlightMode.$declaration);
-    registry.defineBridgeEnum($MaterialTapTargetSize.$declaration);
-    registry.defineBridgeEnum($IconAlignment.$declaration);
-    registry.defineBridgeEnum($WidgetState.$declaration);
-    registry.defineBridgeEnum($KeyEventResult.$declaration);
+    final enums = <BridgeEnumDef>[
+      $MainAxisAlignment.$declaration,
+      $CrossAxisAlignment.$declaration,
+      $MainAxisSize.$declaration,
+      $FontWeight.$declaration,
+      $FontStyle.$declaration,
+      $TextDirection.$declaration,
+      $VerticalDirection.$declaration,
+      $TextBaseline.$declaration,
+      $Axis.$declaration,
+      $BorderStyle.$declaration,
+      $BoxFit.$declaration,
+      $FilterQuality.$declaration,
+      $PointerDeviceKind.$declaration,
+      $HitTestBehavior.$declaration,
+      $Clip.$declaration,
+      $StackFit.$declaration,
+      $AnimationStatus.$declaration,
+      $ColorSpace.$declaration,
+      $DiagnosticLevel.$declaration,
+      $DiagnosticsTreeStyle.$declaration,
+      $KeyEventResult.$declaration,
+      $FocusHighlightMode.$declaration,
+      $MaterialTapTargetSize.$declaration,
+      $IconAlignment.$declaration,
+      $WidgetState.$declaration,
+      $KeyEventResult.$declaration,
+      $TextInputAction.$declaration,
+      $TextCapitalization.$declaration,
+      $ButtonTextTheme.$declaration,
+      $OptionsViewOpenDirection.$declaration,
+    ];
+
+    for (final cls in enums) {
+      registry.defineBridgeEnum(cls);
+    }
 
     registry.defineBridgeTopLevelFunction($showModalBottomSheetFn.$declaration);
 
@@ -383,6 +403,16 @@ class FlutterEvalPlugin implements EvalPlugin {
     $IconAlignment.configureForRuntime(runtime);
     $BottomSheet.configureForRuntime(runtime);
     $SafeArea.configureForRuntime(runtime);
+    $TextRange.configureForRuntime(runtime);
+    $RawAutocomplete.configureForRuntime(runtime);
+    $TextInputType.configureForRuntime(runtime);
+    $TextInputAction.configureForRuntime(runtime);
+    $TextCapitalization.configureForRuntime(runtime);
+    $TextEditingValue.configureForRuntime(runtime);
+    $ButtonTextTheme.configureForRuntime(runtime);
+    $Autocomplete.configureForRuntime(runtime);
+    $MaterialButton.configureForRuntime(runtime);
+    $OptionsViewOpenDirection.configureForRuntime(runtime);
 
     $showModalBottomSheetFn.configureForRuntime(runtime);
 

@@ -1,6 +1,7 @@
 /// Bridge classes and wrappers for Flutter's basic widget library
 library;
 
+export 'src/widgets/autocomplete.dart';
 export 'src/widgets/basic.dart';
 export 'src/widgets/container.dart';
 export 'src/widgets/editable_text.dart';

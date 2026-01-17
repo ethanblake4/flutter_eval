@@ -1,6 +1,7 @@
 ## 0.8.2
 - Support for Flutter 3.38
 - Added `Color` methods, `SafeArea` widget, and `showBottomSheet` function.
+- Added `MaterialButton`, `Autocomplete`, and related classes.
 - Exported multiple wrappers (thanks @Zverik)
 - Fix typo in example code (thanks @chan150)
 
