@@ -1,3 +1,10 @@
+## 0.8.3
+- Support for Flutter 3.41. `Container` gained an `isAntiAlias` field, which
+  `$Container` did not implement — without it the package does not compile.
+- Raised the minimum Flutter version to 3.41.0, since `Container.isAntiAlias`
+  does not exist before it.
+- Raised the minimum dart_eval version to 0.8.5.
+
 ## 0.8.2
 - Support for Flutter 3.38
 - Added `Color` methods, `SafeArea` widget, and `showBottomSheet` function.
