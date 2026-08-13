@@ -132,6 +132,9 @@ class $Container implements Container, $Instance {
   Clip get clipBehavior => $value.clipBehavior;
 
   @override
+  bool get isAntiAlias => $value.isAntiAlias;
+
+  @override
   Color? get color => $value.color;
 
   @override
