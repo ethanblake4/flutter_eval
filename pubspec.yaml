@@ -25,7 +25,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  dart_eval: ^0.8.1
+  dart_eval:
+    git:
+      url: https://github.com/normidar/dart_eval
+      ref: be43486445b0158ae72874ec5e14ebe0032a6581
   path_provider: ^2.1.0
   http: ^1.1.0
 

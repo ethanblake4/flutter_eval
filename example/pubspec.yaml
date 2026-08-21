@@ -9,7 +9,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  dart_eval: ^0.8.1
   flutter_eval:
     path: ../
 
