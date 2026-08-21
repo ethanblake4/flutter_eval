@@ -73,6 +73,11 @@ class $Container implements Container, $Instance {
                   BridgeTypeAnnotation($Widget.$type, nullable: true), true),
               BridgeParameter('clipBehavior',
                   BridgeTypeAnnotation($Clip.$type, nullable: true), true),
+              BridgeParameter(
+                  'isAntiAlias',
+                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool),
+                      nullable: true),
+                  true),
             ]))
       },
       wrap: true);
@@ -92,6 +97,7 @@ class $Container implements Container, $Instance {
       transformAlignment: args[10]?.$value,
       child: args[11]?.$value,
       clipBehavior: args[12]?.$value ?? Clip.none,
+      isAntiAlias: args[13]?.$value ?? true,
     ));
   }
 
@@ -133,6 +139,9 @@ class $Container implements Container, $Instance {
 
   @override
   Color? get color => $value.color;
+
+  @override
+  bool get isAntiAlias => $value.isAntiAlias;
 
   @override
   BoxConstraints? get constraints => $value.constraints;
