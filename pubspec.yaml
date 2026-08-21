@@ -28,7 +28,7 @@ dependencies:
   dart_eval:
     git:
       url: https://github.com/normidar/dart_eval
-      ref: be43486445b0158ae72874ec5e14ebe0032a6581
+      ref: 98c5a8fdddf1e88537d51f228c938843b66e7138
   path_provider: ^2.1.0
   http: ^1.1.0
 
