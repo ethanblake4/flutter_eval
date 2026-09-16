@@ -69,7 +69,7 @@ class $TextEditingController implements $Instance {
     switch (identifier) {
       case 'text':
         $value.text = value.$value;
-        break;
+        return;
     }
     return _superclass.$setProperty(runtime, identifier, value);
   }

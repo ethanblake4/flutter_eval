@@ -61,6 +61,29 @@ void main() {
         prints('listener\n'));
   });
 
+  test('TextEditingController text assignment stays in its bridge setter', () {
+    final program = compiler.compile({
+      'example': {
+        'main.dart': '''
+          import 'package:flutter/widgets.dart';
+
+          String main() {
+            final controller = TextEditingController(text: 'before');
+            controller.text = 'after';
+            return controller.text;
+          }
+        ''',
+      },
+    });
+    for (final runtime in [
+      Runtime.ofProgram(program),
+      Runtime(program.write().buffer),
+    ]) {
+      runtime.addPlugin(flutterEvalPlugin);
+      expect(runtime.executeLib('package:example/main.dart', 'main'), 'after');
+    }
+  });
+
   testWidgets('TextField test', (WidgetTester tester) async {
     final program = compiler.compile({
       'example': {
