@@ -51,19 +51,13 @@ enum HotSwapStrategy {
 /// 'ClassName.constructorName', and for default constructors it is simply
 /// 'ClassName.'.
 ///
-/// You can optionally add arguments using [args]. These must be specified
-/// fully and in-order of definition, regardless of the use of named arguments.
-/// For example, for a function defined as such:
-///     void main(int a, {String c =  "hello"}) { ... }
-/// you could specify [args] as [1, $String("greetings")].
+/// Pass arguments by their declared parameter names using [args], including
+/// positional parameters. For `Widget main(int count, {String label = 'Hello'})`,
+/// use `args: {'count': 1, 'label': 'Greetings'}`. Omitted optional parameters use
+/// their defaults, and an explicit null is passed as a null value.
 ///
-/// If you need to use the default value of a named argument, you can use
-/// null, as in [1, null].
-///
-/// Arguments should generally be dart_eval [$Value] subclasses, except for
-/// [int]s, [double]s, and [bool]s which may be passed directly. Note that this
-/// includes passing a null *value*, which must be represented as [$null] -
-/// using null directly has a different meaning signaling 'no value specified'.
+/// Primitive values and collections can be passed directly. Custom objects and
+/// callbacks use their dart_eval bridge wrappers.
 ///
 /// If you'd like to save the generated EVC bytecode to a file, you can specify
 /// the [outputFile] path.
@@ -73,7 +67,7 @@ class CompilerWidget extends StatefulWidget {
       {required this.packages,
       required this.library,
       this.function = 'main',
-      this.args = const [],
+      this.args = const {},
       this.outputFile,
       this.onError,
       this.permissions = const [],
@@ -83,7 +77,7 @@ class CompilerWidget extends StatefulWidget {
   final Map<String, Map<String, String>> packages;
   final String library;
   final String function;
-  final List<dynamic> args;
+  final Map<String, Object?> args;
   final String? outputFile;
   final EvalErrorBuilder? onError;
   final List<EvalPlugin> plugins;
@@ -173,11 +167,10 @@ class _CompilerWidgetState extends State<CompilerWidget> {
         codeCache = widget.packages;
         _recompile(false);
       }
-      final result =
-          runtime.executeLib(widget.library, widget.function, widget.args);
+      final result = runtime.executeLib(widget.library, widget.function,
+          arguments: widget.args);
       return Container(
-          child: (result as $Value).$value,
-          key: ValueKey(Random().nextDouble()));
+          key: ValueKey(Random().nextDouble()), child: result as Widget);
     } catch (e, stackTrace) {
       if (widget.onError != null) {
         return widget.onError!(context, e, stackTrace);
@@ -203,19 +196,13 @@ class _CompilerWidgetState extends State<CompilerWidget> {
 /// 'ClassName.constructorName', and for default constructors it is simply
 /// 'ClassName.'.
 ///
-/// You can optionally add arguments using [args]. These must be specified
-/// fully and in-order of definition, regardless of the use of named arguments.
-/// For example, for a function defined as such:
-///     void main(int a, {String c =  "hello"}) { ... }
-/// you could specify [args] as [1, $String("greetings")].
+/// Pass arguments by their declared parameter names using [args], including
+/// positional parameters. For `Widget main(int count, {String label = 'Hello'})`,
+/// use `args: {'count': 1, 'label': 'Greetings'}`. Omitted optional parameters use
+/// their defaults, and an explicit null is passed as a null value.
 ///
-/// If you need to use the default value of a named argument, you can use
-/// null, as in [1, null].
-///
-/// Arguments should generally be dart_eval [$Value] subclasses, except for
-/// [int]s, [double]s, and [bool]s which are passed directly. Note that this
-/// includes passing a null *value*, which must be represented as [$null] -
-/// using null directly has a different meaning signaling 'no value specified'.
+/// Primitive values and collections can be passed directly. Custom objects and
+/// callbacks use their dart_eval bridge wrappers.
 ///
 /// [loading] is a widget that is displayed while the EVC bytecode is loading.
 ///
@@ -224,7 +211,7 @@ class RuntimeWidget extends StatefulWidget {
       {required this.uri,
       required this.library,
       required this.function,
-      this.args = const [],
+      this.args = const {},
       this.loading,
       this.onError,
       this.permissions = const [],
@@ -234,7 +221,7 @@ class RuntimeWidget extends StatefulWidget {
   final Uri uri;
   final String library;
   final String function;
-  final List<dynamic> args;
+  final Map<String, Object?> args;
   final Widget? loading;
   final EvalErrorBuilder? onError;
   final List<EvalPlugin> plugins;
@@ -305,7 +292,7 @@ class _RuntimeWidgetState extends State<RuntimeWidget> {
   void _setup(TypedData bytecode) {
     setState(() {
       try {
-        runtime = Runtime(ByteData.sublistView(bytecode));
+        runtime = Runtime(_bytecodeBuffer(bytecode));
         for (final permission in widget.permissions) {
           runtime!.grant(permission);
         }
@@ -343,9 +330,9 @@ class _RuntimeWidgetState extends State<RuntimeWidget> {
       return widget.onError!(context, setupError!, setupErrorTrace);
     }
     if (runtime == null) return widget.loading ?? Container();
-    final result =
-        runtime!.executeLib(widget.library, widget.function, widget.args);
-    return (result as $Value).$value;
+    final result = runtime!
+        .executeLib(widget.library, widget.function, arguments: widget.args);
+    return result as Widget;
   }
 }
 
@@ -376,19 +363,10 @@ class _RuntimeWidgetState extends State<RuntimeWidget> {
 /// 'ClassName.constructorName', and for default constructors it is simply
 /// 'ClassName.'.
 ///
-/// You can optionally add arguments using [args]. These must be specified
-/// fully and in-order of definition, regardless of the use of named arguments.
-/// For example, for a function defined as such:
-///     void main(int a, {String c =  "hello"}) { ... }
-/// you could specify [args] as [1, $String("greetings")].
-///
-/// If you need to use the default value of a named argument, you can use
-/// null, as in [1, null].
-///
-/// Arguments should generally be dart_eval [$Value] subclasses, except for
-/// [int]s, [double]s, and [bool]s which may be passed directly. Note that this
-/// includes passing a null *value*, which must be represented as [$null] -
-/// using null directly has a different meaning signaling 'no value specified'.
+/// Pass arguments by their declared parameter names using [args], including
+/// positional parameters. Omitted optional parameters use their defaults, and
+/// an explicit null is passed as a null value. Primitive values and collections
+/// can be passed directly; custom objects use their dart_eval bridge wrappers.
 ///
 /// [loading] is a widget that is displayed while the EVC bytecode is loading.
 ///
@@ -401,7 +379,7 @@ class EvalWidget extends StatefulWidget {
       required this.library,
       this.uri,
       this.function = 'main',
-      this.args = const [],
+      this.args = const {},
       this.loading,
       this.onError,
       this.permissions = const [],
@@ -414,7 +392,7 @@ class EvalWidget extends StatefulWidget {
   final String function;
   final Uri? uri;
   final Widget? loading;
-  final List<dynamic> args;
+  final Map<String, Object?> args;
   final EvalErrorBuilder? onError;
   final List<EvalPlugin> plugins;
 
@@ -522,7 +500,7 @@ class _EvalWidgetState extends State<EvalWidget> {
   void _setup(TypedData bytecode) {
     setState(() {
       try {
-        runtime = Runtime(ByteData.sublistView(bytecode));
+        runtime = Runtime(_bytecodeBuffer(bytecode));
         for (final permission in widget.permissions) {
           runtime!.grant(permission);
         }
@@ -569,9 +547,9 @@ class _EvalWidgetState extends State<EvalWidget> {
         if (runtime == null) return widget.loading ?? Container();
       }
 
-      final result =
-          runtime!.executeLib(widget.library, widget.function, widget.args);
-      return (result as $Value).$value;
+      final result = runtime!
+          .executeLib(widget.library, widget.function, arguments: widget.args);
+      return result as Widget;
     } catch (e, stackTrace) {
       if (widget.onError != null) {
         return widget.onError!(context, e, stackTrace);
@@ -791,7 +769,7 @@ Multiple HotSwapLoaders in the widget tree are not supported.
     debugPrint('Applying hot update...');
     setState(() {
       try {
-        runtime = Runtime(ByteData.sublistView(bytecode));
+        runtime = Runtime(_bytecodeBuffer(bytecode));
         for (final permission in widget.permissions) {
           runtime!.grant(permission);
         }
@@ -862,3 +840,9 @@ class HotSwap extends StatelessWidget {
     return childBuilder(context);
   }
 }
+
+// Asset bundles may return a view into a larger buffer.
+ByteBuffer _bytecodeBuffer(TypedData bytecode) => bytecode.offsetInBytes == 0 &&
+        bytecode.lengthInBytes == bytecode.buffer.lengthInBytes
+    ? bytecode.buffer
+    : Uint8List.fromList(Uint8List.sublistView(bytecode)).buffer;

@@ -164,7 +164,7 @@ return EvalWidget(packages: {
     assetPath: 'assets/program.evc',
     library: 'package:example/main.dart',
     function: 'MyWidget.',
-    args: [$String('Example name')]
+    args: {'name': 'Example name'}
 );
 ```
 
@@ -197,9 +197,9 @@ flutter_eval includes two other helper Widgets for different use cases:
 
 To instantiate a class with its default constructor, append a '.' to the class name.
 
-When calling a dart_eval function or constructor externally, you must specify *all* 
-arguments - even optional and named ones - in order, using null to indicate the absence
-of an argument (whereas `$null()` indicates a null value).
+Pass entrypoint arguments in a map keyed by their declared parameter names,
+including positional parameters. Omit optional parameters to use their defaults.
+An explicit null is passed as null. Primitives and collections need no wrappers.
 
 E.g. for the following class:
 
@@ -218,7 +218,7 @@ return RuntimeWidget(
   uri: Uri.parse('asset:assets/program.evc'),
   library: 'package:example/main.dart',
   function: 'MyApp.',
-  args: [$String('Jessica'), null, null]
+  args: {'name': 'Jessica'}
 );
 ```
 
@@ -337,7 +337,8 @@ class ExampleState extends State<Example> {
 
   @override
   Widget build(BuildContext context) {
-    return (runtime.executeLib('package:example/main.dart', 'HomePage.', [$int(55)]) as $Value).$value;
+    return runtime!.executeLib('package:example/main.dart', 'HomePage.',
+        arguments: {'number': 55}) as Widget;
   }
 }
 ```
@@ -352,6 +353,7 @@ Flutter Desktop and use it in a Flutter Mobile app with no issues.
 After it's generated, you can use it in an app like so:
 
 ```dart
+import 'dart:typed_data';
 import 'package:flutter/services.dart' show rootBundle;
 
 class ExampleState extends State<Example> {
@@ -362,15 +364,16 @@ class ExampleState extends State<Example> {
     super.initState();
     
     rootBundle.load('assets/out.evc').then((bytecode) => setState(() {
-      runtime = Runtime(ByteData.sublistView(bytecode));
-      runtime.addPlugin(flutterEvalPlugin);
+      runtime = Runtime(Uint8List.fromList(Uint8List.sublistView(bytecode)).buffer);
+      runtime!.addPlugin(flutterEvalPlugin);
     }));
   }
 
   @override
   Widget build(BuildContext context) {
     if (runtime == null) return CircularProgressIndicator();
-    return (runtime.executeLib('package:example/main.dart', 'HomePage.', [$int(55)]) as $Value).$value;
+    return runtime!.executeLib('package:example/main.dart', 'HomePage.',
+        arguments: {'number': 55}) as Widget;
   }
 }
 ```

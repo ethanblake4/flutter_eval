@@ -91,11 +91,8 @@ class EvalExample extends StatelessWidget {
       /// name is blank.
       function: 'MyApp.',
 
-      /// Specify the arguments to pass to the entrypoint. Generally these
-      /// should be dart_eval [$Value] objects, but when invoking a static or
-      /// top-level function or constructor, [int]s, [double]s, and [bool]s
-      /// should be passed directly.
-      args: [null],
+      /// Omitted optional arguments use their defaults.
+      args: {},
     );
   }
 }

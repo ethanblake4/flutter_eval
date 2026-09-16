@@ -1,10 +1,7 @@
 import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
-import 'package:dart_eval/stdlib/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_eval/flutter_eval.dart';
-import 'package:flutter_eval/src/animation/curves.dart';
-import 'package:flutter_eval/src/painting/alignment.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -32,7 +29,7 @@ void main() {
         '''
       }
     });
-    final runtime = Runtime(program.write().buffer.asByteData());
+    final runtime = Runtime(program.write().buffer);
     runtime.addPlugin(flutterEvalPlugin);
     final result = runtime.executeLib('package:example/main.dart', 'MyApp.');
     expect(result, isNotNull);
@@ -58,7 +55,7 @@ void main() {
         '''
       }
     });
-    final runtime = Runtime(program.write().buffer.asByteData());
+    final runtime = Runtime(program.write().buffer);
     runtime.addPlugin(flutterEvalPlugin);
     expect(() => runtime.executeLib('package:example/main.dart', 'main'),
         prints('listener\n'));
@@ -107,7 +104,7 @@ void main() {
         '''
       }
     });
-    final runtime = Runtime(program.write().buffer.asByteData());
+    final runtime = Runtime(program.write().buffer);
     runtime.addPlugin(flutterEvalPlugin);
     await tester.pumpWidget(
         runtime.executeLib('package:example/main.dart', 'MyWidget.'));
@@ -128,13 +125,13 @@ void main() {
         '''
       }
     });
-    final runtime = Runtime(program.write().buffer.asByteData());
+    final runtime = Runtime(program.write().buffer);
     runtime.addPlugin(flutterEvalPlugin);
     final result = runtime.executeLib('package:example/main.dart', 'main');
     expect(result, isNotNull);
-    expect(result[0], isA<$Alignment>());
-    expect((result[0] as $Alignment).$value.x, -1.0);
-    expect((result[0] as $Alignment).$value.y, -1.0);
+    expect(result[0], isA<Alignment>());
+    expect((result[0] as Alignment).x, -1.0);
+    expect((result[0] as Alignment).y, -1.0);
   });
 
   test('Curves.easeIn and easeOut', () {
@@ -149,20 +146,20 @@ void main() {
         '''
       }
     });
-    final runtime = Runtime(program.write().buffer.asByteData());
+    final runtime = Runtime(program.write().buffer);
     runtime.addPlugin(flutterEvalPlugin);
     final result = runtime.executeLib('package:example/main.dart', 'main');
     expect(result, isNotNull);
-    expect(result[0], isA<$Cubic>());
-    expect(((result[0] as $Cubic).$value).a, 0.41999998688697815);
-    expect(((result[0] as $Cubic).$value).b, 0.0);
-    expect(((result[0] as $Cubic).$value).c, 1.0);
-    expect(((result[0] as $Cubic).$value).d, 1.0);
+    expect(result[0], isA<Cubic>());
+    expect((result[0] as Cubic).a, Curves.easeIn.a);
+    expect((result[0] as Cubic).b, 0.0);
+    expect((result[0] as Cubic).c, 1.0);
+    expect((result[0] as Cubic).d, 1.0);
 
-    expect(((result[1] as $Cubic).$value).a, 0.0);
-    expect(((result[1] as $Cubic).$value).b, 0.0);
-    expect(((result[1] as $Cubic).$value).c, 0.5799999833106995);
-    expect(((result[1] as $Cubic).$value).d, 1.0);
+    expect((result[1] as Cubic).a, 0.0);
+    expect((result[1] as Cubic).b, 0.0);
+    expect((result[1] as Cubic).c, Curves.easeOut.c);
+    expect((result[1] as Cubic).d, 1.0);
   });
 
   test('AppBar with title and actions', () {
@@ -187,12 +184,12 @@ void main() {
         '''
       }
     });
-    final runtime = Runtime(program.write().buffer.asByteData());
+    final runtime = Runtime(program.write().buffer);
     runtime.addPlugin(flutterEvalPlugin);
     final result = runtime.executeLib('package:example/main.dart', 'main');
     expect(result, isNotNull);
-    expect(result.$value, isA<AppBar>());
-    expect((result.$value as AppBar).title, isA<Text>());
+    expect(result, isA<AppBar>());
+    expect((result as AppBar).title, isA<Text>());
   });
 
   test('BoxDecoration with Border.all', () {
@@ -212,15 +209,14 @@ void main() {
         '''
       }
     });
-    final runtime = Runtime(program.write().buffer.asByteData());
+    final runtime = Runtime(program.write().buffer);
     runtime.addPlugin(flutterEvalPlugin);
     final result = runtime.executeLib('package:example/main.dart', 'main');
     expect(result, isNotNull);
-    expect(result.$value, isA<BoxDecoration>());
-    expect((result.$value as BoxDecoration).border, isA<Border>());
-    expect(
-        (result.$value as BoxDecoration).border!.top.color, equals(Colors.red));
-    expect((result.$value as BoxDecoration).border!.top.width, equals(2.0));
+    expect(result, isA<BoxDecoration>());
+    expect((result as BoxDecoration).border, isA<Border>());
+    expect(result.border!.top.color, equals(Colors.red));
+    expect(result.border!.top.width, equals(2.0));
   });
 
   test('Stack and Positioned', () {
@@ -248,14 +244,14 @@ void main() {
         '''
       }
     });
-    final runtime = Runtime(program.write().buffer.asByteData());
+    final runtime = Runtime(program.write().buffer);
     runtime.addPlugin(flutterEvalPlugin);
     final result = runtime.executeLib('package:example/main.dart', 'main');
     expect(result, isNotNull);
-    expect(result.$value, isA<Stack>());
-    expect((result.$value as Stack).children.length, equals(2));
-    expect((result.$value as Stack).children[0], isA<Positioned>());
-    expect((result.$value as Stack).children[1], isA<Positioned>());
+    expect(result, isA<Stack>());
+    expect((result as Stack).children.length, equals(2));
+    expect(result.children[0], isA<Positioned>());
+    expect(result.children[1], isA<Positioned>());
   });
 
   test('ClipRRect', () {
@@ -274,13 +270,13 @@ void main() {
         '''
       }
     });
-    final runtime = Runtime(program.write().buffer.asByteData());
+    final runtime = Runtime(program.write().buffer);
     runtime.addPlugin(flutterEvalPlugin);
     final result = runtime.executeLib('package:example/main.dart', 'main');
     expect(result, isNotNull);
-    expect(result.$value, isA<ClipRRect>());
-    expect((result.$value as ClipRRect).borderRadius, isA<BorderRadius>());
-    expect((result.$value as ClipRRect).child, isA<Text>());
+    expect(result, isA<ClipRRect>());
+    expect((result as ClipRRect).borderRadius, isA<BorderRadius>());
+    expect(result.child, isA<Text>());
   });
 
   testWidgets('Passing a Map', (WidgetTester tester) async {
@@ -308,11 +304,12 @@ void main() {
         '''
       }
     });
-    final runtime = Runtime(program.write().buffer.asByteData());
+    final runtime = Runtime(program.write().buffer);
     runtime.addPlugin(flutterEvalPlugin);
-    final Map<$String, $Value> map = {$String('title'): $String('Hello World')};
-    final result = runtime.executeLib(
-        'package:example/main.dart', 'MyWidget.', [$Map.wrap(map), null]);
+    final result = runtime
+        .executeLib('package:example/main.dart', 'MyWidget.', arguments: {
+      'map': {'title': 'Hello World'}
+    });
     await tester.pumpWidget(result);
     expect(find.text('Hello World'), findsOneWidget);
   });
@@ -342,17 +339,16 @@ void main() {
         '''
       }
     });
-    final runtime = Runtime(program.write().buffer.asByteData());
+    final runtime = Runtime(program.write().buffer);
     runtime.addPlugin(flutterEvalPlugin);
     String strval = '';
-    final result =
-        runtime.executeLib('package:example/main.dart', 'MyWidget.', [
-      $Closure((runtime, target, args) {
+    final result = runtime
+        .executeLib('package:example/main.dart', 'MyWidget.', arguments: {
+      'onClick': $Closure((runtime, target, args) {
         strval = args[0]!.$value;
         return null;
       }),
-      null
-    ]);
+    });
     await tester.pumpWidget(result);
     await tester.tap(find.text('Click me'));
     expect(strval, 'Hello!');
@@ -383,17 +379,16 @@ void main() {
         '''
       }
     });
-    final runtime = Runtime(program.write().buffer.asByteData());
+    final runtime = Runtime(program.write().buffer);
     runtime.addPlugin(flutterEvalPlugin);
     bool tapped = false;
-    final result =
-        runtime.executeLib('package:example/main.dart', 'MyWidget.', [
-      $Function((runtime, target, args) {
+    final result = runtime
+        .executeLib('package:example/main.dart', 'MyWidget.', arguments: {
+      'onTap': $Function((runtime, target, args) {
         tapped = true;
         return null;
       }),
-      null
-    ]);
+    });
     await tester.pumpWidget(result);
     await tester.tap(find.text('Click me'));
     expect(tapped, isTrue);
@@ -431,10 +426,10 @@ void main() {
         '''
       }
     });
-    final runtime = Runtime(program.write().buffer.asByteData());
+    final runtime = Runtime(program.write().buffer);
     runtime.addPlugin(flutterEvalPlugin);
-    await tester.pumpWidget(
-        runtime.executeLib('package:example/main.dart', 'main').$value);
+    await tester
+        .pumpWidget(runtime.executeLib('package:example/main.dart', 'main'));
     expect(find.text('Hello'), findsNothing);
     await tester.tap(find.text('Click me'));
     await tester.pumpAndSettle();

@@ -27,7 +27,7 @@ void main() {
         '''
       }
     });
-    final runtime = Runtime(program.write().buffer.asByteData());
+    final runtime = Runtime(program.write().buffer);
     runtime.grant(const MethodChannelPermission('test_channel'));
     runtime.addPlugin(flutterEvalPlugin);
     expect(
