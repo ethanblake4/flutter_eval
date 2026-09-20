@@ -41,7 +41,7 @@ class $Border implements $Instance {
       BridgeTypeSpec('package:flutter/src/painting/box_border.dart', 'Border'));
 
   static const $declaration = BridgeClassDef(
-      BridgeClassType($type, isAbstract: false),
+      BridgeClassType($type, $extends: $BoxBorder.$type, isAbstract: false),
       constructors: {
         '': BridgeConstructorDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation($type),
