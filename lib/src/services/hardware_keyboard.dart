@@ -1,22 +1,52 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND.
+// Regenerate with dart run tool/generate_bindings.dart.
+// ignore_for_file: implementation_imports, deprecated_member_use
+// ignore_for_file: invalid_null_aware_operator, invalid_use_of_protected_member
+// ignore_for_file: invalid_use_of_visible_for_testing_member
+// ignore_for_file: non_const_argument_for_const_parameter, unnecessary_null_comparison
+// ignore_for_file: no_logic_in_create_state, sort_child_properties_last
+// ignore_for_file: must_call_super
 // ignore_for_file: unused_import, unnecessary_import
 // ignore_for_file: always_specify_types, avoid_redundant_argument_values
 // ignore_for_file: sort_constructors_first
 // ignore_for_file: no_leading_underscores_for_local_identifiers
+// ignore_for_file: prefer_is_empty
+// ignore_for_file: undefined_hidden_name
+// ignore_for_file: dead_code, unused_local_variable
+// ignore_for_file: unnecessary_type_check, unnecessary_non_null_assertion
+// ignore_for_file: unnecessary_cast
+// ignore_for_file: sdk_version_since
+// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: argument_type_not_assignable_to_error_handler
+// ignore_for_file: avoid_function_literals_in_foreach_calls
 
 import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
+
+import 'package:flutter/src/services/hardware_keyboard.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_eval/src/services/keyboard_key.g.dart';
-import 'package:flutter_eval/src/sky_engine/ui/key.dart';
-import 'hardware_keyboard.dart';
+import 'package:dart_eval/stdlib/core.dart'
+    hide $KeyEvent, $KeyDownEvent, $KeyUpEvent, $KeyRepeatEvent;
+import 'package:dart_eval/stdlib/async.dart'
+    hide $KeyEvent, $KeyDownEvent, $KeyUpEvent, $KeyRepeatEvent;
+import 'package:dart_eval/stdlib/typed_data.dart'
+    hide $KeyEvent, $KeyDownEvent, $KeyUpEvent, $KeyRepeatEvent;
+import 'package:flutter/gestures.dart';
+import 'package:flutter/rendering.dart';
 import 'dart:ui';
-import 'package:flutter/foundation.dart';
-import 'package:dart_eval/stdlib/core.dart';
+import './keyboard_key.g.dart';
+import '../sky_engine/ui/key.dart';
 
 /// dart_eval wrapper binding for [KeyEvent]
 class $KeyEvent implements $Instance {
   /// Configure this class for use in a [Runtime]
   static void configureForRuntime(Runtime runtime) {}
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
+  }
 
   /// Compile-time type specification of [$KeyEvent]
   static const $spec = BridgeTypeSpec(
@@ -29,7 +59,20 @@ class $KeyEvent implements $Instance {
 
   /// Compile-time class declaration of [$KeyEvent]
   static const $declaration = BridgeClassDef(
-    BridgeClassType($type, isAbstract: true),
+    BridgeClassType(
+      $type,
+      isAbstract: true,
+
+      $implements: [
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'Diagnosticable',
+          ),
+          [],
+        ),
+      ],
+    ),
     constructors: {
       '': BridgeConstructorDef(
         BridgeFunctionDef(
@@ -48,6 +91,7 @@ class $KeyEvent implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               'logicalKey',
               BridgeTypeAnnotation(
@@ -61,19 +105,24 @@ class $KeyEvent implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               'character',
               BridgeTypeAnnotation(
-                BridgeTypeRef(CoreTypes.string, []),
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
                 nullable: true,
               ),
               true,
             ),
+
             BridgeParameter(
               'timeStamp',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.duration, [])),
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'Duration'), []),
+              ),
               false,
             ),
+
             BridgeParameter(
               'deviceType',
               BridgeTypeAnnotation(
@@ -84,9 +133,12 @@ class $KeyEvent implements $Instance {
               ),
               true,
             ),
+
             BridgeParameter(
               'synthesized',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+              ),
               true,
             ),
           ],
@@ -95,6 +147,7 @@ class $KeyEvent implements $Instance {
         isFactory: false,
       ),
     },
+
     methods: {
       'debugFillProperties': BridgeMethodDef(
         BridgeFunctionDef(
@@ -133,6 +186,7 @@ class $KeyEvent implements $Instance {
         ),
         isStatic: false,
       ),
+
       'logicalKey': BridgeFieldDef(
         BridgeTypeAnnotation(
           BridgeTypeRef(
@@ -145,25 +199,33 @@ class $KeyEvent implements $Instance {
         ),
         isStatic: false,
       ),
+
       'character': BridgeFieldDef(
         BridgeTypeAnnotation(
-          BridgeTypeRef(CoreTypes.string, []),
+          BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
           nullable: true,
         ),
         isStatic: false,
       ),
+
       'timeStamp': BridgeFieldDef(
-        BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.duration, [])),
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:core', 'Duration'), []),
+        ),
         isStatic: false,
       ),
+
       'deviceType': BridgeFieldDef(
         BridgeTypeAnnotation(
           BridgeTypeRef(BridgeTypeSpec('dart:ui', 'KeyEventDeviceType'), []),
         ),
         isStatic: false,
       ),
+
       'synthesized': BridgeFieldDef(
-        BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+        ),
         isStatic: false,
       ),
     },
@@ -191,28 +253,23 @@ class $KeyEvent implements $Instance {
       case 'physicalKey':
         final _physicalKey = $value.physicalKey;
         return $PhysicalKeyboardKey.wrap(_physicalKey);
-
       case 'logicalKey':
         final _logicalKey = $value.logicalKey;
         return $LogicalKeyboardKey.wrap(_logicalKey);
-
       case 'character':
         final _character = $value.character;
         return _character == null ? const $null() : $String(_character);
-
       case 'timeStamp':
         final _timeStamp = $value.timeStamp;
         return $Duration.wrap(_timeStamp);
-
       case 'deviceType':
         final _deviceType = $value.deviceType;
         return $KeyEventDeviceType.wrap(_deviceType);
-
       case 'synthesized':
         final _synthesized = $value.synthesized;
         return $bool(_synthesized);
       case 'debugFillProperties':
-        return __debugFillProperties;
+        return $Closure(__debugFillProperties.func, this);
     }
     return _superclass.$getProperty(runtime, identifier);
   }
@@ -223,10 +280,12 @@ class $KeyEvent implements $Instance {
   static $Value? _debugFillProperties(
     Runtime runtime,
     $Value? target,
-    List<$Value?> args,
+    Object? r,
+    Object? s,
+    Object? c,
   ) {
     final self = target! as $KeyEvent;
-    self.$value.debugFillProperties(args[0]!.$value);
+    self.$value.debugFillProperties((r as $Value?)!.$value);
     return null;
   }
 
@@ -240,11 +299,16 @@ class $KeyEvent implements $Instance {
 class $KeyDownEvent implements $Instance {
   /// Configure this class for use in a [Runtime]
   static void configureForRuntime(Runtime runtime) {
-    runtime.registerBridgeFunc(
+    runtime.registerBridgeFuncRegisters(
       'package:flutter/src/services/hardware_keyboard.dart',
       'KeyDownEvent.',
       $KeyDownEvent.$new,
     );
+  }
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
   }
 
   /// Compile-time type specification of [$KeyDownEvent]
@@ -260,6 +324,7 @@ class $KeyDownEvent implements $Instance {
   static const $declaration = BridgeClassDef(
     BridgeClassType(
       $type,
+
       $extends: BridgeTypeRef(
         BridgeTypeSpec(
           'package:flutter/src/services/hardware_keyboard.dart',
@@ -267,6 +332,23 @@ class $KeyDownEvent implements $Instance {
         ),
         [],
       ),
+
+      $implements: [
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/services/hardware_keyboard.dart',
+            'KeyEvent',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'Diagnosticable',
+          ),
+          [],
+        ),
+      ],
     ),
     constructors: {
       '': BridgeConstructorDef(
@@ -286,6 +368,7 @@ class $KeyDownEvent implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               'logicalKey',
               BridgeTypeAnnotation(
@@ -299,24 +382,32 @@ class $KeyDownEvent implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               'character',
               BridgeTypeAnnotation(
-                BridgeTypeRef(CoreTypes.string, []),
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
                 nullable: true,
               ),
               true,
             ),
+
             BridgeParameter(
               'timeStamp',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.duration, [])),
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'Duration'), []),
+              ),
               false,
             ),
+
             BridgeParameter(
               'synthesized',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+              ),
               true,
             ),
+
             BridgeParameter(
               'deviceType',
               BridgeTypeAnnotation(
@@ -333,6 +424,7 @@ class $KeyDownEvent implements $Instance {
         isFactory: false,
       ),
     },
+
     methods: {},
     getters: {},
     setters: {},
@@ -342,15 +434,24 @@ class $KeyDownEvent implements $Instance {
   );
 
   /// Wrapper for the [KeyDownEvent.new] constructor
-  static $Value? $new(Runtime runtime, $Value? thisValue, List<$Value?> args) {
+  static $Value? $new(Runtime runtime, Object? r, Object? s, Object? c) {
+    final _arg2OrNull = c is List && c.length > 0 ? c[0] as $Value? : null;
+    final _arg3 = (c as List<Object?>)[1] as $Value?;
+    final _arg4OrNull = c is List && c.length > 2 ? c[2] as $Value? : null;
+    final _arg5OrNull = c is List && c.length > 3 ? c[3] as $Value? : null;
+
     return $KeyDownEvent.wrap(
       KeyDownEvent(
-        physicalKey: args[0]!.$value,
-        logicalKey: args[1]!.$value,
-        character: args[2]?.$value,
-        timeStamp: args[3]!.$value,
-        synthesized: args[4]?.$value ?? false,
-        deviceType: args[5]?.$value ?? KeyEventDeviceType.keyboard,
+        physicalKey: (r as $Value?)!.$value,
+        logicalKey: (s as $Value?)!.$value,
+        character: _arg2OrNull?.$value,
+        timeStamp: _arg3!.$value,
+        synthesized: _arg4OrNull == null
+            ? false
+            : (_arg4OrNull as $bool).$value,
+        deviceType: _arg5OrNull == null
+            ? KeyEventDeviceType.keyboard
+            : _arg5OrNull!.$value,
       ),
     );
   }
@@ -384,11 +485,16 @@ class $KeyDownEvent implements $Instance {
 class $KeyUpEvent implements $Instance {
   /// Configure this class for use in a [Runtime]
   static void configureForRuntime(Runtime runtime) {
-    runtime.registerBridgeFunc(
+    runtime.registerBridgeFuncRegisters(
       'package:flutter/src/services/hardware_keyboard.dart',
       'KeyUpEvent.',
       $KeyUpEvent.$new,
     );
+  }
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
   }
 
   /// Compile-time type specification of [$KeyUpEvent]
@@ -404,6 +510,7 @@ class $KeyUpEvent implements $Instance {
   static const $declaration = BridgeClassDef(
     BridgeClassType(
       $type,
+
       $extends: BridgeTypeRef(
         BridgeTypeSpec(
           'package:flutter/src/services/hardware_keyboard.dart',
@@ -411,6 +518,23 @@ class $KeyUpEvent implements $Instance {
         ),
         [],
       ),
+
+      $implements: [
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/services/hardware_keyboard.dart',
+            'KeyEvent',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'Diagnosticable',
+          ),
+          [],
+        ),
+      ],
     ),
     constructors: {
       '': BridgeConstructorDef(
@@ -430,6 +554,7 @@ class $KeyUpEvent implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               'logicalKey',
               BridgeTypeAnnotation(
@@ -443,16 +568,23 @@ class $KeyUpEvent implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               'timeStamp',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.duration, [])),
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'Duration'), []),
+              ),
               false,
             ),
+
             BridgeParameter(
               'synthesized',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+              ),
               true,
             ),
+
             BridgeParameter(
               'deviceType',
               BridgeTypeAnnotation(
@@ -469,6 +601,7 @@ class $KeyUpEvent implements $Instance {
         isFactory: false,
       ),
     },
+
     methods: {},
     getters: {},
     setters: {},
@@ -478,14 +611,22 @@ class $KeyUpEvent implements $Instance {
   );
 
   /// Wrapper for the [KeyUpEvent.new] constructor
-  static $Value? $new(Runtime runtime, $Value? thisValue, List<$Value?> args) {
+  static $Value? $new(Runtime runtime, Object? r, Object? s, Object? c) {
+    final _arg2 = (c as List<Object?>)[0] as $Value?;
+    final _arg3OrNull = c is List && c.length > 1 ? c[1] as $Value? : null;
+    final _arg4OrNull = c is List && c.length > 2 ? c[2] as $Value? : null;
+
     return $KeyUpEvent.wrap(
       KeyUpEvent(
-        physicalKey: args[0]!.$value,
-        logicalKey: args[1]!.$value,
-        timeStamp: args[2]!.$value,
-        synthesized: args[3]?.$value ?? false,
-        deviceType: args[4]?.$value ?? KeyEventDeviceType.keyboard,
+        physicalKey: (r as $Value?)!.$value,
+        logicalKey: (s as $Value?)!.$value,
+        timeStamp: _arg2!.$value,
+        synthesized: _arg3OrNull == null
+            ? false
+            : (_arg3OrNull as $bool).$value,
+        deviceType: _arg4OrNull == null
+            ? KeyEventDeviceType.keyboard
+            : _arg4OrNull!.$value,
       ),
     );
   }
@@ -519,11 +660,16 @@ class $KeyUpEvent implements $Instance {
 class $KeyRepeatEvent implements $Instance {
   /// Configure this class for use in a [Runtime]
   static void configureForRuntime(Runtime runtime) {
-    runtime.registerBridgeFunc(
+    runtime.registerBridgeFuncRegisters(
       'package:flutter/src/services/hardware_keyboard.dart',
       'KeyRepeatEvent.',
       $KeyRepeatEvent.$new,
     );
+  }
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
   }
 
   /// Compile-time type specification of [$KeyRepeatEvent]
@@ -539,6 +685,7 @@ class $KeyRepeatEvent implements $Instance {
   static const $declaration = BridgeClassDef(
     BridgeClassType(
       $type,
+
       $extends: BridgeTypeRef(
         BridgeTypeSpec(
           'package:flutter/src/services/hardware_keyboard.dart',
@@ -546,6 +693,23 @@ class $KeyRepeatEvent implements $Instance {
         ),
         [],
       ),
+
+      $implements: [
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/services/hardware_keyboard.dart',
+            'KeyEvent',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'Diagnosticable',
+          ),
+          [],
+        ),
+      ],
     ),
     constructors: {
       '': BridgeConstructorDef(
@@ -565,6 +729,7 @@ class $KeyRepeatEvent implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               'logicalKey',
               BridgeTypeAnnotation(
@@ -578,19 +743,24 @@ class $KeyRepeatEvent implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               'character',
               BridgeTypeAnnotation(
-                BridgeTypeRef(CoreTypes.string, []),
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
                 nullable: true,
               ),
               true,
             ),
+
             BridgeParameter(
               'timeStamp',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.duration, [])),
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'Duration'), []),
+              ),
               false,
             ),
+
             BridgeParameter(
               'deviceType',
               BridgeTypeAnnotation(
@@ -607,6 +777,7 @@ class $KeyRepeatEvent implements $Instance {
         isFactory: false,
       ),
     },
+
     methods: {},
     getters: {},
     setters: {},
@@ -616,14 +787,20 @@ class $KeyRepeatEvent implements $Instance {
   );
 
   /// Wrapper for the [KeyRepeatEvent.new] constructor
-  static $Value? $new(Runtime runtime, $Value? thisValue, List<$Value?> args) {
+  static $Value? $new(Runtime runtime, Object? r, Object? s, Object? c) {
+    final _arg2OrNull = c is List && c.length > 0 ? c[0] as $Value? : null;
+    final _arg3 = (c as List<Object?>)[1] as $Value?;
+    final _arg4OrNull = c is List && c.length > 2 ? c[2] as $Value? : null;
+
     return $KeyRepeatEvent.wrap(
       KeyRepeatEvent(
-        physicalKey: args[0]!.$value,
-        logicalKey: args[1]!.$value,
-        character: args[2]?.$value,
-        timeStamp: args[3]!.$value,
-        deviceType: args[4]?.$value ?? KeyEventDeviceType.keyboard,
+        physicalKey: (r as $Value?)!.$value,
+        logicalKey: (s as $Value?)!.$value,
+        character: _arg2OrNull?.$value,
+        timeStamp: _arg3!.$value,
+        deviceType: _arg4OrNull == null
+            ? KeyEventDeviceType.keyboard
+            : _arg4OrNull!.$value,
       ),
     );
   }

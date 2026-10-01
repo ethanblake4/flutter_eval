@@ -1,6 +1,6 @@
 library;
 
-export 'src/painting/basic_types.dart' show $Axis;
+export 'src/painting/basic_types.dart';
 export 'src/painting/alignment.dart';
 export 'src/painting/border_radius.dart';
 export 'src/painting/borders.dart';
@@ -12,3 +12,19 @@ export 'src/painting/decoration.dart';
 export 'src/painting/edge_insets.dart';
 export 'src/painting/image_provider.dart';
 export 'src/painting/text_style.dart';
+export 'src/supporting/flutter_painting_alignment.dart';
+export 'src/supporting/flutter_painting_basic_types.dart';
+export 'src/supporting/flutter_painting_borders.dart';
+export 'src/supporting/flutter_painting_box_border.dart';
+export 'src/supporting/flutter_painting_decoration.dart';
+export 'src/supporting/flutter_painting_image_provider.dart';
+export 'src/supporting/flutter_painting_text_painter.dart';
+export 'src/supporting/flutter_painting_box_shadow.dart';
+export 'src/supporting/flutter_painting_decoration_image.dart';
+export 'src/supporting/flutter_painting_gradient.dart';
+export 'src/supporting/flutter_painting_image_cache.dart';
+export 'src/supporting/flutter_painting_image_stream.dart';
+export 'src/supporting/flutter_painting_inline_span.dart';
+export 'src/supporting/flutter_painting_strut_style.dart';
+export 'src/supporting/flutter_painting_text_scaler.dart';
+export 'src/supporting/flutter_painting_text_span.dart';

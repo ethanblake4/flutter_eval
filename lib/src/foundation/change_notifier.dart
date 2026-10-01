@@ -1,277 +1,55 @@
 import 'package:dart_eval/dart_eval_bridge.dart';
-import 'package:dart_eval/stdlib/core.dart';
 import 'package:flutter/foundation.dart';
+import 'notifiers.dart';
 
-/// dart_eval wrapper for [Listenable]
-class $Listenable implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec(
-      'package:flutter/src/foundation/change_notifier.dart', 'Listenable'));
+export 'notifiers.dart';
 
-  static const $methods = {
-    'addListener': BridgeMethodDef(BridgeFunctionDef(
-        returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
-        params: [
-          BridgeParameter('listener',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.function)), false),
-        ])),
-    'removeListener': BridgeMethodDef(BridgeFunctionDef(
-        returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
-        params: [
-          BridgeParameter('listener',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.function)), false),
-        ])),
-  };
-
-  static const $declaration = BridgeClassDef(
-      BridgeClassType($type, isAbstract: true),
-      constructors: {},
-      methods: $methods,
-      wrap: true);
-
-  late final $Instance _superclass = $Object(this);
-
-  $Listenable.wrap(this.$value);
-
-  @override
-  final Listenable $value;
-
-  final _$listenerCache = <EvalCallable, void Function()>{};
-
-  @override
-  Listenable get $reified => $value;
-
-  @override
-  $Value? $getProperty(Runtime runtime, String identifier) {
-    switch (identifier) {
-      case 'addListener':
-        return $Function((runtime, target, args) {
-          final listener = args[0] as EvalCallable;
-          void fn() => listener.call(runtime, null, []);
-          _$listenerCache[listener] = fn;
-          (target!.$value as Listenable).addListener(fn);
-          return null;
-        });
-      case 'removeListener':
-        return $Function((runtime, target, args) {
-          (target!.$value as Listenable)
-              .removeListener(_$listenerCache[args[0] as EvalCallable]!);
-          return null;
-        });
-    }
-    return _superclass.$getProperty(runtime, identifier);
-  }
-
-  @override
-  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
-
-  @override
-  void $setProperty(Runtime runtime, String identifier, $Value value) {
-    return _superclass.$setProperty(runtime, identifier, value);
-  }
-}
-
-/// dart_eval wrapper for [ValueListenable]
-class $ValueListenable implements $Instance {
-  static const $spec = BridgeTypeSpec(
-      'package:flutter/src/foundation/change_notifier.dart', 'ValueListenable');
-  static const $type = BridgeTypeRef($spec);
-
-  static const $methods = {
-    'value': BridgeMethodDef(BridgeFunctionDef(
-        returns: BridgeTypeAnnotation(BridgeTypeRef.ref('T')))),
-  };
-
-  static const $declaration = BridgeClassDef(
-      BridgeClassType($type,
-          isAbstract: true,
-          generics: {'T': BridgeGenericParam()},
-          $extends: $Listenable.$type),
-      constructors: {},
-      methods: $methods,
-      wrap: true);
-
-  late final $Instance _superclass = $Listenable.wrap($value);
-
-  $ValueListenable.wrap(this.$value);
-
-  @override
-  final ValueListenable $value;
-
-  @override
-  ValueListenable get $reified => $value;
-
-  @override
-  $Value? $getProperty(Runtime runtime, String identifier) {
-    switch (identifier) {
-      case 'value':
-        return runtime.wrap($value.value);
-    }
-    return _superclass.$getProperty(runtime, identifier);
-  }
-
-  @override
-  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
-
-  @override
-  void $setProperty(Runtime runtime, String identifier, $Value value) {
-    return _superclass.$setProperty(runtime, identifier, value);
-  }
-}
-
-/// dart_eval wrapper for [ChangeNotifier]
-class $ChangeNotifier implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec(
-      'package:flutter/src/foundation/change_notifier.dart', 'ChangeNotifier'));
-
-  static const $methods = {
-    'dispose': BridgeMethodDef(BridgeFunctionDef(
-        returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)))),
-    'notifyListeners': BridgeMethodDef(BridgeFunctionDef(
-        returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)))),
-  };
-
-  late final $Instance _superclass = $Listenable.wrap($value);
-
-  $ChangeNotifier.wrap(this.$value);
-
-  static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
-    return $ChangeNotifier.wrap(ChangeNotifier());
-  }
-
-  @override
-  final ChangeNotifier $value;
-
-  @override
-  ChangeNotifier get $reified => $value;
-
-  @override
-  $Value? $getProperty(Runtime runtime, String identifier) {
-    switch (identifier) {
-      case 'dispose':
-        return $Function((runtime, target, args) {
-          (target!.$value as ChangeNotifier).dispose();
-          return null;
-        });
-      case 'notifyListeners':
-        return $Function((runtime, target, args) {
-          // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
-          (target!.$value as ChangeNotifier).notifyListeners();
-          return null;
-        });
-    }
-    return _superclass.$getProperty(runtime, identifier);
-  }
-
-  @override
-  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
-
-  @override
-  void $setProperty(Runtime runtime, String identifier, $Value value) {
-    return _superclass.$setProperty(runtime, identifier, value);
-  }
-}
-
-class $ValueNotifier implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec(
-      'package:flutter/src/foundation/change_notifier.dart', 'ValueNotifier'));
-
-  static const $methods = {
-    'value': BridgeMethodDef(BridgeFunctionDef(
-        returns: BridgeTypeAnnotation(BridgeTypeRef.ref('T')))),
-  };
-
-  static const $declaration = BridgeClassDef(
-      BridgeClassType($type,
-          isAbstract: false,
-          generics: {'T': BridgeGenericParam()},
-          $extends: $ChangeNotifier.$type),
-      constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(
-            returns: BridgeTypeAnnotation($type),
-            params: [
-              BridgeParameter(
-                  'value', BridgeTypeAnnotation(BridgeTypeRef.ref('T')), false)
-            ]))
-      },
-      methods: $methods,
-      wrap: true);
-
-  late final $Instance _superclass = $ChangeNotifier.wrap($value);
-
-  $ValueNotifier.wrap(this.$value);
-
-  @override
-  final ValueNotifier $value;
-
-  @override
-  ValueNotifier get $reified => $value;
-
-  @override
-  $Value? $getProperty(Runtime runtime, String identifier) {
-    switch (identifier) {
-      case 'value':
-        return runtime.wrap($value.value);
-    }
-    return _superclass.$getProperty(runtime, identifier);
-  }
-
-  @override
-  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
-
-  @override
-  void $setProperty(Runtime runtime, String identifier, $Value value) {
-    if (identifier == 'value') {
-      $value.value = value.$value;
-      return;
-    }
-    return _superclass.$setProperty(runtime, identifier, value);
-  }
-}
-
+// Host callbacks need stable guest wrappers when they cross the bridge twice.
 class $ChangeNotifier$bridge extends ChangeNotifier
     with $Bridge<ChangeNotifier> {
-  static const $declaration = BridgeClassDef(
+  static final $declaration = BridgeClassDef(
       BridgeClassType($ChangeNotifier.$type,
           isAbstract: false, $extends: $Listenable.$type),
       constructors: {
         '': BridgeConstructorDef(BridgeFunctionDef(
             returns: BridgeTypeAnnotation($ChangeNotifier.$type)))
       },
-      methods: $ChangeNotifier.$methods,
+      methods: $ChangeNotifier.$declaration.methods,
       bridge: true);
 
-  static $Value? $new(Runtime runtime, $Value? target, List<$Value?> args) {
+  static $Value? $new(Runtime runtime, Object? r, Object? s, Object? c) {
     // ignore: prefer_const_constructors
     return $ChangeNotifier$bridge();
   }
 
-  final _$listenerCache = <EvalCallable, void Function()>{};
-  final _$listenerNativeCache = <Function, $Function>{};
+  final _$listenerCache = <EvalCallable, VoidCallback>{};
+  final _$listenerNativeCache = <VoidCallback, $Function>{};
 
   @override
   $Value? $bridgeGet(String identifier) {
     switch (identifier) {
       case 'addListener':
-        return $Function((runtime, target, args) {
-          final listener = args[0] as EvalCallable;
-          void fn() => listener.call(runtime, null, []);
-          _$listenerCache[args[0] as EvalCallable] = fn;
-          super.addListener(fn);
+        return $Function((runtime, target, r, s, c) {
+          final listener = r as EvalCallable;
+          final callback = _$listenerCache.putIfAbsent(listener,
+              () => () => listener.call(runtime, null, null, null, 0));
+          super.addListener(callback);
           return null;
         });
       case 'dispose':
-        return $Function((runtime, target, args) {
+        return $Function((runtime, target, r, s, c) {
           super.dispose();
           return null;
         });
       case 'notifyListeners':
-        return $Function((runtime, target, args) {
+        return $Function((runtime, target, r, s, c) {
           super.notifyListeners();
           return null;
         });
       case 'removeListener':
-        return $Function((runtime, target, args) {
-          super.removeListener(_$listenerCache[args[0] as EvalCallable]!);
+        return $Function((runtime, target, r, s, c) {
+          final callback = _$listenerCache[r as EvalCallable];
+          if (callback != null) super.removeListener(callback);
           return null;
         });
     }
@@ -287,11 +65,12 @@ class $ChangeNotifier$bridge extends ChangeNotifier
   @override
   void addListener(VoidCallback listener) {
     $_invoke('addListener', [
-      _$listenerNativeCache[listener] ??
-          (_$listenerNativeCache[listener] = $Function((runtime, target, args) {
-            listener();
-            return null;
-          }))
+      _$listenerNativeCache.putIfAbsent(
+          listener,
+          () => $Function((runtime, target, r, s, c) {
+                listener();
+                return null;
+              }))
     ]);
   }
 
@@ -304,6 +83,7 @@ class $ChangeNotifier$bridge extends ChangeNotifier
 
   @override
   void removeListener(VoidCallback listener) {
-    $_invoke('removeListener', [_$listenerNativeCache[listener]!]);
+    final callback = _$listenerNativeCache[listener];
+    if (callback != null) $_invoke('removeListener', [callback]);
   }
 }

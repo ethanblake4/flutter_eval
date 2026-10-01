@@ -1,0 +1,24 @@
+library painting;
+
+export 'src/painting/alignment.dart';
+export 'src/painting/basic_types.dart';
+export 'src/painting/borders.dart';
+export 'src/painting/border_radius.dart';
+export 'src/painting/box_border.dart';
+export 'src/painting/box_decoration.dart';
+export 'src/painting/box_fit.dart';
+export 'src/painting/colors.dart';
+export 'src/painting/decoration.dart';
+export 'src/painting/edge_insets.dart';
+export 'src/painting/image_provider.dart';
+export 'src/painting/text_style.dart';
+export 'src/painting/text_painter.dart';
+export 'src/painting/box_shadow.dart';
+export 'src/painting/decoration_image.dart';
+export 'src/painting/gradient.dart';
+export 'src/painting/image_cache.dart';
+export 'src/painting/image_stream.dart';
+export 'src/painting/inline_span.dart';
+export 'src/painting/strut_style.dart';
+export 'src/painting/text_scaler.dart';
+export 'src/painting/text_span.dart';

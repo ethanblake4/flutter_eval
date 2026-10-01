@@ -367,8 +367,8 @@ void main() {
     String strval = '';
     final result = runtime
         .executeLib('package:example/main.dart', 'MyWidget.', arguments: {
-      'onClick': $Closure((runtime, target, args) {
-        strval = args[0]!.$value;
+      'onClick': $Closure((runtime, target, r, s, c) {
+        strval = (r as $Value).$value as String;
         return null;
       }),
     });
@@ -407,7 +407,7 @@ void main() {
     bool tapped = false;
     final result = runtime
         .executeLib('package:example/main.dart', 'MyWidget.', arguments: {
-      'onTap': $Function((runtime, target, args) {
+      'onTap': $Function((runtime, target, r, s, c) {
         tapped = true;
         return null;
       }),

@@ -1,33 +1,46 @@
-// ignore_for_file: invalid_use_of_protected_member
-
-import 'package:dart_eval/dart_eval_bridge.dart';
-import 'package:dart_eval/stdlib/core.dart';
-import 'package:flutter/material.dart';
-
+// GENERATED CODE - DO NOT MODIFY BY HAND.
+// Regenerate with dart run tool/generate_bindings.dart.
+// ignore_for_file: implementation_imports, deprecated_member_use
+// ignore_for_file: invalid_null_aware_operator, invalid_use_of_protected_member
+// ignore_for_file: invalid_use_of_visible_for_testing_member
+// ignore_for_file: non_const_argument_for_const_parameter, unnecessary_null_comparison
+// ignore_for_file: no_logic_in_create_state, sort_child_properties_last
+// ignore_for_file: must_call_super
 // ignore_for_file: unused_import, unnecessary_import
 // ignore_for_file: always_specify_types, avoid_redundant_argument_values
 // ignore_for_file: sort_constructors_first
 // ignore_for_file: no_leading_underscores_for_local_identifiers
+// ignore_for_file: prefer_is_empty
+// ignore_for_file: undefined_hidden_name
+// ignore_for_file: dead_code, unused_local_variable
+// ignore_for_file: unnecessary_type_check, unnecessary_non_null_assertion
+// ignore_for_file: unnecessary_cast
+// ignore_for_file: sdk_version_since
+// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: argument_type_not_assignable_to_error_handler
+// ignore_for_file: avoid_function_literals_in_foreach_calls
 
 import 'package:dart_eval/dart_eval.dart';
-import 'package:flutter_eval/src/painting/edge_insets.dart';
-import 'package:flutter_eval/src/sky_engine/ui/painting.dart';
-import 'package:flutter_eval/src/widgets/focus_manager.dart';
-import 'package:flutter_eval/src/widgets/widget_state.dart';
-import 'button_style_button.dart';
-import 'dart:math';
-import 'package:flutter/foundation.dart';
+import 'package:dart_eval/dart_eval_bridge.dart';
+
+import 'package:flutter/src/material/button_style_button.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:dart_eval/stdlib/core.dart'
+    hide $IconAlignment, $ButtonStyleButton;
+import 'package:dart_eval/stdlib/async.dart'
+    hide $IconAlignment, $ButtonStyleButton;
+import 'package:dart_eval/stdlib/typed_data.dart'
+    hide $IconAlignment, $ButtonStyleButton;
+import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
-import 'button_style.dart';
-import 'colors.dart';
-import 'elevated_button.dart';
-import 'ink_well.dart';
-import 'text_button.dart';
-import 'theme.dart';
-import 'theme_data.dart';
-import 'package:flutter_eval/painting.dart';
-import 'package:flutter_eval/widgets.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import '../widgets/widget_state.dart';
+import '../painting/edge_insets.dart';
+import '../widgets/framework_wrappers.dart';
+import './button_style.dart';
+import '../sky_engine/ui/painting.dart';
+import '../widgets/focus_manager.dart';
 
 /// dart_eval enum wrapper binding for [IconAlignment]
 class $IconAlignment implements $Instance {
@@ -39,11 +52,16 @@ class $IconAlignment implements $Instance {
       $IconAlignment._$values,
     );
 
-    runtime.registerBridgeFunc(
+    runtime.registerBridgeFuncRegisters(
       'package:flutter/src/material/button_style_button.dart',
       'IconAlignment.values*g',
       $IconAlignment.$values,
     );
+  }
+
+  /// Configure this enum for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeEnum($declaration);
   }
 
   /// Compile-time type specification of [$IconAlignment]
@@ -58,11 +76,30 @@ class $IconAlignment implements $Instance {
   /// Compile-time class declaration of [$IconAlignment]
   static const $declaration = BridgeEnumDef(
     $type,
+
     values: ['start', 'end'],
+
     methods: {},
     getters: {},
     setters: {},
-    fields: {},
+    fields: {
+      'values': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:core', 'List'), [
+            BridgeTypeAnnotation(
+              BridgeTypeRef(
+                BridgeTypeSpec(
+                  'package:flutter/src/material/button_style_button.dart',
+                  'IconAlignment',
+                ),
+                [],
+              ),
+            ),
+          ]),
+        ),
+        isStatic: true,
+      ),
+    },
   );
 
   static final _$values = {
@@ -71,9 +108,21 @@ class $IconAlignment implements $Instance {
   };
 
   /// Wrapper for the [IconAlignment.values] getter
-  static $Value? $values(Runtime runtime, $Value? target, List<$Value?> args) {
-    const value = IconAlignment.values;
-    return $List.view(value, (e) => $IconAlignment.wrap(e));
+  static $Value? $values(Runtime runtime, Object? r, Object? s, Object? c) {
+    final value = IconAlignment.values;
+    return $List.view(
+      value,
+      (e) => $IconAlignment.wrap(e),
+      runtime: runtime,
+      runtimeTypeId: runtime.internParameterizedType(CoreTypes.list, [
+        runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/material/button_style_button.dart',
+            'IconAlignment',
+          ),
+        ),
+      ]),
+    );
   }
 
   final $Instance _superclass;
@@ -105,23 +154,28 @@ class $IconAlignment implements $Instance {
 class $ButtonStyleButton implements $Instance {
   /// Configure this class for use in a [Runtime]
   static void configureForRuntime(Runtime runtime) {
-    runtime.registerBridgeFunc(
+    runtime.registerBridgeFuncRegisters(
       'package:flutter/src/material/button_style_button.dart',
       'ButtonStyleButton.allOrNull',
       $ButtonStyleButton.$allOrNull,
     );
 
-    runtime.registerBridgeFunc(
+    runtime.registerBridgeFuncRegisters(
       'package:flutter/src/material/button_style_button.dart',
       'ButtonStyleButton.defaultColor',
       $ButtonStyleButton.$defaultColor,
     );
 
-    runtime.registerBridgeFunc(
+    runtime.registerBridgeFuncRegisters(
       'package:flutter/src/material/button_style_button.dart',
       'ButtonStyleButton.scaledPadding',
       $ButtonStyleButton.$scaledPadding,
     );
+  }
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
   }
 
   /// Compile-time type specification of [$ButtonStyleButton]
@@ -138,6 +192,7 @@ class $ButtonStyleButton implements $Instance {
     BridgeClassType(
       $type,
       isAbstract: true,
+
       $extends: BridgeTypeRef(
         BridgeTypeSpec(
           'package:flutter/src/widgets/framework.dart',
@@ -145,6 +200,37 @@ class $ButtonStyleButton implements $Instance {
         ),
         [],
       ),
+
+      $implements: [
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'StatefulWidget',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'Widget',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'DiagnosticableTree',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'Diagnosticable',
+          ),
+          [],
+        ),
+      ],
     ),
     constructors: {
       '': BridgeConstructorDef(
@@ -165,6 +251,7 @@ class $ButtonStyleButton implements $Instance {
               ),
               true,
             ),
+
             BridgeParameter(
               'onPressed',
               BridgeTypeAnnotation(
@@ -181,6 +268,7 @@ class $ButtonStyleButton implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               'onLongPress',
               BridgeTypeAnnotation(
@@ -197,6 +285,7 @@ class $ButtonStyleButton implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               'onHover',
               BridgeTypeAnnotation(
@@ -208,7 +297,12 @@ class $ButtonStyleButton implements $Instance {
                     params: [
                       BridgeParameter(
                         'value',
-                        BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+                        BridgeTypeAnnotation(
+                          BridgeTypeRef(
+                            BridgeTypeSpec('dart:core', 'bool'),
+                            [],
+                          ),
+                        ),
                         false,
                       ),
                     ],
@@ -219,6 +313,7 @@ class $ButtonStyleButton implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               'onFocusChange',
               BridgeTypeAnnotation(
@@ -230,7 +325,12 @@ class $ButtonStyleButton implements $Instance {
                     params: [
                       BridgeParameter(
                         'value',
-                        BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+                        BridgeTypeAnnotation(
+                          BridgeTypeRef(
+                            BridgeTypeSpec('dart:core', 'bool'),
+                            [],
+                          ),
+                        ),
                         false,
                       ),
                     ],
@@ -241,6 +341,7 @@ class $ButtonStyleButton implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               'style',
               BridgeTypeAnnotation(
@@ -255,6 +356,7 @@ class $ButtonStyleButton implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               'focusNode',
               BridgeTypeAnnotation(
@@ -269,11 +371,15 @@ class $ButtonStyleButton implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               'autofocus',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+              ),
               false,
             ),
+
             BridgeParameter(
               'clipBehavior',
               BridgeTypeAnnotation(
@@ -282,6 +388,7 @@ class $ButtonStyleButton implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               'statesController',
               BridgeTypeAnnotation(
@@ -296,22 +403,40 @@ class $ButtonStyleButton implements $Instance {
               ),
               true,
             ),
+
             BridgeParameter(
               'isSemanticButton',
               BridgeTypeAnnotation(
-                BridgeTypeRef(CoreTypes.bool, []),
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
                 nullable: true,
               ),
               true,
             ),
+
+            BridgeParameter(
+              'iconAlignment',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/material/button_style_button.dart',
+                    'IconAlignment',
+                  ),
+                  [],
+                ),
+                nullable: true,
+              ),
+              true,
+            ),
+
             BridgeParameter(
               'tooltip',
               BridgeTypeAnnotation(
-                BridgeTypeRef(CoreTypes.string, []),
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
                 nullable: true,
               ),
               true,
             ),
+
             BridgeParameter(
               'child',
               BridgeTypeAnnotation(
@@ -332,27 +457,46 @@ class $ButtonStyleButton implements $Instance {
         isFactory: false,
       ),
     },
+
     methods: {
-      'defaultStyleOf': BridgeMethodDef(
+      'createState': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
             BridgeTypeRef(
               BridgeTypeSpec(
-                'package:flutter/src/material/button_style.dart',
-                'ButtonStyle',
+                'package:flutter/src/widgets/framework.dart',
+                'State',
               ),
-              [],
+              [
+                BridgeTypeAnnotation(
+                  BridgeTypeRef(
+                    BridgeTypeSpec(
+                      'package:flutter/src/material/button_style_button.dart',
+                      'ButtonStyleButton',
+                    ),
+                    [],
+                  ),
+                ),
+              ],
             ),
           ),
           namedParams: [],
+          params: [],
+        ),
+      ),
+
+      'debugFillProperties': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
+          namedParams: [],
           params: [
             BridgeParameter(
-              'context',
+              'properties',
               BridgeTypeAnnotation(
                 BridgeTypeRef(
                   BridgeTypeSpec(
-                    'package:flutter/src/widgets/framework.dart',
-                    'BuildContext',
+                    'package:flutter/src/foundation/diagnostics.dart',
+                    'DiagnosticPropertiesBuilder',
                   ),
                   [],
                 ),
@@ -362,38 +506,10 @@ class $ButtonStyleButton implements $Instance {
           ],
         ),
       ),
-      'themeStyleOf': BridgeMethodDef(
-        BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(
-            BridgeTypeRef(
-              BridgeTypeSpec(
-                'package:flutter/src/material/button_style.dart',
-                'ButtonStyle',
-              ),
-              [],
-            ),
-            nullable: true,
-          ),
-          namedParams: [],
-          params: [
-            BridgeParameter(
-              'context',
-              BridgeTypeAnnotation(
-                BridgeTypeRef(
-                  BridgeTypeSpec(
-                    'package:flutter/src/widgets/framework.dart',
-                    'BuildContext',
-                  ),
-                  [],
-                ),
-              ),
-              false,
-            ),
-          ],
-        ),
-      ),
+
       'allOrNull': BridgeMethodDef(
         BridgeFunctionDef(
+          generics: {'T': BridgeGenericParam()},
           returns: BridgeTypeAnnotation(
             BridgeTypeRef(
               BridgeTypeSpec(
@@ -413,8 +529,10 @@ class $ButtonStyleButton implements $Instance {
             ),
           ],
         ),
+
         isStatic: true,
       ),
+
       'defaultColor': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
@@ -442,6 +560,7 @@ class $ButtonStyleButton implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               'disabled',
               BridgeTypeAnnotation(
@@ -452,8 +571,10 @@ class $ButtonStyleButton implements $Instance {
             ),
           ],
         ),
+
         isStatic: true,
       ),
+
       'scaledPadding': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
@@ -480,6 +601,7 @@ class $ButtonStyleButton implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               'geometry2x',
               BridgeTypeAnnotation(
@@ -493,6 +615,7 @@ class $ButtonStyleButton implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               'geometry3x',
               BridgeTypeAnnotation(
@@ -506,20 +629,26 @@ class $ButtonStyleButton implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               'fontSizeMultiplier',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double, [])),
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
+              ),
               false,
             ),
           ],
         ),
+
         isStatic: true,
       ),
     },
     getters: {
       'enabled': BridgeMethodDef(
         BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+          ),
           namedParams: [],
           params: [],
         ),
@@ -540,6 +669,7 @@ class $ButtonStyleButton implements $Instance {
         ),
         isStatic: false,
       ),
+
       'onLongPress': BridgeFieldDef(
         BridgeTypeAnnotation(
           BridgeTypeRef.genericFunction(
@@ -553,6 +683,7 @@ class $ButtonStyleButton implements $Instance {
         ),
         isStatic: false,
       ),
+
       'onHover': BridgeFieldDef(
         BridgeTypeAnnotation(
           BridgeTypeRef.genericFunction(
@@ -561,7 +692,9 @@ class $ButtonStyleButton implements $Instance {
               params: [
                 BridgeParameter(
                   'value',
-                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+                  BridgeTypeAnnotation(
+                    BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+                  ),
                   false,
                 ),
               ],
@@ -572,6 +705,7 @@ class $ButtonStyleButton implements $Instance {
         ),
         isStatic: false,
       ),
+
       'onFocusChange': BridgeFieldDef(
         BridgeTypeAnnotation(
           BridgeTypeRef.genericFunction(
@@ -580,7 +714,9 @@ class $ButtonStyleButton implements $Instance {
               params: [
                 BridgeParameter(
                   'value',
-                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+                  BridgeTypeAnnotation(
+                    BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+                  ),
                   false,
                 ),
               ],
@@ -591,6 +727,7 @@ class $ButtonStyleButton implements $Instance {
         ),
         isStatic: false,
       ),
+
       'style': BridgeFieldDef(
         BridgeTypeAnnotation(
           BridgeTypeRef(
@@ -604,6 +741,7 @@ class $ButtonStyleButton implements $Instance {
         ),
         isStatic: false,
       ),
+
       'clipBehavior': BridgeFieldDef(
         BridgeTypeAnnotation(
           BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Clip'), []),
@@ -611,6 +749,7 @@ class $ButtonStyleButton implements $Instance {
         ),
         isStatic: false,
       ),
+
       'focusNode': BridgeFieldDef(
         BridgeTypeAnnotation(
           BridgeTypeRef(
@@ -624,10 +763,14 @@ class $ButtonStyleButton implements $Instance {
         ),
         isStatic: false,
       ),
+
       'autofocus': BridgeFieldDef(
-        BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+        ),
         isStatic: false,
       ),
+
       'statesController': BridgeFieldDef(
         BridgeTypeAnnotation(
           BridgeTypeRef(
@@ -641,17 +784,37 @@ class $ButtonStyleButton implements $Instance {
         ),
         isStatic: false,
       ),
+
       'isSemanticButton': BridgeFieldDef(
-        BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, []), nullable: true),
-        isStatic: false,
-      ),
-      'tooltip': BridgeFieldDef(
         BridgeTypeAnnotation(
-          BridgeTypeRef(CoreTypes.string, []),
+          BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
           nullable: true,
         ),
         isStatic: false,
       ),
+
+      'iconAlignment': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(
+            BridgeTypeSpec(
+              'package:flutter/src/material/button_style_button.dart',
+              'IconAlignment',
+            ),
+            [],
+          ),
+          nullable: true,
+        ),
+        isStatic: false,
+      ),
+
+      'tooltip': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
+          nullable: true,
+        ),
+        isStatic: false,
+      ),
+
       'child': BridgeFieldDef(
         BridgeTypeAnnotation(
           BridgeTypeRef(
@@ -671,24 +834,21 @@ class $ButtonStyleButton implements $Instance {
   );
 
   /// Wrapper for the [ButtonStyleButton.allOrNull] method
-  static $Value? $allOrNull(
-    Runtime runtime,
-    $Value? target,
-    List<$Value?> args,
-  ) {
-    final value = ButtonStyleButton.allOrNull(args[0]!.$value);
+  static $Value? $allOrNull(Runtime runtime, Object? r, Object? s, Object? c) {
+    final value = ButtonStyleButton.allOrNull((r as $Value?)!.$value);
     return value == null ? const $null() : $WidgetStateProperty.wrap(value);
   }
 
   /// Wrapper for the [ButtonStyleButton.defaultColor] method
   static $Value? $defaultColor(
     Runtime runtime,
-    $Value? target,
-    List<$Value?> args,
+    Object? r,
+    Object? s,
+    Object? c,
   ) {
     final value = ButtonStyleButton.defaultColor(
-      args[0]!.$value,
-      args[1]!.$value,
+      (r as $Value?)!.$value,
+      (s as $Value?)!.$value,
     );
     return value == null ? const $null() : $WidgetStateProperty.wrap(value);
   }
@@ -696,14 +856,18 @@ class $ButtonStyleButton implements $Instance {
   /// Wrapper for the [ButtonStyleButton.scaledPadding] method
   static $Value? $scaledPadding(
     Runtime runtime,
-    $Value? target,
-    List<$Value?> args,
+    Object? r,
+    Object? s,
+    Object? c,
   ) {
+    final _arg2 = (c as List<Object?>)[0] as $Value?;
+    final _arg3 = (c as List<Object?>)[1] as $Value?;
+
     final value = ButtonStyleButton.scaledPadding(
-      args[0]!.$value,
-      args[1]!.$value,
-      args[2]!.$value,
-      args[3]!.$value,
+      (r as $Value?)!.$value,
+      (s as $Value?)!.$value,
+      _arg2!.$value,
+      (_arg3 as $double).$value,
     );
     return $EdgeInsetsGeometry.wrap(value);
   }
@@ -717,7 +881,8 @@ class $ButtonStyleButton implements $Instance {
   ButtonStyleButton get $reified => $value;
 
   /// Wrap a [ButtonStyleButton] in a [$ButtonStyleButton]
-  $ButtonStyleButton.wrap(this.$value) : _superclass = $Widget.wrap($value);
+  $ButtonStyleButton.wrap(this.$value)
+    : _superclass = $StatefulWidget.wrap($value);
 
   @override
   int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
@@ -729,108 +894,107 @@ class $ButtonStyleButton implements $Instance {
         final _onPressed = $value.onPressed;
         return _onPressed == null
             ? const $null()
-            : $Function((runtime, target, args) {
+            : $Function((runtime, target, r, s, c) {
                 _onPressed();
                 return const $null();
               });
-
       case 'onLongPress':
         final _onLongPress = $value.onLongPress;
         return _onLongPress == null
             ? const $null()
-            : $Function((runtime, target, args) {
+            : $Function((runtime, target, r, s, c) {
                 _onLongPress();
                 return const $null();
               });
-
       case 'onHover':
         final _onHover = $value.onHover;
         return _onHover == null
             ? const $null()
-            : $Function((runtime, target, args) {
-                _onHover(args[0]!.$value);
+            : $Function((runtime, target, r, s, c) {
+                _onHover((r as $Value?)!.$value);
                 return const $null();
               });
-
       case 'onFocusChange':
         final _onFocusChange = $value.onFocusChange;
         return _onFocusChange == null
             ? const $null()
-            : $Function((runtime, target, args) {
-                _onFocusChange(args[0]!.$value);
+            : $Function((runtime, target, r, s, c) {
+                _onFocusChange((r as $Value?)!.$value);
                 return const $null();
               });
-
       case 'style':
         final _style = $value.style;
         return _style == null ? const $null() : $ButtonStyle.wrap(_style);
-
       case 'clipBehavior':
         final _clipBehavior = $value.clipBehavior;
         return _clipBehavior == null
             ? const $null()
             : $Clip.wrap(_clipBehavior);
-
       case 'focusNode':
         final _focusNode = $value.focusNode;
         return _focusNode == null ? const $null() : $FocusNode.wrap(_focusNode);
-
       case 'autofocus':
         final _autofocus = $value.autofocus;
         return $bool(_autofocus);
-
       case 'statesController':
         final _statesController = $value.statesController;
         return _statesController == null
             ? const $null()
             : $WidgetStatesController.wrap(_statesController);
-
       case 'isSemanticButton':
         final _isSemanticButton = $value.isSemanticButton;
         return _isSemanticButton == null
             ? const $null()
             : $bool(_isSemanticButton);
-
+      case 'iconAlignment':
+        final _iconAlignment = $value.iconAlignment;
+        return _iconAlignment == null
+            ? const $null()
+            : $IconAlignment.wrap(_iconAlignment);
       case 'tooltip':
         final _tooltip = $value.tooltip;
         return _tooltip == null ? const $null() : $String(_tooltip);
-
       case 'child':
         final _child = $value.child;
         return _child == null ? const $null() : $Widget.wrap(_child);
-
       case 'enabled':
         final _enabled = $value.enabled;
         return $bool(_enabled);
-      case 'defaultStyleOf':
-        return __defaultStyleOf;
+      case 'createState':
+        return $Closure(__createState.func, this);
 
-      case 'themeStyleOf':
-        return __themeStyleOf;
+      case 'debugFillProperties':
+        return $Closure(__debugFillProperties.func, this);
     }
     return _superclass.$getProperty(runtime, identifier);
   }
 
-  static const $Function __defaultStyleOf = $Function(_defaultStyleOf);
-  static $Value? _defaultStyleOf(
+  static const $Function __createState = $Function(_createState);
+  static $Value? _createState(
     Runtime runtime,
     $Value? target,
-    List<$Value?> args,
+    Object? r,
+    Object? s,
+    Object? c,
   ) {
     final self = target! as $ButtonStyleButton;
-    final result = self.$value.defaultStyleOf(args[0]!.$value);
-    return $ButtonStyle.wrap(result);
+    final result = self.$value.createState();
+    return $State.wrap(result);
   }
 
-  static const $Function __themeStyleOf = $Function(_themeStyleOf);
-  static $Value? _themeStyleOf(
+  static const $Function __debugFillProperties = $Function(
+    _debugFillProperties,
+  );
+  static $Value? _debugFillProperties(
     Runtime runtime,
     $Value? target,
-    List<$Value?> args,
+    Object? r,
+    Object? s,
+    Object? c,
   ) {
     final self = target! as $ButtonStyleButton;
-    final result = self.$value.themeStyleOf(args[0]!.$value);
-    return result == null ? const $null() : $ButtonStyle.wrap(result);
+    self.$value.debugFillProperties((r as $Value?)!.$value);
+    return null;
   }
 
   @override

@@ -13,8 +13,7 @@ class AssetPermission implements Permission {
 
   /// Create a new filesystem permission that matches a specific file.
   factory AssetPermission.asset(String asset) {
-    final escaped = asset.replaceAll(r'\', r'\\').replaceAll(r'/', r'\/');
-    return AssetPermission(RegExp('^$escaped\$'));
+    return AssetPermission(RegExp('^${RegExp.escape(asset)}\$'));
   }
 
   @override
@@ -31,13 +30,13 @@ class AssetPermission implements Permission {
   @override
   bool operator ==(Object other) {
     if (other is AssetPermission) {
-      return other.matchPattern == matchPattern && other.domains == domains;
+      return other.matchPattern == matchPattern;
     }
     return false;
   }
 
   @override
-  int get hashCode => matchPattern.hashCode ^ domains.hashCode;
+  int get hashCode => matchPattern.hashCode;
 }
 
 /// A permission that allows access to a Flutter method channel.
@@ -62,11 +61,11 @@ class MethodChannelPermission implements Permission {
   @override
   bool operator ==(Object other) {
     if (other is MethodChannelPermission) {
-      return other.channel == channel && other.domains == domains;
+      return other.channel == channel;
     }
     return false;
   }
 
   @override
-  int get hashCode => channel.hashCode ^ domains.hashCode;
+  int get hashCode => channel.hashCode;
 }

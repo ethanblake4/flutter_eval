@@ -1,0 +1,2379 @@
+# Flutter bindings. Regenerate with dart run tool/generate_bindings.dart.
+version: 1
+defaults:
+  mode: wrap
+  implicitSupers: false
+libraries:
+- uri: package:flutter/src/animation/animation.dart
+  outDir: lib/src
+  imports: &flutterImports
+  - package:flutter/material.dart
+  - package:flutter/services.dart
+  - package:dart_eval/stdlib/core.dart
+  - package:dart_eval/stdlib/async.dart
+  - package:dart_eval/stdlib/typed_data.dart
+  - package:flutter/gestures.dart
+  - package:flutter/rendering.dart
+  classes:
+    AnimationStatus:
+      file: animation/animation.dart
+    Animation:
+      file: animation/animation.dart
+- uri: package:flutter/src/animation/animation_controller.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    AnimationController:
+      file: animation/animation_controller.dart
+    AnimationBehavior:
+      file: supporting/flutter_animation_animation_controller.dart
+- uri: package:flutter/src/animation/curves.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ParametricCurve:
+      file: animation/curves.dart
+    Curve:
+      file: animation/curves.dart
+    SawTooth:
+      file: animation/curves.dart
+    Interval:
+      file: animation/curves.dart
+    Threshold:
+      file: animation/curves.dart
+    Cubic:
+      file: animation/curves.dart
+    ElasticInCurve:
+      file: animation/curves.dart
+    ElasticOutCurve:
+      file: animation/curves.dart
+    ElasticInOutCurve:
+      file: animation/curves.dart
+    Curves:
+      file: animation/curves.dart
+    ThreePointCubic:
+      file: supporting/flutter_animation_curves.dart
+      opaque: true
+- uri: package:flutter/src/cupertino/colors.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    CupertinoDynamicColor:
+      file: cupertino/colors.dart
+- uri: package:flutter/src/foundation/change_notifier.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Listenable:
+      file: foundation/notifiers.dart
+    ValueListenable:
+      file: foundation/notifiers.dart
+    ChangeNotifier:
+      file: foundation/notifiers.dart
+      methods:
+        notifyListeners:
+          include: true
+    ValueNotifier:
+      file: foundation/notifiers.dart
+- uri: package:flutter/src/foundation/diagnostics.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    DiagnosticLevel:
+      file: foundation/diagnostics.dart
+    DiagnosticsTreeStyle:
+      file: foundation/diagnostics.dart
+    TextTreeConfiguration:
+      file: foundation/diagnostics.dart
+    DiagnosticsNode:
+      file: foundation/diagnostics.dart
+    DiagnosticsProperty:
+      file: foundation/diagnostics.dart
+    DiagnosticPropertiesBuilder:
+      file: foundation/diagnostics.dart
+    DiagnosticsSerializationDelegate:
+      file: foundation/diagnostics.dart
+    Diagnosticable:
+      file: supporting/flutter_foundation_diagnostics.dart
+      opaque: true
+    DiagnosticableTree:
+      file: supporting/flutter_foundation_diagnostics.dart
+      opaque: true
+    DiagnosticableTreeMixin:
+      file: supporting/flutter_foundation_diagnostics.dart
+      opaque: true
+- uri: package:flutter/src/foundation/key.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Key:
+      file: foundation/key.dart
+    LocalKey:
+      file: foundation/key.dart
+    ValueKey:
+      file: foundation/key.dart
+    UniqueKey:
+      file: foundation/key.dart
+- uri: package:flutter/src/gestures/drag_details.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    DragDownDetails:
+      file: gestures/drag_details.dart
+    DragStartDetails:
+      file: gestures/drag_details.dart
+    DragUpdateDetails:
+      file: gestures/drag_details.dart
+    DragEndDetails:
+      file: gestures/drag_details.dart
+- uri: package:flutter/src/gestures/long_press.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    LongPressDownDetails:
+      file: gestures/long_press.dart
+    LongPressStartDetails:
+      file: gestures/long_press.dart
+    LongPressMoveUpdateDetails:
+      file: gestures/long_press.dart
+    LongPressEndDetails:
+      file: gestures/long_press.dart
+- uri: package:flutter/src/gestures/tap.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    TapDownDetails:
+      file: gestures/tap.dart
+    TapUpDetails:
+      file: gestures/tap.dart
+    TapMoveDetails:
+      file: supporting/flutter_gestures_tap.dart
+      opaque: true
+- uri: package:flutter/src/gestures/velocity_tracker.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Velocity:
+      file: gestures/velocity_tracker.dart
+- uri: package:flutter/src/material/app.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    MaterialApp:
+      file: material/app.dart
+    ThemeMode:
+      file: supporting/flutter_material_app.dart
+- uri: package:flutter/src/material/app_bar.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    AppBar:
+      file: material/app_bar.dart
+- uri: package:flutter/src/material/button_style.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ButtonStyle:
+      file: material/button_style.dart
+- uri: package:flutter/src/material/button_style_button.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    IconAlignment:
+      file: material/button_style_button.dart
+    ButtonStyleButton:
+      file: material/button_style_button.dart
+- uri: package:flutter/src/material/card.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Card:
+      file: material/card.dart
+- uri: package:flutter/src/material/colors.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    MaterialColor:
+      file: material/colors.dart
+    MaterialAccentColor:
+      file: material/colors.dart
+    Colors:
+      file: material/colors.dart
+- uri: package:flutter/src/material/drawer.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Drawer:
+      file: material/drawer.dart
+- uri: package:flutter/src/material/elevated_button.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ElevatedButton:
+      file: material/elevated_button.dart
+- uri: package:flutter/src/material/floating_action_button.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    FloatingActionButton:
+      file: material/floating_action_button.dart
+      constructors:
+        new:
+          params:
+            heroTag:
+              default: 'const FloatingActionButton(onPressed: null).heroTag'
+        small:
+          params:
+            heroTag:
+              default: 'const FloatingActionButton(onPressed: null).heroTag'
+        large:
+          params:
+            heroTag:
+              default: 'const FloatingActionButton(onPressed: null).heroTag'
+        extended:
+          params:
+            heroTag:
+              default: 'const FloatingActionButton(onPressed: null).heroTag'
+- uri: package:flutter/src/material/icon_button.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    IconButton:
+      file: material/icon_button.dart
+- uri: package:flutter/src/material/ink_well.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    InkWell:
+      file: material/ink_well.dart
+    InkResponse:
+      file: supporting/flutter_material_ink_well.dart
+      opaque: true
+    InteractiveInkFeatureFactory:
+      file: supporting/flutter_material_ink_well.dart
+      opaque: true
+- uri: package:flutter/src/material/list_tile.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ListTile:
+      file: material/list_tile.dart
+    ListTileControlAffinity:
+      file: supporting/flutter_material_list_tile.dart
+    ListTileStyle:
+      file: supporting/flutter_material_list_tile.dart
+    ListTileTitleAlignment:
+      file: supporting/flutter_material_list_tile.dart
+- uri: package:flutter/src/material/page.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    MaterialPageRoute:
+      file: material/page.dart
+    MaterialRouteTransitionMixin:
+      file: supporting/flutter_material_page.dart
+      opaque: true
+- uri: package:flutter/src/material/scaffold.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Scaffold:
+      file: material/scaffold.dart
+      constructors:
+        new:
+          params:
+            bottomSheetScrimBuilder:
+              default: const Scaffold().bottomSheetScrimBuilder
+    ScaffoldMessenger:
+      file: material/scaffold.dart
+    ScaffoldMessengerState:
+      file: material/scaffold.dart
+    ScaffoldFeatureController:
+      file: supporting/flutter_material_scaffold.dart
+      opaque: true
+    ScaffoldGeometry:
+      file: supporting/flutter_material_scaffold.dart
+      opaque: true
+    ScaffoldState:
+      file: supporting/flutter_material_scaffold.dart
+      opaque: true
+- uri: package:flutter/src/material/snack_bar.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    SnackBar:
+      file: material/snack_bar.dart
+      constructors:
+        new:
+          params:
+            duration:
+              default: 'const SnackBar(content: SizedBox()).duration'
+    SnackBarAction:
+      file: supporting/flutter_material_snack_bar.dart
+      opaque: true
+    SnackBarClosedReason:
+      file: supporting/flutter_material_snack_bar.dart
+- uri: package:flutter/src/material/switch_list_tile.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    SwitchListTile:
+      file: material/switch_list_tile.dart
+- uri: package:flutter/src/material/text_button.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    TextButton:
+      file: material/text_button.dart
+- uri: package:flutter/src/material/text_field.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    TextField:
+      file: material/text_field.dart
+      constructors:
+        new:
+          params:
+            contextMenuBuilder:
+              default: const TextField().contextMenuBuilder
+- uri: package:flutter/src/material/text_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    TextTheme:
+      file: material/text_theme.dart
+- uri: package:flutter/src/material/theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Theme:
+      file: material/theme.dart
+- uri: package:flutter/src/material/theme_data.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    MaterialTapTargetSize:
+      file: material/theme_data.dart
+    ThemeData:
+      file: material/theme_data.dart
+    VisualDensity:
+      file: material/theme_data.dart
+    Adaptation:
+      file: supporting/flutter_material_theme_data.dart
+      opaque: true
+    ThemeExtension:
+      file: supporting/flutter_material_theme_data.dart
+      opaque: true
+- uri: package:flutter/src/painting/alignment.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    AlignmentGeometry:
+      file: painting/alignment.dart
+    Alignment:
+      file: painting/alignment.dart
+    AlignmentDirectional:
+      file: supporting/flutter_painting_alignment.dart
+      opaque: true
+    TextAlignVertical:
+      file: supporting/flutter_painting_alignment.dart
+      opaque: true
+- uri: package:flutter/src/painting/basic_types.dart
+  outDir: lib/src
+  imports: &id002
+  - package:flutter/material.dart
+  - package:flutter/services.dart
+  - package:dart_eval/stdlib/core.dart
+  - package:dart_eval/stdlib/async.dart
+  - package:dart_eval/stdlib/typed_data.dart
+  - package:flutter/gestures.dart
+  - package:flutter/rendering.dart
+  - package:dart_eval/stdlib/core.dart
+  - package:dart_eval/stdlib/async.dart
+  - package:dart_eval/stdlib/typed_data.dart
+  - package:flutter/gestures.dart
+  - package:flutter/rendering.dart
+  classes:
+    VerticalDirection:
+      file: painting/basic_types.dart
+    Axis:
+      file: painting/basic_types.dart
+    RenderComparison:
+      file: supporting/flutter_painting_basic_types.dart
+- uri: package:flutter/src/painting/border_radius.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    BorderRadiusGeometry:
+      file: painting/border_radius.dart
+    BorderRadius:
+      file: painting/border_radius.dart
+- uri: package:flutter/src/painting/borders.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    BorderStyle:
+      file: painting/borders.dart
+    ShapeBorder:
+      file: painting/borders.dart
+    BorderSide:
+      file: painting/borders.dart
+      constructors:
+        new:
+          params:
+            strokeAlign:
+              default: BorderSide.strokeAlignInside
+    OutlinedBorder:
+      file: supporting/flutter_painting_borders.dart
+      opaque: true
+- uri: package:flutter/src/painting/box_border.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    BoxBorder:
+      file: painting/box_border.dart
+    Border:
+      file: painting/box_border.dart
+    BoxShape:
+      file: supporting/flutter_painting_box_border.dart
+- uri: package:flutter/src/painting/box_decoration.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    BoxDecoration:
+      file: painting/box_decoration.dart
+- uri: package:flutter/src/painting/box_fit.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    BoxFit:
+      file: painting/box_fit.dart
+- uri: package:flutter/src/painting/colors.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ColorSwatch:
+      file: painting/colors.dart
+- uri: package:flutter/src/painting/decoration.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Decoration:
+      file: painting/decoration.dart
+    BoxPainter:
+      file: supporting/flutter_painting_decoration.dart
+      opaque: true
+- uri: package:flutter/src/painting/edge_insets.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    EdgeInsetsGeometry:
+      file: painting/edge_insets.dart
+    EdgeInsets:
+      file: painting/edge_insets.dart
+- uri: package:flutter/src/painting/image_provider.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ImageProvider:
+      file: painting/image_provider.dart
+      excludeMembers:
+      - loadBuffer
+      - loadImage
+    NetworkImage:
+      file: painting/image_provider.dart
+      constructors:
+        "":
+          params:
+            scale:
+              default: "1.0"
+            webHtmlElementStrategy:
+              default: WebHtmlElementStrategy.never
+          permissions:
+          - name: network
+            paramData: url
+      excludeMembers:
+      - loadBuffer
+      - loadImage
+    MemoryImage:
+      file: painting/image_provider.dart
+      excludeMembers:
+      - loadBuffer
+      - loadImage
+    ResizeImage:
+      file: painting/image_provider.dart
+      excludeMembers:
+      - loadBuffer
+      - loadImage
+    ImageConfiguration:
+      file: supporting/flutter_painting_image_provider.dart
+      opaque: true
+    ResizeImageKey:
+      file: supporting/flutter_painting_image_provider.dart
+      opaque: true
+    ResizeImagePolicy:
+      file: supporting/flutter_painting_image_provider.dart
+    WebHtmlElementStrategy:
+      file: supporting/flutter_painting_image_provider.dart
+- uri: package:flutter/src/painting/text_style.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    TextStyle:
+      file: painting/text_style.dart
+- uri: package:flutter/src/rendering/box.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    BoxConstraints:
+      file: rendering/box.dart
+    BoxParentData:
+      file: supporting/flutter_rendering_box.dart
+      opaque: true
+    ContainerBoxParentData:
+      file: supporting/flutter_rendering_box.dart
+      opaque: true
+    RenderBox:
+      file: supporting/flutter_rendering_box.dart
+      opaque: true
+    RenderBoxContainerDefaultsMixin:
+      file: supporting/flutter_rendering_box.dart
+      opaque: true
+- uri: package:flutter/src/rendering/flex.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    MainAxisAlignment:
+      file: rendering/flex.dart
+    CrossAxisAlignment:
+      file: rendering/flex.dart
+    MainAxisSize:
+      file: rendering/flex.dart
+    FlexFit:
+      file: supporting/flutter_rendering_flex.dart
+    FlexParentData:
+      file: supporting/flutter_rendering_flex.dart
+      opaque: true
+- uri: package:flutter/src/rendering/object.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Constraints:
+      file: rendering/object.dart
+    ContainerParentDataMixin:
+      file: supporting/flutter_rendering_object.dart
+      opaque: true
+    ContainerRenderObjectMixin:
+      file: supporting/flutter_rendering_object.dart
+      opaque: true
+    ParentData:
+      file: supporting/flutter_rendering_object.dart
+      opaque: true
+    RenderObject:
+      file: supporting/flutter_rendering_object.dart
+      opaque: true
+    RenderObjectWithChildMixin:
+      file: supporting/flutter_rendering_object.dart
+      opaque: true
+- uri: package:flutter/src/rendering/proxy_box.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    HitTestBehavior:
+      file: rendering/proxy_box.dart
+    CustomClipper:
+      file: supporting/flutter_rendering_proxy_box.dart
+      opaque: true
+    RenderAspectRatio:
+      file: supporting/flutter_rendering_proxy_box.dart
+      opaque: true
+    RenderClipRRect:
+      file: supporting/flutter_rendering_proxy_box.dart
+      opaque: true
+    RenderConstrainedBox:
+      file: supporting/flutter_rendering_proxy_box.dart
+      opaque: true
+    RenderFittedBox:
+      file: supporting/flutter_rendering_proxy_box.dart
+      opaque: true
+    RenderProxyBox:
+      file: supporting/flutter_rendering_proxy_box.dart
+      opaque: true
+    RenderProxyBoxMixin:
+      file: supporting/flutter_rendering_proxy_box.dart
+      opaque: true
+- uri: package:flutter/src/rendering/stack.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    StackFit:
+      file: rendering/stack.dart
+    RelativeRect:
+      file: supporting/flutter_rendering_stack.dart
+      opaque: true
+    RenderStack:
+      file: supporting/flutter_rendering_stack.dart
+      opaque: true
+    StackParentData:
+      file: supporting/flutter_rendering_stack.dart
+      opaque: true
+- uri: package:flutter/src/scheduler/ticker.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    TickerFuture:
+      file: scheduler/ticker.dart
+    Ticker:
+      file: scheduler/ticker.dart
+    TickerProvider:
+      file: scheduler/ticker.dart
+- uri: package:flutter/src/services/binary_messenger.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    BinaryMessenger:
+      handMaintained: true
+      file: package:flutter_eval/src/services/binary_messenger.dart
+- uri: package:flutter/src/services/hardware_keyboard.dart
+  outDir: lib/src
+  imports:
+  - package:flutter/material.dart
+  - package:flutter/services.dart
+  - package:dart_eval/stdlib/core.dart
+  - package:dart_eval/stdlib/async.dart
+  - package:dart_eval/stdlib/typed_data.dart
+  - package:flutter/gestures.dart
+  - package:flutter/rendering.dart
+  - dart:ui
+  classes:
+    KeyEvent:
+      file: services/hardware_keyboard.dart
+    KeyDownEvent:
+      file: services/hardware_keyboard.dart
+      constructors:
+        new:
+          params:
+            deviceType:
+              default: KeyEventDeviceType.keyboard
+    KeyUpEvent:
+      file: services/hardware_keyboard.dart
+      constructors:
+        new:
+          params:
+            deviceType:
+              default: KeyEventDeviceType.keyboard
+    KeyRepeatEvent:
+      file: services/hardware_keyboard.dart
+      constructors:
+        new:
+          params:
+            deviceType:
+              default: KeyEventDeviceType.keyboard
+- uri: package:flutter/src/services/keyboard_key.g.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    KeyboardKey:
+      file: services/keyboard_key.g.dart
+    LogicalKeyboardKey:
+      file: services/keyboard_key.g.dart
+    PhysicalKeyboardKey:
+      file: services/keyboard_key.g.dart
+- uri: package:flutter/src/services/message_codec.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    MethodCodec:
+      file: services/message_codec.dart
+    MethodCall:
+      file: services/method_call.dart
+- uri: package:flutter/src/services/platform_channel.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    MethodChannel:
+      handMaintained: true
+      file: package:flutter_eval/src/services/platform_channel.dart
+- uri: dart:ui
+  outDir: lib/src
+  imports:
+  - package:dart_eval/stdlib/core.dart
+  - package:dart_eval/stdlib/async.dart
+  - package:dart_eval/stdlib/typed_data.dart
+  classes:
+    Size:
+      file: sky_engine/ui/geometry.dart
+    Offset:
+      file: sky_engine/ui/geometry.dart
+    Radius:
+      file: sky_engine/ui/geometry.dart
+    Rect:
+      file: sky_engine/ui/geometry.dart
+    FilterQuality:
+      file: sky_engine/ui/image.dart
+    ColorSpace:
+      file: sky_engine/ui/painting.dart
+    Color:
+      file: sky_engine/ui/painting.dart
+    Clip:
+      file: sky_engine/ui/painting.dart
+    PointerDeviceKind:
+      file: sky_engine/ui/pointer.dart
+    FontStyle:
+      file: sky_engine/ui/text.dart
+    FontWeight:
+      file: sky_engine/ui/text.dart
+    TextDirection:
+      file: sky_engine/ui/text.dart
+    TextBaseline:
+      file: sky_engine/ui/text.dart
+    TextAlign:
+      file: sky_engine/ui/text.dart
+    TextDecoration:
+      file: sky_engine/ui/text.dart
+    TextAffinity:
+      file: sky_engine/ui/text.dart
+    Locale:
+      file: sky_engine/ui/text.dart
+    Brightness:
+      file: sky_engine/ui/text.dart
+    BlendMode:
+      file: sky_engine/ui/text.dart
+    PaintingStyle:
+      file: sky_engine/ui/text.dart
+    StrokeCap:
+      file: sky_engine/ui/text.dart
+    StrokeJoin:
+      file: sky_engine/ui/text.dart
+    KeyEventDeviceType:
+      file: sky_engine/ui/key.dart
+    BoxHeightStyle:
+      file: supporting/ui.dart
+    BoxWidthStyle:
+      file: supporting/ui.dart
+    Canvas:
+      file: supporting/ui.dart
+      opaque: true
+    FontFeature:
+      file: supporting/ui.dart
+      opaque: true
+    FontVariation:
+      file: supporting/ui.dart
+      opaque: true
+    ImageFilter:
+      file: supporting/ui.dart
+      opaque: true
+    OffsetBase:
+      file: supporting/ui.dart
+      opaque: true
+    Paint:
+      file: supporting/ui.dart
+      opaque: true
+    ParagraphStyle:
+      file: supporting/ui.dart
+      opaque: true
+    Path:
+      file: supporting/ui.dart
+      opaque: true
+    RRect:
+      file: supporting/ui.dart
+      opaque: true
+    RSuperellipse:
+      file: supporting/ui.dart
+      opaque: true
+    Shadow:
+      file: supporting/ui.dart
+      opaque: true
+    TextDecorationStyle:
+      file: supporting/ui.dart
+    TextHeightBehavior:
+      file: supporting/ui.dart
+      opaque: true
+    TextLeadingDistribution:
+      file: supporting/ui.dart
+    TextRange:
+      file: supporting/ui.dart
+      opaque: true
+    TextStyle:
+      file: supporting/ui.dart
+      wrapperName: UiTextStyle
+      opaque: true
+    ViewConstraints:
+      file: supporting/ui.dart
+      opaque: true
+    ViewPadding:
+      file: supporting/ui.dart
+      opaque: true
+- uri: package:flutter/src/widgets/app.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    WidgetsApp:
+      file: widgets/app.dart
+- uri: package:flutter/src/widgets/basic.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Align:
+      file: widgets/basic.dart
+    AspectRatio:
+      file: widgets/basic.dart
+    Baseline:
+      file: widgets/basic.dart
+    Builder:
+      file: widgets/basic.dart
+    Center:
+      file: widgets/basic.dart
+    Column:
+      file: widgets/basic.dart
+    ClipRRect:
+      file: widgets/basic.dart
+    ColoredBox:
+      file: widgets/basic.dart
+    Directionality:
+      file: widgets/basic.dart
+    Expanded:
+      file: widgets/basic.dart
+    FittedBox:
+      file: widgets/basic.dart
+    FractionallySizedBox:
+      file: widgets/basic.dart
+    Padding:
+      file: widgets/basic.dart
+    Positioned:
+      file: widgets/basic.dart
+    Row:
+      file: widgets/basic.dart
+    Stack:
+      file: widgets/basic.dart
+    SizedBox:
+      file: widgets/basic.dart
+    Flex:
+      file: supporting/flutter_widgets_basic.dart
+      opaque: true
+    Flexible:
+      file: supporting/flutter_widgets_basic.dart
+      opaque: true
+- uri: package:flutter/src/widgets/container.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Container:
+      file: widgets/container.dart
+- uri: package:flutter/src/widgets/editable_text.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    TextEditingController:
+      file: widgets/editable_text.dart
+    ContentInsertionConfiguration:
+      file: supporting/flutter_widgets_editable_text.dart
+      opaque: true
+    EditableText:
+      file: supporting/flutter_widgets_editable_text.dart
+      opaque: true
+    EditableTextState:
+      file: supporting/flutter_widgets_editable_text.dart
+      opaque: true
+    ToolbarOptions:
+      file: supporting/flutter_widgets_editable_text.dart
+      opaque: true
+- uri: package:flutter/src/widgets/focus_manager.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    KeyEventResult:
+      file: widgets/focus_manager.dart
+    FocusNode:
+      file: widgets/focus_manager.dart
+    FocusScopeNode:
+      file: widgets/focus_manager.dart
+    FocusHighlightMode:
+      file: widgets/focus_manager.dart
+    FocusAttachment:
+      file: supporting/flutter_widgets_focus_manager.dart
+      opaque: true
+    UnfocusDisposition:
+      file: supporting/flutter_widgets_focus_manager.dart
+- uri: package:flutter/src/widgets/framework.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    StatelessWidget:
+      file: widgets/framework_wrappers.dart
+      implementsSdk: true
+    StatefulWidget:
+      file: widgets/framework_wrappers.dart
+      implementsSdk: true
+    State:
+      file: widgets/framework_wrappers.dart
+    GlobalKey:
+      file: widgets/framework_wrappers.dart
+    Widget:
+      file: widgets/framework_wrappers.dart
+      implementsSdk: true
+    BuildContext:
+      file: widgets/framework_wrappers.dart
+      implementsSdk: true
+    BuildOwner:
+      file: supporting/flutter_widgets_framework.dart
+      opaque: true
+    ComponentElement:
+      file: supporting/flutter_widgets_framework.dart
+      opaque: true
+    Element:
+      file: supporting/flutter_widgets_framework.dart
+      opaque: true
+    InheritedElement:
+      file: supporting/flutter_widgets_framework.dart
+      opaque: true
+    InheritedWidget:
+      file: supporting/flutter_widgets_framework.dart
+      opaque: true
+    MultiChildRenderObjectWidget:
+      file: supporting/flutter_widgets_framework.dart
+      opaque: true
+    ParentDataWidget:
+      file: supporting/flutter_widgets_framework.dart
+      opaque: true
+    ProxyElement:
+      file: supporting/flutter_widgets_framework.dart
+      opaque: true
+    ProxyWidget:
+      file: supporting/flutter_widgets_framework.dart
+      opaque: true
+    RenderObjectWidget:
+      file: supporting/flutter_widgets_framework.dart
+      opaque: true
+    SingleChildRenderObjectWidget:
+      file: supporting/flutter_widgets_framework.dart
+      opaque: true
+    StatefulElement:
+      file: supporting/flutter_widgets_framework.dart
+      opaque: true
+    StatelessElement:
+      file: supporting/flutter_widgets_framework.dart
+      opaque: true
+- uri: package:flutter/src/widgets/gesture_detector.dart
+  outDir: lib/src
+  imports:
+  - package:flutter/material.dart
+  - package:flutter/services.dart
+  - package:dart_eval/stdlib/core.dart
+  - package:dart_eval/stdlib/async.dart
+  - package:dart_eval/stdlib/typed_data.dart
+  - package:flutter/gestures.dart
+  - package:flutter/rendering.dart
+  - package:flutter/src/gestures/tap.dart
+  classes:
+    GestureDetector:
+      file: widgets/gesture_detector.dart
+- uri: package:flutter/src/widgets/icon.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Icon:
+      file: widgets/icon.dart
+- uri: package:flutter/src/widgets/icon_data.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    IconData:
+      file: widgets/icon_data.dart
+- uri: package:flutter/src/widgets/image.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Image:
+      file: widgets/image.dart
+      constructors:
+        network:
+          permissions:
+          - name: network
+            paramData: src
+        asset:
+          permissions:
+          - name: asset
+            paramData: name
+        file:
+          permissions:
+          - name: filesystem:read
+            paramData: file.path
+- uri: package:flutter/src/widgets/navigator.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Navigator:
+      file: widgets/navigator.dart
+    NavigatorState:
+      file: widgets/navigator.dart
+    RouteSettings:
+      file: widgets/overlay.dart
+    Route:
+      file: widgets/routes.dart
+    NavigationNotification:
+      file: supporting/flutter_widgets_navigator.dart
+      opaque: true
+    NavigatorObserver:
+      file: supporting/flutter_widgets_navigator.dart
+      opaque: true
+    Page:
+      file: supporting/flutter_widgets_navigator.dart
+      opaque: true
+    RoutePopDisposition:
+      file: supporting/flutter_widgets_navigator.dart
+    TransitionDelegate:
+      file: supporting/flutter_widgets_navigator.dart
+      opaque: true
+- uri: package:flutter/src/widgets/overlay.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    OverlayEntry:
+      file: widgets/overlay.dart
+    Overlay:
+      file: supporting/flutter_widgets_overlay.dart
+      opaque: true
+    OverlayState:
+      file: supporting/flutter_widgets_overlay.dart
+      opaque: true
+- uri: package:flutter/src/widgets/routes.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    OverlayRoute:
+      file: widgets/routes.dart
+    TransitionRoute:
+      file: widgets/routes.dart
+    PopEntry:
+      file: widgets/routes.dart
+    LocalHistoryEntry:
+      file: supporting/flutter_widgets_routes.dart
+      opaque: true
+    LocalHistoryRoute:
+      file: supporting/flutter_widgets_routes.dart
+      opaque: true
+    ModalRoute:
+      file: supporting/flutter_widgets_routes.dart
+      opaque: true
+    PredictiveBackRoute:
+      file: supporting/flutter_widgets_routes.dart
+      opaque: true
+- uri: package:flutter/src/widgets/pages.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    PageRoute:
+      file: widgets/pages_wrappers.dart
+      mode: both
+      imports:
+      - dart:ui
+      - package:flutter/foundation.dart
+- uri: package:flutter/src/widgets/scroll_controller.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ScrollController:
+      file: widgets/scroll_controller.dart
+- uri: package:flutter/src/widgets/scroll_view.dart
+  outDir: lib/src
+  imports:
+  - package:flutter/material.dart
+  - package:flutter/services.dart
+  - package:dart_eval/stdlib/core.dart
+  - package:dart_eval/stdlib/async.dart
+  - package:dart_eval/stdlib/typed_data.dart
+  - package:flutter/gestures.dart
+  - package:flutter/rendering.dart
+  - package:flutter/src/rendering/sliver.dart
+  classes:
+    ListView:
+      file: widgets/scroll_view.dart
+    BoxScrollView:
+      file: supporting/flutter_widgets_scroll_view.dart
+      opaque: true
+    ScrollView:
+      file: supporting/flutter_widgets_scroll_view.dart
+      opaque: true
+    ScrollViewKeyboardDismissBehavior:
+      file: supporting/flutter_widgets_scroll_view.dart
+- uri: package:flutter/src/widgets/spacer.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Spacer:
+      file: widgets/spacer.dart
+- uri: package:flutter/src/widgets/text.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Text:
+      file: widgets/text.dart
+- uri: package:flutter/src/widgets/widget_state.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    WidgetState:
+      file: widgets/widget_state.dart
+    WidgetStateProperty:
+      file: widgets/widget_state.dart
+    WidgetStatesController:
+      file: widgets/widget_state.dart
+    WidgetStatesConstraint:
+      file: supporting/flutter_widgets_widget_state.dart
+      opaque: true
+- uri: package:flutter/src/material/icons.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Icons:
+      file: material/icons.dart
+      compactStaticConstants: true
+    PlatformAdaptiveIcons:
+      file: supporting/flutter_material_icons.dart
+      opaque: true
+- uri: package:flutter/src/painting/text_painter.dart
+  outDir: lib/src
+  imports: *id002
+  classes:
+    TextOverflow:
+      file: painting/basic_types.dart
+    TextWidthBasis:
+      file: supporting/flutter_painting_text_painter.dart
+- uri: dart:core
+  outDir: lib/src
+  classes:
+    Duration:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    DateTime:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    Iterator:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    Comparable:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    Sink:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    StackTrace:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    StringBuffer:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    Symbol:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    MapEntry:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    Stopwatch:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    Error:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    TypeError:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    NoSuchMethodError:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    RangeError:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    AssertionError:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    ArgumentError:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    StateError:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    UnsupportedError:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    UnimplementedError:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    Invocation:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    Exception:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    FormatException:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    Uri:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    Pattern:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    Match:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    RegExp:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    RegExpMatch:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    StringSink:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    num:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    int:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    double:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    bool:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    String:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    Object:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    List:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    Map:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    Set:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    Iterable:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+    Type:
+      handMaintained: true
+      file: package:dart_eval/stdlib/core.dart
+      unnamedValueConstructor: true
+- uri: dart:async
+  outDir: lib/src
+  classes:
+    Future:
+      handMaintained: true
+      file: package:dart_eval/stdlib/async.dart
+    Stream:
+      handMaintained: true
+      file: package:dart_eval/stdlib/async.dart
+    Completer:
+      handMaintained: true
+      file: package:dart_eval/stdlib/async.dart
+    Timer:
+      handMaintained: true
+      file: package:dart_eval/stdlib/async.dart
+    Zone:
+      handMaintained: true
+      file: package:dart_eval/stdlib/async.dart
+    StreamSubscription:
+      handMaintained: true
+      file: package:dart_eval/stdlib/async.dart
+    StreamSink:
+      handMaintained: true
+      file: package:dart_eval/stdlib/async.dart
+    EventSink:
+      handMaintained: true
+      file: package:dart_eval/stdlib/async.dart
+    StreamIterator:
+      handMaintained: true
+      file: package:dart_eval/stdlib/async.dart
+    StreamTransformer:
+      handMaintained: true
+      file: package:dart_eval/stdlib/async.dart
+    StreamView:
+      handMaintained: true
+      file: package:dart_eval/stdlib/async.dart
+    StreamController:
+      handMaintained: true
+      file: package:dart_eval/stdlib/async.dart
+- uri: dart:convert
+  outDir: lib/src
+  classes:
+    Converter:
+      handMaintained: true
+      file: package:dart_eval/stdlib/convert.dart
+    Codec:
+      handMaintained: true
+      file: package:dart_eval/stdlib/convert.dart
+    Encoding:
+      handMaintained: true
+      file: package:dart_eval/stdlib/convert.dart
+    JsonEncoder:
+      handMaintained: true
+      file: package:dart_eval/stdlib/convert.dart
+    JsonDecoder:
+      handMaintained: true
+      file: package:dart_eval/stdlib/convert.dart
+    JsonCodec:
+      handMaintained: true
+      file: package:dart_eval/stdlib/convert.dart
+    Utf8Decoder:
+      handMaintained: true
+      file: package:dart_eval/stdlib/convert.dart
+    Utf8Codec:
+      handMaintained: true
+      file: package:dart_eval/stdlib/convert.dart
+    Utf8Encoder:
+      handMaintained: true
+      file: package:dart_eval/stdlib/convert.dart
+    Base64Encoder:
+      handMaintained: true
+      file: package:dart_eval/stdlib/convert.dart
+    Base64Decoder:
+      handMaintained: true
+      file: package:dart_eval/stdlib/convert.dart
+    Base64Codec:
+      handMaintained: true
+      file: package:dart_eval/stdlib/convert.dart
+    ByteConversionSink:
+      handMaintained: true
+      file: package:dart_eval/stdlib/convert.dart
+    ChunkedConversionSink:
+      handMaintained: true
+      file: package:dart_eval/stdlib/convert.dart
+- uri: dart:math
+  outDir: lib/src
+  classes:
+    Point:
+      handMaintained: true
+      file: package:dart_eval/stdlib/math.dart
+    Random:
+      handMaintained: true
+      file: package:dart_eval/stdlib/math.dart
+- uri: dart:typed_data
+  outDir: lib/src
+  classes:
+    ByteBuffer:
+      handMaintained: true
+      file: package:dart_eval/stdlib/typed_data.dart
+    TypedData:
+      handMaintained: true
+      file: package:dart_eval/stdlib/typed_data.dart
+    ByteData:
+      handMaintained: true
+      file: package:dart_eval/stdlib/typed_data.dart
+    Uint8List:
+      handMaintained: true
+      file: package:dart_eval/stdlib/typed_data.dart
+    Uint32List:
+      handMaintained: true
+      file: package:dart_eval/stdlib/typed_data.dart
+- uri: dart:io
+  outDir: lib/src
+  imports:
+  - package:dart_eval/stdlib/core.dart
+  - package:dart_eval/stdlib/async.dart
+  - package:dart_eval/stdlib/typed_data.dart
+  classes:
+    File:
+      handMaintained: true
+      file: package:dart_eval/stdlib/io.dart
+    FileSystemEntity:
+      handMaintained: true
+      file: package:dart_eval/stdlib/io.dart
+- uri: package:flutter/src/animation/animation_style.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    AnimationStyle:
+      file: supporting/flutter_animation_animation_style.dart
+      opaque: true
+- uri: package:flutter/src/animation/listener_helpers.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    AnimationEagerListenerMixin:
+      file: supporting/flutter_animation_listener_helpers.dart
+      opaque: true
+    AnimationLocalListenersMixin:
+      file: supporting/flutter_animation_listener_helpers.dart
+      opaque: true
+    AnimationLocalStatusListenersMixin:
+      file: supporting/flutter_animation_listener_helpers.dart
+      opaque: true
+- uri: package:flutter/src/animation/tween.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Animatable:
+      file: supporting/flutter_animation_tween.dart
+      opaque: true
+- uri: package:flutter/src/cupertino/theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    NoDefaultCupertinoThemeData:
+      file: supporting/flutter_cupertino_theme.dart
+      opaque: true
+- uri: package:flutter/src/foundation/platform.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    TargetPlatform:
+      file: supporting/flutter_foundation_platform.dart
+- uri: package:flutter/src/gestures/events.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    PointerDownEvent:
+      file: supporting/flutter_gestures_events.dart
+      opaque: true
+    PointerEvent:
+      file: supporting/flutter_gestures_events.dart
+      opaque: true
+    PointerUpEvent:
+      file: supporting/flutter_gestures_events.dart
+      opaque: true
+- uri: package:flutter/src/gestures/force_press.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ForcePressDetails:
+      file: supporting/flutter_gestures_force_press.dart
+      opaque: true
+- uri: package:flutter/src/gestures/gesture_details.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    PositionedGestureDetails:
+      file: supporting/flutter_gestures_gesture_details.dart
+      opaque: true
+- uri: package:flutter/src/gestures/hit_test.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    HitTestTarget:
+      file: supporting/flutter_gestures_hit_test.dart
+      opaque: true
+- uri: package:flutter/src/gestures/recognizer.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    DragStartBehavior:
+      file: supporting/flutter_gestures_recognizer.dart
+- uri: package:flutter/src/gestures/scale.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ScaleEndDetails:
+      file: supporting/flutter_gestures_scale.dart
+      opaque: true
+    ScaleStartDetails:
+      file: supporting/flutter_gestures_scale.dart
+      opaque: true
+    ScaleUpdateDetails:
+      file: supporting/flutter_gestures_scale.dart
+      opaque: true
+- uri: package:flutter/src/material/action_icons_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ActionIconThemeData:
+      file: supporting/flutter_material_action_icons_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/app_bar_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    AppBarThemeData:
+      file: supporting/flutter_material_app_bar_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/badge_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    BadgeThemeData:
+      file: supporting/flutter_material_badge_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/banner.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    MaterialBanner:
+      file: supporting/flutter_material_banner.dart
+      opaque: true
+    MaterialBannerClosedReason:
+      file: supporting/flutter_material_banner.dart
+- uri: package:flutter/src/material/banner_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    MaterialBannerThemeData:
+      file: supporting/flutter_material_banner_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/bottom_app_bar_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    BottomAppBarThemeData:
+      file: supporting/flutter_material_bottom_app_bar_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/bottom_navigation_bar_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    BottomNavigationBarThemeData:
+      file: supporting/flutter_material_bottom_navigation_bar_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/bottom_sheet_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    BottomSheetThemeData:
+      file: supporting/flutter_material_bottom_sheet_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/button_bar_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ButtonBarThemeData:
+      file: supporting/flutter_material_button_bar_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/button_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ButtonThemeData:
+      file: supporting/flutter_material_button_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/card_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    CardThemeData:
+      file: supporting/flutter_material_card_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/carousel_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    CarouselViewThemeData:
+      file: supporting/flutter_material_carousel_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/checkbox_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    CheckboxThemeData:
+      file: supporting/flutter_material_checkbox_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/chip_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ChipThemeData:
+      file: supporting/flutter_material_chip_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/color_scheme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ColorScheme:
+      file: supporting/flutter_material_color_scheme.dart
+      opaque: true
+- uri: package:flutter/src/material/data_table_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    DataTableThemeData:
+      file: supporting/flutter_material_data_table_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/date_picker_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    DatePickerThemeData:
+      file: supporting/flutter_material_date_picker_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/dialog_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    DialogThemeData:
+      file: supporting/flutter_material_dialog_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/divider_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    DividerThemeData:
+      file: supporting/flutter_material_divider_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/drawer_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    DrawerThemeData:
+      file: supporting/flutter_material_drawer_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/dropdown_menu_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    DropdownMenuThemeData:
+      file: supporting/flutter_material_dropdown_menu_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/elevated_button_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ElevatedButtonThemeData:
+      file: supporting/flutter_material_elevated_button_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/expansion_tile_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ExpansionTileThemeData:
+      file: supporting/flutter_material_expansion_tile_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/filled_button_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    FilledButtonThemeData:
+      file: supporting/flutter_material_filled_button_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/floating_action_button_location.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    FloatingActionButtonAnimator:
+      file: supporting/flutter_material_floating_action_button_location.dart
+      opaque: true
+    FloatingActionButtonLocation:
+      file: supporting/flutter_material_floating_action_button_location.dart
+      opaque: true
+- uri: package:flutter/src/material/floating_action_button_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    FloatingActionButtonThemeData:
+      file: supporting/flutter_material_floating_action_button_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/icon_button_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    IconButtonThemeData:
+      file: supporting/flutter_material_icon_button_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/input_decorator.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    InputDecoration:
+      file: supporting/flutter_material_input_decorator.dart
+      opaque: true
+    InputDecorationThemeData:
+      file: supporting/flutter_material_input_decorator.dart
+      opaque: true
+- uri: package:flutter/src/material/list_tile_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ListTileThemeData:
+      file: supporting/flutter_material_list_tile_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/menu_bar_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    MenuBarThemeData:
+      file: supporting/flutter_material_menu_bar_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/menu_button_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    MenuButtonThemeData:
+      file: supporting/flutter_material_menu_button_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/menu_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    MenuThemeData:
+      file: supporting/flutter_material_menu_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/navigation_bar_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    NavigationBarThemeData:
+      file: supporting/flutter_material_navigation_bar_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/navigation_drawer_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    NavigationDrawerThemeData:
+      file: supporting/flutter_material_navigation_drawer_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/navigation_rail_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    NavigationRailThemeData:
+      file: supporting/flutter_material_navigation_rail_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/outlined_button_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    OutlinedButtonThemeData:
+      file: supporting/flutter_material_outlined_button_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/page_transitions_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    PageTransitionsTheme:
+      file: supporting/flutter_material_page_transitions_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/popup_menu_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    PopupMenuThemeData:
+      file: supporting/flutter_material_popup_menu_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/progress_indicator_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ProgressIndicatorThemeData:
+      file: supporting/flutter_material_progress_indicator_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/radio_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    RadioThemeData:
+      file: supporting/flutter_material_radio_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/scrollbar_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ScrollbarThemeData:
+      file: supporting/flutter_material_scrollbar_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/search_bar_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    SearchBarThemeData:
+      file: supporting/flutter_material_search_bar_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/search_view_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    SearchViewThemeData:
+      file: supporting/flutter_material_search_view_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/segmented_button_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    SegmentedButtonThemeData:
+      file: supporting/flutter_material_segmented_button_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/slider_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    SliderThemeData:
+      file: supporting/flutter_material_slider_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/snack_bar_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    SnackBarBehavior:
+      file: supporting/flutter_material_snack_bar_theme.dart
+    SnackBarThemeData:
+      file: supporting/flutter_material_snack_bar_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/switch_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    SwitchThemeData:
+      file: supporting/flutter_material_switch_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/tab_bar_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    TabBarThemeData:
+      file: supporting/flutter_material_tab_bar_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/text_button_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    TextButtonThemeData:
+      file: supporting/flutter_material_text_button_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/text_selection_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    TextSelectionThemeData:
+      file: supporting/flutter_material_text_selection_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/time_picker_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    TimePickerThemeData:
+      file: supporting/flutter_material_time_picker_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/toggle_buttons_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ToggleButtonsThemeData:
+      file: supporting/flutter_material_toggle_buttons_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/tooltip_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    TooltipThemeData:
+      file: supporting/flutter_material_tooltip_theme.dart
+      opaque: true
+- uri: package:flutter/src/material/typography.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Typography:
+      file: supporting/flutter_material_typography.dart
+      opaque: true
+- uri: package:flutter/src/painting/box_shadow.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    BoxShadow:
+      file: supporting/flutter_painting_box_shadow.dart
+      opaque: true
+- uri: package:flutter/src/painting/decoration_image.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    DecorationImage:
+      file: supporting/flutter_painting_decoration_image.dart
+      opaque: true
+    ImageRepeat:
+      file: supporting/flutter_painting_decoration_image.dart
+- uri: package:flutter/src/painting/gradient.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Gradient:
+      file: supporting/flutter_painting_gradient.dart
+      opaque: true
+- uri: package:flutter/src/painting/image_cache.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ImageCache:
+      file: supporting/flutter_painting_image_cache.dart
+      opaque: true
+    ImageCacheStatus:
+      file: supporting/flutter_painting_image_cache.dart
+      opaque: true
+- uri: package:flutter/src/painting/image_stream.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ImageChunkEvent:
+      file: supporting/flutter_painting_image_stream.dart
+      opaque: true
+    ImageStream:
+      file: supporting/flutter_painting_image_stream.dart
+      opaque: true
+- uri: package:flutter/src/painting/inline_span.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    InlineSpan:
+      file: supporting/flutter_painting_inline_span.dart
+      opaque: true
+- uri: package:flutter/src/painting/strut_style.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    StrutStyle:
+      file: supporting/flutter_painting_strut_style.dart
+      opaque: true
+- uri: package:flutter/src/painting/text_scaler.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    TextScaler:
+      file: supporting/flutter_painting_text_scaler.dart
+      opaque: true
+- uri: package:flutter/src/painting/text_span.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    TextSpan:
+      file: supporting/flutter_painting_text_span.dart
+      opaque: true
+- uri: package:flutter/src/physics/simulation.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Simulation:
+      file: supporting/flutter_physics_simulation.dart
+      opaque: true
+- uri: package:flutter/src/physics/spring_simulation.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    SpringDescription:
+      file: supporting/flutter_physics_spring_simulation.dart
+      opaque: true
+- uri: package:flutter/src/rendering/shifted_box.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    RenderAligningShiftedBox:
+      file: supporting/flutter_rendering_shifted_box.dart
+      opaque: true
+    RenderBaseline:
+      file: supporting/flutter_rendering_shifted_box.dart
+      opaque: true
+    RenderFractionallySizedOverflowBox:
+      file: supporting/flutter_rendering_shifted_box.dart
+      opaque: true
+    RenderPadding:
+      file: supporting/flutter_rendering_shifted_box.dart
+      opaque: true
+    RenderPositionedBox:
+      file: supporting/flutter_rendering_shifted_box.dart
+      opaque: true
+    RenderShiftedBox:
+      file: supporting/flutter_rendering_shifted_box.dart
+      opaque: true
+- uri: package:flutter/src/rendering/sliver.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    SliverLayoutDimensions:
+      file: supporting/flutter_rendering_sliver.dart
+      opaque: true
+- uri: package:flutter/src/rendering/viewport.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ScrollCacheExtent:
+      file: supporting/flutter_rendering_viewport.dart
+      opaque: true
+- uri: package:flutter/src/rendering/viewport_offset.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ViewportOffset:
+      file: supporting/flutter_rendering_viewport_offset.dart
+      opaque: true
+- uri: package:flutter/src/services/asset_bundle.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    AssetBundle:
+      file: supporting/flutter_services_asset_bundle.dart
+      opaque: true
+- uri: package:flutter/src/services/autofill.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    AutofillClient:
+      file: supporting/flutter_services_autofill.dart
+      opaque: true
+- uri: package:flutter/src/services/mouse_cursor.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    MouseCursor:
+      file: supporting/flutter_services_mouse_cursor.dart
+      opaque: true
+- uri: package:flutter/src/services/mouse_tracking.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    MouseTrackerAnnotation:
+      file: supporting/flutter_services_mouse_tracking.dart
+      opaque: true
+- uri: package:flutter/src/services/raw_keyboard.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    RawKeyEvent:
+      file: supporting/flutter_services_raw_keyboard.dart
+      opaque: true
+- uri: package:flutter/src/services/restoration.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    RestorationBucket:
+      file: supporting/flutter_services_restoration.dart
+      opaque: true
+- uri: package:flutter/src/services/system_chrome.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    SystemUiOverlayStyle:
+      file: supporting/flutter_services_system_chrome.dart
+      opaque: true
+- uri: package:flutter/src/services/text_editing.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    TextSelection:
+      file: supporting/flutter_services_text_editing.dart
+      opaque: true
+- uri: package:flutter/src/services/text_formatter.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    MaxLengthEnforcement:
+      file: supporting/flutter_services_text_formatter.dart
+    TextInputFormatter:
+      file: supporting/flutter_services_text_formatter.dart
+      opaque: true
+- uri: package:flutter/src/services/text_input.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    SmartDashesType:
+      file: supporting/flutter_services_text_input.dart
+    SmartQuotesType:
+      file: supporting/flutter_services_text_input.dart
+    TextCapitalization:
+      file: supporting/flutter_services_text_input.dart
+    TextEditingValue:
+      file: supporting/flutter_services_text_input.dart
+      opaque: true
+    TextInputAction:
+      file: supporting/flutter_services_text_input.dart
+    TextInputClient:
+      file: supporting/flutter_services_text_input.dart
+      opaque: true
+    TextInputType:
+      file: supporting/flutter_services_text_input.dart
+      opaque: true
+    TextSelectionDelegate:
+      file: supporting/flutter_services_text_input.dart
+      opaque: true
+- uri: package:flutter/src/widgets/actions.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Action:
+      file: supporting/flutter_widgets_actions.dart
+      opaque: true
+    Intent:
+      file: supporting/flutter_widgets_actions.dart
+      opaque: true
+- uri: package:flutter/src/widgets/automatic_keep_alive.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    AutomaticKeepAliveClientMixin:
+      file: supporting/flutter_widgets_automatic_keep_alive.dart
+      opaque: true
+- uri: package:flutter/src/widgets/binding.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    WidgetsBindingObserver:
+      file: supporting/flutter_widgets_binding.dart
+      opaque: true
+- uri: package:flutter/src/widgets/dismissible.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    DismissDirection:
+      file: supporting/flutter_widgets_dismissible.dart
+- uri: package:flutter/src/widgets/focus_traversal.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    TraversalDirection:
+      file: supporting/flutter_widgets_focus_traversal.dart
+    TraversalEdgeBehavior:
+      file: supporting/flutter_widgets_focus_traversal.dart
+- uri: package:flutter/src/widgets/heroes.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    HeroController:
+      file: supporting/flutter_widgets_heroes.dart
+      opaque: true
+- uri: package:flutter/src/widgets/icon_theme_data.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    IconThemeData:
+      file: supporting/flutter_widgets_icon_theme_data.dart
+      opaque: true
+- uri: package:flutter/src/widgets/localizations.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    LocalizationsDelegate:
+      file: supporting/flutter_widgets_localizations.dart
+      opaque: true
+- uri: package:flutter/src/widgets/magnifier.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    TextMagnifierConfiguration:
+      file: supporting/flutter_widgets_magnifier.dart
+      opaque: true
+- uri: package:flutter/src/widgets/notification_listener.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    LayoutChangedNotification:
+      file: supporting/flutter_widgets_notification_listener.dart
+      opaque: true
+    Notification:
+      file: supporting/flutter_widgets_notification_listener.dart
+      opaque: true
+- uri: package:flutter/src/widgets/preferred_size.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    PreferredSizeWidget:
+      file: supporting/flutter_widgets_preferred_size.dart
+      opaque: true
+- uri: package:flutter/src/widgets/restoration.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    RestorationMixin:
+      file: supporting/flutter_widgets_restoration.dart
+      opaque: true
+- uri: package:flutter/src/widgets/router.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    BackButtonDispatcher:
+      file: supporting/flutter_widgets_router.dart
+      opaque: true
+    RouteInformation:
+      file: supporting/flutter_widgets_router.dart
+      opaque: true
+    RouteInformationParser:
+      file: supporting/flutter_widgets_router.dart
+      opaque: true
+    RouteInformationProvider:
+      file: supporting/flutter_widgets_router.dart
+      opaque: true
+    RouterConfig:
+      file: supporting/flutter_widgets_router.dart
+      opaque: true
+    RouterDelegate:
+      file: supporting/flutter_widgets_router.dart
+      opaque: true
+- uri: package:flutter/src/widgets/scroll_configuration.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ScrollBehavior:
+      file: supporting/flutter_widgets_scroll_configuration.dart
+      opaque: true
+- uri: package:flutter/src/widgets/scroll_context.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ScrollContext:
+      file: supporting/flutter_widgets_scroll_context.dart
+      opaque: true
+- uri: package:flutter/src/widgets/scroll_delegate.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    SliverChildDelegate:
+      file: supporting/flutter_widgets_scroll_delegate.dart
+      opaque: true
+- uri: package:flutter/src/widgets/scroll_metrics.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ScrollMetrics:
+      file: supporting/flutter_widgets_scroll_metrics.dart
+      opaque: true
+- uri: package:flutter/src/widgets/scroll_notification.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ScrollNotification:
+      file: supporting/flutter_widgets_scroll_notification.dart
+      opaque: true
+    ViewportNotificationMixin:
+      file: supporting/flutter_widgets_scroll_notification.dart
+      opaque: true
+- uri: package:flutter/src/widgets/scroll_physics.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ScrollPhysics:
+      file: supporting/flutter_widgets_scroll_physics.dart
+      opaque: true
+- uri: package:flutter/src/widgets/scroll_position.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ScrollPosition:
+      file: supporting/flutter_widgets_scroll_position.dart
+      opaque: true
+- uri: package:flutter/src/widgets/shortcuts.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ShortcutActivator:
+      file: supporting/flutter_widgets_shortcuts.dart
+      opaque: true
+- uri: package:flutter/src/widgets/spell_check.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    SpellCheckConfiguration:
+      file: supporting/flutter_widgets_spell_check.dart
+      opaque: true
+- uri: package:flutter/src/widgets/text_selection.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    TextSelectionControls:
+      file: supporting/flutter_widgets_text_selection.dart
+      opaque: true
+- uri: package:flutter/src/widgets/ticker_provider.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    TickerProviderStateMixin:
+      file: supporting/flutter_widgets_ticker_provider.dart
+      opaque: true
+- uri: package:flutter/src/widgets/undo_history.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    UndoHistoryController:
+      file: supporting/flutter_widgets_undo_history.dart
+      opaque: true
+    UndoHistoryValue:
+      file: supporting/flutter_widgets_undo_history.dart
+      opaque: true
+- uri: package:vector_math/vector_math_64.dart
+  outDir: lib/src
+  imports:
+  - package:dart_eval/stdlib/core.dart
+  - package:dart_eval/stdlib/async.dart
+  - package:dart_eval/stdlib/typed_data.dart
+  classes:
+    Matrix4:
+      file: supporting/vector_math_vector_math_64.dart
+      opaque: true
+plugin:
+  out: lib/flutter_eval.dart
+  class: FlutterEvalPlugin
+  identifier: package:flutter
+  imports:
+  - src/widgets/framework.dart
+  - src/widgets/pages.dart
+  - src/foundation/change_notifier.dart
+  - src/services/platform_channel.dart
+  - src/services/binary_messenger.dart
+  excludeDeclarations:
+  - StatelessWidget
+  - StatefulWidget
+  - State
+  - ChangeNotifier
+  extraDeclarations:
+  - $ChangeNotifier$bridge.$declaration
+  - $StatelessWidget$bridge.$declaration
+  - $StatefulWidget$bridge.$declaration
+  - $State$bridge.$declaration
+  - $MethodChannel.$declaration
+  - $BinaryMessenger.$declaration
+  evalSources:
+  - uri: dart:ui
+    file: .dart_eval/sources/dart_ui.dart
+  - uri: package:flutter/animation.dart
+    file: .dart_eval/sources/animation.dart
+  - uri: package:flutter/src/animation/animation_controller.dart
+    file: .dart_eval/sources/animation_controller.dart
+  - uri: package:flutter/foundation.dart
+    file: .dart_eval/sources/foundation.dart
+  - uri: package:flutter/gestures.dart
+    file: .dart_eval/sources/gestures.dart
+  - uri: package:flutter/src/widgets/gesture_detector.dart
+    file: .dart_eval/sources/gesture_detector.dart
+  - uri: package:flutter/material.dart
+    file: .dart_eval/sources/material.dart
+  - uri: package:flutter/painting.dart
+    file: .dart_eval/sources/painting.dart
+  - uri: package:flutter/src/painting/basic_types.dart
+    file: .dart_eval/sources/painting_basic_types.dart
+  - uri: package:flutter/rendering.dart
+    file: .dart_eval/sources/rendering.dart
+  - uri: package:flutter/scheduler.dart
+    file: .dart_eval/sources/scheduler.dart
+  - uri: package:flutter/services.dart
+    file: .dart_eval/sources/services.dart
+  - uri: package:flutter/widgets.dart
+    file: .dart_eval/sources/widgets.dart
+  - uri: package:flutter/src/widgets/framework.dart
+    file: .dart_eval/sources/widgets_framework.dart
+  - uri: package:flutter/src/widgets/basic.dart
+    file: .dart_eval/sources/widgets_basic.dart
+  - uri: package:flutter/cupertino.dart
+    file: .dart_eval/sources/cupertino.dart
+  extraSources:
+  - expression: registry.addExportedLibraryMapping('package:flutter/src/animation', 'package:flutter_eval/animation.dart')
+  - expression: registry.addExportedLibraryMapping('package:flutter/src/foundation', 'package:flutter_eval/foundation.dart')
+  - expression: registry.addExportedLibraryMapping('package:flutter/src/gestures', 'package:flutter_eval/gestures.dart')
+  - expression: registry.addExportedLibraryMapping('package:flutter/src/material', 'package:flutter_eval/material.dart')
+  - expression: registry.addExportedLibraryMapping('package:flutter/src/painting', 'package:flutter_eval/painting.dart')
+  - expression: registry.addExportedLibraryMapping('package:flutter/src/rendering', 'package:flutter_eval/rendering.dart')
+  - expression: registry.addExportedLibraryMapping('package:flutter/src/scheduler', 'package:flutter_eval/scheduler.dart')
+  - expression: registry.addExportedLibraryMapping('package:flutter/src/services', 'package:flutter_eval/services.dart')
+  - expression: registry.addExportedLibraryMapping('package:flutter/src/widgets', 'package:flutter_eval/widgets.dart')
+  - expression: registry.addExportedLibraryMapping('dart:ui', 'package:flutter_eval/ui.dart')
+  - target: runtime
+    expression: 'runtime.registerBridgeFuncRegisters(''package:flutter/src/foundation/change_notifier.dart'',
+      ''ChangeNotifier.'', $ChangeNotifier$bridge.$new, isBridge: true)'
+  - target: runtime
+    expression: 'runtime.registerBridgeFuncRegisters(''package:flutter/src/widgets/framework.dart'', ''StatelessWidget.'',
+      $StatelessWidget$bridge.$new, isBridge: true)'
+  - target: runtime
+    expression: 'runtime.registerBridgeFuncRegisters(''package:flutter/src/widgets/framework.dart'', ''StatefulWidget.'',
+      $StatefulWidget$bridge.$new, isBridge: true)'
+  - target: runtime
+    expression: 'runtime.registerBridgeFuncRegisters(''package:flutter/src/widgets/framework.dart'', ''State.'',
+      $State$bridge.$new, isBridge: true)'
+  - target: runtime
+    expression: runtime.registerBridgeFuncRegisters('package:flutter/src/services/platform_channel.dart',
+      'MethodChannel.', $MethodChannel.$new)
+  instance: flutterEvalPlugin

@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
       args: [
         $BuildContext.wrap(context),
         _counter, // ints, doubles, bools, and Lists are passed without wrapping
-        $Function((runtime, target, args) {
+        $Function((runtime, target, r, s, c) {
           _incrementCounter();
           return null;
         })

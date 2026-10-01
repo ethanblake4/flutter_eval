@@ -1,0 +1,15 @@
+export 'package:flutter/gestures.dart' show
+  DragDownDetails,
+  DragEndDetails,
+  DragStartDetails,
+  DragUpdateDetails,
+  // ForcePressDetails,
+  LongPressEndDetails,
+  LongPressMoveUpdateDetails,
+  LongPressStartDetails,
+  // ScaleEndDetails,
+  // ScaleStartDetails,
+  // ScaleUpdateDetails,
+  TapDownDetails,
+  TapUpDetails,
+  Velocity;

@@ -1,19 +1,40 @@
 on:
   push:
-    branches:
-      - master
+    branches: [master]
 
 jobs:
   generate_bindings:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: flutter_eval
     steps:
       - uses: actions/checkout@v4
-      - uses: monterail/flutter-action@v1
         with:
-          channel: 'stable'
+          path: flutter_eval
+      - uses: actions/checkout@v4
+        with:
+          repository: ethanblake4/dart_eval
+          ref: xv2
+          path: dart_eval
+      - uses: actions/checkout@v4
+        with:
+          repository: ethanblake4/control_flow_graph
+          path: control_flow_graph
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version-file: flutter_eval/.fvmrc
+      - name: Use the xv2 checkout
+        run: |
+          cat > pubspec_overrides.yaml <<'YAML'
+          dependency_overrides:
+            dart_eval:
+              path: ../dart_eval
+          YAML
+      - run: flutter pub get
       - run: make flutter_bindings
-      - name: Archive generated flutter_eval.json
+      - name: Archive generated compiler metadata
         uses: actions/upload-artifact@v4
         with:
           name: flutter_eval.json
-          path: flutter_eval.json
+          path: flutter_eval/flutter_eval.json

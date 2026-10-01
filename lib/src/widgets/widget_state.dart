@@ -1,17 +1,54 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND.
+// Regenerate with dart run tool/generate_bindings.dart.
+// ignore_for_file: implementation_imports, deprecated_member_use
+// ignore_for_file: invalid_null_aware_operator, invalid_use_of_protected_member
+// ignore_for_file: invalid_use_of_visible_for_testing_member
+// ignore_for_file: non_const_argument_for_const_parameter, unnecessary_null_comparison
+// ignore_for_file: no_logic_in_create_state, sort_child_properties_last
+// ignore_for_file: must_call_super
 // ignore_for_file: unused_import, unnecessary_import
 // ignore_for_file: always_specify_types, avoid_redundant_argument_values
 // ignore_for_file: sort_constructors_first
 // ignore_for_file: no_leading_underscores_for_local_identifiers
+// ignore_for_file: prefer_is_empty
+// ignore_for_file: undefined_hidden_name
+// ignore_for_file: dead_code, unused_local_variable
+// ignore_for_file: unnecessary_type_check, unnecessary_non_null_assertion
+// ignore_for_file: unnecessary_cast
+// ignore_for_file: sdk_version_since
+// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: argument_type_not_assignable_to_error_handler
+// ignore_for_file: avoid_function_literals_in_foreach_calls
 
 import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
-import 'package:flutter/widgets.dart';
-import 'widget_state.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/rendering.dart';
+
+import 'package:flutter/src/widgets/widget_state.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:dart_eval/stdlib/core.dart';
-import 'package:flutter_eval/foundation.dart';
+import 'package:dart_eval/stdlib/core.dart'
+    hide
+        $WidgetState,
+        $WidgetStateProperty,
+        $WidgetStatesController,
+        $WidgetStatesConstraint;
+import 'package:dart_eval/stdlib/async.dart'
+    hide
+        $WidgetState,
+        $WidgetStateProperty,
+        $WidgetStatesController,
+        $WidgetStatesConstraint;
+import 'package:dart_eval/stdlib/typed_data.dart'
+    hide
+        $WidgetState,
+        $WidgetStateProperty,
+        $WidgetStatesController,
+        $WidgetStatesConstraint;
+import 'package:flutter/gestures.dart';
+import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import '../supporting/flutter_widgets_widget_state.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 
 /// dart_eval enum wrapper binding for [WidgetState]
 class $WidgetState implements $Instance {
@@ -23,17 +60,22 @@ class $WidgetState implements $Instance {
       $WidgetState._$values,
     );
 
-    runtime.registerBridgeFunc(
+    runtime.registerBridgeFuncRegisters(
       'package:flutter/src/widgets/widget_state.dart',
       'WidgetState.values*g',
       $WidgetState.$values,
     );
 
-    runtime.registerBridgeFunc(
+    runtime.registerBridgeFuncRegisters(
       'package:flutter/src/widgets/widget_state.dart',
       'WidgetState.any*g',
       $WidgetState.$any,
     );
+  }
+
+  /// Configure this enum for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeEnum($declaration);
   }
 
   /// Compile-time type specification of [$WidgetState]
@@ -48,6 +90,7 @@ class $WidgetState implements $Instance {
   /// Compile-time class declaration of [$WidgetState]
   static const $declaration = BridgeEnumDef(
     $type,
+
     values: [
       'hovered',
       'focused',
@@ -58,16 +101,19 @@ class $WidgetState implements $Instance {
       'disabled',
       'error',
     ],
+
     methods: {
       'isSatisfiedBy': BridgeMethodDef(
         BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+          ),
           namedParams: [],
           params: [
             BridgeParameter(
               'states',
               BridgeTypeAnnotation(
-                BridgeTypeRef(CoreTypes.set, [
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'Set'), [
                   BridgeTypeAnnotation(
                     BridgeTypeRef(
                       BridgeTypeSpec(
@@ -88,6 +134,23 @@ class $WidgetState implements $Instance {
     getters: {},
     setters: {},
     fields: {
+      'values': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:core', 'List'), [
+            BridgeTypeAnnotation(
+              BridgeTypeRef(
+                BridgeTypeSpec(
+                  'package:flutter/src/widgets/widget_state.dart',
+                  'WidgetState',
+                ),
+                [],
+              ),
+            ),
+          ]),
+        ),
+        isStatic: true,
+      ),
+
       'any': BridgeFieldDef(
         BridgeTypeAnnotation(
           BridgeTypeRef(
@@ -115,15 +178,27 @@ class $WidgetState implements $Instance {
   };
 
   /// Wrapper for the [WidgetState.values] getter
-  static $Value? $values(Runtime runtime, $Value? target, List<$Value?> args) {
-    const value = WidgetState.values;
-    return $List.view(value, (e) => $WidgetState.wrap(e));
+  static $Value? $values(Runtime runtime, Object? r, Object? s, Object? c) {
+    final value = WidgetState.values;
+    return $List.view(
+      value,
+      (e) => $WidgetState.wrap(e),
+      runtime: runtime,
+      runtimeTypeId: runtime.internParameterizedType(CoreTypes.list, [
+        runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/widget_state.dart',
+            'WidgetState',
+          ),
+        ),
+      ]),
+    );
   }
 
   /// Wrapper for the [WidgetState.any] getter
-  static $Value? $any(Runtime runtime, $Value? target, List<$Value?> args) {
-    const value = WidgetState.any;
-    return runtime.wrapAlways(value);
+  static $Value? $any(Runtime runtime, Object? r, Object? s, Object? c) {
+    final value = WidgetState.any;
+    return $WidgetStatesConstraint.wrap(value);
   }
 
   final $Instance _superclass;
@@ -144,7 +219,7 @@ class $WidgetState implements $Instance {
   $Value? $getProperty(Runtime runtime, String identifier) {
     switch (identifier) {
       case 'isSatisfiedBy':
-        return __isSatisfiedBy;
+        return $Closure(__isSatisfiedBy.func, this);
     }
     return _superclass.$getProperty(runtime, identifier);
   }
@@ -153,10 +228,14 @@ class $WidgetState implements $Instance {
   static $Value? _isSatisfiedBy(
     Runtime runtime,
     $Value? target,
-    List<$Value?> args,
+    Object? r,
+    Object? s,
+    Object? c,
   ) {
     final self = target! as $WidgetState;
-    final result = self.$value.isSatisfiedBy((args[0]!.$reified as Set).cast());
+    final result = self.$value.isSatisfiedBy(
+      ((r as $Value?)!.$reified as Set).cast<WidgetState>(),
+    );
     return $bool(result);
   }
 
@@ -167,38 +246,43 @@ class $WidgetState implements $Instance {
 }
 
 /// dart_eval wrapper binding for [WidgetStateProperty]
-class $WidgetStateProperty implements $Instance {
+class $WidgetStateProperty<T> implements $Instance {
   /// Configure this class for use in a [Runtime]
   static void configureForRuntime(Runtime runtime) {
-    runtime.registerBridgeFunc(
+    runtime.registerBridgeFuncRegisters(
       'package:flutter/src/widgets/widget_state.dart',
       'WidgetStateProperty.fromMap',
       $WidgetStateProperty.$fromMap,
     );
 
-    runtime.registerBridgeFunc(
+    runtime.registerBridgeFuncRegisters(
       'package:flutter/src/widgets/widget_state.dart',
       'WidgetStateProperty.resolveAs',
       $WidgetStateProperty.$resolveAs,
     );
 
-    runtime.registerBridgeFunc(
+    runtime.registerBridgeFuncRegisters(
       'package:flutter/src/widgets/widget_state.dart',
       'WidgetStateProperty.resolveWith',
       $WidgetStateProperty.$resolveWith,
     );
 
-    runtime.registerBridgeFunc(
+    runtime.registerBridgeFuncRegisters(
       'package:flutter/src/widgets/widget_state.dart',
       'WidgetStateProperty.all',
       $WidgetStateProperty.$all,
     );
 
-    runtime.registerBridgeFunc(
+    runtime.registerBridgeFuncRegisters(
       'package:flutter/src/widgets/widget_state.dart',
       'WidgetStateProperty.lerp',
       $WidgetStateProperty.$lerp,
     );
+  }
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
   }
 
   /// Compile-time type specification of [$WidgetStateProperty]
@@ -215,6 +299,7 @@ class $WidgetStateProperty implements $Instance {
     BridgeClassType(
       $type,
       isAbstract: true,
+
       generics: {'T': BridgeGenericParam()},
     ),
     constructors: {
@@ -226,6 +311,7 @@ class $WidgetStateProperty implements $Instance {
         ),
         isFactory: false,
       ),
+
       'fromMap': BridgeConstructorDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation($type),
@@ -234,7 +320,7 @@ class $WidgetStateProperty implements $Instance {
             BridgeParameter(
               'map',
               BridgeTypeAnnotation(
-                BridgeTypeRef(CoreTypes.map, [
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'Map'), [
                   BridgeTypeAnnotation(
                     BridgeTypeRef(
                       BridgeTypeSpec(
@@ -254,9 +340,11 @@ class $WidgetStateProperty implements $Instance {
         isFactory: true,
       ),
     },
+
     methods: {
       'resolveAs': BridgeMethodDef(
         BridgeFunctionDef(
+          generics: {'T': BridgeGenericParam()},
           returns: BridgeTypeAnnotation(BridgeTypeRef.ref('T')),
           namedParams: [],
           params: [
@@ -265,10 +353,11 @@ class $WidgetStateProperty implements $Instance {
               BridgeTypeAnnotation(BridgeTypeRef.ref('T')),
               false,
             ),
+
             BridgeParameter(
               'states',
               BridgeTypeAnnotation(
-                BridgeTypeRef(CoreTypes.set, [
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'Set'), [
                   BridgeTypeAnnotation(
                     BridgeTypeRef(
                       BridgeTypeSpec(
@@ -284,10 +373,13 @@ class $WidgetStateProperty implements $Instance {
             ),
           ],
         ),
+
         isStatic: true,
       ),
+
       'resolveWith': BridgeMethodDef(
         BridgeFunctionDef(
+          generics: {'T': BridgeGenericParam()},
           returns: BridgeTypeAnnotation(
             BridgeTypeRef(
               BridgeTypeSpec(
@@ -309,7 +401,7 @@ class $WidgetStateProperty implements $Instance {
                       BridgeParameter(
                         'states',
                         BridgeTypeAnnotation(
-                          BridgeTypeRef(CoreTypes.set, [
+                          BridgeTypeRef(BridgeTypeSpec('dart:core', 'Set'), [
                             BridgeTypeAnnotation(
                               BridgeTypeRef(
                                 BridgeTypeSpec(
@@ -332,10 +424,13 @@ class $WidgetStateProperty implements $Instance {
             ),
           ],
         ),
+
         isStatic: true,
       ),
+
       'all': BridgeMethodDef(
         BridgeFunctionDef(
+          generics: {'T': BridgeGenericParam()},
           returns: BridgeTypeAnnotation(
             BridgeTypeRef(
               BridgeTypeSpec(
@@ -354,10 +449,13 @@ class $WidgetStateProperty implements $Instance {
             ),
           ],
         ),
+
         isStatic: true,
       ),
+
       'lerp': BridgeMethodDef(
         BridgeFunctionDef(
+          generics: {'T': BridgeGenericParam()},
           returns: BridgeTypeAnnotation(
             BridgeTypeRef(
               BridgeTypeSpec(
@@ -384,6 +482,7 @@ class $WidgetStateProperty implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               'b',
               BridgeTypeAnnotation(
@@ -398,11 +497,15 @@ class $WidgetStateProperty implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               't',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.double, [])),
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
+              ),
               false,
             ),
+
             BridgeParameter(
               'lerpFunction',
               BridgeTypeAnnotation(
@@ -414,25 +517,30 @@ class $WidgetStateProperty implements $Instance {
                     ),
                     params: [
                       BridgeParameter(
-                        '',
+                        'null',
                         BridgeTypeAnnotation(
                           BridgeTypeRef.ref('T'),
                           nullable: true,
                         ),
                         false,
                       ),
+
                       BridgeParameter(
-                        '',
+                        'null',
                         BridgeTypeAnnotation(
                           BridgeTypeRef.ref('T'),
                           nullable: true,
                         ),
                         false,
                       ),
+
                       BridgeParameter(
-                        '',
+                        'null',
                         BridgeTypeAnnotation(
-                          BridgeTypeRef(CoreTypes.double, []),
+                          BridgeTypeRef(
+                            BridgeTypeSpec('dart:core', 'double'),
+                            [],
+                          ),
                         ),
                         false,
                       ),
@@ -445,8 +553,10 @@ class $WidgetStateProperty implements $Instance {
             ),
           ],
         ),
+
         isStatic: true,
       ),
+
       'resolve': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(BridgeTypeRef.ref('T')),
@@ -455,7 +565,7 @@ class $WidgetStateProperty implements $Instance {
             BridgeParameter(
               'states',
               BridgeTypeAnnotation(
-                BridgeTypeRef(CoreTypes.set, [
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'Set'), [
                   BridgeTypeAnnotation(
                     BridgeTypeRef(
                       BridgeTypeSpec(
@@ -481,61 +591,83 @@ class $WidgetStateProperty implements $Instance {
   );
 
   /// Wrapper for the [WidgetStateProperty.fromMap] constructor
-  static $Value? $fromMap(
-    Runtime runtime,
-    $Value? thisValue,
-    List<$Value?> args,
-  ) {
+  static $Value? $fromMap(Runtime runtime, Object? r, Object? s, Object? c) {
     return $WidgetStateProperty.wrap(
-      WidgetStateProperty.fromMap((args[0]!.$reified as Map).cast()),
+      WidgetStateProperty.fromMap(
+        ((r as $Value?)!.$reified as Map)
+            .cast<WidgetStatesConstraint, dynamic>(),
+      ),
     );
   }
 
   /// Wrapper for the [WidgetStateProperty.resolveAs] method
-  static $Value? $resolveAs(
-    Runtime runtime,
-    $Value? target,
-    List<$Value?> args,
-  ) {
+  static $Value? $resolveAs(Runtime runtime, Object? r, Object? s, Object? c) {
     final value = WidgetStateProperty.resolveAs(
-      args[0]!.$value,
-      (args[1]!.$reified as Set).cast(),
+      (r as $Value?)!.$value,
+      ((s as $Value?)!.$reified as Set).cast<WidgetState>(),
     );
-    return runtime.wrapAlways(value);
+    return runtime.wrapAlways(value, recursive: true);
   }
 
   /// Wrapper for the [WidgetStateProperty.resolveWith] method
   static $Value? $resolveWith(
     Runtime runtime,
-    $Value? target,
-    List<$Value?> args,
+    Object? r,
+    Object? s,
+    Object? c,
   ) {
-    final value = WidgetStateProperty.resolveWith((Set<WidgetState> states) {
-      return (args[0]! as EvalCallable)(runtime, null, [$Set.wrap(states)])
-          ?.$value;
-    });
+    final value = WidgetStateProperty.resolveWith(
+      runtime.cachedCallback(
+        (r as $Value?)! as EvalCallable,
+        "T Function(Set<WidgetState>);export=false",
+        (_callable) => (Set<WidgetState> states) {
+          return _callable
+              .call(
+                runtime,
+                null,
+                $Set.wrap((states).map((e) => $WidgetState.wrap(e)).toSet()),
+                null,
+                1,
+              )
+              ?.$value;
+        },
+      ),
+    );
     return $WidgetStateProperty.wrap(value);
   }
 
   /// Wrapper for the [WidgetStateProperty.all] method
-  static $Value? $all(Runtime runtime, $Value? target, List<$Value?> args) {
-    final value = WidgetStateProperty.all(args[0]!.$value);
+  static $Value? $all(Runtime runtime, Object? r, Object? s, Object? c) {
+    final value = WidgetStateProperty.all((r as $Value?)!.$value);
     return $WidgetStateProperty.wrap(value);
   }
 
   /// Wrapper for the [WidgetStateProperty.lerp] method
-  static $Value? $lerp(Runtime runtime, $Value? target, List<$Value?> args) {
+  static $Value? $lerp(Runtime runtime, Object? r, Object? s, Object? c) {
+    final _arg2 = (c as List<Object?>)[0] as $Value?;
+    final _arg3 = (c as List<Object?>)[1] as $Value?;
+
     final value = WidgetStateProperty.lerp(
-      args[0]!.$value,
-      args[1]!.$value,
-      args[2]!.$value,
-      (Object? arg0, Object? arg1, double arg2) {
-        return (args[3]! as EvalCallable)(runtime, null, [
-          if (arg0 == null) const $null() else runtime.wrapAlways(arg0),
-          if (arg1 == null) const $null() else runtime.wrapAlways(arg1),
-          $double(arg2),
-        ])?.$value;
-      },
+      (r as $Value?)!.$value,
+      (s as $Value?)!.$value,
+      (_arg2 as $double).$value,
+      runtime.cachedCallback(
+        _arg3! as EvalCallable,
+        "T? Function(T?, T?, double);export=false",
+        (_callable) => (dynamic arg0, dynamic arg1, double arg2) {
+          return _callable.call(
+            runtime,
+            null,
+            (arg0 == null
+                ? const $null()
+                : runtime.wrapAlways(arg0, recursive: true)),
+            (arg1 == null
+                ? const $null()
+                : runtime.wrapAlways(arg1, recursive: true)),
+            [$double(arg2)],
+          )?.$value;
+        },
+      ),
     );
     return value == null ? const $null() : $WidgetStateProperty.wrap(value);
   }
@@ -543,31 +675,46 @@ class $WidgetStateProperty implements $Instance {
   final $Instance _superclass;
 
   @override
-  final WidgetStateProperty $value;
+  final WidgetStateProperty<T> $value;
 
   @override
-  WidgetStateProperty get $reified => $value;
+  WidgetStateProperty<T> get $reified => $value;
 
   /// Wrap a [WidgetStateProperty] in a [$WidgetStateProperty]
   $WidgetStateProperty.wrap(this.$value) : _superclass = $Object($value);
 
   @override
-  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+  int $getRuntimeType(Runtime runtime) {
+    final data = Runtime.bridgeData[this];
+    return data == null
+        ? runtime.lookupType($spec)
+        : runtime.importRuntimeType(data.runtime, data.$runtimeType);
+  }
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
     switch (identifier) {
       case 'resolve':
-        return __resolve;
+        return $Closure(__resolve.func, this);
     }
     return _superclass.$getProperty(runtime, identifier);
   }
 
   static const $Function __resolve = $Function(_resolve);
-  static $Value? _resolve(Runtime runtime, $Value? target, List<$Value?> args) {
+  static $Value? _resolve(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
     final self = target! as $WidgetStateProperty;
-    final result = self.$value.resolve((args[0]!.$reified as Set).cast());
-    return runtime.wrapAlways(result);
+    final result = self.$value.resolve(
+      ((r as $Value?)!.$reified as Set).cast<WidgetState>(),
+    );
+    return (result is List || result is Map || result is Set
+        ? TypedInterop.boxExternal(result, runtime: runtime)!
+        : runtime.wrapAlways(result));
   }
 
   @override
@@ -580,11 +727,16 @@ class $WidgetStateProperty implements $Instance {
 class $WidgetStatesController implements $Instance {
   /// Configure this class for use in a [Runtime]
   static void configureForRuntime(Runtime runtime) {
-    runtime.registerBridgeFunc(
+    runtime.registerBridgeFuncRegisters(
       'package:flutter/src/widgets/widget_state.dart',
       'WidgetStatesController.',
       $WidgetStatesController.$new,
     );
+  }
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
   }
 
   /// Compile-time type specification of [$WidgetStatesController]
@@ -600,27 +752,65 @@ class $WidgetStatesController implements $Instance {
   static const $declaration = BridgeClassDef(
     BridgeClassType(
       $type,
-      $extends: BridgeTypeRef(
-        BridgeTypeSpec(
-          'package:flutter/src/foundation/change_notifier.dart',
-          'ValueNotifier',
-        ),
-        [
-          BridgeTypeAnnotation(
-            BridgeTypeRef(CoreTypes.set, [
-              BridgeTypeAnnotation(
-                BridgeTypeRef(
-                  BridgeTypeSpec(
-                    'package:flutter/src/widgets/widget_state.dart',
-                    'WidgetState',
-                  ),
-                  [],
-                ),
-              ),
-            ]),
+
+      $implements: [
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/change_notifier.dart',
+            'ValueNotifier',
           ),
-        ],
-      ),
+          [
+            BridgeTypeAnnotation(
+              BridgeTypeRef(BridgeTypeSpec('dart:core', 'Set'), [
+                BridgeTypeAnnotation(
+                  BridgeTypeRef(
+                    BridgeTypeSpec(
+                      'package:flutter/src/widgets/widget_state.dart',
+                      'WidgetState',
+                    ),
+                    [],
+                  ),
+                ),
+              ]),
+            ),
+          ],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/change_notifier.dart',
+            'ChangeNotifier',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/change_notifier.dart',
+            'Listenable',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/change_notifier.dart',
+            'ValueListenable',
+          ),
+          [
+            BridgeTypeAnnotation(
+              BridgeTypeRef(BridgeTypeSpec('dart:core', 'Set'), [
+                BridgeTypeAnnotation(
+                  BridgeTypeRef(
+                    BridgeTypeSpec(
+                      'package:flutter/src/widgets/widget_state.dart',
+                      'WidgetState',
+                    ),
+                    [],
+                  ),
+                ),
+              ]),
+            ),
+          ],
+        ),
+      ],
     ),
     constructors: {
       '': BridgeConstructorDef(
@@ -631,7 +821,7 @@ class $WidgetStatesController implements $Instance {
             BridgeParameter(
               'value',
               BridgeTypeAnnotation(
-                BridgeTypeRef(CoreTypes.set, [
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'Set'), [
                   BridgeTypeAnnotation(
                     BridgeTypeRef(
                       BridgeTypeSpec(
@@ -651,7 +841,64 @@ class $WidgetStatesController implements $Instance {
         isFactory: false,
       ),
     },
+
     methods: {
+      'addListener': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
+          namedParams: [],
+          params: [
+            BridgeParameter(
+              'listener',
+              BridgeTypeAnnotation(
+                BridgeTypeRef.genericFunction(
+                  BridgeFunctionDef(
+                    returns: BridgeTypeAnnotation(
+                      BridgeTypeRef(CoreTypes.voidType),
+                    ),
+                    params: [],
+                    namedParams: [],
+                  ),
+                ),
+              ),
+              false,
+            ),
+          ],
+        ),
+      ),
+
+      'removeListener': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
+          namedParams: [],
+          params: [
+            BridgeParameter(
+              'listener',
+              BridgeTypeAnnotation(
+                BridgeTypeRef.genericFunction(
+                  BridgeFunctionDef(
+                    returns: BridgeTypeAnnotation(
+                      BridgeTypeRef(CoreTypes.voidType),
+                    ),
+                    params: [],
+                    namedParams: [],
+                  ),
+                ),
+              ),
+              false,
+            ),
+          ],
+        ),
+      ),
+
+      'dispose': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
+          namedParams: [],
+          params: [],
+        ),
+      ),
+
       'update': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -670,26 +917,77 @@ class $WidgetStatesController implements $Instance {
               ),
               false,
             ),
+
             BridgeParameter(
               'add',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+              ),
               false,
             ),
           ],
         ),
       ),
     },
-    getters: {},
-    setters: {},
+    getters: {
+      'value': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'Set'), [
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/widget_state.dart',
+                    'WidgetState',
+                  ),
+                  [],
+                ),
+              ),
+            ]),
+          ),
+          namedParams: [],
+          params: [],
+        ),
+      ),
+    },
+    setters: {
+      'value': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
+          namedParams: [],
+          params: [
+            BridgeParameter(
+              'newValue',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'Set'), [
+                  BridgeTypeAnnotation(
+                    BridgeTypeRef(
+                      BridgeTypeSpec(
+                        'package:flutter/src/widgets/widget_state.dart',
+                        'WidgetState',
+                      ),
+                      [],
+                    ),
+                  ),
+                ]),
+              ),
+              false,
+            ),
+          ],
+        ),
+      ),
+    },
     fields: {},
     wrap: true,
     bridge: false,
   );
 
   /// Wrapper for the [WidgetStatesController.new] constructor
-  static $Value? $new(Runtime runtime, $Value? thisValue, List<$Value?> args) {
+  static $Value? $new(Runtime runtime, Object? r, Object? s, Object? c) {
     return $WidgetStatesController.wrap(
-      WidgetStatesController((args[0]?.$reified as Set?)?.cast()),
+      WidgetStatesController(
+        ((r is $Value ? r : null)?.$reified as Set?)?.cast<WidgetState>(),
+      ),
     );
   }
 
@@ -702,8 +1000,7 @@ class $WidgetStatesController implements $Instance {
   WidgetStatesController get $reified => $value;
 
   /// Wrap a [WidgetStatesController] in a [$WidgetStatesController]
-  $WidgetStatesController.wrap(this.$value)
-      : _superclass = $ValueNotifier.wrap($value);
+  $WidgetStatesController.wrap(this.$value) : _superclass = $Object($value);
 
   @override
   int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
@@ -711,21 +1008,99 @@ class $WidgetStatesController implements $Instance {
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
     switch (identifier) {
+      case 'value':
+        final _value = $value.value;
+        return $Set.wrap((_value).map((e) => $WidgetState.wrap(e)).toSet());
+      case 'addListener':
+        return $Closure(__addListener.func, this);
+
+      case 'removeListener':
+        return $Closure(__removeListener.func, this);
+
+      case 'dispose':
+        return $Closure(__dispose.func, this);
+
       case 'update':
-        return __update;
+        return $Closure(__update.func, this);
     }
     return _superclass.$getProperty(runtime, identifier);
   }
 
-  static const $Function __update = $Function(_update);
-  static $Value? _update(Runtime runtime, $Value? target, List<$Value?> args) {
+  static const $Function __addListener = $Function(_addListener);
+  static $Value? _addListener(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
     final self = target! as $WidgetStatesController;
-    self.$value.update(args[0]!.$value, args[1]!.$value);
+    self.$value.addListener(
+      runtime.cachedCallback(
+        (r as $Value?)! as EvalCallable,
+        "void Function();export=false",
+        (_callable) => () {
+          _callable.call(runtime, null, null, null, 0);
+        },
+      ),
+    );
+    return null;
+  }
+
+  static const $Function __removeListener = $Function(_removeListener);
+  static $Value? _removeListener(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
+    final self = target! as $WidgetStatesController;
+    self.$value.removeListener(
+      runtime.cachedCallback(
+        (r as $Value?)! as EvalCallable,
+        "void Function();export=false",
+        (_callable) => () {
+          _callable.call(runtime, null, null, null, 0);
+        },
+      ),
+    );
+    return null;
+  }
+
+  static const $Function __dispose = $Function(_dispose);
+  static $Value? _dispose(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
+    final self = target! as $WidgetStatesController;
+    self.$value.dispose();
+    return null;
+  }
+
+  static const $Function __update = $Function(_update);
+  static $Value? _update(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
+    final self = target! as $WidgetStatesController;
+    self.$value.update((r as $Value?)!.$value, (s as $bool).$value);
     return null;
   }
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
+    switch (identifier) {
+      case 'value':
+        $value.value = value.$reified;
+        return;
+    }
     return _superclass.$setProperty(runtime, identifier, value);
   }
 }

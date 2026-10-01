@@ -1,26 +1,65 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND.
+// Regenerate with dart run tool/generate_bindings.dart.
+// ignore_for_file: implementation_imports, deprecated_member_use
+// ignore_for_file: invalid_null_aware_operator, invalid_use_of_protected_member
+// ignore_for_file: invalid_use_of_visible_for_testing_member
+// ignore_for_file: non_const_argument_for_const_parameter, unnecessary_null_comparison
+// ignore_for_file: no_logic_in_create_state, sort_child_properties_last
+// ignore_for_file: must_call_super
 // ignore_for_file: unused_import, unnecessary_import
 // ignore_for_file: always_specify_types, avoid_redundant_argument_values
 // ignore_for_file: sort_constructors_first
 // ignore_for_file: no_leading_underscores_for_local_identifiers
+// ignore_for_file: prefer_is_empty
+// ignore_for_file: undefined_hidden_name
+// ignore_for_file: dead_code, unused_local_variable
+// ignore_for_file: unnecessary_type_check, unnecessary_non_null_assertion
+// ignore_for_file: unnecessary_cast
+// ignore_for_file: sdk_version_since
+// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: argument_type_not_assignable_to_error_handler
+// ignore_for_file: avoid_function_literals_in_foreach_calls
 
 import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_eval/src/foundation/diagnostics.dart';
-import 'package:flutter_eval/src/services/hardware_keyboard.dart';
-import 'package:flutter_eval/src/sky_engine/ui/geometry.dart';
-import 'focus_manager.dart';
-import 'dart:async';
-import 'dart:ui';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/gestures.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/semantics.dart';
+
+import 'package:flutter/src/widgets/focus_manager.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'framework.dart';
-import 'package:dart_eval/stdlib/core.dart';
-import 'package:flutter_eval/widgets.dart';
+import 'package:dart_eval/stdlib/core.dart'
+    hide
+        $KeyEventResult,
+        $FocusNode,
+        $FocusScopeNode,
+        $FocusHighlightMode,
+        $FocusAttachment,
+        $UnfocusDisposition;
+import 'package:dart_eval/stdlib/async.dart'
+    hide
+        $KeyEventResult,
+        $FocusNode,
+        $FocusScopeNode,
+        $FocusHighlightMode,
+        $FocusAttachment,
+        $UnfocusDisposition;
+import 'package:dart_eval/stdlib/typed_data.dart'
+    hide
+        $KeyEventResult,
+        $FocusNode,
+        $FocusScopeNode,
+        $FocusHighlightMode,
+        $FocusAttachment,
+        $UnfocusDisposition;
+import 'package:flutter/gestures.dart';
+import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import '../supporting/flutter_services_raw_keyboard.dart';
+import '../services/hardware_keyboard.dart';
+import './framework_wrappers.dart';
+import '../sky_engine/ui/geometry.dart';
+import '../supporting/flutter_widgets_focus_manager.dart';
+import '../foundation/diagnostics.dart';
+import '../supporting/flutter_widgets_focus_traversal.dart';
 
 /// dart_eval enum wrapper binding for [KeyEventResult]
 class $KeyEventResult implements $Instance {
@@ -32,11 +71,16 @@ class $KeyEventResult implements $Instance {
       $KeyEventResult._$values,
     );
 
-    runtime.registerBridgeFunc(
+    runtime.registerBridgeFuncRegisters(
       'package:flutter/src/widgets/focus_manager.dart',
       'KeyEventResult.values*g',
       $KeyEventResult.$values,
     );
+  }
+
+  /// Configure this enum for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeEnum($declaration);
   }
 
   /// Compile-time type specification of [$KeyEventResult]
@@ -51,11 +95,30 @@ class $KeyEventResult implements $Instance {
   /// Compile-time class declaration of [$KeyEventResult]
   static const $declaration = BridgeEnumDef(
     $type,
+
     values: ['handled', 'ignored', 'skipRemainingHandlers'],
+
     methods: {},
     getters: {},
     setters: {},
-    fields: {},
+    fields: {
+      'values': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:core', 'List'), [
+            BridgeTypeAnnotation(
+              BridgeTypeRef(
+                BridgeTypeSpec(
+                  'package:flutter/src/widgets/focus_manager.dart',
+                  'KeyEventResult',
+                ),
+                [],
+              ),
+            ),
+          ]),
+        ),
+        isStatic: true,
+      ),
+    },
   );
 
   static final _$values = {
@@ -67,9 +130,21 @@ class $KeyEventResult implements $Instance {
   };
 
   /// Wrapper for the [KeyEventResult.values] getter
-  static $Value? $values(Runtime runtime, $Value? target, List<$Value?> args) {
-    const value = KeyEventResult.values;
-    return $List.view(value, (e) => $KeyEventResult.wrap(e));
+  static $Value? $values(Runtime runtime, Object? r, Object? s, Object? c) {
+    final value = KeyEventResult.values;
+    return $List.view(
+      value,
+      (e) => $KeyEventResult.wrap(e),
+      runtime: runtime,
+      runtimeTypeId: runtime.internParameterizedType(CoreTypes.list, [
+        runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/focus_manager.dart',
+            'KeyEventResult',
+          ),
+        ),
+      ]),
+    );
   }
 
   final $Instance _superclass;
@@ -101,11 +176,16 @@ class $KeyEventResult implements $Instance {
 class $FocusNode implements $Instance {
   /// Configure this class for use in a [Runtime]
   static void configureForRuntime(Runtime runtime) {
-    runtime.registerBridgeFunc(
+    runtime.registerBridgeFuncRegisters(
       'package:flutter/src/widgets/focus_manager.dart',
       'FocusNode.',
       $FocusNode.$new,
     );
+  }
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
   }
 
   /// Compile-time type specification of [$FocusNode]
@@ -119,7 +199,47 @@ class $FocusNode implements $Instance {
 
   /// Compile-time class declaration of [$FocusNode]
   static const $declaration = BridgeClassDef(
-    BridgeClassType($type),
+    BridgeClassType(
+      $type,
+
+      $implements: [
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'DiagnosticableTreeMixin',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'DiagnosticableTree',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'Diagnosticable',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/change_notifier.dart',
+            'ChangeNotifier',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/change_notifier.dart',
+            'Listenable',
+          ),
+          [],
+        ),
+      ],
+    ),
     constructors: {
       '': BridgeConstructorDef(
         BridgeFunctionDef(
@@ -128,11 +248,12 @@ class $FocusNode implements $Instance {
             BridgeParameter(
               'debugLabel',
               BridgeTypeAnnotation(
-                BridgeTypeRef(CoreTypes.string, []),
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
                 nullable: true,
               ),
               true,
             ),
+
             BridgeParameter(
               'onKey',
               BridgeTypeAnnotation(
@@ -161,6 +282,7 @@ class $FocusNode implements $Instance {
                         ),
                         false,
                       ),
+
                       BridgeParameter(
                         'event',
                         BridgeTypeAnnotation(
@@ -182,6 +304,7 @@ class $FocusNode implements $Instance {
               ),
               true,
             ),
+
             BridgeParameter(
               'onKeyEvent',
               BridgeTypeAnnotation(
@@ -210,6 +333,7 @@ class $FocusNode implements $Instance {
                         ),
                         false,
                       ),
+
                       BridgeParameter(
                         'event',
                         BridgeTypeAnnotation(
@@ -231,24 +355,36 @@ class $FocusNode implements $Instance {
               ),
               true,
             ),
+
             BridgeParameter(
               'skipTraversal',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+              ),
               true,
             ),
+
             BridgeParameter(
               'canRequestFocus',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+              ),
               true,
             ),
+
             BridgeParameter(
               'descendantsAreFocusable',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+              ),
               true,
             ),
+
             BridgeParameter(
               'descendantsAreTraversable',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+              ),
               true,
             ),
           ],
@@ -257,36 +393,8 @@ class $FocusNode implements $Instance {
         isFactory: false,
       ),
     },
+
     methods: {
-      '_allowDescendantsToBeFocused': BridgeMethodDef(
-        BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
-          namedParams: [],
-          params: [
-            BridgeParameter(
-              'ancestor',
-              BridgeTypeAnnotation(
-                BridgeTypeRef(
-                  BridgeTypeSpec(
-                    'package:flutter/src/widgets/focus_manager.dart',
-                    'FocusNode',
-                  ),
-                  [],
-                ),
-              ),
-              false,
-            ),
-          ],
-        ),
-        isStatic: true,
-      ),
-      '_clearEnclosingScopeCache': BridgeMethodDef(
-        BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
-          namedParams: [],
-          params: [],
-        ),
-      ),
       'unfocus': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -308,104 +416,17 @@ class $FocusNode implements $Instance {
           params: [],
         ),
       ),
+
       'consumeKeyboardToken': BridgeMethodDef(
         BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+          ),
           namedParams: [],
           params: [],
         ),
       ),
-      '_markNextFocus': BridgeMethodDef(
-        BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
-          namedParams: [],
-          params: [
-            BridgeParameter(
-              'newFocus',
-              BridgeTypeAnnotation(
-                BridgeTypeRef(
-                  BridgeTypeSpec(
-                    'package:flutter/src/widgets/focus_manager.dart',
-                    'FocusNode',
-                  ),
-                  [],
-                ),
-              ),
-              false,
-            ),
-          ],
-        ),
-      ),
-      '_removeChild': BridgeMethodDef(
-        BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
-          namedParams: [
-            BridgeParameter(
-              'removeScopeFocus',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
-              true,
-            ),
-          ],
-          params: [
-            BridgeParameter(
-              'node',
-              BridgeTypeAnnotation(
-                BridgeTypeRef(
-                  BridgeTypeSpec(
-                    'package:flutter/src/widgets/focus_manager.dart',
-                    'FocusNode',
-                  ),
-                  [],
-                ),
-              ),
-              false,
-            ),
-          ],
-        ),
-      ),
-      '_updateManager': BridgeMethodDef(
-        BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
-          namedParams: [],
-          params: [
-            BridgeParameter(
-              'manager',
-              BridgeTypeAnnotation(
-                BridgeTypeRef(
-                  BridgeTypeSpec(
-                    'package:flutter/src/widgets/focus_manager.dart',
-                    'FocusManager',
-                  ),
-                  [],
-                ),
-                nullable: true,
-              ),
-              false,
-            ),
-          ],
-        ),
-      ),
-      '_reparent': BridgeMethodDef(
-        BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
-          namedParams: [],
-          params: [
-            BridgeParameter(
-              'child',
-              BridgeTypeAnnotation(
-                BridgeTypeRef(
-                  BridgeTypeSpec(
-                    'package:flutter/src/widgets/focus_manager.dart',
-                    'FocusNode',
-                  ),
-                  [],
-                ),
-              ),
-              false,
-            ),
-          ],
-        ),
-      ),
+
       'attach': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
@@ -446,6 +467,7 @@ class $FocusNode implements $Instance {
                         ),
                         false,
                       ),
+
                       BridgeParameter(
                         'event',
                         BridgeTypeAnnotation(
@@ -467,6 +489,7 @@ class $FocusNode implements $Instance {
               ),
               true,
             ),
+
             BridgeParameter(
               'onKey',
               BridgeTypeAnnotation(
@@ -495,6 +518,7 @@ class $FocusNode implements $Instance {
                         ),
                         false,
                       ),
+
                       BridgeParameter(
                         'event',
                         BridgeTypeAnnotation(
@@ -535,6 +559,7 @@ class $FocusNode implements $Instance {
           ],
         ),
       ),
+
       'dispose': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -542,13 +567,7 @@ class $FocusNode implements $Instance {
           params: [],
         ),
       ),
-      '_notify': BridgeMethodDef(
-        BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
-          namedParams: [],
-          params: [],
-        ),
-      ),
+
       'requestFocus': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -571,43 +590,32 @@ class $FocusNode implements $Instance {
           ],
         ),
       ),
-      '_doRequestFocus': BridgeMethodDef(
-        BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
-          namedParams: [
-            BridgeParameter(
-              'findFirstFocus',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
-              false,
-            ),
-          ],
-          params: [],
-        ),
-      ),
-      '_setAsFocusedChildForScope': BridgeMethodDef(
-        BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
-          namedParams: [],
-          params: [],
-        ),
-      ),
+
       'nextFocus': BridgeMethodDef(
         BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+          ),
           namedParams: [],
           params: [],
         ),
       ),
+
       'previousFocus': BridgeMethodDef(
         BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+          ),
           namedParams: [],
           params: [],
         ),
       ),
+
       'focusInDirection': BridgeMethodDef(
         BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+          ),
           namedParams: [],
           params: [
             BridgeParameter(
@@ -626,6 +634,7 @@ class $FocusNode implements $Instance {
           ],
         ),
       ),
+
       'debugFillProperties': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -647,10 +656,11 @@ class $FocusNode implements $Instance {
           ],
         ),
       ),
+
       'debugDescribeChildren': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
-            BridgeTypeRef(CoreTypes.list, [
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'List'), [
               BridgeTypeAnnotation(
                 BridgeTypeRef(
                   BridgeTypeSpec(
@@ -666,9 +676,12 @@ class $FocusNode implements $Instance {
           params: [],
         ),
       ),
+
       'toStringShort': BridgeMethodDef(
         BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.string, [])),
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
+          ),
           namedParams: [],
           params: [],
         ),
@@ -677,32 +690,44 @@ class $FocusNode implements $Instance {
     getters: {
       'skipTraversal': BridgeMethodDef(
         BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+          ),
           namedParams: [],
           params: [],
         ),
       ),
+
       'canRequestFocus': BridgeMethodDef(
         BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+          ),
           namedParams: [],
           params: [],
         ),
       ),
+
       'descendantsAreFocusable': BridgeMethodDef(
         BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+          ),
           namedParams: [],
           params: [],
         ),
       ),
+
       'descendantsAreTraversable': BridgeMethodDef(
         BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+          ),
           namedParams: [],
           params: [],
         ),
       ),
+
       'context': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
@@ -719,6 +744,7 @@ class $FocusNode implements $Instance {
           params: [],
         ),
       ),
+
       'parent': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
@@ -735,10 +761,11 @@ class $FocusNode implements $Instance {
           params: [],
         ),
       ),
+
       'children': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
-            BridgeTypeRef(CoreTypes.iterable, [
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'Iterable'), [
               BridgeTypeAnnotation(
                 BridgeTypeRef(
                   BridgeTypeSpec(
@@ -754,10 +781,11 @@ class $FocusNode implements $Instance {
           params: [],
         ),
       ),
+
       'traversalChildren': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
-            BridgeTypeRef(CoreTypes.iterable, [
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'Iterable'), [
               BridgeTypeAnnotation(
                 BridgeTypeRef(
                   BridgeTypeSpec(
@@ -773,20 +801,22 @@ class $FocusNode implements $Instance {
           params: [],
         ),
       ),
+
       'debugLabel': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
-            BridgeTypeRef(CoreTypes.string, []),
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
             nullable: true,
           ),
           namedParams: [],
           params: [],
         ),
       ),
+
       'descendants': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
-            BridgeTypeRef(CoreTypes.iterable, [
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'Iterable'), [
               BridgeTypeAnnotation(
                 BridgeTypeRef(
                   BridgeTypeSpec(
@@ -802,10 +832,11 @@ class $FocusNode implements $Instance {
           params: [],
         ),
       ),
+
       'traversalDescendants': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
-            BridgeTypeRef(CoreTypes.iterable, [
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'Iterable'), [
               BridgeTypeAnnotation(
                 BridgeTypeRef(
                   BridgeTypeSpec(
@@ -821,10 +852,11 @@ class $FocusNode implements $Instance {
           params: [],
         ),
       ),
+
       'ancestors': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
-            BridgeTypeRef(CoreTypes.iterable, [
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'Iterable'), [
               BridgeTypeAnnotation(
                 BridgeTypeRef(
                   BridgeTypeSpec(
@@ -840,20 +872,27 @@ class $FocusNode implements $Instance {
           params: [],
         ),
       ),
+
       'hasFocus': BridgeMethodDef(
         BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+          ),
           namedParams: [],
           params: [],
         ),
       ),
+
       'hasPrimaryFocus': BridgeMethodDef(
         BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+          ),
           namedParams: [],
           params: [],
         ),
       ),
+
       'highlightMode': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
@@ -869,6 +908,7 @@ class $FocusNode implements $Instance {
           params: [],
         ),
       ),
+
       'nearestScope': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
@@ -885,6 +925,7 @@ class $FocusNode implements $Instance {
           params: [],
         ),
       ),
+
       'enclosingScope': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
@@ -901,6 +942,7 @@ class $FocusNode implements $Instance {
           params: [],
         ),
       ),
+
       'size': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
@@ -910,6 +952,7 @@ class $FocusNode implements $Instance {
           params: [],
         ),
       ),
+
       'offset': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
@@ -919,6 +962,7 @@ class $FocusNode implements $Instance {
           params: [],
         ),
       ),
+
       'rect': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
@@ -937,12 +981,15 @@ class $FocusNode implements $Instance {
           params: [
             BridgeParameter(
               'value',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+              ),
               false,
             ),
           ],
         ),
       ),
+
       'canRequestFocus': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -950,12 +997,15 @@ class $FocusNode implements $Instance {
           params: [
             BridgeParameter(
               'value',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+              ),
               false,
             ),
           ],
         ),
       ),
+
       'descendantsAreFocusable': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -963,12 +1013,15 @@ class $FocusNode implements $Instance {
           params: [
             BridgeParameter(
               'value',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+              ),
               false,
             ),
           ],
         ),
       ),
+
       'descendantsAreTraversable': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -976,12 +1029,15 @@ class $FocusNode implements $Instance {
           params: [
             BridgeParameter(
               'value',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+              ),
               false,
             ),
           ],
         ),
       ),
+
       'debugLabel': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -990,7 +1046,7 @@ class $FocusNode implements $Instance {
             BridgeParameter(
               'value',
               BridgeTypeAnnotation(
-                BridgeTypeRef(CoreTypes.string, []),
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
                 nullable: true,
               ),
               false,
@@ -1000,35 +1056,6 @@ class $FocusNode implements $Instance {
       ),
     },
     fields: {
-      '_skipTraversal': BridgeFieldDef(
-        BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
-        isStatic: false,
-      ),
-      '_canRequestFocus': BridgeFieldDef(
-        BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
-        isStatic: false,
-      ),
-      '_descendantsAreFocusable': BridgeFieldDef(
-        BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
-        isStatic: false,
-      ),
-      '_descendantsAreTraversable': BridgeFieldDef(
-        BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
-        isStatic: false,
-      ),
-      '_context': BridgeFieldDef(
-        BridgeTypeAnnotation(
-          BridgeTypeRef(
-            BridgeTypeSpec(
-              'package:flutter/src/widgets/framework.dart',
-              'BuildContext',
-            ),
-            [],
-          ),
-          nullable: true,
-        ),
-        isStatic: false,
-      ),
       'onKey': BridgeFieldDef(
         BridgeTypeAnnotation(
           BridgeTypeRef.genericFunction(
@@ -1056,6 +1083,7 @@ class $FocusNode implements $Instance {
                   ),
                   false,
                 ),
+
                 BridgeParameter(
                   'event',
                   BridgeTypeAnnotation(
@@ -1077,6 +1105,7 @@ class $FocusNode implements $Instance {
         ),
         isStatic: false,
       ),
+
       'onKeyEvent': BridgeFieldDef(
         BridgeTypeAnnotation(
           BridgeTypeRef.genericFunction(
@@ -1104,6 +1133,7 @@ class $FocusNode implements $Instance {
                   ),
                   false,
                 ),
+
                 BridgeParameter(
                   'event',
                   BridgeTypeAnnotation(
@@ -1125,143 +1155,70 @@ class $FocusNode implements $Instance {
         ),
         isStatic: false,
       ),
-      '_manager': BridgeFieldDef(
-        BridgeTypeAnnotation(
-          BridgeTypeRef(
-            BridgeTypeSpec(
-              'package:flutter/src/widgets/focus_manager.dart',
-              'FocusManager',
-            ),
-            [],
-          ),
-          nullable: true,
-        ),
-        isStatic: false,
-      ),
-      '_ancestors': BridgeFieldDef(
-        BridgeTypeAnnotation(
-          BridgeTypeRef(CoreTypes.list, [
-            BridgeTypeAnnotation(
-              BridgeTypeRef(
-                BridgeTypeSpec(
-                  'package:flutter/src/widgets/focus_manager.dart',
-                  'FocusNode',
-                ),
-                [],
-              ),
-            ),
-          ]),
-          nullable: true,
-        ),
-        isStatic: false,
-      ),
-      '_descendants': BridgeFieldDef(
-        BridgeTypeAnnotation(
-          BridgeTypeRef(CoreTypes.list, [
-            BridgeTypeAnnotation(
-              BridgeTypeRef(
-                BridgeTypeSpec(
-                  'package:flutter/src/widgets/focus_manager.dart',
-                  'FocusNode',
-                ),
-                [],
-              ),
-            ),
-          ]),
-          nullable: true,
-        ),
-        isStatic: false,
-      ),
-      '_hasKeyboardToken': BridgeFieldDef(
-        BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
-        isStatic: false,
-      ),
-      '_parent': BridgeFieldDef(
-        BridgeTypeAnnotation(
-          BridgeTypeRef(
-            BridgeTypeSpec(
-              'package:flutter/src/widgets/focus_manager.dart',
-              'FocusNode',
-            ),
-            [],
-          ),
-          nullable: true,
-        ),
-        isStatic: false,
-      ),
-      '_children': BridgeFieldDef(
-        BridgeTypeAnnotation(
-          BridgeTypeRef(CoreTypes.list, [
-            BridgeTypeAnnotation(
-              BridgeTypeRef(
-                BridgeTypeSpec(
-                  'package:flutter/src/widgets/focus_manager.dart',
-                  'FocusNode',
-                ),
-                [],
-              ),
-            ),
-          ]),
-        ),
-        isStatic: false,
-      ),
-      '_debugLabel': BridgeFieldDef(
-        BridgeTypeAnnotation(
-          BridgeTypeRef(CoreTypes.string, []),
-          nullable: true,
-        ),
-        isStatic: false,
-      ),
-      '_attachment': BridgeFieldDef(
-        BridgeTypeAnnotation(
-          BridgeTypeRef(
-            BridgeTypeSpec(
-              'package:flutter/src/widgets/focus_manager.dart',
-              'FocusAttachment',
-            ),
-            [],
-          ),
-          nullable: true,
-        ),
-        isStatic: false,
-      ),
-      '_enclosingScope': BridgeFieldDef(
-        BridgeTypeAnnotation(
-          BridgeTypeRef(
-            BridgeTypeSpec(
-              'package:flutter/src/widgets/focus_manager.dart',
-              'FocusScopeNode',
-            ),
-            [],
-          ),
-          nullable: true,
-        ),
-        isStatic: false,
-      ),
-      '_requestFocusWhenReparented': BridgeFieldDef(
-        BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
-        isStatic: false,
-      ),
     },
     wrap: true,
     bridge: false,
   );
 
   /// Wrapper for the [FocusNode.new] constructor
-  static $Value? $new(Runtime runtime, $Value? thisValue, List<$Value?> args) {
+  static $Value? $new(Runtime runtime, Object? r, Object? s, Object? c) {
+    final _arg2OrNull = c is List && c.length > 0 ? c[0] as $Value? : null;
+    final _arg3OrNull = c is List && c.length > 1 ? c[1] as $Value? : null;
+    final _arg4OrNull = c is List && c.length > 2 ? c[2] as $Value? : null;
+    final _arg5OrNull = c is List && c.length > 3 ? c[3] as $Value? : null;
+    final _arg6OrNull = c is List && c.length > 4 ? c[4] as $Value? : null;
+
     return $FocusNode.wrap(
       FocusNode(
-        debugLabel: args[0]?.$value,
-        onKeyEvent: (FocusNode node, KeyEvent event) {
-          return (args[2]! as EvalCallable?)?.call(runtime, null, [
-            $FocusNode.wrap(node),
-            $KeyEvent.wrap(event),
-          ])?.$value;
-        },
-        skipTraversal: args[3]?.$value ?? false,
-        canRequestFocus: args[4]?.$value ?? true,
-        descendantsAreFocusable: args[5]?.$value ?? true,
-        descendantsAreTraversable: args[6]?.$value ?? true,
+        debugLabel: (r is $Value ? r : null)?.$value,
+        onKey:
+            (s is $Value ? s : null) == null ||
+                (s is $Value ? s : null) is $null
+            ? null
+            : runtime.cachedCallback(
+                (s is $Value ? s : null)! as EvalCallable,
+                "KeyEventResult Function(FocusNode, RawKeyEvent);export=false",
+                (_callable) => (FocusNode node, RawKeyEvent event) {
+                  return _callable
+                      .call(
+                        runtime,
+                        null,
+                        $FocusNode.wrap(node),
+                        $RawKeyEvent.wrap(event),
+                        2,
+                      )
+                      ?.$value;
+                },
+              ),
+        onKeyEvent: _arg2OrNull == null || _arg2OrNull is $null
+            ? null
+            : runtime.cachedCallback(
+                _arg2OrNull! as EvalCallable,
+                "KeyEventResult Function(FocusNode, KeyEvent);export=false",
+                (_callable) => (FocusNode node, KeyEvent event) {
+                  return _callable
+                      .call(
+                        runtime,
+                        null,
+                        $FocusNode.wrap(node),
+                        $KeyEvent.wrap(event),
+                        2,
+                      )
+                      ?.$value;
+                },
+              ),
+        skipTraversal: _arg3OrNull == null
+            ? false
+            : (_arg3OrNull as $bool).$value,
+        canRequestFocus: _arg4OrNull == null
+            ? true
+            : (_arg4OrNull as $bool).$value,
+        descendantsAreFocusable: _arg5OrNull == null
+            ? true
+            : (_arg5OrNull as $bool).$value,
+        descendantsAreTraversable: _arg6OrNull == null
+            ? true
+            : (_arg6OrNull as $bool).$value,
       ),
     );
   }
@@ -1283,140 +1240,145 @@ class $FocusNode implements $Instance {
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
     switch (identifier) {
+      case 'skipTraversal':
+        final _skipTraversal = $value.skipTraversal;
+        return $bool(_skipTraversal);
+      case 'canRequestFocus':
+        final _canRequestFocus = $value.canRequestFocus;
+        return $bool(_canRequestFocus);
+      case 'descendantsAreFocusable':
+        final _descendantsAreFocusable = $value.descendantsAreFocusable;
+        return $bool(_descendantsAreFocusable);
+      case 'descendantsAreTraversable':
+        final _descendantsAreTraversable = $value.descendantsAreTraversable;
+        return $bool(_descendantsAreTraversable);
+      case 'context':
+        final _context = $value.context;
+        return _context == null ? const $null() : $BuildContext.wrap(_context);
+      case 'onKey':
+        final _onKey = $value.onKey;
+        return _onKey == null
+            ? const $null()
+            : $Function((runtime, target, r, s, c) {
+                final funcResult = _onKey(
+                  (r as $Value?)!.$value,
+                  (s as $Value?)!.$value,
+                );
+                return $KeyEventResult.wrap(funcResult);
+              });
       case 'onKeyEvent':
         final _onKeyEvent = $value.onKeyEvent;
         return _onKeyEvent == null
             ? const $null()
-            : $Function((runtime, target, args) {
-                final funcResult =
-                    _onKeyEvent(args[0]!.$value, args[1]!.$value);
+            : $Function((runtime, target, r, s, c) {
+                final funcResult = _onKeyEvent(
+                  (r as $Value?)!.$value,
+                  (s as $Value?)!.$value,
+                );
                 return $KeyEventResult.wrap(funcResult);
               });
-
-      case 'skipTraversal':
-        final _skipTraversal = $value.skipTraversal;
-        return $bool(_skipTraversal);
-
-      case 'canRequestFocus':
-        final _canRequestFocus = $value.canRequestFocus;
-        return $bool(_canRequestFocus);
-
-      case 'descendantsAreFocusable':
-        final _descendantsAreFocusable = $value.descendantsAreFocusable;
-        return $bool(_descendantsAreFocusable);
-
-      case 'descendantsAreTraversable':
-        final _descendantsAreTraversable = $value.descendantsAreTraversable;
-        return $bool(_descendantsAreTraversable);
-
-      case 'context':
-        final _context = $value.context;
-        return _context == null ? const $null() : $BuildContext.wrap(_context);
-
       case 'parent':
         final _parent = $value.parent;
         return _parent == null ? const $null() : $FocusNode.wrap(_parent);
-
       case 'children':
         final _children = $value.children;
-        return $Iterable.wrap(_children);
-
+        return $Iterable.wrap((_children).map((e) => $FocusNode.wrap(e)));
       case 'traversalChildren':
         final _traversalChildren = $value.traversalChildren;
-        return $Iterable.wrap(_traversalChildren);
-
+        return $Iterable.wrap(
+          (_traversalChildren).map((e) => $FocusNode.wrap(e)),
+        );
       case 'debugLabel':
         final _debugLabel = $value.debugLabel;
         return _debugLabel == null ? const $null() : $String(_debugLabel);
-
       case 'descendants':
         final _descendants = $value.descendants;
-        return $Iterable.wrap(_descendants);
-
+        return $Iterable.wrap((_descendants).map((e) => $FocusNode.wrap(e)));
       case 'traversalDescendants':
         final _traversalDescendants = $value.traversalDescendants;
-        return $Iterable.wrap(_traversalDescendants);
-
+        return $Iterable.wrap(
+          (_traversalDescendants).map((e) => $FocusNode.wrap(e)),
+        );
       case 'ancestors':
         final _ancestors = $value.ancestors;
-        return $Iterable.wrap(_ancestors);
-
+        return $Iterable.wrap((_ancestors).map((e) => $FocusNode.wrap(e)));
       case 'hasFocus':
         final _hasFocus = $value.hasFocus;
         return $bool(_hasFocus);
-
       case 'hasPrimaryFocus':
         final _hasPrimaryFocus = $value.hasPrimaryFocus;
         return $bool(_hasPrimaryFocus);
-
       case 'highlightMode':
         final _highlightMode = $value.highlightMode;
         return $FocusHighlightMode.wrap(_highlightMode);
-
       case 'nearestScope':
         final _nearestScope = $value.nearestScope;
         return _nearestScope == null
             ? const $null()
             : $FocusScopeNode.wrap(_nearestScope);
-
       case 'enclosingScope':
         final _enclosingScope = $value.enclosingScope;
         return _enclosingScope == null
             ? const $null()
             : $FocusScopeNode.wrap(_enclosingScope);
-
       case 'size':
         final _size = $value.size;
         return $Size.wrap(_size);
-
       case 'offset':
         final _offset = $value.offset;
         return $Offset.wrap(_offset);
-
       case 'rect':
         final _rect = $value.rect;
         return $Rect.wrap(_rect);
       case 'unfocus':
-        return __unfocus;
+        return $Closure(__unfocus.func, this);
 
       case 'consumeKeyboardToken':
-        return __consumeKeyboardToken;
+        return $Closure(__consumeKeyboardToken.func, this);
 
       case 'attach':
-        return __attach;
+        return $Closure(__attach.func, this);
 
       case 'dispose':
-        return __dispose;
+        return $Closure(__dispose.func, this);
 
       case 'requestFocus':
-        return __requestFocus;
+        return $Closure(__requestFocus.func, this);
 
       case 'nextFocus':
-        return __nextFocus;
+        return $Closure(__nextFocus.func, this);
 
       case 'previousFocus':
-        return __previousFocus;
+        return $Closure(__previousFocus.func, this);
 
       case 'focusInDirection':
-        return __focusInDirection;
+        return $Closure(__focusInDirection.func, this);
 
       case 'debugFillProperties':
-        return __debugFillProperties;
+        return $Closure(__debugFillProperties.func, this);
 
       case 'debugDescribeChildren':
-        return __debugDescribeChildren;
+        return $Closure(__debugDescribeChildren.func, this);
 
       case 'toStringShort':
-        return __toStringShort;
+        return $Closure(__toStringShort.func, this);
     }
     return _superclass.$getProperty(runtime, identifier);
   }
 
   static const $Function __unfocus = $Function(_unfocus);
-  static $Value? _unfocus(Runtime runtime, $Value? target, List<$Value?> args) {
+  static $Value? _unfocus(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
     final self = target! as $FocusNode;
     self.$value.unfocus(
-      disposition: args[0]?.$value ?? UnfocusDisposition.scope,
+      disposition: (r is $Value ? r : null) == null
+          ? UnfocusDisposition.scope
+          : (r is $Value ? r : null)!.$value,
     );
     return null;
   }
@@ -1427,7 +1389,9 @@ class $FocusNode implements $Instance {
   static $Value? _consumeKeyboardToken(
     Runtime runtime,
     $Value? target,
-    List<$Value?> args,
+    Object? r,
+    Object? s,
+    Object? c,
   ) {
     final self = target! as $FocusNode;
     final result = self.$value.consumeKeyboardToken();
@@ -1435,22 +1399,74 @@ class $FocusNode implements $Instance {
   }
 
   static const $Function __attach = $Function(_attach);
-  static $Value? _attach(Runtime runtime, $Value? target, List<$Value?> args) {
+  static $Value? _attach(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
     final self = target! as $FocusNode;
     final result = self.$value.attach(
-      args[0]!.$value,
-      onKeyEvent: (FocusNode node, KeyEvent event) {
-        return (args[1]! as EvalCallable?)?.call(runtime, null, [
-          $FocusNode.wrap(node),
-          $KeyEvent.wrap(event),
-        ])?.$value;
-      },
+      (r as $Value?)!.$value,
+      onKeyEvent:
+          (s is $Value ? s : null) == null || (s is $Value ? s : null) is $null
+          ? null
+          : runtime.cachedCallback(
+              (s is $Value ? s : null)! as EvalCallable,
+              "KeyEventResult Function(FocusNode, KeyEvent);export=false",
+              (_callable) => (FocusNode node, KeyEvent event) {
+                return _callable
+                    .call(
+                      runtime,
+                      null,
+                      $FocusNode.wrap(node),
+                      $KeyEvent.wrap(event),
+                      2,
+                    )
+                    ?.$value;
+              },
+            ),
+      onKey:
+          (c is List && (c as List).length > 0
+                      ? (c as List)[0] as $Value?
+                      : null) ==
+                  null ||
+              (c is List && (c as List).length > 0
+                      ? (c as List)[0] as $Value?
+                      : null)
+                  is $null
+          ? null
+          : runtime.cachedCallback(
+              (c is List && (c as List).length > 0
+                      ? (c as List)[0] as $Value?
+                      : null)!
+                  as EvalCallable,
+              "KeyEventResult Function(FocusNode, RawKeyEvent);export=false",
+              (_callable) => (FocusNode node, RawKeyEvent event) {
+                return _callable
+                    .call(
+                      runtime,
+                      null,
+                      $FocusNode.wrap(node),
+                      $RawKeyEvent.wrap(event),
+                      2,
+                    )
+                    ?.$value;
+              },
+            ),
     );
-    return runtime.wrapAlways(result);
+    return $FocusAttachment.wrap(result);
   }
 
   static const $Function __dispose = $Function(_dispose);
-  static $Value? _dispose(Runtime runtime, $Value? target, List<$Value?> args) {
+  static $Value? _dispose(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
     final self = target! as $FocusNode;
     self.$value.dispose();
     return null;
@@ -1460,10 +1476,12 @@ class $FocusNode implements $Instance {
   static $Value? _requestFocus(
     Runtime runtime,
     $Value? target,
-    List<$Value?> args,
+    Object? r,
+    Object? s,
+    Object? c,
   ) {
     final self = target! as $FocusNode;
-    self.$value.requestFocus(args[0]?.$value);
+    self.$value.requestFocus((r is $Value ? r : null)?.$value);
     return null;
   }
 
@@ -1471,7 +1489,9 @@ class $FocusNode implements $Instance {
   static $Value? _nextFocus(
     Runtime runtime,
     $Value? target,
-    List<$Value?> args,
+    Object? r,
+    Object? s,
+    Object? c,
   ) {
     final self = target! as $FocusNode;
     final result = self.$value.nextFocus();
@@ -1482,7 +1502,9 @@ class $FocusNode implements $Instance {
   static $Value? _previousFocus(
     Runtime runtime,
     $Value? target,
-    List<$Value?> args,
+    Object? r,
+    Object? s,
+    Object? c,
   ) {
     final self = target! as $FocusNode;
     final result = self.$value.previousFocus();
@@ -1493,10 +1515,12 @@ class $FocusNode implements $Instance {
   static $Value? _focusInDirection(
     Runtime runtime,
     $Value? target,
-    List<$Value?> args,
+    Object? r,
+    Object? s,
+    Object? c,
   ) {
     final self = target! as $FocusNode;
-    final result = self.$value.focusInDirection(args[0]!.$value);
+    final result = self.$value.focusInDirection((r as $Value?)!.$value);
     return $bool(result);
   }
 
@@ -1506,10 +1530,12 @@ class $FocusNode implements $Instance {
   static $Value? _debugFillProperties(
     Runtime runtime,
     $Value? target,
-    List<$Value?> args,
+    Object? r,
+    Object? s,
+    Object? c,
   ) {
     final self = target! as $FocusNode;
-    self.$value.debugFillProperties(args[0]!.$value);
+    self.$value.debugFillProperties((r as $Value?)!.$value);
     return null;
   }
 
@@ -1519,18 +1545,34 @@ class $FocusNode implements $Instance {
   static $Value? _debugDescribeChildren(
     Runtime runtime,
     $Value? target,
-    List<$Value?> args,
+    Object? r,
+    Object? s,
+    Object? c,
   ) {
     final self = target! as $FocusNode;
     final result = self.$value.debugDescribeChildren();
-    return $List.view(result, (e) => $DiagnosticsNode.wrap(e));
+    return $List.view(
+      result,
+      (e) => $DiagnosticsNode.wrap(e),
+      runtime: runtime,
+      runtimeTypeId: runtime.internParameterizedType(CoreTypes.list, [
+        runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'DiagnosticsNode',
+          ),
+        ),
+      ]),
+    );
   }
 
   static const $Function __toStringShort = $Function(_toStringShort);
   static $Value? _toStringShort(
     Runtime runtime,
     $Value? target,
-    List<$Value?> args,
+    Object? r,
+    Object? s,
+    Object? c,
   ) {
     final self = target! as $FocusNode;
     final result = self.$value.toStringShort();
@@ -1540,28 +1582,26 @@ class $FocusNode implements $Instance {
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
     switch (identifier) {
-      case 'onKeyEvent':
-        $value.onKeyEvent = value.$value;
-        return;
-
       case 'skipTraversal':
-        $value.skipTraversal = value.$value;
+        $value.skipTraversal = value.$reified;
         return;
-
       case 'canRequestFocus':
-        $value.canRequestFocus = value.$value;
+        $value.canRequestFocus = value.$reified;
         return;
-
       case 'descendantsAreFocusable':
-        $value.descendantsAreFocusable = value.$value;
+        $value.descendantsAreFocusable = value.$reified;
         return;
-
       case 'descendantsAreTraversable':
-        $value.descendantsAreTraversable = value.$value;
+        $value.descendantsAreTraversable = value.$reified;
         return;
-
+      case 'onKey':
+        $value.onKey = value.$reified;
+        return;
+      case 'onKeyEvent':
+        $value.onKeyEvent = value.$reified;
+        return;
       case 'debugLabel':
-        $value.debugLabel = value.$value;
+        $value.debugLabel = value.$reified;
         return;
     }
     return _superclass.$setProperty(runtime, identifier, value);
@@ -1572,11 +1612,16 @@ class $FocusNode implements $Instance {
 class $FocusScopeNode implements $Instance {
   /// Configure this class for use in a [Runtime]
   static void configureForRuntime(Runtime runtime) {
-    runtime.registerBridgeFunc(
+    runtime.registerBridgeFuncRegisters(
       'package:flutter/src/widgets/focus_manager.dart',
       'FocusScopeNode.',
       $FocusScopeNode.$new,
     );
+  }
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
   }
 
   /// Compile-time type specification of [$FocusScopeNode]
@@ -1592,6 +1637,7 @@ class $FocusScopeNode implements $Instance {
   static const $declaration = BridgeClassDef(
     BridgeClassType(
       $type,
+
       $extends: BridgeTypeRef(
         BridgeTypeSpec(
           'package:flutter/src/widgets/focus_manager.dart',
@@ -1599,6 +1645,51 @@ class $FocusScopeNode implements $Instance {
         ),
         [],
       ),
+
+      $implements: [
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/focus_manager.dart',
+            'FocusNode',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'DiagnosticableTreeMixin',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'DiagnosticableTree',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'Diagnosticable',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/change_notifier.dart',
+            'ChangeNotifier',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/change_notifier.dart',
+            'Listenable',
+          ),
+          [],
+        ),
+      ],
     ),
     constructors: {
       '': BridgeConstructorDef(
@@ -1608,11 +1699,12 @@ class $FocusScopeNode implements $Instance {
             BridgeParameter(
               'debugLabel',
               BridgeTypeAnnotation(
-                BridgeTypeRef(CoreTypes.string, []),
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
                 nullable: true,
               ),
               true,
             ),
+
             BridgeParameter(
               'onKeyEvent',
               BridgeTypeAnnotation(
@@ -1641,6 +1733,7 @@ class $FocusScopeNode implements $Instance {
                         ),
                         false,
                       ),
+
                       BridgeParameter(
                         'event',
                         BridgeTypeAnnotation(
@@ -1662,6 +1755,7 @@ class $FocusScopeNode implements $Instance {
               ),
               true,
             ),
+
             BridgeParameter(
               'onKey',
               BridgeTypeAnnotation(
@@ -1690,6 +1784,7 @@ class $FocusScopeNode implements $Instance {
                         ),
                         false,
                       ),
+
                       BridgeParameter(
                         'event',
                         BridgeTypeAnnotation(
@@ -1711,16 +1806,23 @@ class $FocusScopeNode implements $Instance {
               ),
               true,
             ),
+
             BridgeParameter(
               'skipTraversal',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+              ),
               true,
             ),
+
             BridgeParameter(
               'canRequestFocus',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+              ),
               true,
             ),
+
             BridgeParameter(
               'traversalEdgeBehavior',
               BridgeTypeAnnotation(
@@ -1734,6 +1836,7 @@ class $FocusScopeNode implements $Instance {
               ),
               true,
             ),
+
             BridgeParameter(
               'directionalTraversalEdgeBehavior',
               BridgeTypeAnnotation(
@@ -1753,6 +1856,7 @@ class $FocusScopeNode implements $Instance {
         isFactory: false,
       ),
     },
+
     methods: {
       'setFirstFocus': BridgeMethodDef(
         BridgeFunctionDef(
@@ -1775,6 +1879,7 @@ class $FocusScopeNode implements $Instance {
           ],
         ),
       ),
+
       'autofocus': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -1796,6 +1901,7 @@ class $FocusScopeNode implements $Instance {
           ],
         ),
       ),
+
       'requestScopeFocus': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -1803,19 +1909,7 @@ class $FocusScopeNode implements $Instance {
           params: [],
         ),
       ),
-      '_doRequestFocus': BridgeMethodDef(
-        BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
-          namedParams: [
-            BridgeParameter(
-              'findFirstFocus',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
-              false,
-            ),
-          ],
-          params: [],
-        ),
-      ),
+
       'debugFillProperties': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -1854,20 +1948,27 @@ class $FocusScopeNode implements $Instance {
           params: [],
         ),
       ),
+
       'descendantsAreFocusable': BridgeMethodDef(
         BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+          ),
           namedParams: [],
           params: [],
         ),
       ),
+
       'isFirstFocus': BridgeMethodDef(
         BridgeFunctionDef(
-          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.bool, [])),
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+          ),
           namedParams: [],
           params: [],
         ),
       ),
+
       'focusedChild': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
@@ -1884,10 +1985,11 @@ class $FocusScopeNode implements $Instance {
           params: [],
         ),
       ),
+
       'traversalChildren': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
-            BridgeTypeRef(CoreTypes.iterable, [
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'Iterable'), [
               BridgeTypeAnnotation(
                 BridgeTypeRef(
                   BridgeTypeSpec(
@@ -1903,10 +2005,11 @@ class $FocusScopeNode implements $Instance {
           params: [],
         ),
       ),
+
       'traversalDescendants': BridgeMethodDef(
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
-            BridgeTypeRef(CoreTypes.iterable, [
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'Iterable'), [
               BridgeTypeAnnotation(
                 BridgeTypeRef(
                   BridgeTypeSpec(
@@ -1937,6 +2040,7 @@ class $FocusScopeNode implements $Instance {
         ),
         isStatic: false,
       ),
+
       'directionalTraversalEdgeBehavior': BridgeFieldDef(
         BridgeTypeAnnotation(
           BridgeTypeRef(
@@ -1949,44 +2053,70 @@ class $FocusScopeNode implements $Instance {
         ),
         isStatic: false,
       ),
-      '_focusedChildren': BridgeFieldDef(
-        BridgeTypeAnnotation(
-          BridgeTypeRef(CoreTypes.list, [
-            BridgeTypeAnnotation(
-              BridgeTypeRef(
-                BridgeTypeSpec(
-                  'package:flutter/src/widgets/focus_manager.dart',
-                  'FocusNode',
-                ),
-                [],
-              ),
-            ),
-          ]),
-        ),
-        isStatic: false,
-      ),
     },
     wrap: true,
     bridge: false,
   );
 
   /// Wrapper for the [FocusScopeNode.new] constructor
-  static $Value? $new(Runtime runtime, $Value? thisValue, List<$Value?> args) {
+  static $Value? $new(Runtime runtime, Object? r, Object? s, Object? c) {
+    final _arg2OrNull = c is List && c.length > 0 ? c[0] as $Value? : null;
+    final _arg3OrNull = c is List && c.length > 1 ? c[1] as $Value? : null;
+    final _arg4OrNull = c is List && c.length > 2 ? c[2] as $Value? : null;
+    final _arg5OrNull = c is List && c.length > 3 ? c[3] as $Value? : null;
+    final _arg6OrNull = c is List && c.length > 4 ? c[4] as $Value? : null;
+
     return $FocusScopeNode.wrap(
       FocusScopeNode(
-        debugLabel: args[0]?.$value,
-        onKeyEvent: (FocusNode node, KeyEvent event) {
-          return (args[1]! as EvalCallable?)?.call(runtime, null, [
-            $FocusNode.wrap(node),
-            $KeyEvent.wrap(event),
-          ])?.$value;
-        },
-        skipTraversal: args[3]?.$value ?? false,
-        canRequestFocus: args[4]?.$value ?? true,
-        traversalEdgeBehavior:
-            args[5]?.$value ?? TraversalEdgeBehavior.closedLoop,
-        directionalTraversalEdgeBehavior:
-            args[6]?.$value ?? TraversalEdgeBehavior.stop,
+        debugLabel: (r is $Value ? r : null)?.$value,
+        onKeyEvent:
+            (s is $Value ? s : null) == null ||
+                (s is $Value ? s : null) is $null
+            ? null
+            : runtime.cachedCallback(
+                (s is $Value ? s : null)! as EvalCallable,
+                "KeyEventResult Function(FocusNode, KeyEvent);export=false",
+                (_callable) => (FocusNode node, KeyEvent event) {
+                  return _callable
+                      .call(
+                        runtime,
+                        null,
+                        $FocusNode.wrap(node),
+                        $KeyEvent.wrap(event),
+                        2,
+                      )
+                      ?.$value;
+                },
+              ),
+        onKey: _arg2OrNull == null || _arg2OrNull is $null
+            ? null
+            : runtime.cachedCallback(
+                _arg2OrNull! as EvalCallable,
+                "KeyEventResult Function(FocusNode, RawKeyEvent);export=false",
+                (_callable) => (FocusNode node, RawKeyEvent event) {
+                  return _callable
+                      .call(
+                        runtime,
+                        null,
+                        $FocusNode.wrap(node),
+                        $RawKeyEvent.wrap(event),
+                        2,
+                      )
+                      ?.$value;
+                },
+              ),
+        skipTraversal: _arg3OrNull == null
+            ? false
+            : (_arg3OrNull as $bool).$value,
+        canRequestFocus: _arg4OrNull == null
+            ? true
+            : (_arg4OrNull as $bool).$value,
+        traversalEdgeBehavior: _arg5OrNull == null
+            ? TraversalEdgeBehavior.closedLoop
+            : _arg5OrNull!.$value,
+        directionalTraversalEdgeBehavior: _arg6OrNull == null
+            ? TraversalEdgeBehavior.stop
+            : _arg6OrNull!.$value,
       ),
     );
   }
@@ -2008,51 +2138,48 @@ class $FocusScopeNode implements $Instance {
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
     switch (identifier) {
-      case 'traversalEdgeBehavior':
-        final _traversalEdgeBehavior = $value.traversalEdgeBehavior;
-        return runtime.wrapAlways(_traversalEdgeBehavior);
-
-      case 'directionalTraversalEdgeBehavior':
-        final _directionalTraversalEdgeBehavior =
-            $value.directionalTraversalEdgeBehavior;
-        return runtime.wrapAlways(_directionalTraversalEdgeBehavior);
-
       case 'nearestScope':
         final _nearestScope = $value.nearestScope;
         return $FocusScopeNode.wrap(_nearestScope);
-
       case 'descendantsAreFocusable':
         final _descendantsAreFocusable = $value.descendantsAreFocusable;
         return $bool(_descendantsAreFocusable);
-
+      case 'traversalEdgeBehavior':
+        final _traversalEdgeBehavior = $value.traversalEdgeBehavior;
+        return $TraversalEdgeBehavior.wrap(_traversalEdgeBehavior);
+      case 'directionalTraversalEdgeBehavior':
+        final _directionalTraversalEdgeBehavior =
+            $value.directionalTraversalEdgeBehavior;
+        return $TraversalEdgeBehavior.wrap(_directionalTraversalEdgeBehavior);
       case 'isFirstFocus':
         final _isFirstFocus = $value.isFirstFocus;
         return $bool(_isFirstFocus);
-
       case 'focusedChild':
         final _focusedChild = $value.focusedChild;
         return _focusedChild == null
             ? const $null()
             : $FocusNode.wrap(_focusedChild);
-
       case 'traversalChildren':
         final _traversalChildren = $value.traversalChildren;
-        return $Iterable.wrap(_traversalChildren);
-
+        return $Iterable.wrap(
+          (_traversalChildren).map((e) => $FocusNode.wrap(e)),
+        );
       case 'traversalDescendants':
         final _traversalDescendants = $value.traversalDescendants;
-        return $Iterable.wrap(_traversalDescendants);
+        return $Iterable.wrap(
+          (_traversalDescendants).map((e) => $FocusNode.wrap(e)),
+        );
       case 'setFirstFocus':
-        return __setFirstFocus;
+        return $Closure(__setFirstFocus.func, this);
 
       case 'autofocus':
-        return __autofocus;
+        return $Closure(__autofocus.func, this);
 
       case 'requestScopeFocus':
-        return __requestScopeFocus;
+        return $Closure(__requestScopeFocus.func, this);
 
       case 'debugFillProperties':
-        return __debugFillProperties;
+        return $Closure(__debugFillProperties.func, this);
     }
     return _superclass.$getProperty(runtime, identifier);
   }
@@ -2061,10 +2188,12 @@ class $FocusScopeNode implements $Instance {
   static $Value? _setFirstFocus(
     Runtime runtime,
     $Value? target,
-    List<$Value?> args,
+    Object? r,
+    Object? s,
+    Object? c,
   ) {
     final self = target! as $FocusScopeNode;
-    self.$value.setFirstFocus(args[0]!.$value);
+    self.$value.setFirstFocus((r as $Value?)!.$value);
     return null;
   }
 
@@ -2072,10 +2201,12 @@ class $FocusScopeNode implements $Instance {
   static $Value? _autofocus(
     Runtime runtime,
     $Value? target,
-    List<$Value?> args,
+    Object? r,
+    Object? s,
+    Object? c,
   ) {
     final self = target! as $FocusScopeNode;
-    self.$value.autofocus(args[0]!.$value);
+    self.$value.autofocus((r as $Value?)!.$value);
     return null;
   }
 
@@ -2083,7 +2214,9 @@ class $FocusScopeNode implements $Instance {
   static $Value? _requestScopeFocus(
     Runtime runtime,
     $Value? target,
-    List<$Value?> args,
+    Object? r,
+    Object? s,
+    Object? c,
   ) {
     final self = target! as $FocusScopeNode;
     self.$value.requestScopeFocus();
@@ -2096,10 +2229,12 @@ class $FocusScopeNode implements $Instance {
   static $Value? _debugFillProperties(
     Runtime runtime,
     $Value? target,
-    List<$Value?> args,
+    Object? r,
+    Object? s,
+    Object? c,
   ) {
     final self = target! as $FocusScopeNode;
-    self.$value.debugFillProperties(args[0]!.$value);
+    self.$value.debugFillProperties((r as $Value?)!.$value);
     return null;
   }
 
@@ -2107,11 +2242,10 @@ class $FocusScopeNode implements $Instance {
   void $setProperty(Runtime runtime, String identifier, $Value value) {
     switch (identifier) {
       case 'traversalEdgeBehavior':
-        $value.traversalEdgeBehavior = value.$value;
+        $value.traversalEdgeBehavior = value.$reified;
         return;
-
       case 'directionalTraversalEdgeBehavior':
-        $value.directionalTraversalEdgeBehavior = value.$value;
+        $value.directionalTraversalEdgeBehavior = value.$reified;
         return;
     }
     return _superclass.$setProperty(runtime, identifier, value);
@@ -2128,11 +2262,16 @@ class $FocusHighlightMode implements $Instance {
       $FocusHighlightMode._$values,
     );
 
-    runtime.registerBridgeFunc(
+    runtime.registerBridgeFuncRegisters(
       'package:flutter/src/widgets/focus_manager.dart',
       'FocusHighlightMode.values*g',
       $FocusHighlightMode.$values,
     );
+  }
+
+  /// Configure this enum for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeEnum($declaration);
   }
 
   /// Compile-time type specification of [$FocusHighlightMode]
@@ -2147,11 +2286,30 @@ class $FocusHighlightMode implements $Instance {
   /// Compile-time class declaration of [$FocusHighlightMode]
   static const $declaration = BridgeEnumDef(
     $type,
+
     values: ['touch', 'traditional'],
+
     methods: {},
     getters: {},
     setters: {},
-    fields: {},
+    fields: {
+      'values': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:core', 'List'), [
+            BridgeTypeAnnotation(
+              BridgeTypeRef(
+                BridgeTypeSpec(
+                  'package:flutter/src/widgets/focus_manager.dart',
+                  'FocusHighlightMode',
+                ),
+                [],
+              ),
+            ),
+          ]),
+        ),
+        isStatic: true,
+      ),
+    },
   );
 
   static final _$values = {
@@ -2160,9 +2318,21 @@ class $FocusHighlightMode implements $Instance {
   };
 
   /// Wrapper for the [FocusHighlightMode.values] getter
-  static $Value? $values(Runtime runtime, $Value? target, List<$Value?> args) {
-    const value = FocusHighlightMode.values;
-    return $List.view(value, (e) => $FocusHighlightMode.wrap(e));
+  static $Value? $values(Runtime runtime, Object? r, Object? s, Object? c) {
+    final value = FocusHighlightMode.values;
+    return $List.view(
+      value,
+      (e) => $FocusHighlightMode.wrap(e),
+      runtime: runtime,
+      runtimeTypeId: runtime.internParameterizedType(CoreTypes.list, [
+        runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/focus_manager.dart',
+            'FocusHighlightMode',
+          ),
+        ),
+      ]),
+    );
   }
 
   final $Instance _superclass;

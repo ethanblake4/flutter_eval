@@ -6,34 +6,64 @@ import 'package:flutter/services.dart';
 /// dart_eval wrapper for [BinaryMessenger]
 class $BinaryMessenger implements $Instance {
   /// Compile-type type reference for [BinaryMessenger]
-  static const $type = BridgeTypeRef(BridgeTypeSpec(
-      'package:flutter/src/services/binary_messenger.dart', 'BinaryMessenger'));
+  static const $type = BridgeTypeRef(
+    BridgeTypeSpec(
+      'package:flutter/src/services/binary_messenger.dart',
+      'BinaryMessenger',
+    ),
+  );
 
   /// Compile-type class declaration for [BinaryMessenger]
   static const $declaration = BridgeClassDef(
-      BridgeClassType($type, isAbstract: true),
-      constructors: {},
-      methods: {
-        'send': BridgeMethodDef(BridgeFunctionDef(
-            returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.future)),
-            params: [
-              BridgeParameter('channel',
-                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.string)), false),
-              BridgeParameter(
-                  'data',
-                  BridgeTypeAnnotation(BridgeTypeRef(TypedDataTypes.byteData)),
-                  false)
-            ])),
-        'setMessageHandler': BridgeMethodDef(BridgeFunctionDef(
-            returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
-            params: [
-              BridgeParameter('channel',
-                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.string)), false),
-              BridgeParameter('handler',
-                  BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.function)), true)
-            ])),
-      },
-      wrap: true);
+    BridgeClassType($type, isAbstract: true),
+    constructors: {},
+    methods: {
+      'send': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(CoreTypes.future),
+            nullable: true,
+          ),
+          params: [
+            BridgeParameter(
+              'channel',
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.string)),
+              false,
+            ),
+            BridgeParameter(
+              'data',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(TypedDataTypes.byteData),
+                nullable: true,
+              ),
+              false,
+            ),
+          ],
+        ),
+      ),
+      'setMessageHandler': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
+          params: [
+            BridgeParameter(
+              'channel',
+              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.string)),
+              false,
+            ),
+            BridgeParameter(
+              'handler',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(CoreTypes.function),
+                nullable: true,
+              ),
+              true,
+            ),
+          ],
+        ),
+      ),
+    },
+    wrap: true,
+  );
 
   final $Instance _superclass;
 
@@ -59,30 +89,56 @@ class $BinaryMessenger implements $Instance {
   }
 
   static const $Function __send = $Function(_send);
-  static $Value? _send(Runtime runtime, $Value? target, List<$Value?> args) {
+  static $Value? _send(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
     final self = target as $BinaryMessenger;
-    final channel = args[0] as $String;
+    final channel = r is $String ? r.$value : r as String;
     runtime.assertPermission('method_channel', channel);
-    final data = args[1] as $ByteData?;
-    final result = self.$value.send(channel.$value, data?.$value);
+    final data = s is $Value ? s.$value as ByteData? : s as ByteData?;
+    final result = self.$value.send(channel, data);
     if (result == null) return const $null();
-    return $Future.wrap(result.then(
-        (value) => value == null ? const $null() : $ByteData.wrap(value)));
+    return $Future.wrap(
+      result.then(
+        (value) => value == null ? const $null() : $ByteData.wrap(value),
+      ),
+    );
   }
 
   static const $Function __setMessageHandler = $Function(_setMessageHandler);
   static $Value? _setMessageHandler(
-      Runtime runtime, $Value? target, List<$Value?> args) {
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
     final self = target as $BinaryMessenger;
-    final channel = args[0] as $String;
+    final channel = r is $String ? r.$value : r as String;
     runtime.assertPermission('method_channel', channel);
-    final handler = args[1] as EvalCallable?;
+    final handler = s is $null ? null : s as EvalCallable?;
     self.$value.setMessageHandler(
-        channel.$value,
-        handler == null
-            ? null
-            : (data) => handler.call(runtime, null,
-                [data == null ? const $null() : $ByteData.wrap(data)])!.$value);
+      channel,
+      handler == null
+          ? null
+          : (data) async {
+              final result = handler.call(
+                runtime,
+                null,
+                data == null ? const $null() : $ByteData.wrap(data),
+                null,
+                1,
+              );
+              Object? response = result?.$reified;
+              if (response is Future) response = await response;
+              if (response is $Value) response = response.$reified;
+              return response as ByteData?;
+            },
+    );
     return null;
   }
 

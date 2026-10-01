@@ -22,9 +22,53 @@ and a list of supported Dart features on the [dart_eval Pub page](https://pub.de
 
 See: [Quickstart for code push](#quickstart-for-code-push) | [Quickstart for dynamic execution and server-driven UI](#quickstart-for-dynamic-execution-and-server-driven-ui) | [Supported widgets and classes](#supported-widgets-and-classes)
 
+### Developing on the xv2 branch
+
+The current source branch uses the `dart_eval` typed backend from its sibling
+`xv2` checkout. The published `dart_eval` 0.8.4 package has an older bridge and
+bytecode API. Use Flutter 3.47.0 from `.fvmrc` and add an ignored
+`pubspec_overrides.yaml` in this repository:
+
+```yaml
+dependency_overrides:
+  dart_eval:
+    path: ../dart_eval
+```
+
+After `flutter pub get`, regenerate bindings with
+`dart run tool/generate_bindings.dart`, or run it with `--check` to verify the
+checked-in files. The selected SDK bindings and evaluated library exports live
+in `.dart_eval/bindgen.yaml`. Ordinary bindings are generated; widget lifecycle,
+interpreted notifier behavior, and permission-checked platform channels retain
+handwritten code. PageRoute uses generated bridge and wrapper bindings.
+Supporting SDK types marked `opaque: true` have typed wrappers but no exposed constructors or members. See the
+[xv2 migration guide](docs/xv2-migration.md) for details.
+
+Export compiler binding metadata with
+`flutter test --no-pub tool/export_bindings.dart`. It writes `flutter_eval.json`
+in the repository root and updates the code push example metadata. Run
+`flutter test --no-pub tool/export_hot_update.dart` to rebuild its bytecode asset.
+Recompile older EVC bytecode before loading it with xv2. The
+[backend compatibility guide](docs/backend-compatibility.md) lists the full
+local setup and verification commands.
+
 ## Quickstart for code push
 
-Run `flutter pub add flutter_eval` to install the package.
+For a published release, run `flutter pub add flutter_eval` to install the
+package. For the xv2 source branch, use a local path dependency on this
+`flutter_eval` checkout in the app and override `dart_eval` to its sibling
+checkout. Give the hot update package the same `dart_eval` override. Generate
+binding metadata from this `flutter_eval` checkout so the compiler and runtime
+agree on the Flutter API.
+
+```yaml
+dependencies:
+  flutter_eval:
+    path: /path/to/flutter_eval
+dependency_overrides:
+  dart_eval:
+    path: /path/to/dart_eval
+```
 
 At the root of your app, add a HotSwapLoader widget with a URI 
 pointing to where you'll host the update file:
@@ -60,9 +104,12 @@ This can be nested inside your app's folder or located separately. Name it
 something appropriate, such as my_app_hot_update. We'll refer to this
 as the "hot update package" from now on.
 
-Head over to the flutter_eval [Releases page](https://github.com/ethanblake4/flutter_eval/releases)
-and find the release corresponding to the version of flutter_eval you are using. Under **Assets**,
-download `flutter_eval.json`. (Or [click here](https://github.com/ethanblake4/flutter_eval/releases/latest/download/flutter_eval.json) to download the latest version.)
+Use `flutter_eval.json` from the flutter_eval version and Flutter SDK used by
+the running app. For a published release, download it from that version's
+[Releases page](https://github.com/ethanblake4/flutter_eval/releases). For
+the xv2 source branch, run
+`flutter test --no-pub tool/export_bindings.dart` in this checkout and copy the
+resulting `flutter_eval.json` into the hot update package.
 
 In the root of the hot update package, create a folder called `.dart_eval` and
 a subfolder `bindings`. Place the downloaded `flutter_eval.json` file inside of 
@@ -72,7 +119,7 @@ Your project structure should look like this:
 ```
 ├── .dart_eval
 │   └── bindings
-│       └── flutter_eval.json.
+│       └── flutter_eval.json
 ├── pubspec.yaml
 └── lib
     └── hot_update.dart
@@ -93,10 +140,16 @@ Widget myHomePageUpdate(BuildContext context) {
   )
 }
 ```
-Finally, we'll need to install the dart_eval CLI:
+Finally, install the matching dart_eval CLI. For a published release:
 
 ```bash
 dart pub global activate dart_eval
+```
+
+For the xv2 source branch, activate it from the local checkout instead:
+
+```bash
+dart pub global activate --source path /path/to/dart_eval
 ```
 
 After installing, you can run:

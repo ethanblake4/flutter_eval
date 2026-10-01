@@ -457,6 +457,9 @@ class _EvalWidgetState extends State<EvalWidget> {
 
     void setupRuntime() {
       runtime = Runtime.ofProgram(program);
+      for (final permission in widget.permissions) {
+        runtime!.grant(permission);
+      }
       runtime!.addPlugin(flutterEvalPlugin);
       widget.plugins.forEach(runtime!.addPlugin);
     }

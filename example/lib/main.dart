@@ -6,7 +6,7 @@ void main() {
 }
 
 class EvalExample extends StatelessWidget {
-  const EvalExample({Key? key}) : super(key: key);
+  const EvalExample({super.key});
 
   @override
   Widget build(BuildContext context) {

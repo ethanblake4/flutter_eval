@@ -1,43 +1,209 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND.
+// Regenerate with dart run tool/generate_bindings.dart.
+// ignore_for_file: implementation_imports, deprecated_member_use
+// ignore_for_file: invalid_null_aware_operator, invalid_use_of_protected_member
+// ignore_for_file: invalid_use_of_visible_for_testing_member
+// ignore_for_file: non_const_argument_for_const_parameter, unnecessary_null_comparison
+// ignore_for_file: no_logic_in_create_state, sort_child_properties_last
+// ignore_for_file: must_call_super
+// ignore_for_file: unused_import, unnecessary_import
+// ignore_for_file: always_specify_types, avoid_redundant_argument_values
+// ignore_for_file: sort_constructors_first
+// ignore_for_file: no_leading_underscores_for_local_identifiers
+// ignore_for_file: prefer_is_empty
+// ignore_for_file: undefined_hidden_name
+// ignore_for_file: dead_code, unused_local_variable
+// ignore_for_file: unnecessary_type_check, unnecessary_non_null_assertion
+// ignore_for_file: unnecessary_cast
+// ignore_for_file: sdk_version_since
+// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: argument_type_not_assignable_to_error_handler
+// ignore_for_file: avoid_function_literals_in_foreach_calls
+
+import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
-import 'package:dart_eval/stdlib/core.dart';
+
+import 'package:flutter/src/gestures/long_press.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:dart_eval/stdlib/core.dart'
+    hide
+        $LongPressDownDetails,
+        $LongPressStartDetails,
+        $LongPressMoveUpdateDetails,
+        $LongPressEndDetails;
+import 'package:dart_eval/stdlib/async.dart'
+    hide
+        $LongPressDownDetails,
+        $LongPressStartDetails,
+        $LongPressMoveUpdateDetails,
+        $LongPressEndDetails;
+import 'package:dart_eval/stdlib/typed_data.dart'
+    hide
+        $LongPressDownDetails,
+        $LongPressStartDetails,
+        $LongPressMoveUpdateDetails,
+        $LongPressEndDetails;
 import 'package:flutter/gestures.dart';
-import 'package:flutter_eval/src/gestures/velocity_tracker.dart';
-import 'package:flutter_eval/src/sky_engine/ui/geometry.dart';
-import 'package:flutter_eval/src/sky_engine/ui/pointer.dart';
+import 'package:flutter/rendering.dart';
+import '../supporting/flutter_gestures_gesture_details.dart';
+import '../sky_engine/ui/geometry.dart';
+import '../sky_engine/ui/pointer.dart';
+import './velocity_tracker.dart';
 
-/// dart_eval wrapper for [LongPressDownDetails]
+/// dart_eval wrapper binding for [LongPressDownDetails]
 class $LongPressDownDetails implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec(
-      'package:flutter/src/gestures/long_press.dart', 'LongPressDownDetails'));
+  /// Configure this class for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {
+    runtime.registerBridgeFuncRegisters(
+      'package:flutter/src/gestures/long_press.dart',
+      'LongPressDownDetails.',
+      $LongPressDownDetails.$new,
+    );
+  }
 
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
+  }
+
+  /// Compile-time type specification of [$LongPressDownDetails]
+  static const $spec = BridgeTypeSpec(
+    'package:flutter/src/gestures/long_press.dart',
+    'LongPressDownDetails',
+  );
+
+  /// Compile-time type declaration of [$LongPressDownDetails]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$LongPressDownDetails]
   static const $declaration = BridgeClassDef(
-      BridgeClassType($type, isAbstract: false),
-      constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(
-            returns: BridgeTypeAnnotation($type),
-            namedParams: [
-              BridgeParameter(
-                  'globalPosition', BridgeTypeAnnotation($Offset.$type), true),
-              BridgeParameter(
-                  'localPosition', BridgeTypeAnnotation($Offset.$type), true),
-              BridgeParameter(
-                  'kind', BridgeTypeAnnotation($PointerDeviceKind.$type), true),
-            ]))
-      },
-      wrap: true);
+    BridgeClassType(
+      $type,
+
+      $implements: [
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/gestures/gesture_details.dart',
+            'PositionedGestureDetails',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'Diagnosticable',
+          ),
+          [],
+        ),
+      ],
+    ),
+    constructors: {
+      '': BridgeConstructorDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation($type),
+          namedParams: [
+            BridgeParameter(
+              'globalPosition',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'localPosition',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'kind',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec('dart:ui', 'PointerDeviceKind'),
+                  [],
+                ),
+                nullable: true,
+              ),
+              true,
+            ),
+          ],
+          params: [],
+        ),
+        isFactory: false,
+      ),
+    },
+
+    methods: {
+      'debugFillProperties': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
+          namedParams: [],
+          params: [
+            BridgeParameter(
+              'properties',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/foundation/diagnostics.dart',
+                    'DiagnosticPropertiesBuilder',
+                  ),
+                  [],
+                ),
+              ),
+              false,
+            ),
+          ],
+        ),
+      ),
+    },
+    getters: {},
+    setters: {},
+    fields: {
+      'globalPosition': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
+        ),
+        isStatic: false,
+      ),
+
+      'localPosition': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
+        ),
+        isStatic: false,
+      ),
+
+      'kind': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:ui', 'PointerDeviceKind'), []),
+          nullable: true,
+        ),
+        isStatic: false,
+      ),
+    },
+    wrap: true,
+    bridge: false,
+  );
+
+  /// Wrapper for the [LongPressDownDetails.new] constructor
+  static $Value? $new(Runtime runtime, Object? r, Object? s, Object? c) {
+    return $LongPressDownDetails.wrap(
+      LongPressDownDetails(
+        globalPosition: (r is $Value ? r : null) == null
+            ? Offset.zero
+            : (r is $Value ? r : null)!.$value,
+        localPosition: (s is $Value ? s : null)?.$value,
+        kind: (c is $Value ? c : null)?.$value,
+      ),
+    );
+  }
 
   final $Instance _superclass;
-
-  $LongPressDownDetails.wrap(this.$value) : _superclass = $Object($value);
-
-  static $LongPressDownDetails $new(
-      Runtime runtime, $Value? target, List<$Value?> args) {
-    return $LongPressDownDetails.wrap(LongPressDownDetails(
-      globalPosition: args[0]?.$value ?? Offset.zero,
-      localPosition: args[1]?.$value,
-      kind: args[2]?.$value,
-    ));
-  }
 
   @override
   final LongPressDownDetails $value;
@@ -45,23 +211,45 @@ class $LongPressDownDetails implements $Instance {
   @override
   LongPressDownDetails get $reified => $value;
 
+  /// Wrap a [LongPressDownDetails] in a [$LongPressDownDetails]
+  $LongPressDownDetails.wrap(this.$value)
+    : _superclass = $PositionedGestureDetails.wrap($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
     switch (identifier) {
       case 'globalPosition':
-        return $Offset.wrap($value.globalPosition);
+        final _globalPosition = $value.globalPosition;
+        return $Offset.wrap(_globalPosition);
       case 'localPosition':
-        return $Offset.wrap($value.localPosition);
+        final _localPosition = $value.localPosition;
+        return $Offset.wrap(_localPosition);
       case 'kind':
-        final kind = $value.kind;
-        return kind == null ? const $null() : $PointerDeviceKind.wrap(kind);
-      default:
-        return _superclass.$getProperty(runtime, identifier);
+        final _kind = $value.kind;
+        return _kind == null ? const $null() : $PointerDeviceKind.wrap(_kind);
+      case 'debugFillProperties':
+        return $Closure(__debugFillProperties.func, this);
     }
+    return _superclass.$getProperty(runtime, identifier);
   }
 
-  @override
-  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
+  static const $Function __debugFillProperties = $Function(
+    _debugFillProperties,
+  );
+  static $Value? _debugFillProperties(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
+    final self = target! as $LongPressDownDetails;
+    self.$value.debugFillProperties((r as $Value?)!.$value);
+    return null;
+  }
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -69,36 +257,138 @@ class $LongPressDownDetails implements $Instance {
   }
 }
 
-/// dart_eval wrapper for [LongPressStartDetails]
+/// dart_eval wrapper binding for [LongPressStartDetails]
 class $LongPressStartDetails implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec(
-      'package:flutter/src/gestures/long_press.dart', 'LongPressStartDetails'));
+  /// Configure this class for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {
+    runtime.registerBridgeFuncRegisters(
+      'package:flutter/src/gestures/long_press.dart',
+      'LongPressStartDetails.',
+      $LongPressStartDetails.$new,
+    );
+  }
 
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
+  }
+
+  /// Compile-time type specification of [$LongPressStartDetails]
+  static const $spec = BridgeTypeSpec(
+    'package:flutter/src/gestures/long_press.dart',
+    'LongPressStartDetails',
+  );
+
+  /// Compile-time type declaration of [$LongPressStartDetails]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$LongPressStartDetails]
   static const $declaration = BridgeClassDef(
-      BridgeClassType($type, isAbstract: false),
-      constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(
-            returns: BridgeTypeAnnotation($type),
-            namedParams: [
-              BridgeParameter(
-                  'globalPosition', BridgeTypeAnnotation($Offset.$type), true),
-              BridgeParameter(
-                  'localPosition', BridgeTypeAnnotation($Offset.$type), true),
-            ]))
-      },
-      wrap: true);
+    BridgeClassType(
+      $type,
+
+      $implements: [
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/gestures/gesture_details.dart',
+            'PositionedGestureDetails',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'Diagnosticable',
+          ),
+          [],
+        ),
+      ],
+    ),
+    constructors: {
+      '': BridgeConstructorDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation($type),
+          namedParams: [
+            BridgeParameter(
+              'globalPosition',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'localPosition',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
+                nullable: true,
+              ),
+              true,
+            ),
+          ],
+          params: [],
+        ),
+        isFactory: false,
+      ),
+    },
+
+    methods: {
+      'debugFillProperties': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
+          namedParams: [],
+          params: [
+            BridgeParameter(
+              'properties',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/foundation/diagnostics.dart',
+                    'DiagnosticPropertiesBuilder',
+                  ),
+                  [],
+                ),
+              ),
+              false,
+            ),
+          ],
+        ),
+      ),
+    },
+    getters: {},
+    setters: {},
+    fields: {
+      'globalPosition': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
+        ),
+        isStatic: false,
+      ),
+
+      'localPosition': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
+        ),
+        isStatic: false,
+      ),
+    },
+    wrap: true,
+    bridge: false,
+  );
+
+  /// Wrapper for the [LongPressStartDetails.new] constructor
+  static $Value? $new(Runtime runtime, Object? r, Object? s, Object? c) {
+    return $LongPressStartDetails.wrap(
+      LongPressStartDetails(
+        globalPosition: (r is $Value ? r : null) == null
+            ? Offset.zero
+            : (r is $Value ? r : null)!.$value,
+        localPosition: (s is $Value ? s : null)?.$value,
+      ),
+    );
+  }
 
   final $Instance _superclass;
-
-  $LongPressStartDetails.wrap(this.$value) : _superclass = $Object($value);
-
-  static $LongPressStartDetails $new(
-      Runtime runtime, $Value? target, List<$Value?> args) {
-    return $LongPressStartDetails.wrap(LongPressStartDetails(
-      globalPosition: args[0]?.$value ?? Offset.zero,
-      localPosition: args[1]?.$value,
-    ));
-  }
 
   @override
   final LongPressStartDetails $value;
@@ -106,20 +396,42 @@ class $LongPressStartDetails implements $Instance {
   @override
   LongPressStartDetails get $reified => $value;
 
+  /// Wrap a [LongPressStartDetails] in a [$LongPressStartDetails]
+  $LongPressStartDetails.wrap(this.$value)
+    : _superclass = $PositionedGestureDetails.wrap($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
     switch (identifier) {
       case 'globalPosition':
-        return $Offset.wrap($value.globalPosition);
+        final _globalPosition = $value.globalPosition;
+        return $Offset.wrap(_globalPosition);
       case 'localPosition':
-        return $Offset.wrap($value.localPosition);
-      default:
-        return _superclass.$getProperty(runtime, identifier);
+        final _localPosition = $value.localPosition;
+        return $Offset.wrap(_localPosition);
+      case 'debugFillProperties':
+        return $Closure(__debugFillProperties.func, this);
     }
+    return _superclass.$getProperty(runtime, identifier);
   }
 
-  @override
-  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
+  static const $Function __debugFillProperties = $Function(
+    _debugFillProperties,
+  );
+  static $Value? _debugFillProperties(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
+    final self = target! as $LongPressStartDetails;
+    self.$value.debugFillProperties((r as $Value?)!.$value);
+    return null;
+  }
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -127,46 +439,176 @@ class $LongPressStartDetails implements $Instance {
   }
 }
 
-/// dart_eval wrapper for [LongPressMoveUpdateDetails]
+/// dart_eval wrapper binding for [LongPressMoveUpdateDetails]
 class $LongPressMoveUpdateDetails implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec(
+  /// Configure this class for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {
+    runtime.registerBridgeFuncRegisters(
       'package:flutter/src/gestures/long_press.dart',
-      'LongPressMoveUpdateDetails'));
+      'LongPressMoveUpdateDetails.',
+      $LongPressMoveUpdateDetails.$new,
+    );
+  }
 
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
+  }
+
+  /// Compile-time type specification of [$LongPressMoveUpdateDetails]
+  static const $spec = BridgeTypeSpec(
+    'package:flutter/src/gestures/long_press.dart',
+    'LongPressMoveUpdateDetails',
+  );
+
+  /// Compile-time type declaration of [$LongPressMoveUpdateDetails]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$LongPressMoveUpdateDetails]
   static const $declaration = BridgeClassDef(
-      BridgeClassType($type, isAbstract: false),
-      constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(
-            returns: BridgeTypeAnnotation($type),
-            namedParams: [
-              BridgeParameter(
-                  'globalPosition', BridgeTypeAnnotation($Offset.$type), true),
-              BridgeParameter(
-                  'localPosition', BridgeTypeAnnotation($Offset.$type), true),
-              BridgeParameter('offsetFromOrigin',
-                  BridgeTypeAnnotation($Offset.$type), true),
-              BridgeParameter(
-                'localOffsetFromOrigin',
-                BridgeTypeAnnotation($Offset.$type),
-                true,
-              )
-            ]))
-      },
-      wrap: true);
+    BridgeClassType(
+      $type,
+
+      $implements: [
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/gestures/gesture_details.dart',
+            'PositionedGestureDetails',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'Diagnosticable',
+          ),
+          [],
+        ),
+      ],
+    ),
+    constructors: {
+      '': BridgeConstructorDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation($type),
+          namedParams: [
+            BridgeParameter(
+              'globalPosition',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'localPosition',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'offsetFromOrigin',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'localOffsetFromOrigin',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
+                nullable: true,
+              ),
+              true,
+            ),
+          ],
+          params: [],
+        ),
+        isFactory: false,
+      ),
+    },
+
+    methods: {
+      'debugFillProperties': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
+          namedParams: [],
+          params: [
+            BridgeParameter(
+              'properties',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/foundation/diagnostics.dart',
+                    'DiagnosticPropertiesBuilder',
+                  ),
+                  [],
+                ),
+              ),
+              false,
+            ),
+          ],
+        ),
+      ),
+    },
+    getters: {},
+    setters: {},
+    fields: {
+      'globalPosition': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
+        ),
+        isStatic: false,
+      ),
+
+      'localPosition': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
+        ),
+        isStatic: false,
+      ),
+
+      'offsetFromOrigin': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
+        ),
+        isStatic: false,
+      ),
+
+      'localOffsetFromOrigin': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
+        ),
+        isStatic: false,
+      ),
+    },
+    wrap: true,
+    bridge: false,
+  );
+
+  /// Wrapper for the [LongPressMoveUpdateDetails.new] constructor
+  static $Value? $new(Runtime runtime, Object? r, Object? s, Object? c) {
+    final _arg2OrNull = c is List && c.length > 0 ? c[0] as $Value? : null;
+    final _arg3OrNull = c is List && c.length > 1 ? c[1] as $Value? : null;
+
+    return $LongPressMoveUpdateDetails.wrap(
+      LongPressMoveUpdateDetails(
+        globalPosition: (r is $Value ? r : null) == null
+            ? Offset.zero
+            : (r is $Value ? r : null)!.$value,
+        localPosition: (s is $Value ? s : null)?.$value,
+        offsetFromOrigin: _arg2OrNull == null
+            ? Offset.zero
+            : _arg2OrNull!.$value,
+        localOffsetFromOrigin: _arg3OrNull?.$value,
+      ),
+    );
+  }
 
   final $Instance _superclass;
-
-  $LongPressMoveUpdateDetails.wrap(this.$value) : _superclass = $Object($value);
-
-  static $LongPressMoveUpdateDetails $new(
-      Runtime runtime, $Value? target, List<$Value?> args) {
-    return $LongPressMoveUpdateDetails.wrap(LongPressMoveUpdateDetails(
-      globalPosition: args[0]?.$value ?? Offset.zero,
-      localPosition: args[1]?.$value,
-      offsetFromOrigin: args[2]?.$value,
-      localOffsetFromOrigin: args[3]?.$value,
-    ));
-  }
 
   @override
   final LongPressMoveUpdateDetails $value;
@@ -174,24 +616,48 @@ class $LongPressMoveUpdateDetails implements $Instance {
   @override
   LongPressMoveUpdateDetails get $reified => $value;
 
+  /// Wrap a [LongPressMoveUpdateDetails] in a [$LongPressMoveUpdateDetails]
+  $LongPressMoveUpdateDetails.wrap(this.$value)
+    : _superclass = $PositionedGestureDetails.wrap($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
     switch (identifier) {
       case 'globalPosition':
-        return $Offset.wrap($value.globalPosition);
+        final _globalPosition = $value.globalPosition;
+        return $Offset.wrap(_globalPosition);
       case 'localPosition':
-        return $Offset.wrap($value.localPosition);
+        final _localPosition = $value.localPosition;
+        return $Offset.wrap(_localPosition);
       case 'offsetFromOrigin':
-        return $Offset.wrap($value.offsetFromOrigin);
+        final _offsetFromOrigin = $value.offsetFromOrigin;
+        return $Offset.wrap(_offsetFromOrigin);
       case 'localOffsetFromOrigin':
-        return $Offset.wrap($value.localOffsetFromOrigin);
-      default:
-        return _superclass.$getProperty(runtime, identifier);
+        final _localOffsetFromOrigin = $value.localOffsetFromOrigin;
+        return $Offset.wrap(_localOffsetFromOrigin);
+      case 'debugFillProperties':
+        return $Closure(__debugFillProperties.func, this);
     }
+    return _superclass.$getProperty(runtime, identifier);
   }
 
-  @override
-  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
+  static const $Function __debugFillProperties = $Function(
+    _debugFillProperties,
+  );
+  static $Value? _debugFillProperties(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
+    final self = target! as $LongPressMoveUpdateDetails;
+    self.$value.debugFillProperties((r as $Value?)!.$value);
+    return null;
+  }
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
@@ -199,39 +665,168 @@ class $LongPressMoveUpdateDetails implements $Instance {
   }
 }
 
-/// dart_eval wrapper for [LongPressEndDetails]
+/// dart_eval wrapper binding for [LongPressEndDetails]
 class $LongPressEndDetails implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec(
-      'package:flutter/src/gestures/long_press.dart', 'LongPressEndDetails'));
+  /// Configure this class for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {
+    runtime.registerBridgeFuncRegisters(
+      'package:flutter/src/gestures/long_press.dart',
+      'LongPressEndDetails.',
+      $LongPressEndDetails.$new,
+    );
+  }
 
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
+  }
+
+  /// Compile-time type specification of [$LongPressEndDetails]
+  static const $spec = BridgeTypeSpec(
+    'package:flutter/src/gestures/long_press.dart',
+    'LongPressEndDetails',
+  );
+
+  /// Compile-time type declaration of [$LongPressEndDetails]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$LongPressEndDetails]
   static const $declaration = BridgeClassDef(
-      BridgeClassType($type, isAbstract: false),
-      constructors: {
-        '': BridgeConstructorDef(BridgeFunctionDef(
-            returns: BridgeTypeAnnotation($type),
-            namedParams: [
-              BridgeParameter(
-                  'globalPosition', BridgeTypeAnnotation($Offset.$type), true),
-              BridgeParameter(
-                  'localPosition', BridgeTypeAnnotation($Offset.$type), true),
-              BridgeParameter(
-                  'velocity', BridgeTypeAnnotation($Velocity.$type), true),
-            ]))
-      },
-      wrap: true);
+    BridgeClassType(
+      $type,
+
+      $implements: [
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/gestures/gesture_details.dart',
+            'PositionedGestureDetails',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'Diagnosticable',
+          ),
+          [],
+        ),
+      ],
+    ),
+    constructors: {
+      '': BridgeConstructorDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation($type),
+          namedParams: [
+            BridgeParameter(
+              'globalPosition',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'localPosition',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'velocity',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/velocity_tracker.dart',
+                    'Velocity',
+                  ),
+                  [],
+                ),
+              ),
+              true,
+            ),
+          ],
+          params: [],
+        ),
+        isFactory: false,
+      ),
+    },
+
+    methods: {
+      'debugFillProperties': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
+          namedParams: [],
+          params: [
+            BridgeParameter(
+              'properties',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/foundation/diagnostics.dart',
+                    'DiagnosticPropertiesBuilder',
+                  ),
+                  [],
+                ),
+              ),
+              false,
+            ),
+          ],
+        ),
+      ),
+    },
+    getters: {},
+    setters: {},
+    fields: {
+      'globalPosition': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
+        ),
+        isStatic: false,
+      ),
+
+      'localPosition': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
+        ),
+        isStatic: false,
+      ),
+
+      'velocity': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(
+            BridgeTypeSpec(
+              'package:flutter/src/gestures/velocity_tracker.dart',
+              'Velocity',
+            ),
+            [],
+          ),
+        ),
+        isStatic: false,
+      ),
+    },
+    wrap: true,
+    bridge: false,
+  );
+
+  /// Wrapper for the [LongPressEndDetails.new] constructor
+  static $Value? $new(Runtime runtime, Object? r, Object? s, Object? c) {
+    return $LongPressEndDetails.wrap(
+      LongPressEndDetails(
+        globalPosition: (r is $Value ? r : null) == null
+            ? Offset.zero
+            : (r is $Value ? r : null)!.$value,
+        localPosition: (s is $Value ? s : null)?.$value,
+        velocity: (c is $Value ? c : null) == null
+            ? Velocity.zero
+            : (c is $Value ? c : null)!.$value,
+      ),
+    );
+  }
 
   final $Instance _superclass;
-
-  $LongPressEndDetails.wrap(this.$value) : _superclass = $Object($value);
-
-  static $LongPressEndDetails $new(
-      Runtime runtime, $Value? target, List<$Value?> args) {
-    return $LongPressEndDetails.wrap(LongPressEndDetails(
-      globalPosition: args[0]?.$value ?? Offset.zero,
-      localPosition: args[1]?.$value,
-      velocity: args[2]?.$value,
-    ));
-  }
 
   @override
   final LongPressEndDetails $value;
@@ -239,22 +834,45 @@ class $LongPressEndDetails implements $Instance {
   @override
   LongPressEndDetails get $reified => $value;
 
+  /// Wrap a [LongPressEndDetails] in a [$LongPressEndDetails]
+  $LongPressEndDetails.wrap(this.$value)
+    : _superclass = $PositionedGestureDetails.wrap($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
     switch (identifier) {
       case 'globalPosition':
-        return $Offset.wrap($value.globalPosition);
+        final _globalPosition = $value.globalPosition;
+        return $Offset.wrap(_globalPosition);
       case 'localPosition':
-        return $Offset.wrap($value.localPosition);
+        final _localPosition = $value.localPosition;
+        return $Offset.wrap(_localPosition);
       case 'velocity':
-        return $Velocity.wrap($value.velocity);
-      default:
-        return _superclass.$getProperty(runtime, identifier);
+        final _velocity = $value.velocity;
+        return $Velocity.wrap(_velocity);
+      case 'debugFillProperties':
+        return $Closure(__debugFillProperties.func, this);
     }
+    return _superclass.$getProperty(runtime, identifier);
   }
 
-  @override
-  int $getRuntimeType(Runtime runtime) => runtime.lookupType($type.spec!);
+  static const $Function __debugFillProperties = $Function(
+    _debugFillProperties,
+  );
+  static $Value? _debugFillProperties(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
+    final self = target! as $LongPressEndDetails;
+    self.$value.debugFillProperties((r as $Value?)!.$value);
+    return null;
+  }
 
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
