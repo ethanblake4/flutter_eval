@@ -2579,7 +2579,11 @@ class $DiagnosticsProperty<T> implements $Instance {
           (s as $Value?)! as EvalCallable,
           "T? Function();export=false",
           (_callable) => () {
-            return _callable.call(runtime, null, null, null, 0)?.$value;
+            return TypedInterop.exportExternal(
+                  _callable.call(runtime, null, null, null, 0),
+                  runtime: runtime,
+                )
+                as dynamic;
           },
         ),
         description: _arg2OrNull?.$value,

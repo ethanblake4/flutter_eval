@@ -623,15 +623,17 @@ class $WidgetStateProperty<T> implements $Instance {
         (r as $Value?)! as EvalCallable,
         "T Function(Set<WidgetState>);export=false",
         (_callable) => (Set<WidgetState> states) {
-          return _callable
-              .call(
-                runtime,
-                null,
-                $Set.wrap((states).map((e) => $WidgetState.wrap(e)).toSet()),
-                null,
-                1,
+          return TypedInterop.exportExternal(
+                _callable.call(
+                  runtime,
+                  null,
+                  $Set.wrap((states).map((e) => $WidgetState.wrap(e)).toSet()),
+                  null,
+                  1,
+                ),
+                runtime: runtime,
               )
-              ?.$value;
+              as dynamic;
         },
       ),
     );
@@ -659,17 +661,21 @@ class $WidgetStateProperty<T> implements $Instance {
         _arg3! as EvalCallable,
         "T? Function(T?, T?, double);export=false",
         (_callable) => (dynamic arg0, dynamic arg1, double arg2) {
-          return _callable.call(
-            runtime,
-            null,
-            (arg0 == null
-                ? const $null()
-                : runtime.wrapAlways(arg0, recursive: true)),
-            (arg1 == null
-                ? const $null()
-                : runtime.wrapAlways(arg1, recursive: true)),
-            [$double(arg2)],
-          )?.$value;
+          return TypedInterop.exportExternal(
+                _callable.call(
+                  runtime,
+                  null,
+                  (arg0 == null
+                      ? const $null()
+                      : runtime.wrapAlways(arg0, recursive: true)),
+                  (arg1 == null
+                      ? const $null()
+                      : runtime.wrapAlways(arg1, recursive: true)),
+                  [$double(arg2)],
+                ),
+                runtime: runtime,
+              )
+              as dynamic;
         },
       ),
     );

@@ -571,15 +571,17 @@ class $Animation<T> implements $Instance {
                 (s is $Value ? s : null)! as EvalCallable,
                 "T Function(T);export=false",
                 (_callable) => (dynamic arg0) {
-                  return _callable
-                      .call(
-                        runtime,
-                        null,
-                        runtime.wrapAlways(arg0, recursive: true),
-                        null,
-                        1,
+                  return TypedInterop.exportExternal(
+                        _callable.call(
+                          runtime,
+                          null,
+                          runtime.wrapAlways(arg0, recursive: true),
+                          null,
+                          1,
+                        ),
+                        runtime: runtime,
                       )
-                      ?.$value;
+                      as dynamic;
                 },
               ),
       ),

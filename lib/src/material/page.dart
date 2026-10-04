@@ -2153,7 +2153,25 @@ class $MaterialPageRoute<T> implements $Instance {
   ) {
     final self = target! as $MaterialPageRoute;
     final result = self.$value.createOverlayEntries();
-    return $Iterable.wrap((result).map((e) => $OverlayEntry.wrap(e)));
+    return (() {
+      final iterableType = runtime.internParameterizedType(CoreTypes.iterable, [
+        runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/overlay.dart',
+            'OverlayEntry',
+          ),
+        ),
+      ]);
+      return $Iterable.wrap(
+        (result).map((e) {
+          final value = $OverlayEntry.wrap(e);
+          runtime.assertTypedTypeArgument(value, iterableType, 0);
+          return value;
+        }),
+        runtime: runtime,
+        runtimeTypeId: iterableType,
+      );
+    })();
   }
 
   static const $Function __createAnimationController = $Function(

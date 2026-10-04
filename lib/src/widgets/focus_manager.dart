@@ -1287,26 +1287,117 @@ class $FocusNode implements $Instance {
         return _parent == null ? const $null() : $FocusNode.wrap(_parent);
       case 'children':
         final _children = $value.children;
-        return $Iterable.wrap((_children).map((e) => $FocusNode.wrap(e)));
+        return (() {
+          final iterableType = runtime
+              .internParameterizedType(CoreTypes.iterable, [
+                runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/focus_manager.dart',
+                    'FocusNode',
+                  ),
+                ),
+              ]);
+          return $Iterable.wrap(
+            (_children).map((e) {
+              final value = $FocusNode.wrap(e);
+              runtime.assertTypedTypeArgument(value, iterableType, 0);
+              return value;
+            }),
+            runtime: runtime,
+            runtimeTypeId: iterableType,
+          );
+        })();
       case 'traversalChildren':
         final _traversalChildren = $value.traversalChildren;
-        return $Iterable.wrap(
-          (_traversalChildren).map((e) => $FocusNode.wrap(e)),
-        );
+        return (() {
+          final iterableType = runtime
+              .internParameterizedType(CoreTypes.iterable, [
+                runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/focus_manager.dart',
+                    'FocusNode',
+                  ),
+                ),
+              ]);
+          return $Iterable.wrap(
+            (_traversalChildren).map((e) {
+              final value = $FocusNode.wrap(e);
+              runtime.assertTypedTypeArgument(value, iterableType, 0);
+              return value;
+            }),
+            runtime: runtime,
+            runtimeTypeId: iterableType,
+          );
+        })();
       case 'debugLabel':
         final _debugLabel = $value.debugLabel;
         return _debugLabel == null ? const $null() : $String(_debugLabel);
       case 'descendants':
         final _descendants = $value.descendants;
-        return $Iterable.wrap((_descendants).map((e) => $FocusNode.wrap(e)));
+        return (() {
+          final iterableType = runtime
+              .internParameterizedType(CoreTypes.iterable, [
+                runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/focus_manager.dart',
+                    'FocusNode',
+                  ),
+                ),
+              ]);
+          return $Iterable.wrap(
+            (_descendants).map((e) {
+              final value = $FocusNode.wrap(e);
+              runtime.assertTypedTypeArgument(value, iterableType, 0);
+              return value;
+            }),
+            runtime: runtime,
+            runtimeTypeId: iterableType,
+          );
+        })();
       case 'traversalDescendants':
         final _traversalDescendants = $value.traversalDescendants;
-        return $Iterable.wrap(
-          (_traversalDescendants).map((e) => $FocusNode.wrap(e)),
-        );
+        return (() {
+          final iterableType = runtime
+              .internParameterizedType(CoreTypes.iterable, [
+                runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/focus_manager.dart',
+                    'FocusNode',
+                  ),
+                ),
+              ]);
+          return $Iterable.wrap(
+            (_traversalDescendants).map((e) {
+              final value = $FocusNode.wrap(e);
+              runtime.assertTypedTypeArgument(value, iterableType, 0);
+              return value;
+            }),
+            runtime: runtime,
+            runtimeTypeId: iterableType,
+          );
+        })();
       case 'ancestors':
         final _ancestors = $value.ancestors;
-        return $Iterable.wrap((_ancestors).map((e) => $FocusNode.wrap(e)));
+        return (() {
+          final iterableType = runtime
+              .internParameterizedType(CoreTypes.iterable, [
+                runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/focus_manager.dart',
+                    'FocusNode',
+                  ),
+                ),
+              ]);
+          return $Iterable.wrap(
+            (_ancestors).map((e) {
+              final value = $FocusNode.wrap(e);
+              runtime.assertTypedTypeArgument(value, iterableType, 0);
+              return value;
+            }),
+            runtime: runtime,
+            runtimeTypeId: iterableType,
+          );
+        })();
       case 'hasFocus':
         final _hasFocus = $value.hasFocus;
         return $bool(_hasFocus);
@@ -2170,14 +2261,48 @@ class $FocusScopeNode implements $Instance {
             : $FocusNode.wrap(_focusedChild);
       case 'traversalChildren':
         final _traversalChildren = $value.traversalChildren;
-        return $Iterable.wrap(
-          (_traversalChildren).map((e) => $FocusNode.wrap(e)),
-        );
+        return (() {
+          final iterableType = runtime
+              .internParameterizedType(CoreTypes.iterable, [
+                runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/focus_manager.dart',
+                    'FocusNode',
+                  ),
+                ),
+              ]);
+          return $Iterable.wrap(
+            (_traversalChildren).map((e) {
+              final value = $FocusNode.wrap(e);
+              runtime.assertTypedTypeArgument(value, iterableType, 0);
+              return value;
+            }),
+            runtime: runtime,
+            runtimeTypeId: iterableType,
+          );
+        })();
       case 'traversalDescendants':
         final _traversalDescendants = $value.traversalDescendants;
-        return $Iterable.wrap(
-          (_traversalDescendants).map((e) => $FocusNode.wrap(e)),
-        );
+        return (() {
+          final iterableType = runtime
+              .internParameterizedType(CoreTypes.iterable, [
+                runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/focus_manager.dart',
+                    'FocusNode',
+                  ),
+                ),
+              ]);
+          return $Iterable.wrap(
+            (_traversalDescendants).map((e) {
+              final value = $FocusNode.wrap(e);
+              runtime.assertTypedTypeArgument(value, iterableType, 0);
+              return value;
+            }),
+            runtime: runtime,
+            runtimeTypeId: iterableType,
+          );
+        })();
       case 'setFirstFocus':
         return $Closure(__setFirstFocus.func, this);
 

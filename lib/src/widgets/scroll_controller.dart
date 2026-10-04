@@ -618,7 +618,26 @@ class $ScrollController implements $Instance {
         return _debugLabel == null ? const $null() : $String(_debugLabel);
       case 'positions':
         final _positions = $value.positions;
-        return $Iterable.wrap((_positions).map((e) => $ScrollPosition.wrap(e)));
+        return (() {
+          final iterableType = runtime
+              .internParameterizedType(CoreTypes.iterable, [
+                runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/scroll_position.dart',
+                    'ScrollPosition',
+                  ),
+                ),
+              ]);
+          return $Iterable.wrap(
+            (_positions).map((e) {
+              final value = $ScrollPosition.wrap(e);
+              runtime.assertTypedTypeArgument(value, iterableType, 0);
+              return value;
+            }),
+            runtime: runtime,
+            runtimeTypeId: iterableType,
+          );
+        })();
       case 'hasClients':
         final _hasClients = $value.hasClients;
         return $bool(_hasClients);

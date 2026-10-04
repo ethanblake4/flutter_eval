@@ -248,13 +248,24 @@ class $ColorSwatch<T> implements $Instance {
     switch (identifier) {
       case 'keys':
         final _keys = $value.keys;
-        return $Iterable.wrap(
-          (_keys).map(
-            (e) => (e is List || e is Map || e is Set
-                ? TypedInterop.boxExternal(e, runtime: runtime)!
-                : runtime.wrapAlways(e)),
-          ),
-        );
+        return (() {
+          final iterableType = runtime
+              .internParameterizedType(CoreTypes.iterable, [
+                runtime.runtimeTypeArgumentAt($getRuntimeType(runtime), 0) ??
+                    runtime.lookupType(CoreTypes.dynamic),
+              ]);
+          return $Iterable.wrap(
+            (_keys).map((e) {
+              final value = (e is List || e is Map || e is Set
+                  ? TypedInterop.boxExternal(e, runtime: runtime)!
+                  : runtime.wrapAlways(e));
+              runtime.assertTypedTypeArgument(value, iterableType, 0);
+              return value;
+            }),
+            runtime: runtime,
+            runtimeTypeId: iterableType,
+          );
+        })();
       case '[]':
         return $Closure(__operatorIndexGet.func, this);
     }

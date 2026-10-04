@@ -47,6 +47,7 @@ import 'package:dart_eval/stdlib/typed_data.dart'
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import '../widgets/framework_wrappers.dart';
 import './theme_data.dart';
 import '../painting/borders.dart';
@@ -1272,7 +1273,25 @@ class $ListTile implements $Instance {
       tiles: TypedInterop.exportIterable((s as $Value?), runtime),
       color: (c is $Value ? c : null)?.$value,
     );
-    return $Iterable.wrap((value).map((e) => $Widget.wrap(e)));
+    return (() {
+      final iterableType = runtime.internParameterizedType(CoreTypes.iterable, [
+        runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'Widget',
+          ),
+        ),
+      ]);
+      return $Iterable.wrap(
+        (value).map((e) {
+          final value = $Widget.wrap(e);
+          runtime.assertTypedTypeArgument(value, iterableType, 0);
+          return value;
+        }),
+        runtime: runtime,
+        runtimeTypeId: iterableType,
+      );
+    })();
   }
 
   final $Instance _superclass;

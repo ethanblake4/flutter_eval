@@ -2970,7 +2970,21 @@ class $TextField implements $Instance {
         final _autofillHints = $value.autofillHints;
         return _autofillHints == null
             ? const $null()
-            : $Iterable.wrap((_autofillHints).map((e) => $String(e)));
+            : (() {
+                final iterableType = runtime.internParameterizedType(
+                  CoreTypes.iterable,
+                  [runtime.lookupType(BridgeTypeSpec('dart:core', 'String'))],
+                );
+                return $Iterable.wrap(
+                  (_autofillHints).map((e) {
+                    final value = $String(e);
+                    runtime.assertTypedTypeArgument(value, iterableType, 0);
+                    return value;
+                  }),
+                  runtime: runtime,
+                  runtimeTypeId: iterableType,
+                );
+              })();
       case 'clipBehavior':
         final _clipBehavior = $value.clipBehavior;
         return $Clip.wrap(_clipBehavior);

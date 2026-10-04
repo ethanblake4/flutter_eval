@@ -34,6 +34,7 @@ import 'package:dart_eval/stdlib/typed_data.dart'
     hide $KeyboardKey, $LogicalKeyboardKey, $PhysicalKeyboardKey;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
 
 /// dart_eval wrapper binding for [KeyboardKey]
 class $KeyboardKey implements $Instance {
@@ -12837,7 +12838,25 @@ class $LogicalKeyboardKey implements $Instance {
     Object? c,
   ) {
     final value = LogicalKeyboardKey.knownLogicalKeys;
-    return $Iterable.wrap((value).map((e) => $LogicalKeyboardKey.wrap(e)));
+    return (() {
+      final iterableType = runtime.internParameterizedType(CoreTypes.iterable, [
+        runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/services/keyboard_key.g.dart',
+            'LogicalKeyboardKey',
+          ),
+        ),
+      ]);
+      return $Iterable.wrap(
+        (value).map((e) {
+          final value = $LogicalKeyboardKey.wrap(e);
+          runtime.assertTypedTypeArgument(value, iterableType, 0);
+          return value;
+        }),
+        runtime: runtime,
+        runtimeTypeId: iterableType,
+      );
+    })();
   }
 
   final $Instance _superclass;
@@ -20364,7 +20383,25 @@ class $PhysicalKeyboardKey implements $Instance {
     Object? c,
   ) {
     final value = PhysicalKeyboardKey.knownPhysicalKeys;
-    return $Iterable.wrap((value).map((e) => $PhysicalKeyboardKey.wrap(e)));
+    return (() {
+      final iterableType = runtime.internParameterizedType(CoreTypes.iterable, [
+        runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/services/keyboard_key.g.dart',
+            'PhysicalKeyboardKey',
+          ),
+        ),
+      ]);
+      return $Iterable.wrap(
+        (value).map((e) {
+          final value = $PhysicalKeyboardKey.wrap(e);
+          runtime.assertTypedTypeArgument(value, iterableType, 0);
+          return value;
+        }),
+        runtime: runtime,
+        runtimeTypeId: iterableType,
+      );
+    })();
   }
 
   final $Instance _superclass;

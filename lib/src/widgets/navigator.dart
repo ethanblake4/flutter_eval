@@ -5697,15 +5697,26 @@ class $NavigatorState implements $Instance {
               )
               as Object?,
     );
-    return $Future.wrap(
-      result.then(
-        (e) => e == null
-            ? const $null()
-            : (e is List || e is Map || e is Set
-                  ? TypedInterop.boxExternal(e, runtime: runtime)!
-                  : runtime.wrapAlways(e)),
-      ),
-    );
+    return (() {
+      final bridgeTypeArguments = runtime.bridgeCallTypeArguments;
+      return $Future.wrap(
+        result.then(
+          (e) => e == null
+              ? const $null()
+              : (e is List || e is Map || e is Set
+                    ? TypedInterop.boxExternal(e, runtime: runtime)!
+                    : runtime.wrapAlways(e)),
+        ),
+        runtime: runtime,
+        runtimeTypeId: runtime.internParameterizedType(CoreTypes.future, [
+          runtime.nullableRuntimeType(
+            (bridgeTypeArguments.length > 0
+                ? bridgeTypeArguments[0]
+                : runtime.lookupType(CoreTypes.dynamic)),
+          ),
+        ]),
+      );
+    })();
   }
 
   static const $Function __restorablePushNamed = $Function(
@@ -5759,15 +5770,26 @@ class $NavigatorState implements $Instance {
               )
               as Object?,
     );
-    return $Future.wrap(
-      result.then(
-        (e) => e == null
-            ? const $null()
-            : (e is List || e is Map || e is Set
-                  ? TypedInterop.boxExternal(e, runtime: runtime)!
-                  : runtime.wrapAlways(e)),
-      ),
-    );
+    return (() {
+      final bridgeTypeArguments = runtime.bridgeCallTypeArguments;
+      return $Future.wrap(
+        result.then(
+          (e) => e == null
+              ? const $null()
+              : (e is List || e is Map || e is Set
+                    ? TypedInterop.boxExternal(e, runtime: runtime)!
+                    : runtime.wrapAlways(e)),
+        ),
+        runtime: runtime,
+        runtimeTypeId: runtime.internParameterizedType(CoreTypes.future, [
+          runtime.nullableRuntimeType(
+            (bridgeTypeArguments.length > 0
+                ? bridgeTypeArguments[0]
+                : runtime.lookupType(CoreTypes.dynamic)),
+          ),
+        ]),
+      );
+    })();
   }
 
   static const $Function __restorablePushReplacementNamed = $Function(
@@ -5827,15 +5849,26 @@ class $NavigatorState implements $Instance {
               )
               as Object?,
     );
-    return $Future.wrap(
-      result.then(
-        (e) => e == null
-            ? const $null()
-            : (e is List || e is Map || e is Set
-                  ? TypedInterop.boxExternal(e, runtime: runtime)!
-                  : runtime.wrapAlways(e)),
-      ),
-    );
+    return (() {
+      final bridgeTypeArguments = runtime.bridgeCallTypeArguments;
+      return $Future.wrap(
+        result.then(
+          (e) => e == null
+              ? const $null()
+              : (e is List || e is Map || e is Set
+                    ? TypedInterop.boxExternal(e, runtime: runtime)!
+                    : runtime.wrapAlways(e)),
+        ),
+        runtime: runtime,
+        runtimeTypeId: runtime.internParameterizedType(CoreTypes.future, [
+          runtime.nullableRuntimeType(
+            (bridgeTypeArguments.length > 0
+                ? bridgeTypeArguments[0]
+                : runtime.lookupType(CoreTypes.dynamic)),
+          ),
+        ]),
+      );
+    })();
   }
 
   static const $Function __restorablePopAndPushNamed = $Function(
@@ -5900,15 +5933,26 @@ class $NavigatorState implements $Instance {
               )
               as Object?,
     );
-    return $Future.wrap(
-      result.then(
-        (e) => e == null
-            ? const $null()
-            : (e is List || e is Map || e is Set
-                  ? TypedInterop.boxExternal(e, runtime: runtime)!
-                  : runtime.wrapAlways(e)),
-      ),
-    );
+    return (() {
+      final bridgeTypeArguments = runtime.bridgeCallTypeArguments;
+      return $Future.wrap(
+        result.then(
+          (e) => e == null
+              ? const $null()
+              : (e is List || e is Map || e is Set
+                    ? TypedInterop.boxExternal(e, runtime: runtime)!
+                    : runtime.wrapAlways(e)),
+        ),
+        runtime: runtime,
+        runtimeTypeId: runtime.internParameterizedType(CoreTypes.future, [
+          runtime.nullableRuntimeType(
+            (bridgeTypeArguments.length > 0
+                ? bridgeTypeArguments[0]
+                : runtime.lookupType(CoreTypes.dynamic)),
+          ),
+        ]),
+      );
+    })();
   }
 
   static const $Function __restorablePushNamedAndRemoveUntil = $Function(
@@ -5955,15 +5999,26 @@ class $NavigatorState implements $Instance {
   ) {
     final self = target! as $NavigatorState;
     final result = self.$value.push((r as $Value?)!.$value);
-    return $Future.wrap(
-      result.then(
-        (e) => e == null
-            ? const $null()
-            : (e is List || e is Map || e is Set
-                  ? TypedInterop.boxExternal(e, runtime: runtime)!
-                  : runtime.wrapAlways(e)),
-      ),
-    );
+    return (() {
+      final bridgeTypeArguments = runtime.bridgeCallTypeArguments;
+      return $Future.wrap(
+        result.then(
+          (e) => e == null
+              ? const $null()
+              : (e is List || e is Map || e is Set
+                    ? TypedInterop.boxExternal(e, runtime: runtime)!
+                    : runtime.wrapAlways(e)),
+        ),
+        runtime: runtime,
+        runtimeTypeId: runtime.internParameterizedType(CoreTypes.future, [
+          runtime.nullableRuntimeType(
+            (bridgeTypeArguments.length > 0
+                ? bridgeTypeArguments[0]
+                : runtime.lookupType(CoreTypes.dynamic)),
+          ),
+        ]),
+      );
+    })();
   }
 
   static const $Function __restorablePush = $Function(_restorablePush);
@@ -6019,15 +6074,26 @@ class $NavigatorState implements $Instance {
               )
               as dynamic,
     );
-    return $Future.wrap(
-      result.then(
-        (e) => e == null
-            ? const $null()
-            : (e is List || e is Map || e is Set
-                  ? TypedInterop.boxExternal(e, runtime: runtime)!
-                  : runtime.wrapAlways(e)),
-      ),
-    );
+    return (() {
+      final bridgeTypeArguments = runtime.bridgeCallTypeArguments;
+      return $Future.wrap(
+        result.then(
+          (e) => e == null
+              ? const $null()
+              : (e is List || e is Map || e is Set
+                    ? TypedInterop.boxExternal(e, runtime: runtime)!
+                    : runtime.wrapAlways(e)),
+        ),
+        runtime: runtime,
+        runtimeTypeId: runtime.internParameterizedType(CoreTypes.future, [
+          runtime.nullableRuntimeType(
+            (bridgeTypeArguments.length > 0
+                ? bridgeTypeArguments[0]
+                : runtime.lookupType(CoreTypes.dynamic)),
+          ),
+        ]),
+      );
+    })();
   }
 
   static const $Function __restorablePushReplacement = $Function(
@@ -6096,15 +6162,26 @@ class $NavigatorState implements $Instance {
         },
       ),
     );
-    return $Future.wrap(
-      result.then(
-        (e) => e == null
-            ? const $null()
-            : (e is List || e is Map || e is Set
-                  ? TypedInterop.boxExternal(e, runtime: runtime)!
-                  : runtime.wrapAlways(e)),
-      ),
-    );
+    return (() {
+      final bridgeTypeArguments = runtime.bridgeCallTypeArguments;
+      return $Future.wrap(
+        result.then(
+          (e) => e == null
+              ? const $null()
+              : (e is List || e is Map || e is Set
+                    ? TypedInterop.boxExternal(e, runtime: runtime)!
+                    : runtime.wrapAlways(e)),
+        ),
+        runtime: runtime,
+        runtimeTypeId: runtime.internParameterizedType(CoreTypes.future, [
+          runtime.nullableRuntimeType(
+            (bridgeTypeArguments.length > 0
+                ? bridgeTypeArguments[0]
+                : runtime.lookupType(CoreTypes.dynamic)),
+          ),
+        ]),
+      );
+    })();
   }
 
   static const $Function __restorablePushAndRemoveUntil = $Function(

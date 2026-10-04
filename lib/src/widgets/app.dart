@@ -3218,9 +3218,27 @@ class $WidgetsApp implements $Instance {
                                           ],
                                         ),
                                   )),
-                            $Iterable.wrap(
-                              (supportedLocales).map((e) => $Locale.wrap(e)),
-                            ),
+                            (() {
+                              final iterableType = runtime
+                                  .internParameterizedType(CoreTypes.iterable, [
+                                    runtime.lookupType(
+                                      BridgeTypeSpec('dart:ui', 'Locale'),
+                                    ),
+                                  ]);
+                              return $Iterable.wrap(
+                                (supportedLocales).map((e) {
+                                  final value = $Locale.wrap(e);
+                                  runtime.assertTypedTypeArgument(
+                                    value,
+                                    iterableType,
+                                    0,
+                                  );
+                                  return value;
+                                }),
+                                runtime: runtime,
+                                runtimeTypeId: iterableType,
+                              );
+                            })(),
                             2,
                           )
                           ?.$value;
@@ -3240,9 +3258,27 @@ class $WidgetsApp implements $Instance {
                             (locale == null
                                 ? const $null()
                                 : $Locale.wrap(locale)),
-                            $Iterable.wrap(
-                              (supportedLocales).map((e) => $Locale.wrap(e)),
-                            ),
+                            (() {
+                              final iterableType = runtime
+                                  .internParameterizedType(CoreTypes.iterable, [
+                                    runtime.lookupType(
+                                      BridgeTypeSpec('dart:ui', 'Locale'),
+                                    ),
+                                  ]);
+                              return $Iterable.wrap(
+                                (supportedLocales).map((e) {
+                                  final value = $Locale.wrap(e);
+                                  runtime.assertTypedTypeArgument(
+                                    value,
+                                    iterableType,
+                                    0,
+                                  );
+                                  return value;
+                                }),
+                                runtime: runtime,
+                                runtimeTypeId: iterableType,
+                              );
+                            })(),
                             2,
                           )
                           ?.$value;
@@ -3471,9 +3507,27 @@ class $WidgetsApp implements $Instance {
                                           ],
                                         ),
                                   )),
-                            $Iterable.wrap(
-                              (supportedLocales).map((e) => $Locale.wrap(e)),
-                            ),
+                            (() {
+                              final iterableType = runtime
+                                  .internParameterizedType(CoreTypes.iterable, [
+                                    runtime.lookupType(
+                                      BridgeTypeSpec('dart:ui', 'Locale'),
+                                    ),
+                                  ]);
+                              return $Iterable.wrap(
+                                (supportedLocales).map((e) {
+                                  final value = $Locale.wrap(e);
+                                  runtime.assertTypedTypeArgument(
+                                    value,
+                                    iterableType,
+                                    0,
+                                  );
+                                  return value;
+                                }),
+                                runtime: runtime,
+                                runtimeTypeId: iterableType,
+                              );
+                            })(),
                             2,
                           )
                           ?.$value;
@@ -3493,9 +3547,27 @@ class $WidgetsApp implements $Instance {
                             (locale == null
                                 ? const $null()
                                 : $Locale.wrap(locale)),
-                            $Iterable.wrap(
-                              (supportedLocales).map((e) => $Locale.wrap(e)),
-                            ),
+                            (() {
+                              final iterableType = runtime
+                                  .internParameterizedType(CoreTypes.iterable, [
+                                    runtime.lookupType(
+                                      BridgeTypeSpec('dart:ui', 'Locale'),
+                                    ),
+                                  ]);
+                              return $Iterable.wrap(
+                                (supportedLocales).map((e) {
+                                  final value = $Locale.wrap(e);
+                                  runtime.assertTypedTypeArgument(
+                                    value,
+                                    iterableType,
+                                    0,
+                                  );
+                                  return value;
+                                }),
+                                runtime: runtime,
+                                runtimeTypeId: iterableType,
+                              );
+                            })(),
                             2,
                           )
                           ?.$value;
@@ -3913,11 +3985,29 @@ class $WidgetsApp implements $Instance {
         final _localizationsDelegates = $value.localizationsDelegates;
         return _localizationsDelegates == null
             ? const $null()
-            : $Iterable.wrap(
-                (_localizationsDelegates).map(
-                  (e) => $LocalizationsDelegate.wrap(e),
-                ),
-              );
+            : (() {
+                final iterableType = runtime.internParameterizedType(
+                  CoreTypes.iterable,
+                  [
+                    runtime.internParameterizedType(
+                      BridgeTypeSpec(
+                        'package:flutter/src/widgets/localizations.dart',
+                        'LocalizationsDelegate',
+                      ),
+                      [runtime.lookupType(CoreTypes.dynamic)],
+                    ),
+                  ],
+                );
+                return $Iterable.wrap(
+                  (_localizationsDelegates).map((e) {
+                    final value = $LocalizationsDelegate.wrap(e);
+                    runtime.assertTypedTypeArgument(value, iterableType, 0);
+                    return value;
+                  }),
+                  runtime: runtime,
+                  runtimeTypeId: iterableType,
+                );
+              })();
       case 'localeListResolutionCallback':
         final _localeListResolutionCallback =
             $value.localeListResolutionCallback;
@@ -3947,7 +4037,21 @@ class $WidgetsApp implements $Instance {
               });
       case 'supportedLocales':
         final _supportedLocales = $value.supportedLocales;
-        return $Iterable.wrap((_supportedLocales).map((e) => $Locale.wrap(e)));
+        return (() {
+          final iterableType = runtime.internParameterizedType(
+            CoreTypes.iterable,
+            [runtime.lookupType(BridgeTypeSpec('dart:ui', 'Locale'))],
+          );
+          return $Iterable.wrap(
+            (_supportedLocales).map((e) {
+              final value = $Locale.wrap(e);
+              runtime.assertTypedTypeArgument(value, iterableType, 0);
+              return value;
+            }),
+            runtime: runtime,
+            runtimeTypeId: iterableType,
+          );
+        })();
       case 'showPerformanceOverlay':
         final _showPerformanceOverlay = $value.showPerformanceOverlay;
         return $bool(_showPerformanceOverlay);

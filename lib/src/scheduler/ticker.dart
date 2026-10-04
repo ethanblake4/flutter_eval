@@ -395,13 +395,22 @@ class $TickerFuture implements $Instance {
               },
             ),
     );
-    return $Future.wrap(
-      result.then(
-        (e) => (e is List || e is Map || e is Set
-            ? TypedInterop.boxExternal(e, runtime: runtime)!
-            : runtime.wrapAlways(e)),
-      ),
-    );
+    return (() {
+      final bridgeTypeArguments = runtime.bridgeCallTypeArguments;
+      return $Future.wrap(
+        result.then(
+          (e) => (e is List || e is Map || e is Set
+              ? TypedInterop.boxExternal(e, runtime: runtime)!
+              : runtime.wrapAlways(e)),
+        ),
+        runtime: runtime,
+        runtimeTypeId: runtime.internParameterizedType(CoreTypes.future, [
+          (bridgeTypeArguments.length > 0
+              ? bridgeTypeArguments[0]
+              : runtime.lookupType(CoreTypes.dynamic)),
+        ]),
+      );
+    })();
   }
 
   static const $Function __catchError = $Function(_catchError);
@@ -470,7 +479,11 @@ class $TickerFuture implements $Instance {
         (r as $Value?)! as EvalCallable,
         "dynamic Function();export=false",
         (_callable) => () {
-          return _callable.call(runtime, null, null, null, 0)?.$value;
+          return TypedInterop.exportExternal(
+                _callable.call(runtime, null, null, null, 0),
+                runtime: runtime,
+              )
+              as dynamic;
         },
       ),
     );

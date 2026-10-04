@@ -2148,7 +2148,26 @@ class $PageRoute$bridge<T> extends PageRoute<T> with $Bridge<PageRoute<T>> {
       case 'createOverlayEntries':
         return $Function((runtime, target, r, s, c) {
           final result = super.createOverlayEntries();
-          return $Iterable.wrap((result).map((e) => $OverlayEntry.wrap(e)));
+          return (() {
+            final iterableType = runtime
+                .internParameterizedType(CoreTypes.iterable, [
+                  runtime.lookupType(
+                    BridgeTypeSpec(
+                      'package:flutter/src/widgets/overlay.dart',
+                      'OverlayEntry',
+                    ),
+                  ),
+                ]);
+            return $Iterable.wrap(
+              (result).map((e) {
+                final value = $OverlayEntry.wrap(e);
+                runtime.assertTypedTypeArgument(value, iterableType, 0);
+                return value;
+              }),
+              runtime: runtime,
+              runtimeTypeId: iterableType,
+            );
+          })();
         });
       case 'debugTransitionCompleted':
         return $Function((runtime, target, r, s, c) {
@@ -3538,7 +3557,25 @@ class $PageRoute<T> implements $Instance {
   ) {
     final self = target! as $PageRoute;
     final result = self.$value.createOverlayEntries();
-    return $Iterable.wrap((result).map((e) => $OverlayEntry.wrap(e)));
+    return (() {
+      final iterableType = runtime.internParameterizedType(CoreTypes.iterable, [
+        runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/overlay.dart',
+            'OverlayEntry',
+          ),
+        ),
+      ]);
+      return $Iterable.wrap(
+        (result).map((e) {
+          final value = $OverlayEntry.wrap(e);
+          runtime.assertTypedTypeArgument(value, iterableType, 0);
+          return value;
+        }),
+        runtime: runtime,
+        runtimeTypeId: iterableType,
+      );
+    })();
   }
 
   static const $Function __debugTransitionCompleted = $Function(

@@ -579,7 +579,21 @@ class $MaterialColor implements $Instance {
         return $int(_blue);
       case 'keys':
         final _keys = $value.keys;
-        return $Iterable.wrap((_keys).map((e) => $int(e)));
+        return (() {
+          final iterableType = runtime.internParameterizedType(
+            CoreTypes.iterable,
+            [runtime.lookupType(BridgeTypeSpec('dart:core', 'int'))],
+          );
+          return $Iterable.wrap(
+            (_keys).map((e) {
+              final value = $int(e);
+              runtime.assertTypedTypeArgument(value, iterableType, 0);
+              return value;
+            }),
+            runtime: runtime,
+            runtimeTypeId: iterableType,
+          );
+        })();
       case 'shade50':
         final _shade50 = $value.shade50;
         return $Color.wrap(_shade50);
@@ -1263,7 +1277,21 @@ class $MaterialAccentColor implements $Instance {
         return $int(_blue);
       case 'keys':
         final _keys = $value.keys;
-        return $Iterable.wrap((_keys).map((e) => $int(e)));
+        return (() {
+          final iterableType = runtime.internParameterizedType(
+            CoreTypes.iterable,
+            [runtime.lookupType(BridgeTypeSpec('dart:core', 'int'))],
+          );
+          return $Iterable.wrap(
+            (_keys).map((e) {
+              final value = $int(e);
+              runtime.assertTypedTypeArgument(value, iterableType, 0);
+              return value;
+            }),
+            runtime: runtime,
+            runtimeTypeId: iterableType,
+          );
+        })();
       case 'shade100':
         final _shade100 = $value.shade100;
         return $Color.wrap(_shade100);
