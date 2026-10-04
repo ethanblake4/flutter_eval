@@ -61,10 +61,10 @@ import 'package:dart_eval/stdlib/typed_data.dart'
         $TransitionDelegate;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import './routes.dart';
 import './overlay.dart';
 import '../supporting/flutter_widgets_navigator.dart';
-import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import './framework_wrappers.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import '../supporting/flutter_widgets_focus_traversal.dart';
@@ -2896,7 +2896,11 @@ class $Navigator implements $Instance {
         key: (r is $Value ? r : null)?.$value,
         pages: (s is $Value ? s : null) == null
             ? const <Page<dynamic>>[]
-            : ((s is $Value ? s : null)!.$reified as List)
+            : (TypedInterop.exportExternal(
+                        (s is $Value ? s : null),
+                        runtime: runtime,
+                      )
+                      as List)
                   .cast<Page<dynamic>>(),
         onPopPage: _arg2OrNull == null || _arg2OrNull is $null
             ? null
@@ -2976,7 +2980,9 @@ class $Navigator implements $Instance {
         clipBehavior: _arg9OrNull == null ? Clip.hardEdge : _arg9OrNull!.$value,
         observers: _arg10OrNull == null
             ? const <NavigatorObserver>[]
-            : (_arg10OrNull!.$reified as List).cast<NavigatorObserver>(),
+            : (TypedInterop.exportExternal(_arg10OrNull, runtime: runtime)
+                      as List)
+                  .cast<NavigatorObserver>(),
         requestFocus: _arg11OrNull == null
             ? true
             : (_arg11OrNull as $bool).$value,

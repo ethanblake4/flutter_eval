@@ -31,6 +31,7 @@ import 'package:dart_eval/stdlib/async.dart' hide $BoxDecoration;
 import 'package:dart_eval/stdlib/typed_data.dart' hide $BoxDecoration;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import './decoration.dart';
 import '../sky_engine/ui/painting.dart';
 import '../supporting/flutter_painting_decoration_image.dart';
@@ -795,7 +796,10 @@ class $BoxDecoration implements $Instance {
         image: (s is $Value ? s : null)?.$value,
         border: _arg2OrNull?.$value,
         borderRadius: _arg3OrNull?.$value,
-        boxShadow: (_arg4OrNull?.$reified as List?)?.cast<BoxShadow>(),
+        boxShadow:
+            (TypedInterop.exportExternal(_arg4OrNull, runtime: runtime)
+                    as List?)
+                ?.cast<BoxShadow>(),
         gradient: _arg5OrNull?.$value,
         backgroundBlendMode: _arg6OrNull?.$value,
         shape: _arg7OrNull == null ? BoxShape.rectangle : _arg7OrNull!.$value,
@@ -931,10 +935,12 @@ class $BoxDecoration implements $Instance {
                   : null)
               ?.$value,
       boxShadow:
-          ((c is List && (c as List).length > 2
-                          ? (c as List)[2] as $Value?
-                          : null)
-                      ?.$reified
+          (TypedInterop.exportExternal(
+                    (c is List && (c as List).length > 2
+                        ? (c as List)[2] as $Value?
+                        : null),
+                    runtime: runtime,
+                  )
                   as List?)
               ?.cast<BoxShadow>(),
       gradient:

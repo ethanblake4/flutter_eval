@@ -36,11 +36,12 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import 'package:flutter/src/painting/text_painter.dart';
-import 'package:dart_eval/stdlib/core.dart' hide $TextOverflow, $TextWidthBasis;
+import 'package:dart_eval/stdlib/core.dart'
+    hide $TextPainter, $TextOverflow, $TextWidthBasis;
 import 'package:dart_eval/stdlib/async.dart'
-    hide $TextOverflow, $TextWidthBasis;
+    hide $TextPainter, $TextOverflow, $TextWidthBasis;
 import 'package:dart_eval/stdlib/typed_data.dart'
-    hide $TextOverflow, $TextWidthBasis;
+    hide $TextPainter, $TextOverflow, $TextWidthBasis;
 
 /// dart_eval enum wrapper binding for [VerticalDirection]
 class $VerticalDirection implements $Instance {

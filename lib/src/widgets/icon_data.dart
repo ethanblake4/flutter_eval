@@ -31,6 +31,7 @@ import 'package:dart_eval/stdlib/async.dart' hide $IconData;
 import 'package:dart_eval/stdlib/typed_data.dart' hide $IconData;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 
 /// dart_eval wrapper binding for [IconData]
@@ -184,7 +185,10 @@ class $IconData implements $Instance {
         matchTextDirection: _arg3OrNull == null
             ? false
             : (_arg3OrNull as $bool).$value,
-        fontFamilyFallback: (_arg4OrNull?.$reified as List?)?.cast<String>(),
+        fontFamilyFallback:
+            (TypedInterop.exportExternal(_arg4OrNull, runtime: runtime)
+                    as List?)
+                ?.cast<String>(),
       ),
     );
   }

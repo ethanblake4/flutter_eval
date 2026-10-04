@@ -212,6 +212,7 @@ import 'package:dart_eval/stdlib/typed_data.dart'
         $ViewPadding;
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import './geometry.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import './text.dart';
 import '../../supporting/ui.dart';
 import './image.dart';
@@ -3510,7 +3511,8 @@ class $Canvas implements $Instance {
     final self = target! as $Canvas;
     self.$value.drawPoints(
       (r as $Value?)!.$value,
-      ((s as $Value?)!.$reified as List).cast<Offset>(),
+      (TypedInterop.exportExternal((s as $Value?), runtime: runtime) as List)
+          .cast<Offset>(),
       ((c as List<Object?>)[0] as $Value?)!.$value,
     );
     return null;
@@ -3561,9 +3563,20 @@ class $Canvas implements $Instance {
     final self = target! as $Canvas;
     self.$value.drawAtlas(
       (r as $Value?)!.$value,
-      ((s as $Value?)!.$reified as List).cast<RSTransform>(),
-      (((c as List<Object?>)[0] as $Value?)!.$reified as List).cast<Rect>(),
-      (((c as List<Object?>)[1] as $Value?)!.$reified as List?)?.cast<Color>(),
+      (TypedInterop.exportExternal((s as $Value?), runtime: runtime) as List)
+          .cast<RSTransform>(),
+      (TypedInterop.exportExternal(
+                ((c as List<Object?>)[0] as $Value?),
+                runtime: runtime,
+              )
+              as List)
+          .cast<Rect>(),
+      (TypedInterop.exportExternal(
+                ((c as List<Object?>)[1] as $Value?),
+                runtime: runtime,
+              )
+              as List?)
+          ?.cast<Color>(),
       ((c as List<Object?>)[2] as $Value?)!.$value,
       ((c as List<Object?>)[3] as $Value?)!.$value,
       ((c as List<Object?>)[4] as $Value?)!.$value,
@@ -6229,7 +6242,8 @@ class $Path implements $Instance {
   ) {
     final self = target! as $Path;
     self.$value.addPolygon(
-      ((r as $Value?)!.$reified as List).cast<Offset>(),
+      (TypedInterop.exportExternal((r as $Value?), runtime: runtime) as List)
+          .cast<Offset>(),
       (s as $bool).$value,
     );
     return null;

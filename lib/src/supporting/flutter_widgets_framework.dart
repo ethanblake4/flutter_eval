@@ -95,6 +95,14 @@ import './flutter_foundation_diagnostics.dart';
 import 'package:flutter/src/rendering/object.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import '../widgets/framework_wrappers.dart';
+import 'package:flutter/src/widgets/inherited_theme.dart';
+import 'package:dart_eval/stdlib/core.dart' hide $InheritedTheme;
+import 'package:dart_eval/stdlib/async.dart' hide $InheritedTheme;
+import 'package:dart_eval/stdlib/typed_data.dart' hide $InheritedTheme;
+import 'package:flutter/src/widgets/inherited_model.dart';
+import 'package:dart_eval/stdlib/core.dart' hide $InheritedModel;
+import 'package:dart_eval/stdlib/async.dart' hide $InheritedModel;
+import 'package:dart_eval/stdlib/typed_data.dart' hide $InheritedModel;
 
 /// dart_eval wrapper binding for [BuildOwner]
 class $BuildOwner implements $Instance {
@@ -1354,6 +1362,227 @@ class $StatelessElement implements $Instance {
 
   @override
   int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
+/// dart_eval wrapper binding for [InheritedTheme]
+class $InheritedTheme implements $Instance {
+  /// Configure this class for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {}
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
+  }
+
+  /// Compile-time type specification of [$InheritedTheme]
+  static const $spec = BridgeTypeSpec(
+    'package:flutter/src/widgets/inherited_theme.dart',
+    'InheritedTheme',
+  );
+
+  /// Compile-time type declaration of [$InheritedTheme]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$InheritedTheme]
+  static const $declaration = BridgeClassDef(
+    BridgeClassType(
+      $type,
+      isAbstract: true,
+
+      $extends: BridgeTypeRef(
+        BridgeTypeSpec(
+          'package:flutter/src/widgets/framework.dart',
+          'InheritedWidget',
+        ),
+        [],
+      ),
+
+      $implements: [
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'InheritedWidget',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'ProxyWidget',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'Widget',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'DiagnosticableTree',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'Diagnosticable',
+          ),
+          [],
+        ),
+      ],
+    ),
+    constructors: {},
+
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {},
+    wrap: true,
+    bridge: false,
+  );
+
+  final $Instance _superclass;
+
+  @override
+  final InheritedTheme $value;
+
+  @override
+  InheritedTheme get $reified => $value;
+
+  /// Wrap a [InheritedTheme] in a [$InheritedTheme]
+  $InheritedTheme.wrap(this.$value)
+    : _superclass = $InheritedWidget.wrap($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
+/// dart_eval wrapper binding for [InheritedModel]
+class $InheritedModel<T> implements $Instance {
+  /// Configure this class for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {}
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
+  }
+
+  /// Compile-time type specification of [$InheritedModel]
+  static const $spec = BridgeTypeSpec(
+    'package:flutter/src/widgets/inherited_model.dart',
+    'InheritedModel',
+  );
+
+  /// Compile-time type declaration of [$InheritedModel]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$InheritedModel]
+  static const $declaration = BridgeClassDef(
+    BridgeClassType(
+      $type,
+      isAbstract: true,
+
+      generics: {'T': BridgeGenericParam()},
+
+      $extends: BridgeTypeRef(
+        BridgeTypeSpec(
+          'package:flutter/src/widgets/framework.dart',
+          'InheritedWidget',
+        ),
+        [],
+      ),
+
+      $implements: [
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'InheritedWidget',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'ProxyWidget',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'Widget',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'DiagnosticableTree',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'Diagnosticable',
+          ),
+          [],
+        ),
+      ],
+    ),
+    constructors: {},
+
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {},
+    wrap: true,
+    bridge: false,
+  );
+
+  final $Instance _superclass;
+
+  @override
+  final InheritedModel<T> $value;
+
+  @override
+  InheritedModel<T> get $reified => $value;
+
+  /// Wrap a [InheritedModel] in a [$InheritedModel]
+  $InheritedModel.wrap(this.$value)
+    : _superclass = $InheritedWidget.wrap($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) {
+    final data = Runtime.bridgeData[this];
+    return data == null
+        ? runtime.lookupType($spec)
+        : runtime.importRuntimeType(data.runtime, data.$runtimeType);
+  }
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {

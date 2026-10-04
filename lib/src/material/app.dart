@@ -33,8 +33,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import '../widgets/overlay.dart';
 import '../supporting/flutter_widgets_navigator.dart';
-import '../widgets/framework_wrappers.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
+import '../widgets/framework_wrappers.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import '../sky_engine/ui/text.dart';
 import '../supporting/flutter_widgets_heroes.dart';
@@ -2593,7 +2593,9 @@ class $MaterialApp implements $Instance {
               ),
         navigatorObservers: _arg10OrNull == null
             ? const <NavigatorObserver>[]
-            : (_arg10OrNull!.$reified as List).cast<NavigatorObserver>(),
+            : (TypedInterop.exportExternal(_arg10OrNull, runtime: runtime)
+                      as List)
+                  .cast<NavigatorObserver>(),
         builder: _arg11OrNull == null || _arg11OrNull is $null
             ? null
             : runtime.cachedCallback(
@@ -3256,7 +3258,9 @@ class $MaterialApp implements $Instance {
             ? const $null()
             : $Function((runtime, target, r, s, c) {
                 final funcResult = _localeListResolutionCallback(
-                  ((r as $Value?)!.$reified as List?)?.cast(),
+                  (TypedInterop.exportExternal((r as $Value?), runtime: runtime)
+                          as List?)
+                      ?.cast(),
                   TypedInterop.exportIterable((s as $Value?), runtime),
                 );
                 return funcResult == null

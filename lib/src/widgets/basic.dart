@@ -97,6 +97,7 @@ import '../supporting/flutter_rendering_shifted_box.dart';
 import '../supporting/flutter_rendering_proxy_box.dart';
 import '../sky_engine/ui/text.dart';
 import './framework_wrappers.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../supporting/flutter_widgets_basic.dart';
 import '../painting/border_radius.dart';
 import '../sky_engine/ui/painting.dart';
@@ -1819,7 +1820,9 @@ class $Column implements $Instance {
         spacing: _arg7OrNull == null ? 0.0 : (_arg7OrNull as $double).$value,
         children: _arg8OrNull == null
             ? const <Widget>[]
-            : (_arg8OrNull!.$reified as List).cast<Widget>(),
+            : (TypedInterop.exportExternal(_arg8OrNull, runtime: runtime)
+                      as List)
+                  .cast<Widget>(),
       ),
     );
   }
@@ -5826,7 +5829,9 @@ class $Row implements $Instance {
         spacing: _arg7OrNull == null ? 0.0 : (_arg7OrNull as $double).$value,
         children: _arg8OrNull == null
             ? const <Widget>[]
-            : (_arg8OrNull!.$reified as List).cast<Widget>(),
+            : (TypedInterop.exportExternal(_arg8OrNull, runtime: runtime)
+                      as List)
+                  .cast<Widget>(),
       ),
     );
   }
@@ -6180,7 +6185,9 @@ class $Stack implements $Instance {
         clipBehavior: _arg4OrNull == null ? Clip.hardEdge : _arg4OrNull!.$value,
         children: _arg5OrNull == null
             ? const <Widget>[]
-            : (_arg5OrNull!.$reified as List).cast<Widget>(),
+            : (TypedInterop.exportExternal(_arg5OrNull, runtime: runtime)
+                      as List)
+                  .cast<Widget>(),
       ),
     );
   }

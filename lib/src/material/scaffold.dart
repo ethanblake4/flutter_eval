@@ -52,6 +52,7 @@ import 'package:dart_eval/stdlib/typed_data.dart'
         $ScaffoldState;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../widgets/framework_wrappers.dart';
 import '../animation/animation.dart';
 import '../supporting/flutter_material_scaffold.dart';
@@ -1168,8 +1169,10 @@ class $Scaffold implements $Instance {
         floatingActionButton: _arg3OrNull?.$value,
         floatingActionButtonLocation: _arg4OrNull?.$value,
         floatingActionButtonAnimator: _arg5OrNull?.$value,
-        persistentFooterButtons: (_arg6OrNull?.$reified as List?)
-            ?.cast<Widget>(),
+        persistentFooterButtons:
+            (TypedInterop.exportExternal(_arg6OrNull, runtime: runtime)
+                    as List?)
+                ?.cast<Widget>(),
         persistentFooterAlignment: _arg7OrNull == null
             ? AlignmentDirectional.centerEnd
             : _arg7OrNull!.$value,

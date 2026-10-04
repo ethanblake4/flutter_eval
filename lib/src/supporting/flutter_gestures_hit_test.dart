@@ -26,11 +26,13 @@ import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/src/gestures/hit_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:dart_eval/stdlib/core.dart' hide $HitTestTarget;
-import 'package:dart_eval/stdlib/async.dart' hide $HitTestTarget;
-import 'package:dart_eval/stdlib/typed_data.dart' hide $HitTestTarget;
+import 'package:dart_eval/stdlib/core.dart' hide $HitTestTarget, $HitTestEntry;
+import 'package:dart_eval/stdlib/async.dart' hide $HitTestTarget, $HitTestEntry;
+import 'package:dart_eval/stdlib/typed_data.dart'
+    hide $HitTestTarget, $HitTestEntry;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
 
 /// dart_eval wrapper binding for [HitTestTarget]
 class $HitTestTarget implements $Instance {
@@ -77,6 +79,82 @@ class $HitTestTarget implements $Instance {
 
   @override
   int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
+/// dart_eval wrapper binding for [HitTestEntry]
+class $HitTestEntry<T extends HitTestTarget> implements $Instance {
+  /// Configure this class for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {}
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
+  }
+
+  /// Compile-time type specification of [$HitTestEntry]
+  static const $spec = BridgeTypeSpec(
+    'package:flutter/src/gestures/hit_test.dart',
+    'HitTestEntry',
+  );
+
+  /// Compile-time type declaration of [$HitTestEntry]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$HitTestEntry]
+  static const $declaration = BridgeClassDef(
+    BridgeClassType(
+      $type,
+
+      generics: {
+        'T': BridgeGenericParam(
+          $extends: BridgeTypeRef(
+            BridgeTypeSpec(
+              'package:flutter/src/gestures/hit_test.dart',
+              'HitTestTarget',
+            ),
+            [],
+          ),
+        ),
+      },
+    ),
+    constructors: {},
+
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {},
+    wrap: true,
+    bridge: false,
+  );
+
+  final $Instance _superclass;
+
+  @override
+  final HitTestEntry<T> $value;
+
+  @override
+  HitTestEntry<T> get $reified => $value;
+
+  /// Wrap a [HitTestEntry] in a [$HitTestEntry]
+  $HitTestEntry.wrap(this.$value) : _superclass = $Object($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) {
+    final data = Runtime.bridgeData[this];
+    return data == null
+        ? runtime.lookupType($spec)
+        : runtime.importRuntimeType(data.runtime, data.$runtimeType);
+  }
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {

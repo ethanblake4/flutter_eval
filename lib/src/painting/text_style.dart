@@ -31,6 +31,7 @@ import 'package:dart_eval/stdlib/async.dart' hide $TextStyle;
 import 'package:dart_eval/stdlib/typed_data.dart' hide $TextStyle;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../sky_engine/ui/painting.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import '../sky_engine/ui/text.dart';
@@ -1544,17 +1545,28 @@ class $TextStyle implements $Instance {
         locale: _arg11OrNull?.$value,
         foreground: _arg12OrNull?.$value,
         background: _arg13OrNull?.$value,
-        shadows: (_arg14OrNull?.$reified as List?)?.cast<Shadow>(),
-        fontFeatures: (_arg15OrNull?.$reified as List?)?.cast<FontFeature>(),
-        fontVariations: (_arg16OrNull?.$reified as List?)
-            ?.cast<FontVariation>(),
+        shadows:
+            (TypedInterop.exportExternal(_arg14OrNull, runtime: runtime)
+                    as List?)
+                ?.cast<Shadow>(),
+        fontFeatures:
+            (TypedInterop.exportExternal(_arg15OrNull, runtime: runtime)
+                    as List?)
+                ?.cast<FontFeature>(),
+        fontVariations:
+            (TypedInterop.exportExternal(_arg16OrNull, runtime: runtime)
+                    as List?)
+                ?.cast<FontVariation>(),
         decoration: _arg17OrNull?.$value,
         decorationColor: _arg18OrNull?.$value,
         decorationStyle: _arg19OrNull?.$value,
         decorationThickness: _arg20OrNull?.$value,
         debugLabel: _arg21OrNull?.$value,
         fontFamily: _arg22OrNull?.$value,
-        fontFamilyFallback: (_arg23OrNull?.$reified as List?)?.cast<String>(),
+        fontFamilyFallback:
+            (TypedInterop.exportExternal(_arg23OrNull, runtime: runtime)
+                    as List?)
+                ?.cast<String>(),
         package: _arg24OrNull?.$value,
         overflow: _arg25OrNull?.$value,
       ),
@@ -1819,24 +1831,30 @@ class $TextStyle implements $Instance {
                   : null)
               ?.$value,
       shadows:
-          ((c is List && (c as List).length > 12
-                          ? (c as List)[12] as $Value?
-                          : null)
-                      ?.$reified
+          (TypedInterop.exportExternal(
+                    (c is List && (c as List).length > 12
+                        ? (c as List)[12] as $Value?
+                        : null),
+                    runtime: runtime,
+                  )
                   as List?)
               ?.cast<Shadow>(),
       fontFeatures:
-          ((c is List && (c as List).length > 13
-                          ? (c as List)[13] as $Value?
-                          : null)
-                      ?.$reified
+          (TypedInterop.exportExternal(
+                    (c is List && (c as List).length > 13
+                        ? (c as List)[13] as $Value?
+                        : null),
+                    runtime: runtime,
+                  )
                   as List?)
               ?.cast<FontFeature>(),
       fontVariations:
-          ((c is List && (c as List).length > 14
-                          ? (c as List)[14] as $Value?
-                          : null)
-                      ?.$reified
+          (TypedInterop.exportExternal(
+                    (c is List && (c as List).length > 14
+                        ? (c as List)[14] as $Value?
+                        : null),
+                    runtime: runtime,
+                  )
                   as List?)
               ?.cast<FontVariation>(),
       decoration:
@@ -1870,10 +1888,12 @@ class $TextStyle implements $Instance {
                   : null)
               ?.$value,
       fontFamilyFallback:
-          ((c is List && (c as List).length > 21
-                          ? (c as List)[21] as $Value?
-                          : null)
-                      ?.$reified
+          (TypedInterop.exportExternal(
+                    (c is List && (c as List).length > 21
+                        ? (c as List)[21] as $Value?
+                        : null),
+                    runtime: runtime,
+                  )
                   as List?)
               ?.cast<String>(),
       package:
@@ -1941,10 +1961,12 @@ class $TextStyle implements $Instance {
                   : null)
               ?.$value,
       fontFamilyFallback:
-          ((c is List && (c as List).length > 6
-                          ? (c as List)[6] as $Value?
-                          : null)
-                      ?.$reified
+          (TypedInterop.exportExternal(
+                    (c is List && (c as List).length > 6
+                        ? (c as List)[6] as $Value?
+                        : null),
+                    runtime: runtime,
+                  )
                   as List?)
               ?.cast<String>(),
       fontSizeFactor:
@@ -2049,24 +2071,30 @@ class $TextStyle implements $Instance {
                   : null)
               ?.$value,
       shadows:
-          ((c is List && (c as List).length > 20
-                          ? (c as List)[20] as $Value?
-                          : null)
-                      ?.$reified
+          (TypedInterop.exportExternal(
+                    (c is List && (c as List).length > 20
+                        ? (c as List)[20] as $Value?
+                        : null),
+                    runtime: runtime,
+                  )
                   as List?)
               ?.cast<Shadow>(),
       fontFeatures:
-          ((c is List && (c as List).length > 21
-                          ? (c as List)[21] as $Value?
-                          : null)
-                      ?.$reified
+          (TypedInterop.exportExternal(
+                    (c is List && (c as List).length > 21
+                        ? (c as List)[21] as $Value?
+                        : null),
+                    runtime: runtime,
+                  )
                   as List?)
               ?.cast<FontFeature>(),
       fontVariations:
-          ((c is List && (c as List).length > 22
-                          ? (c as List)[22] as $Value?
-                          : null)
-                      ?.$reified
+          (TypedInterop.exportExternal(
+                    (c is List && (c as List).length > 22
+                        ? (c as List)[22] as $Value?
+                        : null),
+                    runtime: runtime,
+                  )
                   as List?)
               ?.cast<FontVariation>(),
       package:

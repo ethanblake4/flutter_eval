@@ -1016,6 +1016,32 @@ libraries:
     StatelessElement:
       file: supporting/flutter_widgets_framework.dart
       opaque: true
+- uri: package:flutter/src/widgets/layout_builder.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    AbstractLayoutBuilder:
+      file: supporting/flutter_widgets_layout_builder.dart
+      opaque: true
+    ConstrainedLayoutBuilder:
+      file: supporting/flutter_widgets_layout_builder.dart
+      opaque: true
+    LayoutBuilder:
+      file: widgets/layout_builder.dart
+- uri: package:flutter/src/widgets/inherited_theme.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    InheritedTheme:
+      file: supporting/flutter_widgets_framework.dart
+      opaque: true
+- uri: package:flutter/src/widgets/inherited_model.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    InheritedModel:
+      file: supporting/flutter_widgets_framework.dart
+      opaque: true
 - uri: package:flutter/src/widgets/gesture_detector.dart
   outDir: lib/src
   imports:
@@ -1169,8 +1195,88 @@ libraries:
   outDir: lib/src
   imports: *flutterImports
   classes:
+    DefaultTextStyle:
+      file: widgets/text.dart
     Text:
       file: widgets/text.dart
+- uri: package:flutter/src/widgets/media_query.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    MediaQuery:
+      file: widgets/media_query.dart
+      implements:
+      - InheritedModel<dynamic>
+      excludeMembers:
+      - removePadding
+      - removeViewInsets
+      - removeViewPadding
+      - applyTextStyleOverrides
+      - fromWindow
+      - fromView
+      - withNoTextScaling
+      - withClampedTextScaling
+      - data
+      - of
+      - maybeOf
+      - sizeOf
+      - maybeSizeOf
+      - widthOf
+      - maybeWidthOf
+      - heightOf
+      - maybeHeightOf
+      - orientationOf
+      - maybeOrientationOf
+      - devicePixelRatioOf
+      - maybeDevicePixelRatioOf
+      - maybeTextScaleFactorOf
+      - textScalerOf
+      - maybeTextScalerOf
+      - platformBrightnessOf
+      - maybePlatformBrightnessOf
+      - paddingOf
+      - maybePaddingOf
+      - viewInsetsOf
+      - maybeViewInsetsOf
+      - systemGestureInsetsOf
+      - maybeSystemGestureInsetsOf
+      - viewPaddingOf
+      - maybeViewPaddingOf
+      - alwaysUse24HourFormatOf
+      - maybeAlwaysUse24HourFormatOf
+      - accessibleNavigationOf
+      - maybeAccessibleNavigationOf
+      - invertColorsOf
+      - maybeInvertColorsOf
+      - highContrastOf
+      - maybeHighContrastOf
+      - onOffSwitchLabelsOf
+      - maybeOnOffSwitchLabelsOf
+      - disableAnimationsOf
+      - maybeDisableAnimationsOf
+      - boldTextOf
+      - maybeBoldTextOf
+      - supportsAnnounceOf
+      - maybeSupportsAnnounceOf
+      - navigationModeOf
+      - maybeNavigationModeOf
+      - gestureSettingsOf
+      - maybeGestureSettingsOf
+      - displayFeaturesOf
+      - maybeDisplayFeaturesOf
+      - supportsShowingSystemContextMenu
+      - maybeSupportsShowingSystemContextMenu
+      - maybeLineHeightScaleFactorOverrideOf
+      - maybeLetterSpacingOverrideOf
+      - maybeWordSpacingOverrideOf
+      - maybeParagraphSpacingOverrideOf
+      - displayCornerRadiiOf
+      - maybeDisplayCornerRadiiOf
+      - updateShouldNotify
+      - debugFillProperties
+      - updateShouldNotifyDependent
+      - ''
+      - new
 - uri: package:flutter/src/widgets/widget_state.dart
   outDir: lib/src
   imports: *flutterImports
@@ -1198,6 +1304,47 @@ libraries:
   outDir: lib/src
   imports: *id002
   classes:
+    TextPainter:
+      file: painting/text_painter.dart
+      excludeMembers:
+      - computeWidth
+      - computeMaxIntrinsicWidth
+      - markNeedsLayout
+      - text
+      - plainText
+      - textAlign
+      - textDirection
+      - textScaleFactor
+      - textScaler
+      - ellipsis
+      - locale
+      - maxLines
+      - strutStyle
+      - textWidthBasis
+      - textHeightBehavior
+      - inlinePlaceholderBoxes
+      - setPlaceholderDimensions
+      - preferredLineHeight
+      - minIntrinsicWidth
+      - maxIntrinsicWidth
+      - size
+      - computeDistanceToActualBaseline
+      - paint
+      - debugPaintTextLayoutBoxes
+      - isHighSurrogate
+      - isLowSurrogate
+      - getOffsetAfter
+      - getOffsetBefore
+      - getOffsetForCaret
+      - getFullHeightForCaret
+      - getBoxesForSelection
+      - getClosestGlyphForOffset
+      - getPositionForOffset
+      - getWordBoundary
+      - wordBoundaries
+      - getLineBoundary
+      - computeLineMetrics
+      - debugDisposed
     TextOverflow:
       file: painting/basic_types.dart
     TextWidthBasis:
@@ -1494,6 +1641,12 @@ libraries:
     PointerDownEvent:
       file: supporting/flutter_gestures_events.dart
       opaque: true
+    PointerEnterEvent:
+      file: supporting/flutter_gestures_events.dart
+      opaque: true
+    PointerExitEvent:
+      file: supporting/flutter_gestures_events.dart
+      opaque: true
     PointerEvent:
       file: supporting/flutter_gestures_events.dart
       opaque: true
@@ -1521,12 +1674,25 @@ libraries:
     HitTestTarget:
       file: supporting/flutter_gestures_hit_test.dart
       opaque: true
+    HitTestEntry:
+      file: supporting/flutter_gestures_hit_test.dart
+      opaque: true
 - uri: package:flutter/src/gestures/recognizer.dart
   outDir: lib/src
   imports: *flutterImports
   classes:
     DragStartBehavior:
       file: supporting/flutter_gestures_recognizer.dart
+    GestureRecognizer:
+      file: supporting/flutter_gestures_recognizer.dart
+      opaque: true
+- uri: package:flutter/src/gestures/arena.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    GestureArenaMember:
+      file: supporting/flutter_gestures_recognizer.dart
+      opaque: true
 - uri: package:flutter/src/gestures/scale.dart
   outDir: lib/src
   imports: *flutterImports
@@ -1977,7 +2143,20 @@ libraries:
   classes:
     InlineSpan:
       file: supporting/flutter_painting_inline_span.dart
-      opaque: true
+      excludeMembers:
+      - build
+      - visitChildren
+      - visitDirectChildren
+      - getSpanForPosition
+      - getSpanForPositionVisitor
+      - getSemanticsInformation
+      - computeSemanticsInformation
+      - computeToPlainText
+      - codeUnitAt
+      - codeUnitAtVisitor
+      - debugAssertIsValid
+      - compareTo
+      - debugFillProperties
 - uri: package:flutter/src/painting/strut_style.dart
   outDir: lib/src
   imports: *flutterImports
@@ -1998,7 +2177,28 @@ libraries:
   classes:
     TextSpan:
       file: supporting/flutter_painting_text_span.dart
-      opaque: true
+      excludeMembers:
+      - mouseCursor
+      - onEnter
+      - onExit
+      - cursor
+      - semanticsLabel
+      - semanticsIdentifier
+      - locale
+      - spellOut
+      - build
+      - visitChildren
+      - visitDirectChildren
+      - getSpanForPosition
+      - getSpanForPositionVisitor
+      - getSemanticsInformation
+      - computeSemanticsInformation
+      - computeToPlainText
+      - codeUnitAt
+      - codeUnitAtVisitor
+      - debugAssertIsValid
+      - compareTo
+      - debugFillProperties
 - uri: package:flutter/src/physics/simulation.dart
   outDir: lib/src
   imports: *flutterImports

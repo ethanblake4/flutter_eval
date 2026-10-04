@@ -48,6 +48,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/src/rendering/sliver.dart';
 import '../supporting/flutter_rendering_sliver.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import './framework_wrappers.dart';
 import '../foundation/key.dart';
 import '../supporting/flutter_widgets_scroll_view.dart';
@@ -1730,7 +1731,9 @@ class $ListView implements $Instance {
         scrollCacheExtent: _arg15OrNull?.$value,
         children: _arg16OrNull == null
             ? const <Widget>[]
-            : (_arg16OrNull!.$reified as List).cast<Widget>(),
+            : (TypedInterop.exportExternal(_arg16OrNull, runtime: runtime)
+                      as List)
+                  .cast<Widget>(),
         semanticChildCount: _arg17OrNull?.$value,
         dragStartBehavior: _arg18OrNull == null
             ? DragStartBehavior.start

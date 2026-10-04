@@ -27,11 +27,26 @@ import 'package:flutter/src/gestures/events.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:dart_eval/stdlib/core.dart'
-    hide $PointerDownEvent, $PointerEvent, $PointerUpEvent;
+    hide
+        $PointerDownEvent,
+        $PointerEnterEvent,
+        $PointerExitEvent,
+        $PointerEvent,
+        $PointerUpEvent;
 import 'package:dart_eval/stdlib/async.dart'
-    hide $PointerDownEvent, $PointerEvent, $PointerUpEvent;
+    hide
+        $PointerDownEvent,
+        $PointerEnterEvent,
+        $PointerExitEvent,
+        $PointerEvent,
+        $PointerUpEvent;
 import 'package:dart_eval/stdlib/typed_data.dart'
-    hide $PointerDownEvent, $PointerEvent, $PointerUpEvent;
+    hide
+        $PointerDownEvent,
+        $PointerEnterEvent,
+        $PointerExitEvent,
+        $PointerEvent,
+        $PointerUpEvent;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 
@@ -104,6 +119,176 @@ class $PointerDownEvent implements $Instance {
 
   /// Wrap a [PointerDownEvent] in a [$PointerDownEvent]
   $PointerDownEvent.wrap(this.$value)
+    : _superclass = $PointerEvent.wrap($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
+/// dart_eval wrapper binding for [PointerEnterEvent]
+class $PointerEnterEvent implements $Instance {
+  /// Configure this class for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {}
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
+  }
+
+  /// Compile-time type specification of [$PointerEnterEvent]
+  static const $spec = BridgeTypeSpec(
+    'package:flutter/src/gestures/events.dart',
+    'PointerEnterEvent',
+  );
+
+  /// Compile-time type declaration of [$PointerEnterEvent]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$PointerEnterEvent]
+  static const $declaration = BridgeClassDef(
+    BridgeClassType(
+      $type,
+
+      $extends: BridgeTypeRef(
+        BridgeTypeSpec(
+          'package:flutter/src/gestures/events.dart',
+          'PointerEvent',
+        ),
+        [],
+      ),
+
+      $implements: [
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/gestures/events.dart',
+            'PointerEvent',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'Diagnosticable',
+          ),
+          [],
+        ),
+      ],
+    ),
+    constructors: {},
+
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {},
+    wrap: true,
+    bridge: false,
+  );
+
+  final $Instance _superclass;
+
+  @override
+  final PointerEnterEvent $value;
+
+  @override
+  PointerEnterEvent get $reified => $value;
+
+  /// Wrap a [PointerEnterEvent] in a [$PointerEnterEvent]
+  $PointerEnterEvent.wrap(this.$value)
+    : _superclass = $PointerEvent.wrap($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
+/// dart_eval wrapper binding for [PointerExitEvent]
+class $PointerExitEvent implements $Instance {
+  /// Configure this class for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {}
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
+  }
+
+  /// Compile-time type specification of [$PointerExitEvent]
+  static const $spec = BridgeTypeSpec(
+    'package:flutter/src/gestures/events.dart',
+    'PointerExitEvent',
+  );
+
+  /// Compile-time type declaration of [$PointerExitEvent]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$PointerExitEvent]
+  static const $declaration = BridgeClassDef(
+    BridgeClassType(
+      $type,
+
+      $extends: BridgeTypeRef(
+        BridgeTypeSpec(
+          'package:flutter/src/gestures/events.dart',
+          'PointerEvent',
+        ),
+        [],
+      ),
+
+      $implements: [
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/gestures/events.dart',
+            'PointerEvent',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'Diagnosticable',
+          ),
+          [],
+        ),
+      ],
+    ),
+    constructors: {},
+
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {},
+    wrap: true,
+    bridge: false,
+  );
+
+  final $Instance _superclass;
+
+  @override
+  final PointerExitEvent $value;
+
+  @override
+  PointerExitEvent get $reified => $value;
+
+  /// Wrap a [PointerExitEvent] in a [$PointerExitEvent]
+  $PointerExitEvent.wrap(this.$value)
     : _superclass = $PointerEvent.wrap($value);
 
   @override

@@ -26,11 +26,12 @@ import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/src/painting/text_painter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:dart_eval/stdlib/core.dart' hide $TextOverflow, $TextWidthBasis;
+import 'package:dart_eval/stdlib/core.dart'
+    hide $TextPainter, $TextOverflow, $TextWidthBasis;
 import 'package:dart_eval/stdlib/async.dart'
-    hide $TextOverflow, $TextWidthBasis;
+    hide $TextPainter, $TextOverflow, $TextWidthBasis;
 import 'package:dart_eval/stdlib/typed_data.dart'
-    hide $TextOverflow, $TextWidthBasis;
+    hide $TextPainter, $TextOverflow, $TextWidthBasis;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';

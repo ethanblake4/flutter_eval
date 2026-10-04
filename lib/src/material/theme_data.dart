@@ -5156,7 +5156,10 @@ class $ThemeData implements $Instance {
         splashColor: _arg31OrNull?.$value,
         unselectedWidgetColor: _arg32OrNull?.$value,
         fontFamily: _arg33OrNull?.$value,
-        fontFamilyFallback: (_arg34OrNull?.$reified as List?)?.cast<String>(),
+        fontFamilyFallback:
+            (TypedInterop.exportExternal(_arg34OrNull, runtime: runtime)
+                    as List?)
+                ?.cast<String>(),
         package: _arg35OrNull?.$value,
         iconTheme: _arg36OrNull?.$value,
         primaryIconTheme: _arg37OrNull?.$value,

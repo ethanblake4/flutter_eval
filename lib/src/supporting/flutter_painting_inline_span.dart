@@ -32,6 +32,7 @@ import 'package:dart_eval/stdlib/typed_data.dart' hide $InlineSpan;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import './flutter_foundation_diagnostics.dart';
+import '../painting/text_style.dart';
 
 /// dart_eval wrapper binding for [InlineSpan]
 class $InlineSpan implements $Instance {
@@ -83,12 +84,78 @@ class $InlineSpan implements $Instance {
         ),
       ],
     ),
-    constructors: {},
+    constructors: {
+      '': BridgeConstructorDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation($type),
+          namedParams: [
+            BridgeParameter(
+              'style',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/painting/text_style.dart',
+                    'TextStyle',
+                  ),
+                  [],
+                ),
+                nullable: true,
+              ),
+              true,
+            ),
+          ],
+          params: [],
+        ),
+        isFactory: false,
+      ),
+    },
 
-    methods: {},
+    methods: {
+      'toPlainText': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
+          ),
+          namedParams: [
+            BridgeParameter(
+              'includeSemanticsLabels',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+              ),
+              true,
+              defaultValueSource: "true",
+            ),
+
+            BridgeParameter(
+              'includePlaceholders',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+              ),
+              true,
+              defaultValueSource: "true",
+            ),
+          ],
+          params: [],
+        ),
+      ),
+    },
     getters: {},
     setters: {},
-    fields: {},
+    fields: {
+      'style': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(
+            BridgeTypeSpec(
+              'package:flutter/src/painting/text_style.dart',
+              'TextStyle',
+            ),
+            [],
+          ),
+          nullable: true,
+        ),
+        isStatic: false,
+      ),
+    },
     wrap: true,
     bridge: false,
   );
@@ -110,7 +177,34 @@ class $InlineSpan implements $Instance {
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
+    switch (identifier) {
+      case 'style':
+        final _style = $value.style;
+        return _style == null ? const $null() : $TextStyle.wrap(_style);
+      case 'toPlainText':
+        return $Closure(__toPlainText.func, this);
+    }
     return _superclass.$getProperty(runtime, identifier);
+  }
+
+  static const $Function __toPlainText = $Function(_toPlainText);
+  static $Value? _toPlainText(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
+    final self = target! as $InlineSpan;
+    final result = self.$value.toPlainText(
+      includeSemanticsLabels: (r is $Value ? r : null) == null
+          ? true
+          : (r as $bool).$value,
+      includePlaceholders: (s is $Value ? s : null) == null
+          ? true
+          : (s as $bool).$value,
+    );
+    return $String(result);
   }
 
   @override

@@ -34,6 +34,7 @@ import 'package:flutter/rendering.dart';
 import '../supporting/flutter_widgets_scroll_position.dart';
 import '../foundation/notifiers.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 
 /// dart_eval wrapper binding for [ScrollController]
 class $ScrollController implements $Instance {
@@ -779,7 +780,8 @@ class $ScrollController implements $Instance {
   ) {
     final self = target! as $ScrollController;
     self.$value.debugFillDescription(
-      ((r as $Value?)!.$reified as List).cast<String>(),
+      (TypedInterop.exportExternal((r as $Value?), runtime: runtime) as List)
+          .cast<String>(),
     );
     return null;
   }

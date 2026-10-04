@@ -2471,8 +2471,10 @@ class $TextField implements $Instance {
                   );
                 },
               ),
-        inputFormatters: (_arg34OrNull?.$reified as List?)
-            ?.cast<TextInputFormatter>(),
+        inputFormatters:
+            (TypedInterop.exportExternal(_arg34OrNull, runtime: runtime)
+                    as List?)
+                ?.cast<TextInputFormatter>(),
         enabled: _arg35OrNull?.$value,
         ignorePointers: _arg36OrNull?.$value,
         cursorWidth: _arg37OrNull == null
@@ -2612,7 +2614,10 @@ class $TextField implements $Instance {
             : (_arg68OrNull as $bool).$value,
         spellCheckConfiguration: _arg69OrNull?.$value,
         magnifierConfiguration: _arg70OrNull?.$value,
-        hintLocales: (_arg71OrNull?.$reified as List?)?.cast<Locale>(),
+        hintLocales:
+            (TypedInterop.exportExternal(_arg71OrNull, runtime: runtime)
+                    as List?)
+                ?.cast<Locale>(),
       ),
     );
   }

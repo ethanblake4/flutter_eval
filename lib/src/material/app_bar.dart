@@ -31,6 +31,7 @@ import 'package:dart_eval/stdlib/async.dart' hide $AppBar;
 import 'package:dart_eval/stdlib/typed_data.dart' hide $AppBar;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../supporting/flutter_widgets_scroll_notification.dart';
 import '../widgets/framework_wrappers.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
@@ -1016,7 +1017,10 @@ class $AppBar implements $Instance {
             ? true
             : (_arg2OrNull as $bool).$value,
         title: _arg3OrNull?.$value,
-        actions: (_arg4OrNull?.$reified as List?)?.cast<Widget>(),
+        actions:
+            (TypedInterop.exportExternal(_arg4OrNull, runtime: runtime)
+                    as List?)
+                ?.cast<Widget>(),
         automaticallyImplyActions: _arg5OrNull == null
             ? true
             : (_arg5OrNull as $bool).$value,

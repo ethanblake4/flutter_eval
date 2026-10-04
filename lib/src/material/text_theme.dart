@@ -32,6 +32,7 @@ import 'package:dart_eval/stdlib/typed_data.dart' hide $TextTheme;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import '../painting/text_style.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 
 /// dart_eval wrapper binding for [TextTheme]
 class $TextTheme implements $Instance {
@@ -1393,8 +1394,13 @@ class $TextTheme implements $Instance {
     final self = target! as $TextTheme;
     final result = self.$value.apply(
       fontFamily: (r is $Value ? r : null)?.$value,
-      fontFamilyFallback: ((s is $Value ? s : null)?.$reified as List?)
-          ?.cast<String>(),
+      fontFamilyFallback:
+          (TypedInterop.exportExternal(
+                    (s is $Value ? s : null),
+                    runtime: runtime,
+                  )
+                  as List?)
+              ?.cast<String>(),
       package:
           (c is List && (c as List).length > 0
                   ? (c as List)[0] as $Value?

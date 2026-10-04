@@ -31,12 +31,23 @@ import 'package:dart_eval/stdlib/async.dart' hide $TextSpan;
 import 'package:dart_eval/stdlib/typed_data.dart' hide $TextSpan;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
+import './flutter_gestures_events.dart';
 import './flutter_painting_inline_span.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import './flutter_gestures_recognizer.dart';
+import '../foundation/diagnostics.dart';
 
 /// dart_eval wrapper binding for [TextSpan]
 class $TextSpan implements $Instance {
   /// Configure this class for use in a [Runtime]
-  static void configureForRuntime(Runtime runtime) {}
+  static void configureForRuntime(Runtime runtime) {
+    runtime.registerBridgeFuncRegisters(
+      'package:flutter/src/painting/text_span.dart',
+      'TextSpan.',
+      $TextSpan.$new,
+    );
+  }
 
   /// Configure this class for use during compilation
   static void configureForCompile(BridgeDeclarationRegistry registry) {
@@ -103,15 +114,384 @@ class $TextSpan implements $Instance {
         ),
       ],
     ),
-    constructors: {},
+    constructors: {
+      '': BridgeConstructorDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation($type),
+          namedParams: [
+            BridgeParameter(
+              'text',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
+                nullable: true,
+              ),
+              true,
+            ),
 
-    methods: {},
-    getters: {},
+            BridgeParameter(
+              'children',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'List'), [
+                  BridgeTypeAnnotation(
+                    BridgeTypeRef(
+                      BridgeTypeSpec(
+                        'package:flutter/src/painting/inline_span.dart',
+                        'InlineSpan',
+                      ),
+                      [],
+                    ),
+                  ),
+                ]),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'style',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/painting/text_style.dart',
+                    'TextStyle',
+                  ),
+                  [],
+                ),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'recognizer',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/recognizer.dart',
+                    'GestureRecognizer',
+                  ),
+                  [],
+                ),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'mouseCursor',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/services/mouse_cursor.dart',
+                    'MouseCursor',
+                  ),
+                  [],
+                ),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'onEnter',
+              BridgeTypeAnnotation(
+                BridgeTypeRef.genericFunction(
+                  BridgeFunctionDef(
+                    returns: BridgeTypeAnnotation(
+                      BridgeTypeRef(CoreTypes.voidType),
+                    ),
+                    params: [
+                      BridgeParameter(
+                        'event',
+                        BridgeTypeAnnotation(
+                          BridgeTypeRef(
+                            BridgeTypeSpec(
+                              'package:flutter/src/gestures/events.dart',
+                              'PointerEnterEvent',
+                            ),
+                            [],
+                          ),
+                        ),
+                        false,
+                      ),
+                    ],
+                    namedParams: [],
+                  ),
+                ),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'onExit',
+              BridgeTypeAnnotation(
+                BridgeTypeRef.genericFunction(
+                  BridgeFunctionDef(
+                    returns: BridgeTypeAnnotation(
+                      BridgeTypeRef(CoreTypes.voidType),
+                    ),
+                    params: [
+                      BridgeParameter(
+                        'event',
+                        BridgeTypeAnnotation(
+                          BridgeTypeRef(
+                            BridgeTypeSpec(
+                              'package:flutter/src/gestures/events.dart',
+                              'PointerExitEvent',
+                            ),
+                            [],
+                          ),
+                        ),
+                        false,
+                      ),
+                    ],
+                    namedParams: [],
+                  ),
+                ),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'semanticsLabel',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'semanticsIdentifier',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'locale',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Locale'), []),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'spellOut',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+                nullable: true,
+              ),
+              true,
+            ),
+          ],
+          params: [],
+        ),
+        isFactory: false,
+      ),
+    },
+
+    methods: {
+      'handleEvent': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
+          namedParams: [],
+          params: [
+            BridgeParameter(
+              'event',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/events.dart',
+                    'PointerEvent',
+                  ),
+                  [],
+                ),
+              ),
+              false,
+            ),
+
+            BridgeParameter(
+              'entry',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/hit_test.dart',
+                    'HitTestEntry',
+                  ),
+                  [
+                    BridgeTypeAnnotation(
+                      BridgeTypeRef(
+                        BridgeTypeSpec(
+                          'package:flutter/src/gestures/hit_test.dart',
+                          'HitTestTarget',
+                        ),
+                        [],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              false,
+            ),
+          ],
+        ),
+      ),
+
+      'toStringShort': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
+          ),
+          namedParams: [],
+          params: [],
+        ),
+      ),
+
+      'debugDescribeChildren': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'List'), [
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/foundation/diagnostics.dart',
+                    'DiagnosticsNode',
+                  ),
+                  [],
+                ),
+              ),
+            ]),
+          ),
+          namedParams: [],
+          params: [],
+        ),
+      ),
+    },
+    getters: {
+      'validForMouseTracker': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+          ),
+          namedParams: [],
+          params: [],
+        ),
+      ),
+    },
     setters: {},
-    fields: {},
+    fields: {
+      'text': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
+          nullable: true,
+        ),
+        isStatic: false,
+      ),
+
+      'children': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:core', 'List'), [
+            BridgeTypeAnnotation(
+              BridgeTypeRef(
+                BridgeTypeSpec(
+                  'package:flutter/src/painting/inline_span.dart',
+                  'InlineSpan',
+                ),
+                [],
+              ),
+            ),
+          ]),
+          nullable: true,
+        ),
+        isStatic: false,
+      ),
+
+      'recognizer': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(
+            BridgeTypeSpec(
+              'package:flutter/src/gestures/recognizer.dart',
+              'GestureRecognizer',
+            ),
+            [],
+          ),
+          nullable: true,
+        ),
+        isStatic: false,
+      ),
+    },
     wrap: true,
     bridge: false,
   );
+
+  /// Wrapper for the [TextSpan.new] constructor
+  static $Value? $new(Runtime runtime, Object? r, Object? s, Object? c) {
+    final _arg2OrNull = c is List && c.length > 0 ? c[0] as $Value? : null;
+    final _arg3OrNull = c is List && c.length > 1 ? c[1] as $Value? : null;
+    final _arg4OrNull = c is List && c.length > 2 ? c[2] as $Value? : null;
+    final _arg5OrNull = c is List && c.length > 3 ? c[3] as $Value? : null;
+    final _arg6OrNull = c is List && c.length > 4 ? c[4] as $Value? : null;
+    final _arg7OrNull = c is List && c.length > 5 ? c[5] as $Value? : null;
+    final _arg8OrNull = c is List && c.length > 6 ? c[6] as $Value? : null;
+    final _arg9OrNull = c is List && c.length > 7 ? c[7] as $Value? : null;
+    final _arg10OrNull = c is List && c.length > 8 ? c[8] as $Value? : null;
+
+    return $TextSpan.wrap(
+      TextSpan(
+        text: (r is $Value ? r : null)?.$value,
+        children:
+            (TypedInterop.exportExternal(
+                      (s is $Value ? s : null),
+                      runtime: runtime,
+                    )
+                    as List?)
+                ?.cast<InlineSpan>(),
+        style: _arg2OrNull?.$value,
+        recognizer: _arg3OrNull?.$value,
+        mouseCursor: _arg4OrNull?.$value,
+        onEnter: _arg5OrNull == null || _arg5OrNull is $null
+            ? null
+            : runtime.cachedCallback(
+                _arg5OrNull! as EvalCallable,
+                "void Function(PointerEnterEvent);export=false",
+                (_callable) => (PointerEnterEvent event) {
+                  _callable.call(
+                    runtime,
+                    null,
+                    $PointerEnterEvent.wrap(event),
+                    null,
+                    1,
+                  );
+                },
+              ),
+        onExit: _arg6OrNull == null || _arg6OrNull is $null
+            ? null
+            : runtime.cachedCallback(
+                _arg6OrNull! as EvalCallable,
+                "void Function(PointerExitEvent);export=false",
+                (_callable) => (PointerExitEvent event) {
+                  _callable.call(
+                    runtime,
+                    null,
+                    $PointerExitEvent.wrap(event),
+                    null,
+                    1,
+                  );
+                },
+              ),
+        semanticsLabel: _arg7OrNull?.$value,
+        semanticsIdentifier: _arg8OrNull?.$value,
+        locale: _arg9OrNull?.$value,
+        spellOut: _arg10OrNull?.$value,
+      ),
+    );
+  }
 
   final $Instance _superclass;
 
@@ -129,7 +509,98 @@ class $TextSpan implements $Instance {
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
+    switch (identifier) {
+      case 'text':
+        final _text = $value.text;
+        return _text == null ? const $null() : $String(_text);
+      case 'children':
+        final _children = $value.children;
+        return _children == null
+            ? const $null()
+            : $List.view(
+                _children,
+                (e) => $InlineSpan.wrap(e),
+                runtime: runtime,
+                runtimeTypeId: runtime.internParameterizedType(CoreTypes.list, [
+                  runtime.lookupType(
+                    BridgeTypeSpec(
+                      'package:flutter/src/painting/inline_span.dart',
+                      'InlineSpan',
+                    ),
+                  ),
+                ]),
+              );
+      case 'recognizer':
+        final _recognizer = $value.recognizer;
+        return _recognizer == null
+            ? const $null()
+            : $GestureRecognizer.wrap(_recognizer);
+      case 'validForMouseTracker':
+        final _validForMouseTracker = $value.validForMouseTracker;
+        return $bool(_validForMouseTracker);
+      case 'handleEvent':
+        return $Closure(__handleEvent.func, this);
+
+      case 'toStringShort':
+        return $Closure(__toStringShort.func, this);
+
+      case 'debugDescribeChildren':
+        return $Closure(__debugDescribeChildren.func, this);
+    }
     return _superclass.$getProperty(runtime, identifier);
+  }
+
+  static const $Function __handleEvent = $Function(_handleEvent);
+  static $Value? _handleEvent(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
+    final self = target! as $TextSpan;
+    self.$value.handleEvent((r as $Value?)!.$value, (s as $Value?)!.$value);
+    return null;
+  }
+
+  static const $Function __toStringShort = $Function(_toStringShort);
+  static $Value? _toStringShort(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
+    final self = target! as $TextSpan;
+    final result = self.$value.toStringShort();
+    return $String(result);
+  }
+
+  static const $Function __debugDescribeChildren = $Function(
+    _debugDescribeChildren,
+  );
+  static $Value? _debugDescribeChildren(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
+    final self = target! as $TextSpan;
+    final result = self.$value.debugDescribeChildren();
+    return $List.view(
+      result,
+      (e) => $DiagnosticsNode.wrap(e),
+      runtime: runtime,
+      runtimeTypeId: runtime.internParameterizedType(CoreTypes.list, [
+        runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'DiagnosticsNode',
+          ),
+        ),
+      ]),
+    );
   }
 
   @override

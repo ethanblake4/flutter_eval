@@ -65,8 +65,8 @@ import 'package:dart_eval/stdlib/typed_data.dart'
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
-import 'package:dart_eval/src/eval/utils/wrap_helper.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
+import 'package:dart_eval/src/eval/utils/wrap_helper.dart';
 
 /// dart_eval enum wrapper binding for [DiagnosticLevel]
 class $DiagnosticLevel implements $Instance {
@@ -1578,7 +1578,8 @@ class $DiagnosticsNode implements $Instance {
   /// Wrapper for the [DiagnosticsNode.toJsonList] method
   static $Value? $toJsonList(Runtime runtime, Object? r, Object? s, Object? c) {
     final value = DiagnosticsNode.toJsonList(
-      ((r as $Value?)!.$reified as List?)?.cast<DiagnosticsNode>(),
+      (TypedInterop.exportExternal((r as $Value?), runtime: runtime) as List?)
+          ?.cast<DiagnosticsNode>(),
       (s as $Value?)!.$value,
       (c as $Value?)!.$value,
     );
@@ -2961,7 +2962,8 @@ class $DiagnosticPropertiesBuilder implements $Instance {
   ) {
     return $DiagnosticPropertiesBuilder.wrap(
       DiagnosticPropertiesBuilder.fromProperties(
-        ((r as $Value?)!.$reified as List).cast<DiagnosticsNode>(),
+        (TypedInterop.exportExternal((r as $Value?), runtime: runtime) as List)
+            .cast<DiagnosticsNode>(),
       ),
     );
   }
@@ -3505,7 +3507,8 @@ class $DiagnosticsSerializationDelegate implements $Instance {
   ) {
     final self = target! as $DiagnosticsSerializationDelegate;
     final result = self.$value.filterChildren(
-      ((r as $Value?)!.$reified as List).cast<DiagnosticsNode>(),
+      (TypedInterop.exportExternal((r as $Value?), runtime: runtime) as List)
+          .cast<DiagnosticsNode>(),
       (s as $Value?)!.$value,
     );
     return $List.view(
@@ -3533,7 +3536,8 @@ class $DiagnosticsSerializationDelegate implements $Instance {
   ) {
     final self = target! as $DiagnosticsSerializationDelegate;
     final result = self.$value.filterProperties(
-      ((r as $Value?)!.$reified as List).cast<DiagnosticsNode>(),
+      (TypedInterop.exportExternal((r as $Value?), runtime: runtime) as List)
+          .cast<DiagnosticsNode>(),
       (s as $Value?)!.$value,
     );
     return $List.view(
@@ -3561,7 +3565,8 @@ class $DiagnosticsSerializationDelegate implements $Instance {
   ) {
     final self = target! as $DiagnosticsSerializationDelegate;
     final result = self.$value.truncateNodesList(
-      ((r as $Value?)!.$reified as List).cast<DiagnosticsNode>(),
+      (TypedInterop.exportExternal((r as $Value?), runtime: runtime) as List)
+          .cast<DiagnosticsNode>(),
       (s as $Value?)!.$value,
     );
     return $List.view(

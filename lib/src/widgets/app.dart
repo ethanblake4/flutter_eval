@@ -33,8 +33,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import './overlay.dart';
 import '../supporting/flutter_widgets_navigator.dart';
-import './framework_wrappers.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
+import './framework_wrappers.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import '../sky_engine/ui/text.dart';
 import 'package:dart_eval/src/eval/utils/wrap_helper.dart';
@@ -3119,7 +3119,9 @@ class $WidgetsApp implements $Instance {
               ),
         navigatorObservers: _arg6OrNull == null
             ? const <NavigatorObserver>[]
-            : (_arg6OrNull!.$reified as List).cast<NavigatorObserver>(),
+            : (TypedInterop.exportExternal(_arg6OrNull, runtime: runtime)
+                      as List)
+                  .cast<NavigatorObserver>(),
         initialRoute: _arg7OrNull?.$value,
         pageRouteBuilder: _arg8OrNull == null || _arg8OrNull is $null
             ? null
@@ -4015,7 +4017,9 @@ class $WidgetsApp implements $Instance {
             ? const $null()
             : $Function((runtime, target, r, s, c) {
                 final funcResult = _localeListResolutionCallback(
-                  ((r as $Value?)!.$reified as List?)?.cast(),
+                  (TypedInterop.exportExternal((r as $Value?), runtime: runtime)
+                          as List?)
+                      ?.cast(),
                   TypedInterop.exportIterable((s as $Value?), runtime),
                 );
                 return funcResult == null

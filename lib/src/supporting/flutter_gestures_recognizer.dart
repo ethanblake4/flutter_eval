@@ -26,12 +26,19 @@ import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/src/gestures/recognizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:dart_eval/stdlib/core.dart' hide $DragStartBehavior;
-import 'package:dart_eval/stdlib/async.dart' hide $DragStartBehavior;
-import 'package:dart_eval/stdlib/typed_data.dart' hide $DragStartBehavior;
+import 'package:dart_eval/stdlib/core.dart'
+    hide $DragStartBehavior, $GestureRecognizer;
+import 'package:dart_eval/stdlib/async.dart'
+    hide $DragStartBehavior, $GestureRecognizer;
+import 'package:dart_eval/stdlib/typed_data.dart'
+    hide $DragStartBehavior, $GestureRecognizer;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import 'package:flutter/src/gestures/arena.dart';
+import 'package:dart_eval/stdlib/core.dart' hide $GestureArenaMember;
+import 'package:dart_eval/stdlib/async.dart' hide $GestureArenaMember;
+import 'package:dart_eval/stdlib/typed_data.dart' hide $GestureArenaMember;
 
 /// dart_eval enum wrapper binding for [DragStartBehavior]
 class $DragStartBehavior implements $Instance {
@@ -126,6 +133,163 @@ class $DragStartBehavior implements $Instance {
 
   /// Wrap a [DragStartBehavior] in a [$DragStartBehavior]
   $DragStartBehavior.wrap(this.$value) : _superclass = $Object($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
+/// dart_eval wrapper binding for [GestureRecognizer]
+class $GestureRecognizer implements $Instance {
+  /// Configure this class for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {}
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
+  }
+
+  /// Compile-time type specification of [$GestureRecognizer]
+  static const $spec = BridgeTypeSpec(
+    'package:flutter/src/gestures/recognizer.dart',
+    'GestureRecognizer',
+  );
+
+  /// Compile-time type declaration of [$GestureRecognizer]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$GestureRecognizer]
+  static const $declaration = BridgeClassDef(
+    BridgeClassType(
+      $type,
+      isAbstract: true,
+
+      $extends: BridgeTypeRef(
+        BridgeTypeSpec(
+          'package:flutter/src/gestures/arena.dart',
+          'GestureArenaMember',
+        ),
+        [],
+      ),
+
+      $implements: [
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/gestures/arena.dart',
+            'GestureArenaMember',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'DiagnosticableTreeMixin',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'DiagnosticableTree',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'Diagnosticable',
+          ),
+          [],
+        ),
+      ],
+    ),
+    constructors: {},
+
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {},
+    wrap: true,
+    bridge: false,
+  );
+
+  final $Instance _superclass;
+
+  @override
+  final GestureRecognizer $value;
+
+  @override
+  GestureRecognizer get $reified => $value;
+
+  /// Wrap a [GestureRecognizer] in a [$GestureRecognizer]
+  $GestureRecognizer.wrap(this.$value)
+    : _superclass = $GestureArenaMember.wrap($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
+/// dart_eval wrapper binding for [GestureArenaMember]
+class $GestureArenaMember implements $Instance {
+  /// Configure this class for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {}
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
+  }
+
+  /// Compile-time type specification of [$GestureArenaMember]
+  static const $spec = BridgeTypeSpec(
+    'package:flutter/src/gestures/arena.dart',
+    'GestureArenaMember',
+  );
+
+  /// Compile-time type declaration of [$GestureArenaMember]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$GestureArenaMember]
+  static const $declaration = BridgeClassDef(
+    BridgeClassType($type, isAbstract: true),
+    constructors: {},
+
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {},
+    wrap: true,
+    bridge: false,
+  );
+
+  final $Instance _superclass;
+
+  @override
+  final GestureArenaMember $value;
+
+  @override
+  GestureArenaMember get $reified => $value;
+
+  /// Wrap a [GestureArenaMember] in a [$GestureArenaMember]
+  $GestureArenaMember.wrap(this.$value) : _superclass = $Object($value);
 
   @override
   int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);

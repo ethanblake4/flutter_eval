@@ -26,21 +26,768 @@ import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/src/widgets/text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:dart_eval/stdlib/core.dart' hide $Text;
-import 'package:dart_eval/stdlib/async.dart' hide $Text;
-import 'package:dart_eval/stdlib/typed_data.dart' hide $Text;
+import 'package:dart_eval/stdlib/core.dart' hide $DefaultTextStyle, $Text;
+import 'package:dart_eval/stdlib/async.dart' hide $DefaultTextStyle, $Text;
+import 'package:dart_eval/stdlib/typed_data.dart' hide $DefaultTextStyle, $Text;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import './framework_wrappers.dart';
-import '../supporting/flutter_painting_inline_span.dart';
+import '../supporting/flutter_widgets_framework.dart';
 import '../painting/text_style.dart';
-import '../supporting/flutter_painting_strut_style.dart';
 import '../sky_engine/ui/text.dart';
 import '../painting/basic_types.dart';
-import '../supporting/flutter_painting_text_scaler.dart';
 import '../supporting/flutter_painting_text_painter.dart';
 import '../supporting/ui.dart';
+import '../supporting/flutter_painting_inline_span.dart';
+import '../supporting/flutter_painting_strut_style.dart';
+import '../supporting/flutter_painting_text_scaler.dart';
 import '../sky_engine/ui/painting.dart';
+
+/// dart_eval wrapper binding for [DefaultTextStyle]
+class $DefaultTextStyle implements $Instance {
+  /// Configure this class for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {
+    runtime.registerBridgeFuncRegisters(
+      'package:flutter/src/widgets/text.dart',
+      'DefaultTextStyle.',
+      $DefaultTextStyle.$new,
+    );
+
+    runtime.registerBridgeFuncRegisters(
+      'package:flutter/src/widgets/text.dart',
+      'DefaultTextStyle.fallback',
+      $DefaultTextStyle.$fallback,
+    );
+
+    runtime.registerBridgeFuncRegisters(
+      'package:flutter/src/widgets/text.dart',
+      'DefaultTextStyle.merge',
+      $DefaultTextStyle.$merge,
+    );
+
+    runtime.registerBridgeFuncRegisters(
+      'package:flutter/src/widgets/text.dart',
+      'DefaultTextStyle.of',
+      $DefaultTextStyle.$of,
+    );
+  }
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
+  }
+
+  /// Compile-time type specification of [$DefaultTextStyle]
+  static const $spec = BridgeTypeSpec(
+    'package:flutter/src/widgets/text.dart',
+    'DefaultTextStyle',
+  );
+
+  /// Compile-time type declaration of [$DefaultTextStyle]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$DefaultTextStyle]
+  static const $declaration = BridgeClassDef(
+    BridgeClassType(
+      $type,
+
+      $extends: BridgeTypeRef(
+        BridgeTypeSpec(
+          'package:flutter/src/widgets/inherited_theme.dart',
+          'InheritedTheme',
+        ),
+        [],
+      ),
+
+      $implements: [
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/inherited_theme.dart',
+            'InheritedTheme',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'InheritedWidget',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'ProxyWidget',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'Widget',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'DiagnosticableTree',
+          ),
+          [],
+        ),
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/foundation/diagnostics.dart',
+            'Diagnosticable',
+          ),
+          [],
+        ),
+      ],
+    ),
+    constructors: {
+      '': BridgeConstructorDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation($type),
+          namedParams: [
+            BridgeParameter(
+              'key',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/foundation/key.dart',
+                    'Key',
+                  ),
+                  [],
+                ),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'style',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/painting/text_style.dart',
+                    'TextStyle',
+                  ),
+                  [],
+                ),
+              ),
+              false,
+            ),
+
+            BridgeParameter(
+              'textAlign',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:ui', 'TextAlign'), []),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'softWrap',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+              ),
+              true,
+              defaultValueSource: "true",
+            ),
+
+            BridgeParameter(
+              'overflow',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/painting/text_painter.dart',
+                    'TextOverflow',
+                  ),
+                  [],
+                ),
+              ),
+              true,
+              defaultValueSource: "TextOverflow.clip",
+            ),
+
+            BridgeParameter(
+              'maxLines',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'int'), []),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'textWidthBasis',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/painting/text_painter.dart',
+                    'TextWidthBasis',
+                  ),
+                  [],
+                ),
+              ),
+              true,
+              defaultValueSource: "TextWidthBasis.parent",
+            ),
+
+            BridgeParameter(
+              'textHeightBehavior',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec('dart:ui', 'TextHeightBehavior'),
+                  [],
+                ),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'child',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'Widget',
+                  ),
+                  [],
+                ),
+              ),
+              false,
+            ),
+          ],
+          params: [],
+        ),
+        isFactory: false,
+      ),
+
+      'fallback': BridgeConstructorDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation($type),
+          namedParams: [
+            BridgeParameter(
+              'key',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/foundation/key.dart',
+                    'Key',
+                  ),
+                  [],
+                ),
+                nullable: true,
+              ),
+              true,
+            ),
+          ],
+          params: [],
+        ),
+        isFactory: false,
+      ),
+    },
+
+    methods: {
+      'merge': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(
+              BridgeTypeSpec(
+                'package:flutter/src/widgets/framework.dart',
+                'Widget',
+              ),
+              [],
+            ),
+          ),
+          namedParams: [
+            BridgeParameter(
+              'key',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/foundation/key.dart',
+                    'Key',
+                  ),
+                  [],
+                ),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'style',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/painting/text_style.dart',
+                    'TextStyle',
+                  ),
+                  [],
+                ),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'textAlign',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:ui', 'TextAlign'), []),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'softWrap',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'overflow',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/painting/text_painter.dart',
+                    'TextOverflow',
+                  ),
+                  [],
+                ),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'maxLines',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'int'), []),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'textWidthBasis',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/painting/text_painter.dart',
+                    'TextWidthBasis',
+                  ),
+                  [],
+                ),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'textHeightBehavior',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec('dart:ui', 'TextHeightBehavior'),
+                  [],
+                ),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'child',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'Widget',
+                  ),
+                  [],
+                ),
+              ),
+              false,
+            ),
+          ],
+          params: [],
+        ),
+
+        isStatic: true,
+      ),
+
+      'of': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(
+              BridgeTypeSpec(
+                'package:flutter/src/widgets/text.dart',
+                'DefaultTextStyle',
+              ),
+              [],
+            ),
+          ),
+          namedParams: [],
+          params: [
+            BridgeParameter(
+              'context',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                  [],
+                ),
+              ),
+              false,
+            ),
+          ],
+        ),
+
+        isStatic: true,
+      ),
+
+      'updateShouldNotify': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+          ),
+          namedParams: [],
+          params: [
+            BridgeParameter(
+              'oldWidget',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/text.dart',
+                    'DefaultTextStyle',
+                  ),
+                  [],
+                ),
+              ),
+              false,
+            ),
+          ],
+        ),
+      ),
+
+      'wrap': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(
+              BridgeTypeSpec(
+                'package:flutter/src/widgets/framework.dart',
+                'Widget',
+              ),
+              [],
+            ),
+          ),
+          namedParams: [],
+          params: [
+            BridgeParameter(
+              'context',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                  [],
+                ),
+              ),
+              false,
+            ),
+
+            BridgeParameter(
+              'child',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'Widget',
+                  ),
+                  [],
+                ),
+              ),
+              false,
+            ),
+          ],
+        ),
+      ),
+
+      'debugFillProperties': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
+          namedParams: [],
+          params: [
+            BridgeParameter(
+              'properties',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/foundation/diagnostics.dart',
+                    'DiagnosticPropertiesBuilder',
+                  ),
+                  [],
+                ),
+              ),
+              false,
+            ),
+          ],
+        ),
+      ),
+    },
+    getters: {},
+    setters: {},
+    fields: {
+      'style': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(
+            BridgeTypeSpec(
+              'package:flutter/src/painting/text_style.dart',
+              'TextStyle',
+            ),
+            [],
+          ),
+        ),
+        isStatic: false,
+      ),
+
+      'textAlign': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:ui', 'TextAlign'), []),
+          nullable: true,
+        ),
+        isStatic: false,
+      ),
+
+      'softWrap': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+        ),
+        isStatic: false,
+      ),
+
+      'overflow': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(
+            BridgeTypeSpec(
+              'package:flutter/src/painting/text_painter.dart',
+              'TextOverflow',
+            ),
+            [],
+          ),
+        ),
+        isStatic: false,
+      ),
+
+      'maxLines': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:core', 'int'), []),
+          nullable: true,
+        ),
+        isStatic: false,
+      ),
+
+      'textWidthBasis': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(
+            BridgeTypeSpec(
+              'package:flutter/src/painting/text_painter.dart',
+              'TextWidthBasis',
+            ),
+            [],
+          ),
+        ),
+        isStatic: false,
+      ),
+
+      'textHeightBehavior': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:ui', 'TextHeightBehavior'), []),
+          nullable: true,
+        ),
+        isStatic: false,
+      ),
+    },
+    wrap: true,
+    bridge: false,
+  );
+
+  /// Wrapper for the [DefaultTextStyle.new] constructor
+  static $Value? $new(Runtime runtime, Object? r, Object? s, Object? c) {
+    final _arg2OrNull = c is List && c.length > 0 ? c[0] as $Value? : null;
+    final _arg3OrNull = c is List && c.length > 1 ? c[1] as $Value? : null;
+    final _arg4OrNull = c is List && c.length > 2 ? c[2] as $Value? : null;
+    final _arg5OrNull = c is List && c.length > 3 ? c[3] as $Value? : null;
+    final _arg6OrNull = c is List && c.length > 4 ? c[4] as $Value? : null;
+    final _arg7OrNull = c is List && c.length > 5 ? c[5] as $Value? : null;
+    final _arg8 = (c as List<Object?>)[6] as $Value?;
+
+    return $DefaultTextStyle.wrap(
+      DefaultTextStyle(
+        key: (r is $Value ? r : null)?.$value,
+        style: (s as $Value?)!.$value,
+        textAlign: _arg2OrNull?.$value,
+        softWrap: _arg3OrNull == null ? true : (_arg3OrNull as $bool).$value,
+        overflow: _arg4OrNull == null ? TextOverflow.clip : _arg4OrNull!.$value,
+        maxLines: _arg5OrNull?.$value,
+        textWidthBasis: _arg6OrNull == null
+            ? TextWidthBasis.parent
+            : _arg6OrNull!.$value,
+        textHeightBehavior: _arg7OrNull?.$value,
+        child: _arg8!.$value,
+      ),
+    );
+  }
+
+  /// Wrapper for the [DefaultTextStyle.fallback] constructor
+  static $Value? $fallback(Runtime runtime, Object? r, Object? s, Object? c) {
+    return $DefaultTextStyle.wrap(
+      DefaultTextStyle.fallback(key: (r is $Value ? r : null)?.$value),
+    );
+  }
+
+  /// Wrapper for the [DefaultTextStyle.merge] method
+  static $Value? $merge(Runtime runtime, Object? r, Object? s, Object? c) {
+    final _arg2OrNull = c is List && c.length > 0 ? c[0] as $Value? : null;
+    final _arg3OrNull = c is List && c.length > 1 ? c[1] as $Value? : null;
+    final _arg4OrNull = c is List && c.length > 2 ? c[2] as $Value? : null;
+    final _arg5OrNull = c is List && c.length > 3 ? c[3] as $Value? : null;
+    final _arg6OrNull = c is List && c.length > 4 ? c[4] as $Value? : null;
+    final _arg7OrNull = c is List && c.length > 5 ? c[5] as $Value? : null;
+    final _arg8 = (c as List<Object?>)[6] as $Value?;
+
+    final value = DefaultTextStyle.merge(
+      key: (r is $Value ? r : null)?.$value,
+      style: (s is $Value ? s : null)?.$value,
+      textAlign: _arg2OrNull?.$value,
+      softWrap: _arg3OrNull?.$value,
+      overflow: _arg4OrNull?.$value,
+      maxLines: _arg5OrNull?.$value,
+      textWidthBasis: _arg6OrNull?.$value,
+      textHeightBehavior: _arg7OrNull?.$value,
+      child: _arg8!.$value,
+    );
+    return $Widget.wrap(value);
+  }
+
+  /// Wrapper for the [DefaultTextStyle.of] method
+  static $Value? $of(Runtime runtime, Object? r, Object? s, Object? c) {
+    final value = DefaultTextStyle.of((r as $Value?)!.$value);
+    return $DefaultTextStyle.wrap(value);
+  }
+
+  final $Instance _superclass;
+
+  @override
+  final DefaultTextStyle $value;
+
+  @override
+  DefaultTextStyle get $reified => $value;
+
+  /// Wrap a [DefaultTextStyle] in a [$DefaultTextStyle]
+  $DefaultTextStyle.wrap(this.$value)
+    : _superclass = $InheritedTheme.wrap($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    switch (identifier) {
+      case 'style':
+        final _style = $value.style;
+        return $TextStyle.wrap(_style);
+      case 'textAlign':
+        final _textAlign = $value.textAlign;
+        return _textAlign == null ? const $null() : $TextAlign.wrap(_textAlign);
+      case 'softWrap':
+        final _softWrap = $value.softWrap;
+        return $bool(_softWrap);
+      case 'overflow':
+        final _overflow = $value.overflow;
+        return $TextOverflow.wrap(_overflow);
+      case 'maxLines':
+        final _maxLines = $value.maxLines;
+        return _maxLines == null ? const $null() : $int(_maxLines);
+      case 'textWidthBasis':
+        final _textWidthBasis = $value.textWidthBasis;
+        return $TextWidthBasis.wrap(_textWidthBasis);
+      case 'textHeightBehavior':
+        final _textHeightBehavior = $value.textHeightBehavior;
+        return _textHeightBehavior == null
+            ? const $null()
+            : $TextHeightBehavior.wrap(_textHeightBehavior);
+      case 'updateShouldNotify':
+        return $Closure(__updateShouldNotify.func, this);
+
+      case 'wrap':
+        return $Closure(__wrap.func, this);
+
+      case 'debugFillProperties':
+        return $Closure(__debugFillProperties.func, this);
+    }
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  static const $Function __updateShouldNotify = $Function(_updateShouldNotify);
+  static $Value? _updateShouldNotify(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
+    final self = target! as $DefaultTextStyle;
+    final result = self.$value.updateShouldNotify((r as $Value?)!.$value);
+    return $bool(result);
+  }
+
+  static const $Function __wrap = $Function(_wrap);
+  static $Value? _wrap(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
+    final self = target! as $DefaultTextStyle;
+    final result = self.$value.wrap(
+      (r as $Value?)!.$value,
+      (s as $Value?)!.$value,
+    );
+    return $Widget.wrap(result);
+  }
+
+  static const $Function __debugFillProperties = $Function(
+    _debugFillProperties,
+  );
+  static $Value? _debugFillProperties(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
+    final self = target! as $DefaultTextStyle;
+    self.$value.debugFillProperties((r as $Value?)!.$value);
+    return null;
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
 
 /// dart_eval wrapper binding for [Text]
 class $Text implements $Instance {

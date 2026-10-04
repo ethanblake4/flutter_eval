@@ -211,6 +211,7 @@ import 'package:dart_eval/stdlib/typed_data.dart'
         $ViewConstraints,
         $ViewPadding;
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 
 /// dart_eval enum wrapper binding for [FontStyle]
 class $FontStyle implements $Instance {
@@ -1136,7 +1137,8 @@ class $TextDecoration implements $Instance {
   static $Value? $combine(Runtime runtime, Object? r, Object? s, Object? c) {
     return $TextDecoration.wrap(
       TextDecoration.combine(
-        ((r as $Value?)!.$reified as List).cast<TextDecoration>(),
+        (TypedInterop.exportExternal((r as $Value?), runtime: runtime) as List)
+            .cast<TextDecoration>(),
       ),
     );
   }

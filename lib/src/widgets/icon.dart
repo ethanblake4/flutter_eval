@@ -31,6 +31,7 @@ import 'package:dart_eval/stdlib/async.dart' hide $Icon;
 import 'package:dart_eval/stdlib/typed_data.dart' hide $Icon;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import './framework_wrappers.dart';
 import './icon_data.dart';
 import '../sky_engine/ui/painting.dart';
@@ -459,7 +460,10 @@ class $Icon implements $Instance {
         grade: _arg5OrNull?.$value,
         opticalSize: _arg6OrNull?.$value,
         color: _arg7OrNull?.$value,
-        shadows: (_arg8OrNull?.$reified as List?)?.cast<Shadow>(),
+        shadows:
+            (TypedInterop.exportExternal(_arg8OrNull, runtime: runtime)
+                    as List?)
+                ?.cast<Shadow>(),
         semanticLabel: _arg9OrNull?.$value,
         textDirection: _arg10OrNull?.$value,
         applyTextScaling: _arg11OrNull?.$value,
