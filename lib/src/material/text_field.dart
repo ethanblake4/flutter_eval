@@ -34,6 +34,7 @@ import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/utils/wrap_helper.dart';
 import '../supporting/flutter_gestures_events.dart';
 import '../widgets/framework_wrappers.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../supporting/flutter_widgets_editable_text.dart';
 import '../supporting/flutter_widgets_spell_check.dart';
 import '../painting/text_style.dart';
@@ -178,6 +179,7 @@ class $TextField implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'Object'), []),
               ),
               true,
+              defaultValueSource: "EditableText",
             ),
 
             BridgeParameter(
@@ -238,6 +240,7 @@ class $TextField implements $Instance {
                 nullable: true,
               ),
               true,
+              defaultValueSource: "const InputDecoration()",
             ),
 
             BridgeParameter(
@@ -282,6 +285,7 @@ class $TextField implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "TextCapitalization.none",
             ),
 
             BridgeParameter(
@@ -320,6 +324,7 @@ class $TextField implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'TextAlign'), []),
               ),
               true,
+              defaultValueSource: "TextAlign.start",
             ),
 
             BridgeParameter(
@@ -352,6 +357,7 @@ class $TextField implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -384,6 +390,7 @@ class $TextField implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -407,6 +414,7 @@ class $TextField implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
               ),
               true,
+              defaultValueSource: "'•'",
             ),
 
             BridgeParameter(
@@ -415,6 +423,7 @@ class $TextField implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -462,6 +471,7 @@ class $TextField implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -471,6 +481,7 @@ class $TextField implements $Instance {
                 nullable: true,
               ),
               true,
+              defaultValueSource: "1",
             ),
 
             BridgeParameter(
@@ -488,6 +499,7 @@ class $TextField implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -676,6 +688,7 @@ class $TextField implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "2.0",
             ),
 
             BridgeParameter(
@@ -762,6 +775,7 @@ class $TextField implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "const EdgeInsets.all(20.0)",
             ),
 
             BridgeParameter(
@@ -776,6 +790,7 @@ class $TextField implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DragStartBehavior.start",
             ),
 
             BridgeParameter(
@@ -834,6 +849,7 @@ class $TextField implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1020,6 +1036,7 @@ class $TextField implements $Instance {
                 nullable: true,
               ),
               true,
+              defaultValueSource: "const <String>[]",
             ),
 
             BridgeParameter(
@@ -1043,6 +1060,7 @@ class $TextField implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Clip'), []),
               ),
               true,
+              defaultValueSource: "Clip.hardEdge",
             ),
 
             BridgeParameter(
@@ -1060,6 +1078,7 @@ class $TextField implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -1068,6 +1087,8 @@ class $TextField implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource:
+                  "EditableText.defaultStylusHandwritingEnabled",
             ),
 
             BridgeParameter(
@@ -1076,6 +1097,7 @@ class $TextField implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -1136,6 +1158,7 @@ class $TextField implements $Instance {
                 nullable: true,
               ),
               true,
+              defaultValueSource: "_defaultContextMenuBuilder",
             ),
 
             BridgeParameter(
@@ -1144,6 +1167,7 @@ class $TextField implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -2538,7 +2562,9 @@ class $TextField implements $Instance {
         scrollPhysics: _arg58OrNull?.$value,
         autofillHints: _arg59OrNull == null
             ? const <String>[]
-            : _arg59OrNull!.$value,
+            : _arg59OrNull == null || _arg59OrNull is $null
+            ? null
+            : TypedInterop.exportIterable(_arg59OrNull, runtime),
         contentInsertionConfiguration: _arg60OrNull?.$value,
         clipBehavior: _arg61OrNull == null
             ? Clip.hardEdge

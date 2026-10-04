@@ -33,7 +33,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import './edge_insets.dart';
 import '../supporting/flutter_painting_decoration.dart';
-import '../supporting/ui.dart';
+import '../sky_engine/ui/painting.dart';
 
 /// dart_eval wrapper binding for [Decoration]
 class $Decoration implements $Instance {
@@ -230,6 +230,8 @@ class $Decoration implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'getClipPath': BridgeMethodDef(

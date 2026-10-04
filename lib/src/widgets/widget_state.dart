@@ -581,6 +581,8 @@ class $WidgetStateProperty<T> implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
     },
     getters: {},
@@ -603,7 +605,7 @@ class $WidgetStateProperty<T> implements $Instance {
   /// Wrapper for the [WidgetStateProperty.resolveAs] method
   static $Value? $resolveAs(Runtime runtime, Object? r, Object? s, Object? c) {
     final value = WidgetStateProperty.resolveAs(
-      (r as $Value?)!.$value,
+      TypedInterop.exportExternal((r as $Value?), runtime: runtime) as dynamic,
       ((s as $Value?)!.$reified as Set).cast<WidgetState>(),
     );
     return runtime.wrapAlways(value, recursive: true);
@@ -638,7 +640,9 @@ class $WidgetStateProperty<T> implements $Instance {
 
   /// Wrapper for the [WidgetStateProperty.all] method
   static $Value? $all(Runtime runtime, Object? r, Object? s, Object? c) {
-    final value = WidgetStateProperty.all((r as $Value?)!.$value);
+    final value = WidgetStateProperty.all(
+      TypedInterop.exportExternal((r as $Value?), runtime: runtime) as dynamic,
+    );
     return $WidgetStateProperty.wrap(value);
   }
 
@@ -948,6 +952,8 @@ class $WidgetStatesController implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
     },
     setters: {

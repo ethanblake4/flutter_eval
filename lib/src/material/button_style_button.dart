@@ -35,6 +35,7 @@ import 'package:dart_eval/stdlib/typed_data.dart'
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../widgets/widget_state.dart';
 import '../painting/edge_insets.dart';
 import '../widgets/framework_wrappers.dart';
@@ -411,6 +412,7 @@ class $ButtonStyleButton implements $Instance {
                 nullable: true,
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -835,7 +837,9 @@ class $ButtonStyleButton implements $Instance {
 
   /// Wrapper for the [ButtonStyleButton.allOrNull] method
   static $Value? $allOrNull(Runtime runtime, Object? r, Object? s, Object? c) {
-    final value = ButtonStyleButton.allOrNull((r as $Value?)!.$value);
+    final value = ButtonStyleButton.allOrNull(
+      TypedInterop.exportExternal((r as $Value?), runtime: runtime) as dynamic,
+    );
     return value == null ? const $null() : $WidgetStateProperty.wrap(value);
   }
 

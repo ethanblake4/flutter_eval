@@ -217,6 +217,7 @@ class $Align implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "Alignment.center",
             ),
 
             BridgeParameter(
@@ -1680,6 +1681,7 @@ class $Column implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "MainAxisAlignment.start",
             ),
 
             BridgeParameter(
@@ -1694,6 +1696,7 @@ class $Column implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "MainAxisSize.max",
             ),
 
             BridgeParameter(
@@ -1708,6 +1711,7 @@ class $Column implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "CrossAxisAlignment.center",
             ),
 
             BridgeParameter(
@@ -1731,6 +1735,7 @@ class $Column implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "VerticalDirection.down",
             ),
 
             BridgeParameter(
@@ -1748,6 +1753,7 @@ class $Column implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
 
             BridgeParameter(
@@ -1766,6 +1772,7 @@ class $Column implements $Instance {
                 ]),
               ),
               true,
+              defaultValueSource: "const <Widget>[]",
             ),
           ],
           params: [],
@@ -1950,6 +1957,7 @@ class $ClipRRect implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BorderRadius.zero",
             ),
 
             BridgeParameter(
@@ -1977,6 +1985,7 @@ class $ClipRRect implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Clip'), []),
               ),
               true,
+              defaultValueSource: "Clip.antiAlias",
             ),
 
             BridgeParameter(
@@ -2339,6 +2348,7 @@ class $ColoredBox implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -3026,6 +3036,7 @@ class $Expanded implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'int'), []),
               ),
               true,
+              defaultValueSource: "1",
             ),
 
             BridgeParameter(
@@ -3111,6 +3122,7 @@ class $Expanded implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
               ),
               true,
+              defaultValueSource: "', '",
             ),
 
             BridgeParameter(
@@ -3125,6 +3137,7 @@ class $Expanded implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DiagnosticLevel.debug",
             ),
           ],
           params: [],
@@ -3143,6 +3156,7 @@ class $Expanded implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
               ),
               true,
+              defaultValueSource: "''",
             ),
 
             BridgeParameter(
@@ -3166,6 +3180,7 @@ class $Expanded implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DiagnosticLevel.debug",
             ),
 
             BridgeParameter(
@@ -3174,6 +3189,7 @@ class $Expanded implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'int'), []),
               ),
               true,
+              defaultValueSource: "65",
             ),
           ],
           params: [],
@@ -3213,6 +3229,8 @@ class $Expanded implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'debugTypicalAncestorWidgetDescription': BridgeMethodDef(
@@ -3554,6 +3572,7 @@ class $FittedBox implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BoxFit.contain",
             ),
 
             BridgeParameter(
@@ -3568,6 +3587,7 @@ class $FittedBox implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "Alignment.center",
             ),
 
             BridgeParameter(
@@ -3576,6 +3596,7 @@ class $FittedBox implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Clip'), []),
               ),
               true,
+              defaultValueSource: "Clip.none",
             ),
 
             BridgeParameter(
@@ -3944,6 +3965,7 @@ class $FractionallySizedBox implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "Alignment.center",
             ),
 
             BridgeParameter(
@@ -4871,6 +4893,7 @@ class $Positioned implements $Instance {
                 nullable: true,
               ),
               true,
+              defaultValueSource: "0.0",
             ),
 
             BridgeParameter(
@@ -4880,6 +4903,7 @@ class $Positioned implements $Instance {
                 nullable: true,
               ),
               true,
+              defaultValueSource: "0.0",
             ),
 
             BridgeParameter(
@@ -4889,6 +4913,7 @@ class $Positioned implements $Instance {
                 nullable: true,
               ),
               true,
+              defaultValueSource: "0.0",
             ),
 
             BridgeParameter(
@@ -4898,6 +4923,7 @@ class $Positioned implements $Instance {
                 nullable: true,
               ),
               true,
+              defaultValueSource: "0.0",
             ),
 
             BridgeParameter(
@@ -5083,6 +5109,7 @@ class $Positioned implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
               ),
               true,
+              defaultValueSource: "', '",
             ),
 
             BridgeParameter(
@@ -5097,6 +5124,7 @@ class $Positioned implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DiagnosticLevel.debug",
             ),
           ],
           params: [],
@@ -5115,6 +5143,7 @@ class $Positioned implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
               ),
               true,
+              defaultValueSource: "''",
             ),
 
             BridgeParameter(
@@ -5138,6 +5167,7 @@ class $Positioned implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DiagnosticLevel.debug",
             ),
 
             BridgeParameter(
@@ -5146,6 +5176,7 @@ class $Positioned implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'int'), []),
               ),
               true,
+              defaultValueSource: "65",
             ),
           ],
           params: [],
@@ -5657,6 +5688,7 @@ class $Row implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "MainAxisAlignment.start",
             ),
 
             BridgeParameter(
@@ -5671,6 +5703,7 @@ class $Row implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "MainAxisSize.max",
             ),
 
             BridgeParameter(
@@ -5685,6 +5718,7 @@ class $Row implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "CrossAxisAlignment.center",
             ),
 
             BridgeParameter(
@@ -5708,6 +5742,7 @@ class $Row implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "VerticalDirection.down",
             ),
 
             BridgeParameter(
@@ -5725,6 +5760,7 @@ class $Row implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
 
             BridgeParameter(
@@ -5743,6 +5779,7 @@ class $Row implements $Instance {
                 ]),
               ),
               true,
+              defaultValueSource: "const <Widget>[]",
             ),
           ],
           params: [],
@@ -5927,6 +5964,7 @@ class $Stack implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "AlignmentDirectional.topStart",
             ),
 
             BridgeParameter(
@@ -5950,6 +5988,7 @@ class $Stack implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "StackFit.loose",
             ),
 
             BridgeParameter(
@@ -5958,6 +5997,7 @@ class $Stack implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Clip'), []),
               ),
               true,
+              defaultValueSource: "Clip.hardEdge",
             ),
 
             BridgeParameter(
@@ -5976,6 +6016,7 @@ class $Stack implements $Instance {
                 ]),
               ),
               true,
+              defaultValueSource: "const <Widget>[]",
             ),
           ],
           params: [],

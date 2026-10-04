@@ -304,6 +304,7 @@ class $SnackBar implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'Duration'), []),
               ),
               true,
+              defaultValueSource: "_snackBarDisplayDuration",
             ),
 
             BridgeParameter(
@@ -372,6 +373,7 @@ class $SnackBar implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Clip'), []),
               ),
               true,
+              defaultValueSource: "Clip.hardEdge",
             ),
           ],
           params: [],

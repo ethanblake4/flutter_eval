@@ -540,6 +540,8 @@ class $EdgeInsetsGeometry implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       '*': BridgeMethodDef(
@@ -564,6 +566,8 @@ class $EdgeInsetsGeometry implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       '/': BridgeMethodDef(
@@ -588,6 +592,8 @@ class $EdgeInsetsGeometry implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       '~/': BridgeMethodDef(
@@ -612,6 +618,8 @@ class $EdgeInsetsGeometry implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       '%': BridgeMethodDef(
@@ -636,6 +644,8 @@ class $EdgeInsetsGeometry implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'lerp': BridgeMethodDef(
@@ -718,6 +728,8 @@ class $EdgeInsetsGeometry implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
     },
     getters: {
@@ -1323,6 +1335,7 @@ class $EdgeInsets implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
 
             BridgeParameter(
@@ -1331,6 +1344,7 @@ class $EdgeInsets implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
 
             BridgeParameter(
@@ -1339,6 +1353,7 @@ class $EdgeInsets implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
 
             BridgeParameter(
@@ -1347,6 +1362,7 @@ class $EdgeInsets implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
           ],
           params: [],
@@ -1364,6 +1380,7 @@ class $EdgeInsets implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
 
             BridgeParameter(
@@ -1372,6 +1389,7 @@ class $EdgeInsets implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
           ],
           params: [],

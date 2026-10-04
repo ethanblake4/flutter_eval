@@ -36,7 +36,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import './edge_insets.dart';
-import '../supporting/ui.dart';
 import '../sky_engine/ui/painting.dart';
 
 /// dart_eval enum wrapper binding for [BorderStyle]
@@ -239,6 +238,8 @@ class $ShapeBorder implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'lerp': BridgeMethodDef(
@@ -323,6 +324,8 @@ class $ShapeBorder implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'getInnerPath': BridgeMethodDef(
@@ -350,6 +353,8 @@ class $ShapeBorder implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'paintInterior': BridgeMethodDef(
@@ -424,6 +429,8 @@ class $ShapeBorder implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
     },
     getters: {
@@ -441,6 +448,8 @@ class $ShapeBorder implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'preferPaintInterior': BridgeMethodDef(
@@ -713,6 +722,7 @@ class $BorderSide implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Color'), []),
               ),
               true,
+              defaultValueSource: "const Color(0xFF000000)",
             ),
 
             BridgeParameter(
@@ -721,6 +731,7 @@ class $BorderSide implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "1.0",
             ),
 
             BridgeParameter(
@@ -735,6 +746,7 @@ class $BorderSide implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BorderStyle.solid",
             ),
 
             BridgeParameter(
@@ -743,6 +755,7 @@ class $BorderSide implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "strokeAlignInside",
             ),
           ],
           params: [],

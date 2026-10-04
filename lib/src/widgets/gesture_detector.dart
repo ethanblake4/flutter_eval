@@ -1701,6 +1701,7 @@ class $GestureDetector implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1715,6 +1716,7 @@ class $GestureDetector implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DragStartBehavior.start",
             ),
 
             BridgeParameter(
@@ -1723,6 +1725,7 @@ class $GestureDetector implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1731,6 +1734,7 @@ class $GestureDetector implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
               ),
               true,
+              defaultValueSource: "kDefaultTrackpadScrollToScaleFactor",
             ),
 
             BridgeParameter(

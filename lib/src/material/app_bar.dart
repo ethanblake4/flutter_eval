@@ -166,6 +166,7 @@ class $AppBar implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -208,6 +209,7 @@ class $AppBar implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -286,6 +288,7 @@ class $AppBar implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "defaultScrollNotificationPredicate",
             ),
 
             BridgeParameter(
@@ -375,6 +378,7 @@ class $AppBar implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -392,6 +396,7 @@ class $AppBar implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -409,6 +414,7 @@ class $AppBar implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "1.0",
             ),
 
             BridgeParameter(
@@ -417,6 +423,7 @@ class $AppBar implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "1.0",
             ),
 
             BridgeParameter(
@@ -488,6 +495,7 @@ class $AppBar implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -496,6 +504,7 @@ class $AppBar implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -528,6 +537,7 @@ class $AppBar implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
           ],
           params: [],

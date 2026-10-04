@@ -90,6 +90,8 @@ class $MethodCodec implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'decodeMethodCall': BridgeMethodDef(
@@ -118,6 +120,8 @@ class $MethodCodec implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'decodeEnvelope': BridgeMethodDef(
@@ -137,6 +141,8 @@ class $MethodCodec implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'encodeSuccessEnvelope': BridgeMethodDef(
@@ -156,6 +162,8 @@ class $MethodCodec implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'encodeErrorEnvelope': BridgeMethodDef(
@@ -192,6 +200,8 @@ class $MethodCodec implements $Instance {
           ],
           params: [],
         ),
+
+        isAbstract: true,
       ),
     },
     getters: {},

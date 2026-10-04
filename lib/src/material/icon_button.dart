@@ -370,6 +370,7 @@ class $IconButton implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -712,6 +713,7 @@ class $IconButton implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1054,6 +1056,7 @@ class $IconButton implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1396,6 +1399,7 @@ class $IconButton implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(

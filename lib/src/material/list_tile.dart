@@ -46,6 +46,7 @@ import 'package:dart_eval/stdlib/typed_data.dart'
         $ListTileTitleAlignment;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../widgets/framework_wrappers.dart';
 import './theme_data.dart';
 import '../painting/borders.dart';
@@ -368,6 +369,7 @@ class $ListTile implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -453,6 +455,7 @@ class $ListTile implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -503,6 +506,7 @@ class $ListTile implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -589,6 +593,7 @@ class $ListTile implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -1264,7 +1269,7 @@ class $ListTile implements $Instance {
   ) {
     final value = ListTile.divideTiles(
       context: (r is $Value ? r : null)?.$value,
-      tiles: (s as $Value?)!.$value,
+      tiles: TypedInterop.exportIterable((s as $Value?), runtime),
       color: (c is $Value ? c : null)?.$value,
     );
     return $Iterable.wrap((value).map((e) => $Widget.wrap(e)));

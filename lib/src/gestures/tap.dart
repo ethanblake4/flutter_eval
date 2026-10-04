@@ -96,6 +96,7 @@ class $TapDownDetails implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
               ),
               true,
+              defaultValueSource: "Offset.zero",
             ),
 
             BridgeParameter(
@@ -302,6 +303,7 @@ class $TapUpDetails implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
               ),
               true,
+              defaultValueSource: "Offset.zero",
             ),
 
             BridgeParameter(

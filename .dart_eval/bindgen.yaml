@@ -715,10 +715,37 @@ libraries:
       file: sky_engine/ui/painting.dart
     Color:
       file: sky_engine/ui/painting.dart
+    Image:
+      file: sky_engine/ui/painting.dart
+      wrapperName: UiImage
     Clip:
       file: sky_engine/ui/painting.dart
+    ClipOp:
+      file: supporting/ui.dart
+      opaque: true
+    Paragraph:
+      file: supporting/ui.dart
+      opaque: true
+    ImageByteFormat:
+      file: supporting/ui.dart
+      opaque: true
+    PathFillType:
+      file: supporting/ui.dart
+      opaque: true
+    PathMetric:
+      file: supporting/ui.dart
+      opaque: true
+    PathMetrics:
+      file: supporting/ui.dart
+      opaque: true
+    PathOperation:
+      file: supporting/ui.dart
+      opaque: true
     PointerDeviceKind:
       file: sky_engine/ui/pointer.dart
+    PointMode:
+      file: supporting/ui.dart
+      opaque: true
     FontStyle:
       file: sky_engine/ui/text.dart
     FontWeight:
@@ -752,6 +779,26 @@ libraries:
     BoxWidthStyle:
       file: supporting/ui.dart
     Canvas:
+      file: sky_engine/ui/painting.dart
+    RSTransform:
+      file: supporting/ui.dart
+      opaque: true
+    Picture:
+      file: sky_engine/ui/painting.dart
+    PictureRecorder:
+      file: sky_engine/ui/painting.dart
+    TargetPixelFormat:
+      file: sky_engine/ui/painting.dart
+    Vertices:
+      file: supporting/ui.dart
+      opaque: true
+    ColorFilter:
+      file: supporting/ui.dart
+      opaque: true
+    MaskFilter:
+      file: supporting/ui.dart
+      opaque: true
+    Shader:
       file: supporting/ui.dart
       opaque: true
     FontFeature:
@@ -767,14 +814,12 @@ libraries:
       file: supporting/ui.dart
       opaque: true
     Paint:
-      file: supporting/ui.dart
-      opaque: true
+      file: sky_engine/ui/painting.dart
     ParagraphStyle:
       file: supporting/ui.dart
       opaque: true
     Path:
-      file: supporting/ui.dart
-      opaque: true
+      file: sky_engine/ui/painting.dart
     RRect:
       file: supporting/ui.dart
       opaque: true
@@ -804,6 +849,23 @@ libraries:
     ViewPadding:
       file: supporting/ui.dart
       opaque: true
+- uri: dart:typed_data
+  outDir: lib/src
+  imports:
+  - package:dart_eval/stdlib/typed_data.dart
+  classes:
+    ByteData:
+      handMaintained: true
+      file: package:dart_eval/stdlib/typed_data.dart
+    Float32List:
+      handMaintained: true
+      file: package:dart_eval/stdlib/typed_data.dart
+    Float64List:
+      handMaintained: true
+      file: package:dart_eval/stdlib/typed_data.dart
+    Int32List:
+      handMaintained: true
+      file: package:dart_eval/stdlib/typed_data.dart
 - uri: package:flutter/src/widgets/app.dart
   outDir: lib/src
   imports: *flutterImports

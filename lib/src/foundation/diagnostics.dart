@@ -423,6 +423,7 @@ class $TextTreeConfiguration implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
               ),
               true,
+              defaultValueSource: "'\\n'",
             ),
 
             BridgeParameter(
@@ -431,6 +432,7 @@ class $TextTreeConfiguration implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -439,6 +441,7 @@ class $TextTreeConfiguration implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
               ),
               true,
+              defaultValueSource: "':'",
             ),
 
             BridgeParameter(
@@ -447,6 +450,7 @@ class $TextTreeConfiguration implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
               ),
               true,
+              defaultValueSource: "''",
             ),
 
             BridgeParameter(
@@ -455,6 +459,7 @@ class $TextTreeConfiguration implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
               ),
               true,
+              defaultValueSource: "''",
             ),
 
             BridgeParameter(
@@ -463,6 +468,7 @@ class $TextTreeConfiguration implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
               ),
               true,
+              defaultValueSource: "''",
             ),
 
             BridgeParameter(
@@ -471,6 +477,7 @@ class $TextTreeConfiguration implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
               ),
               true,
+              defaultValueSource: "''",
             ),
 
             BridgeParameter(
@@ -479,6 +486,7 @@ class $TextTreeConfiguration implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
               ),
               true,
+              defaultValueSource: "''",
             ),
 
             BridgeParameter(
@@ -487,6 +495,7 @@ class $TextTreeConfiguration implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
               ),
               true,
+              defaultValueSource: "''",
             ),
 
             BridgeParameter(
@@ -495,6 +504,7 @@ class $TextTreeConfiguration implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
               ),
               true,
+              defaultValueSource: "''",
             ),
 
             BridgeParameter(
@@ -503,6 +513,7 @@ class $TextTreeConfiguration implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
               ),
               true,
+              defaultValueSource: "''",
             ),
 
             BridgeParameter(
@@ -511,6 +522,7 @@ class $TextTreeConfiguration implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -519,6 +531,7 @@ class $TextTreeConfiguration implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -527,6 +540,7 @@ class $TextTreeConfiguration implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -535,6 +549,7 @@ class $TextTreeConfiguration implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -543,6 +558,7 @@ class $TextTreeConfiguration implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
               ),
               true,
+              defaultValueSource: "''",
             ),
 
             BridgeParameter(
@@ -551,6 +567,7 @@ class $TextTreeConfiguration implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
               ),
               true,
+              defaultValueSource: "''",
             ),
 
             BridgeParameter(
@@ -559,6 +576,7 @@ class $TextTreeConfiguration implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
               ),
               true,
+              defaultValueSource: "''",
             ),
           ],
           params: [],
@@ -1019,6 +1037,7 @@ class $DiagnosticsNode implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -1027,6 +1046,7 @@ class $DiagnosticsNode implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -1059,6 +1079,7 @@ class $DiagnosticsNode implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DiagnosticsTreeStyle.singleLine",
             ),
 
             BridgeParameter(
@@ -1073,6 +1094,7 @@ class $DiagnosticsNode implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DiagnosticLevel.info",
             ),
 
             BridgeParameter(
@@ -1081,6 +1103,7 @@ class $DiagnosticsNode implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
           ],
           params: [
@@ -1121,6 +1144,8 @@ class $DiagnosticsNode implements $Instance {
           ],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'isFiltered': BridgeMethodDef(
@@ -1165,6 +1190,8 @@ class $DiagnosticsNode implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'getChildren': BridgeMethodDef(
@@ -1185,6 +1212,8 @@ class $DiagnosticsNode implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'toTimelineArguments': BridgeMethodDef(
@@ -1353,6 +1382,7 @@ class $DiagnosticsNode implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
               ),
               true,
+              defaultValueSource: "''",
             ),
 
             BridgeParameter(
@@ -1391,6 +1421,7 @@ class $DiagnosticsNode implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DiagnosticLevel.debug",
             ),
 
             BridgeParameter(
@@ -1399,6 +1430,7 @@ class $DiagnosticsNode implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'int'), []),
               ),
               true,
+              defaultValueSource: "65",
             ),
           ],
           params: [],
@@ -1442,6 +1474,8 @@ class $DiagnosticsNode implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'allowWrap': BridgeMethodDef(
@@ -1930,6 +1964,7 @@ class $DiagnosticsProperty<T> implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -1938,6 +1973,7 @@ class $DiagnosticsProperty<T> implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -1947,6 +1983,7 @@ class $DiagnosticsProperty<T> implements $Instance {
                 nullable: true,
               ),
               true,
+              defaultValueSource: "kNoDefaultValue",
             ),
 
             BridgeParameter(
@@ -1964,6 +2001,7 @@ class $DiagnosticsProperty<T> implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1981,6 +2019,7 @@ class $DiagnosticsProperty<T> implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1989,6 +2028,7 @@ class $DiagnosticsProperty<T> implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -1997,6 +2037,7 @@ class $DiagnosticsProperty<T> implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -2011,6 +2052,7 @@ class $DiagnosticsProperty<T> implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DiagnosticsTreeStyle.singleLine",
             ),
 
             BridgeParameter(
@@ -2025,6 +2067,7 @@ class $DiagnosticsProperty<T> implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DiagnosticLevel.info",
             ),
           ],
           params: [
@@ -2084,6 +2127,7 @@ class $DiagnosticsProperty<T> implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -2092,6 +2136,7 @@ class $DiagnosticsProperty<T> implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -2101,6 +2146,7 @@ class $DiagnosticsProperty<T> implements $Instance {
                 nullable: true,
               ),
               true,
+              defaultValueSource: "kNoDefaultValue",
             ),
 
             BridgeParameter(
@@ -2118,6 +2164,7 @@ class $DiagnosticsProperty<T> implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -2126,6 +2173,7 @@ class $DiagnosticsProperty<T> implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -2134,6 +2182,7 @@ class $DiagnosticsProperty<T> implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -2142,6 +2191,7 @@ class $DiagnosticsProperty<T> implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -2156,6 +2206,7 @@ class $DiagnosticsProperty<T> implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DiagnosticsTreeStyle.singleLine",
             ),
 
             BridgeParameter(
@@ -2170,6 +2221,7 @@ class $DiagnosticsProperty<T> implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DiagnosticLevel.info",
             ),
           ],
           params: [
@@ -2469,7 +2521,8 @@ class $DiagnosticsProperty<T> implements $Instance {
     return $DiagnosticsProperty.wrap(
       DiagnosticsProperty(
         (r as $Value?)!.$value,
-        (s as $Value?)!.$value,
+        TypedInterop.exportExternal((s as $Value?), runtime: runtime)
+            as dynamic,
         description: _arg2OrNull?.$value,
         ifNull: _arg3OrNull?.$value,
         ifEmpty: _arg4OrNull?.$value,
@@ -3057,6 +3110,7 @@ class $DiagnosticsSerializationDelegate implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
           ],
           params: [
@@ -3075,6 +3129,8 @@ class $DiagnosticsSerializationDelegate implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'filterChildren': BridgeMethodDef(
@@ -3127,6 +3183,8 @@ class $DiagnosticsSerializationDelegate implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'filterProperties': BridgeMethodDef(
@@ -3179,6 +3237,8 @@ class $DiagnosticsSerializationDelegate implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'truncateNodesList': BridgeMethodDef(
@@ -3232,6 +3292,8 @@ class $DiagnosticsSerializationDelegate implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'delegateForNode': BridgeMethodDef(
@@ -3262,6 +3324,8 @@ class $DiagnosticsSerializationDelegate implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'copyWith': BridgeMethodDef(
@@ -3294,6 +3358,8 @@ class $DiagnosticsSerializationDelegate implements $Instance {
           ],
           params: [],
         ),
+
+        isAbstract: true,
       ),
     },
     getters: {
@@ -3305,6 +3371,8 @@ class $DiagnosticsSerializationDelegate implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'includeProperties': BridgeMethodDef(
@@ -3315,6 +3383,8 @@ class $DiagnosticsSerializationDelegate implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'expandPropertyValues': BridgeMethodDef(
@@ -3325,6 +3395,8 @@ class $DiagnosticsSerializationDelegate implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
     },
     setters: {},

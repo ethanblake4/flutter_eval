@@ -186,6 +186,7 @@ class $ListView implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "Axis.vertical",
             ),
 
             BridgeParameter(
@@ -194,6 +195,7 @@ class $ListView implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -241,6 +243,7 @@ class $ListView implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -328,6 +331,7 @@ class $ListView implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -336,6 +340,7 @@ class $ListView implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -344,6 +349,7 @@ class $ListView implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -386,6 +392,7 @@ class $ListView implements $Instance {
                 ]),
               ),
               true,
+              defaultValueSource: "const <Widget>[]",
             ),
 
             BridgeParameter(
@@ -409,6 +416,7 @@ class $ListView implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DragStartBehavior.start",
             ),
 
             BridgeParameter(
@@ -441,6 +449,7 @@ class $ListView implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Clip'), []),
               ),
               true,
+              defaultValueSource: "Clip.hardEdge",
             ),
 
             BridgeParameter(
@@ -455,6 +464,7 @@ class $ListView implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "HitTestBehavior.opaque",
             ),
           ],
           params: [],
@@ -493,6 +503,7 @@ class $ListView implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "Axis.vertical",
             ),
 
             BridgeParameter(
@@ -501,6 +512,7 @@ class $ListView implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -548,6 +560,7 @@ class $ListView implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -721,6 +734,7 @@ class $ListView implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -729,6 +743,7 @@ class $ListView implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -737,6 +752,7 @@ class $ListView implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -784,6 +800,7 @@ class $ListView implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DragStartBehavior.start",
             ),
 
             BridgeParameter(
@@ -816,6 +833,7 @@ class $ListView implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Clip'), []),
               ),
               true,
+              defaultValueSource: "Clip.hardEdge",
             ),
 
             BridgeParameter(
@@ -830,6 +848,7 @@ class $ListView implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "HitTestBehavior.opaque",
             ),
           ],
           params: [],
@@ -868,6 +887,7 @@ class $ListView implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "Axis.vertical",
             ),
 
             BridgeParameter(
@@ -876,6 +896,7 @@ class $ListView implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -923,6 +944,7 @@ class $ListView implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1107,6 +1129,7 @@ class $ListView implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -1115,6 +1138,7 @@ class $ListView implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -1123,6 +1147,7 @@ class $ListView implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -1161,6 +1186,7 @@ class $ListView implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DragStartBehavior.start",
             ),
 
             BridgeParameter(
@@ -1193,6 +1219,7 @@ class $ListView implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Clip'), []),
               ),
               true,
+              defaultValueSource: "Clip.hardEdge",
             ),
 
             BridgeParameter(
@@ -1207,6 +1234,7 @@ class $ListView implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "HitTestBehavior.opaque",
             ),
           ],
           params: [],
@@ -1245,6 +1273,7 @@ class $ListView implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "Axis.vertical",
             ),
 
             BridgeParameter(
@@ -1253,6 +1282,7 @@ class $ListView implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1300,6 +1330,7 @@ class $ListView implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1440,6 +1471,7 @@ class $ListView implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DragStartBehavior.start",
             ),
 
             BridgeParameter(
@@ -1472,6 +1504,7 @@ class $ListView implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Clip'), []),
               ),
               true,
+              defaultValueSource: "Clip.hardEdge",
             ),
 
             BridgeParameter(
@@ -1486,6 +1519,7 @@ class $ListView implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "HitTestBehavior.opaque",
             ),
           ],
           params: [],

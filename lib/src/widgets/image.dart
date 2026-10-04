@@ -387,6 +387,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -471,6 +472,7 @@ class $Image implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "Alignment.center",
             ),
 
             BridgeParameter(
@@ -485,6 +487,7 @@ class $Image implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "ImageRepeat.noRepeat",
             ),
 
             BridgeParameter(
@@ -502,6 +505,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -510,6 +514,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -518,6 +523,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -526,6 +532,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'FilterQuality'), []),
               ),
               true,
+              defaultValueSource: "FilterQuality.medium",
             ),
           ],
           params: [],
@@ -558,6 +565,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "1.0",
             ),
 
             BridgeParameter(
@@ -772,6 +780,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -856,6 +865,7 @@ class $Image implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "Alignment.center",
             ),
 
             BridgeParameter(
@@ -870,6 +880,7 @@ class $Image implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "ImageRepeat.noRepeat",
             ),
 
             BridgeParameter(
@@ -887,6 +898,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -895,6 +907,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -903,6 +916,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'FilterQuality'), []),
               ),
               true,
+              defaultValueSource: "FilterQuality.medium",
             ),
 
             BridgeParameter(
@@ -911,6 +925,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -959,6 +974,7 @@ class $Image implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "WebHtmlElementStrategy.never",
             ),
           ],
           params: [
@@ -999,6 +1015,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "1.0",
             ),
 
             BridgeParameter(
@@ -1147,6 +1164,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1231,6 +1249,7 @@ class $Image implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "Alignment.center",
             ),
 
             BridgeParameter(
@@ -1245,6 +1264,7 @@ class $Image implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "ImageRepeat.noRepeat",
             ),
 
             BridgeParameter(
@@ -1262,6 +1282,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1270,6 +1291,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1278,6 +1300,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1286,6 +1309,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'FilterQuality'), []),
               ),
               true,
+              defaultValueSource: "FilterQuality.medium",
             ),
 
             BridgeParameter(
@@ -1499,6 +1523,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1592,6 +1617,7 @@ class $Image implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "Alignment.center",
             ),
 
             BridgeParameter(
@@ -1606,6 +1632,7 @@ class $Image implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "ImageRepeat.noRepeat",
             ),
 
             BridgeParameter(
@@ -1623,6 +1650,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1631,6 +1659,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1639,6 +1668,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1656,6 +1686,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'FilterQuality'), []),
               ),
               true,
+              defaultValueSource: "FilterQuality.medium",
             ),
 
             BridgeParameter(
@@ -1714,6 +1745,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "1.0",
             ),
 
             BridgeParameter(
@@ -1862,6 +1894,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1946,6 +1979,7 @@ class $Image implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "Alignment.center",
             ),
 
             BridgeParameter(
@@ -1960,6 +1994,7 @@ class $Image implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "ImageRepeat.noRepeat",
             ),
 
             BridgeParameter(
@@ -1977,6 +2012,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1985,6 +2021,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1993,6 +2030,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -2001,6 +2039,7 @@ class $Image implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'FilterQuality'), []),
               ),
               true,
+              defaultValueSource: "FilterQuality.medium",
             ),
 
             BridgeParameter(

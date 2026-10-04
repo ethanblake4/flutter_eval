@@ -205,6 +205,7 @@ class $MaterialPageRoute<T> implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -213,6 +214,7 @@ class $MaterialPageRoute<T> implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -221,6 +223,7 @@ class $MaterialPageRoute<T> implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -229,6 +232,7 @@ class $MaterialPageRoute<T> implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -396,6 +400,8 @@ class $MaterialPageRoute<T> implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'buildTransitions': BridgeMethodDef(
@@ -552,6 +558,7 @@ class $MaterialPageRoute<T> implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
           ],
           params: [],
@@ -870,6 +877,8 @@ class $MaterialPageRoute<T> implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'barrierDismissible': BridgeMethodDef(
@@ -880,6 +889,8 @@ class $MaterialPageRoute<T> implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'popGestureEnabled': BridgeMethodDef(
@@ -890,6 +901,8 @@ class $MaterialPageRoute<T> implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'delegatedTransition': BridgeMethodDef(
@@ -1324,6 +1337,8 @@ class $MaterialPageRoute<T> implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'isFirst': BridgeMethodDef(
@@ -1910,7 +1925,9 @@ class $MaterialPageRoute<T> implements $Instance {
     Object? c,
   ) {
     final self = target! as $MaterialPageRoute;
-    final result = self.$value.didPop((r as $Value?)!.$value);
+    final result = self.$value.didPop(
+      TypedInterop.exportExternal((r as $Value?), runtime: runtime) as dynamic,
+    );
     return $bool(result);
   }
 
@@ -2119,7 +2136,7 @@ class $MaterialPageRoute<T> implements $Instance {
     final self = target! as $MaterialPageRoute;
     self.$value.onPopInvokedWithResult(
       (r as $bool).$value,
-      (s as $Value?)!.$value,
+      TypedInterop.exportExternal((s as $Value?), runtime: runtime) as dynamic,
     );
     return null;
   }

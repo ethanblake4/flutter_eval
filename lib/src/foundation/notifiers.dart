@@ -34,8 +34,8 @@ import 'package:dart_eval/stdlib/typed_data.dart'
     hide $Listenable, $ValueListenable, $ChangeNotifier, $ValueNotifier;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
-import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
 
 /// dart_eval wrapper binding for [Listenable]
 class $Listenable implements $Instance {
@@ -127,6 +127,8 @@ class $Listenable implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'removeListener': BridgeMethodDef(
@@ -151,6 +153,8 @@ class $Listenable implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
     },
     getters: {},
@@ -162,7 +166,9 @@ class $Listenable implements $Instance {
 
   /// Wrapper for the [Listenable.merge] constructor
   static $Value? $merge(Runtime runtime, Object? r, Object? s, Object? c) {
-    return $Listenable.wrap(Listenable.merge((r as $Value?)!.$value));
+    return $Listenable.wrap(
+      Listenable.merge(TypedInterop.exportIterable((r as $Value?), runtime)),
+    );
   }
 
   final $Instance _superclass;
@@ -303,6 +309,8 @@ class $ValueListenable<T> implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
     },
     setters: {},
@@ -383,6 +391,8 @@ class $ChangeNotifier implements $Instance {
   static const $declaration = BridgeClassDef(
     BridgeClassType(
       $type,
+
+      isMixinClass: true,
 
       $implements: [
         BridgeTypeRef(
@@ -786,7 +796,12 @@ class $ValueNotifier<T> implements $Instance {
 
   /// Wrapper for the [ValueNotifier.new] constructor
   static $Value? $new(Runtime runtime, Object? r, Object? s, Object? c) {
-    return $ValueNotifier.wrap(ValueNotifier((r as $Value?)!.$value));
+    return $ValueNotifier.wrap(
+      ValueNotifier(
+        TypedInterop.exportExternal((r as $Value?), runtime: runtime)
+            as dynamic,
+      ),
+    );
   }
 
   final $Instance _superclass;

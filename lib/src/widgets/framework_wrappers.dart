@@ -1232,6 +1232,8 @@ class $BuildContext implements BuildContext, $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'dependOnInheritedElement': BridgeMethodDef(
@@ -1271,6 +1273,8 @@ class $BuildContext implements BuildContext, $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'dependOnInheritedWidgetOfExactType': BridgeMethodDef(
@@ -1299,6 +1303,8 @@ class $BuildContext implements BuildContext, $Instance {
           ],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'getInheritedWidgetOfExactType': BridgeMethodDef(
@@ -1318,6 +1324,8 @@ class $BuildContext implements BuildContext, $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'getElementForInheritedWidgetOfExactType': BridgeMethodDef(
@@ -1346,6 +1354,8 @@ class $BuildContext implements BuildContext, $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'findAncestorWidgetOfExactType': BridgeMethodDef(
@@ -1365,6 +1375,8 @@ class $BuildContext implements BuildContext, $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'findAncestorStateOfType': BridgeMethodDef(
@@ -1394,6 +1406,8 @@ class $BuildContext implements BuildContext, $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'findRootAncestorStateOfType': BridgeMethodDef(
@@ -1423,6 +1437,8 @@ class $BuildContext implements BuildContext, $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'findAncestorRenderObjectOfType': BridgeMethodDef(
@@ -1442,6 +1458,8 @@ class $BuildContext implements BuildContext, $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'visitAncestorElements': BridgeMethodDef(
@@ -1480,6 +1498,8 @@ class $BuildContext implements BuildContext, $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'visitChildElements': BridgeMethodDef(
@@ -1518,6 +1538,8 @@ class $BuildContext implements BuildContext, $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'dispatchNotification': BridgeMethodDef(
@@ -1540,6 +1562,8 @@ class $BuildContext implements BuildContext, $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'describeElement': BridgeMethodDef(
@@ -1566,6 +1590,7 @@ class $BuildContext implements BuildContext, $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DiagnosticsTreeStyle.errorProperty",
             ),
           ],
           params: [
@@ -1578,6 +1603,8 @@ class $BuildContext implements BuildContext, $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'describeWidget': BridgeMethodDef(
@@ -1604,6 +1631,7 @@ class $BuildContext implements BuildContext, $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DiagnosticsTreeStyle.errorProperty",
             ),
           ],
           params: [
@@ -1616,6 +1644,8 @@ class $BuildContext implements BuildContext, $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'describeMissingAncestor': BridgeMethodDef(
@@ -1644,6 +1674,8 @@ class $BuildContext implements BuildContext, $Instance {
           ],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'describeOwnershipChain': BridgeMethodDef(
@@ -1668,6 +1700,8 @@ class $BuildContext implements BuildContext, $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
     },
     getters: {
@@ -1685,6 +1719,8 @@ class $BuildContext implements BuildContext, $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'owner': BridgeMethodDef(
@@ -1702,6 +1738,8 @@ class $BuildContext implements BuildContext, $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'mounted': BridgeMethodDef(
@@ -1712,6 +1750,8 @@ class $BuildContext implements BuildContext, $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'debugDoingBuild': BridgeMethodDef(
@@ -1722,6 +1762,8 @@ class $BuildContext implements BuildContext, $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'size': BridgeMethodDef(
@@ -1733,6 +1775,8 @@ class $BuildContext implements BuildContext, $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
     },
     setters: {},

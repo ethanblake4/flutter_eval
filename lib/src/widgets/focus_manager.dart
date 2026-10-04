@@ -362,6 +362,7 @@ class $FocusNode implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -370,6 +371,7 @@ class $FocusNode implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -378,6 +380,7 @@ class $FocusNode implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -386,6 +389,7 @@ class $FocusNode implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
           ],
           params: [],
@@ -411,6 +415,7 @@ class $FocusNode implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "UnfocusDisposition.scope",
             ),
           ],
           params: [],
@@ -1813,6 +1818,7 @@ class $FocusScopeNode implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1821,6 +1827,7 @@ class $FocusScopeNode implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -1835,6 +1842,7 @@ class $FocusScopeNode implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "TraversalEdgeBehavior.closedLoop",
             ),
 
             BridgeParameter(
@@ -1849,6 +1857,7 @@ class $FocusScopeNode implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "TraversalEdgeBehavior.stop",
             ),
           ],
           params: [],

@@ -42,7 +42,6 @@ import '../supporting/flutter_painting_gradient.dart';
 import '../sky_engine/ui/text.dart';
 import '../supporting/flutter_painting_box_border.dart';
 import './edge_insets.dart';
-import '../supporting/ui.dart';
 import '../supporting/flutter_painting_decoration.dart';
 
 /// dart_eval wrapper binding for [BoxDecoration]
@@ -220,6 +219,7 @@ class $BoxDecoration implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BoxShape.rectangle",
             ),
           ],
           params: [],

@@ -111,7 +111,7 @@ class $TickerFuture implements $Instance {
                 BridgeTypeRef.genericFunction(
                   BridgeFunctionDef(
                     returns: BridgeTypeAnnotation(
-                      BridgeTypeRef(BridgeTypeSpec('dart:async', 'FutureOr'), [
+                      BridgeTypeRef(AsyncTypes.futureOr, [
                         BridgeTypeAnnotation(BridgeTypeRef.ref('R')),
                       ]),
                     ),
@@ -234,7 +234,7 @@ class $TickerFuture implements $Instance {
                 BridgeTypeRef.genericFunction(
                   BridgeFunctionDef(
                     returns: BridgeTypeAnnotation(
-                      BridgeTypeRef(BridgeTypeSpec('dart:async', 'FutureOr'), [
+                      BridgeTypeRef(AsyncTypes.futureOr, [
                         BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
                       ]),
                     ),
@@ -327,7 +327,9 @@ class $TickerFuture implements $Instance {
       case 'orCancel':
         final _orCancel = $value.orCancel;
         return $Future.wrap(
-          _orCancel.then((e) => null),
+          (_orCancel as Future<dynamic>).then(
+            (e) => runtime.wrapAlways(e, recursive: true),
+          ),
           runtime: runtime,
           runtimeTypeId: runtime.internParameterizedType(CoreTypes.future, [
             runtime.lookupType(CoreTypes.voidType),
@@ -444,7 +446,9 @@ class $TickerFuture implements $Instance {
             ),
     );
     return $Future.wrap(
-      result.then((e) => null),
+      (result as Future<dynamic>).then(
+        (e) => runtime.wrapAlways(e, recursive: true),
+      ),
       runtime: runtime,
       runtimeTypeId: runtime.internParameterizedType(CoreTypes.future, [
         runtime.lookupType(CoreTypes.voidType),
@@ -471,7 +475,9 @@ class $TickerFuture implements $Instance {
       ),
     );
     return $Future.wrap(
-      result.then((e) => null),
+      (result as Future<dynamic>).then(
+        (e) => runtime.wrapAlways(e, recursive: true),
+      ),
       runtime: runtime,
       runtimeTypeId: runtime.internParameterizedType(CoreTypes.future, [
         runtime.lookupType(CoreTypes.voidType),
@@ -521,7 +527,9 @@ class $TickerFuture implements $Instance {
             ),
     );
     return $Future.wrap(
-      result.then((e) => null),
+      (result as Future<dynamic>).then(
+        (e) => runtime.wrapAlways(e, recursive: true),
+      ),
       runtime: runtime,
       runtimeTypeId: runtime.internParameterizedType(CoreTypes.future, [
         runtime.lookupType(CoreTypes.voidType),
@@ -684,6 +692,7 @@ class $Ticker implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
           ],
           params: [],
@@ -1010,6 +1019,8 @@ class $TickerProvider implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
     },
     getters: {},

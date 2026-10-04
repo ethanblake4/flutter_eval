@@ -101,6 +101,7 @@ class $ScrollController implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
 
             BridgeParameter(
@@ -109,6 +110,7 @@ class $ScrollController implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -665,7 +667,9 @@ class $ScrollController implements $Instance {
       curve: ((c as List<Object?>)[0] as $Value?)!.$value,
     );
     return $Future.wrap(
-      result.then((e) => null),
+      (result as Future<dynamic>).then(
+        (e) => runtime.wrapAlways(e, recursive: true),
+      ),
       runtime: runtime,
       runtimeTypeId: runtime.internParameterizedType(CoreTypes.future, [
         runtime.lookupType(CoreTypes.voidType),

@@ -128,6 +128,7 @@ class $Spacer implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'int'), []),
               ),
               true,
+              defaultValueSource: "1",
             ),
           ],
           params: [],

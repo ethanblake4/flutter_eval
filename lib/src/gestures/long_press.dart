@@ -109,6 +109,7 @@ class $LongPressDownDetails implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
               ),
               true,
+              defaultValueSource: "Offset.zero",
             ),
 
             BridgeParameter(
@@ -315,6 +316,7 @@ class $LongPressStartDetails implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
               ),
               true,
+              defaultValueSource: "Offset.zero",
             ),
 
             BridgeParameter(
@@ -497,6 +499,7 @@ class $LongPressMoveUpdateDetails implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
               ),
               true,
+              defaultValueSource: "Offset.zero",
             ),
 
             BridgeParameter(
@@ -514,6 +517,7 @@ class $LongPressMoveUpdateDetails implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
               ),
               true,
+              defaultValueSource: "Offset.zero",
             ),
 
             BridgeParameter(
@@ -723,6 +727,7 @@ class $LongPressEndDetails implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
               ),
               true,
+              defaultValueSource: "Offset.zero",
             ),
 
             BridgeParameter(
@@ -746,6 +751,7 @@ class $LongPressEndDetails implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "Velocity.zero",
             ),
           ],
           params: [],

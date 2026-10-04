@@ -109,6 +109,7 @@ class $DragDownDetails implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
               ),
               true,
+              defaultValueSource: "Offset.zero",
             ),
 
             BridgeParameter(
@@ -291,6 +292,7 @@ class $DragStartDetails implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
               ),
               true,
+              defaultValueSource: "Offset.zero",
             ),
 
             BridgeParameter(
@@ -549,6 +551,7 @@ class $DragUpdateDetails implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
               ),
               true,
+              defaultValueSource: "Offset.zero",
             ),
 
             BridgeParameter(
@@ -795,6 +798,7 @@ class $DragEndDetails implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Offset'), []),
               ),
               true,
+              defaultValueSource: "Offset.zero",
             ),
 
             BridgeParameter(
@@ -818,6 +822,7 @@ class $DragEndDetails implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "Velocity.zero",
             ),
 
             BridgeParameter(

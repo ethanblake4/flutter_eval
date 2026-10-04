@@ -34,7 +34,7 @@ import 'package:dart_eval/stdlib/typed_data.dart'
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import './borders.dart';
-import '../supporting/ui.dart';
+import '../sky_engine/ui/painting.dart';
 import './edge_insets.dart';
 
 /// dart_eval wrapper binding for [BoxBorder]
@@ -148,6 +148,7 @@ class $BoxBorder implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BorderSide.none",
             ),
 
             BridgeParameter(
@@ -162,6 +163,7 @@ class $BoxBorder implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BorderSide.none",
             ),
 
             BridgeParameter(
@@ -176,6 +178,7 @@ class $BoxBorder implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BorderSide.none",
             ),
 
             BridgeParameter(
@@ -190,6 +193,7 @@ class $BoxBorder implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BorderSide.none",
             ),
           ],
           params: [],
@@ -320,6 +324,7 @@ class $BoxBorder implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BorderSide.none",
             ),
 
             BridgeParameter(
@@ -334,6 +339,7 @@ class $BoxBorder implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BorderSide.none",
             ),
 
             BridgeParameter(
@@ -348,6 +354,7 @@ class $BoxBorder implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BorderSide.none",
             ),
 
             BridgeParameter(
@@ -362,6 +369,7 @@ class $BoxBorder implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BorderSide.none",
             ),
           ],
           params: [],
@@ -390,6 +398,7 @@ class $BoxBorder implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
           ],
           params: [
@@ -587,6 +596,7 @@ class $BoxBorder implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BoxShape.rectangle",
             ),
 
             BridgeParameter(
@@ -622,6 +632,8 @@ class $BoxBorder implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'paintNonUniformBorder': BridgeMethodDef(
@@ -664,6 +676,7 @@ class $BoxBorder implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BoxShape.rectangle",
             ),
 
             BridgeParameter(
@@ -678,6 +691,7 @@ class $BoxBorder implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BorderSide.none",
             ),
 
             BridgeParameter(
@@ -692,6 +706,7 @@ class $BoxBorder implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BorderSide.none",
             ),
 
             BridgeParameter(
@@ -706,6 +721,7 @@ class $BoxBorder implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BorderSide.none",
             ),
 
             BridgeParameter(
@@ -720,6 +736,7 @@ class $BoxBorder implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BorderSide.none",
             ),
 
             BridgeParameter(
@@ -767,6 +784,8 @@ class $BoxBorder implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'bottom': BridgeMethodDef(
@@ -783,6 +802,8 @@ class $BoxBorder implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'isUniform': BridgeMethodDef(
@@ -793,6 +814,8 @@ class $BoxBorder implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'preferPaintInterior': BridgeMethodDef(
@@ -1186,6 +1209,7 @@ class $Border implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BorderSide.none",
             ),
 
             BridgeParameter(
@@ -1200,6 +1224,7 @@ class $Border implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BorderSide.none",
             ),
 
             BridgeParameter(
@@ -1214,6 +1239,7 @@ class $Border implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BorderSide.none",
             ),
 
             BridgeParameter(
@@ -1228,6 +1254,7 @@ class $Border implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BorderSide.none",
             ),
           ],
           params: [],
@@ -1274,6 +1301,7 @@ class $Border implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BorderSide.none",
             ),
 
             BridgeParameter(
@@ -1288,6 +1316,7 @@ class $Border implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BorderSide.none",
             ),
           ],
           params: [],
@@ -1305,6 +1334,7 @@ class $Border implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Color'), []),
               ),
               true,
+              defaultValueSource: "const Color(0xFF000000)",
             ),
 
             BridgeParameter(
@@ -1313,6 +1343,7 @@ class $Border implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "1.0",
             ),
 
             BridgeParameter(
@@ -1327,6 +1358,7 @@ class $Border implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BorderStyle.solid",
             ),
 
             BridgeParameter(
@@ -1335,6 +1367,7 @@ class $Border implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "BorderSide.strokeAlignInside",
             ),
           ],
           params: [],
@@ -1409,6 +1442,7 @@ class $Border implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
           ],
           params: [
@@ -1615,6 +1649,7 @@ class $Border implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "BoxShape.rectangle",
             ),
 
             BridgeParameter(

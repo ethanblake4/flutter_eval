@@ -561,7 +561,7 @@ class $Route<T> implements $Instance {
     final self = target! as $Route;
     self.$value.onPopInvokedWithResult(
       (r as $bool).$value,
-      (s as $Value?)!.$value,
+      TypedInterop.exportExternal((s as $Value?), runtime: runtime) as dynamic,
     );
     return null;
   }
@@ -575,7 +575,9 @@ class $Route<T> implements $Instance {
     Object? c,
   ) {
     final self = target! as $Route;
-    final result = self.$value.didPop((r as $Value?)!.$value);
+    final result = self.$value.didPop(
+      TypedInterop.exportExternal((r as $Value?), runtime: runtime) as dynamic,
+    );
     return $bool(result);
   }
 
@@ -747,6 +749,8 @@ class $OverlayRoute<T> implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
     },
     getters: {
@@ -1077,7 +1081,7 @@ class $OverlayRoute<T> implements $Instance {
     final self = target! as $OverlayRoute;
     self.$value.onPopInvokedWithResult(
       (r as $bool).$value,
-      (s as $Value?)!.$value,
+      TypedInterop.exportExternal((s as $Value?), runtime: runtime) as dynamic,
     );
     return null;
   }
@@ -1091,7 +1095,9 @@ class $OverlayRoute<T> implements $Instance {
     Object? c,
   ) {
     final self = target! as $OverlayRoute;
-    final result = self.$value.didPop((r as $Value?)!.$value);
+    final result = self.$value.didPop(
+      TypedInterop.exportExternal((r as $Value?), runtime: runtime) as dynamic,
+    );
     return $bool(result);
   }
 
@@ -1210,6 +1216,7 @@ class $TransitionRoute<T> implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
           ],
           params: [],
@@ -1340,6 +1347,8 @@ class $TransitionRoute<T> implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'createAnimationController': BridgeMethodDef(
@@ -1590,6 +1599,8 @@ class $TransitionRoute<T> implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'isFirst': BridgeMethodDef(
@@ -1620,6 +1631,8 @@ class $TransitionRoute<T> implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'completed': BridgeMethodDef(
@@ -1642,6 +1655,8 @@ class $TransitionRoute<T> implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'reverseTransitionDuration': BridgeMethodDef(
@@ -1662,6 +1677,8 @@ class $TransitionRoute<T> implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'allowSnapshotting': BridgeMethodDef(
@@ -2039,7 +2056,7 @@ class $TransitionRoute<T> implements $Instance {
     final self = target! as $TransitionRoute;
     self.$value.onPopInvokedWithResult(
       (r as $bool).$value,
-      (s as $Value?)!.$value,
+      TypedInterop.exportExternal((s as $Value?), runtime: runtime) as dynamic,
     );
     return null;
   }
@@ -2053,7 +2070,9 @@ class $TransitionRoute<T> implements $Instance {
     Object? c,
   ) {
     final self = target! as $TransitionRoute;
-    final result = self.$value.didPop((r as $Value?)!.$value);
+    final result = self.$value.didPop(
+      TypedInterop.exportExternal((r as $Value?), runtime: runtime) as dynamic,
+    );
     return $bool(result);
   }
 
@@ -2246,6 +2265,8 @@ class $PopEntry<T> implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
     },
     setters: {},
@@ -2314,7 +2335,7 @@ class $PopEntry<T> implements $Instance {
     final self = target! as $PopEntry;
     self.$value.onPopInvokedWithResult(
       (r as $bool).$value,
-      (s as $Value?)!.$value,
+      TypedInterop.exportExternal((s as $Value?), runtime: runtime) as dynamic,
     );
     return null;
   }

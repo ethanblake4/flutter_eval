@@ -95,6 +95,7 @@ class $TextStyle implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -707,6 +708,7 @@ class $TextStyle implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "1.0",
             ),
 
             BridgeParameter(
@@ -715,6 +717,7 @@ class $TextStyle implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
 
             BridgeParameter(
@@ -745,6 +748,7 @@ class $TextStyle implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "1.0",
             ),
 
             BridgeParameter(
@@ -753,6 +757,7 @@ class $TextStyle implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
 
             BridgeParameter(
@@ -761,6 +766,7 @@ class $TextStyle implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'int'), []),
               ),
               true,
+              defaultValueSource: "0",
             ),
 
             BridgeParameter(
@@ -778,6 +784,7 @@ class $TextStyle implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "1.0",
             ),
 
             BridgeParameter(
@@ -786,6 +793,7 @@ class $TextStyle implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
 
             BridgeParameter(
@@ -794,6 +802,7 @@ class $TextStyle implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "1.0",
             ),
 
             BridgeParameter(
@@ -802,6 +811,7 @@ class $TextStyle implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
 
             BridgeParameter(
@@ -810,6 +820,7 @@ class $TextStyle implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "1.0",
             ),
 
             BridgeParameter(
@@ -818,6 +829,7 @@ class $TextStyle implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
 
             BridgeParameter(
@@ -1020,6 +1032,7 @@ class $TextStyle implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "1.0",
             ),
 
             BridgeParameter(
@@ -1034,6 +1047,7 @@ class $TextStyle implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "TextScaler.noScaling",
             ),
           ],
           params: [],
@@ -1076,6 +1090,7 @@ class $TextStyle implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "TextScaler.noScaling",
             ),
 
             BridgeParameter(
@@ -1231,6 +1246,7 @@ class $TextStyle implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
               ),
               true,
+              defaultValueSource: "''",
             ),
           ],
           params: [

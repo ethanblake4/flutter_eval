@@ -50,6 +50,7 @@ import 'package:dart_eval/stdlib/typed_data.dart'
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../sky_engine/ui/text.dart';
 import '../supporting/flutter_cupertino_theme.dart';
 import 'package:dart_eval/src/eval/utils/wrap_helper.dart';
@@ -111,7 +112,6 @@ import '../supporting/flutter_material_time_picker_theme.dart';
 import '../supporting/flutter_material_toggle_buttons_theme.dart';
 import '../supporting/flutter_material_tooltip_theme.dart';
 import '../supporting/flutter_material_button_bar_theme.dart';
-import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../sky_engine/ui/geometry.dart';
 import '../rendering/box.dart';
 
@@ -5114,10 +5114,16 @@ class $ThemeData implements $Instance {
 
     return $ThemeData.wrap(
       ThemeData(
-        adaptations: (r is $Value ? r : null)?.$value,
+        adaptations:
+            (r is $Value ? r : null) == null ||
+                (r is $Value ? r : null) is $null
+            ? null
+            : TypedInterop.exportIterable((r is $Value ? r : null), runtime),
         applyElevationOverlayColor: (s is $Value ? s : null)?.$value,
         cupertinoOverrideTheme: _arg2OrNull?.$value,
-        extensions: _arg3OrNull?.$value,
+        extensions: _arg3OrNull == null || _arg3OrNull is $null
+            ? null
+            : TypedInterop.exportIterable(_arg3OrNull, runtime),
         inputDecorationTheme: _arg4OrNull?.$reified,
         materialTapTargetSize: _arg5OrNull?.$value,
         pageTransitionsTheme: _arg6OrNull?.$value,
@@ -5779,7 +5785,10 @@ class $ThemeData implements $Instance {
   ) {
     final self = target! as $ThemeData;
     final result = self.$value.copyWith(
-      adaptations: (r is $Value ? r : null)?.$value,
+      adaptations:
+          (r is $Value ? r : null) == null || (r is $Value ? r : null) is $null
+          ? null
+          : TypedInterop.exportIterable((r is $Value ? r : null), runtime),
       applyElevationOverlayColor: (s is $Value ? s : null)?.$value,
       cupertinoOverrideTheme:
           (c is List && (c as List).length > 0
@@ -5788,9 +5797,20 @@ class $ThemeData implements $Instance {
               ?.$value,
       extensions:
           (c is List && (c as List).length > 1
+                      ? (c as List)[1] as $Value?
+                      : null) ==
+                  null ||
+              (c is List && (c as List).length > 1
+                      ? (c as List)[1] as $Value?
+                      : null)
+                  is $null
+          ? null
+          : TypedInterop.exportIterable(
+              (c is List && (c as List).length > 1
                   ? (c as List)[1] as $Value?
-                  : null)
-              ?.$value,
+                  : null),
+              runtime,
+            ),
       inputDecorationTheme:
           (c is List && (c as List).length > 2
                   ? (c as List)[2] as $Value?
@@ -6315,6 +6335,7 @@ class $VisualDensity implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
 
             BridgeParameter(
@@ -6323,6 +6344,7 @@ class $VisualDensity implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
           ],
           params: [],

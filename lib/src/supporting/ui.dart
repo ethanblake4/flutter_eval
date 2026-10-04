@@ -33,8 +33,17 @@ import 'package:dart_eval/stdlib/core.dart'
         $FilterQuality,
         $ColorSpace,
         $Color,
+        $UiImage,
         $Clip,
+        $ClipOp,
+        $Paragraph,
+        $ImageByteFormat,
+        $PathFillType,
+        $PathMetric,
+        $PathMetrics,
+        $PathOperation,
         $PointerDeviceKind,
+        $PointMode,
         $FontStyle,
         $FontWeight,
         $TextDirection,
@@ -52,6 +61,14 @@ import 'package:dart_eval/stdlib/core.dart'
         $BoxHeightStyle,
         $BoxWidthStyle,
         $Canvas,
+        $RSTransform,
+        $Picture,
+        $PictureRecorder,
+        $TargetPixelFormat,
+        $Vertices,
+        $ColorFilter,
+        $MaskFilter,
+        $Shader,
         $FontFeature,
         $FontVariation,
         $ImageFilter,
@@ -78,8 +95,17 @@ import 'package:dart_eval/stdlib/async.dart'
         $FilterQuality,
         $ColorSpace,
         $Color,
+        $UiImage,
         $Clip,
+        $ClipOp,
+        $Paragraph,
+        $ImageByteFormat,
+        $PathFillType,
+        $PathMetric,
+        $PathMetrics,
+        $PathOperation,
         $PointerDeviceKind,
+        $PointMode,
         $FontStyle,
         $FontWeight,
         $TextDirection,
@@ -97,6 +123,14 @@ import 'package:dart_eval/stdlib/async.dart'
         $BoxHeightStyle,
         $BoxWidthStyle,
         $Canvas,
+        $RSTransform,
+        $Picture,
+        $PictureRecorder,
+        $TargetPixelFormat,
+        $Vertices,
+        $ColorFilter,
+        $MaskFilter,
+        $Shader,
         $FontFeature,
         $FontVariation,
         $ImageFilter,
@@ -123,8 +157,17 @@ import 'package:dart_eval/stdlib/typed_data.dart'
         $FilterQuality,
         $ColorSpace,
         $Color,
+        $UiImage,
         $Clip,
+        $ClipOp,
+        $Paragraph,
+        $ImageByteFormat,
+        $PathFillType,
+        $PathMetric,
+        $PathMetrics,
+        $PathOperation,
         $PointerDeviceKind,
+        $PointMode,
         $FontStyle,
         $FontWeight,
         $TextDirection,
@@ -142,6 +185,14 @@ import 'package:dart_eval/stdlib/typed_data.dart'
         $BoxHeightStyle,
         $BoxWidthStyle,
         $Canvas,
+        $RSTransform,
+        $Picture,
+        $PictureRecorder,
+        $TargetPixelFormat,
+        $Vertices,
+        $ColorFilter,
+        $MaskFilter,
+        $Shader,
         $FontFeature,
         $FontVariation,
         $ImageFilter,
@@ -160,6 +211,509 @@ import 'package:dart_eval/stdlib/typed_data.dart'
         $ViewConstraints,
         $ViewPadding;
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
+
+/// dart_eval enum wrapper binding for [ClipOp]
+class $ClipOp implements $Instance {
+  /// Configure this enum for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {
+    runtime.registerBridgeEnumValues('dart:ui', 'ClipOp', $ClipOp._$values);
+  }
+
+  /// Configure this enum for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeEnum($declaration);
+  }
+
+  /// Compile-time type specification of [$ClipOp]
+  static const $spec = BridgeTypeSpec('dart:ui', 'ClipOp');
+
+  /// Compile-time type declaration of [$ClipOp]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$ClipOp]
+  static const $declaration = BridgeEnumDef(
+    $type,
+
+    values: ['difference', 'intersect'],
+
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {},
+  );
+
+  static final _$values = {
+    'difference': $ClipOp.wrap(ClipOp.difference),
+    'intersect': $ClipOp.wrap(ClipOp.intersect),
+  };
+
+  final $Instance _superclass;
+
+  @override
+  final ClipOp $value;
+
+  @override
+  ClipOp get $reified => $value;
+
+  /// Wrap a [ClipOp] in a [$ClipOp]
+  $ClipOp.wrap(this.$value) : _superclass = $Object($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
+/// dart_eval wrapper binding for [Paragraph]
+class $Paragraph implements $Instance {
+  /// Configure this class for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {}
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
+  }
+
+  /// Compile-time type specification of [$Paragraph]
+  static const $spec = BridgeTypeSpec('dart:ui', 'Paragraph');
+
+  /// Compile-time type declaration of [$Paragraph]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$Paragraph]
+  static const $declaration = BridgeClassDef(
+    BridgeClassType($type, isAbstract: true),
+    constructors: {},
+
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {},
+    wrap: true,
+    bridge: false,
+  );
+
+  final $Instance _superclass;
+
+  @override
+  final Paragraph $value;
+
+  @override
+  Paragraph get $reified => $value;
+
+  /// Wrap a [Paragraph] in a [$Paragraph]
+  $Paragraph.wrap(this.$value) : _superclass = $Object($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
+/// dart_eval enum wrapper binding for [ImageByteFormat]
+class $ImageByteFormat implements $Instance {
+  /// Configure this enum for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {
+    runtime.registerBridgeEnumValues(
+      'dart:ui',
+      'ImageByteFormat',
+      $ImageByteFormat._$values,
+    );
+  }
+
+  /// Configure this enum for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeEnum($declaration);
+  }
+
+  /// Compile-time type specification of [$ImageByteFormat]
+  static const $spec = BridgeTypeSpec('dart:ui', 'ImageByteFormat');
+
+  /// Compile-time type declaration of [$ImageByteFormat]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$ImageByteFormat]
+  static const $declaration = BridgeEnumDef(
+    $type,
+
+    values: [
+      'rawRgba',
+      'rawStraightRgba',
+      'rawUnmodified',
+      'rawExtendedRgba128',
+      'png',
+    ],
+
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {},
+  );
+
+  static final _$values = {
+    'rawRgba': $ImageByteFormat.wrap(ImageByteFormat.rawRgba),
+    'rawStraightRgba': $ImageByteFormat.wrap(ImageByteFormat.rawStraightRgba),
+    'rawUnmodified': $ImageByteFormat.wrap(ImageByteFormat.rawUnmodified),
+    'rawExtendedRgba128': $ImageByteFormat.wrap(
+      ImageByteFormat.rawExtendedRgba128,
+    ),
+    'png': $ImageByteFormat.wrap(ImageByteFormat.png),
+  };
+
+  final $Instance _superclass;
+
+  @override
+  final ImageByteFormat $value;
+
+  @override
+  ImageByteFormat get $reified => $value;
+
+  /// Wrap a [ImageByteFormat] in a [$ImageByteFormat]
+  $ImageByteFormat.wrap(this.$value) : _superclass = $Object($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
+/// dart_eval enum wrapper binding for [PathFillType]
+class $PathFillType implements $Instance {
+  /// Configure this enum for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {
+    runtime.registerBridgeEnumValues(
+      'dart:ui',
+      'PathFillType',
+      $PathFillType._$values,
+    );
+  }
+
+  /// Configure this enum for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeEnum($declaration);
+  }
+
+  /// Compile-time type specification of [$PathFillType]
+  static const $spec = BridgeTypeSpec('dart:ui', 'PathFillType');
+
+  /// Compile-time type declaration of [$PathFillType]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$PathFillType]
+  static const $declaration = BridgeEnumDef(
+    $type,
+
+    values: ['nonZero', 'evenOdd'],
+
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {},
+  );
+
+  static final _$values = {
+    'nonZero': $PathFillType.wrap(PathFillType.nonZero),
+    'evenOdd': $PathFillType.wrap(PathFillType.evenOdd),
+  };
+
+  final $Instance _superclass;
+
+  @override
+  final PathFillType $value;
+
+  @override
+  PathFillType get $reified => $value;
+
+  /// Wrap a [PathFillType] in a [$PathFillType]
+  $PathFillType.wrap(this.$value) : _superclass = $Object($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
+/// dart_eval wrapper binding for [PathMetric]
+class $PathMetric implements $Instance {
+  /// Configure this class for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {}
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
+  }
+
+  /// Compile-time type specification of [$PathMetric]
+  static const $spec = BridgeTypeSpec('dart:ui', 'PathMetric');
+
+  /// Compile-time type declaration of [$PathMetric]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$PathMetric]
+  static const $declaration = BridgeClassDef(
+    BridgeClassType($type),
+    constructors: {},
+
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {},
+    wrap: true,
+    bridge: false,
+  );
+
+  final $Instance _superclass;
+
+  @override
+  final PathMetric $value;
+
+  @override
+  PathMetric get $reified => $value;
+
+  /// Wrap a [PathMetric] in a [$PathMetric]
+  $PathMetric.wrap(this.$value) : _superclass = $Object($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
+/// dart_eval wrapper binding for [PathMetrics]
+class $PathMetrics implements $Instance {
+  /// Configure this class for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {}
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
+  }
+
+  /// Compile-time type specification of [$PathMetrics]
+  static const $spec = BridgeTypeSpec('dart:ui', 'PathMetrics');
+
+  /// Compile-time type declaration of [$PathMetrics]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$PathMetrics]
+  static const $declaration = BridgeClassDef(
+    BridgeClassType(
+      $type,
+
+      $implements: [
+        BridgeTypeRef(BridgeTypeSpec('dart:core', 'Iterable'), [
+          BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:ui', 'PathMetric'), []),
+          ),
+        ]),
+      ],
+    ),
+    constructors: {},
+
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {},
+    wrap: true,
+    bridge: false,
+  );
+
+  final $Instance _superclass;
+
+  @override
+  final PathMetrics $value;
+
+  @override
+  PathMetrics get $reified => $value;
+
+  /// Wrap a [PathMetrics] in a [$PathMetrics]
+  $PathMetrics.wrap(this.$value) : _superclass = $Object($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
+/// dart_eval enum wrapper binding for [PathOperation]
+class $PathOperation implements $Instance {
+  /// Configure this enum for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {
+    runtime.registerBridgeEnumValues(
+      'dart:ui',
+      'PathOperation',
+      $PathOperation._$values,
+    );
+  }
+
+  /// Configure this enum for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeEnum($declaration);
+  }
+
+  /// Compile-time type specification of [$PathOperation]
+  static const $spec = BridgeTypeSpec('dart:ui', 'PathOperation');
+
+  /// Compile-time type declaration of [$PathOperation]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$PathOperation]
+  static const $declaration = BridgeEnumDef(
+    $type,
+
+    values: ['difference', 'intersect', 'union', 'xor', 'reverseDifference'],
+
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {},
+  );
+
+  static final _$values = {
+    'difference': $PathOperation.wrap(PathOperation.difference),
+    'intersect': $PathOperation.wrap(PathOperation.intersect),
+    'union': $PathOperation.wrap(PathOperation.union),
+    'xor': $PathOperation.wrap(PathOperation.xor),
+    'reverseDifference': $PathOperation.wrap(PathOperation.reverseDifference),
+  };
+
+  final $Instance _superclass;
+
+  @override
+  final PathOperation $value;
+
+  @override
+  PathOperation get $reified => $value;
+
+  /// Wrap a [PathOperation] in a [$PathOperation]
+  $PathOperation.wrap(this.$value) : _superclass = $Object($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
+/// dart_eval enum wrapper binding for [PointMode]
+class $PointMode implements $Instance {
+  /// Configure this enum for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {
+    runtime.registerBridgeEnumValues(
+      'dart:ui',
+      'PointMode',
+      $PointMode._$values,
+    );
+  }
+
+  /// Configure this enum for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeEnum($declaration);
+  }
+
+  /// Compile-time type specification of [$PointMode]
+  static const $spec = BridgeTypeSpec('dart:ui', 'PointMode');
+
+  /// Compile-time type declaration of [$PointMode]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$PointMode]
+  static const $declaration = BridgeEnumDef(
+    $type,
+
+    values: ['points', 'lines', 'polygon'],
+
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {},
+  );
+
+  static final _$values = {
+    'points': $PointMode.wrap(PointMode.points),
+    'lines': $PointMode.wrap(PointMode.lines),
+    'polygon': $PointMode.wrap(PointMode.polygon),
+  };
+
+  final $Instance _superclass;
+
+  @override
+  final PointMode $value;
+
+  @override
+  PointMode get $reified => $value;
+
+  /// Wrap a [PointMode] in a [$PointMode]
+  $PointMode.wrap(this.$value) : _superclass = $Object($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
 
 /// dart_eval enum wrapper binding for [BoxHeightStyle]
 class $BoxHeightStyle implements $Instance {
@@ -366,8 +920,8 @@ class $BoxWidthStyle implements $Instance {
   }
 }
 
-/// dart_eval wrapper binding for [Canvas]
-class $Canvas implements $Instance {
+/// dart_eval wrapper binding for [RSTransform]
+class $RSTransform implements $Instance {
   /// Configure this class for use in a [Runtime]
   static void configureForRuntime(Runtime runtime) {}
 
@@ -376,15 +930,15 @@ class $Canvas implements $Instance {
     registry.defineBridgeClass($declaration);
   }
 
-  /// Compile-time type specification of [$Canvas]
-  static const $spec = BridgeTypeSpec('dart:ui', 'Canvas');
+  /// Compile-time type specification of [$RSTransform]
+  static const $spec = BridgeTypeSpec('dart:ui', 'RSTransform');
 
-  /// Compile-time type declaration of [$Canvas]
+  /// Compile-time type declaration of [$RSTransform]
   static const $type = BridgeTypeRef($spec);
 
-  /// Compile-time class declaration of [$Canvas]
+  /// Compile-time class declaration of [$RSTransform]
   static const $declaration = BridgeClassDef(
-    BridgeClassType($type, isAbstract: true),
+    BridgeClassType($type),
     constructors: {},
 
     methods: {},
@@ -398,13 +952,235 @@ class $Canvas implements $Instance {
   final $Instance _superclass;
 
   @override
-  final Canvas $value;
+  final RSTransform $value;
 
   @override
-  Canvas get $reified => $value;
+  RSTransform get $reified => $value;
 
-  /// Wrap a [Canvas] in a [$Canvas]
-  $Canvas.wrap(this.$value) : _superclass = $Object($value);
+  /// Wrap a [RSTransform] in a [$RSTransform]
+  $RSTransform.wrap(this.$value) : _superclass = $Object($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
+/// dart_eval wrapper binding for [Vertices]
+class $Vertices implements $Instance {
+  /// Configure this class for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {}
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
+  }
+
+  /// Compile-time type specification of [$Vertices]
+  static const $spec = BridgeTypeSpec('dart:ui', 'Vertices');
+
+  /// Compile-time type declaration of [$Vertices]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$Vertices]
+  static const $declaration = BridgeClassDef(
+    BridgeClassType($type),
+    constructors: {},
+
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {},
+    wrap: true,
+    bridge: false,
+  );
+
+  final $Instance _superclass;
+
+  @override
+  final Vertices $value;
+
+  @override
+  Vertices get $reified => $value;
+
+  /// Wrap a [Vertices] in a [$Vertices]
+  $Vertices.wrap(this.$value) : _superclass = $Object($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
+/// dart_eval wrapper binding for [ColorFilter]
+class $ColorFilter implements $Instance {
+  /// Configure this class for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {}
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
+  }
+
+  /// Compile-time type specification of [$ColorFilter]
+  static const $spec = BridgeTypeSpec('dart:ui', 'ColorFilter');
+
+  /// Compile-time type declaration of [$ColorFilter]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$ColorFilter]
+  static const $declaration = BridgeClassDef(
+    BridgeClassType(
+      $type,
+
+      $implements: [
+        BridgeTypeRef(BridgeTypeSpec('dart:ui', 'ImageFilter'), []),
+      ],
+    ),
+    constructors: {},
+
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {},
+    wrap: true,
+    bridge: false,
+  );
+
+  final $Instance _superclass;
+
+  @override
+  final ColorFilter $value;
+
+  @override
+  ColorFilter get $reified => $value;
+
+  /// Wrap a [ColorFilter] in a [$ColorFilter]
+  $ColorFilter.wrap(this.$value) : _superclass = $ImageFilter.wrap($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
+/// dart_eval wrapper binding for [MaskFilter]
+class $MaskFilter implements $Instance {
+  /// Configure this class for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {}
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
+  }
+
+  /// Compile-time type specification of [$MaskFilter]
+  static const $spec = BridgeTypeSpec('dart:ui', 'MaskFilter');
+
+  /// Compile-time type declaration of [$MaskFilter]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$MaskFilter]
+  static const $declaration = BridgeClassDef(
+    BridgeClassType($type),
+    constructors: {},
+
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {},
+    wrap: true,
+    bridge: false,
+  );
+
+  final $Instance _superclass;
+
+  @override
+  final MaskFilter $value;
+
+  @override
+  MaskFilter get $reified => $value;
+
+  /// Wrap a [MaskFilter] in a [$MaskFilter]
+  $MaskFilter.wrap(this.$value) : _superclass = $Object($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
+/// dart_eval wrapper binding for [Shader]
+class $Shader implements $Instance {
+  /// Configure this class for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {}
+
+  /// Configure this class for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeClass($declaration);
+  }
+
+  /// Compile-time type specification of [$Shader]
+  static const $spec = BridgeTypeSpec('dart:ui', 'Shader');
+
+  /// Compile-time type declaration of [$Shader]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$Shader]
+  static const $declaration = BridgeClassDef(
+    BridgeClassType($type),
+    constructors: {},
+
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {},
+    wrap: true,
+    bridge: false,
+  );
+
+  final $Instance _superclass;
+
+  @override
+  final Shader $value;
+
+  @override
+  Shader get $reified => $value;
+
+  /// Wrap a [Shader] in a [$Shader]
+  $Shader.wrap(this.$value) : _superclass = $Object($value);
 
   @override
   int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
@@ -636,60 +1412,6 @@ class $OffsetBase implements $Instance {
   }
 }
 
-/// dart_eval wrapper binding for [Paint]
-class $Paint implements $Instance {
-  /// Configure this class for use in a [Runtime]
-  static void configureForRuntime(Runtime runtime) {}
-
-  /// Configure this class for use during compilation
-  static void configureForCompile(BridgeDeclarationRegistry registry) {
-    registry.defineBridgeClass($declaration);
-  }
-
-  /// Compile-time type specification of [$Paint]
-  static const $spec = BridgeTypeSpec('dart:ui', 'Paint');
-
-  /// Compile-time type declaration of [$Paint]
-  static const $type = BridgeTypeRef($spec);
-
-  /// Compile-time class declaration of [$Paint]
-  static const $declaration = BridgeClassDef(
-    BridgeClassType($type),
-    constructors: {},
-
-    methods: {},
-    getters: {},
-    setters: {},
-    fields: {},
-    wrap: true,
-    bridge: false,
-  );
-
-  final $Instance _superclass;
-
-  @override
-  final Paint $value;
-
-  @override
-  Paint get $reified => $value;
-
-  /// Wrap a [Paint] in a [$Paint]
-  $Paint.wrap(this.$value) : _superclass = $Object($value);
-
-  @override
-  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
-
-  @override
-  $Value? $getProperty(Runtime runtime, String identifier) {
-    return _superclass.$getProperty(runtime, identifier);
-  }
-
-  @override
-  void $setProperty(Runtime runtime, String identifier, $Value value) {
-    return _superclass.$setProperty(runtime, identifier, value);
-  }
-}
-
 /// dart_eval wrapper binding for [ParagraphStyle]
 class $ParagraphStyle implements $Instance {
   /// Configure this class for use in a [Runtime]
@@ -729,60 +1451,6 @@ class $ParagraphStyle implements $Instance {
 
   /// Wrap a [ParagraphStyle] in a [$ParagraphStyle]
   $ParagraphStyle.wrap(this.$value) : _superclass = $Object($value);
-
-  @override
-  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
-
-  @override
-  $Value? $getProperty(Runtime runtime, String identifier) {
-    return _superclass.$getProperty(runtime, identifier);
-  }
-
-  @override
-  void $setProperty(Runtime runtime, String identifier, $Value value) {
-    return _superclass.$setProperty(runtime, identifier, value);
-  }
-}
-
-/// dart_eval wrapper binding for [Path]
-class $Path implements $Instance {
-  /// Configure this class for use in a [Runtime]
-  static void configureForRuntime(Runtime runtime) {}
-
-  /// Configure this class for use during compilation
-  static void configureForCompile(BridgeDeclarationRegistry registry) {
-    registry.defineBridgeClass($declaration);
-  }
-
-  /// Compile-time type specification of [$Path]
-  static const $spec = BridgeTypeSpec('dart:ui', 'Path');
-
-  /// Compile-time type declaration of [$Path]
-  static const $type = BridgeTypeRef($spec);
-
-  /// Compile-time class declaration of [$Path]
-  static const $declaration = BridgeClassDef(
-    BridgeClassType($type, isAbstract: true),
-    constructors: {},
-
-    methods: {},
-    getters: {},
-    setters: {},
-    fields: {},
-    wrap: true,
-    bridge: false,
-  );
-
-  final $Instance _superclass;
-
-  @override
-  final Path $value;
-
-  @override
-  Path get $reified => $value;
-
-  /// Wrap a [Path] in a [$Path]
-  $Path.wrap(this.$value) : _superclass = $Object($value);
 
   @override
   int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
@@ -1285,7 +1953,7 @@ class $UiTextStyle implements $Instance {
   /// Compile-time type declaration of [$UiTextStyle]
   static const $type = BridgeTypeRef($spec);
 
-  /// Compile-time class declaration of [$TextStyle]
+  /// Compile-time class declaration of [$UiTextStyle]
   static const $declaration = BridgeClassDef(
     BridgeClassType($type),
     constructors: {},

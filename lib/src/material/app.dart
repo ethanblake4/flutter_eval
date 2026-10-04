@@ -34,6 +34,7 @@ import 'package:flutter/rendering.dart';
 import '../widgets/overlay.dart';
 import '../supporting/flutter_widgets_navigator.dart';
 import '../widgets/framework_wrappers.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import '../sky_engine/ui/text.dart';
 import '../supporting/flutter_widgets_heroes.dart';
@@ -257,6 +258,7 @@ class $MaterialApp implements $Instance {
                 ]),
               ),
               true,
+              defaultValueSource: "const <String, WidgetBuilder>{}",
             ),
 
             BridgeParameter(
@@ -441,6 +443,7 @@ class $MaterialApp implements $Instance {
                 ]),
               ),
               true,
+              defaultValueSource: "const <NavigatorObserver>[]",
             ),
 
             BridgeParameter(
@@ -502,6 +505,7 @@ class $MaterialApp implements $Instance {
                 nullable: true,
               ),
               true,
+              defaultValueSource: "''",
             ),
 
             BridgeParameter(
@@ -617,6 +621,7 @@ class $MaterialApp implements $Instance {
                 nullable: true,
               ),
               true,
+              defaultValueSource: "ThemeMode.system",
             ),
 
             BridgeParameter(
@@ -625,6 +630,7 @@ class $MaterialApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'Duration'), []),
               ),
               true,
+              defaultValueSource: "kThemeAnimationDuration",
             ),
 
             BridgeParameter(
@@ -639,6 +645,7 @@ class $MaterialApp implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "Curves.linear",
             ),
 
             BridgeParameter(
@@ -779,6 +786,7 @@ class $MaterialApp implements $Instance {
                 ]),
               ),
               true,
+              defaultValueSource: "const <Locale>[Locale('en', 'US')]",
             ),
 
             BridgeParameter(
@@ -787,6 +795,7 @@ class $MaterialApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -795,6 +804,7 @@ class $MaterialApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -803,6 +813,7 @@ class $MaterialApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -811,6 +822,7 @@ class $MaterialApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -819,6 +831,7 @@ class $MaterialApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -827,6 +840,7 @@ class $MaterialApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -919,6 +933,7 @@ class $MaterialApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1277,6 +1292,7 @@ class $MaterialApp implements $Instance {
                 nullable: true,
               ),
               true,
+              defaultValueSource: "ThemeMode.system",
             ),
 
             BridgeParameter(
@@ -1285,6 +1301,7 @@ class $MaterialApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'Duration'), []),
               ),
               true,
+              defaultValueSource: "kThemeAnimationDuration",
             ),
 
             BridgeParameter(
@@ -1299,6 +1316,7 @@ class $MaterialApp implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "Curves.linear",
             ),
 
             BridgeParameter(
@@ -1439,6 +1457,7 @@ class $MaterialApp implements $Instance {
                 ]),
               ),
               true,
+              defaultValueSource: "const <Locale>[Locale('en', 'US')]",
             ),
 
             BridgeParameter(
@@ -1447,6 +1466,7 @@ class $MaterialApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1455,6 +1475,7 @@ class $MaterialApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1463,6 +1484,7 @@ class $MaterialApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1471,6 +1493,7 @@ class $MaterialApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1479,6 +1502,7 @@ class $MaterialApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1487,6 +1511,7 @@ class $MaterialApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -1579,6 +1604,7 @@ class $MaterialApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -2612,7 +2638,9 @@ class $MaterialApp implements $Instance {
             ? Curves.linear
             : _arg21OrNull!.$value,
         locale: _arg22OrNull?.$value,
-        localizationsDelegates: _arg23OrNull?.$value,
+        localizationsDelegates: _arg23OrNull == null || _arg23OrNull is $null
+            ? null
+            : TypedInterop.exportIterable(_arg23OrNull, runtime),
         localeListResolutionCallback:
             _arg24OrNull == null || _arg24OrNull is $null
             ? null
@@ -2676,7 +2704,7 @@ class $MaterialApp implements $Instance {
               ),
         supportedLocales: _arg26OrNull == null
             ? const <Locale>[Locale('en', 'US')]
-            : _arg26OrNull!.$value,
+            : TypedInterop.exportIterable(_arg26OrNull, runtime),
         debugShowMaterialGrid: _arg27OrNull == null
             ? false
             : (_arg27OrNull as $bool).$value,
@@ -2815,7 +2843,9 @@ class $MaterialApp implements $Instance {
             ? Curves.linear
             : _arg18OrNull!.$value,
         locale: _arg19OrNull?.$value,
-        localizationsDelegates: _arg20OrNull?.$value,
+        localizationsDelegates: _arg20OrNull == null || _arg20OrNull is $null
+            ? null
+            : TypedInterop.exportIterable(_arg20OrNull, runtime),
         localeListResolutionCallback:
             _arg21OrNull == null || _arg21OrNull is $null
             ? null
@@ -2879,7 +2909,7 @@ class $MaterialApp implements $Instance {
               ),
         supportedLocales: _arg23OrNull == null
             ? const <Locale>[Locale('en', 'US')]
-            : _arg23OrNull!.$value,
+            : TypedInterop.exportIterable(_arg23OrNull, runtime),
         debugShowMaterialGrid: _arg24OrNull == null
             ? false
             : (_arg24OrNull as $bool).$value,

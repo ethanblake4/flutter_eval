@@ -223,6 +223,7 @@ class $FloatingActionButton implements $Instance {
                 nullable: true,
               ),
               true,
+              defaultValueSource: "const _DefaultHeroTag()",
             ),
 
             BridgeParameter(
@@ -308,6 +309,7 @@ class $FloatingActionButton implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -331,6 +333,7 @@ class $FloatingActionButton implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Clip'), []),
               ),
               true,
+              defaultValueSource: "Clip.none",
             ),
 
             BridgeParameter(
@@ -354,6 +357,7 @@ class $FloatingActionButton implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -377,6 +381,7 @@ class $FloatingActionButton implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -488,6 +493,7 @@ class $FloatingActionButton implements $Instance {
                 nullable: true,
               ),
               true,
+              defaultValueSource: "const _DefaultHeroTag()",
             ),
 
             BridgeParameter(
@@ -588,6 +594,7 @@ class $FloatingActionButton implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Clip'), []),
               ),
               true,
+              defaultValueSource: "Clip.none",
             ),
 
             BridgeParameter(
@@ -611,6 +618,7 @@ class $FloatingActionButton implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -737,6 +745,7 @@ class $FloatingActionButton implements $Instance {
                 nullable: true,
               ),
               true,
+              defaultValueSource: "const _DefaultHeroTag()",
             ),
 
             BridgeParameter(
@@ -837,6 +846,7 @@ class $FloatingActionButton implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Clip'), []),
               ),
               true,
+              defaultValueSource: "Clip.none",
             ),
 
             BridgeParameter(
@@ -860,6 +870,7 @@ class $FloatingActionButton implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -962,6 +973,7 @@ class $FloatingActionButton implements $Instance {
                 nullable: true,
               ),
               true,
+              defaultValueSource: "const _DefaultHeroTag()",
             ),
 
             BridgeParameter(
@@ -1071,6 +1083,7 @@ class $FloatingActionButton implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -1094,6 +1107,7 @@ class $FloatingActionButton implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Clip'), []),
               ),
               true,
+              defaultValueSource: "Clip.none",
             ),
 
             BridgeParameter(
@@ -1117,6 +1131,7 @@ class $FloatingActionButton implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(

@@ -251,6 +251,7 @@ class $ImageProvider<T extends Object> implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "ImageConfiguration.empty",
             ),
           ],
           params: [],
@@ -281,6 +282,8 @@ class $ImageProvider<T extends Object> implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
     },
     getters: {},
@@ -691,6 +694,7 @@ class $NetworkImage implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "ImageConfiguration.empty",
             ),
           ],
           params: [],
@@ -729,6 +733,8 @@ class $NetworkImage implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
     },
     getters: {
@@ -740,6 +746,8 @@ class $NetworkImage implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'scale': BridgeMethodDef(
@@ -750,6 +758,8 @@ class $NetworkImage implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'headers': BridgeMethodDef(
@@ -768,6 +778,8 @@ class $NetworkImage implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'webHtmlElementStrategy': BridgeMethodDef(
@@ -784,6 +796,8 @@ class $NetworkImage implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
     },
     setters: {},
@@ -1032,6 +1046,7 @@ class $MemoryImage implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "1.0",
             ),
           ],
           params: [
@@ -1194,6 +1209,7 @@ class $MemoryImage implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "ImageConfiguration.empty",
             ),
           ],
           params: [],
@@ -1284,7 +1300,7 @@ class $MemoryImage implements $Instance {
     switch (identifier) {
       case 'bytes':
         final _bytes = $value.bytes;
-        return $Uint8List.wrap(_bytes);
+        return $Object(_bytes);
       case 'scale':
         final _scale = $value.scale;
         return $double(_scale);
@@ -1507,6 +1523,7 @@ class $ResizeImage implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "ResizeImagePolicy.exact",
             ),
 
             BridgeParameter(
@@ -1515,6 +1532,7 @@ class $ResizeImage implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
           ],
           params: [
@@ -1684,6 +1702,7 @@ class $ResizeImage implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "ImageConfiguration.empty",
             ),
           ],
           params: [],

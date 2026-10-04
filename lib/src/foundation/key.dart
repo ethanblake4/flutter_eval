@@ -34,8 +34,8 @@ import 'package:dart_eval/stdlib/typed_data.dart'
     hide $Key, $LocalKey, $ValueKey, $UniqueKey;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
-import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
 
 /// dart_eval wrapper binding for [Key]
 class $Key implements $Instance {
@@ -283,7 +283,12 @@ class $ValueKey<T> implements $Instance {
 
   /// Wrapper for the [ValueKey.new] constructor
   static $Value? $new(Runtime runtime, Object? r, Object? s, Object? c) {
-    return $ValueKey.wrap(ValueKey((r as $Value?)!.$value));
+    return $ValueKey.wrap(
+      ValueKey(
+        TypedInterop.exportExternal((r as $Value?), runtime: runtime)
+            as dynamic,
+      ),
+    );
   }
 
   final $Instance _superclass;

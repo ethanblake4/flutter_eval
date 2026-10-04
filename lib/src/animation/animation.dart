@@ -327,6 +327,8 @@ class $Animation<T> implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'removeListener': BridgeMethodDef(
@@ -351,6 +353,8 @@ class $Animation<T> implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'addStatusListener': BridgeMethodDef(
@@ -389,6 +393,8 @@ class $Animation<T> implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'removeStatusListener': BridgeMethodDef(
@@ -427,6 +433,8 @@ class $Animation<T> implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'drive': BridgeMethodDef(
@@ -477,6 +485,8 @@ class $Animation<T> implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'status': BridgeMethodDef(
@@ -493,6 +503,8 @@ class $Animation<T> implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'isDismissed': BridgeMethodDef(

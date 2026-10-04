@@ -285,6 +285,7 @@ class $Scaffold implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "AlignmentDirectional.centerEnd",
             ),
 
             BridgeParameter(
@@ -442,6 +443,7 @@ class $Scaffold implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -456,6 +458,7 @@ class $Scaffold implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DragStartBehavior.start",
             ),
 
             BridgeParameter(
@@ -464,6 +467,7 @@ class $Scaffold implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -472,6 +476,7 @@ class $Scaffold implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -480,6 +485,7 @@ class $Scaffold implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -547,6 +553,7 @@ class $Scaffold implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "_defaultBottomSheetScrimBuilder",
             ),
 
             BridgeParameter(
@@ -564,6 +571,7 @@ class $Scaffold implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -572,6 +580,7 @@ class $Scaffold implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -709,6 +718,7 @@ class $Scaffold implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
           ],
           params: [
@@ -1992,6 +2002,7 @@ class $ScaffoldMessengerState implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "SnackBarClosedReason.remove",
             ),
           ],
           params: [],
@@ -2014,6 +2025,7 @@ class $ScaffoldMessengerState implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "SnackBarClosedReason.hide",
             ),
           ],
           params: [],
@@ -2093,6 +2105,7 @@ class $ScaffoldMessengerState implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "MaterialBannerClosedReason.remove",
             ),
           ],
           params: [],
@@ -2115,6 +2128,7 @@ class $ScaffoldMessengerState implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "MaterialBannerClosedReason.hide",
             ),
           ],
           params: [],

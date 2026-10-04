@@ -132,6 +132,7 @@ class $KeyEvent implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "ui.KeyEventDeviceType.keyboard",
             ),
 
             BridgeParameter(
@@ -140,6 +141,7 @@ class $KeyEvent implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
           ],
           params: [],
@@ -406,6 +408,7 @@ class $KeyDownEvent implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -417,6 +420,7 @@ class $KeyDownEvent implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "ui.KeyEventDeviceType.keyboard",
             ),
           ],
           params: [],
@@ -583,6 +587,7 @@ class $KeyUpEvent implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -594,6 +599,7 @@ class $KeyUpEvent implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "ui.KeyEventDeviceType.keyboard",
             ),
           ],
           params: [],
@@ -770,6 +776,7 @@ class $KeyRepeatEvent implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "ui.KeyEventDeviceType.keyboard",
             ),
           ],
           params: [],

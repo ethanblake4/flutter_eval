@@ -270,6 +270,7 @@ class $TextButton implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -303,6 +304,7 @@ class $TextButton implements $Instance {
                 nullable: true,
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -469,6 +471,7 @@ class $TextButton implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -478,6 +481,7 @@ class $TextButton implements $Instance {
                 nullable: true,
               ),
               true,
+              defaultValueSource: "Clip.none",
             ),
 
             BridgeParameter(

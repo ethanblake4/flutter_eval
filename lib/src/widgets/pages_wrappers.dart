@@ -203,6 +203,7 @@ class $PageRoute$bridge<T> extends PageRoute<T> with $Bridge<PageRoute<T>> {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -211,6 +212,7 @@ class $PageRoute$bridge<T> extends PageRoute<T> with $Bridge<PageRoute<T>> {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -219,6 +221,7 @@ class $PageRoute$bridge<T> extends PageRoute<T> with $Bridge<PageRoute<T>> {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
           ],
           params: [],
@@ -318,6 +321,7 @@ class $PageRoute$bridge<T> extends PageRoute<T> with $Bridge<PageRoute<T>> {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
           ],
           params: [],
@@ -782,6 +786,8 @@ class $PageRoute$bridge<T> extends PageRoute<T> with $Bridge<PageRoute<T>> {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'buildTransitions': BridgeMethodDef(
@@ -1131,6 +1137,8 @@ class $PageRoute$bridge<T> extends PageRoute<T> with $Bridge<PageRoute<T>> {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'barrierLabel': BridgeMethodDef(
@@ -1142,6 +1150,8 @@ class $PageRoute$bridge<T> extends PageRoute<T> with $Bridge<PageRoute<T>> {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'barrierCurve': BridgeMethodDef(
@@ -1168,6 +1178,8 @@ class $PageRoute$bridge<T> extends PageRoute<T> with $Bridge<PageRoute<T>> {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'popGestureInProgress': BridgeMethodDef(
@@ -1325,6 +1337,8 @@ class $PageRoute$bridge<T> extends PageRoute<T> with $Bridge<PageRoute<T>> {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'reverseTransitionDuration': BridgeMethodDef(
@@ -1506,6 +1520,8 @@ class $PageRoute$bridge<T> extends PageRoute<T> with $Bridge<PageRoute<T>> {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'isFirst': BridgeMethodDef(
@@ -3260,7 +3276,9 @@ class $PageRoute<T> implements $Instance {
     Object? c,
   ) {
     final self = target! as $PageRoute;
-    final result = self.$value.didPop((r as $Value?)!.$value);
+    final result = self.$value.didPop(
+      TypedInterop.exportExternal((r as $Value?), runtime: runtime) as dynamic,
+    );
     return $bool(result);
   }
 
@@ -3406,7 +3424,7 @@ class $PageRoute<T> implements $Instance {
     final self = target! as $PageRoute;
     self.$value.onPopInvokedWithResult(
       (r as $bool).$value,
-      (s as $Value?)!.$value,
+      TypedInterop.exportExternal((s as $Value?), runtime: runtime) as dynamic,
     );
     return null;
   }
@@ -3420,7 +3438,9 @@ class $PageRoute<T> implements $Instance {
     Object? c,
   ) {
     final self = target! as $PageRoute;
-    self.$value.didComplete((r as $Value?)!.$value);
+    self.$value.didComplete(
+      TypedInterop.exportExternal((r as $Value?), runtime: runtime) as dynamic,
+    );
     return null;
   }
 

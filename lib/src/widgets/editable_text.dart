@@ -325,6 +325,8 @@ class $TextEditingController implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       'text': BridgeMethodDef(

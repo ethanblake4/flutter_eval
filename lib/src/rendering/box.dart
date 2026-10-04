@@ -153,6 +153,7 @@ class $BoxConstraints implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
 
             BridgeParameter(
@@ -161,6 +162,7 @@ class $BoxConstraints implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "double.infinity",
             ),
 
             BridgeParameter(
@@ -169,6 +171,7 @@ class $BoxConstraints implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
 
             BridgeParameter(
@@ -177,6 +180,7 @@ class $BoxConstraints implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "double.infinity",
             ),
           ],
           params: [],
@@ -238,6 +242,7 @@ class $BoxConstraints implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "double.infinity",
             ),
 
             BridgeParameter(
@@ -246,6 +251,7 @@ class $BoxConstraints implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "double.infinity",
             ),
           ],
           params: [],
@@ -523,6 +529,7 @@ class $BoxConstraints implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "double.infinity",
             ),
           ],
         ),
@@ -541,6 +548,7 @@ class $BoxConstraints implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "double.infinity",
             ),
           ],
         ),
@@ -791,6 +799,7 @@ class $BoxConstraints implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(

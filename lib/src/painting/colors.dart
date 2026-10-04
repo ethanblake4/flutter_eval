@@ -270,7 +270,12 @@ class $ColorSwatch<T> implements $Instance {
     Object? c,
   ) {
     final self = target! as $ColorSwatch;
-    final result = self.$value[(r as $Value?)!.$value];
+    final result =
+        self.$value[TypedInterop.exportExternal(
+              (r as $Value?),
+              runtime: runtime,
+            )
+            as dynamic];
     return result == null ? const $null() : $Color.wrap(result);
   }
 

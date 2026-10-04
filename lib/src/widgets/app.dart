@@ -34,6 +34,7 @@ import 'package:flutter/rendering.dart';
 import './overlay.dart';
 import '../supporting/flutter_widgets_navigator.dart';
 import './framework_wrappers.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import '../sky_engine/ui/text.dart';
 import 'package:dart_eval/src/eval/utils/wrap_helper.dart';
@@ -393,6 +394,7 @@ class $WidgetsApp implements $Instance {
                 ]),
               ),
               true,
+              defaultValueSource: "const <NavigatorObserver>[]",
             ),
 
             BridgeParameter(
@@ -533,6 +535,7 @@ class $WidgetsApp implements $Instance {
                 ]),
               ),
               true,
+              defaultValueSource: "const <String, WidgetBuilder>{}",
             ),
 
             BridgeParameter(
@@ -788,6 +791,7 @@ class $WidgetsApp implements $Instance {
                 ]),
               ),
               true,
+              defaultValueSource: "const <Locale>[Locale('en', 'US')]",
             ),
 
             BridgeParameter(
@@ -796,6 +800,7 @@ class $WidgetsApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -804,6 +809,7 @@ class $WidgetsApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -812,6 +818,7 @@ class $WidgetsApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -820,6 +827,7 @@ class $WidgetsApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -1145,6 +1153,7 @@ class $WidgetsApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
           ],
           params: [],
@@ -1542,6 +1551,7 @@ class $WidgetsApp implements $Instance {
                 ]),
               ),
               true,
+              defaultValueSource: "const <Locale>[Locale('en', 'US')]",
             ),
 
             BridgeParameter(
@@ -1550,6 +1560,7 @@ class $WidgetsApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1558,6 +1569,7 @@ class $WidgetsApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1566,6 +1578,7 @@ class $WidgetsApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1574,6 +1587,7 @@ class $WidgetsApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -1899,6 +1913,7 @@ class $WidgetsApp implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
           ],
           params: [],
@@ -3169,7 +3184,9 @@ class $WidgetsApp implements $Instance {
         textStyle: _arg14OrNull?.$value,
         color: _arg15!.$value,
         locale: _arg16OrNull?.$value,
-        localizationsDelegates: _arg17OrNull?.$value,
+        localizationsDelegates: _arg17OrNull == null || _arg17OrNull is $null
+            ? null
+            : TypedInterop.exportIterable(_arg17OrNull, runtime),
         localeListResolutionCallback:
             _arg18OrNull == null || _arg18OrNull is $null
             ? null
@@ -3233,7 +3250,7 @@ class $WidgetsApp implements $Instance {
               ),
         supportedLocales: _arg20OrNull == null
             ? const <Locale>[Locale('en', 'US')]
-            : _arg20OrNull!.$value,
+            : TypedInterop.exportIterable(_arg20OrNull, runtime),
         showPerformanceOverlay: _arg21OrNull == null
             ? false
             : (_arg21OrNull as $bool).$value,
@@ -3420,7 +3437,9 @@ class $WidgetsApp implements $Instance {
         textStyle: _arg10OrNull?.$value,
         color: _arg11!.$value,
         locale: _arg12OrNull?.$value,
-        localizationsDelegates: _arg13OrNull?.$value,
+        localizationsDelegates: _arg13OrNull == null || _arg13OrNull is $null
+            ? null
+            : TypedInterop.exportIterable(_arg13OrNull, runtime),
         localeListResolutionCallback:
             _arg14OrNull == null || _arg14OrNull is $null
             ? null
@@ -3484,7 +3503,7 @@ class $WidgetsApp implements $Instance {
               ),
         supportedLocales: _arg16OrNull == null
             ? const <Locale>[Locale('en', 'US')]
-            : _arg16OrNull!.$value,
+            : TypedInterop.exportIterable(_arg16OrNull, runtime),
         showPerformanceOverlay: _arg17OrNull == null
             ? false
             : (_arg17OrNull as $bool).$value,

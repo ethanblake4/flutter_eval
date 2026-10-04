@@ -379,6 +379,8 @@ class $BorderRadiusGeometry implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       '*': BridgeMethodDef(
@@ -403,6 +405,8 @@ class $BorderRadiusGeometry implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       '/': BridgeMethodDef(
@@ -427,6 +431,8 @@ class $BorderRadiusGeometry implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       '~/': BridgeMethodDef(
@@ -451,6 +457,8 @@ class $BorderRadiusGeometry implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       '%': BridgeMethodDef(
@@ -475,6 +483,8 @@ class $BorderRadiusGeometry implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'lerp': BridgeMethodDef(
@@ -557,6 +567,8 @@ class $BorderRadiusGeometry implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
     },
     getters: {},
@@ -952,6 +964,7 @@ class $BorderRadius implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Radius'), []),
               ),
               true,
+              defaultValueSource: "Radius.zero",
             ),
 
             BridgeParameter(
@@ -960,6 +973,7 @@ class $BorderRadius implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Radius'), []),
               ),
               true,
+              defaultValueSource: "Radius.zero",
             ),
           ],
           params: [],
@@ -977,6 +991,7 @@ class $BorderRadius implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Radius'), []),
               ),
               true,
+              defaultValueSource: "Radius.zero",
             ),
 
             BridgeParameter(
@@ -985,6 +1000,7 @@ class $BorderRadius implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Radius'), []),
               ),
               true,
+              defaultValueSource: "Radius.zero",
             ),
           ],
           params: [],
@@ -1002,6 +1018,7 @@ class $BorderRadius implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Radius'), []),
               ),
               true,
+              defaultValueSource: "Radius.zero",
             ),
 
             BridgeParameter(
@@ -1010,6 +1027,7 @@ class $BorderRadius implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Radius'), []),
               ),
               true,
+              defaultValueSource: "Radius.zero",
             ),
 
             BridgeParameter(
@@ -1018,6 +1036,7 @@ class $BorderRadius implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Radius'), []),
               ),
               true,
+              defaultValueSource: "Radius.zero",
             ),
 
             BridgeParameter(
@@ -1026,6 +1045,7 @@ class $BorderRadius implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Radius'), []),
               ),
               true,
+              defaultValueSource: "Radius.zero",
             ),
           ],
           params: [],

@@ -174,6 +174,7 @@ class $AnimationController implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
 
             BridgeParameter(
@@ -182,6 +183,7 @@ class $AnimationController implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "1.0",
             ),
 
             BridgeParameter(
@@ -196,6 +198,7 @@ class $AnimationController implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "AnimationBehavior.normal",
             ),
 
             BridgeParameter(
@@ -227,6 +230,7 @@ class $AnimationController implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "0.0",
             ),
 
             BridgeParameter(
@@ -282,6 +286,7 @@ class $AnimationController implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "AnimationBehavior.preserve",
             ),
           ],
           params: [],
@@ -327,6 +332,8 @@ class $AnimationController implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'removeStatusListener': BridgeMethodDef(
@@ -365,6 +372,8 @@ class $AnimationController implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'addListener': BridgeMethodDef(
@@ -389,6 +398,8 @@ class $AnimationController implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'removeListener': BridgeMethodDef(
@@ -413,6 +424,8 @@ class $AnimationController implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'dispose': BridgeMethodDef(
@@ -602,6 +615,7 @@ class $AnimationController implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "Curves.linear",
             ),
           ],
           params: [
@@ -649,6 +663,7 @@ class $AnimationController implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "Curves.linear",
             ),
           ],
           params: [
@@ -699,6 +714,7 @@ class $AnimationController implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -741,6 +757,7 @@ class $AnimationController implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'double'), []),
               ),
               true,
+              defaultValueSource: "1.0",
             ),
 
             BridgeParameter(
@@ -847,6 +864,7 @@ class $AnimationController implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
           ],
           params: [],

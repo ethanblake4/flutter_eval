@@ -64,6 +64,7 @@ import 'package:flutter/rendering.dart';
 import './routes.dart';
 import './overlay.dart';
 import '../supporting/flutter_widgets_navigator.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import './framework_wrappers.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import '../supporting/flutter_widgets_focus_traversal.dart';
@@ -74,7 +75,6 @@ import '../supporting/flutter_widgets_overlay.dart';
 import '../foundation/notifiers.dart';
 import '../scheduler/ticker.dart';
 import '../foundation/diagnostics.dart';
-import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 
 /// dart_eval wrapper binding for [Navigator]
 class $Navigator implements $Instance {
@@ -355,6 +355,7 @@ class $Navigator implements $Instance {
                 ]),
               ),
               true,
+              defaultValueSource: "const <Page<dynamic>>[]",
             ),
 
             BridgeParameter(
@@ -460,6 +461,7 @@ class $Navigator implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "Navigator.defaultGenerateInitialRoutes",
             ),
 
             BridgeParameter(
@@ -558,6 +560,7 @@ class $Navigator implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "const DefaultTransitionDelegate<dynamic>()",
             ),
 
             BridgeParameter(
@@ -566,6 +569,7 @@ class $Navigator implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -574,6 +578,7 @@ class $Navigator implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:ui', 'Clip'), []),
               ),
               true,
+              defaultValueSource: "Clip.hardEdge",
             ),
 
             BridgeParameter(
@@ -592,6 +597,7 @@ class $Navigator implements $Instance {
                 ]),
               ),
               true,
+              defaultValueSource: "const <NavigatorObserver>[]",
             ),
 
             BridgeParameter(
@@ -600,6 +606,7 @@ class $Navigator implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "true",
             ),
 
             BridgeParameter(
@@ -623,6 +630,7 @@ class $Navigator implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "kDefaultRouteTraversalEdgeBehavior",
             ),
 
             BridgeParameter(
@@ -637,6 +645,8 @@ class $Navigator implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource:
+                  "kDefaultRouteDirectionalTraversalEdgeBehavior",
             ),
 
             BridgeParameter(
@@ -2422,6 +2432,7 @@ class $Navigator implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
           ],
           params: [
@@ -2463,6 +2474,7 @@ class $Navigator implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
           ],
           params: [
@@ -3031,7 +3043,8 @@ class $Navigator implements $Instance {
     final value = Navigator.pushReplacementNamed(
       (r as $Value?)!.$value,
       (s as $String).$value,
-      result: _arg2OrNull?.$value,
+      result:
+          TypedInterop.exportExternal(_arg2OrNull, runtime: runtime) as dynamic,
       arguments: _arg3OrNull?.$reified,
     );
     return $Future.wrap(
@@ -3055,7 +3068,8 @@ class $Navigator implements $Instance {
     final value = Navigator.restorablePushReplacementNamed(
       (r as $Value?)!.$value,
       (s as $String).$value,
-      result: _arg2OrNull?.$value,
+      result:
+          TypedInterop.exportExternal(_arg2OrNull, runtime: runtime) as dynamic,
       arguments: _arg3OrNull?.$reified,
     );
     return $String(value);
@@ -3074,7 +3088,8 @@ class $Navigator implements $Instance {
     final value = Navigator.popAndPushNamed(
       (r as $Value?)!.$value,
       (s as $String).$value,
-      result: _arg2OrNull?.$value,
+      result:
+          TypedInterop.exportExternal(_arg2OrNull, runtime: runtime) as dynamic,
       arguments: _arg3OrNull?.$reified,
     );
     return $Future.wrap(
@@ -3098,7 +3113,8 @@ class $Navigator implements $Instance {
     final value = Navigator.restorablePopAndPushNamed(
       (r as $Value?)!.$value,
       (s as $String).$value,
-      result: _arg2OrNull?.$value,
+      result:
+          TypedInterop.exportExternal(_arg2OrNull, runtime: runtime) as dynamic,
       arguments: _arg3OrNull?.$reified,
     );
     return $String(value);
@@ -3216,7 +3232,12 @@ class $Navigator implements $Instance {
     final value = Navigator.pushReplacement(
       (r as $Value?)!.$value,
       (s as $Value?)!.$value,
-      result: (c is $Value ? c : null)?.$value,
+      result:
+          TypedInterop.exportExternal(
+                (c is $Value ? c : null),
+                runtime: runtime,
+              )
+              as dynamic,
     );
     return $Future.wrap(
       value.then(
@@ -3253,7 +3274,8 @@ class $Navigator implements $Instance {
               ?.$value;
         },
       ),
-      result: _arg2OrNull?.$value,
+      result:
+          TypedInterop.exportExternal(_arg2OrNull, runtime: runtime) as dynamic,
       arguments: _arg3OrNull?.$reified,
     );
     return $String(value);
@@ -3429,7 +3451,8 @@ class $Navigator implements $Instance {
   static $Value? $maybePop(Runtime runtime, Object? r, Object? s, Object? c) {
     final value = Navigator.maybePop(
       (r as $Value?)!.$value,
-      (s is $Value ? s : null)?.$value,
+      TypedInterop.exportExternal((s is $Value ? s : null), runtime: runtime)
+          as dynamic,
     );
     return $Future.wrap(
       value.then((e) => $bool(e)),
@@ -3442,7 +3465,11 @@ class $Navigator implements $Instance {
 
   /// Wrapper for the [Navigator.pop] method
   static $Value? $pop(Runtime runtime, Object? r, Object? s, Object? c) {
-    Navigator.pop((r as $Value?)!.$value, (s is $Value ? s : null)?.$value);
+    Navigator.pop(
+      (r as $Value?)!.$value,
+      TypedInterop.exportExternal((s is $Value ? s : null), runtime: runtime)
+          as dynamic,
+    );
     return null;
   }
 
@@ -3481,7 +3508,7 @@ class $Navigator implements $Instance {
               ?.$value;
         },
       ),
-      (c as $Value?)!.$value,
+      TypedInterop.exportExternal((c as $Value?), runtime: runtime) as dynamic,
     );
     return null;
   }
@@ -3496,7 +3523,8 @@ class $Navigator implements $Instance {
     Navigator.removeRoute(
       (r as $Value?)!.$value,
       (s as $Value?)!.$value,
-      (c is $Value ? c : null)?.$value,
+      TypedInterop.exportExternal((c is $Value ? c : null), runtime: runtime)
+          as dynamic,
     );
     return null;
   }
@@ -3511,7 +3539,8 @@ class $Navigator implements $Instance {
     Navigator.removeRouteBelow(
       (r as $Value?)!.$value,
       (s as $Value?)!.$value,
-      (c is $Value ? c : null)?.$value,
+      TypedInterop.exportExternal((c is $Value ? c : null), runtime: runtime)
+          as dynamic,
     );
     return null;
   }
@@ -5679,7 +5708,12 @@ class $NavigatorState implements $Instance {
     final self = target! as $NavigatorState;
     final result = self.$value.pushReplacementNamed(
       (r as $String).$value,
-      result: (s is $Value ? s : null)?.$value,
+      result:
+          TypedInterop.exportExternal(
+                (s is $Value ? s : null),
+                runtime: runtime,
+              )
+              as dynamic,
       arguments:
           (c is List && (c as List).length > 0
                   ? (c as List)[0] as $Value?
@@ -5710,7 +5744,12 @@ class $NavigatorState implements $Instance {
     final self = target! as $NavigatorState;
     final result = self.$value.restorablePushReplacementNamed(
       (r as $String).$value,
-      result: (s is $Value ? s : null)?.$value,
+      result:
+          TypedInterop.exportExternal(
+                (s is $Value ? s : null),
+                runtime: runtime,
+              )
+              as dynamic,
       arguments:
           (c is List && (c as List).length > 0
                   ? (c as List)[0] as $Value?
@@ -5731,7 +5770,12 @@ class $NavigatorState implements $Instance {
     final self = target! as $NavigatorState;
     final result = self.$value.popAndPushNamed(
       (r as $String).$value,
-      result: (s is $Value ? s : null)?.$value,
+      result:
+          TypedInterop.exportExternal(
+                (s is $Value ? s : null),
+                runtime: runtime,
+              )
+              as dynamic,
       arguments:
           (c is List && (c as List).length > 0
                   ? (c as List)[0] as $Value?
@@ -5762,7 +5806,12 @@ class $NavigatorState implements $Instance {
     final self = target! as $NavigatorState;
     final result = self.$value.restorablePopAndPushNamed(
       (r as $String).$value,
-      result: (s is $Value ? s : null)?.$value,
+      result:
+          TypedInterop.exportExternal(
+                (s is $Value ? s : null),
+                runtime: runtime,
+              )
+              as dynamic,
       arguments:
           (c is List && (c as List).length > 0
                   ? (c as List)[0] as $Value?
@@ -5904,7 +5953,12 @@ class $NavigatorState implements $Instance {
     final self = target! as $NavigatorState;
     final result = self.$value.pushReplacement(
       (r as $Value?)!.$value,
-      result: (s is $Value ? s : null)?.$value,
+      result:
+          TypedInterop.exportExternal(
+                (s is $Value ? s : null),
+                runtime: runtime,
+              )
+              as dynamic,
     );
     return $Future.wrap(
       result.then(
@@ -5944,7 +5998,12 @@ class $NavigatorState implements $Instance {
               ?.$value;
         },
       ),
-      result: (s is $Value ? s : null)?.$value,
+      result:
+          TypedInterop.exportExternal(
+                (s is $Value ? s : null),
+                runtime: runtime,
+              )
+              as dynamic,
       arguments:
           (c is List && (c as List).length > 0
                   ? (c as List)[0] as $Value?
@@ -6157,7 +6216,10 @@ class $NavigatorState implements $Instance {
     Object? c,
   ) {
     final self = target! as $NavigatorState;
-    final result = self.$value.maybePop((r is $Value ? r : null)?.$value);
+    final result = self.$value.maybePop(
+      TypedInterop.exportExternal((r is $Value ? r : null), runtime: runtime)
+          as dynamic,
+    );
     return $Future.wrap(
       result.then((e) => $bool(e)),
       runtime: runtime,
@@ -6176,7 +6238,10 @@ class $NavigatorState implements $Instance {
     Object? c,
   ) {
     final self = target! as $NavigatorState;
-    self.$value.pop((r is $Value ? r : null)?.$value);
+    self.$value.pop(
+      TypedInterop.exportExternal((r is $Value ? r : null), runtime: runtime)
+          as dynamic,
+    );
     return null;
   }
 
@@ -6222,7 +6287,7 @@ class $NavigatorState implements $Instance {
               ?.$value;
         },
       ),
-      (s as $Value?)!.$value,
+      TypedInterop.exportExternal((s as $Value?), runtime: runtime) as dynamic,
     );
     return null;
   }
@@ -6238,7 +6303,8 @@ class $NavigatorState implements $Instance {
     final self = target! as $NavigatorState;
     self.$value.removeRoute(
       (r as $Value?)!.$value,
-      (s is $Value ? s : null)?.$value,
+      TypedInterop.exportExternal((s is $Value ? s : null), runtime: runtime)
+          as dynamic,
     );
     return null;
   }
@@ -6254,7 +6320,8 @@ class $NavigatorState implements $Instance {
     final self = target! as $NavigatorState;
     self.$value.removeRouteBelow(
       (r as $Value?)!.$value,
-      (s is $Value ? s : null)?.$value,
+      TypedInterop.exportExternal((s is $Value ? s : null), runtime: runtime)
+          as dynamic,
     );
     return null;
   }

@@ -53,7 +53,7 @@ class $WidgetsBindingObserver implements $Instance {
 
   /// Compile-time class declaration of [$WidgetsBindingObserver]
   static const $declaration = BridgeClassDef(
-    BridgeClassType($type, isAbstract: true),
+    BridgeClassType($type, isAbstract: true, isMixinClass: true),
     constructors: {},
 
     methods: {},

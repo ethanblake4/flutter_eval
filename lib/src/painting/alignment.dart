@@ -284,6 +284,8 @@ class $AlignmentGeometry implements $Instance {
           namedParams: [],
           params: [],
         ),
+
+        isAbstract: true,
       ),
 
       '*': BridgeMethodDef(
@@ -308,6 +310,8 @@ class $AlignmentGeometry implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       '/': BridgeMethodDef(
@@ -332,6 +336,8 @@ class $AlignmentGeometry implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       '~/': BridgeMethodDef(
@@ -356,6 +362,8 @@ class $AlignmentGeometry implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       '%': BridgeMethodDef(
@@ -380,6 +388,8 @@ class $AlignmentGeometry implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
 
       'lerp': BridgeMethodDef(
@@ -462,6 +472,8 @@ class $AlignmentGeometry implements $Instance {
             ),
           ],
         ),
+
+        isAbstract: true,
       ),
     },
     getters: {},

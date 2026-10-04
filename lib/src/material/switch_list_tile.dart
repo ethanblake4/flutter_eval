@@ -450,6 +450,7 @@ class $SwitchListTile implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DragStartBehavior.start",
             ),
 
             BridgeParameter(
@@ -560,6 +561,7 @@ class $SwitchListTile implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -655,6 +657,7 @@ class $SwitchListTile implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -771,6 +774,7 @@ class $SwitchListTile implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
           ],
           params: [],
@@ -1109,6 +1113,7 @@ class $SwitchListTile implements $Instance {
                 ),
               ),
               true,
+              defaultValueSource: "DragStartBehavior.start",
             ),
 
             BridgeParameter(
@@ -1219,6 +1224,7 @@ class $SwitchListTile implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1323,6 +1329,7 @@ class $SwitchListTile implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
 
             BridgeParameter(
@@ -1439,6 +1446,7 @@ class $SwitchListTile implements $Instance {
                 BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
               ),
               true,
+              defaultValueSource: "false",
             ),
           ],
           params: [],
