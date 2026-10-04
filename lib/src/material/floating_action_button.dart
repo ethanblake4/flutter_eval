@@ -31,6 +31,7 @@ import 'package:dart_eval/stdlib/async.dart' hide $FloatingActionButton;
 import 'package:dart_eval/stdlib/typed_data.dart' hide $FloatingActionButton;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../widgets/framework_wrappers.dart';
 import '../sky_engine/ui/painting.dart';
 import '../supporting/flutter_services_mouse_cursor.dart';
@@ -1566,7 +1567,8 @@ class $FloatingActionButton implements $Instance {
         splashColor: _arg7OrNull?.$value,
         heroTag: _arg8OrNull == null
             ? const FloatingActionButton(onPressed: null).heroTag
-            : _arg8OrNull!.$reified,
+            : TypedInterop.exportExternal(_arg8OrNull, runtime: runtime)
+                  as Object?,
         elevation: _arg9OrNull?.$value,
         focusElevation: _arg10OrNull?.$value,
         hoverElevation: _arg11OrNull?.$value,
@@ -1633,7 +1635,8 @@ class $FloatingActionButton implements $Instance {
         splashColor: _arg7OrNull?.$value,
         heroTag: _arg8OrNull == null
             ? const FloatingActionButton(onPressed: null).heroTag
-            : _arg8OrNull!.$reified,
+            : TypedInterop.exportExternal(_arg8OrNull, runtime: runtime)
+                  as Object?,
         elevation: _arg9OrNull?.$value,
         focusElevation: _arg10OrNull?.$value,
         hoverElevation: _arg11OrNull?.$value,
@@ -1696,7 +1699,8 @@ class $FloatingActionButton implements $Instance {
         splashColor: _arg7OrNull?.$value,
         heroTag: _arg8OrNull == null
             ? const FloatingActionButton(onPressed: null).heroTag
-            : _arg8OrNull!.$reified,
+            : TypedInterop.exportExternal(_arg8OrNull, runtime: runtime)
+                  as Object?,
         elevation: _arg9OrNull?.$value,
         focusElevation: _arg10OrNull?.$value,
         hoverElevation: _arg11OrNull?.$value,
@@ -1762,7 +1766,8 @@ class $FloatingActionButton implements $Instance {
         hoverColor: _arg5OrNull?.$value,
         heroTag: _arg6OrNull == null
             ? const FloatingActionButton(onPressed: null).heroTag
-            : _arg6OrNull!.$reified,
+            : TypedInterop.exportExternal(_arg6OrNull, runtime: runtime)
+                  as Object?,
         elevation: _arg7OrNull?.$value,
         focusElevation: _arg8OrNull?.$value,
         hoverElevation: _arg9OrNull?.$value,

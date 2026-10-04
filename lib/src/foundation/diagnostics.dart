@@ -2532,7 +2532,8 @@ class $DiagnosticsProperty<T> implements $Instance {
             : (_arg6OrNull as $bool).$value,
         defaultValue: _arg7OrNull == null
             ? kNoDefaultValue
-            : _arg7OrNull!.$reified,
+            : TypedInterop.exportExternal(_arg7OrNull, runtime: runtime)
+                  as Object?,
         tooltip: _arg8OrNull?.$value,
         missingIfNull: _arg9OrNull == null
             ? false
@@ -2590,7 +2591,8 @@ class $DiagnosticsProperty<T> implements $Instance {
             : (_arg6OrNull as $bool).$value,
         defaultValue: _arg7OrNull == null
             ? kNoDefaultValue
-            : _arg7OrNull!.$reified,
+            : TypedInterop.exportExternal(_arg7OrNull, runtime: runtime)
+                  as Object?,
         tooltip: _arg8OrNull?.$value,
         missingIfNull: _arg9OrNull == null
             ? false

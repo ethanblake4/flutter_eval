@@ -35,6 +35,7 @@ import './framework_wrappers.dart';
 import '../supporting/flutter_painting_image_stream.dart';
 import 'dart:io';
 import '../painting/image_provider.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../sky_engine/ui/painting.dart';
 import '../animation/animation.dart';
 import '../sky_engine/ui/image.dart';
@@ -3119,8 +3120,8 @@ class $Image implements $Instance {
                 final funcResult = _frameBuilder(
                   (r as $Value?)!.$value,
                   (s as $Value?)!.$value,
-                  ((c as List<Object?>)[0] as $Value?)?.$value,
-                  ((c as List<Object?>)[1] as $Value?)!.$value,
+                  ((c as List<Object?>)[0] as $Value?)!.$value,
+                  ((c as List)[1] as $bool).$value,
                 );
                 return $Widget.wrap(funcResult);
               });
@@ -3132,7 +3133,7 @@ class $Image implements $Instance {
                 final funcResult = _loadingBuilder(
                   (r as $Value?)!.$value,
                   (s as $Value?)!.$value,
-                  ((c as List<Object?>)[0] as $Value?)?.$value,
+                  ((c as List<Object?>)[0] as $Value?)!.$value,
                 );
                 return $Widget.wrap(funcResult);
               });
@@ -3143,8 +3144,9 @@ class $Image implements $Instance {
             : $Function((runtime, target, r, s, c) {
                 final funcResult = _errorBuilder(
                   (r as $Value?)!.$value,
-                  (s as $Value?)!.$value,
-                  ((c as List<Object?>)[0] as $Value?)?.$value,
+                  TypedInterop.exportExternal((s as $Value?), runtime: runtime)
+                      as Object,
+                  ((c as List<Object?>)[0] as $Value?)!.$value,
                 );
                 return $Widget.wrap(funcResult);
               });

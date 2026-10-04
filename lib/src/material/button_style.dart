@@ -2197,8 +2197,8 @@ class $ButtonStyle implements $Instance {
             : $Function((runtime, target, r, s, c) {
                 final funcResult = _backgroundBuilder(
                   (r as $Value?)!.$value,
-                  (s as $Value?)!.$value,
-                  ((c as List<Object?>)[0] as $Value?)?.$value,
+                  ((s as $Value?)!.$reified as Set).cast(),
+                  ((c as List<Object?>)[0] as $Value?)!.$value,
                 );
                 return $Widget.wrap(funcResult);
               });
@@ -2209,8 +2209,8 @@ class $ButtonStyle implements $Instance {
             : $Function((runtime, target, r, s, c) {
                 final funcResult = _foregroundBuilder(
                   (r as $Value?)!.$value,
-                  (s as $Value?)!.$value,
-                  ((c as List<Object?>)[0] as $Value?)?.$value,
+                  ((s as $Value?)!.$reified as Set).cast(),
+                  ((c as List<Object?>)[0] as $Value?)!.$value,
                 );
                 return $Widget.wrap(funcResult);
               });

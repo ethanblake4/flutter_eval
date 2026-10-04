@@ -2070,7 +2070,7 @@ class $ListView implements $Instance {
             ? const $null()
             : $Function((runtime, target, r, s, c) {
                 final funcResult = _itemExtentBuilder(
-                  (r as $Value?)!.$value,
+                  (r as $int).$value,
                   (s as $Value?)!.$value,
                 );
                 return funcResult == null ? const $null() : $double(funcResult);

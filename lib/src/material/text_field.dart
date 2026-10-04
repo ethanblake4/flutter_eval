@@ -31,10 +31,10 @@ import 'package:dart_eval/stdlib/async.dart' hide $TextField;
 import 'package:dart_eval/stdlib/typed_data.dart' hide $TextField;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import 'package:dart_eval/src/eval/utils/wrap_helper.dart';
 import '../supporting/flutter_gestures_events.dart';
 import '../widgets/framework_wrappers.dart';
-import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../supporting/flutter_widgets_editable_text.dart';
 import '../supporting/flutter_widgets_spell_check.dart';
 import '../painting/text_style.dart';
@@ -2376,7 +2376,11 @@ class $TextField implements $Instance {
         key: (r is $Value ? r : null)?.$value,
         groupId: (s is $Value ? s : null) == null
             ? EditableText
-            : (s is $Value ? s : null)!.$reified,
+            : TypedInterop.exportExternal(
+                    (s is $Value ? s : null),
+                    runtime: runtime,
+                  )
+                  as Object,
         controller: _arg2OrNull?.$value,
         focusNode: _arg3OrNull?.$value,
         undoController: _arg4OrNull?.$value,
@@ -2791,7 +2795,7 @@ class $TextField implements $Instance {
         return _onChanged == null
             ? const $null()
             : $Function((runtime, target, r, s, c) {
-                _onChanged((r as $Value?)!.$value);
+                _onChanged((r as $String).$value);
                 return const $null();
               });
       case 'onEditingComplete':
@@ -2807,7 +2811,7 @@ class $TextField implements $Instance {
         return _onSubmitted == null
             ? const $null()
             : $Function((runtime, target, r, s, c) {
-                _onSubmitted((r as $Value?)!.$value);
+                _onSubmitted((r as $String).$value);
                 return const $null();
               });
       case 'onAppPrivateCommand':
@@ -2816,8 +2820,8 @@ class $TextField implements $Instance {
             ? const $null()
             : $Function((runtime, target, r, s, c) {
                 _onAppPrivateCommand(
-                  (r as $Value?)!.$value,
-                  (s as $Value?)!.$value,
+                  (r as $String).$value,
+                  ((s as $Value?)!.$reified as Map).cast(),
                 );
                 return const $null();
               });
@@ -2944,9 +2948,9 @@ class $TextField implements $Instance {
             : $Function((runtime, target, r, s, c) {
                 final funcResult = _buildCounter(
                   (r as $Value?)!.$value,
-                  currentLength: (s as $Value?)?.$value,
-                  isFocused: (s as $Value?)?.$value,
-                  maxLength: (s as $Value?)?.$value,
+                  currentLength: (s as $int).$value,
+                  isFocused: ((c as List)[0] as $bool).$value,
+                  maxLength: ((c as List<Object?>)[1] as $Value?)!.$value,
                 );
                 return funcResult == null
                     ? const $null()

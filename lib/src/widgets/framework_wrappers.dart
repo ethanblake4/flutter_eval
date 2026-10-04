@@ -1894,7 +1894,12 @@ class $BuildContext implements BuildContext, $Instance {
     final self = target! as $BuildContext;
     final result = self.$value.dependOnInheritedElement(
       (r as $Value?)!.$value,
-      aspect: (s is $Value ? s : null)?.$reified,
+      aspect:
+          TypedInterop.exportExternal(
+                (s is $Value ? s : null),
+                runtime: runtime,
+              )
+              as Object?,
     );
     return $InheritedWidget.wrap(result);
   }
@@ -1911,7 +1916,12 @@ class $BuildContext implements BuildContext, $Instance {
   ) {
     final self = target! as $BuildContext;
     final result = self.$value.dependOnInheritedWidgetOfExactType(
-      aspect: (r is $Value ? r : null)?.$reified,
+      aspect:
+          TypedInterop.exportExternal(
+                (r is $Value ? r : null),
+                runtime: runtime,
+              )
+              as Object?,
     );
     return result == null
         ? const $null()

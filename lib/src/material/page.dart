@@ -1656,8 +1656,8 @@ class $MaterialPageRoute<T> implements $Instance {
                   (r as $Value?)!.$value,
                   (s as $Value?)!.$value,
                   ((c as List<Object?>)[0] as $Value?)!.$value,
-                  ((c as List<Object?>)[1] as $Value?)!.$value,
-                  ((c as List<Object?>)[2] as $Value?)?.$value,
+                  ((c as List)[1] as $bool).$value,
+                  ((c as List<Object?>)[2] as $Value?)!.$value,
                 );
                 return funcResult == null
                     ? const $null()
@@ -1799,8 +1799,8 @@ class $MaterialPageRoute<T> implements $Instance {
                   (r as $Value?)!.$value,
                   (s as $Value?)!.$value,
                   ((c as List<Object?>)[0] as $Value?)!.$value,
-                  ((c as List<Object?>)[1] as $Value?)!.$value,
-                  ((c as List<Object?>)[2] as $Value?)?.$value,
+                  ((c as List)[1] as $bool).$value,
+                  ((c as List<Object?>)[2] as $Value?)!.$value,
                 );
                 return funcResult == null
                     ? const $null()

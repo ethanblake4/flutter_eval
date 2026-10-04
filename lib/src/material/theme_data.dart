@@ -5124,7 +5124,9 @@ class $ThemeData implements $Instance {
         extensions: _arg3OrNull == null || _arg3OrNull is $null
             ? null
             : TypedInterop.exportIterable(_arg3OrNull, runtime),
-        inputDecorationTheme: _arg4OrNull?.$reified,
+        inputDecorationTheme:
+            TypedInterop.exportExternal(_arg4OrNull, runtime: runtime)
+                as Object?,
         materialTapTargetSize: _arg5OrNull?.$value,
         pageTransitionsTheme: _arg6OrNull?.$value,
         platform: _arg7OrNull?.$value,
@@ -5162,7 +5164,9 @@ class $ThemeData implements $Instance {
         textTheme: _arg39OrNull?.$value,
         typography: _arg40OrNull?.$value,
         actionIconTheme: _arg41OrNull?.$value,
-        appBarTheme: _arg42OrNull?.$reified,
+        appBarTheme:
+            TypedInterop.exportExternal(_arg42OrNull, runtime: runtime)
+                as Object?,
         badgeTheme: _arg43OrNull?.$value,
         bannerTheme: _arg44OrNull?.$value,
         bottomAppBarTheme: _arg45OrNull?.$value,
@@ -5812,10 +5816,13 @@ class $ThemeData implements $Instance {
               runtime,
             ),
       inputDecorationTheme:
-          (c is List && (c as List).length > 2
-                  ? (c as List)[2] as $Value?
-                  : null)
-              ?.$reified,
+          TypedInterop.exportExternal(
+                (c is List && (c as List).length > 2
+                    ? (c as List)[2] as $Value?
+                    : null),
+                runtime: runtime,
+              )
+              as Object?,
       materialTapTargetSize:
           (c is List && (c as List).length > 3
                   ? (c as List)[3] as $Value?
@@ -5967,10 +5974,13 @@ class $ThemeData implements $Instance {
                   : null)
               ?.$value,
       appBarTheme:
-          (c is List && (c as List).length > 33
-                  ? (c as List)[33] as $Value?
-                  : null)
-              ?.$reified,
+          TypedInterop.exportExternal(
+                (c is List && (c as List).length > 33
+                    ? (c as List)[33] as $Value?
+                    : null),
+                runtime: runtime,
+              )
+              as Object?,
       badgeTheme:
           (c is List && (c as List).length > 34
                   ? (c as List)[34] as $Value?

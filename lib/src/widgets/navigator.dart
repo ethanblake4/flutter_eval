@@ -3005,7 +3005,12 @@ class $Navigator implements $Instance {
     final value = Navigator.pushNamed(
       (r as $Value?)!.$value,
       (s as $String).$value,
-      arguments: (c is $Value ? c : null)?.$reified,
+      arguments:
+          TypedInterop.exportExternal(
+                (c is $Value ? c : null),
+                runtime: runtime,
+              )
+              as Object?,
     );
     return $Future.wrap(
       value.then(
@@ -3025,7 +3030,12 @@ class $Navigator implements $Instance {
     final value = Navigator.restorablePushNamed(
       (r as $Value?)!.$value,
       (s as $String).$value,
-      arguments: (c is $Value ? c : null)?.$reified,
+      arguments:
+          TypedInterop.exportExternal(
+                (c is $Value ? c : null),
+                runtime: runtime,
+              )
+              as Object?,
     );
     return $String(value);
   }
@@ -3045,7 +3055,8 @@ class $Navigator implements $Instance {
       (s as $String).$value,
       result:
           TypedInterop.exportExternal(_arg2OrNull, runtime: runtime) as dynamic,
-      arguments: _arg3OrNull?.$reified,
+      arguments:
+          TypedInterop.exportExternal(_arg3OrNull, runtime: runtime) as Object?,
     );
     return $Future.wrap(
       value.then(
@@ -3070,7 +3081,8 @@ class $Navigator implements $Instance {
       (s as $String).$value,
       result:
           TypedInterop.exportExternal(_arg2OrNull, runtime: runtime) as dynamic,
-      arguments: _arg3OrNull?.$reified,
+      arguments:
+          TypedInterop.exportExternal(_arg3OrNull, runtime: runtime) as Object?,
     );
     return $String(value);
   }
@@ -3090,7 +3102,8 @@ class $Navigator implements $Instance {
       (s as $String).$value,
       result:
           TypedInterop.exportExternal(_arg2OrNull, runtime: runtime) as dynamic,
-      arguments: _arg3OrNull?.$reified,
+      arguments:
+          TypedInterop.exportExternal(_arg3OrNull, runtime: runtime) as Object?,
     );
     return $Future.wrap(
       value.then(
@@ -3115,7 +3128,8 @@ class $Navigator implements $Instance {
       (s as $String).$value,
       result:
           TypedInterop.exportExternal(_arg2OrNull, runtime: runtime) as dynamic,
-      arguments: _arg3OrNull?.$reified,
+      arguments:
+          TypedInterop.exportExternal(_arg3OrNull, runtime: runtime) as Object?,
     );
     return $String(value);
   }
@@ -3142,7 +3156,8 @@ class $Navigator implements $Instance {
               ?.$value;
         },
       ),
-      arguments: _arg3OrNull?.$reified,
+      arguments:
+          TypedInterop.exportExternal(_arg3OrNull, runtime: runtime) as Object?,
     );
     return $Future.wrap(
       value.then(
@@ -3174,7 +3189,8 @@ class $Navigator implements $Instance {
               ?.$value;
         },
       ),
-      arguments: _arg3OrNull?.$reified,
+      arguments:
+          TypedInterop.exportExternal(_arg3OrNull, runtime: runtime) as Object?,
     );
     return $String(value);
   }
@@ -3217,7 +3233,12 @@ class $Navigator implements $Instance {
               ?.$value;
         },
       ),
-      arguments: (c is $Value ? c : null)?.$reified,
+      arguments:
+          TypedInterop.exportExternal(
+                (c is $Value ? c : null),
+                runtime: runtime,
+              )
+              as Object?,
     );
     return $String(value);
   }
@@ -3276,7 +3297,8 @@ class $Navigator implements $Instance {
       ),
       result:
           TypedInterop.exportExternal(_arg2OrNull, runtime: runtime) as dynamic,
-      arguments: _arg3OrNull?.$reified,
+      arguments:
+          TypedInterop.exportExternal(_arg3OrNull, runtime: runtime) as Object?,
     );
     return $String(value);
   }
@@ -3345,7 +3367,8 @@ class $Navigator implements $Instance {
               ?.$value;
         },
       ),
-      arguments: _arg3OrNull?.$reified,
+      arguments:
+          TypedInterop.exportExternal(_arg3OrNull, runtime: runtime) as Object?,
     );
     return $String(value);
   }
@@ -3388,7 +3411,8 @@ class $Navigator implements $Instance {
               ?.$value;
         },
       ),
-      arguments: _arg3OrNull?.$reified,
+      arguments:
+          TypedInterop.exportExternal(_arg3OrNull, runtime: runtime) as Object?,
     );
     return $String(value);
   }
@@ -3436,7 +3460,8 @@ class $Navigator implements $Instance {
               ?.$value;
         },
       ),
-      arguments: _arg3OrNull?.$reified,
+      arguments:
+          TypedInterop.exportExternal(_arg3OrNull, runtime: runtime) as Object?,
     );
     return $String(value);
   }
@@ -3642,7 +3667,8 @@ class $Navigator implements $Instance {
             : $Function((runtime, target, r, s, c) {
                 final funcResult = _onPopPage(
                   (r as $Value?)!.$value,
-                  (s as $Value?)!.$value,
+                  TypedInterop.exportExternal((s as $Value?), runtime: runtime)
+                      as dynamic,
                 );
                 return $bool(funcResult);
               });
@@ -3714,7 +3740,7 @@ class $Navigator implements $Instance {
         return $Function((runtime, target, r, s, c) {
           final funcResult = _onGenerateInitialRoutes(
             (r as $Value?)!.$value,
-            (s as $Value?)!.$value,
+            (s as $String).$value,
           );
           return $List.view(
             funcResult,
@@ -5664,7 +5690,12 @@ class $NavigatorState implements $Instance {
     final self = target! as $NavigatorState;
     final result = self.$value.pushNamed(
       (r as $String).$value,
-      arguments: (s is $Value ? s : null)?.$reified,
+      arguments:
+          TypedInterop.exportExternal(
+                (s is $Value ? s : null),
+                runtime: runtime,
+              )
+              as Object?,
     );
     return $Future.wrap(
       result.then(
@@ -5690,7 +5721,12 @@ class $NavigatorState implements $Instance {
     final self = target! as $NavigatorState;
     final result = self.$value.restorablePushNamed(
       (r as $String).$value,
-      arguments: (s is $Value ? s : null)?.$reified,
+      arguments:
+          TypedInterop.exportExternal(
+                (s is $Value ? s : null),
+                runtime: runtime,
+              )
+              as Object?,
     );
     return $String(result);
   }
@@ -5715,10 +5751,13 @@ class $NavigatorState implements $Instance {
               )
               as dynamic,
       arguments:
-          (c is List && (c as List).length > 0
-                  ? (c as List)[0] as $Value?
-                  : null)
-              ?.$reified,
+          TypedInterop.exportExternal(
+                (c is List && (c as List).length > 0
+                    ? (c as List)[0] as $Value?
+                    : null),
+                runtime: runtime,
+              )
+              as Object?,
     );
     return $Future.wrap(
       result.then(
@@ -5751,10 +5790,13 @@ class $NavigatorState implements $Instance {
               )
               as dynamic,
       arguments:
-          (c is List && (c as List).length > 0
-                  ? (c as List)[0] as $Value?
-                  : null)
-              ?.$reified,
+          TypedInterop.exportExternal(
+                (c is List && (c as List).length > 0
+                    ? (c as List)[0] as $Value?
+                    : null),
+                runtime: runtime,
+              )
+              as Object?,
     );
     return $String(result);
   }
@@ -5777,10 +5819,13 @@ class $NavigatorState implements $Instance {
               )
               as dynamic,
       arguments:
-          (c is List && (c as List).length > 0
-                  ? (c as List)[0] as $Value?
-                  : null)
-              ?.$reified,
+          TypedInterop.exportExternal(
+                (c is List && (c as List).length > 0
+                    ? (c as List)[0] as $Value?
+                    : null),
+                runtime: runtime,
+              )
+              as Object?,
     );
     return $Future.wrap(
       result.then(
@@ -5813,10 +5858,13 @@ class $NavigatorState implements $Instance {
               )
               as dynamic,
       arguments:
-          (c is List && (c as List).length > 0
-                  ? (c as List)[0] as $Value?
-                  : null)
-              ?.$reified,
+          TypedInterop.exportExternal(
+                (c is List && (c as List).length > 0
+                    ? (c as List)[0] as $Value?
+                    : null),
+                runtime: runtime,
+              )
+              as Object?,
     );
     return $String(result);
   }
@@ -5844,10 +5892,13 @@ class $NavigatorState implements $Instance {
         },
       ),
       arguments:
-          (c is List && (c as List).length > 0
-                  ? (c as List)[0] as $Value?
-                  : null)
-              ?.$reified,
+          TypedInterop.exportExternal(
+                (c is List && (c as List).length > 0
+                    ? (c as List)[0] as $Value?
+                    : null),
+                runtime: runtime,
+              )
+              as Object?,
     );
     return $Future.wrap(
       result.then(
@@ -5883,10 +5934,13 @@ class $NavigatorState implements $Instance {
         },
       ),
       arguments:
-          (c is List && (c as List).length > 0
-                  ? (c as List)[0] as $Value?
-                  : null)
-              ?.$reified,
+          TypedInterop.exportExternal(
+                (c is List && (c as List).length > 0
+                    ? (c as List)[0] as $Value?
+                    : null),
+                runtime: runtime,
+              )
+              as Object?,
     );
     return $String(result);
   }
@@ -5937,7 +5991,12 @@ class $NavigatorState implements $Instance {
               ?.$value;
         },
       ),
-      arguments: (s is $Value ? s : null)?.$reified,
+      arguments:
+          TypedInterop.exportExternal(
+                (s is $Value ? s : null),
+                runtime: runtime,
+              )
+              as Object?,
     );
     return $String(result);
   }
@@ -6005,10 +6064,13 @@ class $NavigatorState implements $Instance {
               )
               as dynamic,
       arguments:
-          (c is List && (c as List).length > 0
-                  ? (c as List)[0] as $Value?
-                  : null)
-              ?.$reified,
+          TypedInterop.exportExternal(
+                (c is List && (c as List).length > 0
+                    ? (c as List)[0] as $Value?
+                    : null),
+                runtime: runtime,
+              )
+              as Object?,
     );
     return $String(result);
   }
@@ -6082,10 +6144,13 @@ class $NavigatorState implements $Instance {
         },
       ),
       arguments:
-          (c is List && (c as List).length > 0
-                  ? (c as List)[0] as $Value?
-                  : null)
-              ?.$reified,
+          TypedInterop.exportExternal(
+                (c is List && (c as List).length > 0
+                    ? (c as List)[0] as $Value?
+                    : null),
+                runtime: runtime,
+              )
+              as Object?,
     );
     return $String(result);
   }
@@ -6133,10 +6198,13 @@ class $NavigatorState implements $Instance {
         },
       ),
       arguments:
-          (c is List && (c as List).length > 0
-                  ? (c as List)[0] as $Value?
-                  : null)
-              ?.$reified,
+          TypedInterop.exportExternal(
+                (c is List && (c as List).length > 0
+                    ? (c as List)[0] as $Value?
+                    : null),
+                runtime: runtime,
+              )
+              as Object?,
     );
     return $String(result);
   }
@@ -6186,10 +6254,13 @@ class $NavigatorState implements $Instance {
         },
       ),
       arguments:
-          (c is List && (c as List).length > 0
-                  ? (c as List)[0] as $Value?
-                  : null)
-              ?.$reified,
+          TypedInterop.exportExternal(
+                (c is List && (c as List).length > 0
+                    ? (c as List)[0] as $Value?
+                    : null),
+                runtime: runtime,
+              )
+              as Object?,
     );
     return $String(result);
   }

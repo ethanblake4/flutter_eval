@@ -34,6 +34,7 @@ import 'package:flutter/rendering.dart';
 import '../widgets/framework_wrappers.dart';
 import '../sky_engine/ui/painting.dart';
 import '../painting/image_provider.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../widgets/widget_state.dart';
 import './theme_data.dart';
 import '../supporting/flutter_gestures_recognizer.dart';
@@ -2399,7 +2400,7 @@ class $SwitchListTile implements $Instance {
         return _onChanged == null
             ? const $null()
             : $Function((runtime, target, r, s, c) {
-                _onChanged((r as $Value?)!.$value);
+                _onChanged((r as $bool).$value);
                 return const $null();
               });
       case 'activeColor':
@@ -2436,8 +2437,9 @@ class $SwitchListTile implements $Instance {
             ? const $null()
             : $Function((runtime, target, r, s, c) {
                 _onActiveThumbImageError(
-                  (r as $Value?)!.$value,
-                  (s as $Value?)?.$value,
+                  TypedInterop.exportExternal((r as $Value?), runtime: runtime)
+                      as Object,
+                  (s as $Value?)!.$value,
                 );
                 return const $null();
               });
@@ -2452,8 +2454,9 @@ class $SwitchListTile implements $Instance {
             ? const $null()
             : $Function((runtime, target, r, s, c) {
                 _onInactiveThumbImageError(
-                  (r as $Value?)!.$value,
-                  (s as $Value?)?.$value,
+                  TypedInterop.exportExternal((r as $Value?), runtime: runtime)
+                      as Object,
+                  (s as $Value?)!.$value,
                 );
                 return const $null();
               });
@@ -2511,7 +2514,7 @@ class $SwitchListTile implements $Instance {
         return _onFocusChange == null
             ? const $null()
             : $Function((runtime, target, r, s, c) {
-                _onFocusChange((r as $Value?)!.$value);
+                _onFocusChange((r as $bool).$value);
                 return const $null();
               });
       case 'autofocus':

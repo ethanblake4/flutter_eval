@@ -3749,7 +3749,7 @@ class $WidgetsApp implements $Instance {
             ? const $null()
             : $Function((runtime, target, r, s, c) {
                 final funcResult = _onGenerateInitialRoutes(
-                  (r as $Value?)!.$value,
+                  (r as $String).$value,
                 );
                 return $List.view(
                   funcResult,
@@ -3776,7 +3776,23 @@ class $WidgetsApp implements $Instance {
             : $Function((runtime, target, r, s, c) {
                 final funcResult = _pageRouteBuilder(
                   (r as $Value?)!.$value,
-                  (s as $Value?)!.$value,
+                  runtime.cachedCallback(
+                    (s as $Value?)! as EvalCallable,
+                    "Widget Function(BuildContext);export=true",
+                    (_callable) => (BuildContext context) {
+                      return TypedInterop.exportExternal(
+                            _callable.call(
+                              runtime,
+                              null,
+                              $BuildContext.wrap(context),
+                              null,
+                              1,
+                            ),
+                            runtime: runtime,
+                          )
+                          as Widget;
+                    },
+                  ),
                 );
                 return $PageRoute.wrap(funcResult);
               });
@@ -3869,7 +3885,7 @@ class $WidgetsApp implements $Instance {
             : $Function((runtime, target, r, s, c) {
                 final funcResult = _builder(
                   (r as $Value?)!.$value,
-                  (s as $Value?)?.$value,
+                  (s as $Value?)!.$value,
                 );
                 return $Widget.wrap(funcResult);
               });
@@ -3909,8 +3925,8 @@ class $WidgetsApp implements $Instance {
             ? const $null()
             : $Function((runtime, target, r, s, c) {
                 final funcResult = _localeListResolutionCallback(
-                  (r as $Value?)?.$value,
-                  (s as $Value?)!.$value,
+                  ((r as $Value?)!.$reified as List?)?.cast(),
+                  TypedInterop.exportIterable((s as $Value?), runtime),
                 );
                 return funcResult == null
                     ? const $null()
@@ -3922,8 +3938,8 @@ class $WidgetsApp implements $Instance {
             ? const $null()
             : $Function((runtime, target, r, s, c) {
                 final funcResult = _localeResolutionCallback(
-                  (r as $Value?)?.$value,
-                  (s as $Value?)!.$value,
+                  (r as $Value?)!.$value,
+                  TypedInterop.exportIterable((s as $Value?), runtime),
                 );
                 return funcResult == null
                     ? const $null()
@@ -3949,9 +3965,15 @@ class $WidgetsApp implements $Instance {
             : $Function((runtime, target, r, s, c) {
                 final funcResult = _exitWidgetSelectionButtonBuilder(
                   (r as $Value?)!.$value,
-                  key: (s as $Value?)?.$value,
-                  onPressed: (s as $Value?)?.$value,
-                  semanticsLabel: (s as $Value?)?.$value,
+                  key: (s as $Value?)!.$value,
+                  onPressed: runtime.cachedCallback(
+                    ((c as List<Object?>)[0] as $Value?)! as EvalCallable,
+                    "void Function();export=true",
+                    (_callable) => () {
+                      _callable.call(runtime, null, null, null, 0);
+                    },
+                  ),
+                  semanticsLabel: ((c as List)[1] as $String).$value,
                 );
                 return $Widget.wrap(funcResult);
               });
@@ -3963,9 +3985,20 @@ class $WidgetsApp implements $Instance {
             : $Function((runtime, target, r, s, c) {
                 final funcResult = _moveExitWidgetSelectionButtonBuilder(
                   (r as $Value?)!.$value,
-                  onPressed: (s as $Value?)?.$value,
-                  semanticsLabel: (s as $Value?)?.$value,
-                  usesDefaultAlignment: (s as $Value?)?.$value,
+                  onPressed: runtime.cachedCallback(
+                    (s as $Value?)! as EvalCallable,
+                    "void Function();export=true",
+                    (_callable) => () {
+                      _callable.call(runtime, null, null, null, 0);
+                    },
+                  ),
+                  semanticsLabel: ((c as List)[0] as $String).$value,
+                  usesDefaultAlignment:
+                      ((c is List && (c as List).length > 1
+                                  ? (c as List)[1]
+                                  : null)
+                              as $bool)
+                          .$value,
                 );
                 return $Widget.wrap(funcResult);
               });
@@ -3976,9 +4009,15 @@ class $WidgetsApp implements $Instance {
             : $Function((runtime, target, r, s, c) {
                 final funcResult = _tapBehaviorButtonBuilder(
                   (r as $Value?)!.$value,
-                  onPressed: (s as $Value?)?.$value,
-                  selectionOnTapEnabled: (s as $Value?)?.$value,
-                  semanticsLabel: (s as $Value?)?.$value,
+                  onPressed: runtime.cachedCallback(
+                    (s as $Value?)! as EvalCallable,
+                    "void Function();export=true",
+                    (_callable) => () {
+                      _callable.call(runtime, null, null, null, 0);
+                    },
+                  ),
+                  selectionOnTapEnabled: ((c as List)[0] as $bool).$value,
+                  semanticsLabel: ((c as List)[1] as $String).$value,
                 );
                 return $Widget.wrap(funcResult);
               });

@@ -61,6 +61,7 @@ import 'package:dart_eval/stdlib/typed_data.dart'
         $TransitionDelegate;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import 'package:flutter/src/widgets/overlay.dart';
 import 'package:dart_eval/stdlib/core.dart'
     hide $OverlayEntry, $Overlay, $OverlayState;
@@ -157,7 +158,12 @@ class $RouteSettings implements $Instance {
     return $RouteSettings.wrap(
       RouteSettings(
         name: (r is $Value ? r : null)?.$value,
-        arguments: (s is $Value ? s : null)?.$reified,
+        arguments:
+            TypedInterop.exportExternal(
+                  (s is $Value ? s : null),
+                  runtime: runtime,
+                )
+                as Object?,
       ),
     );
   }

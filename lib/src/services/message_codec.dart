@@ -33,6 +33,7 @@ import 'package:dart_eval/stdlib/typed_data.dart'
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import './method_call.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 
 /// dart_eval wrapper binding for [MethodCodec]
 class $MethodCodec implements $Instance {
@@ -296,7 +297,9 @@ class $MethodCodec implements $Instance {
     Object? c,
   ) {
     final self = target! as $MethodCodec;
-    final result = self.$value.encodeSuccessEnvelope((r as $Value?)!.$reified);
+    final result = self.$value.encodeSuccessEnvelope(
+      TypedInterop.exportExternal((r as $Value?), runtime: runtime) as Object?,
+    );
     return $ByteData.wrap(result);
   }
 
@@ -315,10 +318,13 @@ class $MethodCodec implements $Instance {
       code: (r as $String).$value,
       message: (s is $Value ? s : null)?.$value,
       details:
-          (c is List && (c as List).length > 0
-                  ? (c as List)[0] as $Value?
-                  : null)
-              ?.$reified,
+          TypedInterop.exportExternal(
+                (c is List && (c as List).length > 0
+                    ? (c as List)[0] as $Value?
+                    : null),
+                runtime: runtime,
+              )
+              as Object?,
     );
     return $ByteData.wrap(result);
   }

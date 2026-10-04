@@ -1376,7 +1376,7 @@ class $ListTile implements $Instance {
         return _onFocusChange == null
             ? const $null()
             : $Function((runtime, target, r, s, c) {
-                _onFocusChange((r as $Value?)!.$value);
+                _onFocusChange((r as $bool).$value);
                 return const $null();
               });
       case 'mouseCursor':

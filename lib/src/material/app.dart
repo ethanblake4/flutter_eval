@@ -3015,7 +3015,7 @@ class $MaterialApp implements $Instance {
             ? const $null()
             : $Function((runtime, target, r, s, c) {
                 final funcResult = _onGenerateInitialRoutes(
-                  (r as $Value?)!.$value,
+                  (r as $String).$value,
                 );
                 return $List.view(
                   funcResult,
@@ -3104,7 +3104,7 @@ class $MaterialApp implements $Instance {
             : $Function((runtime, target, r, s, c) {
                 final funcResult = _builder(
                   (r as $Value?)!.$value,
-                  (s as $Value?)?.$value,
+                  (s as $Value?)!.$value,
                 );
                 return $Widget.wrap(funcResult);
               });
@@ -3166,8 +3166,8 @@ class $MaterialApp implements $Instance {
             ? const $null()
             : $Function((runtime, target, r, s, c) {
                 final funcResult = _localeListResolutionCallback(
-                  (r as $Value?)?.$value,
-                  (s as $Value?)!.$value,
+                  ((r as $Value?)!.$reified as List?)?.cast(),
+                  TypedInterop.exportIterable((s as $Value?), runtime),
                 );
                 return funcResult == null
                     ? const $null()
@@ -3179,8 +3179,8 @@ class $MaterialApp implements $Instance {
             ? const $null()
             : $Function((runtime, target, r, s, c) {
                 final funcResult = _localeResolutionCallback(
-                  (r as $Value?)?.$value,
-                  (s as $Value?)!.$value,
+                  (r as $Value?)!.$value,
+                  TypedInterop.exportIterable((s as $Value?), runtime),
                 );
                 return funcResult == null
                     ? const $null()

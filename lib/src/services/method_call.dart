@@ -32,6 +32,7 @@ import 'package:dart_eval/stdlib/typed_data.dart'
     hide $MethodCodec, $MethodCall;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 
 /// dart_eval wrapper binding for [MethodCall]
 class $MethodCall implements $Instance {
@@ -109,7 +110,11 @@ class $MethodCall implements $Instance {
   /// Wrapper for the [MethodCall.new] constructor
   static $Value? $new(Runtime runtime, Object? r, Object? s, Object? c) {
     return $MethodCall.wrap(
-      MethodCall((r as $String).$value, (s is $Value ? s : null)?.$reified),
+      MethodCall(
+        (r as $String).$value,
+        TypedInterop.exportExternal((s is $Value ? s : null), runtime: runtime)
+            as dynamic,
+      ),
     );
   }
 

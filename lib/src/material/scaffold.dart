@@ -1354,7 +1354,7 @@ class $Scaffold implements $Instance {
         return _onDrawerChanged == null
             ? const $null()
             : $Function((runtime, target, r, s, c) {
-                _onDrawerChanged((r as $Value?)!.$value);
+                _onDrawerChanged((r as $bool).$value);
                 return const $null();
               });
       case 'endDrawer':
@@ -1365,7 +1365,7 @@ class $Scaffold implements $Instance {
         return _onEndDrawerChanged == null
             ? const $null()
             : $Function((runtime, target, r, s, c) {
-                _onEndDrawerChanged((r as $Value?)!.$value);
+                _onEndDrawerChanged((r as $bool).$value);
                 return const $null();
               });
       case 'drawerScrimColor':

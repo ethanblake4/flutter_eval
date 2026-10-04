@@ -2638,7 +2638,7 @@ class $IconButton implements $Instance {
         return _onHover == null
             ? const $null()
             : $Function((runtime, target, r, s, c) {
-                _onHover((r as $Value?)!.$value);
+                _onHover((r as $bool).$value);
                 return const $null();
               });
       case 'onLongPress':
