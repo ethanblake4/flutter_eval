@@ -34,6 +34,8 @@ import 'package:dart_eval/stdlib/typed_data.dart'
     hide $InkWell, $InkResponse, $InteractiveInkFeatureFactory;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../gestures/tap.dart';
 import '../supporting/flutter_material_ink_well.dart';
 
@@ -765,34 +767,60 @@ class $InkWell implements $Instance {
               ),
         onTapDown: _arg6OrNull == null || _arg6OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg6OrNull! as EvalCallable,
-                "void Function(TapDownDetails);export=false",
-                (_callable) => (TapDownDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $TapDownDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/tap.dart',
+                    'TapDownDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg6OrNull! as EvalCallable,
+                  "void Function(TapDownDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (TapDownDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $TapDownDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onTapUp: _arg7OrNull == null || _arg7OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg7OrNull! as EvalCallable,
-                "void Function(TapUpDetails);export=false",
-                (_callable) => (TapUpDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $TapUpDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/tap.dart',
+                    'TapUpDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg7OrNull! as EvalCallable,
+                  "void Function(TapUpDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (TapUpDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $TapUpDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onTapCancel: _arg8OrNull == null || _arg8OrNull is $null
             ? null
             : runtime.cachedCallback(
@@ -813,34 +841,60 @@ class $InkWell implements $Instance {
               ),
         onSecondaryTapUp: _arg10OrNull == null || _arg10OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg10OrNull! as EvalCallable,
-                "void Function(TapUpDetails);export=false",
-                (_callable) => (TapUpDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $TapUpDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/tap.dart',
+                    'TapUpDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg10OrNull! as EvalCallable,
+                  "void Function(TapUpDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (TapUpDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $TapUpDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onSecondaryTapDown: _arg11OrNull == null || _arg11OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg11OrNull! as EvalCallable,
-                "void Function(TapDownDetails);export=false",
-                (_callable) => (TapDownDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $TapDownDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/tap.dart',
+                    'TapDownDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg11OrNull! as EvalCallable,
+                  "void Function(TapDownDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (TapDownDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $TapDownDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onSecondaryTapCancel: _arg12OrNull == null || _arg12OrNull is $null
             ? null
             : runtime.cachedCallback(
@@ -852,22 +906,32 @@ class $InkWell implements $Instance {
               ),
         onHighlightChanged: _arg13OrNull == null || _arg13OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg13OrNull! as EvalCallable,
-                "void Function(bool);export=false",
-                (_callable) => (bool value) {
-                  _callable.call(runtime, null, $bool(value), null, 1);
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg13OrNull! as EvalCallable,
+                  "void Function(bool);export=false" + ";types=$_callbackType0",
+                  (_callable) => (bool value) {
+                    _callable.call(runtime, null, $bool(value), null, 1);
+                  },
+                );
+              })(),
         onHover: _arg14OrNull == null || _arg14OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg14OrNull! as EvalCallable,
-                "void Function(bool);export=false",
-                (_callable) => (bool value) {
-                  _callable.call(runtime, null, $bool(value), null, 1);
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg14OrNull! as EvalCallable,
+                  "void Function(bool);export=false" + ";types=$_callbackType0",
+                  (_callable) => (bool value) {
+                    _callable.call(runtime, null, $bool(value), null, 1);
+                  },
+                );
+              })(),
         mouseCursor: _arg15OrNull?.$value,
         focusColor: _arg16OrNull?.$value,
         hoverColor: _arg17OrNull?.$value,
@@ -890,13 +954,18 @@ class $InkWell implements $Instance {
             : (_arg28OrNull as $bool).$value,
         onFocusChange: _arg29OrNull == null || _arg29OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg29OrNull! as EvalCallable,
-                "void Function(bool);export=false",
-                (_callable) => (bool value) {
-                  _callable.call(runtime, null, $bool(value), null, 1);
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg29OrNull! as EvalCallable,
+                  "void Function(bool);export=false" + ";types=$_callbackType0",
+                  (_callable) => (bool value) {
+                    _callable.call(runtime, null, $bool(value), null, 1);
+                  },
+                );
+              })(),
         autofocus: _arg30OrNull == null
             ? false
             : (_arg30OrNull as $bool).$value,

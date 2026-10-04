@@ -213,7 +213,8 @@ class $Constraints implements $Instance {
               (s is $Value ? s : null)! as EvalCallable,
               "Iterable<DiagnosticsNode> Function();export=false",
               (_callable) => () {
-                return _callable.call(runtime, null, null, null, 0)?.$value;
+                return _callable.call(runtime, null, null, null, 0)?.$value
+                    as Iterable<DiagnosticsNode>;
               },
             ),
     );

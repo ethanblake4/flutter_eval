@@ -31,8 +31,9 @@ import 'package:dart_eval/stdlib/async.dart' hide $ElevatedButton;
 import 'package:dart_eval/stdlib/typed_data.dart' hide $ElevatedButton;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../widgets/framework_wrappers.dart';
-import '../widgets/widget_state.dart';
 import './button_style.dart';
 import './button_style_button.dart';
 
@@ -1111,22 +1112,32 @@ class $ElevatedButton implements $Instance {
               ),
         onHover: _arg3OrNull == null || _arg3OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg3OrNull! as EvalCallable,
-                "void Function(bool);export=false",
-                (_callable) => (bool value) {
-                  _callable.call(runtime, null, $bool(value), null, 1);
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg3OrNull! as EvalCallable,
+                  "void Function(bool);export=false" + ";types=$_callbackType0",
+                  (_callable) => (bool value) {
+                    _callable.call(runtime, null, $bool(value), null, 1);
+                  },
+                );
+              })(),
         onFocusChange: _arg4OrNull == null || _arg4OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg4OrNull! as EvalCallable,
-                "void Function(bool);export=false",
-                (_callable) => (bool value) {
-                  _callable.call(runtime, null, $bool(value), null, 1);
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg4OrNull! as EvalCallable,
+                  "void Function(bool);export=false" + ";types=$_callbackType0",
+                  (_callable) => (bool value) {
+                    _callable.call(runtime, null, $bool(value), null, 1);
+                  },
+                );
+              })(),
         style: _arg5OrNull?.$value,
         focusNode: _arg6OrNull?.$value,
         autofocus: _arg7OrNull == null ? false : (_arg7OrNull as $bool).$value,
@@ -1174,22 +1185,32 @@ class $ElevatedButton implements $Instance {
               ),
         onHover: _arg3OrNull == null || _arg3OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg3OrNull! as EvalCallable,
-                "void Function(bool);export=false",
-                (_callable) => (bool value) {
-                  _callable.call(runtime, null, $bool(value), null, 1);
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg3OrNull! as EvalCallable,
+                  "void Function(bool);export=false" + ";types=$_callbackType0",
+                  (_callable) => (bool value) {
+                    _callable.call(runtime, null, $bool(value), null, 1);
+                  },
+                );
+              })(),
         onFocusChange: _arg4OrNull == null || _arg4OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg4OrNull! as EvalCallable,
-                "void Function(bool);export=false",
-                (_callable) => (bool value) {
-                  _callable.call(runtime, null, $bool(value), null, 1);
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg4OrNull! as EvalCallable,
+                  "void Function(bool);export=false" + ";types=$_callbackType0",
+                  (_callable) => (bool value) {
+                    _callable.call(runtime, null, $bool(value), null, 1);
+                  },
+                );
+              })(),
         style: _arg5OrNull?.$value,
         focusNode: _arg6OrNull?.$value,
         autofocus: _arg7OrNull == null ? false : (_arg7OrNull as $bool).$value,
@@ -1262,48 +1283,130 @@ class $ElevatedButton implements $Instance {
       splashFactory: _arg26OrNull?.$value,
       backgroundBuilder: _arg27OrNull == null || _arg27OrNull is $null
           ? null
-          : runtime.cachedCallback(
-              _arg27OrNull! as EvalCallable,
-              "Widget Function(BuildContext, Set<WidgetState>, Widget?);export=false",
-              (_callable) =>
-                  (
-                    BuildContext context,
-                    Set<WidgetState> states,
-                    Widget? child,
-                  ) {
-                    return _callable.call(
-                      runtime,
-                      null,
-                      $BuildContext.wrap(context),
-                      $Set.wrap(
-                        (states).map((e) => $WidgetState.wrap(e)).toSet(),
+          : (() {
+              final _callbackType0 = runtime.lookupType(
+                BridgeTypeSpec(
+                  'package:flutter/src/widgets/framework.dart',
+                  'BuildContext',
+                ),
+              );
+              final _callbackType1 = runtime
+                  .internParameterizedType(BridgeTypeSpec('dart:core', 'Set'), [
+                    runtime.lookupType(
+                      BridgeTypeSpec(
+                        'package:flutter/src/widgets/widget_state.dart',
+                        'WidgetState',
                       ),
-                      [(child == null ? const $null() : $Widget.wrap(child))],
-                    )?.$value;
-                  },
-            ),
+                    ),
+                  ]);
+              final _callbackType2 = runtime.internParameterizedType(
+                BridgeTypeSpec(
+                  'package:flutter/src/widgets/framework.dart',
+                  'Widget',
+                ),
+                [],
+                nullable: true,
+              );
+              return runtime.cachedCallback(
+                _arg27OrNull! as EvalCallable,
+                "Widget Function(BuildContext, Set<WidgetState>, Widget?);export=false" +
+                    ";types=$_callbackType0,$_callbackType1,$_callbackType2",
+                (_callable) =>
+                    (
+                      BuildContext context,
+                      Set<WidgetState> states,
+                      Widget? child,
+                    ) {
+                      return _callable.call(
+                            runtime,
+                            null,
+                            TypedInterop.annotateBridgeType(
+                              $BuildContext.wrap(context),
+                              runtime,
+                              _callbackType0,
+                            ),
+                            TypedInterop.boxExternal(
+                              states,
+                              runtime: runtime,
+                              runtimeTypeId: _callbackType1,
+                            ),
+                            [
+                              TypedInterop.annotateBridgeType(
+                                (child == null
+                                    ? const $null()
+                                    : $Widget.wrap(child)),
+                                runtime,
+                                _callbackType2,
+                              ),
+                            ],
+                          )?.$value
+                          as Widget;
+                    },
+              );
+            })(),
       foregroundBuilder: _arg28OrNull == null || _arg28OrNull is $null
           ? null
-          : runtime.cachedCallback(
-              _arg28OrNull! as EvalCallable,
-              "Widget Function(BuildContext, Set<WidgetState>, Widget?);export=false",
-              (_callable) =>
-                  (
-                    BuildContext context,
-                    Set<WidgetState> states,
-                    Widget? child,
-                  ) {
-                    return _callable.call(
-                      runtime,
-                      null,
-                      $BuildContext.wrap(context),
-                      $Set.wrap(
-                        (states).map((e) => $WidgetState.wrap(e)).toSet(),
+          : (() {
+              final _callbackType0 = runtime.lookupType(
+                BridgeTypeSpec(
+                  'package:flutter/src/widgets/framework.dart',
+                  'BuildContext',
+                ),
+              );
+              final _callbackType1 = runtime
+                  .internParameterizedType(BridgeTypeSpec('dart:core', 'Set'), [
+                    runtime.lookupType(
+                      BridgeTypeSpec(
+                        'package:flutter/src/widgets/widget_state.dart',
+                        'WidgetState',
                       ),
-                      [(child == null ? const $null() : $Widget.wrap(child))],
-                    )?.$value;
-                  },
-            ),
+                    ),
+                  ]);
+              final _callbackType2 = runtime.internParameterizedType(
+                BridgeTypeSpec(
+                  'package:flutter/src/widgets/framework.dart',
+                  'Widget',
+                ),
+                [],
+                nullable: true,
+              );
+              return runtime.cachedCallback(
+                _arg28OrNull! as EvalCallable,
+                "Widget Function(BuildContext, Set<WidgetState>, Widget?);export=false" +
+                    ";types=$_callbackType0,$_callbackType1,$_callbackType2",
+                (_callable) =>
+                    (
+                      BuildContext context,
+                      Set<WidgetState> states,
+                      Widget? child,
+                    ) {
+                      return _callable.call(
+                            runtime,
+                            null,
+                            TypedInterop.annotateBridgeType(
+                              $BuildContext.wrap(context),
+                              runtime,
+                              _callbackType0,
+                            ),
+                            TypedInterop.boxExternal(
+                              states,
+                              runtime: runtime,
+                              runtimeTypeId: _callbackType1,
+                            ),
+                            [
+                              TypedInterop.annotateBridgeType(
+                                (child == null
+                                    ? const $null()
+                                    : $Widget.wrap(child)),
+                                runtime,
+                                _callbackType2,
+                              ),
+                            ],
+                          )?.$value
+                          as Widget;
+                    },
+              );
+            })(),
     );
     return $ButtonStyle.wrap(value);
   }

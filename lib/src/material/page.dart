@@ -34,20 +34,21 @@ import 'package:dart_eval/stdlib/typed_data.dart'
     hide $MaterialPageRoute, $MaterialRouteTransitionMixin;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
-import '../widgets/framework_wrappers.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
+import '../widgets/framework_wrappers.dart';
 import '../sky_engine/ui/painting.dart';
 import '../supporting/flutter_widgets_navigator.dart';
 import '../widgets/navigator.dart';
 import '../widgets/overlay.dart';
 import '../foundation/notifiers.dart';
-import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../animation/animation.dart';
 import '../supporting/ui.dart';
 import '../supporting/flutter_widgets_focus_traversal.dart';
 import '../animation/curves.dart';
 import '../animation/animation_controller.dart';
 import '../supporting/flutter_physics_simulation.dart';
+import 'dart:async';
 
 /// dart_eval wrapper binding for [MaterialPageRoute]
 class $MaterialPageRoute<T> implements $Instance {
@@ -1582,15 +1583,35 @@ class $MaterialPageRoute<T> implements $Instance {
 
     return $MaterialPageRoute.wrap(
       MaterialPageRoute(
-        builder: runtime.cachedCallback(
-          (r as $Value?)! as EvalCallable,
-          "Widget Function(BuildContext);export=false",
-          (_callable) => (BuildContext context) {
-            return _callable
-                .call(runtime, null, $BuildContext.wrap(context), null, 1)
-                ?.$value;
-          },
-        ),
+        builder: (() {
+          final _callbackType0 = runtime.lookupType(
+            BridgeTypeSpec(
+              'package:flutter/src/widgets/framework.dart',
+              'BuildContext',
+            ),
+          );
+          return runtime.cachedCallback(
+            (r as $Value?)! as EvalCallable,
+            "Widget Function(BuildContext);export=false" +
+                ";types=$_callbackType0",
+            (_callable) => (BuildContext context) {
+              return _callable
+                      .call(
+                        runtime,
+                        null,
+                        TypedInterop.annotateBridgeType(
+                          $BuildContext.wrap(context),
+                          runtime,
+                          _callbackType0,
+                        ),
+                        null,
+                        1,
+                      )
+                      ?.$value
+                  as Widget;
+            },
+          );
+        })(),
         settings: (s is $Value ? s : null)?.$value,
         requestFocus: _arg2OrNull?.$value,
         maintainState: _arg3OrNull == null
@@ -2231,7 +2252,8 @@ class $MaterialPageRoute<T> implements $Instance {
         (r as $Value?)! as EvalCallable,
         "Future<bool> Function();export=false",
         (_callable) => () {
-          return _callable.call(runtime, null, null, null, 0)?.$value;
+          return _callable.call(runtime, null, null, null, 0)?.$value
+              as Future<bool>;
         },
       ),
     );
@@ -2254,7 +2276,8 @@ class $MaterialPageRoute<T> implements $Instance {
         (r as $Value?)! as EvalCallable,
         "Future<bool> Function();export=false",
         (_callable) => () {
-          return _callable.call(runtime, null, null, null, 0)?.$value;
+          return _callable.call(runtime, null, null, null, 0)?.$value
+              as Future<bool>;
         },
       ),
     );

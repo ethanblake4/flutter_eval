@@ -32,9 +32,9 @@ import 'package:dart_eval/stdlib/typed_data.dart' hide $AppBar;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import '../supporting/flutter_widgets_scroll_notification.dart';
 import '../widgets/framework_wrappers.dart';
-import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import '../supporting/flutter_widgets_preferred_size.dart';
 import '../sky_engine/ui/painting.dart';
 import '../painting/borders.dart';
@@ -1030,21 +1030,35 @@ class $AppBar implements $Instance {
         scrolledUnderElevation: _arg9OrNull?.$value,
         notificationPredicate: _arg10OrNull == null
             ? defaultScrollNotificationPredicate
-            : runtime.cachedCallback(
-                _arg10OrNull! as EvalCallable,
-                "bool Function(ScrollNotification);export=false",
-                (_callable) => (ScrollNotification notification) {
-                  return _callable
-                      .call(
-                        runtime,
-                        null,
-                        $ScrollNotification.wrap(notification),
-                        null,
-                        1,
-                      )
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/scroll_notification.dart',
+                    'ScrollNotification',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg10OrNull! as EvalCallable,
+                  "bool Function(ScrollNotification);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (ScrollNotification notification) {
+                    return _callable
+                            .call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $ScrollNotification.wrap(notification),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              null,
+                              1,
+                            )
+                            ?.$value
+                        as bool;
+                  },
+                );
+              })(),
         shadowColor: _arg11OrNull?.$value,
         surfaceTintColor: _arg12OrNull?.$value,
         shape: _arg13OrNull?.$value,

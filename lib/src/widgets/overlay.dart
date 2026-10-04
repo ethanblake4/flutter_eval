@@ -69,6 +69,7 @@ import 'package:dart_eval/stdlib/async.dart'
     hide $OverlayEntry, $Overlay, $OverlayState;
 import 'package:dart_eval/stdlib/typed_data.dart'
     hide $OverlayEntry, $Overlay, $OverlayState;
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import './framework_wrappers.dart';
 import '../foundation/notifiers.dart';
 
@@ -506,15 +507,35 @@ class $OverlayEntry implements $Instance {
 
     return $OverlayEntry.wrap(
       OverlayEntry(
-        builder: runtime.cachedCallback(
-          (r as $Value?)! as EvalCallable,
-          "Widget Function(BuildContext);export=false",
-          (_callable) => (BuildContext context) {
-            return _callable
-                .call(runtime, null, $BuildContext.wrap(context), null, 1)
-                ?.$value;
-          },
-        ),
+        builder: (() {
+          final _callbackType0 = runtime.lookupType(
+            BridgeTypeSpec(
+              'package:flutter/src/widgets/framework.dart',
+              'BuildContext',
+            ),
+          );
+          return runtime.cachedCallback(
+            (r as $Value?)! as EvalCallable,
+            "Widget Function(BuildContext);export=false" +
+                ";types=$_callbackType0",
+            (_callable) => (BuildContext context) {
+              return _callable
+                      .call(
+                        runtime,
+                        null,
+                        TypedInterop.annotateBridgeType(
+                          $BuildContext.wrap(context),
+                          runtime,
+                          _callbackType0,
+                        ),
+                        null,
+                        1,
+                      )
+                      ?.$value
+                  as Widget;
+            },
+          );
+        })(),
         opaque: (s is $Value ? s : null) == null ? false : (s as $bool).$value,
         maintainState: _arg2OrNull == null
             ? false

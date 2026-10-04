@@ -32,7 +32,7 @@ import 'package:dart_eval/stdlib/typed_data.dart' hide $TextField;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
-import 'package:dart_eval/src/eval/utils/wrap_helper.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import '../supporting/flutter_gestures_events.dart';
 import '../widgets/framework_wrappers.dart';
 import '../supporting/flutter_widgets_editable_text.dart';
@@ -48,7 +48,6 @@ import '../sky_engine/ui/text.dart';
 import '../supporting/flutter_painting_alignment.dart';
 import '../widgets/widget_state.dart';
 import '../supporting/flutter_services_text_formatter.dart';
-import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import '../sky_engine/ui/geometry.dart';
 import '../sky_engine/ui/painting.dart';
 import '../supporting/ui.dart';
@@ -2425,13 +2424,19 @@ class $TextField implements $Instance {
         maxLengthEnforcement: _arg29OrNull?.$value,
         onChanged: _arg30OrNull == null || _arg30OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg30OrNull! as EvalCallable,
-                "void Function(String);export=false",
-                (_callable) => (String value) {
-                  _callable.call(runtime, null, $String(value), null, 1);
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'String'),
+                );
+                return runtime.cachedCallback(
+                  _arg30OrNull! as EvalCallable,
+                  "void Function(String);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (String value) {
+                    _callable.call(runtime, null, $String(value), null, 1);
+                  },
+                );
+              })(),
         onEditingComplete: _arg31OrNull == null || _arg31OrNull is $null
             ? null
             : runtime.cachedCallback(
@@ -2443,34 +2448,51 @@ class $TextField implements $Instance {
               ),
         onSubmitted: _arg32OrNull == null || _arg32OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg32OrNull! as EvalCallable,
-                "void Function(String);export=false",
-                (_callable) => (String value) {
-                  _callable.call(runtime, null, $String(value), null, 1);
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'String'),
+                );
+                return runtime.cachedCallback(
+                  _arg32OrNull! as EvalCallable,
+                  "void Function(String);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (String value) {
+                    _callable.call(runtime, null, $String(value), null, 1);
+                  },
+                );
+              })(),
         onAppPrivateCommand: _arg33OrNull == null || _arg33OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg33OrNull! as EvalCallable,
-                "void Function(String, Map<String, dynamic>);export=false",
-                (_callable) => (String action, Map<String, dynamic> data) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $String(action),
-                    wrapMap(
-                      data,
-                      (key, value) => MapEntry(
-                        $String(key),
-                        runtime.wrapAlways(value, recursive: true),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'String'),
+                );
+                final _callbackType1 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'Map'),
+                  [
+                    runtime.lookupType(BridgeTypeSpec('dart:core', 'String')),
+                    runtime.lookupType(CoreTypes.dynamic),
+                  ],
+                );
+                return runtime.cachedCallback(
+                  _arg33OrNull! as EvalCallable,
+                  "void Function(String, Map<String, dynamic>);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) => (String action, Map<String, dynamic> data) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      $String(action),
+                      TypedInterop.boxExternal(
+                        data,
+                        runtime: runtime,
+                        runtimeTypeId: _callbackType1,
                       ),
-                    ),
-                    2,
-                  );
-                },
-              ),
+                      2,
+                    );
+                  },
+                );
+              })(),
         inputFormatters:
             (TypedInterop.exportExternal(_arg34OrNull, runtime: runtime)
                     as List?)
@@ -2511,59 +2533,112 @@ class $TextField implements $Instance {
             : (_arg52OrNull as $bool).$value,
         onTapOutside: _arg53OrNull == null || _arg53OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg53OrNull! as EvalCallable,
-                "void Function(PointerDownEvent);export=false",
-                (_callable) => (PointerDownEvent event) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $PointerDownEvent.wrap(event),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/events.dart',
+                    'PointerDownEvent',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg53OrNull! as EvalCallable,
+                  "void Function(PointerDownEvent);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (PointerDownEvent event) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $PointerDownEvent.wrap(event),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onTapUpOutside: _arg54OrNull == null || _arg54OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg54OrNull! as EvalCallable,
-                "void Function(PointerUpEvent);export=false",
-                (_callable) => (PointerUpEvent event) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $PointerUpEvent.wrap(event),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/events.dart',
+                    'PointerUpEvent',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg54OrNull! as EvalCallable,
+                  "void Function(PointerUpEvent);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (PointerUpEvent event) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $PointerUpEvent.wrap(event),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         mouseCursor: _arg55OrNull?.$value,
         buildCounter: _arg56OrNull == null || _arg56OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg56OrNull! as EvalCallable,
-                "Widget? Function(BuildContext, {required int currentLength, required bool isFocused, required int? maxLength});export=false",
-                (_callable) =>
-                    (
-                      BuildContext context, {
-                      required int currentLength,
-                      required bool isFocused,
-                      required int? maxLength,
-                    }) {
-                      return _callable.call(
-                        runtime,
-                        null,
-                        $BuildContext.wrap(context),
-                        $int(currentLength),
-                        [
-                          $bool(isFocused),
-                          (maxLength == null ? const $null() : $int(maxLength)),
-                        ],
-                      )?.$value;
-                    },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'int'),
+                );
+                final _callbackType2 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                final _callbackType3 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'int'),
+                  [],
+                  nullable: true,
+                );
+                return runtime.cachedCallback(
+                  _arg56OrNull! as EvalCallable,
+                  "Widget? Function(BuildContext, {required int currentLength, required bool isFocused, required int? maxLength});export=false" +
+                      ";types=$_callbackType0,$_callbackType1,$_callbackType2,$_callbackType3",
+                  (_callable) =>
+                      (
+                        BuildContext context, {
+                        required int currentLength,
+                        required bool isFocused,
+                        required int? maxLength,
+                      }) {
+                        return _callable.call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $BuildContext.wrap(context),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              $int(currentLength),
+                              [
+                                $bool(isFocused),
+                                (maxLength == null
+                                    ? const $null()
+                                    : $int(maxLength)),
+                              ],
+                            )?.$value
+                            as Widget?;
+                      },
+                );
+              })(),
         scrollController: _arg57OrNull?.$value,
         scrollPhysics: _arg58OrNull?.$value,
         autofillHints: _arg59OrNull == null
@@ -2590,25 +2665,49 @@ class $TextField implements $Instance {
             ? const TextField().contextMenuBuilder
             : _arg67OrNull == null || _arg67OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg67OrNull! as EvalCallable,
-                "Widget Function(BuildContext, EditableTextState);export=false",
-                (_callable) =>
-                    (
-                      BuildContext context,
-                      EditableTextState editableTextState,
-                    ) {
-                      return _callable
-                          .call(
-                            runtime,
-                            null,
-                            $BuildContext.wrap(context),
-                            $EditableTextState.wrap(editableTextState),
-                            2,
-                          )
-                          ?.$value;
-                    },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/editable_text.dart',
+                    'EditableTextState',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg67OrNull! as EvalCallable,
+                  "Widget Function(BuildContext, EditableTextState);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) =>
+                      (
+                        BuildContext context,
+                        EditableTextState editableTextState,
+                      ) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.annotateBridgeType(
+                                    $BuildContext.wrap(context),
+                                    runtime,
+                                    _callbackType0,
+                                  ),
+                                  TypedInterop.annotateBridgeType(
+                                    $EditableTextState.wrap(editableTextState),
+                                    runtime,
+                                    _callbackType1,
+                                  ),
+                                  2,
+                                )
+                                ?.$value
+                            as Widget;
+                      },
+                );
+              })(),
         canRequestFocus: _arg68OrNull == null
             ? true
             : (_arg68OrNull as $bool).$value,

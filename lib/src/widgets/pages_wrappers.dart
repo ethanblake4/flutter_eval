@@ -47,6 +47,7 @@ import './framework_wrappers.dart';
 import '../animation/curves.dart';
 import '../scheduler/ticker.dart';
 import '../supporting/flutter_physics_simulation.dart';
+import 'dart:async';
 import '../supporting/flutter_widgets_routes.dart';
 import './routes.dart';
 import '../sky_engine/ui/painting.dart';
@@ -2042,8 +2043,7 @@ class $PageRoute$bridge<T> extends PageRoute<T> with $Bridge<PageRoute<T>> {
       case 'didPop':
         return $Function((runtime, target, r, s, c) {
           final result = super.didPop(
-            TypedInterop.exportExternal((r as $Value?), runtime: runtime)
-                as dynamic,
+            TypedInterop.exportExternal((r as $Value?), runtime: runtime) as T?,
           );
           return $bool(result);
         });
@@ -2102,16 +2102,14 @@ class $PageRoute$bridge<T> extends PageRoute<T> with $Bridge<PageRoute<T>> {
         return $Function((runtime, target, r, s, c) {
           super.onPopInvokedWithResult(
             (r as $bool).$value,
-            TypedInterop.exportExternal((s as $Value?), runtime: runtime)
-                as dynamic,
+            TypedInterop.exportExternal((s as $Value?), runtime: runtime) as T?,
           );
           return null;
         });
       case 'didComplete':
         return $Function((runtime, target, r, s, c) {
           super.didComplete(
-            TypedInterop.exportExternal((r as $Value?), runtime: runtime)
-                as dynamic,
+            TypedInterop.exportExternal((r as $Value?), runtime: runtime) as T?,
           );
           return null;
         });
@@ -2272,7 +2270,12 @@ class $PageRoute$bridge<T> extends PageRoute<T> with $Bridge<PageRoute<T>> {
           return $Widget.wrap(result);
         });
     }
-    return null;
+    return $bridgeGetObject(
+      identifier,
+      hashCode: () => super.hashCode,
+      equals: (other) => super == other,
+      toString: () => super.toString(),
+    );
   }
 
   @override
@@ -3732,7 +3735,8 @@ class $PageRoute<T> implements $Instance {
         (r as $Value?)! as EvalCallable,
         "Future<bool> Function();export=false",
         (_callable) => () {
-          return _callable.call(runtime, null, null, null, 0)?.$value;
+          return _callable.call(runtime, null, null, null, 0)?.$value
+              as Future<bool>;
         },
       ),
     );
@@ -3755,7 +3759,8 @@ class $PageRoute<T> implements $Instance {
         (r as $Value?)! as EvalCallable,
         "Future<bool> Function();export=false",
         (_callable) => () {
-          return _callable.call(runtime, null, null, null, 0)?.$value;
+          return _callable.call(runtime, null, null, null, 0)?.$value
+              as Future<bool>;
         },
       ),
     );

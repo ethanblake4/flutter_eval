@@ -31,11 +31,12 @@ import 'package:dart_eval/stdlib/async.dart' hide $Image;
 import 'package:dart_eval/stdlib/typed_data.dart' hide $Image;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import './framework_wrappers.dart';
 import '../supporting/flutter_painting_image_stream.dart';
 import 'dart:io';
 import '../painting/image_provider.dart';
-import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../sky_engine/ui/painting.dart';
 import '../animation/animation.dart';
 import '../sky_engine/ui/image.dart';
@@ -2507,76 +2508,174 @@ class $Image implements $Instance {
         image: (s as $Value?)!.$value,
         frameBuilder: _arg2OrNull == null || _arg2OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg2OrNull! as EvalCallable,
-                "Widget Function(BuildContext, Widget, int?, bool);export=false",
-                (_callable) =>
-                    (
-                      BuildContext context,
-                      Widget child,
-                      int? frame,
-                      bool wasSynchronouslyLoaded,
-                    ) {
-                      return _callable.call(
-                        runtime,
-                        null,
-                        $BuildContext.wrap(context),
-                        $Widget.wrap(child),
-                        [
-                          (frame == null ? const $null() : $int(frame)),
-                          $bool(wasSynchronouslyLoaded),
-                        ],
-                      )?.$value;
-                    },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'Widget',
+                  ),
+                );
+                final _callbackType2 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'int'),
+                  [],
+                  nullable: true,
+                );
+                final _callbackType3 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg2OrNull! as EvalCallable,
+                  "Widget Function(BuildContext, Widget, int?, bool);export=false" +
+                      ";types=$_callbackType0,$_callbackType1,$_callbackType2,$_callbackType3",
+                  (_callable) =>
+                      (
+                        BuildContext context,
+                        Widget child,
+                        int? frame,
+                        bool wasSynchronouslyLoaded,
+                      ) {
+                        return _callable.call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $BuildContext.wrap(context),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              TypedInterop.annotateBridgeType(
+                                $Widget.wrap(child),
+                                runtime,
+                                _callbackType1,
+                              ),
+                              [
+                                (frame == null ? const $null() : $int(frame)),
+                                $bool(wasSynchronouslyLoaded),
+                              ],
+                            )?.$value
+                            as Widget;
+                      },
+                );
+              })(),
         loadingBuilder: _arg3OrNull == null || _arg3OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg3OrNull! as EvalCallable,
-                "Widget Function(BuildContext, Widget, ImageChunkEvent?);export=false",
-                (_callable) =>
-                    (
-                      BuildContext context,
-                      Widget child,
-                      ImageChunkEvent? loadingProgress,
-                    ) {
-                      return _callable.call(
-                        runtime,
-                        null,
-                        $BuildContext.wrap(context),
-                        $Widget.wrap(child),
-                        [
-                          (loadingProgress == null
-                              ? const $null()
-                              : $ImageChunkEvent.wrap(loadingProgress)),
-                        ],
-                      )?.$value;
-                    },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'Widget',
+                  ),
+                );
+                final _callbackType2 = runtime.internParameterizedType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/painting/image_stream.dart',
+                    'ImageChunkEvent',
+                  ),
+                  [],
+                  nullable: true,
+                );
+                return runtime.cachedCallback(
+                  _arg3OrNull! as EvalCallable,
+                  "Widget Function(BuildContext, Widget, ImageChunkEvent?);export=false" +
+                      ";types=$_callbackType0,$_callbackType1,$_callbackType2",
+                  (_callable) =>
+                      (
+                        BuildContext context,
+                        Widget child,
+                        ImageChunkEvent? loadingProgress,
+                      ) {
+                        return _callable.call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $BuildContext.wrap(context),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              TypedInterop.annotateBridgeType(
+                                $Widget.wrap(child),
+                                runtime,
+                                _callbackType1,
+                              ),
+                              [
+                                TypedInterop.annotateBridgeType(
+                                  (loadingProgress == null
+                                      ? const $null()
+                                      : $ImageChunkEvent.wrap(loadingProgress)),
+                                  runtime,
+                                  _callbackType2,
+                                ),
+                              ],
+                            )?.$value
+                            as Widget;
+                      },
+                );
+              })(),
         errorBuilder: _arg4OrNull == null || _arg4OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg4OrNull! as EvalCallable,
-                "Widget Function(BuildContext, Object, StackTrace?);export=false",
-                (_callable) =>
-                    (
-                      BuildContext context,
-                      Object error,
-                      StackTrace? stackTrace,
-                    ) {
-                      return _callable.call(
-                        runtime,
-                        null,
-                        $BuildContext.wrap(context),
-                        $Object(error),
-                        [
-                          (stackTrace == null
-                              ? const $null()
-                              : $StackTrace.wrap(stackTrace)),
-                        ],
-                      )?.$value;
-                    },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'Object'),
+                );
+                final _callbackType2 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'StackTrace'),
+                  [],
+                  nullable: true,
+                );
+                return runtime.cachedCallback(
+                  _arg4OrNull! as EvalCallable,
+                  "Widget Function(BuildContext, Object, StackTrace?);export=false" +
+                      ";types=$_callbackType0,$_callbackType1,$_callbackType2",
+                  (_callable) =>
+                      (
+                        BuildContext context,
+                        Object error,
+                        StackTrace? stackTrace,
+                      ) {
+                        return _callable.call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $BuildContext.wrap(context),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              TypedInterop.annotateBridgeType(
+                                $Object(error),
+                                runtime,
+                                _callbackType1,
+                              ),
+                              [
+                                TypedInterop.annotateBridgeType(
+                                  (stackTrace == null
+                                      ? const $null()
+                                      : $StackTrace.wrap(stackTrace)),
+                                  runtime,
+                                  _callbackType2,
+                                ),
+                              ],
+                            )?.$value
+                            as Widget;
+                      },
+                );
+              })(),
         semanticLabel: _arg5OrNull?.$value,
         excludeFromSemantics: _arg6OrNull == null
             ? false
@@ -2643,76 +2742,174 @@ class $Image implements $Instance {
         scale: _arg2OrNull == null ? 1.0 : (_arg2OrNull as $double).$value,
         frameBuilder: _arg3OrNull == null || _arg3OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg3OrNull! as EvalCallable,
-                "Widget Function(BuildContext, Widget, int?, bool);export=false",
-                (_callable) =>
-                    (
-                      BuildContext context,
-                      Widget child,
-                      int? frame,
-                      bool wasSynchronouslyLoaded,
-                    ) {
-                      return _callable.call(
-                        runtime,
-                        null,
-                        $BuildContext.wrap(context),
-                        $Widget.wrap(child),
-                        [
-                          (frame == null ? const $null() : $int(frame)),
-                          $bool(wasSynchronouslyLoaded),
-                        ],
-                      )?.$value;
-                    },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'Widget',
+                  ),
+                );
+                final _callbackType2 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'int'),
+                  [],
+                  nullable: true,
+                );
+                final _callbackType3 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg3OrNull! as EvalCallable,
+                  "Widget Function(BuildContext, Widget, int?, bool);export=false" +
+                      ";types=$_callbackType0,$_callbackType1,$_callbackType2,$_callbackType3",
+                  (_callable) =>
+                      (
+                        BuildContext context,
+                        Widget child,
+                        int? frame,
+                        bool wasSynchronouslyLoaded,
+                      ) {
+                        return _callable.call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $BuildContext.wrap(context),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              TypedInterop.annotateBridgeType(
+                                $Widget.wrap(child),
+                                runtime,
+                                _callbackType1,
+                              ),
+                              [
+                                (frame == null ? const $null() : $int(frame)),
+                                $bool(wasSynchronouslyLoaded),
+                              ],
+                            )?.$value
+                            as Widget;
+                      },
+                );
+              })(),
         loadingBuilder: _arg4OrNull == null || _arg4OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg4OrNull! as EvalCallable,
-                "Widget Function(BuildContext, Widget, ImageChunkEvent?);export=false",
-                (_callable) =>
-                    (
-                      BuildContext context,
-                      Widget child,
-                      ImageChunkEvent? loadingProgress,
-                    ) {
-                      return _callable.call(
-                        runtime,
-                        null,
-                        $BuildContext.wrap(context),
-                        $Widget.wrap(child),
-                        [
-                          (loadingProgress == null
-                              ? const $null()
-                              : $ImageChunkEvent.wrap(loadingProgress)),
-                        ],
-                      )?.$value;
-                    },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'Widget',
+                  ),
+                );
+                final _callbackType2 = runtime.internParameterizedType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/painting/image_stream.dart',
+                    'ImageChunkEvent',
+                  ),
+                  [],
+                  nullable: true,
+                );
+                return runtime.cachedCallback(
+                  _arg4OrNull! as EvalCallable,
+                  "Widget Function(BuildContext, Widget, ImageChunkEvent?);export=false" +
+                      ";types=$_callbackType0,$_callbackType1,$_callbackType2",
+                  (_callable) =>
+                      (
+                        BuildContext context,
+                        Widget child,
+                        ImageChunkEvent? loadingProgress,
+                      ) {
+                        return _callable.call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $BuildContext.wrap(context),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              TypedInterop.annotateBridgeType(
+                                $Widget.wrap(child),
+                                runtime,
+                                _callbackType1,
+                              ),
+                              [
+                                TypedInterop.annotateBridgeType(
+                                  (loadingProgress == null
+                                      ? const $null()
+                                      : $ImageChunkEvent.wrap(loadingProgress)),
+                                  runtime,
+                                  _callbackType2,
+                                ),
+                              ],
+                            )?.$value
+                            as Widget;
+                      },
+                );
+              })(),
         errorBuilder: _arg5OrNull == null || _arg5OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg5OrNull! as EvalCallable,
-                "Widget Function(BuildContext, Object, StackTrace?);export=false",
-                (_callable) =>
-                    (
-                      BuildContext context,
-                      Object error,
-                      StackTrace? stackTrace,
-                    ) {
-                      return _callable.call(
-                        runtime,
-                        null,
-                        $BuildContext.wrap(context),
-                        $Object(error),
-                        [
-                          (stackTrace == null
-                              ? const $null()
-                              : $StackTrace.wrap(stackTrace)),
-                        ],
-                      )?.$value;
-                    },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'Object'),
+                );
+                final _callbackType2 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'StackTrace'),
+                  [],
+                  nullable: true,
+                );
+                return runtime.cachedCallback(
+                  _arg5OrNull! as EvalCallable,
+                  "Widget Function(BuildContext, Object, StackTrace?);export=false" +
+                      ";types=$_callbackType0,$_callbackType1,$_callbackType2",
+                  (_callable) =>
+                      (
+                        BuildContext context,
+                        Object error,
+                        StackTrace? stackTrace,
+                      ) {
+                        return _callable.call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $BuildContext.wrap(context),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              TypedInterop.annotateBridgeType(
+                                $Object(error),
+                                runtime,
+                                _callbackType1,
+                              ),
+                              [
+                                TypedInterop.annotateBridgeType(
+                                  (stackTrace == null
+                                      ? const $null()
+                                      : $StackTrace.wrap(stackTrace)),
+                                  runtime,
+                                  _callbackType2,
+                                ),
+                              ],
+                            )?.$value
+                            as Widget;
+                      },
+                );
+              })(),
         semanticLabel: _arg6OrNull?.$value,
         excludeFromSemantics: _arg7OrNull == null
             ? false
@@ -2785,52 +2982,114 @@ class $Image implements $Instance {
         scale: _arg2OrNull == null ? 1.0 : (_arg2OrNull as $double).$value,
         frameBuilder: _arg3OrNull == null || _arg3OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg3OrNull! as EvalCallable,
-                "Widget Function(BuildContext, Widget, int?, bool);export=false",
-                (_callable) =>
-                    (
-                      BuildContext context,
-                      Widget child,
-                      int? frame,
-                      bool wasSynchronouslyLoaded,
-                    ) {
-                      return _callable.call(
-                        runtime,
-                        null,
-                        $BuildContext.wrap(context),
-                        $Widget.wrap(child),
-                        [
-                          (frame == null ? const $null() : $int(frame)),
-                          $bool(wasSynchronouslyLoaded),
-                        ],
-                      )?.$value;
-                    },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'Widget',
+                  ),
+                );
+                final _callbackType2 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'int'),
+                  [],
+                  nullable: true,
+                );
+                final _callbackType3 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg3OrNull! as EvalCallable,
+                  "Widget Function(BuildContext, Widget, int?, bool);export=false" +
+                      ";types=$_callbackType0,$_callbackType1,$_callbackType2,$_callbackType3",
+                  (_callable) =>
+                      (
+                        BuildContext context,
+                        Widget child,
+                        int? frame,
+                        bool wasSynchronouslyLoaded,
+                      ) {
+                        return _callable.call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $BuildContext.wrap(context),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              TypedInterop.annotateBridgeType(
+                                $Widget.wrap(child),
+                                runtime,
+                                _callbackType1,
+                              ),
+                              [
+                                (frame == null ? const $null() : $int(frame)),
+                                $bool(wasSynchronouslyLoaded),
+                              ],
+                            )?.$value
+                            as Widget;
+                      },
+                );
+              })(),
         errorBuilder: _arg4OrNull == null || _arg4OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg4OrNull! as EvalCallable,
-                "Widget Function(BuildContext, Object, StackTrace?);export=false",
-                (_callable) =>
-                    (
-                      BuildContext context,
-                      Object error,
-                      StackTrace? stackTrace,
-                    ) {
-                      return _callable.call(
-                        runtime,
-                        null,
-                        $BuildContext.wrap(context),
-                        $Object(error),
-                        [
-                          (stackTrace == null
-                              ? const $null()
-                              : $StackTrace.wrap(stackTrace)),
-                        ],
-                      )?.$value;
-                    },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'Object'),
+                );
+                final _callbackType2 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'StackTrace'),
+                  [],
+                  nullable: true,
+                );
+                return runtime.cachedCallback(
+                  _arg4OrNull! as EvalCallable,
+                  "Widget Function(BuildContext, Object, StackTrace?);export=false" +
+                      ";types=$_callbackType0,$_callbackType1,$_callbackType2",
+                  (_callable) =>
+                      (
+                        BuildContext context,
+                        Object error,
+                        StackTrace? stackTrace,
+                      ) {
+                        return _callable.call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $BuildContext.wrap(context),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              TypedInterop.annotateBridgeType(
+                                $Object(error),
+                                runtime,
+                                _callbackType1,
+                              ),
+                              [
+                                TypedInterop.annotateBridgeType(
+                                  (stackTrace == null
+                                      ? const $null()
+                                      : $StackTrace.wrap(stackTrace)),
+                                  runtime,
+                                  _callbackType2,
+                                ),
+                              ],
+                            )?.$value
+                            as Widget;
+                      },
+                );
+              })(),
         semanticLabel: _arg5OrNull?.$value,
         excludeFromSemantics: _arg6OrNull == null
             ? false
@@ -2898,52 +3157,114 @@ class $Image implements $Instance {
         bundle: _arg2OrNull?.$value,
         frameBuilder: _arg3OrNull == null || _arg3OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg3OrNull! as EvalCallable,
-                "Widget Function(BuildContext, Widget, int?, bool);export=false",
-                (_callable) =>
-                    (
-                      BuildContext context,
-                      Widget child,
-                      int? frame,
-                      bool wasSynchronouslyLoaded,
-                    ) {
-                      return _callable.call(
-                        runtime,
-                        null,
-                        $BuildContext.wrap(context),
-                        $Widget.wrap(child),
-                        [
-                          (frame == null ? const $null() : $int(frame)),
-                          $bool(wasSynchronouslyLoaded),
-                        ],
-                      )?.$value;
-                    },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'Widget',
+                  ),
+                );
+                final _callbackType2 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'int'),
+                  [],
+                  nullable: true,
+                );
+                final _callbackType3 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg3OrNull! as EvalCallable,
+                  "Widget Function(BuildContext, Widget, int?, bool);export=false" +
+                      ";types=$_callbackType0,$_callbackType1,$_callbackType2,$_callbackType3",
+                  (_callable) =>
+                      (
+                        BuildContext context,
+                        Widget child,
+                        int? frame,
+                        bool wasSynchronouslyLoaded,
+                      ) {
+                        return _callable.call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $BuildContext.wrap(context),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              TypedInterop.annotateBridgeType(
+                                $Widget.wrap(child),
+                                runtime,
+                                _callbackType1,
+                              ),
+                              [
+                                (frame == null ? const $null() : $int(frame)),
+                                $bool(wasSynchronouslyLoaded),
+                              ],
+                            )?.$value
+                            as Widget;
+                      },
+                );
+              })(),
         errorBuilder: _arg4OrNull == null || _arg4OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg4OrNull! as EvalCallable,
-                "Widget Function(BuildContext, Object, StackTrace?);export=false",
-                (_callable) =>
-                    (
-                      BuildContext context,
-                      Object error,
-                      StackTrace? stackTrace,
-                    ) {
-                      return _callable.call(
-                        runtime,
-                        null,
-                        $BuildContext.wrap(context),
-                        $Object(error),
-                        [
-                          (stackTrace == null
-                              ? const $null()
-                              : $StackTrace.wrap(stackTrace)),
-                        ],
-                      )?.$value;
-                    },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'Object'),
+                );
+                final _callbackType2 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'StackTrace'),
+                  [],
+                  nullable: true,
+                );
+                return runtime.cachedCallback(
+                  _arg4OrNull! as EvalCallable,
+                  "Widget Function(BuildContext, Object, StackTrace?);export=false" +
+                      ";types=$_callbackType0,$_callbackType1,$_callbackType2",
+                  (_callable) =>
+                      (
+                        BuildContext context,
+                        Object error,
+                        StackTrace? stackTrace,
+                      ) {
+                        return _callable.call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $BuildContext.wrap(context),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              TypedInterop.annotateBridgeType(
+                                $Object(error),
+                                runtime,
+                                _callbackType1,
+                              ),
+                              [
+                                TypedInterop.annotateBridgeType(
+                                  (stackTrace == null
+                                      ? const $null()
+                                      : $StackTrace.wrap(stackTrace)),
+                                  runtime,
+                                  _callbackType2,
+                                ),
+                              ],
+                            )?.$value
+                            as Widget;
+                      },
+                );
+              })(),
         semanticLabel: _arg5OrNull?.$value,
         excludeFromSemantics: _arg6OrNull == null
             ? false
@@ -3011,52 +3332,114 @@ class $Image implements $Instance {
         scale: _arg2OrNull == null ? 1.0 : (_arg2OrNull as $double).$value,
         frameBuilder: _arg3OrNull == null || _arg3OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg3OrNull! as EvalCallable,
-                "Widget Function(BuildContext, Widget, int?, bool);export=false",
-                (_callable) =>
-                    (
-                      BuildContext context,
-                      Widget child,
-                      int? frame,
-                      bool wasSynchronouslyLoaded,
-                    ) {
-                      return _callable.call(
-                        runtime,
-                        null,
-                        $BuildContext.wrap(context),
-                        $Widget.wrap(child),
-                        [
-                          (frame == null ? const $null() : $int(frame)),
-                          $bool(wasSynchronouslyLoaded),
-                        ],
-                      )?.$value;
-                    },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'Widget',
+                  ),
+                );
+                final _callbackType2 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'int'),
+                  [],
+                  nullable: true,
+                );
+                final _callbackType3 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg3OrNull! as EvalCallable,
+                  "Widget Function(BuildContext, Widget, int?, bool);export=false" +
+                      ";types=$_callbackType0,$_callbackType1,$_callbackType2,$_callbackType3",
+                  (_callable) =>
+                      (
+                        BuildContext context,
+                        Widget child,
+                        int? frame,
+                        bool wasSynchronouslyLoaded,
+                      ) {
+                        return _callable.call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $BuildContext.wrap(context),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              TypedInterop.annotateBridgeType(
+                                $Widget.wrap(child),
+                                runtime,
+                                _callbackType1,
+                              ),
+                              [
+                                (frame == null ? const $null() : $int(frame)),
+                                $bool(wasSynchronouslyLoaded),
+                              ],
+                            )?.$value
+                            as Widget;
+                      },
+                );
+              })(),
         errorBuilder: _arg4OrNull == null || _arg4OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg4OrNull! as EvalCallable,
-                "Widget Function(BuildContext, Object, StackTrace?);export=false",
-                (_callable) =>
-                    (
-                      BuildContext context,
-                      Object error,
-                      StackTrace? stackTrace,
-                    ) {
-                      return _callable.call(
-                        runtime,
-                        null,
-                        $BuildContext.wrap(context),
-                        $Object(error),
-                        [
-                          (stackTrace == null
-                              ? const $null()
-                              : $StackTrace.wrap(stackTrace)),
-                        ],
-                      )?.$value;
-                    },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'Object'),
+                );
+                final _callbackType2 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'StackTrace'),
+                  [],
+                  nullable: true,
+                );
+                return runtime.cachedCallback(
+                  _arg4OrNull! as EvalCallable,
+                  "Widget Function(BuildContext, Object, StackTrace?);export=false" +
+                      ";types=$_callbackType0,$_callbackType1,$_callbackType2",
+                  (_callable) =>
+                      (
+                        BuildContext context,
+                        Object error,
+                        StackTrace? stackTrace,
+                      ) {
+                        return _callable.call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $BuildContext.wrap(context),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              TypedInterop.annotateBridgeType(
+                                $Object(error),
+                                runtime,
+                                _callbackType1,
+                              ),
+                              [
+                                TypedInterop.annotateBridgeType(
+                                  (stackTrace == null
+                                      ? const $null()
+                                      : $StackTrace.wrap(stackTrace)),
+                                  runtime,
+                                  _callbackType2,
+                                ),
+                              ],
+                            )?.$value
+                            as Widget;
+                      },
+                );
+              })(),
         semanticLabel: _arg5OrNull?.$value,
         excludeFromSemantics: _arg6OrNull == null
             ? false

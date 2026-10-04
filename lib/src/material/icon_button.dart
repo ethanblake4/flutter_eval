@@ -31,6 +31,8 @@ import 'package:dart_eval/stdlib/async.dart' hide $IconButton;
 import 'package:dart_eval/stdlib/typed_data.dart' hide $IconButton;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import './button_style.dart';
 import '../widgets/framework_wrappers.dart';
 import './theme_data.dart';
@@ -2211,13 +2213,18 @@ class $IconButton implements $Instance {
               ),
         onHover: _arg13OrNull == null || _arg13OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg13OrNull! as EvalCallable,
-                "void Function(bool);export=false",
-                (_callable) => (bool value) {
-                  _callable.call(runtime, null, $bool(value), null, 1);
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg13OrNull! as EvalCallable,
+                  "void Function(bool);export=false" + ";types=$_callbackType0",
+                  (_callable) => (bool value) {
+                    _callable.call(runtime, null, $bool(value), null, 1);
+                  },
+                );
+              })(),
         onLongPress: _arg14OrNull == null || _arg14OrNull is $null
             ? null
             : runtime.cachedCallback(
@@ -2296,13 +2303,18 @@ class $IconButton implements $Instance {
               ),
         onHover: _arg13OrNull == null || _arg13OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg13OrNull! as EvalCallable,
-                "void Function(bool);export=false",
-                (_callable) => (bool value) {
-                  _callable.call(runtime, null, $bool(value), null, 1);
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg13OrNull! as EvalCallable,
+                  "void Function(bool);export=false" + ";types=$_callbackType0",
+                  (_callable) => (bool value) {
+                    _callable.call(runtime, null, $bool(value), null, 1);
+                  },
+                );
+              })(),
         onLongPress: _arg14OrNull == null || _arg14OrNull is $null
             ? null
             : runtime.cachedCallback(
@@ -2386,13 +2398,18 @@ class $IconButton implements $Instance {
               ),
         onHover: _arg13OrNull == null || _arg13OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg13OrNull! as EvalCallable,
-                "void Function(bool);export=false",
-                (_callable) => (bool value) {
-                  _callable.call(runtime, null, $bool(value), null, 1);
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg13OrNull! as EvalCallable,
+                  "void Function(bool);export=false" + ";types=$_callbackType0",
+                  (_callable) => (bool value) {
+                    _callable.call(runtime, null, $bool(value), null, 1);
+                  },
+                );
+              })(),
         onLongPress: _arg14OrNull == null || _arg14OrNull is $null
             ? null
             : runtime.cachedCallback(
@@ -2471,13 +2488,18 @@ class $IconButton implements $Instance {
               ),
         onHover: _arg13OrNull == null || _arg13OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg13OrNull! as EvalCallable,
-                "void Function(bool);export=false",
-                (_callable) => (bool value) {
-                  _callable.call(runtime, null, $bool(value), null, 1);
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg13OrNull! as EvalCallable,
+                  "void Function(bool);export=false" + ";types=$_callbackType0",
+                  (_callable) => (bool value) {
+                    _callable.call(runtime, null, $bool(value), null, 1);
+                  },
+                );
+              })(),
         onLongPress: _arg14OrNull == null || _arg14OrNull is $null
             ? null
             : runtime.cachedCallback(

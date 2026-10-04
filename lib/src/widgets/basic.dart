@@ -96,8 +96,9 @@ import '../painting/alignment.dart';
 import '../supporting/flutter_rendering_shifted_box.dart';
 import '../supporting/flutter_rendering_proxy_box.dart';
 import '../sky_engine/ui/text.dart';
-import './framework_wrappers.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
+import './framework_wrappers.dart';
 import '../supporting/flutter_widgets_basic.dart';
 import '../painting/border_radius.dart';
 import '../sky_engine/ui/painting.dart';
@@ -1328,15 +1329,35 @@ class $Builder implements $Instance {
     return $Builder.wrap(
       Builder(
         key: (r is $Value ? r : null)?.$value,
-        builder: runtime.cachedCallback(
-          (s as $Value?)! as EvalCallable,
-          "Widget Function(BuildContext);export=false",
-          (_callable) => (BuildContext context) {
-            return _callable
-                .call(runtime, null, $BuildContext.wrap(context), null, 1)
-                ?.$value;
-          },
-        ),
+        builder: (() {
+          final _callbackType0 = runtime.lookupType(
+            BridgeTypeSpec(
+              'package:flutter/src/widgets/framework.dart',
+              'BuildContext',
+            ),
+          );
+          return runtime.cachedCallback(
+            (s as $Value?)! as EvalCallable,
+            "Widget Function(BuildContext);export=false" +
+                ";types=$_callbackType0",
+            (_callable) => (BuildContext context) {
+              return _callable
+                      .call(
+                        runtime,
+                        null,
+                        TypedInterop.annotateBridgeType(
+                          $BuildContext.wrap(context),
+                          runtime,
+                          _callbackType0,
+                        ),
+                        null,
+                        1,
+                      )
+                      ?.$value
+                  as Widget;
+            },
+          );
+        })(),
       ),
     );
   }

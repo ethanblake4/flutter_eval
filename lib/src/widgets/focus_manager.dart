@@ -53,6 +53,7 @@ import 'package:dart_eval/stdlib/typed_data.dart'
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../supporting/flutter_services_raw_keyboard.dart';
 import '../services/hardware_keyboard.dart';
 import './framework_wrappers.dart';
@@ -1180,38 +1181,86 @@ class $FocusNode implements $Instance {
             (s is $Value ? s : null) == null ||
                 (s is $Value ? s : null) is $null
             ? null
-            : runtime.cachedCallback(
-                (s is $Value ? s : null)! as EvalCallable,
-                "KeyEventResult Function(FocusNode, RawKeyEvent);export=false",
-                (_callable) => (FocusNode node, RawKeyEvent event) {
-                  return _callable
-                      .call(
-                        runtime,
-                        null,
-                        $FocusNode.wrap(node),
-                        $RawKeyEvent.wrap(event),
-                        2,
-                      )
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/focus_manager.dart',
+                    'FocusNode',
+                  ),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/services/raw_keyboard.dart',
+                    'RawKeyEvent',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  (s is $Value ? s : null)! as EvalCallable,
+                  "KeyEventResult Function(FocusNode, RawKeyEvent);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) => (FocusNode node, RawKeyEvent event) {
+                    return _callable
+                            .call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $FocusNode.wrap(node),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              TypedInterop.annotateBridgeType(
+                                $RawKeyEvent.wrap(event),
+                                runtime,
+                                _callbackType1,
+                              ),
+                              2,
+                            )
+                            ?.$value
+                        as KeyEventResult;
+                  },
+                );
+              })(),
         onKeyEvent: _arg2OrNull == null || _arg2OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg2OrNull! as EvalCallable,
-                "KeyEventResult Function(FocusNode, KeyEvent);export=false",
-                (_callable) => (FocusNode node, KeyEvent event) {
-                  return _callable
-                      .call(
-                        runtime,
-                        null,
-                        $FocusNode.wrap(node),
-                        $KeyEvent.wrap(event),
-                        2,
-                      )
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/focus_manager.dart',
+                    'FocusNode',
+                  ),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/services/hardware_keyboard.dart',
+                    'KeyEvent',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg2OrNull! as EvalCallable,
+                  "KeyEventResult Function(FocusNode, KeyEvent);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) => (FocusNode node, KeyEvent event) {
+                    return _callable
+                            .call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $FocusNode.wrap(node),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              TypedInterop.annotateBridgeType(
+                                $KeyEvent.wrap(event),
+                                runtime,
+                                _callbackType1,
+                              ),
+                              2,
+                            )
+                            ?.$value
+                        as KeyEventResult;
+                  },
+                );
+              })(),
         skipTraversal: _arg3OrNull == null
             ? false
             : (_arg3OrNull as $bool).$value,
@@ -1508,21 +1557,45 @@ class $FocusNode implements $Instance {
       onKeyEvent:
           (s is $Value ? s : null) == null || (s is $Value ? s : null) is $null
           ? null
-          : runtime.cachedCallback(
-              (s is $Value ? s : null)! as EvalCallable,
-              "KeyEventResult Function(FocusNode, KeyEvent);export=false",
-              (_callable) => (FocusNode node, KeyEvent event) {
-                return _callable
-                    .call(
-                      runtime,
-                      null,
-                      $FocusNode.wrap(node),
-                      $KeyEvent.wrap(event),
-                      2,
-                    )
-                    ?.$value;
-              },
-            ),
+          : (() {
+              final _callbackType0 = runtime.lookupType(
+                BridgeTypeSpec(
+                  'package:flutter/src/widgets/focus_manager.dart',
+                  'FocusNode',
+                ),
+              );
+              final _callbackType1 = runtime.lookupType(
+                BridgeTypeSpec(
+                  'package:flutter/src/services/hardware_keyboard.dart',
+                  'KeyEvent',
+                ),
+              );
+              return runtime.cachedCallback(
+                (s is $Value ? s : null)! as EvalCallable,
+                "KeyEventResult Function(FocusNode, KeyEvent);export=false" +
+                    ";types=$_callbackType0,$_callbackType1",
+                (_callable) => (FocusNode node, KeyEvent event) {
+                  return _callable
+                          .call(
+                            runtime,
+                            null,
+                            TypedInterop.annotateBridgeType(
+                              $FocusNode.wrap(node),
+                              runtime,
+                              _callbackType0,
+                            ),
+                            TypedInterop.annotateBridgeType(
+                              $KeyEvent.wrap(event),
+                              runtime,
+                              _callbackType1,
+                            ),
+                            2,
+                          )
+                          ?.$value
+                      as KeyEventResult;
+                },
+              );
+            })(),
       onKey:
           (c is List && (c as List).length > 0
                       ? (c as List)[0] as $Value?
@@ -1533,24 +1606,48 @@ class $FocusNode implements $Instance {
                       : null)
                   is $null
           ? null
-          : runtime.cachedCallback(
-              (c is List && (c as List).length > 0
-                      ? (c as List)[0] as $Value?
-                      : null)!
-                  as EvalCallable,
-              "KeyEventResult Function(FocusNode, RawKeyEvent);export=false",
-              (_callable) => (FocusNode node, RawKeyEvent event) {
-                return _callable
-                    .call(
-                      runtime,
-                      null,
-                      $FocusNode.wrap(node),
-                      $RawKeyEvent.wrap(event),
-                      2,
-                    )
-                    ?.$value;
-              },
-            ),
+          : (() {
+              final _callbackType0 = runtime.lookupType(
+                BridgeTypeSpec(
+                  'package:flutter/src/widgets/focus_manager.dart',
+                  'FocusNode',
+                ),
+              );
+              final _callbackType1 = runtime.lookupType(
+                BridgeTypeSpec(
+                  'package:flutter/src/services/raw_keyboard.dart',
+                  'RawKeyEvent',
+                ),
+              );
+              return runtime.cachedCallback(
+                (c is List && (c as List).length > 0
+                        ? (c as List)[0] as $Value?
+                        : null)!
+                    as EvalCallable,
+                "KeyEventResult Function(FocusNode, RawKeyEvent);export=false" +
+                    ";types=$_callbackType0,$_callbackType1",
+                (_callable) => (FocusNode node, RawKeyEvent event) {
+                  return _callable
+                          .call(
+                            runtime,
+                            null,
+                            TypedInterop.annotateBridgeType(
+                              $FocusNode.wrap(node),
+                              runtime,
+                              _callbackType0,
+                            ),
+                            TypedInterop.annotateBridgeType(
+                              $RawKeyEvent.wrap(event),
+                              runtime,
+                              _callbackType1,
+                            ),
+                            2,
+                          )
+                          ?.$value
+                      as KeyEventResult;
+                },
+              );
+            })(),
     );
     return $FocusAttachment.wrap(result);
   }
@@ -2173,38 +2270,86 @@ class $FocusScopeNode implements $Instance {
             (s is $Value ? s : null) == null ||
                 (s is $Value ? s : null) is $null
             ? null
-            : runtime.cachedCallback(
-                (s is $Value ? s : null)! as EvalCallable,
-                "KeyEventResult Function(FocusNode, KeyEvent);export=false",
-                (_callable) => (FocusNode node, KeyEvent event) {
-                  return _callable
-                      .call(
-                        runtime,
-                        null,
-                        $FocusNode.wrap(node),
-                        $KeyEvent.wrap(event),
-                        2,
-                      )
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/focus_manager.dart',
+                    'FocusNode',
+                  ),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/services/hardware_keyboard.dart',
+                    'KeyEvent',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  (s is $Value ? s : null)! as EvalCallable,
+                  "KeyEventResult Function(FocusNode, KeyEvent);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) => (FocusNode node, KeyEvent event) {
+                    return _callable
+                            .call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $FocusNode.wrap(node),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              TypedInterop.annotateBridgeType(
+                                $KeyEvent.wrap(event),
+                                runtime,
+                                _callbackType1,
+                              ),
+                              2,
+                            )
+                            ?.$value
+                        as KeyEventResult;
+                  },
+                );
+              })(),
         onKey: _arg2OrNull == null || _arg2OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg2OrNull! as EvalCallable,
-                "KeyEventResult Function(FocusNode, RawKeyEvent);export=false",
-                (_callable) => (FocusNode node, RawKeyEvent event) {
-                  return _callable
-                      .call(
-                        runtime,
-                        null,
-                        $FocusNode.wrap(node),
-                        $RawKeyEvent.wrap(event),
-                        2,
-                      )
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/focus_manager.dart',
+                    'FocusNode',
+                  ),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/services/raw_keyboard.dart',
+                    'RawKeyEvent',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg2OrNull! as EvalCallable,
+                  "KeyEventResult Function(FocusNode, RawKeyEvent);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) => (FocusNode node, RawKeyEvent event) {
+                    return _callable
+                            .call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $FocusNode.wrap(node),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              TypedInterop.annotateBridgeType(
+                                $RawKeyEvent.wrap(event),
+                                runtime,
+                                _callbackType1,
+                              ),
+                              2,
+                            )
+                            ?.$value
+                        as KeyEventResult;
+                  },
+                );
+              })(),
         skipTraversal: _arg3OrNull == null
             ? false
             : (_arg3OrNull as $bool).$value,

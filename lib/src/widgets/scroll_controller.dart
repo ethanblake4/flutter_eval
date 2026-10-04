@@ -31,10 +31,10 @@ import 'package:dart_eval/stdlib/async.dart' hide $ScrollController;
 import 'package:dart_eval/stdlib/typed_data.dart' hide $ScrollController;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
-import '../supporting/flutter_widgets_scroll_position.dart';
-import '../foundation/notifiers.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
+import '../supporting/flutter_widgets_scroll_position.dart';
+import '../foundation/notifiers.dart';
 
 /// dart_eval wrapper binding for [ScrollController]
 class $ScrollController implements $Instance {
@@ -542,34 +542,60 @@ class $ScrollController implements $Instance {
         debugLabel: _arg2OrNull?.$value,
         onAttach: _arg3OrNull == null || _arg3OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg3OrNull! as EvalCallable,
-                "void Function(ScrollPosition);export=false",
-                (_callable) => (ScrollPosition position) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $ScrollPosition.wrap(position),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/scroll_position.dart',
+                    'ScrollPosition',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg3OrNull! as EvalCallable,
+                  "void Function(ScrollPosition);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (ScrollPosition position) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $ScrollPosition.wrap(position),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onDetach: _arg4OrNull == null || _arg4OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg4OrNull! as EvalCallable,
-                "void Function(ScrollPosition);export=false",
-                (_callable) => (ScrollPosition position) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $ScrollPosition.wrap(position),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/scroll_position.dart',
+                    'ScrollPosition',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg4OrNull! as EvalCallable,
+                  "void Function(ScrollPosition);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (ScrollPosition position) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $ScrollPosition.wrap(position),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
       ),
     );
   }

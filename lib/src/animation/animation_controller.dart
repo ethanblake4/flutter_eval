@@ -36,6 +36,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import './animation.dart';
 import '../supporting/flutter_animation_animation_controller.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../scheduler/ticker.dart';
 
 /// dart_eval wrapper binding for [AnimationController]
@@ -1234,13 +1236,32 @@ class $AnimationController implements $Instance {
   ) {
     final self = target! as $AnimationController;
     self.$value.addStatusListener(
-      runtime.cachedCallback(
-        (r as $Value?)! as EvalCallable,
-        "void Function(AnimationStatus);export=false",
-        (_callable) => (AnimationStatus status) {
-          _callable.call(runtime, null, $AnimationStatus.wrap(status), null, 1);
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/animation/animation.dart',
+            'AnimationStatus',
+          ),
+        );
+        return runtime.cachedCallback(
+          (r as $Value?)! as EvalCallable,
+          "void Function(AnimationStatus);export=false" +
+              ";types=$_callbackType0",
+          (_callable) => (AnimationStatus status) {
+            _callable.call(
+              runtime,
+              null,
+              TypedInterop.annotateBridgeType(
+                $AnimationStatus.wrap(status),
+                runtime,
+                _callbackType0,
+              ),
+              null,
+              1,
+            );
+          },
+        );
+      })(),
     );
     return null;
   }
@@ -1257,13 +1278,32 @@ class $AnimationController implements $Instance {
   ) {
     final self = target! as $AnimationController;
     self.$value.removeStatusListener(
-      runtime.cachedCallback(
-        (r as $Value?)! as EvalCallable,
-        "void Function(AnimationStatus);export=false",
-        (_callable) => (AnimationStatus status) {
-          _callable.call(runtime, null, $AnimationStatus.wrap(status), null, 1);
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/animation/animation.dart',
+            'AnimationStatus',
+          ),
+        );
+        return runtime.cachedCallback(
+          (r as $Value?)! as EvalCallable,
+          "void Function(AnimationStatus);export=false" +
+              ";types=$_callbackType0",
+          (_callable) => (AnimationStatus status) {
+            _callable.call(
+              runtime,
+              null,
+              TypedInterop.annotateBridgeType(
+                $AnimationStatus.wrap(status),
+                runtime,
+                _callbackType0,
+              ),
+              null,
+              1,
+            );
+          },
+        );
+      })(),
     );
     return null;
   }

@@ -47,8 +47,9 @@ import 'package:dart_eval/stdlib/typed_data.dart'
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/src/rendering/sliver.dart';
-import '../supporting/flutter_rendering_sliver.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
+import '../supporting/flutter_rendering_sliver.dart';
 import './framework_wrappers.dart';
 import '../foundation/key.dart';
 import '../supporting/flutter_widgets_scroll_view.dart';
@@ -1702,21 +1703,39 @@ class $ListView implements $Instance {
         itemExtent: _arg8OrNull?.$value,
         itemExtentBuilder: _arg9OrNull == null || _arg9OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg9OrNull! as EvalCallable,
-                "double? Function(int, SliverLayoutDimensions);export=false",
-                (_callable) => (int index, SliverLayoutDimensions dimensions) {
-                  return _callable
-                      .call(
-                        runtime,
-                        null,
-                        $int(index),
-                        $SliverLayoutDimensions.wrap(dimensions),
-                        2,
-                      )
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'int'),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/rendering/sliver.dart',
+                    'SliverLayoutDimensions',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg9OrNull! as EvalCallable,
+                  "double? Function(int, SliverLayoutDimensions);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) =>
+                      (int index, SliverLayoutDimensions dimensions) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  $int(index),
+                                  TypedInterop.annotateBridgeType(
+                                    $SliverLayoutDimensions.wrap(dimensions),
+                                    runtime,
+                                    _callbackType1,
+                                  ),
+                                  2,
+                                )
+                                ?.$value
+                            as double?;
+                      },
+                );
+              })(),
         prototypeItem: _arg10OrNull?.$value,
         addAutomaticKeepAlives: _arg11OrNull == null
             ? true
@@ -1791,48 +1810,102 @@ class $ListView implements $Instance {
         itemExtent: _arg8OrNull?.$value,
         itemExtentBuilder: _arg9OrNull == null || _arg9OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg9OrNull! as EvalCallable,
-                "double? Function(int, SliverLayoutDimensions);export=false",
-                (_callable) => (int index, SliverLayoutDimensions dimensions) {
-                  return _callable
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'int'),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/rendering/sliver.dart',
+                    'SliverLayoutDimensions',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg9OrNull! as EvalCallable,
+                  "double? Function(int, SliverLayoutDimensions);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) =>
+                      (int index, SliverLayoutDimensions dimensions) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  $int(index),
+                                  TypedInterop.annotateBridgeType(
+                                    $SliverLayoutDimensions.wrap(dimensions),
+                                    runtime,
+                                    _callbackType1,
+                                  ),
+                                  2,
+                                )
+                                ?.$value
+                            as double?;
+                      },
+                );
+              })(),
+        prototypeItem: _arg10OrNull?.$value,
+        itemBuilder: (() {
+          final _callbackType0 = runtime.lookupType(
+            BridgeTypeSpec(
+              'package:flutter/src/widgets/framework.dart',
+              'BuildContext',
+            ),
+          );
+          final _callbackType1 = runtime.lookupType(
+            BridgeTypeSpec('dart:core', 'int'),
+          );
+          return runtime.cachedCallback(
+            _arg11! as EvalCallable,
+            "Widget? Function(BuildContext, int);export=false" +
+                ";types=$_callbackType0,$_callbackType1",
+            (_callable) => (BuildContext context, int index) {
+              return _callable
                       .call(
                         runtime,
                         null,
+                        TypedInterop.annotateBridgeType(
+                          $BuildContext.wrap(context),
+                          runtime,
+                          _callbackType0,
+                        ),
                         $int(index),
-                        $SliverLayoutDimensions.wrap(dimensions),
                         2,
                       )
-                      ?.$value;
-                },
-              ),
-        prototypeItem: _arg10OrNull?.$value,
-        itemBuilder: runtime.cachedCallback(
-          _arg11! as EvalCallable,
-          "Widget? Function(BuildContext, int);export=false",
-          (_callable) => (BuildContext context, int index) {
-            return _callable
-                .call(
-                  runtime,
-                  null,
-                  $BuildContext.wrap(context),
-                  $int(index),
-                  2,
-                )
-                ?.$value;
-          },
-        ),
+                      ?.$value
+                  as Widget?;
+            },
+          );
+        })(),
         findChildIndexCallback: _arg12OrNull == null || _arg12OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg12OrNull! as EvalCallable,
-                "int? Function(Key);export=false",
-                (_callable) => (Key key) {
-                  return _callable
-                      .call(runtime, null, $Key.wrap(key), null, 1)
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/foundation/key.dart',
+                    'Key',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg12OrNull! as EvalCallable,
+                  "int? Function(Key);export=false" + ";types=$_callbackType0",
+                  (_callable) => (Key key) {
+                    return _callable
+                            .call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $Key.wrap(key),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              null,
+                              1,
+                            )
+                            ?.$value
+                        as int?;
+                  },
+                );
+              })(),
         itemCount: _arg13OrNull?.$value,
         addAutomaticKeepAlives: _arg14OrNull == null
             ? true
@@ -1897,58 +1970,130 @@ class $ListView implements $Instance {
         physics: _arg5OrNull?.$value,
         shrinkWrap: _arg6OrNull == null ? false : (_arg6OrNull as $bool).$value,
         padding: _arg7OrNull?.$value,
-        itemBuilder: runtime.cachedCallback(
-          _arg8! as EvalCallable,
-          "Widget? Function(BuildContext, int);export=false",
-          (_callable) => (BuildContext context, int index) {
-            return _callable
-                .call(
-                  runtime,
-                  null,
-                  $BuildContext.wrap(context),
-                  $int(index),
-                  2,
-                )
-                ?.$value;
-          },
-        ),
+        itemBuilder: (() {
+          final _callbackType0 = runtime.lookupType(
+            BridgeTypeSpec(
+              'package:flutter/src/widgets/framework.dart',
+              'BuildContext',
+            ),
+          );
+          final _callbackType1 = runtime.lookupType(
+            BridgeTypeSpec('dart:core', 'int'),
+          );
+          return runtime.cachedCallback(
+            _arg8! as EvalCallable,
+            "Widget? Function(BuildContext, int);export=false" +
+                ";types=$_callbackType0,$_callbackType1",
+            (_callable) => (BuildContext context, int index) {
+              return _callable
+                      .call(
+                        runtime,
+                        null,
+                        TypedInterop.annotateBridgeType(
+                          $BuildContext.wrap(context),
+                          runtime,
+                          _callbackType0,
+                        ),
+                        $int(index),
+                        2,
+                      )
+                      ?.$value
+                  as Widget?;
+            },
+          );
+        })(),
         findChildIndexCallback: _arg9OrNull == null || _arg9OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg9OrNull! as EvalCallable,
-                "int? Function(Key);export=false",
-                (_callable) => (Key key) {
-                  return _callable
-                      .call(runtime, null, $Key.wrap(key), null, 1)
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/foundation/key.dart',
+                    'Key',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg9OrNull! as EvalCallable,
+                  "int? Function(Key);export=false" + ";types=$_callbackType0",
+                  (_callable) => (Key key) {
+                    return _callable
+                            .call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $Key.wrap(key),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              null,
+                              1,
+                            )
+                            ?.$value
+                        as int?;
+                  },
+                );
+              })(),
         findItemIndexCallback: _arg10OrNull == null || _arg10OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg10OrNull! as EvalCallable,
-                "int? Function(Key);export=false",
-                (_callable) => (Key key) {
-                  return _callable
-                      .call(runtime, null, $Key.wrap(key), null, 1)
-                      ?.$value;
-                },
-              ),
-        separatorBuilder: runtime.cachedCallback(
-          _arg11! as EvalCallable,
-          "Widget Function(BuildContext, int);export=false",
-          (_callable) => (BuildContext context, int index) {
-            return _callable
-                .call(
-                  runtime,
-                  null,
-                  $BuildContext.wrap(context),
-                  $int(index),
-                  2,
-                )
-                ?.$value;
-          },
-        ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/foundation/key.dart',
+                    'Key',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg10OrNull! as EvalCallable,
+                  "int? Function(Key);export=false" + ";types=$_callbackType0",
+                  (_callable) => (Key key) {
+                    return _callable
+                            .call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $Key.wrap(key),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              null,
+                              1,
+                            )
+                            ?.$value
+                        as int?;
+                  },
+                );
+              })(),
+        separatorBuilder: (() {
+          final _callbackType0 = runtime.lookupType(
+            BridgeTypeSpec(
+              'package:flutter/src/widgets/framework.dart',
+              'BuildContext',
+            ),
+          );
+          final _callbackType1 = runtime.lookupType(
+            BridgeTypeSpec('dart:core', 'int'),
+          );
+          return runtime.cachedCallback(
+            _arg11! as EvalCallable,
+            "Widget Function(BuildContext, int);export=false" +
+                ";types=$_callbackType0,$_callbackType1",
+            (_callable) => (BuildContext context, int index) {
+              return _callable
+                      .call(
+                        runtime,
+                        null,
+                        TypedInterop.annotateBridgeType(
+                          $BuildContext.wrap(context),
+                          runtime,
+                          _callbackType0,
+                        ),
+                        $int(index),
+                        2,
+                      )
+                      ?.$value
+                  as Widget;
+            },
+          );
+        })(),
         itemCount: (_arg12 as $int).$value,
         addAutomaticKeepAlives: _arg13OrNull == null
             ? true
@@ -2013,21 +2158,39 @@ class $ListView implements $Instance {
         prototypeItem: _arg9OrNull?.$value,
         itemExtentBuilder: _arg10OrNull == null || _arg10OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg10OrNull! as EvalCallable,
-                "double? Function(int, SliverLayoutDimensions);export=false",
-                (_callable) => (int index, SliverLayoutDimensions dimensions) {
-                  return _callable
-                      .call(
-                        runtime,
-                        null,
-                        $int(index),
-                        $SliverLayoutDimensions.wrap(dimensions),
-                        2,
-                      )
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'int'),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/rendering/sliver.dart',
+                    'SliverLayoutDimensions',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg10OrNull! as EvalCallable,
+                  "double? Function(int, SliverLayoutDimensions);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) =>
+                      (int index, SliverLayoutDimensions dimensions) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  $int(index),
+                                  TypedInterop.annotateBridgeType(
+                                    $SliverLayoutDimensions.wrap(dimensions),
+                                    runtime,
+                                    _callbackType1,
+                                  ),
+                                  2,
+                                )
+                                ?.$value
+                            as double?;
+                      },
+                );
+              })(),
         childrenDelegate: _arg11!.$value,
         cacheExtent: _arg12OrNull?.$value,
         scrollCacheExtent: _arg13OrNull?.$value,

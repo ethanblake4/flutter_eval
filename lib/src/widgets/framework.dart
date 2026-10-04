@@ -412,6 +412,13 @@ class $State$bridge<T extends StatefulWidget> extends State<T>
         return $bool(super.mounted);
     }
 
+    final objectMember = $bridgeGetObject(
+      identifier,
+      hashCode: () => super.hashCode,
+      equals: (other) => super == other,
+      toString: () => super.toString(),
+    );
+    if (objectMember != null) return objectMember;
     throw UnimplementedError('Unknown property "$identifier"');
   }
 

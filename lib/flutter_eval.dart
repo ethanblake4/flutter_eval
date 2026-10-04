@@ -4,6 +4,7 @@ export 'src/flutter_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
 import 'src/widgets/framework.dart';
 import 'src/widgets/pages.dart';
+import 'src/typedefs.dart';
 import 'src/foundation/change_notifier.dart';
 import 'src/services/platform_channel.dart';
 import 'src/services/binary_messenger.dart';
@@ -735,6 +736,12 @@ class FlutterEvalPlugin implements EvalPlugin {
     registry.defineBridgeClass($State$bridge.$declaration);
     registry.defineBridgeClass($MethodChannel.$declaration);
     registry.defineBridgeClass($BinaryMessenger.$declaration);
+    registry.addSource(
+      DartSource(
+        sdkTypedefsSource.uri.toString(),
+        "import 'package:flutter/widgets.dart';\n${sdkTypedefsSource.stringSource}",
+      ),
+    );
     registry.addSource(
       DartSource('dart:ui', r'''
 library dart.ui;

@@ -1071,6 +1071,8 @@ libraries:
 - uri: package:flutter/src/widgets/image.dart
   outDir: lib/src
   imports: *flutterImports
+  typedefs:
+  - ImageErrorWidgetBuilder
   classes:
     Image:
       file: widgets/image.dart
@@ -2564,6 +2566,7 @@ plugin:
   imports:
   - src/widgets/framework.dart
   - src/widgets/pages.dart
+  - src/typedefs.dart
   - src/foundation/change_notifier.dart
   - src/services/platform_channel.dart
   - src/services/binary_messenger.dart
@@ -2580,6 +2583,11 @@ plugin:
   - $MethodChannel.$declaration
   - $BinaryMessenger.$declaration
   evalSources:
+  - expression: >-
+      DartSource(
+        sdkTypedefsSource.uri.toString(),
+        "import 'package:flutter/widgets.dart';\n${sdkTypedefsSource.stringSource}"
+      )
   - uri: dart:ui
     file: .dart_eval/sources/dart_ui.dart
   - uri: package:flutter/animation.dart

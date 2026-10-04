@@ -35,6 +35,7 @@ import 'package:dart_eval/stdlib/typed_data.dart'
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import 'dart:async';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../foundation/diagnostics.dart';
 
@@ -370,7 +371,8 @@ class $TickerFuture implements $Instance {
         (r as $Value?)! as EvalCallable,
         "FutureOr<R> Function(void);export=false",
         (_callable) => (void value) {
-          return _callable.call(runtime, null, null, null, 1)?.$value;
+          return _callable.call(runtime, null, const $null(), null, 1)?.$value
+              as FutureOr<dynamic>;
         },
       ),
       onError:
@@ -444,15 +446,31 @@ class $TickerFuture implements $Instance {
       test:
           (s is $Value ? s : null) == null || (s is $Value ? s : null) is $null
           ? null
-          : runtime.cachedCallback(
-              (s is $Value ? s : null)! as EvalCallable,
-              "bool Function(Object);export=false",
-              (_callable) => (Object arg0) {
-                return _callable
-                    .call(runtime, null, $Object(arg0), null, 1)
-                    ?.$value;
-              },
-            ),
+          : (() {
+              final _callbackType0 = runtime.lookupType(
+                BridgeTypeSpec('dart:core', 'Object'),
+              );
+              return runtime.cachedCallback(
+                (s is $Value ? s : null)! as EvalCallable,
+                "bool Function(Object);export=false" + ";types=$_callbackType0",
+                (_callable) => (Object arg0) {
+                  return _callable
+                          .call(
+                            runtime,
+                            null,
+                            TypedInterop.annotateBridgeType(
+                              $Object(arg0),
+                              runtime,
+                              _callbackType0,
+                            ),
+                            null,
+                            1,
+                          )
+                          ?.$value
+                      as bool;
+                },
+              );
+            })(),
     );
     return $Future.wrap(
       (result as Future<dynamic>).then(
@@ -535,7 +553,8 @@ class $TickerFuture implements $Instance {
               (s is $Value ? s : null)! as EvalCallable,
               "FutureOr<void> Function();export=false",
               (_callable) => () {
-                return _callable.call(runtime, null, null, null, 0)?.$value;
+                return _callable.call(runtime, null, null, null, 0)?.$value
+                    as FutureOr<void>;
               },
             ),
     );
@@ -814,13 +833,28 @@ class $Ticker implements $Instance {
   static $Value? $new(Runtime runtime, Object? r, Object? s, Object? c) {
     return $Ticker.wrap(
       Ticker(
-        runtime.cachedCallback(
-          (r as $Value?)! as EvalCallable,
-          "void Function(Duration);export=false",
-          (_callable) => (Duration elapsed) {
-            _callable.call(runtime, null, $Duration.wrap(elapsed), null, 1);
-          },
-        ),
+        (() {
+          final _callbackType0 = runtime.lookupType(
+            BridgeTypeSpec('dart:core', 'Duration'),
+          );
+          return runtime.cachedCallback(
+            (r as $Value?)! as EvalCallable,
+            "void Function(Duration);export=false" + ";types=$_callbackType0",
+            (_callable) => (Duration elapsed) {
+              _callable.call(
+                runtime,
+                null,
+                TypedInterop.annotateBridgeType(
+                  $Duration.wrap(elapsed),
+                  runtime,
+                  _callbackType0,
+                ),
+                null,
+                1,
+              );
+            },
+          );
+        })(),
         debugLabel: (s is $Value ? s : null)?.$value,
       ),
     );
@@ -1076,13 +1110,28 @@ class $TickerProvider implements $Instance {
   ) {
     final self = target! as $TickerProvider;
     final result = self.$value.createTicker(
-      runtime.cachedCallback(
-        (r as $Value?)! as EvalCallable,
-        "void Function(Duration);export=false",
-        (_callable) => (Duration elapsed) {
-          _callable.call(runtime, null, $Duration.wrap(elapsed), null, 1);
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.lookupType(
+          BridgeTypeSpec('dart:core', 'Duration'),
+        );
+        return runtime.cachedCallback(
+          (r as $Value?)! as EvalCallable,
+          "void Function(Duration);export=false" + ";types=$_callbackType0",
+          (_callable) => (Duration elapsed) {
+            _callable.call(
+              runtime,
+              null,
+              TypedInterop.annotateBridgeType(
+                $Duration.wrap(elapsed),
+                runtime,
+                _callbackType0,
+              ),
+              null,
+              1,
+            );
+          },
+        );
+      })(),
     );
     return $Ticker.wrap(result);
   }

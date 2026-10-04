@@ -31,11 +31,11 @@ import 'package:dart_eval/stdlib/async.dart' hide $MaterialApp, $ThemeMode;
 import 'package:dart_eval/stdlib/typed_data.dart' hide $MaterialApp, $ThemeMode;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../widgets/overlay.dart';
 import '../supporting/flutter_widgets_navigator.dart';
-import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../widgets/framework_wrappers.dart';
-import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import '../sky_engine/ui/text.dart';
 import '../supporting/flutter_widgets_heroes.dart';
 import 'package:dart_eval/src/eval/utils/wrap_helper.dart';
@@ -2531,66 +2531,115 @@ class $MaterialApp implements $Instance {
         initialRoute: _arg5OrNull?.$value,
         onGenerateRoute: _arg6OrNull == null || _arg6OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg6OrNull! as EvalCallable,
-                "Route<dynamic>? Function(RouteSettings);export=false",
-                (_callable) => (RouteSettings settings) {
-                  return _callable
-                      .call(
-                        runtime,
-                        null,
-                        $RouteSettings.wrap(settings),
-                        null,
-                        1,
-                      )
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/navigator.dart',
+                    'RouteSettings',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg6OrNull! as EvalCallable,
+                  "Route<dynamic>? Function(RouteSettings);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (RouteSettings settings) {
+                    return _callable
+                            .call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $RouteSettings.wrap(settings),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              null,
+                              1,
+                            )
+                            ?.$value
+                        as Route<dynamic>?;
+                  },
+                );
+              })(),
         onGenerateInitialRoutes: _arg7OrNull == null || _arg7OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg7OrNull! as EvalCallable,
-                "List<Route<dynamic>> Function(String);export=false",
-                (_callable) => (String initialRoute) {
-                  return _callable
-                      .call(runtime, null, $String(initialRoute), null, 1)
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'String'),
+                );
+                return runtime.cachedCallback(
+                  _arg7OrNull! as EvalCallable,
+                  "List<Route<dynamic>> Function(String);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (String initialRoute) {
+                    return _callable
+                            .call(runtime, null, $String(initialRoute), null, 1)
+                            ?.$value
+                        as List<Route<dynamic>>;
+                  },
+                );
+              })(),
         onUnknownRoute: _arg8OrNull == null || _arg8OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg8OrNull! as EvalCallable,
-                "Route<dynamic>? Function(RouteSettings);export=false",
-                (_callable) => (RouteSettings settings) {
-                  return _callable
-                      .call(
-                        runtime,
-                        null,
-                        $RouteSettings.wrap(settings),
-                        null,
-                        1,
-                      )
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/navigator.dart',
+                    'RouteSettings',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg8OrNull! as EvalCallable,
+                  "Route<dynamic>? Function(RouteSettings);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (RouteSettings settings) {
+                    return _callable
+                            .call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $RouteSettings.wrap(settings),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              null,
+                              1,
+                            )
+                            ?.$value
+                        as Route<dynamic>?;
+                  },
+                );
+              })(),
         onNavigationNotification: _arg9OrNull == null || _arg9OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg9OrNull! as EvalCallable,
-                "bool Function(NavigationNotification);export=false",
-                (_callable) => (NavigationNotification notification) {
-                  return _callable
-                      .call(
-                        runtime,
-                        null,
-                        $NavigationNotification.wrap(notification),
-                        null,
-                        1,
-                      )
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/navigator.dart',
+                    'NavigationNotification',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg9OrNull! as EvalCallable,
+                  "bool Function(NavigationNotification);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (NavigationNotification notification) {
+                    return _callable
+                            .call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $NavigationNotification.wrap(notification),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              null,
+                              1,
+                            )
+                            ?.$value
+                        as bool;
+                  },
+                );
+              })(),
         navigatorObservers: _arg10OrNull == null
             ? const <NavigatorObserver>[]
             : (TypedInterop.exportExternal(_arg10OrNull, runtime: runtime)
@@ -2598,33 +2647,81 @@ class $MaterialApp implements $Instance {
                   .cast<NavigatorObserver>(),
         builder: _arg11OrNull == null || _arg11OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg11OrNull! as EvalCallable,
-                "Widget Function(BuildContext, Widget?);export=false",
-                (_callable) => (BuildContext context, Widget? child) {
-                  return _callable
-                      .call(
-                        runtime,
-                        null,
-                        $BuildContext.wrap(context),
-                        (child == null ? const $null() : $Widget.wrap(child)),
-                        2,
-                      )
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                );
+                final _callbackType1 = runtime.internParameterizedType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'Widget',
+                  ),
+                  [],
+                  nullable: true,
+                );
+                return runtime.cachedCallback(
+                  _arg11OrNull! as EvalCallable,
+                  "Widget Function(BuildContext, Widget?);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) => (BuildContext context, Widget? child) {
+                    return _callable
+                            .call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $BuildContext.wrap(context),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              TypedInterop.annotateBridgeType(
+                                (child == null
+                                    ? const $null()
+                                    : $Widget.wrap(child)),
+                                runtime,
+                                _callbackType1,
+                              ),
+                              2,
+                            )
+                            ?.$value
+                        as Widget;
+                  },
+                );
+              })(),
         title: _arg12OrNull == null ? '' : _arg12OrNull!.$value,
         onGenerateTitle: _arg13OrNull == null || _arg13OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg13OrNull! as EvalCallable,
-                "String Function(BuildContext);export=false",
-                (_callable) => (BuildContext context) {
-                  return _callable
-                      .call(runtime, null, $BuildContext.wrap(context), null, 1)
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg13OrNull! as EvalCallable,
+                  "String Function(BuildContext);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (BuildContext context) {
+                    return _callable
+                            .call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $BuildContext.wrap(context),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              null,
+                              1,
+                            )
+                            ?.$value
+                        as String;
+                  },
+                );
+              })(),
         color: _arg14OrNull?.$value,
         theme: _arg15OrNull?.$value,
         darkTheme: _arg16OrNull?.$value,
@@ -2646,100 +2743,139 @@ class $MaterialApp implements $Instance {
         localeListResolutionCallback:
             _arg24OrNull == null || _arg24OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg24OrNull! as EvalCallable,
-                "Locale? Function(List<Locale>?, Iterable<Locale>);export=false",
-                (_callable) =>
-                    (List<Locale>? locales, Iterable<Locale> supportedLocales) {
-                      return _callable
-                          .call(
-                            runtime,
-                            null,
-                            (locales == null
-                                ? const $null()
-                                : $List.view(
+            : (() {
+                final _callbackType0 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'List'),
+                  [runtime.lookupType(BridgeTypeSpec('dart:ui', 'Locale'))],
+                  nullable: true,
+                );
+                final _callbackType1 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'Iterable'),
+                  [runtime.lookupType(BridgeTypeSpec('dart:ui', 'Locale'))],
+                );
+                return runtime.cachedCallback(
+                  _arg24OrNull! as EvalCallable,
+                  "Locale? Function(List<Locale>?, Iterable<Locale>);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) =>
+                      (
+                        List<Locale>? locales,
+                        Iterable<Locale> supportedLocales,
+                      ) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.boxExternal(
                                     locales,
-                                    (e) => $Locale.wrap(e),
                                     runtime: runtime,
-                                    runtimeTypeId: runtime
-                                        .internParameterizedType(
-                                          CoreTypes.list,
-                                          [
-                                            runtime.lookupType(
-                                              BridgeTypeSpec(
-                                                'dart:ui',
-                                                'Locale',
+                                    runtimeTypeId: _callbackType0,
+                                  ),
+                                  TypedInterop.annotateBridgeType(
+                                    (() {
+                                      final iterableType = runtime
+                                          .internParameterizedType(
+                                            CoreTypes.iterable,
+                                            [
+                                              runtime.lookupType(
+                                                BridgeTypeSpec(
+                                                  'dart:ui',
+                                                  'Locale',
+                                                ),
                                               ),
-                                            ),
-                                          ],
-                                        ),
-                                  )),
-                            (() {
-                              final iterableType = runtime
-                                  .internParameterizedType(CoreTypes.iterable, [
-                                    runtime.lookupType(
-                                      BridgeTypeSpec('dart:ui', 'Locale'),
-                                    ),
-                                  ]);
-                              return $Iterable.wrap(
-                                (supportedLocales).map((e) {
-                                  final value = $Locale.wrap(e);
-                                  runtime.assertTypedTypeArgument(
-                                    value,
-                                    iterableType,
-                                    0,
-                                  );
-                                  return value;
-                                }),
-                                runtime: runtime,
-                                runtimeTypeId: iterableType,
-                              );
-                            })(),
-                            2,
-                          )
-                          ?.$value;
-                    },
-              ),
+                                            ],
+                                          );
+                                      return $Iterable.wrap(
+                                        (supportedLocales).map((e) {
+                                          final value = $Locale.wrap(e);
+                                          runtime.assertTypedTypeArgument(
+                                            value,
+                                            iterableType,
+                                            0,
+                                          );
+                                          return value;
+                                        }),
+                                        runtime: runtime,
+                                        runtimeTypeId: iterableType,
+                                      );
+                                    })(),
+                                    runtime,
+                                    _callbackType1,
+                                  ),
+                                  2,
+                                )
+                                ?.$value
+                            as Locale?;
+                      },
+                );
+              })(),
         localeResolutionCallback: _arg25OrNull == null || _arg25OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg25OrNull! as EvalCallable,
-                "Locale? Function(Locale?, Iterable<Locale>);export=false",
-                (_callable) =>
-                    (Locale? locale, Iterable<Locale> supportedLocales) {
-                      return _callable
-                          .call(
-                            runtime,
-                            null,
-                            (locale == null
-                                ? const $null()
-                                : $Locale.wrap(locale)),
-                            (() {
-                              final iterableType = runtime
-                                  .internParameterizedType(CoreTypes.iterable, [
-                                    runtime.lookupType(
-                                      BridgeTypeSpec('dart:ui', 'Locale'),
-                                    ),
-                                  ]);
-                              return $Iterable.wrap(
-                                (supportedLocales).map((e) {
-                                  final value = $Locale.wrap(e);
-                                  runtime.assertTypedTypeArgument(
-                                    value,
-                                    iterableType,
-                                    0,
-                                  );
-                                  return value;
-                                }),
-                                runtime: runtime,
-                                runtimeTypeId: iterableType,
-                              );
-                            })(),
-                            2,
-                          )
-                          ?.$value;
-                    },
-              ),
+            : (() {
+                final _callbackType0 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:ui', 'Locale'),
+                  [],
+                  nullable: true,
+                );
+                final _callbackType1 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'Iterable'),
+                  [runtime.lookupType(BridgeTypeSpec('dart:ui', 'Locale'))],
+                );
+                return runtime.cachedCallback(
+                  _arg25OrNull! as EvalCallable,
+                  "Locale? Function(Locale?, Iterable<Locale>);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) =>
+                      (Locale? locale, Iterable<Locale> supportedLocales) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.annotateBridgeType(
+                                    (locale == null
+                                        ? const $null()
+                                        : $Locale.wrap(locale)),
+                                    runtime,
+                                    _callbackType0,
+                                  ),
+                                  TypedInterop.annotateBridgeType(
+                                    (() {
+                                      final iterableType = runtime
+                                          .internParameterizedType(
+                                            CoreTypes.iterable,
+                                            [
+                                              runtime.lookupType(
+                                                BridgeTypeSpec(
+                                                  'dart:ui',
+                                                  'Locale',
+                                                ),
+                                              ),
+                                            ],
+                                          );
+                                      return $Iterable.wrap(
+                                        (supportedLocales).map((e) {
+                                          final value = $Locale.wrap(e);
+                                          runtime.assertTypedTypeArgument(
+                                            value,
+                                            iterableType,
+                                            0,
+                                          );
+                                          return value;
+                                        }),
+                                        runtime: runtime,
+                                        runtimeTypeId: iterableType,
+                                      );
+                                    })(),
+                                    runtime,
+                                    _callbackType1,
+                                  ),
+                                  2,
+                                )
+                                ?.$value
+                            as Locale?;
+                      },
+                );
+              })(),
         supportedLocales: _arg26OrNull == null
             ? const <Locale>[Locale('en', 'US')]
             : TypedInterop.exportIterable(_arg26OrNull, runtime),
@@ -2822,50 +2958,112 @@ class $MaterialApp implements $Instance {
         backButtonDispatcher: _arg6OrNull?.$value,
         builder: _arg7OrNull == null || _arg7OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg7OrNull! as EvalCallable,
-                "Widget Function(BuildContext, Widget?);export=false",
-                (_callable) => (BuildContext context, Widget? child) {
-                  return _callable
-                      .call(
-                        runtime,
-                        null,
-                        $BuildContext.wrap(context),
-                        (child == null ? const $null() : $Widget.wrap(child)),
-                        2,
-                      )
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                );
+                final _callbackType1 = runtime.internParameterizedType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'Widget',
+                  ),
+                  [],
+                  nullable: true,
+                );
+                return runtime.cachedCallback(
+                  _arg7OrNull! as EvalCallable,
+                  "Widget Function(BuildContext, Widget?);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) => (BuildContext context, Widget? child) {
+                    return _callable
+                            .call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $BuildContext.wrap(context),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              TypedInterop.annotateBridgeType(
+                                (child == null
+                                    ? const $null()
+                                    : $Widget.wrap(child)),
+                                runtime,
+                                _callbackType1,
+                              ),
+                              2,
+                            )
+                            ?.$value
+                        as Widget;
+                  },
+                );
+              })(),
         title: _arg8OrNull?.$value,
         onGenerateTitle: _arg9OrNull == null || _arg9OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg9OrNull! as EvalCallable,
-                "String Function(BuildContext);export=false",
-                (_callable) => (BuildContext context) {
-                  return _callable
-                      .call(runtime, null, $BuildContext.wrap(context), null, 1)
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg9OrNull! as EvalCallable,
+                  "String Function(BuildContext);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (BuildContext context) {
+                    return _callable
+                            .call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $BuildContext.wrap(context),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              null,
+                              1,
+                            )
+                            ?.$value
+                        as String;
+                  },
+                );
+              })(),
         onNavigationNotification: _arg10OrNull == null || _arg10OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg10OrNull! as EvalCallable,
-                "bool Function(NavigationNotification);export=false",
-                (_callable) => (NavigationNotification notification) {
-                  return _callable
-                      .call(
-                        runtime,
-                        null,
-                        $NavigationNotification.wrap(notification),
-                        null,
-                        1,
-                      )
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/navigator.dart',
+                    'NavigationNotification',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg10OrNull! as EvalCallable,
+                  "bool Function(NavigationNotification);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (NavigationNotification notification) {
+                    return _callable
+                            .call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $NavigationNotification.wrap(notification),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              null,
+                              1,
+                            )
+                            ?.$value
+                        as bool;
+                  },
+                );
+              })(),
         color: _arg11OrNull?.$value,
         theme: _arg12OrNull?.$value,
         darkTheme: _arg13OrNull?.$value,
@@ -2887,100 +3085,139 @@ class $MaterialApp implements $Instance {
         localeListResolutionCallback:
             _arg21OrNull == null || _arg21OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg21OrNull! as EvalCallable,
-                "Locale? Function(List<Locale>?, Iterable<Locale>);export=false",
-                (_callable) =>
-                    (List<Locale>? locales, Iterable<Locale> supportedLocales) {
-                      return _callable
-                          .call(
-                            runtime,
-                            null,
-                            (locales == null
-                                ? const $null()
-                                : $List.view(
+            : (() {
+                final _callbackType0 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'List'),
+                  [runtime.lookupType(BridgeTypeSpec('dart:ui', 'Locale'))],
+                  nullable: true,
+                );
+                final _callbackType1 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'Iterable'),
+                  [runtime.lookupType(BridgeTypeSpec('dart:ui', 'Locale'))],
+                );
+                return runtime.cachedCallback(
+                  _arg21OrNull! as EvalCallable,
+                  "Locale? Function(List<Locale>?, Iterable<Locale>);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) =>
+                      (
+                        List<Locale>? locales,
+                        Iterable<Locale> supportedLocales,
+                      ) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.boxExternal(
                                     locales,
-                                    (e) => $Locale.wrap(e),
                                     runtime: runtime,
-                                    runtimeTypeId: runtime
-                                        .internParameterizedType(
-                                          CoreTypes.list,
-                                          [
-                                            runtime.lookupType(
-                                              BridgeTypeSpec(
-                                                'dart:ui',
-                                                'Locale',
+                                    runtimeTypeId: _callbackType0,
+                                  ),
+                                  TypedInterop.annotateBridgeType(
+                                    (() {
+                                      final iterableType = runtime
+                                          .internParameterizedType(
+                                            CoreTypes.iterable,
+                                            [
+                                              runtime.lookupType(
+                                                BridgeTypeSpec(
+                                                  'dart:ui',
+                                                  'Locale',
+                                                ),
                                               ),
-                                            ),
-                                          ],
-                                        ),
-                                  )),
-                            (() {
-                              final iterableType = runtime
-                                  .internParameterizedType(CoreTypes.iterable, [
-                                    runtime.lookupType(
-                                      BridgeTypeSpec('dart:ui', 'Locale'),
-                                    ),
-                                  ]);
-                              return $Iterable.wrap(
-                                (supportedLocales).map((e) {
-                                  final value = $Locale.wrap(e);
-                                  runtime.assertTypedTypeArgument(
-                                    value,
-                                    iterableType,
-                                    0,
-                                  );
-                                  return value;
-                                }),
-                                runtime: runtime,
-                                runtimeTypeId: iterableType,
-                              );
-                            })(),
-                            2,
-                          )
-                          ?.$value;
-                    },
-              ),
+                                            ],
+                                          );
+                                      return $Iterable.wrap(
+                                        (supportedLocales).map((e) {
+                                          final value = $Locale.wrap(e);
+                                          runtime.assertTypedTypeArgument(
+                                            value,
+                                            iterableType,
+                                            0,
+                                          );
+                                          return value;
+                                        }),
+                                        runtime: runtime,
+                                        runtimeTypeId: iterableType,
+                                      );
+                                    })(),
+                                    runtime,
+                                    _callbackType1,
+                                  ),
+                                  2,
+                                )
+                                ?.$value
+                            as Locale?;
+                      },
+                );
+              })(),
         localeResolutionCallback: _arg22OrNull == null || _arg22OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg22OrNull! as EvalCallable,
-                "Locale? Function(Locale?, Iterable<Locale>);export=false",
-                (_callable) =>
-                    (Locale? locale, Iterable<Locale> supportedLocales) {
-                      return _callable
-                          .call(
-                            runtime,
-                            null,
-                            (locale == null
-                                ? const $null()
-                                : $Locale.wrap(locale)),
-                            (() {
-                              final iterableType = runtime
-                                  .internParameterizedType(CoreTypes.iterable, [
-                                    runtime.lookupType(
-                                      BridgeTypeSpec('dart:ui', 'Locale'),
-                                    ),
-                                  ]);
-                              return $Iterable.wrap(
-                                (supportedLocales).map((e) {
-                                  final value = $Locale.wrap(e);
-                                  runtime.assertTypedTypeArgument(
-                                    value,
-                                    iterableType,
-                                    0,
-                                  );
-                                  return value;
-                                }),
-                                runtime: runtime,
-                                runtimeTypeId: iterableType,
-                              );
-                            })(),
-                            2,
-                          )
-                          ?.$value;
-                    },
-              ),
+            : (() {
+                final _callbackType0 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:ui', 'Locale'),
+                  [],
+                  nullable: true,
+                );
+                final _callbackType1 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'Iterable'),
+                  [runtime.lookupType(BridgeTypeSpec('dart:ui', 'Locale'))],
+                );
+                return runtime.cachedCallback(
+                  _arg22OrNull! as EvalCallable,
+                  "Locale? Function(Locale?, Iterable<Locale>);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) =>
+                      (Locale? locale, Iterable<Locale> supportedLocales) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.annotateBridgeType(
+                                    (locale == null
+                                        ? const $null()
+                                        : $Locale.wrap(locale)),
+                                    runtime,
+                                    _callbackType0,
+                                  ),
+                                  TypedInterop.annotateBridgeType(
+                                    (() {
+                                      final iterableType = runtime
+                                          .internParameterizedType(
+                                            CoreTypes.iterable,
+                                            [
+                                              runtime.lookupType(
+                                                BridgeTypeSpec(
+                                                  'dart:ui',
+                                                  'Locale',
+                                                ),
+                                              ),
+                                            ],
+                                          );
+                                      return $Iterable.wrap(
+                                        (supportedLocales).map((e) {
+                                          final value = $Locale.wrap(e);
+                                          runtime.assertTypedTypeArgument(
+                                            value,
+                                            iterableType,
+                                            0,
+                                          );
+                                          return value;
+                                        }),
+                                        runtime: runtime,
+                                        runtimeTypeId: iterableType,
+                                      );
+                                    })(),
+                                    runtime,
+                                    _callbackType1,
+                                  ),
+                                  2,
+                                )
+                                ?.$value
+                            as Locale?;
+                      },
+                );
+              })(),
         supportedLocales: _arg23OrNull == null
             ? const <Locale>[Locale('en', 'US')]
             : TypedInterop.exportIterable(_arg23OrNull, runtime),

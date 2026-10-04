@@ -34,6 +34,8 @@ import 'package:dart_eval/stdlib/typed_data.dart'
     hide $AbstractLayoutBuilder, $ConstrainedLayoutBuilder, $LayoutBuilder;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import './framework_wrappers.dart';
 import '../rendering/box.dart';
 import '../foundation/key.dart';
@@ -424,21 +426,45 @@ class $LayoutBuilder implements $Instance {
     return $LayoutBuilder.wrap(
       LayoutBuilder(
         key: (r is $Value ? r : null)?.$value,
-        builder: runtime.cachedCallback(
-          (s as $Value?)! as EvalCallable,
-          "Widget Function(BuildContext, BoxConstraints);export=false",
-          (_callable) => (BuildContext context, BoxConstraints constraints) {
-            return _callable
-                .call(
-                  runtime,
-                  null,
-                  $BuildContext.wrap(context),
-                  $BoxConstraints.wrap(constraints),
-                  2,
-                )
-                ?.$value;
-          },
-        ),
+        builder: (() {
+          final _callbackType0 = runtime.lookupType(
+            BridgeTypeSpec(
+              'package:flutter/src/widgets/framework.dart',
+              'BuildContext',
+            ),
+          );
+          final _callbackType1 = runtime.lookupType(
+            BridgeTypeSpec(
+              'package:flutter/src/rendering/box.dart',
+              'BoxConstraints',
+            ),
+          );
+          return runtime.cachedCallback(
+            (s as $Value?)! as EvalCallable,
+            "Widget Function(BuildContext, BoxConstraints);export=false" +
+                ";types=$_callbackType0,$_callbackType1",
+            (_callable) => (BuildContext context, BoxConstraints constraints) {
+              return _callable
+                      .call(
+                        runtime,
+                        null,
+                        TypedInterop.annotateBridgeType(
+                          $BuildContext.wrap(context),
+                          runtime,
+                          _callbackType0,
+                        ),
+                        TypedInterop.annotateBridgeType(
+                          $BoxConstraints.wrap(constraints),
+                          runtime,
+                          _callbackType1,
+                        ),
+                        2,
+                      )
+                      ?.$value
+                  as Widget;
+            },
+          );
+        })(),
       ),
     );
   }

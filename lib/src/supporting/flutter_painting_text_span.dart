@@ -32,9 +32,9 @@ import 'package:dart_eval/stdlib/typed_data.dart' hide $TextSpan;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import './flutter_gestures_events.dart';
 import './flutter_painting_inline_span.dart';
-import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import './flutter_gestures_recognizer.dart';
 import '../foundation/diagnostics.dart';
 
@@ -457,34 +457,60 @@ class $TextSpan implements $Instance {
         mouseCursor: _arg4OrNull?.$value,
         onEnter: _arg5OrNull == null || _arg5OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg5OrNull! as EvalCallable,
-                "void Function(PointerEnterEvent);export=false",
-                (_callable) => (PointerEnterEvent event) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $PointerEnterEvent.wrap(event),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/events.dart',
+                    'PointerEnterEvent',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg5OrNull! as EvalCallable,
+                  "void Function(PointerEnterEvent);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (PointerEnterEvent event) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $PointerEnterEvent.wrap(event),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onExit: _arg6OrNull == null || _arg6OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg6OrNull! as EvalCallable,
-                "void Function(PointerExitEvent);export=false",
-                (_callable) => (PointerExitEvent event) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $PointerExitEvent.wrap(event),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/events.dart',
+                    'PointerExitEvent',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg6OrNull! as EvalCallable,
+                  "void Function(PointerExitEvent);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (PointerExitEvent event) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $PointerExitEvent.wrap(event),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         semanticsLabel: _arg7OrNull?.$value,
         semanticsIdentifier: _arg8OrNull?.$value,
         locale: _arg9OrNull?.$value,

@@ -619,23 +619,39 @@ class $WidgetStateProperty<T> implements $Instance {
     Object? c,
   ) {
     final value = WidgetStateProperty.resolveWith(
-      runtime.cachedCallback(
-        (r as $Value?)! as EvalCallable,
-        "T Function(Set<WidgetState>);export=false",
-        (_callable) => (Set<WidgetState> states) {
-          return TypedInterop.exportExternal(
-                _callable.call(
-                  runtime,
-                  null,
-                  $Set.wrap((states).map((e) => $WidgetState.wrap(e)).toSet()),
-                  null,
-                  1,
+      (() {
+        final _callbackType0 = runtime
+            .internParameterizedType(BridgeTypeSpec('dart:core', 'Set'), [
+              runtime.lookupType(
+                BridgeTypeSpec(
+                  'package:flutter/src/widgets/widget_state.dart',
+                  'WidgetState',
                 ),
-                runtime: runtime,
-              )
-              as dynamic;
-        },
-      ),
+              ),
+            ]);
+        return runtime.cachedCallback(
+          (r as $Value?)! as EvalCallable,
+          "T Function(Set<WidgetState>);export=false" +
+              ";types=$_callbackType0",
+          (_callable) => (Set<WidgetState> states) {
+            return TypedInterop.exportExternal(
+                  _callable.call(
+                    runtime,
+                    null,
+                    TypedInterop.boxExternal(
+                      states,
+                      runtime: runtime,
+                      runtimeTypeId: _callbackType0,
+                    ),
+                    null,
+                    1,
+                  ),
+                  runtime: runtime,
+                )
+                as dynamic;
+          },
+        );
+      })(),
     );
     return $WidgetStateProperty.wrap(value);
   }
@@ -657,27 +673,47 @@ class $WidgetStateProperty<T> implements $Instance {
       (r as $Value?)!.$value,
       (s as $Value?)!.$value,
       (_arg2 as $double).$value,
-      runtime.cachedCallback(
-        _arg3! as EvalCallable,
-        "T? Function(T?, T?, double);export=false",
-        (_callable) => (dynamic arg0, dynamic arg1, double arg2) {
-          return TypedInterop.exportExternal(
-                _callable.call(
-                  runtime,
-                  null,
-                  (arg0 == null
-                      ? const $null()
-                      : runtime.wrapAlways(arg0, recursive: true)),
-                  (arg1 == null
-                      ? const $null()
-                      : runtime.wrapAlways(arg1, recursive: true)),
-                  [$double(arg2)],
-                ),
-                runtime: runtime,
-              )
-              as dynamic;
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.nullableRuntimeType(
+          (runtime.bridgeCallTypeArguments.length > 0
+              ? runtime.bridgeCallTypeArguments[0]
+              : runtime.lookupType(CoreTypes.dynamic)),
+        );
+        final _callbackType1 = runtime.nullableRuntimeType(
+          (runtime.bridgeCallTypeArguments.length > 0
+              ? runtime.bridgeCallTypeArguments[0]
+              : runtime.lookupType(CoreTypes.dynamic)),
+        );
+        final _callbackType2 = runtime.lookupType(
+          BridgeTypeSpec('dart:core', 'double'),
+        );
+        return runtime.cachedCallback(
+          _arg3! as EvalCallable,
+          "T? Function(T?, T?, double);export=false" +
+              ";types=$_callbackType0,$_callbackType1,$_callbackType2",
+          (_callable) => (dynamic arg0, dynamic arg1, double arg2) {
+            return TypedInterop.exportExternal(
+                  _callable.call(
+                    runtime,
+                    null,
+                    TypedInterop.boxExternal(
+                      arg0,
+                      runtime: runtime,
+                      runtimeTypeId: _callbackType0,
+                    ),
+                    TypedInterop.boxExternal(
+                      arg1,
+                      runtime: runtime,
+                      runtimeTypeId: _callbackType1,
+                    ),
+                    [$double(arg2)],
+                  ),
+                  runtime: runtime,
+                )
+                as dynamic;
+          },
+        );
+      })(),
     );
     return value == null ? const $null() : $WidgetStateProperty.wrap(value);
   }

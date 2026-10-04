@@ -32,6 +32,8 @@ import 'package:dart_eval/stdlib/typed_data.dart' hide $GestureDetector;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/src/gestures/tap.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../gestures/tap.dart';
 import '../supporting/flutter_gestures_tap.dart';
 import '../gestures/long_press.dart';
@@ -3324,34 +3326,60 @@ class $GestureDetector implements $Instance {
         child: (s is $Value ? s : null)?.$value,
         onTapDown: _arg2OrNull == null || _arg2OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg2OrNull! as EvalCallable,
-                "void Function(TapDownDetails);export=false",
-                (_callable) => (TapDownDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $TapDownDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/tap.dart',
+                    'TapDownDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg2OrNull! as EvalCallable,
+                  "void Function(TapDownDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (TapDownDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $TapDownDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onTapUp: _arg3OrNull == null || _arg3OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg3OrNull! as EvalCallable,
-                "void Function(TapUpDetails);export=false",
-                (_callable) => (TapUpDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $TapUpDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/tap.dart',
+                    'TapUpDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg3OrNull! as EvalCallable,
+                  "void Function(TapUpDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (TapUpDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $TapUpDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onTap: _arg4OrNull == null || _arg4OrNull is $null
             ? null
             : runtime.cachedCallback(
@@ -3363,19 +3391,32 @@ class $GestureDetector implements $Instance {
               ),
         onTapMove: _arg5OrNull == null || _arg5OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg5OrNull! as EvalCallable,
-                "void Function(TapMoveDetails);export=false",
-                (_callable) => (TapMoveDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $TapMoveDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/tap.dart',
+                    'TapMoveDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg5OrNull! as EvalCallable,
+                  "void Function(TapMoveDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (TapMoveDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $TapMoveDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onTapCancel: _arg6OrNull == null || _arg6OrNull is $null
             ? null
             : runtime.cachedCallback(
@@ -3396,34 +3437,60 @@ class $GestureDetector implements $Instance {
               ),
         onSecondaryTapDown: _arg8OrNull == null || _arg8OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg8OrNull! as EvalCallable,
-                "void Function(TapDownDetails);export=false",
-                (_callable) => (TapDownDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $TapDownDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/tap.dart',
+                    'TapDownDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg8OrNull! as EvalCallable,
+                  "void Function(TapDownDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (TapDownDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $TapDownDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onSecondaryTapUp: _arg9OrNull == null || _arg9OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg9OrNull! as EvalCallable,
-                "void Function(TapUpDetails);export=false",
-                (_callable) => (TapUpDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $TapUpDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/tap.dart',
+                    'TapUpDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg9OrNull! as EvalCallable,
+                  "void Function(TapUpDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (TapUpDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $TapUpDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onSecondaryTapCancel: _arg10OrNull == null || _arg10OrNull is $null
             ? null
             : runtime.cachedCallback(
@@ -3435,34 +3502,60 @@ class $GestureDetector implements $Instance {
               ),
         onTertiaryTapDown: _arg11OrNull == null || _arg11OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg11OrNull! as EvalCallable,
-                "void Function(TapDownDetails);export=false",
-                (_callable) => (TapDownDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $TapDownDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/tap.dart',
+                    'TapDownDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg11OrNull! as EvalCallable,
+                  "void Function(TapDownDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (TapDownDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $TapDownDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onTertiaryTapUp: _arg12OrNull == null || _arg12OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg12OrNull! as EvalCallable,
-                "void Function(TapUpDetails);export=false",
-                (_callable) => (TapUpDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $TapUpDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/tap.dart',
+                    'TapUpDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg12OrNull! as EvalCallable,
+                  "void Function(TapUpDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (TapUpDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $TapUpDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onTertiaryTapCancel: _arg13OrNull == null || _arg13OrNull is $null
             ? null
             : runtime.cachedCallback(
@@ -3474,19 +3567,32 @@ class $GestureDetector implements $Instance {
               ),
         onDoubleTapDown: _arg14OrNull == null || _arg14OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg14OrNull! as EvalCallable,
-                "void Function(TapDownDetails);export=false",
-                (_callable) => (TapDownDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $TapDownDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/tap.dart',
+                    'TapDownDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg14OrNull! as EvalCallable,
+                  "void Function(TapDownDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (TapDownDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $TapDownDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onDoubleTap: _arg15OrNull == null || _arg15OrNull is $null
             ? null
             : runtime.cachedCallback(
@@ -3507,19 +3613,32 @@ class $GestureDetector implements $Instance {
               ),
         onLongPressDown: _arg17OrNull == null || _arg17OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg17OrNull! as EvalCallable,
-                "void Function(LongPressDownDetails);export=false",
-                (_callable) => (LongPressDownDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $LongPressDownDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/long_press.dart',
+                    'LongPressDownDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg17OrNull! as EvalCallable,
+                  "void Function(LongPressDownDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (LongPressDownDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $LongPressDownDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onLongPressCancel: _arg18OrNull == null || _arg18OrNull is $null
             ? null
             : runtime.cachedCallback(
@@ -3540,34 +3659,60 @@ class $GestureDetector implements $Instance {
               ),
         onLongPressStart: _arg20OrNull == null || _arg20OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg20OrNull! as EvalCallable,
-                "void Function(LongPressStartDetails);export=false",
-                (_callable) => (LongPressStartDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $LongPressStartDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/long_press.dart',
+                    'LongPressStartDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg20OrNull! as EvalCallable,
+                  "void Function(LongPressStartDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (LongPressStartDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $LongPressStartDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onLongPressMoveUpdate: _arg21OrNull == null || _arg21OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg21OrNull! as EvalCallable,
-                "void Function(LongPressMoveUpdateDetails);export=false",
-                (_callable) => (LongPressMoveUpdateDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $LongPressMoveUpdateDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/long_press.dart',
+                    'LongPressMoveUpdateDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg21OrNull! as EvalCallable,
+                  "void Function(LongPressMoveUpdateDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (LongPressMoveUpdateDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $LongPressMoveUpdateDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onLongPressUp: _arg22OrNull == null || _arg22OrNull is $null
             ? null
             : runtime.cachedCallback(
@@ -3579,34 +3724,60 @@ class $GestureDetector implements $Instance {
               ),
         onLongPressEnd: _arg23OrNull == null || _arg23OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg23OrNull! as EvalCallable,
-                "void Function(LongPressEndDetails);export=false",
-                (_callable) => (LongPressEndDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $LongPressEndDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/long_press.dart',
+                    'LongPressEndDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg23OrNull! as EvalCallable,
+                  "void Function(LongPressEndDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (LongPressEndDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $LongPressEndDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onSecondaryLongPressDown: _arg24OrNull == null || _arg24OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg24OrNull! as EvalCallable,
-                "void Function(LongPressDownDetails);export=false",
-                (_callable) => (LongPressDownDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $LongPressDownDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/long_press.dart',
+                    'LongPressDownDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg24OrNull! as EvalCallable,
+                  "void Function(LongPressDownDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (LongPressDownDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $LongPressDownDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onSecondaryLongPressCancel:
             _arg25OrNull == null || _arg25OrNull is $null
             ? null
@@ -3628,35 +3799,61 @@ class $GestureDetector implements $Instance {
               ),
         onSecondaryLongPressStart: _arg27OrNull == null || _arg27OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg27OrNull! as EvalCallable,
-                "void Function(LongPressStartDetails);export=false",
-                (_callable) => (LongPressStartDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $LongPressStartDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/long_press.dart',
+                    'LongPressStartDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg27OrNull! as EvalCallable,
+                  "void Function(LongPressStartDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (LongPressStartDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $LongPressStartDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onSecondaryLongPressMoveUpdate:
             _arg28OrNull == null || _arg28OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg28OrNull! as EvalCallable,
-                "void Function(LongPressMoveUpdateDetails);export=false",
-                (_callable) => (LongPressMoveUpdateDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $LongPressMoveUpdateDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/long_press.dart',
+                    'LongPressMoveUpdateDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg28OrNull! as EvalCallable,
+                  "void Function(LongPressMoveUpdateDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (LongPressMoveUpdateDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $LongPressMoveUpdateDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onSecondaryLongPressUp: _arg29OrNull == null || _arg29OrNull is $null
             ? null
             : runtime.cachedCallback(
@@ -3668,34 +3865,60 @@ class $GestureDetector implements $Instance {
               ),
         onSecondaryLongPressEnd: _arg30OrNull == null || _arg30OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg30OrNull! as EvalCallable,
-                "void Function(LongPressEndDetails);export=false",
-                (_callable) => (LongPressEndDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $LongPressEndDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/long_press.dart',
+                    'LongPressEndDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg30OrNull! as EvalCallable,
+                  "void Function(LongPressEndDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (LongPressEndDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $LongPressEndDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onTertiaryLongPressDown: _arg31OrNull == null || _arg31OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg31OrNull! as EvalCallable,
-                "void Function(LongPressDownDetails);export=false",
-                (_callable) => (LongPressDownDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $LongPressDownDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/long_press.dart',
+                    'LongPressDownDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg31OrNull! as EvalCallable,
+                  "void Function(LongPressDownDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (LongPressDownDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $LongPressDownDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onTertiaryLongPressCancel: _arg32OrNull == null || _arg32OrNull is $null
             ? null
             : runtime.cachedCallback(
@@ -3716,35 +3939,61 @@ class $GestureDetector implements $Instance {
               ),
         onTertiaryLongPressStart: _arg34OrNull == null || _arg34OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg34OrNull! as EvalCallable,
-                "void Function(LongPressStartDetails);export=false",
-                (_callable) => (LongPressStartDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $LongPressStartDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/long_press.dart',
+                    'LongPressStartDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg34OrNull! as EvalCallable,
+                  "void Function(LongPressStartDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (LongPressStartDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $LongPressStartDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onTertiaryLongPressMoveUpdate:
             _arg35OrNull == null || _arg35OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg35OrNull! as EvalCallable,
-                "void Function(LongPressMoveUpdateDetails);export=false",
-                (_callable) => (LongPressMoveUpdateDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $LongPressMoveUpdateDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/long_press.dart',
+                    'LongPressMoveUpdateDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg35OrNull! as EvalCallable,
+                  "void Function(LongPressMoveUpdateDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (LongPressMoveUpdateDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $LongPressMoveUpdateDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onTertiaryLongPressUp: _arg36OrNull == null || _arg36OrNull is $null
             ? null
             : runtime.cachedCallback(
@@ -3756,79 +4005,144 @@ class $GestureDetector implements $Instance {
               ),
         onTertiaryLongPressEnd: _arg37OrNull == null || _arg37OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg37OrNull! as EvalCallable,
-                "void Function(LongPressEndDetails);export=false",
-                (_callable) => (LongPressEndDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $LongPressEndDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/long_press.dart',
+                    'LongPressEndDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg37OrNull! as EvalCallable,
+                  "void Function(LongPressEndDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (LongPressEndDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $LongPressEndDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onVerticalDragDown: _arg38OrNull == null || _arg38OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg38OrNull! as EvalCallable,
-                "void Function(DragDownDetails);export=false",
-                (_callable) => (DragDownDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $DragDownDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/drag_details.dart',
+                    'DragDownDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg38OrNull! as EvalCallable,
+                  "void Function(DragDownDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (DragDownDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $DragDownDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onVerticalDragStart: _arg39OrNull == null || _arg39OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg39OrNull! as EvalCallable,
-                "void Function(DragStartDetails);export=false",
-                (_callable) => (DragStartDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $DragStartDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/drag_details.dart',
+                    'DragStartDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg39OrNull! as EvalCallable,
+                  "void Function(DragStartDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (DragStartDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $DragStartDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onVerticalDragUpdate: _arg40OrNull == null || _arg40OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg40OrNull! as EvalCallable,
-                "void Function(DragUpdateDetails);export=false",
-                (_callable) => (DragUpdateDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $DragUpdateDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/drag_details.dart',
+                    'DragUpdateDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg40OrNull! as EvalCallable,
+                  "void Function(DragUpdateDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (DragUpdateDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $DragUpdateDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onVerticalDragEnd: _arg41OrNull == null || _arg41OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg41OrNull! as EvalCallable,
-                "void Function(DragEndDetails);export=false",
-                (_callable) => (DragEndDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $DragEndDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/drag_details.dart',
+                    'DragEndDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg41OrNull! as EvalCallable,
+                  "void Function(DragEndDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (DragEndDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $DragEndDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onVerticalDragCancel: _arg42OrNull == null || _arg42OrNull is $null
             ? null
             : runtime.cachedCallback(
@@ -3840,64 +4154,116 @@ class $GestureDetector implements $Instance {
               ),
         onHorizontalDragDown: _arg43OrNull == null || _arg43OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg43OrNull! as EvalCallable,
-                "void Function(DragDownDetails);export=false",
-                (_callable) => (DragDownDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $DragDownDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/drag_details.dart',
+                    'DragDownDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg43OrNull! as EvalCallable,
+                  "void Function(DragDownDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (DragDownDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $DragDownDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onHorizontalDragStart: _arg44OrNull == null || _arg44OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg44OrNull! as EvalCallable,
-                "void Function(DragStartDetails);export=false",
-                (_callable) => (DragStartDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $DragStartDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/drag_details.dart',
+                    'DragStartDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg44OrNull! as EvalCallable,
+                  "void Function(DragStartDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (DragStartDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $DragStartDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onHorizontalDragUpdate: _arg45OrNull == null || _arg45OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg45OrNull! as EvalCallable,
-                "void Function(DragUpdateDetails);export=false",
-                (_callable) => (DragUpdateDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $DragUpdateDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/drag_details.dart',
+                    'DragUpdateDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg45OrNull! as EvalCallable,
+                  "void Function(DragUpdateDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (DragUpdateDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $DragUpdateDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onHorizontalDragEnd: _arg46OrNull == null || _arg46OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg46OrNull! as EvalCallable,
-                "void Function(DragEndDetails);export=false",
-                (_callable) => (DragEndDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $DragEndDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/drag_details.dart',
+                    'DragEndDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg46OrNull! as EvalCallable,
+                  "void Function(DragEndDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (DragEndDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $DragEndDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onHorizontalDragCancel: _arg47OrNull == null || _arg47OrNull is $null
             ? null
             : runtime.cachedCallback(
@@ -3909,124 +4275,228 @@ class $GestureDetector implements $Instance {
               ),
         onForcePressStart: _arg48OrNull == null || _arg48OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg48OrNull! as EvalCallable,
-                "void Function(ForcePressDetails);export=false",
-                (_callable) => (ForcePressDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $ForcePressDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/force_press.dart',
+                    'ForcePressDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg48OrNull! as EvalCallable,
+                  "void Function(ForcePressDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (ForcePressDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $ForcePressDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onForcePressPeak: _arg49OrNull == null || _arg49OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg49OrNull! as EvalCallable,
-                "void Function(ForcePressDetails);export=false",
-                (_callable) => (ForcePressDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $ForcePressDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/force_press.dart',
+                    'ForcePressDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg49OrNull! as EvalCallable,
+                  "void Function(ForcePressDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (ForcePressDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $ForcePressDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onForcePressUpdate: _arg50OrNull == null || _arg50OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg50OrNull! as EvalCallable,
-                "void Function(ForcePressDetails);export=false",
-                (_callable) => (ForcePressDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $ForcePressDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/force_press.dart',
+                    'ForcePressDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg50OrNull! as EvalCallable,
+                  "void Function(ForcePressDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (ForcePressDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $ForcePressDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onForcePressEnd: _arg51OrNull == null || _arg51OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg51OrNull! as EvalCallable,
-                "void Function(ForcePressDetails);export=false",
-                (_callable) => (ForcePressDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $ForcePressDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/force_press.dart',
+                    'ForcePressDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg51OrNull! as EvalCallable,
+                  "void Function(ForcePressDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (ForcePressDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $ForcePressDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onPanDown: _arg52OrNull == null || _arg52OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg52OrNull! as EvalCallable,
-                "void Function(DragDownDetails);export=false",
-                (_callable) => (DragDownDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $DragDownDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/drag_details.dart',
+                    'DragDownDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg52OrNull! as EvalCallable,
+                  "void Function(DragDownDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (DragDownDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $DragDownDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onPanStart: _arg53OrNull == null || _arg53OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg53OrNull! as EvalCallable,
-                "void Function(DragStartDetails);export=false",
-                (_callable) => (DragStartDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $DragStartDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/drag_details.dart',
+                    'DragStartDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg53OrNull! as EvalCallable,
+                  "void Function(DragStartDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (DragStartDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $DragStartDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onPanUpdate: _arg54OrNull == null || _arg54OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg54OrNull! as EvalCallable,
-                "void Function(DragUpdateDetails);export=false",
-                (_callable) => (DragUpdateDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $DragUpdateDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/drag_details.dart',
+                    'DragUpdateDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg54OrNull! as EvalCallable,
+                  "void Function(DragUpdateDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (DragUpdateDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $DragUpdateDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onPanEnd: _arg55OrNull == null || _arg55OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg55OrNull! as EvalCallable,
-                "void Function(DragEndDetails);export=false",
-                (_callable) => (DragEndDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $DragEndDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/drag_details.dart',
+                    'DragEndDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg55OrNull! as EvalCallable,
+                  "void Function(DragEndDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (DragEndDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $DragEndDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onPanCancel: _arg56OrNull == null || _arg56OrNull is $null
             ? null
             : runtime.cachedCallback(
@@ -4038,49 +4508,88 @@ class $GestureDetector implements $Instance {
               ),
         onScaleStart: _arg57OrNull == null || _arg57OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg57OrNull! as EvalCallable,
-                "void Function(ScaleStartDetails);export=false",
-                (_callable) => (ScaleStartDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $ScaleStartDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/scale.dart',
+                    'ScaleStartDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg57OrNull! as EvalCallable,
+                  "void Function(ScaleStartDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (ScaleStartDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $ScaleStartDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onScaleUpdate: _arg58OrNull == null || _arg58OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg58OrNull! as EvalCallable,
-                "void Function(ScaleUpdateDetails);export=false",
-                (_callable) => (ScaleUpdateDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $ScaleUpdateDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/scale.dart',
+                    'ScaleUpdateDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg58OrNull! as EvalCallable,
+                  "void Function(ScaleUpdateDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (ScaleUpdateDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $ScaleUpdateDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         onScaleEnd: _arg59OrNull == null || _arg59OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg59OrNull! as EvalCallable,
-                "void Function(ScaleEndDetails);export=false",
-                (_callable) => (ScaleEndDetails details) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $ScaleEndDetails.wrap(details),
-                    null,
-                    1,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/gestures/scale.dart',
+                    'ScaleEndDetails',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg59OrNull! as EvalCallable,
+                  "void Function(ScaleEndDetails);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (ScaleEndDetails details) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $ScaleEndDetails.wrap(details),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
         behavior: _arg60OrNull?.$value,
         excludeFromSemantics: _arg61OrNull == null
             ? false

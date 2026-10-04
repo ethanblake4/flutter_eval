@@ -53,13 +53,13 @@ import 'package:dart_eval/stdlib/typed_data.dart'
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import '../widgets/framework_wrappers.dart';
 import '../animation/animation.dart';
 import '../supporting/flutter_material_scaffold.dart';
 import '../foundation/notifiers.dart';
 import '../supporting/flutter_widgets_preferred_size.dart';
 import '../supporting/flutter_material_floating_action_button_location.dart';
-import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import '../supporting/flutter_painting_alignment.dart';
 import '../painting/box_decoration.dart';
 import '../sky_engine/ui/painting.dart';
@@ -1180,23 +1180,33 @@ class $Scaffold implements $Instance {
         drawer: _arg9OrNull?.$value,
         onDrawerChanged: _arg10OrNull == null || _arg10OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg10OrNull! as EvalCallable,
-                "void Function(bool);export=false",
-                (_callable) => (bool isOpened) {
-                  _callable.call(runtime, null, $bool(isOpened), null, 1);
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg10OrNull! as EvalCallable,
+                  "void Function(bool);export=false" + ";types=$_callbackType0",
+                  (_callable) => (bool isOpened) {
+                    _callable.call(runtime, null, $bool(isOpened), null, 1);
+                  },
+                );
+              })(),
         endDrawer: _arg11OrNull?.$value,
         onEndDrawerChanged: _arg12OrNull == null || _arg12OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg12OrNull! as EvalCallable,
-                "void Function(bool);export=false",
-                (_callable) => (bool isOpened) {
-                  _callable.call(runtime, null, $bool(isOpened), null, 1);
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg12OrNull! as EvalCallable,
+                  "void Function(bool);export=false" + ";types=$_callbackType0",
+                  (_callable) => (bool isOpened) {
+                    _callable.call(runtime, null, $bool(isOpened), null, 1);
+                  },
+                );
+              })(),
         bottomNavigationBar: _arg13OrNull?.$value,
         bottomSheet: _arg14OrNull?.$value,
         backgroundColor: _arg15OrNull?.$value,
@@ -1217,21 +1227,46 @@ class $Scaffold implements $Instance {
         drawerScrimColor: _arg22OrNull?.$value,
         bottomSheetScrimBuilder: _arg23OrNull == null
             ? const Scaffold().bottomSheetScrimBuilder
-            : runtime.cachedCallback(
-                _arg23OrNull! as EvalCallable,
-                "Widget? Function(BuildContext, Animation<double>);export=false",
-                (_callable) => (BuildContext arg0, Animation<double> arg1) {
-                  return _callable
-                      .call(
-                        runtime,
-                        null,
-                        $BuildContext.wrap(arg0),
-                        $Animation.wrap(arg1),
-                        2,
-                      )
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                );
+                final _callbackType1 = runtime.internParameterizedType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/animation/animation.dart',
+                    'Animation',
+                  ),
+                  [runtime.lookupType(BridgeTypeSpec('dart:core', 'double'))],
+                );
+                return runtime.cachedCallback(
+                  _arg23OrNull! as EvalCallable,
+                  "Widget? Function(BuildContext, Animation<double>);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) => (BuildContext arg0, Animation<double> arg1) {
+                    return _callable
+                            .call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $BuildContext.wrap(arg0),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              TypedInterop.annotateBridgeType(
+                                $Animation.wrap(arg1),
+                                runtime,
+                                _callbackType1,
+                              ),
+                              2,
+                            )
+                            ?.$value
+                        as Widget?;
+                  },
+                );
+              })(),
         drawerEdgeDragWidth: _arg24OrNull?.$value,
         drawerEnableOpenDragGesture: _arg25OrNull == null
             ? true
@@ -2272,13 +2307,28 @@ class $ScaffoldMessengerState implements $Instance {
   ) {
     final self = target! as $ScaffoldMessengerState;
     final result = self.$value.createTicker(
-      runtime.cachedCallback(
-        (r as $Value?)! as EvalCallable,
-        "void Function(Duration);export=false",
-        (_callable) => (Duration elapsed) {
-          _callable.call(runtime, null, $Duration.wrap(elapsed), null, 1);
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.lookupType(
+          BridgeTypeSpec('dart:core', 'Duration'),
+        );
+        return runtime.cachedCallback(
+          (r as $Value?)! as EvalCallable,
+          "void Function(Duration);export=false" + ";types=$_callbackType0",
+          (_callable) => (Duration elapsed) {
+            _callable.call(
+              runtime,
+              null,
+              TypedInterop.annotateBridgeType(
+                $Duration.wrap(elapsed),
+                runtime,
+                _callbackType0,
+              ),
+              null,
+              1,
+            );
+          },
+        );
+      })(),
     );
     return $Ticker.wrap(result);
   }

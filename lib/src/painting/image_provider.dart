@@ -61,8 +61,8 @@ import 'package:flutter/rendering.dart';
 import 'dart:core';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import '../supporting/flutter_painting_image_stream.dart';
-import '../supporting/flutter_painting_image_cache.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
+import '../supporting/flutter_painting_image_cache.dart';
 import 'package:dart_eval/src/eval/utils/wrap_helper.dart';
 import '../supporting/flutter_painting_image_provider.dart';
 
@@ -357,21 +357,40 @@ class $ImageProvider<T extends Object> implements $Instance {
       handleError:
           (s is $Value ? s : null) == null || (s is $Value ? s : null) is $null
           ? null
-          : runtime.cachedCallback(
-              (s is $Value ? s : null)! as EvalCallable,
-              "void Function(Object, StackTrace?);export=false",
-              (_callable) => (Object exception, StackTrace? stackTrace) {
-                _callable.call(
-                  runtime,
-                  null,
-                  $Object(exception),
-                  (stackTrace == null
-                      ? const $null()
-                      : $StackTrace.wrap(stackTrace)),
-                  2,
-                );
-              },
-            ),
+          : (() {
+              final _callbackType0 = runtime.lookupType(
+                BridgeTypeSpec('dart:core', 'Object'),
+              );
+              final _callbackType1 = runtime.internParameterizedType(
+                BridgeTypeSpec('dart:core', 'StackTrace'),
+                [],
+                nullable: true,
+              );
+              return runtime.cachedCallback(
+                (s is $Value ? s : null)! as EvalCallable,
+                "void Function(Object, StackTrace?);export=false" +
+                    ";types=$_callbackType0,$_callbackType1",
+                (_callable) => (Object exception, StackTrace? stackTrace) {
+                  _callable.call(
+                    runtime,
+                    null,
+                    TypedInterop.annotateBridgeType(
+                      $Object(exception),
+                      runtime,
+                      _callbackType0,
+                    ),
+                    TypedInterop.annotateBridgeType(
+                      (stackTrace == null
+                          ? const $null()
+                          : $StackTrace.wrap(stackTrace)),
+                      runtime,
+                      _callbackType1,
+                    ),
+                    2,
+                  );
+                },
+              );
+            })(),
     );
     return $Future.wrap(
       result.then((e) => e == null ? const $null() : $ImageCacheStatus.wrap(e)),
@@ -899,21 +918,40 @@ class $NetworkImage implements $Instance {
       handleError:
           (s is $Value ? s : null) == null || (s is $Value ? s : null) is $null
           ? null
-          : runtime.cachedCallback(
-              (s is $Value ? s : null)! as EvalCallable,
-              "void Function(Object, StackTrace?);export=false",
-              (_callable) => (Object exception, StackTrace? stackTrace) {
-                _callable.call(
-                  runtime,
-                  null,
-                  $Object(exception),
-                  (stackTrace == null
-                      ? const $null()
-                      : $StackTrace.wrap(stackTrace)),
-                  2,
-                );
-              },
-            ),
+          : (() {
+              final _callbackType0 = runtime.lookupType(
+                BridgeTypeSpec('dart:core', 'Object'),
+              );
+              final _callbackType1 = runtime.internParameterizedType(
+                BridgeTypeSpec('dart:core', 'StackTrace'),
+                [],
+                nullable: true,
+              );
+              return runtime.cachedCallback(
+                (s is $Value ? s : null)! as EvalCallable,
+                "void Function(Object, StackTrace?);export=false" +
+                    ";types=$_callbackType0,$_callbackType1",
+                (_callable) => (Object exception, StackTrace? stackTrace) {
+                  _callable.call(
+                    runtime,
+                    null,
+                    TypedInterop.annotateBridgeType(
+                      $Object(exception),
+                      runtime,
+                      _callbackType0,
+                    ),
+                    TypedInterop.annotateBridgeType(
+                      (stackTrace == null
+                          ? const $null()
+                          : $StackTrace.wrap(stackTrace)),
+                      runtime,
+                      _callbackType1,
+                    ),
+                    2,
+                  );
+                },
+              );
+            })(),
     );
     return $Future.wrap(
       result.then((e) => e == null ? const $null() : $ImageCacheStatus.wrap(e)),
@@ -1346,21 +1384,40 @@ class $MemoryImage implements $Instance {
       handleError:
           (s is $Value ? s : null) == null || (s is $Value ? s : null) is $null
           ? null
-          : runtime.cachedCallback(
-              (s is $Value ? s : null)! as EvalCallable,
-              "void Function(Object, StackTrace?);export=false",
-              (_callable) => (Object exception, StackTrace? stackTrace) {
-                _callable.call(
-                  runtime,
-                  null,
-                  $Object(exception),
-                  (stackTrace == null
-                      ? const $null()
-                      : $StackTrace.wrap(stackTrace)),
-                  2,
-                );
-              },
-            ),
+          : (() {
+              final _callbackType0 = runtime.lookupType(
+                BridgeTypeSpec('dart:core', 'Object'),
+              );
+              final _callbackType1 = runtime.internParameterizedType(
+                BridgeTypeSpec('dart:core', 'StackTrace'),
+                [],
+                nullable: true,
+              );
+              return runtime.cachedCallback(
+                (s is $Value ? s : null)! as EvalCallable,
+                "void Function(Object, StackTrace?);export=false" +
+                    ";types=$_callbackType0,$_callbackType1",
+                (_callable) => (Object exception, StackTrace? stackTrace) {
+                  _callable.call(
+                    runtime,
+                    null,
+                    TypedInterop.annotateBridgeType(
+                      $Object(exception),
+                      runtime,
+                      _callbackType0,
+                    ),
+                    TypedInterop.annotateBridgeType(
+                      (stackTrace == null
+                          ? const $null()
+                          : $StackTrace.wrap(stackTrace)),
+                      runtime,
+                      _callbackType1,
+                    ),
+                    2,
+                  );
+                },
+              );
+            })(),
     );
     return $Future.wrap(
       result.then((e) => e == null ? const $null() : $ImageCacheStatus.wrap(e)),
@@ -1971,21 +2028,40 @@ class $ResizeImage implements $Instance {
       handleError:
           (s is $Value ? s : null) == null || (s is $Value ? s : null) is $null
           ? null
-          : runtime.cachedCallback(
-              (s is $Value ? s : null)! as EvalCallable,
-              "void Function(Object, StackTrace?);export=false",
-              (_callable) => (Object exception, StackTrace? stackTrace) {
-                _callable.call(
-                  runtime,
-                  null,
-                  $Object(exception),
-                  (stackTrace == null
-                      ? const $null()
-                      : $StackTrace.wrap(stackTrace)),
-                  2,
-                );
-              },
-            ),
+          : (() {
+              final _callbackType0 = runtime.lookupType(
+                BridgeTypeSpec('dart:core', 'Object'),
+              );
+              final _callbackType1 = runtime.internParameterizedType(
+                BridgeTypeSpec('dart:core', 'StackTrace'),
+                [],
+                nullable: true,
+              );
+              return runtime.cachedCallback(
+                (s is $Value ? s : null)! as EvalCallable,
+                "void Function(Object, StackTrace?);export=false" +
+                    ";types=$_callbackType0,$_callbackType1",
+                (_callable) => (Object exception, StackTrace? stackTrace) {
+                  _callable.call(
+                    runtime,
+                    null,
+                    TypedInterop.annotateBridgeType(
+                      $Object(exception),
+                      runtime,
+                      _callbackType0,
+                    ),
+                    TypedInterop.annotateBridgeType(
+                      (stackTrace == null
+                          ? const $null()
+                          : $StackTrace.wrap(stackTrace)),
+                      runtime,
+                      _callbackType1,
+                    ),
+                    2,
+                  );
+                },
+              );
+            })(),
     );
     return $Future.wrap(
       result.then((e) => e == null ? const $null() : $ImageCacheStatus.wrap(e)),

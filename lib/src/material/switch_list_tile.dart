@@ -31,10 +31,11 @@ import 'package:dart_eval/stdlib/async.dart' hide $SwitchListTile;
 import 'package:dart_eval/stdlib/typed_data.dart' hide $SwitchListTile;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../widgets/framework_wrappers.dart';
 import '../sky_engine/ui/painting.dart';
 import '../painting/image_provider.dart';
-import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../widgets/widget_state.dart';
 import './theme_data.dart';
 import '../supporting/flutter_gestures_recognizer.dart';
@@ -2125,13 +2126,18 @@ class $SwitchListTile implements $Instance {
         value: (s as $bool).$value,
         onChanged: _arg2 == null || _arg2 is $null
             ? null
-            : runtime.cachedCallback(
-                _arg2! as EvalCallable,
-                "void Function(bool);export=false",
-                (_callable) => (bool value) {
-                  _callable.call(runtime, null, $bool(value), null, 1);
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg2! as EvalCallable,
+                  "void Function(bool);export=false" + ";types=$_callbackType0",
+                  (_callable) => (bool value) {
+                    _callable.call(runtime, null, $bool(value), null, 1);
+                  },
+                );
+              })(),
         activeColor: _arg3OrNull?.$value,
         activeThumbColor: _arg4OrNull?.$value,
         activeTrackColor: _arg5OrNull?.$value,
@@ -2140,39 +2146,77 @@ class $SwitchListTile implements $Instance {
         activeThumbImage: _arg8OrNull?.$value,
         onActiveThumbImageError: _arg9OrNull == null || _arg9OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg9OrNull! as EvalCallable,
-                "void Function(Object, StackTrace?);export=false",
-                (_callable) => (Object exception, StackTrace? stackTrace) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $Object(exception),
-                    (stackTrace == null
-                        ? const $null()
-                        : $StackTrace.wrap(stackTrace)),
-                    2,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'Object'),
+                );
+                final _callbackType1 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'StackTrace'),
+                  [],
+                  nullable: true,
+                );
+                return runtime.cachedCallback(
+                  _arg9OrNull! as EvalCallable,
+                  "void Function(Object, StackTrace?);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) => (Object exception, StackTrace? stackTrace) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $Object(exception),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      TypedInterop.annotateBridgeType(
+                        (stackTrace == null
+                            ? const $null()
+                            : $StackTrace.wrap(stackTrace)),
+                        runtime,
+                        _callbackType1,
+                      ),
+                      2,
+                    );
+                  },
+                );
+              })(),
         inactiveThumbImage: _arg10OrNull?.$value,
         onInactiveThumbImageError: _arg11OrNull == null || _arg11OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg11OrNull! as EvalCallable,
-                "void Function(Object, StackTrace?);export=false",
-                (_callable) => (Object exception, StackTrace? stackTrace) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $Object(exception),
-                    (stackTrace == null
-                        ? const $null()
-                        : $StackTrace.wrap(stackTrace)),
-                    2,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'Object'),
+                );
+                final _callbackType1 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'StackTrace'),
+                  [],
+                  nullable: true,
+                );
+                return runtime.cachedCallback(
+                  _arg11OrNull! as EvalCallable,
+                  "void Function(Object, StackTrace?);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) => (Object exception, StackTrace? stackTrace) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $Object(exception),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      TypedInterop.annotateBridgeType(
+                        (stackTrace == null
+                            ? const $null()
+                            : $StackTrace.wrap(stackTrace)),
+                        runtime,
+                        _callbackType1,
+                      ),
+                      2,
+                    );
+                  },
+                );
+              })(),
         thumbColor: _arg12OrNull?.$value,
         trackColor: _arg13OrNull?.$value,
         trackOutlineColor: _arg14OrNull?.$value,
@@ -2188,13 +2232,18 @@ class $SwitchListTile implements $Instance {
         statesController: _arg22OrNull?.$value,
         onFocusChange: _arg23OrNull == null || _arg23OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg23OrNull! as EvalCallable,
-                "void Function(bool);export=false",
-                (_callable) => (bool value) {
-                  _callable.call(runtime, null, $bool(value), null, 1);
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg23OrNull! as EvalCallable,
+                  "void Function(bool);export=false" + ";types=$_callbackType0",
+                  (_callable) => (bool value) {
+                    _callable.call(runtime, null, $bool(value), null, 1);
+                  },
+                );
+              })(),
         autofocus: _arg24OrNull == null
             ? false
             : (_arg24OrNull as $bool).$value,
@@ -2275,13 +2324,18 @@ class $SwitchListTile implements $Instance {
         value: (s as $bool).$value,
         onChanged: _arg2 == null || _arg2 is $null
             ? null
-            : runtime.cachedCallback(
-                _arg2! as EvalCallable,
-                "void Function(bool);export=false",
-                (_callable) => (bool value) {
-                  _callable.call(runtime, null, $bool(value), null, 1);
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg2! as EvalCallable,
+                  "void Function(bool);export=false" + ";types=$_callbackType0",
+                  (_callable) => (bool value) {
+                    _callable.call(runtime, null, $bool(value), null, 1);
+                  },
+                );
+              })(),
         activeColor: _arg3OrNull?.$value,
         activeThumbColor: _arg4OrNull?.$value,
         activeTrackColor: _arg5OrNull?.$value,
@@ -2290,39 +2344,77 @@ class $SwitchListTile implements $Instance {
         activeThumbImage: _arg8OrNull?.$value,
         onActiveThumbImageError: _arg9OrNull == null || _arg9OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg9OrNull! as EvalCallable,
-                "void Function(Object, StackTrace?);export=false",
-                (_callable) => (Object exception, StackTrace? stackTrace) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $Object(exception),
-                    (stackTrace == null
-                        ? const $null()
-                        : $StackTrace.wrap(stackTrace)),
-                    2,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'Object'),
+                );
+                final _callbackType1 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'StackTrace'),
+                  [],
+                  nullable: true,
+                );
+                return runtime.cachedCallback(
+                  _arg9OrNull! as EvalCallable,
+                  "void Function(Object, StackTrace?);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) => (Object exception, StackTrace? stackTrace) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $Object(exception),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      TypedInterop.annotateBridgeType(
+                        (stackTrace == null
+                            ? const $null()
+                            : $StackTrace.wrap(stackTrace)),
+                        runtime,
+                        _callbackType1,
+                      ),
+                      2,
+                    );
+                  },
+                );
+              })(),
         inactiveThumbImage: _arg10OrNull?.$value,
         onInactiveThumbImageError: _arg11OrNull == null || _arg11OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg11OrNull! as EvalCallable,
-                "void Function(Object, StackTrace?);export=false",
-                (_callable) => (Object exception, StackTrace? stackTrace) {
-                  _callable.call(
-                    runtime,
-                    null,
-                    $Object(exception),
-                    (stackTrace == null
-                        ? const $null()
-                        : $StackTrace.wrap(stackTrace)),
-                    2,
-                  );
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'Object'),
+                );
+                final _callbackType1 = runtime.internParameterizedType(
+                  BridgeTypeSpec('dart:core', 'StackTrace'),
+                  [],
+                  nullable: true,
+                );
+                return runtime.cachedCallback(
+                  _arg11OrNull! as EvalCallable,
+                  "void Function(Object, StackTrace?);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) => (Object exception, StackTrace? stackTrace) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $Object(exception),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      TypedInterop.annotateBridgeType(
+                        (stackTrace == null
+                            ? const $null()
+                            : $StackTrace.wrap(stackTrace)),
+                        runtime,
+                        _callbackType1,
+                      ),
+                      2,
+                    );
+                  },
+                );
+              })(),
         thumbColor: _arg12OrNull?.$value,
         trackColor: _arg13OrNull?.$value,
         trackOutlineColor: _arg14OrNull?.$value,
@@ -2338,13 +2430,18 @@ class $SwitchListTile implements $Instance {
         statesController: _arg22OrNull?.$value,
         onFocusChange: _arg23OrNull == null || _arg23OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg23OrNull! as EvalCallable,
-                "void Function(bool);export=false",
-                (_callable) => (bool value) {
-                  _callable.call(runtime, null, $bool(value), null, 1);
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg23OrNull! as EvalCallable,
+                  "void Function(bool);export=false" + ";types=$_callbackType0",
+                  (_callable) => (bool value) {
+                    _callable.call(runtime, null, $bool(value), null, 1);
+                  },
+                );
+              })(),
         autofocus: _arg24OrNull == null
             ? false
             : (_arg24OrNull as $bool).$value,

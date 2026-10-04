@@ -46,8 +46,8 @@ import 'package:dart_eval/stdlib/typed_data.dart'
         $ListTileTitleAlignment;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
-import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
+import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../widgets/framework_wrappers.dart';
 import './theme_data.dart';
 import '../painting/borders.dart';
@@ -1229,13 +1229,18 @@ class $ListTile implements $Instance {
               ),
         onFocusChange: _arg20OrNull == null || _arg20OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg20OrNull! as EvalCallable,
-                "void Function(bool);export=false",
-                (_callable) => (bool value) {
-                  _callable.call(runtime, null, $bool(value), null, 1);
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                return runtime.cachedCallback(
+                  _arg20OrNull! as EvalCallable,
+                  "void Function(bool);export=false" + ";types=$_callbackType0",
+                  (_callable) => (bool value) {
+                    _callable.call(runtime, null, $bool(value), null, 1);
+                  },
+                );
+              })(),
         mouseCursor: _arg21OrNull?.$value,
         selected: _arg22OrNull == null ? false : (_arg22OrNull as $bool).$value,
         focusColor: _arg23OrNull?.$value,

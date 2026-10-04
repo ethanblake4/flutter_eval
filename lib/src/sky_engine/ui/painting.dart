@@ -211,8 +211,8 @@ import 'package:dart_eval/stdlib/typed_data.dart'
         $ViewConstraints,
         $ViewPadding;
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
-import './geometry.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
+import './geometry.dart';
 import './text.dart';
 import '../../supporting/ui.dart';
 import './image.dart';
@@ -1394,13 +1394,28 @@ class $UiImage implements $Instance {
   ) {
     Image.onCreate = (r as $Value?) == null || (r as $Value?) is $null
         ? null
-        : runtime.cachedCallback(
-            (r as $Value?)! as EvalCallable,
-            "void Function(Image);export=false",
-            (_callable) => (Image image) {
-              _callable.call(runtime, null, $UiImage.wrap(image), null, 1);
-            },
-          );
+        : (() {
+            final _callbackType0 = runtime.lookupType(
+              BridgeTypeSpec('dart:ui', 'Image'),
+            );
+            return runtime.cachedCallback(
+              (r as $Value?)! as EvalCallable,
+              "void Function(Image);export=false" + ";types=$_callbackType0",
+              (_callable) => (Image image) {
+                _callable.call(
+                  runtime,
+                  null,
+                  TypedInterop.annotateBridgeType(
+                    $UiImage.wrap(image),
+                    runtime,
+                    _callbackType0,
+                  ),
+                  null,
+                  1,
+                );
+              },
+            );
+          })();
     return null;
   }
 
@@ -1413,13 +1428,28 @@ class $UiImage implements $Instance {
   ) {
     Image.onDispose = (r as $Value?) == null || (r as $Value?) is $null
         ? null
-        : runtime.cachedCallback(
-            (r as $Value?)! as EvalCallable,
-            "void Function(Image);export=false",
-            (_callable) => (Image image) {
-              _callable.call(runtime, null, $UiImage.wrap(image), null, 1);
-            },
-          );
+        : (() {
+            final _callbackType0 = runtime.lookupType(
+              BridgeTypeSpec('dart:ui', 'Image'),
+            );
+            return runtime.cachedCallback(
+              (r as $Value?)! as EvalCallable,
+              "void Function(Image);export=false" + ";types=$_callbackType0",
+              (_callable) => (Image image) {
+                _callable.call(
+                  runtime,
+                  null,
+                  TypedInterop.annotateBridgeType(
+                    $UiImage.wrap(image),
+                    runtime,
+                    _callbackType0,
+                  ),
+                  null,
+                  1,
+                );
+              },
+            );
+          })();
     return null;
   }
 
@@ -3872,13 +3902,28 @@ class $Picture implements $Instance {
   ) {
     Picture.onCreate = (r as $Value?) == null || (r as $Value?) is $null
         ? null
-        : runtime.cachedCallback(
-            (r as $Value?)! as EvalCallable,
-            "void Function(Picture);export=false",
-            (_callable) => (Picture picture) {
-              _callable.call(runtime, null, $Picture.wrap(picture), null, 1);
-            },
-          );
+        : (() {
+            final _callbackType0 = runtime.lookupType(
+              BridgeTypeSpec('dart:ui', 'Picture'),
+            );
+            return runtime.cachedCallback(
+              (r as $Value?)! as EvalCallable,
+              "void Function(Picture);export=false" + ";types=$_callbackType0",
+              (_callable) => (Picture picture) {
+                _callable.call(
+                  runtime,
+                  null,
+                  TypedInterop.annotateBridgeType(
+                    $Picture.wrap(picture),
+                    runtime,
+                    _callbackType0,
+                  ),
+                  null,
+                  1,
+                );
+              },
+            );
+          })();
     return null;
   }
 
@@ -3891,13 +3936,28 @@ class $Picture implements $Instance {
   ) {
     Picture.onDispose = (r as $Value?) == null || (r as $Value?) is $null
         ? null
-        : runtime.cachedCallback(
-            (r as $Value?)! as EvalCallable,
-            "void Function(Picture);export=false",
-            (_callable) => (Picture picture) {
-              _callable.call(runtime, null, $Picture.wrap(picture), null, 1);
-            },
-          );
+        : (() {
+            final _callbackType0 = runtime.lookupType(
+              BridgeTypeSpec('dart:ui', 'Picture'),
+            );
+            return runtime.cachedCallback(
+              (r as $Value?)! as EvalCallable,
+              "void Function(Picture);export=false" + ";types=$_callbackType0",
+              (_callable) => (Picture picture) {
+                _callable.call(
+                  runtime,
+                  null,
+                  TypedInterop.annotateBridgeType(
+                    $Picture.wrap(picture),
+                    runtime,
+                    _callbackType0,
+                  ),
+                  null,
+                  1,
+                );
+              },
+            );
+          })();
     return null;
   }
 

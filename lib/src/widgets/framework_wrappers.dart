@@ -2052,15 +2052,34 @@ class $BuildContext implements BuildContext, $Instance {
   ) {
     final self = target! as $BuildContext;
     self.$value.visitAncestorElements(
-      runtime.cachedCallback(
-        (r as $Value?)! as EvalCallable,
-        "bool Function(Element);export=false",
-        (_callable) => (Element element) {
-          return _callable
-              .call(runtime, null, $Element.wrap(element), null, 1)
-              ?.$value;
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'Element',
+          ),
+        );
+        return runtime.cachedCallback(
+          (r as $Value?)! as EvalCallable,
+          "bool Function(Element);export=false" + ";types=$_callbackType0",
+          (_callable) => (Element element) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $Element.wrap(element),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    )
+                    ?.$value
+                as bool;
+          },
+        );
+      })(),
     );
     return null;
   }
@@ -2075,13 +2094,31 @@ class $BuildContext implements BuildContext, $Instance {
   ) {
     final self = target! as $BuildContext;
     self.$value.visitChildElements(
-      runtime.cachedCallback(
-        (r as $Value?)! as EvalCallable,
-        "void Function(Element);export=false",
-        (_callable) => (Element element) {
-          _callable.call(runtime, null, $Element.wrap(element), null, 1);
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'Element',
+          ),
+        );
+        return runtime.cachedCallback(
+          (r as $Value?)! as EvalCallable,
+          "void Function(Element);export=false" + ";types=$_callbackType0",
+          (_callable) => (Element element) {
+            _callable.call(
+              runtime,
+              null,
+              TypedInterop.annotateBridgeType(
+                $Element.wrap(element),
+                runtime,
+                _callbackType0,
+              ),
+              null,
+              1,
+            );
+          },
+        );
+      })(),
     );
     return null;
   }

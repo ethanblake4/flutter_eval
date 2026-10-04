@@ -62,11 +62,11 @@ import 'package:dart_eval/stdlib/typed_data.dart'
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import './routes.dart';
 import './overlay.dart';
 import '../supporting/flutter_widgets_navigator.dart';
 import './framework_wrappers.dart';
-import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import '../supporting/flutter_widgets_focus_traversal.dart';
 import '../sky_engine/ui/painting.dart';
 import '../supporting/flutter_services_restoration.dart';
@@ -2904,73 +2904,139 @@ class $Navigator implements $Instance {
                   .cast<Page<dynamic>>(),
         onPopPage: _arg2OrNull == null || _arg2OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg2OrNull! as EvalCallable,
-                "bool Function(Route<dynamic>, dynamic);export=false",
-                (_callable) => (Route<dynamic> route, dynamic result) {
-                  return _callable
-                      .call(
-                        runtime,
-                        null,
-                        $Route.wrap(route),
-                        runtime.wrapAlways(result, recursive: true),
-                        2,
-                      )
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.internParameterizedType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/navigator.dart',
+                    'Route',
+                  ),
+                  [runtime.lookupType(CoreTypes.dynamic)],
+                );
+                final _callbackType1 = runtime.lookupType(CoreTypes.dynamic);
+                return runtime.cachedCallback(
+                  _arg2OrNull! as EvalCallable,
+                  "bool Function(Route<dynamic>, dynamic);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) => (Route<dynamic> route, dynamic result) {
+                    return _callable
+                            .call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $Route.wrap(route),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              TypedInterop.boxExternal(
+                                result,
+                                runtime: runtime,
+                                runtimeTypeId: _callbackType1,
+                              ),
+                              2,
+                            )
+                            ?.$value
+                        as bool;
+                  },
+                );
+              })(),
         initialRoute: _arg3OrNull?.$value,
         onGenerateInitialRoutes: _arg4OrNull == null
             ? Navigator.defaultGenerateInitialRoutes
-            : runtime.cachedCallback(
-                _arg4OrNull! as EvalCallable,
-                "List<Route<dynamic>> Function(NavigatorState, String);export=false",
-                (_callable) => (NavigatorState navigator, String initialRoute) {
-                  return _callable
-                      .call(
-                        runtime,
-                        null,
-                        $NavigatorState.wrap(navigator),
-                        $String(initialRoute),
-                        2,
-                      )
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/navigator.dart',
+                    'NavigatorState',
+                  ),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'String'),
+                );
+                return runtime.cachedCallback(
+                  _arg4OrNull! as EvalCallable,
+                  "List<Route<dynamic>> Function(NavigatorState, String);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) =>
+                      (NavigatorState navigator, String initialRoute) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.annotateBridgeType(
+                                    $NavigatorState.wrap(navigator),
+                                    runtime,
+                                    _callbackType0,
+                                  ),
+                                  $String(initialRoute),
+                                  2,
+                                )
+                                ?.$value
+                            as List<Route<dynamic>>;
+                      },
+                );
+              })(),
         onGenerateRoute: _arg5OrNull == null || _arg5OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg5OrNull! as EvalCallable,
-                "Route<dynamic>? Function(RouteSettings);export=false",
-                (_callable) => (RouteSettings settings) {
-                  return _callable
-                      .call(
-                        runtime,
-                        null,
-                        $RouteSettings.wrap(settings),
-                        null,
-                        1,
-                      )
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/navigator.dart',
+                    'RouteSettings',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg5OrNull! as EvalCallable,
+                  "Route<dynamic>? Function(RouteSettings);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (RouteSettings settings) {
+                    return _callable
+                            .call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $RouteSettings.wrap(settings),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              null,
+                              1,
+                            )
+                            ?.$value
+                        as Route<dynamic>?;
+                  },
+                );
+              })(),
         onUnknownRoute: _arg6OrNull == null || _arg6OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg6OrNull! as EvalCallable,
-                "Route<dynamic>? Function(RouteSettings);export=false",
-                (_callable) => (RouteSettings settings) {
-                  return _callable
-                      .call(
-                        runtime,
-                        null,
-                        $RouteSettings.wrap(settings),
-                        null,
-                        1,
-                      )
-                      ?.$value;
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/navigator.dart',
+                    'RouteSettings',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  _arg6OrNull! as EvalCallable,
+                  "Route<dynamic>? Function(RouteSettings);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (RouteSettings settings) {
+                    return _callable
+                            .call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $RouteSettings.wrap(settings),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              null,
+                              1,
+                            )
+                            ?.$value
+                        as Route<dynamic>?;
+                  },
+                );
+              })(),
         transitionDelegate: _arg7OrNull == null
             ? const DefaultTransitionDelegate<dynamic>()
             : _arg7OrNull!.$value,
@@ -2995,13 +3061,39 @@ class $Navigator implements $Instance {
             : _arg14OrNull!.$value,
         onDidRemovePage: _arg15OrNull == null || _arg15OrNull is $null
             ? null
-            : runtime.cachedCallback(
-                _arg15OrNull! as EvalCallable,
-                "void Function(Page<Object?>);export=false",
-                (_callable) => (Page<Object?> page) {
-                  _callable.call(runtime, null, $Page.wrap(page), null, 1);
-                },
-              ),
+            : (() {
+                final _callbackType0 = runtime.internParameterizedType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/navigator.dart',
+                    'Page',
+                  ),
+                  [
+                    runtime.internParameterizedType(
+                      BridgeTypeSpec('dart:core', 'Object'),
+                      [],
+                      nullable: true,
+                    ),
+                  ],
+                );
+                return runtime.cachedCallback(
+                  _arg15OrNull! as EvalCallable,
+                  "void Function(Page<Object?>);export=false" +
+                      ";types=$_callbackType0",
+                  (_callable) => (Page<Object?> page) {
+                    _callable.call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $Page.wrap(page),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    );
+                  },
+                );
+              })(),
       ),
     );
   }
@@ -3153,15 +3245,33 @@ class $Navigator implements $Instance {
     final value = Navigator.pushNamedAndRemoveUntil(
       (r as $Value?)!.$value,
       (s as $String).$value,
-      runtime.cachedCallback(
-        _arg2! as EvalCallable,
-        "bool Function(Route<dynamic>);export=false",
-        (_callable) => (Route<dynamic> route) {
-          return _callable
-              .call(runtime, null, $Route.wrap(route), null, 1)
-              ?.$value;
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.internParameterizedType(
+          BridgeTypeSpec('package:flutter/src/widgets/navigator.dart', 'Route'),
+          [runtime.lookupType(CoreTypes.dynamic)],
+        );
+        return runtime.cachedCallback(
+          _arg2! as EvalCallable,
+          "bool Function(Route<dynamic>);export=false" +
+              ";types=$_callbackType0",
+          (_callable) => (Route<dynamic> route) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $Route.wrap(route),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    )
+                    ?.$value
+                as bool;
+          },
+        );
+      })(),
       arguments:
           TypedInterop.exportExternal(_arg3OrNull, runtime: runtime) as Object?,
     );
@@ -3186,15 +3296,33 @@ class $Navigator implements $Instance {
     final value = Navigator.restorablePushNamedAndRemoveUntil(
       (r as $Value?)!.$value,
       (s as $String).$value,
-      runtime.cachedCallback(
-        _arg2! as EvalCallable,
-        "bool Function(Route<dynamic>);export=false",
-        (_callable) => (Route<dynamic> route) {
-          return _callable
-              .call(runtime, null, $Route.wrap(route), null, 1)
-              ?.$value;
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.internParameterizedType(
+          BridgeTypeSpec('package:flutter/src/widgets/navigator.dart', 'Route'),
+          [runtime.lookupType(CoreTypes.dynamic)],
+        );
+        return runtime.cachedCallback(
+          _arg2! as EvalCallable,
+          "bool Function(Route<dynamic>);export=false" +
+              ";types=$_callbackType0",
+          (_callable) => (Route<dynamic> route) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $Route.wrap(route),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    )
+                    ?.$value
+                as bool;
+          },
+        );
+      })(),
       arguments:
           TypedInterop.exportExternal(_arg3OrNull, runtime: runtime) as Object?,
     );
@@ -3224,21 +3352,46 @@ class $Navigator implements $Instance {
   ) {
     final value = Navigator.restorablePush(
       (r as $Value?)!.$value,
-      runtime.cachedCallback(
-        (s as $Value?)! as EvalCallable,
-        "Route<T> Function(BuildContext, Object?);export=false",
-        (_callable) => (BuildContext context, Object? arguments) {
-          return _callable
-              .call(
-                runtime,
-                null,
-                $BuildContext.wrap(context),
-                (arguments == null ? const $null() : $Object(arguments)),
-                2,
-              )
-              ?.$value;
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'BuildContext',
+          ),
+        );
+        final _callbackType1 = runtime.internParameterizedType(
+          BridgeTypeSpec('dart:core', 'Object'),
+          [],
+          nullable: true,
+        );
+        return runtime.cachedCallback(
+          (s as $Value?)! as EvalCallable,
+          "Route<T> Function(BuildContext, Object?);export=false" +
+              ";types=$_callbackType0,$_callbackType1",
+          (_callable) => (BuildContext context, Object? arguments) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $BuildContext.wrap(context),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      TypedInterop.annotateBridgeType(
+                        (arguments == null
+                            ? const $null()
+                            : $Object(arguments)),
+                        runtime,
+                        _callbackType1,
+                      ),
+                      2,
+                    )
+                    ?.$value
+                as Route<dynamic>;
+          },
+        );
+      })(),
       arguments:
           TypedInterop.exportExternal(
                 (c is $Value ? c : null),
@@ -3286,21 +3439,46 @@ class $Navigator implements $Instance {
 
     final value = Navigator.restorablePushReplacement(
       (r as $Value?)!.$value,
-      runtime.cachedCallback(
-        (s as $Value?)! as EvalCallable,
-        "Route<T> Function(BuildContext, Object?);export=false",
-        (_callable) => (BuildContext context, Object? arguments) {
-          return _callable
-              .call(
-                runtime,
-                null,
-                $BuildContext.wrap(context),
-                (arguments == null ? const $null() : $Object(arguments)),
-                2,
-              )
-              ?.$value;
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'BuildContext',
+          ),
+        );
+        final _callbackType1 = runtime.internParameterizedType(
+          BridgeTypeSpec('dart:core', 'Object'),
+          [],
+          nullable: true,
+        );
+        return runtime.cachedCallback(
+          (s as $Value?)! as EvalCallable,
+          "Route<T> Function(BuildContext, Object?);export=false" +
+              ";types=$_callbackType0,$_callbackType1",
+          (_callable) => (BuildContext context, Object? arguments) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $BuildContext.wrap(context),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      TypedInterop.annotateBridgeType(
+                        (arguments == null
+                            ? const $null()
+                            : $Object(arguments)),
+                        runtime,
+                        _callbackType1,
+                      ),
+                      2,
+                    )
+                    ?.$value
+                as Route<dynamic>;
+          },
+        );
+      })(),
       result:
           TypedInterop.exportExternal(_arg2OrNull, runtime: runtime) as dynamic,
       arguments:
@@ -3319,15 +3497,33 @@ class $Navigator implements $Instance {
     final value = Navigator.pushAndRemoveUntil(
       (r as $Value?)!.$value,
       (s as $Value?)!.$value,
-      runtime.cachedCallback(
-        (c as $Value?)! as EvalCallable,
-        "bool Function(Route<dynamic>);export=false",
-        (_callable) => (Route<dynamic> route) {
-          return _callable
-              .call(runtime, null, $Route.wrap(route), null, 1)
-              ?.$value;
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.internParameterizedType(
+          BridgeTypeSpec('package:flutter/src/widgets/navigator.dart', 'Route'),
+          [runtime.lookupType(CoreTypes.dynamic)],
+        );
+        return runtime.cachedCallback(
+          (c as $Value?)! as EvalCallable,
+          "bool Function(Route<dynamic>);export=false" +
+              ";types=$_callbackType0",
+          (_callable) => (Route<dynamic> route) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $Route.wrap(route),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    )
+                    ?.$value
+                as bool;
+          },
+        );
+      })(),
     );
     return $Future.wrap(
       value.then(
@@ -3349,30 +3545,73 @@ class $Navigator implements $Instance {
 
     final value = Navigator.restorablePushAndRemoveUntil(
       (r as $Value?)!.$value,
-      runtime.cachedCallback(
-        (s as $Value?)! as EvalCallable,
-        "Route<T> Function(BuildContext, Object?);export=false",
-        (_callable) => (BuildContext context, Object? arguments) {
-          return _callable
-              .call(
-                runtime,
-                null,
-                $BuildContext.wrap(context),
-                (arguments == null ? const $null() : $Object(arguments)),
-                2,
-              )
-              ?.$value;
-        },
-      ),
-      runtime.cachedCallback(
-        _arg2! as EvalCallable,
-        "bool Function(Route<dynamic>);export=false",
-        (_callable) => (Route<dynamic> route) {
-          return _callable
-              .call(runtime, null, $Route.wrap(route), null, 1)
-              ?.$value;
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'BuildContext',
+          ),
+        );
+        final _callbackType1 = runtime.internParameterizedType(
+          BridgeTypeSpec('dart:core', 'Object'),
+          [],
+          nullable: true,
+        );
+        return runtime.cachedCallback(
+          (s as $Value?)! as EvalCallable,
+          "Route<T> Function(BuildContext, Object?);export=false" +
+              ";types=$_callbackType0,$_callbackType1",
+          (_callable) => (BuildContext context, Object? arguments) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $BuildContext.wrap(context),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      TypedInterop.annotateBridgeType(
+                        (arguments == null
+                            ? const $null()
+                            : $Object(arguments)),
+                        runtime,
+                        _callbackType1,
+                      ),
+                      2,
+                    )
+                    ?.$value
+                as Route<dynamic>;
+          },
+        );
+      })(),
+      (() {
+        final _callbackType0 = runtime.internParameterizedType(
+          BridgeTypeSpec('package:flutter/src/widgets/navigator.dart', 'Route'),
+          [runtime.lookupType(CoreTypes.dynamic)],
+        );
+        return runtime.cachedCallback(
+          _arg2! as EvalCallable,
+          "bool Function(Route<dynamic>);export=false" +
+              ";types=$_callbackType0",
+          (_callable) => (Route<dynamic> route) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $Route.wrap(route),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    )
+                    ?.$value
+                as bool;
+          },
+        );
+      })(),
       arguments:
           TypedInterop.exportExternal(_arg3OrNull, runtime: runtime) as Object?,
     );
@@ -3402,21 +3641,46 @@ class $Navigator implements $Instance {
     final value = Navigator.restorableReplace(
       (r as $Value?)!.$value,
       oldRoute: (s as $Value?)!.$value,
-      newRouteBuilder: runtime.cachedCallback(
-        _arg2! as EvalCallable,
-        "Route<T> Function(BuildContext, Object?);export=false",
-        (_callable) => (BuildContext context, Object? arguments) {
-          return _callable
-              .call(
-                runtime,
-                null,
-                $BuildContext.wrap(context),
-                (arguments == null ? const $null() : $Object(arguments)),
-                2,
-              )
-              ?.$value;
-        },
-      ),
+      newRouteBuilder: (() {
+        final _callbackType0 = runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'BuildContext',
+          ),
+        );
+        final _callbackType1 = runtime.internParameterizedType(
+          BridgeTypeSpec('dart:core', 'Object'),
+          [],
+          nullable: true,
+        );
+        return runtime.cachedCallback(
+          _arg2! as EvalCallable,
+          "Route<T> Function(BuildContext, Object?);export=false" +
+              ";types=$_callbackType0,$_callbackType1",
+          (_callable) => (BuildContext context, Object? arguments) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $BuildContext.wrap(context),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      TypedInterop.annotateBridgeType(
+                        (arguments == null
+                            ? const $null()
+                            : $Object(arguments)),
+                        runtime,
+                        _callbackType1,
+                      ),
+                      2,
+                    )
+                    ?.$value
+                as Route<dynamic>;
+          },
+        );
+      })(),
       arguments:
           TypedInterop.exportExternal(_arg3OrNull, runtime: runtime) as Object?,
     );
@@ -3451,21 +3715,46 @@ class $Navigator implements $Instance {
     final value = Navigator.restorableReplaceRouteBelow(
       (r as $Value?)!.$value,
       anchorRoute: (s as $Value?)!.$value,
-      newRouteBuilder: runtime.cachedCallback(
-        _arg2! as EvalCallable,
-        "Route<T> Function(BuildContext, Object?);export=false",
-        (_callable) => (BuildContext context, Object? arguments) {
-          return _callable
-              .call(
-                runtime,
-                null,
-                $BuildContext.wrap(context),
-                (arguments == null ? const $null() : $Object(arguments)),
-                2,
-              )
-              ?.$value;
-        },
-      ),
+      newRouteBuilder: (() {
+        final _callbackType0 = runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'BuildContext',
+          ),
+        );
+        final _callbackType1 = runtime.internParameterizedType(
+          BridgeTypeSpec('dart:core', 'Object'),
+          [],
+          nullable: true,
+        );
+        return runtime.cachedCallback(
+          _arg2! as EvalCallable,
+          "Route<T> Function(BuildContext, Object?);export=false" +
+              ";types=$_callbackType0,$_callbackType1",
+          (_callable) => (BuildContext context, Object? arguments) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $BuildContext.wrap(context),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      TypedInterop.annotateBridgeType(
+                        (arguments == null
+                            ? const $null()
+                            : $Object(arguments)),
+                        runtime,
+                        _callbackType1,
+                      ),
+                      2,
+                    )
+                    ?.$value
+                as Route<dynamic>;
+          },
+        );
+      })(),
       arguments:
           TypedInterop.exportExternal(_arg3OrNull, runtime: runtime) as Object?,
     );
@@ -3508,15 +3797,33 @@ class $Navigator implements $Instance {
   static $Value? $popUntil(Runtime runtime, Object? r, Object? s, Object? c) {
     Navigator.popUntil(
       (r as $Value?)!.$value,
-      runtime.cachedCallback(
-        (s as $Value?)! as EvalCallable,
-        "bool Function(Route<dynamic>);export=false",
-        (_callable) => (Route<dynamic> route) {
-          return _callable
-              .call(runtime, null, $Route.wrap(route), null, 1)
-              ?.$value;
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.internParameterizedType(
+          BridgeTypeSpec('package:flutter/src/widgets/navigator.dart', 'Route'),
+          [runtime.lookupType(CoreTypes.dynamic)],
+        );
+        return runtime.cachedCallback(
+          (s as $Value?)! as EvalCallable,
+          "bool Function(Route<dynamic>);export=false" +
+              ";types=$_callbackType0",
+          (_callable) => (Route<dynamic> route) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $Route.wrap(route),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    )
+                    ?.$value
+                as bool;
+          },
+        );
+      })(),
     );
     return null;
   }
@@ -3530,15 +3837,33 @@ class $Navigator implements $Instance {
   ) {
     Navigator.popUntilWithResult(
       (r as $Value?)!.$value,
-      runtime.cachedCallback(
-        (s as $Value?)! as EvalCallable,
-        "bool Function(Route<dynamic>);export=false",
-        (_callable) => (Route<dynamic> route) {
-          return _callable
-              .call(runtime, null, $Route.wrap(route), null, 1)
-              ?.$value;
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.internParameterizedType(
+          BridgeTypeSpec('package:flutter/src/widgets/navigator.dart', 'Route'),
+          [runtime.lookupType(CoreTypes.dynamic)],
+        );
+        return runtime.cachedCallback(
+          (s as $Value?)! as EvalCallable,
+          "bool Function(Route<dynamic>);export=false" +
+              ";types=$_callbackType0",
+          (_callable) => (Route<dynamic> route) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $Route.wrap(route),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    )
+                    ?.$value
+                as bool;
+          },
+        );
+      })(),
       TypedInterop.exportExternal((c as $Value?), runtime: runtime) as dynamic,
     );
     return null;
@@ -5645,13 +5970,28 @@ class $NavigatorState implements $Instance {
   ) {
     final self = target! as $NavigatorState;
     final result = self.$value.createTicker(
-      runtime.cachedCallback(
-        (r as $Value?)! as EvalCallable,
-        "void Function(Duration);export=false",
-        (_callable) => (Duration elapsed) {
-          _callable.call(runtime, null, $Duration.wrap(elapsed), null, 1);
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.lookupType(
+          BridgeTypeSpec('dart:core', 'Duration'),
+        );
+        return runtime.cachedCallback(
+          (r as $Value?)! as EvalCallable,
+          "void Function(Duration);export=false" + ";types=$_callbackType0",
+          (_callable) => (Duration elapsed) {
+            _callable.call(
+              runtime,
+              null,
+              TypedInterop.annotateBridgeType(
+                $Duration.wrap(elapsed),
+                runtime,
+                _callbackType0,
+              ),
+              null,
+              1,
+            );
+          },
+        );
+      })(),
     );
     return $Ticker.wrap(result);
   }
@@ -5921,15 +6261,33 @@ class $NavigatorState implements $Instance {
     final self = target! as $NavigatorState;
     final result = self.$value.pushNamedAndRemoveUntil(
       (r as $String).$value,
-      runtime.cachedCallback(
-        (s as $Value?)! as EvalCallable,
-        "bool Function(Route<dynamic>);export=false",
-        (_callable) => (Route<dynamic> route) {
-          return _callable
-              .call(runtime, null, $Route.wrap(route), null, 1)
-              ?.$value;
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.internParameterizedType(
+          BridgeTypeSpec('package:flutter/src/widgets/navigator.dart', 'Route'),
+          [runtime.lookupType(CoreTypes.dynamic)],
+        );
+        return runtime.cachedCallback(
+          (s as $Value?)! as EvalCallable,
+          "bool Function(Route<dynamic>);export=false" +
+              ";types=$_callbackType0",
+          (_callable) => (Route<dynamic> route) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $Route.wrap(route),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    )
+                    ?.$value
+                as bool;
+          },
+        );
+      })(),
       arguments:
           TypedInterop.exportExternal(
                 (c is List && (c as List).length > 0
@@ -5974,15 +6332,33 @@ class $NavigatorState implements $Instance {
     final self = target! as $NavigatorState;
     final result = self.$value.restorablePushNamedAndRemoveUntil(
       (r as $String).$value,
-      runtime.cachedCallback(
-        (s as $Value?)! as EvalCallable,
-        "bool Function(Route<dynamic>);export=false",
-        (_callable) => (Route<dynamic> route) {
-          return _callable
-              .call(runtime, null, $Route.wrap(route), null, 1)
-              ?.$value;
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.internParameterizedType(
+          BridgeTypeSpec('package:flutter/src/widgets/navigator.dart', 'Route'),
+          [runtime.lookupType(CoreTypes.dynamic)],
+        );
+        return runtime.cachedCallback(
+          (s as $Value?)! as EvalCallable,
+          "bool Function(Route<dynamic>);export=false" +
+              ";types=$_callbackType0",
+          (_callable) => (Route<dynamic> route) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $Route.wrap(route),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    )
+                    ?.$value
+                as bool;
+          },
+        );
+      })(),
       arguments:
           TypedInterop.exportExternal(
                 (c is List && (c as List).length > 0
@@ -6037,21 +6413,46 @@ class $NavigatorState implements $Instance {
   ) {
     final self = target! as $NavigatorState;
     final result = self.$value.restorablePush(
-      runtime.cachedCallback(
-        (r as $Value?)! as EvalCallable,
-        "Route<T> Function(BuildContext, Object?);export=false",
-        (_callable) => (BuildContext context, Object? arguments) {
-          return _callable
-              .call(
-                runtime,
-                null,
-                $BuildContext.wrap(context),
-                (arguments == null ? const $null() : $Object(arguments)),
-                2,
-              )
-              ?.$value;
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'BuildContext',
+          ),
+        );
+        final _callbackType1 = runtime.internParameterizedType(
+          BridgeTypeSpec('dart:core', 'Object'),
+          [],
+          nullable: true,
+        );
+        return runtime.cachedCallback(
+          (r as $Value?)! as EvalCallable,
+          "Route<T> Function(BuildContext, Object?);export=false" +
+              ";types=$_callbackType0,$_callbackType1",
+          (_callable) => (BuildContext context, Object? arguments) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $BuildContext.wrap(context),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      TypedInterop.annotateBridgeType(
+                        (arguments == null
+                            ? const $null()
+                            : $Object(arguments)),
+                        runtime,
+                        _callbackType1,
+                      ),
+                      2,
+                    )
+                    ?.$value
+                as Route<dynamic>;
+          },
+        );
+      })(),
       arguments:
           TypedInterop.exportExternal(
                 (s is $Value ? s : null),
@@ -6114,21 +6515,46 @@ class $NavigatorState implements $Instance {
   ) {
     final self = target! as $NavigatorState;
     final result = self.$value.restorablePushReplacement(
-      runtime.cachedCallback(
-        (r as $Value?)! as EvalCallable,
-        "Route<T> Function(BuildContext, Object?);export=false",
-        (_callable) => (BuildContext context, Object? arguments) {
-          return _callable
-              .call(
-                runtime,
-                null,
-                $BuildContext.wrap(context),
-                (arguments == null ? const $null() : $Object(arguments)),
-                2,
-              )
-              ?.$value;
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'BuildContext',
+          ),
+        );
+        final _callbackType1 = runtime.internParameterizedType(
+          BridgeTypeSpec('dart:core', 'Object'),
+          [],
+          nullable: true,
+        );
+        return runtime.cachedCallback(
+          (r as $Value?)! as EvalCallable,
+          "Route<T> Function(BuildContext, Object?);export=false" +
+              ";types=$_callbackType0,$_callbackType1",
+          (_callable) => (BuildContext context, Object? arguments) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $BuildContext.wrap(context),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      TypedInterop.annotateBridgeType(
+                        (arguments == null
+                            ? const $null()
+                            : $Object(arguments)),
+                        runtime,
+                        _callbackType1,
+                      ),
+                      2,
+                    )
+                    ?.$value
+                as Route<dynamic>;
+          },
+        );
+      })(),
       result:
           TypedInterop.exportExternal(
                 (s is $Value ? s : null),
@@ -6158,15 +6584,33 @@ class $NavigatorState implements $Instance {
     final self = target! as $NavigatorState;
     final result = self.$value.pushAndRemoveUntil(
       (r as $Value?)!.$value,
-      runtime.cachedCallback(
-        (s as $Value?)! as EvalCallable,
-        "bool Function(Route<dynamic>);export=false",
-        (_callable) => (Route<dynamic> route) {
-          return _callable
-              .call(runtime, null, $Route.wrap(route), null, 1)
-              ?.$value;
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.internParameterizedType(
+          BridgeTypeSpec('package:flutter/src/widgets/navigator.dart', 'Route'),
+          [runtime.lookupType(CoreTypes.dynamic)],
+        );
+        return runtime.cachedCallback(
+          (s as $Value?)! as EvalCallable,
+          "bool Function(Route<dynamic>);export=false" +
+              ";types=$_callbackType0",
+          (_callable) => (Route<dynamic> route) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $Route.wrap(route),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    )
+                    ?.$value
+                as bool;
+          },
+        );
+      })(),
     );
     return (() {
       final bridgeTypeArguments = runtime.bridgeCallTypeArguments;
@@ -6202,30 +6646,73 @@ class $NavigatorState implements $Instance {
   ) {
     final self = target! as $NavigatorState;
     final result = self.$value.restorablePushAndRemoveUntil(
-      runtime.cachedCallback(
-        (r as $Value?)! as EvalCallable,
-        "Route<T> Function(BuildContext, Object?);export=false",
-        (_callable) => (BuildContext context, Object? arguments) {
-          return _callable
-              .call(
-                runtime,
-                null,
-                $BuildContext.wrap(context),
-                (arguments == null ? const $null() : $Object(arguments)),
-                2,
-              )
-              ?.$value;
-        },
-      ),
-      runtime.cachedCallback(
-        (s as $Value?)! as EvalCallable,
-        "bool Function(Route<dynamic>);export=false",
-        (_callable) => (Route<dynamic> route) {
-          return _callable
-              .call(runtime, null, $Route.wrap(route), null, 1)
-              ?.$value;
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'BuildContext',
+          ),
+        );
+        final _callbackType1 = runtime.internParameterizedType(
+          BridgeTypeSpec('dart:core', 'Object'),
+          [],
+          nullable: true,
+        );
+        return runtime.cachedCallback(
+          (r as $Value?)! as EvalCallable,
+          "Route<T> Function(BuildContext, Object?);export=false" +
+              ";types=$_callbackType0,$_callbackType1",
+          (_callable) => (BuildContext context, Object? arguments) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $BuildContext.wrap(context),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      TypedInterop.annotateBridgeType(
+                        (arguments == null
+                            ? const $null()
+                            : $Object(arguments)),
+                        runtime,
+                        _callbackType1,
+                      ),
+                      2,
+                    )
+                    ?.$value
+                as Route<dynamic>;
+          },
+        );
+      })(),
+      (() {
+        final _callbackType0 = runtime.internParameterizedType(
+          BridgeTypeSpec('package:flutter/src/widgets/navigator.dart', 'Route'),
+          [runtime.lookupType(CoreTypes.dynamic)],
+        );
+        return runtime.cachedCallback(
+          (s as $Value?)! as EvalCallable,
+          "bool Function(Route<dynamic>);export=false" +
+              ";types=$_callbackType0",
+          (_callable) => (Route<dynamic> route) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $Route.wrap(route),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    )
+                    ?.$value
+                as bool;
+          },
+        );
+      })(),
       arguments:
           TypedInterop.exportExternal(
                 (c is List && (c as List).length > 0
@@ -6265,21 +6752,46 @@ class $NavigatorState implements $Instance {
     final self = target! as $NavigatorState;
     final result = self.$value.restorableReplace(
       oldRoute: (r as $Value?)!.$value,
-      newRouteBuilder: runtime.cachedCallback(
-        (s as $Value?)! as EvalCallable,
-        "Route<T> Function(BuildContext, Object?);export=false",
-        (_callable) => (BuildContext context, Object? arguments) {
-          return _callable
-              .call(
-                runtime,
-                null,
-                $BuildContext.wrap(context),
-                (arguments == null ? const $null() : $Object(arguments)),
-                2,
-              )
-              ?.$value;
-        },
-      ),
+      newRouteBuilder: (() {
+        final _callbackType0 = runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'BuildContext',
+          ),
+        );
+        final _callbackType1 = runtime.internParameterizedType(
+          BridgeTypeSpec('dart:core', 'Object'),
+          [],
+          nullable: true,
+        );
+        return runtime.cachedCallback(
+          (s as $Value?)! as EvalCallable,
+          "Route<T> Function(BuildContext, Object?);export=false" +
+              ";types=$_callbackType0,$_callbackType1",
+          (_callable) => (BuildContext context, Object? arguments) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $BuildContext.wrap(context),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      TypedInterop.annotateBridgeType(
+                        (arguments == null
+                            ? const $null()
+                            : $Object(arguments)),
+                        runtime,
+                        _callbackType1,
+                      ),
+                      2,
+                    )
+                    ?.$value
+                as Route<dynamic>;
+          },
+        );
+      })(),
       arguments:
           TypedInterop.exportExternal(
                 (c is List && (c as List).length > 0
@@ -6321,21 +6833,46 @@ class $NavigatorState implements $Instance {
     final self = target! as $NavigatorState;
     final result = self.$value.restorableReplaceRouteBelow(
       anchorRoute: (r as $Value?)!.$value,
-      newRouteBuilder: runtime.cachedCallback(
-        (s as $Value?)! as EvalCallable,
-        "Route<T> Function(BuildContext, Object?);export=false",
-        (_callable) => (BuildContext context, Object? arguments) {
-          return _callable
-              .call(
-                runtime,
-                null,
-                $BuildContext.wrap(context),
-                (arguments == null ? const $null() : $Object(arguments)),
-                2,
-              )
-              ?.$value;
-        },
-      ),
+      newRouteBuilder: (() {
+        final _callbackType0 = runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/framework.dart',
+            'BuildContext',
+          ),
+        );
+        final _callbackType1 = runtime.internParameterizedType(
+          BridgeTypeSpec('dart:core', 'Object'),
+          [],
+          nullable: true,
+        );
+        return runtime.cachedCallback(
+          (s as $Value?)! as EvalCallable,
+          "Route<T> Function(BuildContext, Object?);export=false" +
+              ";types=$_callbackType0,$_callbackType1",
+          (_callable) => (BuildContext context, Object? arguments) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $BuildContext.wrap(context),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      TypedInterop.annotateBridgeType(
+                        (arguments == null
+                            ? const $null()
+                            : $Object(arguments)),
+                        runtime,
+                        _callbackType1,
+                      ),
+                      2,
+                    )
+                    ?.$value
+                as Route<dynamic>;
+          },
+        );
+      })(),
       arguments:
           TypedInterop.exportExternal(
                 (c is List && (c as List).length > 0
@@ -6409,15 +6946,33 @@ class $NavigatorState implements $Instance {
   ) {
     final self = target! as $NavigatorState;
     self.$value.popUntil(
-      runtime.cachedCallback(
-        (r as $Value?)! as EvalCallable,
-        "bool Function(Route<dynamic>);export=false",
-        (_callable) => (Route<dynamic> route) {
-          return _callable
-              .call(runtime, null, $Route.wrap(route), null, 1)
-              ?.$value;
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.internParameterizedType(
+          BridgeTypeSpec('package:flutter/src/widgets/navigator.dart', 'Route'),
+          [runtime.lookupType(CoreTypes.dynamic)],
+        );
+        return runtime.cachedCallback(
+          (r as $Value?)! as EvalCallable,
+          "bool Function(Route<dynamic>);export=false" +
+              ";types=$_callbackType0",
+          (_callable) => (Route<dynamic> route) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $Route.wrap(route),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    )
+                    ?.$value
+                as bool;
+          },
+        );
+      })(),
     );
     return null;
   }
@@ -6432,15 +6987,33 @@ class $NavigatorState implements $Instance {
   ) {
     final self = target! as $NavigatorState;
     self.$value.popUntilWithResult(
-      runtime.cachedCallback(
-        (r as $Value?)! as EvalCallable,
-        "bool Function(Route<dynamic>);export=false",
-        (_callable) => (Route<dynamic> route) {
-          return _callable
-              .call(runtime, null, $Route.wrap(route), null, 1)
-              ?.$value;
-        },
-      ),
+      (() {
+        final _callbackType0 = runtime.internParameterizedType(
+          BridgeTypeSpec('package:flutter/src/widgets/navigator.dart', 'Route'),
+          [runtime.lookupType(CoreTypes.dynamic)],
+        );
+        return runtime.cachedCallback(
+          (r as $Value?)! as EvalCallable,
+          "bool Function(Route<dynamic>);export=false" +
+              ";types=$_callbackType0",
+          (_callable) => (Route<dynamic> route) {
+            return _callable
+                    .call(
+                      runtime,
+                      null,
+                      TypedInterop.annotateBridgeType(
+                        $Route.wrap(route),
+                        runtime,
+                        _callbackType0,
+                      ),
+                      null,
+                      1,
+                    )
+                    ?.$value
+                as bool;
+          },
+        );
+      })(),
       TypedInterop.exportExternal((s as $Value?), runtime: runtime) as dynamic,
     );
     return null;
