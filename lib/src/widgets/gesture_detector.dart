@@ -40,11 +40,18 @@ import '../gestures/long_press.dart';
 import '../gestures/drag_details.dart';
 import '../supporting/flutter_gestures_force_press.dart';
 import '../supporting/flutter_gestures_scale.dart';
+import 'dart:ui';
 import './framework_wrappers.dart';
 import '../rendering/proxy_box.dart';
 import '../supporting/flutter_gestures_recognizer.dart';
 import '../sky_engine/ui/pointer.dart';
 import '../sky_engine/ui/geometry.dart';
+import 'package:flutter/src/gestures/tap.dart' as bindgenNative0;
+import 'package:flutter/src/gestures/long_press.dart' as bindgenNative1;
+import 'package:flutter/src/gestures/drag_details.dart' as bindgenNative2;
+import 'package:flutter/src/gestures/force_press.dart' as bindgenNative3;
+import 'package:flutter/src/gestures/scale.dart' as bindgenNative4;
+import 'package:flutter/src/gestures/recognizer.dart' as bindgenNative5;
 
 /// dart_eval wrapper binding for [GestureDetector]
 class $GestureDetector implements $Instance {
@@ -3337,7 +3344,7 @@ class $GestureDetector implements $Instance {
                   _arg2OrNull! as EvalCallable,
                   "void Function(TapDownDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (TapDownDetails details) {
+                  (_callable) => (bindgenNative0.TapDownDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -3365,7 +3372,7 @@ class $GestureDetector implements $Instance {
                   _arg3OrNull! as EvalCallable,
                   "void Function(TapUpDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (TapUpDetails details) {
+                  (_callable) => (bindgenNative0.TapUpDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -3402,7 +3409,7 @@ class $GestureDetector implements $Instance {
                   _arg5OrNull! as EvalCallable,
                   "void Function(TapMoveDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (TapMoveDetails details) {
+                  (_callable) => (bindgenNative0.TapMoveDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -3448,7 +3455,7 @@ class $GestureDetector implements $Instance {
                   _arg8OrNull! as EvalCallable,
                   "void Function(TapDownDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (TapDownDetails details) {
+                  (_callable) => (bindgenNative0.TapDownDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -3476,7 +3483,7 @@ class $GestureDetector implements $Instance {
                   _arg9OrNull! as EvalCallable,
                   "void Function(TapUpDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (TapUpDetails details) {
+                  (_callable) => (bindgenNative0.TapUpDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -3513,7 +3520,7 @@ class $GestureDetector implements $Instance {
                   _arg11OrNull! as EvalCallable,
                   "void Function(TapDownDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (TapDownDetails details) {
+                  (_callable) => (bindgenNative0.TapDownDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -3541,7 +3548,7 @@ class $GestureDetector implements $Instance {
                   _arg12OrNull! as EvalCallable,
                   "void Function(TapUpDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (TapUpDetails details) {
+                  (_callable) => (bindgenNative0.TapUpDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -3578,7 +3585,7 @@ class $GestureDetector implements $Instance {
                   _arg14OrNull! as EvalCallable,
                   "void Function(TapDownDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (TapDownDetails details) {
+                  (_callable) => (bindgenNative0.TapDownDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -3624,7 +3631,7 @@ class $GestureDetector implements $Instance {
                   _arg17OrNull! as EvalCallable,
                   "void Function(LongPressDownDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (LongPressDownDetails details) {
+                  (_callable) => (bindgenNative1.LongPressDownDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -3670,19 +3677,20 @@ class $GestureDetector implements $Instance {
                   _arg20OrNull! as EvalCallable,
                   "void Function(LongPressStartDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (LongPressStartDetails details) {
-                    _callable.call(
-                      runtime,
-                      null,
-                      TypedInterop.annotateBridgeType(
-                        $LongPressStartDetails.wrap(details),
-                        runtime,
-                        _callbackType0,
-                      ),
-                      null,
-                      1,
-                    );
-                  },
+                  (_callable) =>
+                      (bindgenNative1.LongPressStartDetails details) {
+                        _callable.call(
+                          runtime,
+                          null,
+                          TypedInterop.annotateBridgeType(
+                            $LongPressStartDetails.wrap(details),
+                            runtime,
+                            _callbackType0,
+                          ),
+                          null,
+                          1,
+                        );
+                      },
                 );
               })(),
         onLongPressMoveUpdate: _arg21OrNull == null || _arg21OrNull is $null
@@ -3698,19 +3706,20 @@ class $GestureDetector implements $Instance {
                   _arg21OrNull! as EvalCallable,
                   "void Function(LongPressMoveUpdateDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (LongPressMoveUpdateDetails details) {
-                    _callable.call(
-                      runtime,
-                      null,
-                      TypedInterop.annotateBridgeType(
-                        $LongPressMoveUpdateDetails.wrap(details),
-                        runtime,
-                        _callbackType0,
-                      ),
-                      null,
-                      1,
-                    );
-                  },
+                  (_callable) =>
+                      (bindgenNative1.LongPressMoveUpdateDetails details) {
+                        _callable.call(
+                          runtime,
+                          null,
+                          TypedInterop.annotateBridgeType(
+                            $LongPressMoveUpdateDetails.wrap(details),
+                            runtime,
+                            _callbackType0,
+                          ),
+                          null,
+                          1,
+                        );
+                      },
                 );
               })(),
         onLongPressUp: _arg22OrNull == null || _arg22OrNull is $null
@@ -3735,7 +3744,7 @@ class $GestureDetector implements $Instance {
                   _arg23OrNull! as EvalCallable,
                   "void Function(LongPressEndDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (LongPressEndDetails details) {
+                  (_callable) => (bindgenNative1.LongPressEndDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -3763,7 +3772,7 @@ class $GestureDetector implements $Instance {
                   _arg24OrNull! as EvalCallable,
                   "void Function(LongPressDownDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (LongPressDownDetails details) {
+                  (_callable) => (bindgenNative1.LongPressDownDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -3810,19 +3819,20 @@ class $GestureDetector implements $Instance {
                   _arg27OrNull! as EvalCallable,
                   "void Function(LongPressStartDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (LongPressStartDetails details) {
-                    _callable.call(
-                      runtime,
-                      null,
-                      TypedInterop.annotateBridgeType(
-                        $LongPressStartDetails.wrap(details),
-                        runtime,
-                        _callbackType0,
-                      ),
-                      null,
-                      1,
-                    );
-                  },
+                  (_callable) =>
+                      (bindgenNative1.LongPressStartDetails details) {
+                        _callable.call(
+                          runtime,
+                          null,
+                          TypedInterop.annotateBridgeType(
+                            $LongPressStartDetails.wrap(details),
+                            runtime,
+                            _callbackType0,
+                          ),
+                          null,
+                          1,
+                        );
+                      },
                 );
               })(),
         onSecondaryLongPressMoveUpdate:
@@ -3839,19 +3849,20 @@ class $GestureDetector implements $Instance {
                   _arg28OrNull! as EvalCallable,
                   "void Function(LongPressMoveUpdateDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (LongPressMoveUpdateDetails details) {
-                    _callable.call(
-                      runtime,
-                      null,
-                      TypedInterop.annotateBridgeType(
-                        $LongPressMoveUpdateDetails.wrap(details),
-                        runtime,
-                        _callbackType0,
-                      ),
-                      null,
-                      1,
-                    );
-                  },
+                  (_callable) =>
+                      (bindgenNative1.LongPressMoveUpdateDetails details) {
+                        _callable.call(
+                          runtime,
+                          null,
+                          TypedInterop.annotateBridgeType(
+                            $LongPressMoveUpdateDetails.wrap(details),
+                            runtime,
+                            _callbackType0,
+                          ),
+                          null,
+                          1,
+                        );
+                      },
                 );
               })(),
         onSecondaryLongPressUp: _arg29OrNull == null || _arg29OrNull is $null
@@ -3876,7 +3887,7 @@ class $GestureDetector implements $Instance {
                   _arg30OrNull! as EvalCallable,
                   "void Function(LongPressEndDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (LongPressEndDetails details) {
+                  (_callable) => (bindgenNative1.LongPressEndDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -3904,7 +3915,7 @@ class $GestureDetector implements $Instance {
                   _arg31OrNull! as EvalCallable,
                   "void Function(LongPressDownDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (LongPressDownDetails details) {
+                  (_callable) => (bindgenNative1.LongPressDownDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -3950,19 +3961,20 @@ class $GestureDetector implements $Instance {
                   _arg34OrNull! as EvalCallable,
                   "void Function(LongPressStartDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (LongPressStartDetails details) {
-                    _callable.call(
-                      runtime,
-                      null,
-                      TypedInterop.annotateBridgeType(
-                        $LongPressStartDetails.wrap(details),
-                        runtime,
-                        _callbackType0,
-                      ),
-                      null,
-                      1,
-                    );
-                  },
+                  (_callable) =>
+                      (bindgenNative1.LongPressStartDetails details) {
+                        _callable.call(
+                          runtime,
+                          null,
+                          TypedInterop.annotateBridgeType(
+                            $LongPressStartDetails.wrap(details),
+                            runtime,
+                            _callbackType0,
+                          ),
+                          null,
+                          1,
+                        );
+                      },
                 );
               })(),
         onTertiaryLongPressMoveUpdate:
@@ -3979,19 +3991,20 @@ class $GestureDetector implements $Instance {
                   _arg35OrNull! as EvalCallable,
                   "void Function(LongPressMoveUpdateDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (LongPressMoveUpdateDetails details) {
-                    _callable.call(
-                      runtime,
-                      null,
-                      TypedInterop.annotateBridgeType(
-                        $LongPressMoveUpdateDetails.wrap(details),
-                        runtime,
-                        _callbackType0,
-                      ),
-                      null,
-                      1,
-                    );
-                  },
+                  (_callable) =>
+                      (bindgenNative1.LongPressMoveUpdateDetails details) {
+                        _callable.call(
+                          runtime,
+                          null,
+                          TypedInterop.annotateBridgeType(
+                            $LongPressMoveUpdateDetails.wrap(details),
+                            runtime,
+                            _callbackType0,
+                          ),
+                          null,
+                          1,
+                        );
+                      },
                 );
               })(),
         onTertiaryLongPressUp: _arg36OrNull == null || _arg36OrNull is $null
@@ -4016,7 +4029,7 @@ class $GestureDetector implements $Instance {
                   _arg37OrNull! as EvalCallable,
                   "void Function(LongPressEndDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (LongPressEndDetails details) {
+                  (_callable) => (bindgenNative1.LongPressEndDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -4044,7 +4057,7 @@ class $GestureDetector implements $Instance {
                   _arg38OrNull! as EvalCallable,
                   "void Function(DragDownDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (DragDownDetails details) {
+                  (_callable) => (bindgenNative2.DragDownDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -4072,7 +4085,7 @@ class $GestureDetector implements $Instance {
                   _arg39OrNull! as EvalCallable,
                   "void Function(DragStartDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (DragStartDetails details) {
+                  (_callable) => (bindgenNative2.DragStartDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -4100,7 +4113,7 @@ class $GestureDetector implements $Instance {
                   _arg40OrNull! as EvalCallable,
                   "void Function(DragUpdateDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (DragUpdateDetails details) {
+                  (_callable) => (bindgenNative2.DragUpdateDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -4128,7 +4141,7 @@ class $GestureDetector implements $Instance {
                   _arg41OrNull! as EvalCallable,
                   "void Function(DragEndDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (DragEndDetails details) {
+                  (_callable) => (bindgenNative2.DragEndDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -4165,7 +4178,7 @@ class $GestureDetector implements $Instance {
                   _arg43OrNull! as EvalCallable,
                   "void Function(DragDownDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (DragDownDetails details) {
+                  (_callable) => (bindgenNative2.DragDownDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -4193,7 +4206,7 @@ class $GestureDetector implements $Instance {
                   _arg44OrNull! as EvalCallable,
                   "void Function(DragStartDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (DragStartDetails details) {
+                  (_callable) => (bindgenNative2.DragStartDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -4221,7 +4234,7 @@ class $GestureDetector implements $Instance {
                   _arg45OrNull! as EvalCallable,
                   "void Function(DragUpdateDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (DragUpdateDetails details) {
+                  (_callable) => (bindgenNative2.DragUpdateDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -4249,7 +4262,7 @@ class $GestureDetector implements $Instance {
                   _arg46OrNull! as EvalCallable,
                   "void Function(DragEndDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (DragEndDetails details) {
+                  (_callable) => (bindgenNative2.DragEndDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -4286,7 +4299,7 @@ class $GestureDetector implements $Instance {
                   _arg48OrNull! as EvalCallable,
                   "void Function(ForcePressDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (ForcePressDetails details) {
+                  (_callable) => (bindgenNative3.ForcePressDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -4314,7 +4327,7 @@ class $GestureDetector implements $Instance {
                   _arg49OrNull! as EvalCallable,
                   "void Function(ForcePressDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (ForcePressDetails details) {
+                  (_callable) => (bindgenNative3.ForcePressDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -4342,7 +4355,7 @@ class $GestureDetector implements $Instance {
                   _arg50OrNull! as EvalCallable,
                   "void Function(ForcePressDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (ForcePressDetails details) {
+                  (_callable) => (bindgenNative3.ForcePressDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -4370,7 +4383,7 @@ class $GestureDetector implements $Instance {
                   _arg51OrNull! as EvalCallable,
                   "void Function(ForcePressDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (ForcePressDetails details) {
+                  (_callable) => (bindgenNative3.ForcePressDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -4398,7 +4411,7 @@ class $GestureDetector implements $Instance {
                   _arg52OrNull! as EvalCallable,
                   "void Function(DragDownDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (DragDownDetails details) {
+                  (_callable) => (bindgenNative2.DragDownDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -4426,7 +4439,7 @@ class $GestureDetector implements $Instance {
                   _arg53OrNull! as EvalCallable,
                   "void Function(DragStartDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (DragStartDetails details) {
+                  (_callable) => (bindgenNative2.DragStartDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -4454,7 +4467,7 @@ class $GestureDetector implements $Instance {
                   _arg54OrNull! as EvalCallable,
                   "void Function(DragUpdateDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (DragUpdateDetails details) {
+                  (_callable) => (bindgenNative2.DragUpdateDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -4482,7 +4495,7 @@ class $GestureDetector implements $Instance {
                   _arg55OrNull! as EvalCallable,
                   "void Function(DragEndDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (DragEndDetails details) {
+                  (_callable) => (bindgenNative2.DragEndDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -4519,7 +4532,7 @@ class $GestureDetector implements $Instance {
                   _arg57OrNull! as EvalCallable,
                   "void Function(ScaleStartDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (ScaleStartDetails details) {
+                  (_callable) => (bindgenNative4.ScaleStartDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -4547,7 +4560,7 @@ class $GestureDetector implements $Instance {
                   _arg58OrNull! as EvalCallable,
                   "void Function(ScaleUpdateDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (ScaleUpdateDetails details) {
+                  (_callable) => (bindgenNative4.ScaleUpdateDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -4575,7 +4588,7 @@ class $GestureDetector implements $Instance {
                   _arg59OrNull! as EvalCallable,
                   "void Function(ScaleEndDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (ScaleEndDetails details) {
+                  (_callable) => (bindgenNative4.ScaleEndDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -4595,13 +4608,13 @@ class $GestureDetector implements $Instance {
             ? false
             : (_arg61OrNull as $bool).$value,
         dragStartBehavior: _arg62OrNull == null
-            ? DragStartBehavior.start
+            ? bindgenNative5.DragStartBehavior.start
             : _arg62OrNull!.$value,
         trackpadScrollCausesScale: _arg63OrNull == null
             ? false
             : (_arg63OrNull as $bool).$value,
         trackpadScrollToScaleFactor: _arg64OrNull == null
-            ? kDefaultTrackpadScrollToScaleFactor
+            ? bindgenNative4.kDefaultTrackpadScrollToScaleFactor
             : _arg64OrNull!.$value,
         supportedDevices: (_arg65OrNull?.$reified as Set?)
             ?.cast<PointerDeviceKind>(),

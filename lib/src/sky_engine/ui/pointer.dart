@@ -26,6 +26,7 @@ import 'package:dart_eval/dart_eval_bridge.dart';
 import 'dart:ui';
 import 'package:dart_eval/stdlib/core.dart'
     hide
+        $SemanticsAction,
         $Size,
         $Offset,
         $Radius,
@@ -88,6 +89,7 @@ import 'package:dart_eval/stdlib/core.dart'
         $ViewPadding;
 import 'package:dart_eval/stdlib/async.dart'
     hide
+        $SemanticsAction,
         $Size,
         $Offset,
         $Radius,
@@ -150,6 +152,7 @@ import 'package:dart_eval/stdlib/async.dart'
         $ViewPadding;
 import 'package:dart_eval/stdlib/typed_data.dart'
     hide
+        $SemanticsAction,
         $Size,
         $Offset,
         $Radius,

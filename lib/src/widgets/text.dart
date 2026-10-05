@@ -42,6 +42,7 @@ import '../supporting/flutter_painting_inline_span.dart';
 import '../supporting/flutter_painting_strut_style.dart';
 import '../supporting/flutter_painting_text_scaler.dart';
 import '../sky_engine/ui/painting.dart';
+import 'package:flutter/src/painting/text_painter.dart' as bindgenNative0;
 
 /// dart_eval wrapper binding for [DefaultTextStyle]
 class $DefaultTextStyle implements $Instance {
@@ -638,10 +639,12 @@ class $DefaultTextStyle implements $Instance {
         style: (s as $Value?)!.$value,
         textAlign: _arg2OrNull?.$value,
         softWrap: _arg3OrNull == null ? true : (_arg3OrNull as $bool).$value,
-        overflow: _arg4OrNull == null ? TextOverflow.clip : _arg4OrNull!.$value,
+        overflow: _arg4OrNull == null
+            ? bindgenNative0.TextOverflow.clip
+            : _arg4OrNull!.$value,
         maxLines: _arg5OrNull?.$value,
         textWidthBasis: _arg6OrNull == null
-            ? TextWidthBasis.parent
+            ? bindgenNative0.TextWidthBasis.parent
             : _arg6OrNull!.$value,
         textHeightBehavior: _arg7OrNull?.$value,
         child: _arg8!.$value,

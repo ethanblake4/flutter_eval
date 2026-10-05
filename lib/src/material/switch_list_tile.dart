@@ -44,6 +44,7 @@ import '../widgets/focus_manager.dart';
 import '../painting/edge_insets.dart';
 import '../supporting/flutter_material_list_tile.dart';
 import '../painting/borders.dart';
+import 'package:flutter/src/gestures/recognizer.dart' as bindgenNative0;
 
 /// dart_eval wrapper binding for [SwitchListTile]
 class $SwitchListTile implements $Instance {
@@ -2223,7 +2224,7 @@ class $SwitchListTile implements $Instance {
         thumbIcon: _arg15OrNull?.$value,
         materialTapTargetSize: _arg16OrNull?.$value,
         dragStartBehavior: _arg17OrNull == null
-            ? DragStartBehavior.start
+            ? bindgenNative0.DragStartBehavior.start
             : _arg17OrNull!.$value,
         mouseCursor: _arg18OrNull?.$value,
         overlayColor: _arg19OrNull?.$value,
@@ -2421,7 +2422,7 @@ class $SwitchListTile implements $Instance {
         thumbIcon: _arg15OrNull?.$value,
         materialTapTargetSize: _arg16OrNull?.$value,
         dragStartBehavior: _arg17OrNull == null
-            ? DragStartBehavior.start
+            ? bindgenNative0.DragStartBehavior.start
             : _arg17OrNull!.$value,
         mouseCursor: _arg18OrNull?.$value,
         overlayColor: _arg19OrNull?.$value,

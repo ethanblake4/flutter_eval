@@ -72,6 +72,7 @@ import 'package:dart_eval/stdlib/typed_data.dart'
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import './framework_wrappers.dart';
 import '../foundation/notifiers.dart';
+import 'package:flutter/src/widgets/framework.dart' as bindgenNative0;
 
 /// dart_eval wrapper binding for [RouteSettings]
 class $RouteSettings implements $Instance {
@@ -518,7 +519,7 @@ class $OverlayEntry implements $Instance {
             (r as $Value?)! as EvalCallable,
             "Widget Function(BuildContext);export=false" +
                 ";types=$_callbackType0",
-            (_callable) => (BuildContext context) {
+            (_callable) => (bindgenNative0.BuildContext context) {
               return _callable
                       .call(
                         runtime,
@@ -532,7 +533,7 @@ class $OverlayEntry implements $Instance {
                         1,
                       )
                       ?.$value
-                  as Widget;
+                  as bindgenNative0.Widget;
             },
           );
         })(),

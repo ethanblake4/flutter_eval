@@ -44,6 +44,8 @@ import '../sky_engine/ui/text.dart';
 import '../supporting/flutter_painting_box_border.dart';
 import './edge_insets.dart';
 import '../supporting/flutter_painting_decoration.dart';
+import 'package:flutter/src/painting/box_shadow.dart' as bindgenNative0;
+import 'package:flutter/src/painting/box_border.dart' as bindgenNative1;
 
 /// dart_eval wrapper binding for [BoxDecoration]
 class $BoxDecoration implements $Instance {
@@ -799,10 +801,12 @@ class $BoxDecoration implements $Instance {
         boxShadow:
             (TypedInterop.exportExternal(_arg4OrNull, runtime: runtime)
                     as List?)
-                ?.cast<BoxShadow>(),
+                ?.cast<bindgenNative0.BoxShadow>(),
         gradient: _arg5OrNull?.$value,
         backgroundBlendMode: _arg6OrNull?.$value,
-        shape: _arg7OrNull == null ? BoxShape.rectangle : _arg7OrNull!.$value,
+        shape: _arg7OrNull == null
+            ? bindgenNative1.BoxShape.rectangle
+            : _arg7OrNull!.$value,
       ),
     );
   }
@@ -942,7 +946,7 @@ class $BoxDecoration implements $Instance {
                     runtime: runtime,
                   )
                   as List?)
-              ?.cast<BoxShadow>(),
+              ?.cast<bindgenNative0.BoxShadow>(),
       gradient:
           (c is List && (c as List).length > 3
                   ? (c as List)[3] as $Value?

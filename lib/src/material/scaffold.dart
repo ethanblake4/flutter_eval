@@ -66,6 +66,12 @@ import '../sky_engine/ui/painting.dart';
 import '../supporting/flutter_gestures_recognizer.dart';
 import '../scheduler/ticker.dart';
 import '../foundation/diagnostics.dart';
+import 'package:flutter/src/widgets/framework.dart' as bindgenNative0;
+import 'package:flutter/src/painting/alignment.dart' as bindgenNative1;
+import 'package:flutter/src/gestures/recognizer.dart' as bindgenNative2;
+import 'package:flutter/src/animation/animation.dart' as bindgenNative3;
+import 'package:flutter/src/material/snack_bar.dart' as bindgenNative4;
+import 'package:flutter/src/material/banner.dart' as bindgenNative5;
 
 /// dart_eval wrapper binding for [Scaffold]
 class $Scaffold implements $Instance {
@@ -1172,9 +1178,9 @@ class $Scaffold implements $Instance {
         persistentFooterButtons:
             (TypedInterop.exportExternal(_arg6OrNull, runtime: runtime)
                     as List?)
-                ?.cast<Widget>(),
+                ?.cast<bindgenNative0.Widget>(),
         persistentFooterAlignment: _arg7OrNull == null
-            ? AlignmentDirectional.centerEnd
+            ? bindgenNative1.AlignmentDirectional.centerEnd
             : _arg7OrNull!.$value,
         persistentFooterDecoration: _arg8OrNull?.$value,
         drawer: _arg9OrNull?.$value,
@@ -1213,7 +1219,7 @@ class $Scaffold implements $Instance {
         resizeToAvoidBottomInset: _arg16OrNull?.$value,
         primary: _arg17OrNull == null ? true : (_arg17OrNull as $bool).$value,
         drawerDragStartBehavior: _arg18OrNull == null
-            ? DragStartBehavior.start
+            ? bindgenNative2.DragStartBehavior.start
             : _arg18OrNull!.$value,
         extendBody: _arg19OrNull == null
             ? false
@@ -1245,26 +1251,30 @@ class $Scaffold implements $Instance {
                   _arg23OrNull! as EvalCallable,
                   "Widget? Function(BuildContext, Animation<double>);export=false" +
                       ";types=$_callbackType0,$_callbackType1",
-                  (_callable) => (BuildContext arg0, Animation<double> arg1) {
-                    return _callable
-                            .call(
-                              runtime,
-                              null,
-                              TypedInterop.annotateBridgeType(
-                                $BuildContext.wrap(arg0),
-                                runtime,
-                                _callbackType0,
-                              ),
-                              TypedInterop.annotateBridgeType(
-                                $Animation.wrap(arg1),
-                                runtime,
-                                _callbackType1,
-                              ),
-                              2,
-                            )
-                            ?.$value
-                        as Widget?;
-                  },
+                  (_callable) =>
+                      (
+                        bindgenNative0.BuildContext arg0,
+                        bindgenNative3.Animation<double> arg1,
+                      ) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.annotateBridgeType(
+                                    $BuildContext.wrap(arg0),
+                                    runtime,
+                                    _callbackType0,
+                                  ),
+                                  TypedInterop.annotateBridgeType(
+                                    $Animation.wrap(arg1),
+                                    runtime,
+                                    _callbackType1,
+                                  ),
+                                  2,
+                                )
+                                ?.$value
+                            as bindgenNative0.Widget?;
+                      },
                 );
               })(),
         drawerEdgeDragWidth: _arg24OrNull?.$value,
@@ -2391,7 +2401,7 @@ class $ScaffoldMessengerState implements $Instance {
     final self = target! as $ScaffoldMessengerState;
     self.$value.removeCurrentSnackBar(
       reason: (r is $Value ? r : null) == null
-          ? SnackBarClosedReason.remove
+          ? bindgenNative4.SnackBarClosedReason.remove
           : (r is $Value ? r : null)!.$value,
     );
     return null;
@@ -2410,7 +2420,7 @@ class $ScaffoldMessengerState implements $Instance {
     final self = target! as $ScaffoldMessengerState;
     self.$value.hideCurrentSnackBar(
       reason: (r is $Value ? r : null) == null
-          ? SnackBarClosedReason.hide
+          ? bindgenNative4.SnackBarClosedReason.hide
           : (r is $Value ? r : null)!.$value,
     );
     return null;
@@ -2455,7 +2465,7 @@ class $ScaffoldMessengerState implements $Instance {
     final self = target! as $ScaffoldMessengerState;
     self.$value.removeCurrentMaterialBanner(
       reason: (r is $Value ? r : null) == null
-          ? MaterialBannerClosedReason.remove
+          ? bindgenNative5.MaterialBannerClosedReason.remove
           : (r is $Value ? r : null)!.$value,
     );
     return null;
@@ -2474,7 +2484,7 @@ class $ScaffoldMessengerState implements $Instance {
     final self = target! as $ScaffoldMessengerState;
     self.$value.hideCurrentMaterialBanner(
       reason: (r is $Value ? r : null) == null
-          ? MaterialBannerClosedReason.hide
+          ? bindgenNative5.MaterialBannerClosedReason.hide
           : (r is $Value ? r : null)!.$value,
     );
     return null;

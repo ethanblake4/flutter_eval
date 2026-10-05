@@ -39,6 +39,8 @@ import '../supporting/flutter_animation_animation_controller.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../scheduler/ticker.dart';
+import 'package:flutter/src/animation/animation.dart' as bindgenNative0;
+import 'package:flutter/src/animation/curves.dart' as bindgenNative1;
 
 /// dart_eval wrapper binding for [AnimationController]
 class $AnimationController implements $Instance {
@@ -1247,7 +1249,7 @@ class $AnimationController implements $Instance {
           (r as $Value?)! as EvalCallable,
           "void Function(AnimationStatus);export=false" +
               ";types=$_callbackType0",
-          (_callable) => (AnimationStatus status) {
+          (_callable) => (bindgenNative0.AnimationStatus status) {
             _callable.call(
               runtime,
               null,
@@ -1289,7 +1291,7 @@ class $AnimationController implements $Instance {
           (r as $Value?)! as EvalCallable,
           "void Function(AnimationStatus);export=false" +
               ";types=$_callbackType0",
-          (_callable) => (AnimationStatus status) {
+          (_callable) => (bindgenNative0.AnimationStatus status) {
             _callable.call(
               runtime,
               null,
@@ -1471,7 +1473,7 @@ class $AnimationController implements $Instance {
                   ? (c as List)[0] as $Value?
                   : null) ==
               null
-          ? Curves.linear
+          ? bindgenNative1.Curves.linear
           : (c is List && (c as List).length > 0
                     ? (c as List)[0] as $Value?
                     : null)!
@@ -1497,7 +1499,7 @@ class $AnimationController implements $Instance {
                   ? (c as List)[0] as $Value?
                   : null) ==
               null
-          ? Curves.linear
+          ? bindgenNative1.Curves.linear
           : (c is List && (c as List).length > 0
                     ? (c as List)[0] as $Value?
                     : null)!

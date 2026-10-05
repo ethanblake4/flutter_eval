@@ -61,6 +61,9 @@ import '../sky_engine/ui/geometry.dart';
 import '../supporting/flutter_widgets_focus_manager.dart';
 import '../foundation/diagnostics.dart';
 import '../supporting/flutter_widgets_focus_traversal.dart';
+import 'package:flutter/src/services/raw_keyboard.dart' as bindgenNative0;
+import 'package:flutter/src/services/hardware_keyboard.dart' as bindgenNative1;
+import 'package:flutter/src/widgets/focus_traversal.dart' as bindgenNative2;
 
 /// dart_eval enum wrapper binding for [KeyEventResult]
 class $KeyEventResult implements $Instance {
@@ -1198,26 +1201,27 @@ class $FocusNode implements $Instance {
                   (s is $Value ? s : null)! as EvalCallable,
                   "KeyEventResult Function(FocusNode, RawKeyEvent);export=false" +
                       ";types=$_callbackType0,$_callbackType1",
-                  (_callable) => (FocusNode node, RawKeyEvent event) {
-                    return _callable
-                            .call(
-                              runtime,
-                              null,
-                              TypedInterop.annotateBridgeType(
-                                $FocusNode.wrap(node),
-                                runtime,
-                                _callbackType0,
-                              ),
-                              TypedInterop.annotateBridgeType(
-                                $RawKeyEvent.wrap(event),
-                                runtime,
-                                _callbackType1,
-                              ),
-                              2,
-                            )
-                            ?.$value
-                        as KeyEventResult;
-                  },
+                  (_callable) =>
+                      (FocusNode node, bindgenNative0.RawKeyEvent event) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.annotateBridgeType(
+                                    $FocusNode.wrap(node),
+                                    runtime,
+                                    _callbackType0,
+                                  ),
+                                  TypedInterop.annotateBridgeType(
+                                    $RawKeyEvent.wrap(event),
+                                    runtime,
+                                    _callbackType1,
+                                  ),
+                                  2,
+                                )
+                                ?.$value
+                            as KeyEventResult;
+                      },
                 );
               })(),
         onKeyEvent: _arg2OrNull == null || _arg2OrNull is $null
@@ -1239,26 +1243,27 @@ class $FocusNode implements $Instance {
                   _arg2OrNull! as EvalCallable,
                   "KeyEventResult Function(FocusNode, KeyEvent);export=false" +
                       ";types=$_callbackType0,$_callbackType1",
-                  (_callable) => (FocusNode node, KeyEvent event) {
-                    return _callable
-                            .call(
-                              runtime,
-                              null,
-                              TypedInterop.annotateBridgeType(
-                                $FocusNode.wrap(node),
-                                runtime,
-                                _callbackType0,
-                              ),
-                              TypedInterop.annotateBridgeType(
-                                $KeyEvent.wrap(event),
-                                runtime,
-                                _callbackType1,
-                              ),
-                              2,
-                            )
-                            ?.$value
-                        as KeyEventResult;
-                  },
+                  (_callable) =>
+                      (FocusNode node, bindgenNative1.KeyEvent event) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.annotateBridgeType(
+                                    $FocusNode.wrap(node),
+                                    runtime,
+                                    _callbackType0,
+                                  ),
+                                  TypedInterop.annotateBridgeType(
+                                    $KeyEvent.wrap(event),
+                                    runtime,
+                                    _callbackType1,
+                                  ),
+                                  2,
+                                )
+                                ?.$value
+                            as KeyEventResult;
+                      },
                 );
               })(),
         skipTraversal: _arg3OrNull == null
@@ -1574,7 +1579,7 @@ class $FocusNode implements $Instance {
                 (s is $Value ? s : null)! as EvalCallable,
                 "KeyEventResult Function(FocusNode, KeyEvent);export=false" +
                     ";types=$_callbackType0,$_callbackType1",
-                (_callable) => (FocusNode node, KeyEvent event) {
+                (_callable) => (FocusNode node, bindgenNative1.KeyEvent event) {
                   return _callable
                           .call(
                             runtime,
@@ -1626,26 +1631,27 @@ class $FocusNode implements $Instance {
                     as EvalCallable,
                 "KeyEventResult Function(FocusNode, RawKeyEvent);export=false" +
                     ";types=$_callbackType0,$_callbackType1",
-                (_callable) => (FocusNode node, RawKeyEvent event) {
-                  return _callable
-                          .call(
-                            runtime,
-                            null,
-                            TypedInterop.annotateBridgeType(
-                              $FocusNode.wrap(node),
-                              runtime,
-                              _callbackType0,
-                            ),
-                            TypedInterop.annotateBridgeType(
-                              $RawKeyEvent.wrap(event),
-                              runtime,
-                              _callbackType1,
-                            ),
-                            2,
-                          )
-                          ?.$value
-                      as KeyEventResult;
-                },
+                (_callable) =>
+                    (FocusNode node, bindgenNative0.RawKeyEvent event) {
+                      return _callable
+                              .call(
+                                runtime,
+                                null,
+                                TypedInterop.annotateBridgeType(
+                                  $FocusNode.wrap(node),
+                                  runtime,
+                                  _callbackType0,
+                                ),
+                                TypedInterop.annotateBridgeType(
+                                  $RawKeyEvent.wrap(event),
+                                  runtime,
+                                  _callbackType1,
+                                ),
+                                2,
+                              )
+                              ?.$value
+                          as KeyEventResult;
+                    },
               );
             })(),
     );
@@ -1788,10 +1794,92 @@ class $FocusNode implements $Instance {
         $value.descendantsAreTraversable = value.$reified;
         return;
       case 'onKey':
-        $value.onKey = value.$reified;
+        $value.onKey = value == null || value is $null
+            ? null
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/focus_manager.dart',
+                    'FocusNode',
+                  ),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/services/raw_keyboard.dart',
+                    'RawKeyEvent',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  value! as EvalCallable,
+                  "KeyEventResult Function(FocusNode, RawKeyEvent);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) =>
+                      (FocusNode node, bindgenNative0.RawKeyEvent event) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.annotateBridgeType(
+                                    $FocusNode.wrap(node),
+                                    runtime,
+                                    _callbackType0,
+                                  ),
+                                  TypedInterop.annotateBridgeType(
+                                    $RawKeyEvent.wrap(event),
+                                    runtime,
+                                    _callbackType1,
+                                  ),
+                                  2,
+                                )
+                                ?.$value
+                            as KeyEventResult;
+                      },
+                );
+              })();
         return;
       case 'onKeyEvent':
-        $value.onKeyEvent = value.$reified;
+        $value.onKeyEvent = value == null || value is $null
+            ? null
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/focus_manager.dart',
+                    'FocusNode',
+                  ),
+                );
+                final _callbackType1 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/services/hardware_keyboard.dart',
+                    'KeyEvent',
+                  ),
+                );
+                return runtime.cachedCallback(
+                  value! as EvalCallable,
+                  "KeyEventResult Function(FocusNode, KeyEvent);export=false" +
+                      ";types=$_callbackType0,$_callbackType1",
+                  (_callable) =>
+                      (FocusNode node, bindgenNative1.KeyEvent event) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.annotateBridgeType(
+                                    $FocusNode.wrap(node),
+                                    runtime,
+                                    _callbackType0,
+                                  ),
+                                  TypedInterop.annotateBridgeType(
+                                    $KeyEvent.wrap(event),
+                                    runtime,
+                                    _callbackType1,
+                                  ),
+                                  2,
+                                )
+                                ?.$value
+                            as KeyEventResult;
+                      },
+                );
+              })();
         return;
       case 'debugLabel':
         $value.debugLabel = value.$reified;
@@ -2287,26 +2375,27 @@ class $FocusScopeNode implements $Instance {
                   (s is $Value ? s : null)! as EvalCallable,
                   "KeyEventResult Function(FocusNode, KeyEvent);export=false" +
                       ";types=$_callbackType0,$_callbackType1",
-                  (_callable) => (FocusNode node, KeyEvent event) {
-                    return _callable
-                            .call(
-                              runtime,
-                              null,
-                              TypedInterop.annotateBridgeType(
-                                $FocusNode.wrap(node),
-                                runtime,
-                                _callbackType0,
-                              ),
-                              TypedInterop.annotateBridgeType(
-                                $KeyEvent.wrap(event),
-                                runtime,
-                                _callbackType1,
-                              ),
-                              2,
-                            )
-                            ?.$value
-                        as KeyEventResult;
-                  },
+                  (_callable) =>
+                      (FocusNode node, bindgenNative1.KeyEvent event) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.annotateBridgeType(
+                                    $FocusNode.wrap(node),
+                                    runtime,
+                                    _callbackType0,
+                                  ),
+                                  TypedInterop.annotateBridgeType(
+                                    $KeyEvent.wrap(event),
+                                    runtime,
+                                    _callbackType1,
+                                  ),
+                                  2,
+                                )
+                                ?.$value
+                            as KeyEventResult;
+                      },
                 );
               })(),
         onKey: _arg2OrNull == null || _arg2OrNull is $null
@@ -2328,26 +2417,27 @@ class $FocusScopeNode implements $Instance {
                   _arg2OrNull! as EvalCallable,
                   "KeyEventResult Function(FocusNode, RawKeyEvent);export=false" +
                       ";types=$_callbackType0,$_callbackType1",
-                  (_callable) => (FocusNode node, RawKeyEvent event) {
-                    return _callable
-                            .call(
-                              runtime,
-                              null,
-                              TypedInterop.annotateBridgeType(
-                                $FocusNode.wrap(node),
-                                runtime,
-                                _callbackType0,
-                              ),
-                              TypedInterop.annotateBridgeType(
-                                $RawKeyEvent.wrap(event),
-                                runtime,
-                                _callbackType1,
-                              ),
-                              2,
-                            )
-                            ?.$value
-                        as KeyEventResult;
-                  },
+                  (_callable) =>
+                      (FocusNode node, bindgenNative0.RawKeyEvent event) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.annotateBridgeType(
+                                    $FocusNode.wrap(node),
+                                    runtime,
+                                    _callbackType0,
+                                  ),
+                                  TypedInterop.annotateBridgeType(
+                                    $RawKeyEvent.wrap(event),
+                                    runtime,
+                                    _callbackType1,
+                                  ),
+                                  2,
+                                )
+                                ?.$value
+                            as KeyEventResult;
+                      },
                 );
               })(),
         skipTraversal: _arg3OrNull == null
@@ -2357,10 +2447,10 @@ class $FocusScopeNode implements $Instance {
             ? true
             : (_arg4OrNull as $bool).$value,
         traversalEdgeBehavior: _arg5OrNull == null
-            ? TraversalEdgeBehavior.closedLoop
+            ? bindgenNative2.TraversalEdgeBehavior.closedLoop
             : _arg5OrNull!.$value,
         directionalTraversalEdgeBehavior: _arg6OrNull == null
-            ? TraversalEdgeBehavior.stop
+            ? bindgenNative2.TraversalEdgeBehavior.stop
             : _arg6OrNull!.$value,
       ),
     );

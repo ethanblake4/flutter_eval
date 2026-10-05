@@ -51,6 +51,8 @@ import 'dart:async';
 import '../supporting/flutter_widgets_routes.dart';
 import './routes.dart';
 import '../sky_engine/ui/painting.dart';
+import 'package:flutter/src/widgets/framework.dart' as bindgenNative0;
+import 'package:flutter/src/animation/animation.dart' as bindgenNative1;
 
 /// dart_eval bridge binding for [PageRoute]
 class $PageRoute$bridge<T> extends PageRoute<T> with $Bridge<PageRoute<T>> {
@@ -2280,13 +2282,95 @@ class $PageRoute$bridge<T> extends PageRoute<T> with $Bridge<PageRoute<T>> {
 
   @override
   void $bridgeSet(String identifier, $Value value) {
+    final runtime = $runtime;
     switch (identifier) {
       case 'willDisposeAnimationController':
         super.willDisposeAnimationController = value.$reified;
         return;
 
       case 'receivedTransition':
-        super.receivedTransition = value.$reified;
+        super.receivedTransition = value == null || value is $null
+            ? null
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                );
+                final _callbackType1 = runtime.internParameterizedType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/animation/animation.dart',
+                    'Animation',
+                  ),
+                  [runtime.lookupType(BridgeTypeSpec('dart:core', 'double'))],
+                );
+                final _callbackType2 = runtime.internParameterizedType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/animation/animation.dart',
+                    'Animation',
+                  ),
+                  [runtime.lookupType(BridgeTypeSpec('dart:core', 'double'))],
+                );
+                final _callbackType3 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                final _callbackType4 = runtime.internParameterizedType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'Widget',
+                  ),
+                  [],
+                  nullable: true,
+                );
+                return runtime.cachedCallback(
+                  value! as EvalCallable,
+                  "Widget? Function(BuildContext, Animation<double>, Animation<double>, bool, Widget?);export=true" +
+                      ";types=$_callbackType0,$_callbackType1,$_callbackType2,$_callbackType3,$_callbackType4",
+                  (_callable) =>
+                      (
+                        bindgenNative0.BuildContext context,
+                        bindgenNative1.Animation<double> animation,
+                        bindgenNative1.Animation<double> secondaryAnimation,
+                        bool allowSnapshotting,
+                        bindgenNative0.Widget? child,
+                      ) {
+                        return TypedInterop.exportExternal(
+                              _callable.call(
+                                runtime,
+                                null,
+                                TypedInterop.annotateBridgeType(
+                                  $BuildContext.wrap(context),
+                                  runtime,
+                                  _callbackType0,
+                                ),
+                                TypedInterop.annotateBridgeType(
+                                  $Animation.wrap(animation),
+                                  runtime,
+                                  _callbackType1,
+                                ),
+                                [
+                                  TypedInterop.annotateBridgeType(
+                                    $Animation.wrap(secondaryAnimation),
+                                    runtime,
+                                    _callbackType2,
+                                  ),
+                                  $bool(allowSnapshotting),
+                                  TypedInterop.annotateBridgeType(
+                                    (child == null
+                                        ? const $null()
+                                        : $Widget.wrap(child)),
+                                    runtime,
+                                    _callbackType4,
+                                  ),
+                                ],
+                              ),
+                              runtime: runtime,
+                            )
+                            as bindgenNative0.Widget?;
+                      },
+                );
+              })();
         return;
 
       case 'offstage':
@@ -2874,6 +2958,9 @@ class $PageRoute$bridge<T> extends PageRoute<T> with $Bridge<PageRoute<T>> {
 
 /// dart_eval lightweight wrapper binding for [PageRoute]
 class $PageRoute<T> implements $Instance {
+  /// Compile-time declaration shared with the bridge binding.
+  static const $declaration = $PageRoute$bridge.$declaration;
+
   /// Compile-time type specification of [$PageRoute]
   static const $spec = BridgeTypeSpec(
     'package:flutter/src/widgets/pages.dart',
@@ -3813,7 +3900,85 @@ class $PageRoute<T> implements $Instance {
         $value.willDisposeAnimationController = value.$reified;
         return;
       case 'receivedTransition':
-        $value.receivedTransition = value.$reified;
+        $value.receivedTransition = value == null || value is $null
+            ? null
+            : (() {
+                final _callbackType0 = runtime.lookupType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'BuildContext',
+                  ),
+                );
+                final _callbackType1 = runtime.internParameterizedType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/animation/animation.dart',
+                    'Animation',
+                  ),
+                  [runtime.lookupType(BridgeTypeSpec('dart:core', 'double'))],
+                );
+                final _callbackType2 = runtime.internParameterizedType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/animation/animation.dart',
+                    'Animation',
+                  ),
+                  [runtime.lookupType(BridgeTypeSpec('dart:core', 'double'))],
+                );
+                final _callbackType3 = runtime.lookupType(
+                  BridgeTypeSpec('dart:core', 'bool'),
+                );
+                final _callbackType4 = runtime.internParameterizedType(
+                  BridgeTypeSpec(
+                    'package:flutter/src/widgets/framework.dart',
+                    'Widget',
+                  ),
+                  [],
+                  nullable: true,
+                );
+                return runtime.cachedCallback(
+                  value! as EvalCallable,
+                  "Widget? Function(BuildContext, Animation<double>, Animation<double>, bool, Widget?);export=false" +
+                      ";types=$_callbackType0,$_callbackType1,$_callbackType2,$_callbackType3,$_callbackType4",
+                  (_callable) =>
+                      (
+                        bindgenNative0.BuildContext context,
+                        bindgenNative1.Animation<double> animation,
+                        bindgenNative1.Animation<double> secondaryAnimation,
+                        bool allowSnapshotting,
+                        bindgenNative0.Widget? child,
+                      ) {
+                        return _callable.call(
+                              runtime,
+                              null,
+                              TypedInterop.annotateBridgeType(
+                                $BuildContext.wrap(context),
+                                runtime,
+                                _callbackType0,
+                              ),
+                              TypedInterop.annotateBridgeType(
+                                $Animation.wrap(animation),
+                                runtime,
+                                _callbackType1,
+                              ),
+                              [
+                                TypedInterop.annotateBridgeType(
+                                  $Animation.wrap(secondaryAnimation),
+                                  runtime,
+                                  _callbackType2,
+                                ),
+                                $bool(allowSnapshotting),
+                                TypedInterop.annotateBridgeType(
+                                  (child == null
+                                      ? const $null()
+                                      : $Widget.wrap(child)),
+                                  runtime,
+                                  _callbackType4,
+                                ),
+                              ],
+                            )?.$value
+                            as bindgenNative0.Widget?;
+                      },
+                );
+              })();
         return;
       case 'offstage':
         $value.offstage = value.$reified;

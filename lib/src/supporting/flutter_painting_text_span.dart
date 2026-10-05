@@ -37,6 +37,8 @@ import './flutter_gestures_events.dart';
 import './flutter_painting_inline_span.dart';
 import './flutter_gestures_recognizer.dart';
 import '../foundation/diagnostics.dart';
+import 'package:flutter/src/painting/inline_span.dart' as bindgenNative0;
+import 'package:flutter/src/gestures/events.dart' as bindgenNative1;
 
 /// dart_eval wrapper binding for [TextSpan]
 class $TextSpan implements $Instance {
@@ -451,7 +453,7 @@ class $TextSpan implements $Instance {
                       runtime: runtime,
                     )
                     as List?)
-                ?.cast<InlineSpan>(),
+                ?.cast<bindgenNative0.InlineSpan>(),
         style: _arg2OrNull?.$value,
         recognizer: _arg3OrNull?.$value,
         mouseCursor: _arg4OrNull?.$value,
@@ -468,7 +470,7 @@ class $TextSpan implements $Instance {
                   _arg5OrNull! as EvalCallable,
                   "void Function(PointerEnterEvent);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (PointerEnterEvent event) {
+                  (_callable) => (bindgenNative1.PointerEnterEvent event) {
                     _callable.call(
                       runtime,
                       null,
@@ -496,7 +498,7 @@ class $TextSpan implements $Instance {
                   _arg6OrNull! as EvalCallable,
                   "void Function(PointerExitEvent);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (PointerExitEvent event) {
+                  (_callable) => (bindgenNative1.PointerExitEvent event) {
                     _callable.call(
                       runtime,
                       null,

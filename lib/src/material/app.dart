@@ -36,6 +36,7 @@ import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../widgets/overlay.dart';
 import '../supporting/flutter_widgets_navigator.dart';
 import '../widgets/framework_wrappers.dart';
+import 'dart:ui';
 import '../sky_engine/ui/text.dart';
 import '../supporting/flutter_widgets_heroes.dart';
 import 'package:dart_eval/src/eval/utils/wrap_helper.dart';
@@ -50,6 +51,12 @@ import '../supporting/flutter_widgets_shortcuts.dart';
 import '../supporting/flutter_widgets_actions.dart';
 import '../supporting/flutter_widgets_scroll_configuration.dart';
 import '../supporting/flutter_animation_animation_style.dart';
+import 'package:flutter/src/widgets/framework.dart' as bindgenNative0;
+import 'package:flutter/src/widgets/navigator.dart' as bindgenNative1;
+import 'package:flutter/src/material/theme.dart' as bindgenNative2;
+import 'package:flutter/src/animation/curves.dart' as bindgenNative3;
+import 'package:flutter/src/widgets/shortcuts.dart' as bindgenNative4;
+import 'package:flutter/src/widgets/actions.dart' as bindgenNative5;
 
 /// dart_eval wrapper binding for [MaterialApp]
 class $MaterialApp implements $Instance {
@@ -2525,9 +2532,12 @@ class $MaterialApp implements $Instance {
         scaffoldMessengerKey: _arg2OrNull?.$value,
         home: _arg3OrNull?.$value,
         routes: _arg4OrNull == null
-            ? const <String, WidgetBuilder>{}
+            ? const <String, bindgenNative0.WidgetBuilder>{}
             : (_arg4OrNull!.$reified as Map)
-                  .cast<String, Widget Function(BuildContext)>(),
+                  .cast<
+                    String,
+                    bindgenNative0.Widget Function(bindgenNative0.BuildContext)
+                  >(),
         initialRoute: _arg5OrNull?.$value,
         onGenerateRoute: _arg6OrNull == null || _arg6OrNull is $null
             ? null
@@ -2542,7 +2552,7 @@ class $MaterialApp implements $Instance {
                   _arg6OrNull! as EvalCallable,
                   "Route<dynamic>? Function(RouteSettings);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (RouteSettings settings) {
+                  (_callable) => (bindgenNative1.RouteSettings settings) {
                     return _callable
                             .call(
                               runtime,
@@ -2556,7 +2566,7 @@ class $MaterialApp implements $Instance {
                               1,
                             )
                             ?.$value
-                        as Route<dynamic>?;
+                        as bindgenNative1.Route<dynamic>?;
                   },
                 );
               })(),
@@ -2574,7 +2584,7 @@ class $MaterialApp implements $Instance {
                     return _callable
                             .call(runtime, null, $String(initialRoute), null, 1)
                             ?.$value
-                        as List<Route<dynamic>>;
+                        as List<bindgenNative1.Route<dynamic>>;
                   },
                 );
               })(),
@@ -2591,7 +2601,7 @@ class $MaterialApp implements $Instance {
                   _arg8OrNull! as EvalCallable,
                   "Route<dynamic>? Function(RouteSettings);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (RouteSettings settings) {
+                  (_callable) => (bindgenNative1.RouteSettings settings) {
                     return _callable
                             .call(
                               runtime,
@@ -2605,7 +2615,7 @@ class $MaterialApp implements $Instance {
                               1,
                             )
                             ?.$value
-                        as Route<dynamic>?;
+                        as bindgenNative1.Route<dynamic>?;
                   },
                 );
               })(),
@@ -2622,29 +2632,30 @@ class $MaterialApp implements $Instance {
                   _arg9OrNull! as EvalCallable,
                   "bool Function(NavigationNotification);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (NavigationNotification notification) {
-                    return _callable
-                            .call(
-                              runtime,
-                              null,
-                              TypedInterop.annotateBridgeType(
-                                $NavigationNotification.wrap(notification),
-                                runtime,
-                                _callbackType0,
-                              ),
-                              null,
-                              1,
-                            )
-                            ?.$value
-                        as bool;
-                  },
+                  (_callable) =>
+                      (bindgenNative1.NavigationNotification notification) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.annotateBridgeType(
+                                    $NavigationNotification.wrap(notification),
+                                    runtime,
+                                    _callbackType0,
+                                  ),
+                                  null,
+                                  1,
+                                )
+                                ?.$value
+                            as bool;
+                      },
                 );
               })(),
         navigatorObservers: _arg10OrNull == null
-            ? const <NavigatorObserver>[]
+            ? const <bindgenNative1.NavigatorObserver>[]
             : (TypedInterop.exportExternal(_arg10OrNull, runtime: runtime)
                       as List)
-                  .cast<NavigatorObserver>(),
+                  .cast<bindgenNative1.NavigatorObserver>(),
         builder: _arg11OrNull == null || _arg11OrNull is $null
             ? null
             : (() {
@@ -2666,28 +2677,32 @@ class $MaterialApp implements $Instance {
                   _arg11OrNull! as EvalCallable,
                   "Widget Function(BuildContext, Widget?);export=false" +
                       ";types=$_callbackType0,$_callbackType1",
-                  (_callable) => (BuildContext context, Widget? child) {
-                    return _callable
-                            .call(
-                              runtime,
-                              null,
-                              TypedInterop.annotateBridgeType(
-                                $BuildContext.wrap(context),
-                                runtime,
-                                _callbackType0,
-                              ),
-                              TypedInterop.annotateBridgeType(
-                                (child == null
-                                    ? const $null()
-                                    : $Widget.wrap(child)),
-                                runtime,
-                                _callbackType1,
-                              ),
-                              2,
-                            )
-                            ?.$value
-                        as Widget;
-                  },
+                  (_callable) =>
+                      (
+                        bindgenNative0.BuildContext context,
+                        bindgenNative0.Widget? child,
+                      ) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.annotateBridgeType(
+                                    $BuildContext.wrap(context),
+                                    runtime,
+                                    _callbackType0,
+                                  ),
+                                  TypedInterop.annotateBridgeType(
+                                    (child == null
+                                        ? const $null()
+                                        : $Widget.wrap(child)),
+                                    runtime,
+                                    _callbackType1,
+                                  ),
+                                  2,
+                                )
+                                ?.$value
+                            as bindgenNative0.Widget;
+                      },
                 );
               })(),
         title: _arg12OrNull == null ? '' : _arg12OrNull!.$value,
@@ -2704,7 +2719,7 @@ class $MaterialApp implements $Instance {
                   _arg13OrNull! as EvalCallable,
                   "String Function(BuildContext);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (BuildContext context) {
+                  (_callable) => (bindgenNative0.BuildContext context) {
                     return _callable
                             .call(
                               runtime,
@@ -2731,10 +2746,10 @@ class $MaterialApp implements $Instance {
             ? ThemeMode.system
             : _arg19OrNull!.$value,
         themeAnimationDuration: _arg20OrNull == null
-            ? kThemeAnimationDuration
+            ? bindgenNative2.kThemeAnimationDuration
             : _arg20OrNull!.$value,
         themeAnimationCurve: _arg21OrNull == null
-            ? Curves.linear
+            ? bindgenNative3.Curves.linear
             : _arg21OrNull!.$value,
         locale: _arg22OrNull?.$value,
         localizationsDelegates: _arg23OrNull == null || _arg23OrNull is $null
@@ -2898,8 +2913,9 @@ class $MaterialApp implements $Instance {
             ? true
             : (_arg32OrNull as $bool).$value,
         shortcuts: (_arg33OrNull?.$reified as Map?)
-            ?.cast<ShortcutActivator, Intent>(),
-        actions: (_arg34OrNull?.$reified as Map?)?.cast<Type, Action<Intent>>(),
+            ?.cast<bindgenNative4.ShortcutActivator, bindgenNative5.Intent>(),
+        actions: (_arg34OrNull?.$reified as Map?)
+            ?.cast<Type, bindgenNative5.Action<bindgenNative5.Intent>>(),
         restorationScopeId: _arg35OrNull?.$value,
         scrollBehavior: _arg36OrNull?.$value,
         useInheritedMediaQuery: _arg37OrNull == null
@@ -2977,28 +2993,32 @@ class $MaterialApp implements $Instance {
                   _arg7OrNull! as EvalCallable,
                   "Widget Function(BuildContext, Widget?);export=false" +
                       ";types=$_callbackType0,$_callbackType1",
-                  (_callable) => (BuildContext context, Widget? child) {
-                    return _callable
-                            .call(
-                              runtime,
-                              null,
-                              TypedInterop.annotateBridgeType(
-                                $BuildContext.wrap(context),
-                                runtime,
-                                _callbackType0,
-                              ),
-                              TypedInterop.annotateBridgeType(
-                                (child == null
-                                    ? const $null()
-                                    : $Widget.wrap(child)),
-                                runtime,
-                                _callbackType1,
-                              ),
-                              2,
-                            )
-                            ?.$value
-                        as Widget;
-                  },
+                  (_callable) =>
+                      (
+                        bindgenNative0.BuildContext context,
+                        bindgenNative0.Widget? child,
+                      ) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.annotateBridgeType(
+                                    $BuildContext.wrap(context),
+                                    runtime,
+                                    _callbackType0,
+                                  ),
+                                  TypedInterop.annotateBridgeType(
+                                    (child == null
+                                        ? const $null()
+                                        : $Widget.wrap(child)),
+                                    runtime,
+                                    _callbackType1,
+                                  ),
+                                  2,
+                                )
+                                ?.$value
+                            as bindgenNative0.Widget;
+                      },
                 );
               })(),
         title: _arg8OrNull?.$value,
@@ -3015,7 +3035,7 @@ class $MaterialApp implements $Instance {
                   _arg9OrNull! as EvalCallable,
                   "String Function(BuildContext);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (BuildContext context) {
+                  (_callable) => (bindgenNative0.BuildContext context) {
                     return _callable
                             .call(
                               runtime,
@@ -3046,22 +3066,23 @@ class $MaterialApp implements $Instance {
                   _arg10OrNull! as EvalCallable,
                   "bool Function(NavigationNotification);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (NavigationNotification notification) {
-                    return _callable
-                            .call(
-                              runtime,
-                              null,
-                              TypedInterop.annotateBridgeType(
-                                $NavigationNotification.wrap(notification),
-                                runtime,
-                                _callbackType0,
-                              ),
-                              null,
-                              1,
-                            )
-                            ?.$value
-                        as bool;
-                  },
+                  (_callable) =>
+                      (bindgenNative1.NavigationNotification notification) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.annotateBridgeType(
+                                    $NavigationNotification.wrap(notification),
+                                    runtime,
+                                    _callbackType0,
+                                  ),
+                                  null,
+                                  1,
+                                )
+                                ?.$value
+                            as bool;
+                      },
                 );
               })(),
         color: _arg11OrNull?.$value,
@@ -3073,10 +3094,10 @@ class $MaterialApp implements $Instance {
             ? ThemeMode.system
             : _arg16OrNull!.$value,
         themeAnimationDuration: _arg17OrNull == null
-            ? kThemeAnimationDuration
+            ? bindgenNative2.kThemeAnimationDuration
             : _arg17OrNull!.$value,
         themeAnimationCurve: _arg18OrNull == null
-            ? Curves.linear
+            ? bindgenNative3.Curves.linear
             : _arg18OrNull!.$value,
         locale: _arg19OrNull?.$value,
         localizationsDelegates: _arg20OrNull == null || _arg20OrNull is $null
@@ -3240,8 +3261,9 @@ class $MaterialApp implements $Instance {
             ? true
             : (_arg29OrNull as $bool).$value,
         shortcuts: (_arg30OrNull?.$reified as Map?)
-            ?.cast<ShortcutActivator, Intent>(),
-        actions: (_arg31OrNull?.$reified as Map?)?.cast<Type, Action<Intent>>(),
+            ?.cast<bindgenNative4.ShortcutActivator, bindgenNative5.Intent>(),
+        actions: (_arg31OrNull?.$reified as Map?)
+            ?.cast<Type, bindgenNative5.Action<bindgenNative5.Intent>>(),
         restorationScopeId: _arg32OrNull?.$value,
         scrollBehavior: _arg33OrNull?.$value,
         useInheritedMediaQuery: _arg34OrNull == null

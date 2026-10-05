@@ -64,23 +64,239 @@ import 'package:dart_eval/stdlib/typed_data.dart'
         $DiagnosticableTreeMixin;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import '../foundation/diagnostics.dart';
 
-/// Opaque dart_eval wrapper for [Diagnosticable].
-class $Diagnosticable implements $Instance {
+/// Native dart_eval mixin adapter for [Diagnosticable].
+class $Diagnosticable$bridge with Diagnosticable, $Bridge<Diagnosticable> {
+  $Diagnosticable$bridge();
+  static void configureForCompile(BridgeDeclarationRegistry registry) =>
+      registry.defineBridgeClass($declaration);
+  static void configureForRuntime(Runtime runtime) =>
+      runtime.registerBridgeFuncRegisters(
+        'package:flutter/src/foundation/diagnostics.dart',
+        'Diagnosticable.',
+        (runtime, r, s, c) => $Diagnosticable$bridge(),
+        isBridge: true,
+      );
   static const $spec = BridgeTypeSpec(
     'package:flutter/src/foundation/diagnostics.dart',
     'Diagnosticable',
   );
+
   static const $type = BridgeTypeRef($spec);
+
   static const $declaration = BridgeClassDef(
-    BridgeClassType($type, isAbstract: true),
-    constructors: {},
-    wrap: true,
-    bridge: false,
+    BridgeClassType($type, isAbstract: true, isMixinClass: true),
+    constructors: {
+      '': BridgeConstructorDef(
+        BridgeFunctionDef(returns: BridgeTypeAnnotation($type)),
+      ),
+    },
+
+    methods: {
+      'toStringShort': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
+          ),
+          namedParams: [],
+          params: [],
+        ),
+      ),
+
+      'toString': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
+          ),
+          namedParams: [
+            BridgeParameter(
+              'minLevel',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/foundation/diagnostics.dart',
+                    'DiagnosticLevel',
+                  ),
+                  [],
+                ),
+              ),
+              true,
+              defaultValueSource: "DiagnosticLevel.info",
+            ),
+          ],
+          params: [],
+        ),
+      ),
+
+      'toDiagnosticsNode': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(
+              BridgeTypeSpec(
+                'package:flutter/src/foundation/diagnostics.dart',
+                'DiagnosticsNode',
+              ),
+              [],
+            ),
+          ),
+          namedParams: [
+            BridgeParameter(
+              'name',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(BridgeTypeSpec('dart:core', 'String'), []),
+                nullable: true,
+              ),
+              true,
+            ),
+
+            BridgeParameter(
+              'style',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/foundation/diagnostics.dart',
+                    'DiagnosticsTreeStyle',
+                  ),
+                  [],
+                ),
+                nullable: true,
+              ),
+              true,
+            ),
+          ],
+          params: [],
+        ),
+      ),
+
+      'debugFillProperties': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
+          namedParams: [],
+          params: [
+            BridgeParameter(
+              'properties',
+              BridgeTypeAnnotation(
+                BridgeTypeRef(
+                  BridgeTypeSpec(
+                    'package:flutter/src/foundation/diagnostics.dart',
+                    'DiagnosticPropertiesBuilder',
+                  ),
+                  [],
+                ),
+              ),
+              false,
+            ),
+          ],
+        ),
+      ),
+    },
+    getters: {},
+    setters: {},
+    fields: {},
+    wrap: false,
+    bridge: true,
   );
-  static void configureForRuntime(Runtime runtime) {}
-  static void configureForCompile(BridgeDeclarationRegistry registry) =>
-      registry.defineBridgeClass($declaration);
+
+  @override
+  $Value? $bridgeGet(String identifier) {
+    final runtime = $runtime;
+    switch (identifier) {
+      case 'toStringShort':
+        return $Function((runtime, target, r, s, c) {
+          final result = super.toStringShort();
+          return $String(result);
+        });
+      case 'toString':
+        return $Function((runtime, target, r, s, c) {
+          final result = super.toString(
+            minLevel: (r is $Value ? r : null) == null
+                ? DiagnosticLevel.info
+                : (r is $Value ? r : null)!.$value,
+          );
+          return $String(result);
+        });
+      case 'toDiagnosticsNode':
+        return $Function((runtime, target, r, s, c) {
+          final result = super.toDiagnosticsNode(
+            name: (r is $Value ? r : null)?.$value,
+            style: (s is $Value ? s : null)?.$value,
+          );
+          return $DiagnosticsNode.wrap(result);
+        });
+      case 'debugFillProperties':
+        return $Function((runtime, target, r, s, c) {
+          super.debugFillProperties((r as $Value?)!.$value);
+          return null;
+        });
+    }
+    return $bridgeGetObject(
+      identifier,
+      hashCode: () => super.hashCode,
+      equals: (other) => super == other,
+      toString: () => super.toString(),
+    );
+  }
+
+  @override
+  void $bridgeSet(String identifier, $Value value) {}
+
+  @override
+  String toStringShort() {
+    if (Runtime.bridgeData[this]?.subclass == null) {
+      return super.toStringShort();
+    }
+    final runtime = $runtime;
+    return $_invoke('toStringShort', []);
+  }
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    if (Runtime.bridgeData[this]?.subclass == null) {
+      return super.toString(minLevel: minLevel);
+    }
+    final runtime = $runtime;
+    return $_invoke('toString', [$DiagnosticLevel.wrap(minLevel)]);
+  }
+
+  @override
+  DiagnosticsNode toDiagnosticsNode({
+    String? name,
+    DiagnosticsTreeStyle? style,
+  }) {
+    if (Runtime.bridgeData[this]?.subclass == null) {
+      return super.toDiagnosticsNode(name: name, style: style);
+    }
+    final runtime = $runtime;
+    return $_invoke('toDiagnosticsNode', [
+      name == null ? const $null() : $String(name),
+      style == null ? const $null() : $DiagnosticsTreeStyle.wrap(style),
+    ]);
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    if (Runtime.bridgeData[this]?.subclass == null) {
+      super.debugFillProperties(properties);
+      return;
+    }
+    final runtime = $runtime;
+    $_invoke('debugFillProperties', [
+      $DiagnosticPropertiesBuilder.wrap(properties),
+    ]);
+  }
+}
+
+/// Wrapper for existing native [Diagnosticable] values.
+class $Diagnosticable implements $Instance {
+  static const $declaration = $Diagnosticable$bridge.$declaration;
+  static const $spec = BridgeTypeSpec(
+    'package:flutter/src/foundation/diagnostics.dart',
+    'Diagnosticable',
+  );
+
+  static const $type = BridgeTypeRef($spec);
+
   final $Instance _superclass;
 
   @override
@@ -97,7 +313,81 @@ class $Diagnosticable implements $Instance {
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
+    switch (identifier) {
+      case 'toStringShort':
+        return $Closure(__toStringShort.func, this);
+
+      case 'toString':
+        return $Closure(__toString.func, this);
+
+      case 'toDiagnosticsNode':
+        return $Closure(__toDiagnosticsNode.func, this);
+
+      case 'debugFillProperties':
+        return $Closure(__debugFillProperties.func, this);
+    }
     return _superclass.$getProperty(runtime, identifier);
+  }
+
+  static const $Function __toStringShort = $Function(_toStringShort);
+  static $Value? _toStringShort(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
+    final self = target! as $Diagnosticable;
+    final result = self.$value.toStringShort();
+    return $String(result);
+  }
+
+  static const $Function __toString = $Function(_toString);
+  static $Value? _toString(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
+    final self = target! as $Diagnosticable;
+    final result = self.$value.toString(
+      minLevel: (r is $Value ? r : null) == null
+          ? DiagnosticLevel.info
+          : (r is $Value ? r : null)!.$value,
+    );
+    return $String(result);
+  }
+
+  static const $Function __toDiagnosticsNode = $Function(_toDiagnosticsNode);
+  static $Value? _toDiagnosticsNode(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
+    final self = target! as $Diagnosticable;
+    final result = self.$value.toDiagnosticsNode(
+      name: (r is $Value ? r : null)?.$value,
+      style: (s is $Value ? s : null)?.$value,
+    );
+    return $DiagnosticsNode.wrap(result);
+  }
+
+  static const $Function __debugFillProperties = $Function(
+    _debugFillProperties,
+  );
+  static $Value? _debugFillProperties(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
+    final self = target! as $Diagnosticable;
+    self.$value.debugFillProperties((r as $Value?)!.$value);
+    return null;
   }
 
   @override

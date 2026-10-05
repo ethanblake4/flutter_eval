@@ -27,11 +27,11 @@ import 'package:flutter/src/painting/basic_types.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:dart_eval/stdlib/core.dart'
-    hide $VerticalDirection, $Axis, $RenderComparison;
+    hide $VerticalDirection, $Axis, $AxisDirection, $RenderComparison;
 import 'package:dart_eval/stdlib/async.dart'
-    hide $VerticalDirection, $Axis, $RenderComparison;
+    hide $VerticalDirection, $Axis, $AxisDirection, $RenderComparison;
 import 'package:dart_eval/stdlib/typed_data.dart'
-    hide $VerticalDirection, $Axis, $RenderComparison;
+    hide $VerticalDirection, $Axis, $AxisDirection, $RenderComparison;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
@@ -256,6 +256,171 @@ class $Axis implements $Instance {
   @override
   void $setProperty(Runtime runtime, String identifier, $Value value) {
     return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
+/// dart_eval enum wrapper binding for [AxisDirection]
+class $AxisDirection implements $Instance {
+  /// Configure this enum for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {
+    runtime.registerBridgeEnumValues(
+      'package:flutter/src/painting/basic_types.dart',
+      'AxisDirection',
+      $AxisDirection._$values,
+    );
+
+    runtime.registerBridgeFuncRegisters(
+      'package:flutter/src/painting/basic_types.dart',
+      'AxisDirection.values*g',
+      $AxisDirection.$values,
+    );
+  }
+
+  /// Configure this enum for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeEnum($declaration);
+  }
+
+  /// Compile-time type specification of [$AxisDirection]
+  static const $spec = BridgeTypeSpec(
+    'package:flutter/src/painting/basic_types.dart',
+    'AxisDirection',
+  );
+
+  /// Compile-time type declaration of [$AxisDirection]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$AxisDirection]
+  static const $declaration = BridgeEnumDef(
+    $type,
+
+    values: ['up', 'right', 'down', 'left'],
+
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {
+      'values': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:core', 'List'), [
+            BridgeTypeAnnotation(
+              BridgeTypeRef(
+                BridgeTypeSpec(
+                  'package:flutter/src/painting/basic_types.dart',
+                  'AxisDirection',
+                ),
+                [],
+              ),
+            ),
+          ]),
+        ),
+        isStatic: true,
+      ),
+    },
+  );
+
+  static final _$values = {
+    'up': $AxisDirection.wrap(AxisDirection.up),
+    'right': $AxisDirection.wrap(AxisDirection.right),
+    'down': $AxisDirection.wrap(AxisDirection.down),
+    'left': $AxisDirection.wrap(AxisDirection.left),
+  };
+
+  /// Wrapper for the [AxisDirection.values] getter
+  static $Value? $values(Runtime runtime, Object? r, Object? s, Object? c) {
+    final value = AxisDirection.values;
+    return $List.view(
+      value,
+      (e) => $AxisDirection.wrap(e),
+      runtime: runtime,
+      runtimeTypeId: runtime.internParameterizedType(CoreTypes.list, [
+        runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/painting/basic_types.dart',
+            'AxisDirection',
+          ),
+        ),
+      ]),
+    );
+  }
+
+  final $Instance _superclass;
+
+  @override
+  final AxisDirection $value;
+
+  @override
+  AxisDirection get $reified => $value;
+
+  /// Wrap a [AxisDirection] in a [$AxisDirection]
+  $AxisDirection.wrap(this.$value) : _superclass = $Object($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
+/// dart_eval function wrapper binding for [axisDirectionToAxis]
+class $axisDirectionToAxisFn {
+  const $axisDirectionToAxisFn();
+
+  static void configureForRuntime(Runtime runtime) {
+    return runtime.registerBridgeFuncRegisters(
+      'package:flutter/src/painting/basic_types.dart',
+      'axisDirectionToAxis',
+      $axisDirectionToAxisFn.callRegisters,
+    );
+  }
+
+  static const $declaration = BridgeFunctionDeclaration(
+    'package:flutter/src/painting/basic_types.dart',
+    'axisDirectionToAxis',
+    BridgeFunctionDef(
+      returns: BridgeTypeAnnotation(
+        BridgeTypeRef(
+          BridgeTypeSpec(
+            'package:flutter/src/painting/basic_types.dart',
+            'Axis',
+          ),
+          [],
+        ),
+      ),
+      namedParams: [],
+      params: [
+        BridgeParameter(
+          'axisDirection',
+          BridgeTypeAnnotation(
+            BridgeTypeRef(
+              BridgeTypeSpec(
+                'package:flutter/src/painting/basic_types.dart',
+                'AxisDirection',
+              ),
+              [],
+            ),
+          ),
+          false,
+        ),
+      ],
+    ),
+  );
+
+  static $Value? callRegisters(
+    Runtime runtime,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
+    final result = axisDirectionToAxis((r as $Value?)!.$value);
+    return $Axis.wrap(result);
   }
 }
 

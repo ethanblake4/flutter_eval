@@ -36,6 +36,7 @@ import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import './overlay.dart';
 import '../supporting/flutter_widgets_navigator.dart';
 import './framework_wrappers.dart';
+import 'dart:ui';
 import '../sky_engine/ui/text.dart';
 import 'package:dart_eval/src/eval/utils/wrap_helper.dart';
 import '../supporting/flutter_widgets_shortcuts.dart';
@@ -46,6 +47,11 @@ import '../supporting/flutter_widgets_router.dart';
 import '../painting/text_style.dart';
 import '../sky_engine/ui/painting.dart';
 import '../supporting/flutter_widgets_localizations.dart';
+import 'package:flutter/src/widgets/navigator.dart' as bindgenNative0;
+import 'package:flutter/src/widgets/framework.dart' as bindgenNative1;
+import 'package:flutter/src/widgets/pages.dart' as bindgenNative2;
+import 'package:flutter/src/widgets/shortcuts.dart' as bindgenNative3;
+import 'package:flutter/src/widgets/actions.dart' as bindgenNative4;
 
 /// dart_eval wrapper binding for [WidgetsApp]
 class $WidgetsApp implements $Instance {
@@ -3068,7 +3074,7 @@ class $WidgetsApp implements $Instance {
                   _arg2OrNull! as EvalCallable,
                   "Route<dynamic>? Function(RouteSettings);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (RouteSettings settings) {
+                  (_callable) => (bindgenNative0.RouteSettings settings) {
                     return _callable
                             .call(
                               runtime,
@@ -3082,7 +3088,7 @@ class $WidgetsApp implements $Instance {
                               1,
                             )
                             ?.$value
-                        as Route<dynamic>?;
+                        as bindgenNative0.Route<dynamic>?;
                   },
                 );
               })(),
@@ -3100,7 +3106,7 @@ class $WidgetsApp implements $Instance {
                     return _callable
                             .call(runtime, null, $String(initialRoute), null, 1)
                             ?.$value
-                        as List<Route<dynamic>>;
+                        as List<bindgenNative0.Route<dynamic>>;
                   },
                 );
               })(),
@@ -3117,7 +3123,7 @@ class $WidgetsApp implements $Instance {
                   _arg4OrNull! as EvalCallable,
                   "Route<dynamic>? Function(RouteSettings);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (RouteSettings settings) {
+                  (_callable) => (bindgenNative0.RouteSettings settings) {
                     return _callable
                             .call(
                               runtime,
@@ -3131,7 +3137,7 @@ class $WidgetsApp implements $Instance {
                               1,
                             )
                             ?.$value
-                        as Route<dynamic>?;
+                        as bindgenNative0.Route<dynamic>?;
                   },
                 );
               })(),
@@ -3148,29 +3154,30 @@ class $WidgetsApp implements $Instance {
                   _arg5OrNull! as EvalCallable,
                   "bool Function(NavigationNotification);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (NavigationNotification notification) {
-                    return _callable
-                            .call(
-                              runtime,
-                              null,
-                              TypedInterop.annotateBridgeType(
-                                $NavigationNotification.wrap(notification),
-                                runtime,
-                                _callbackType0,
-                              ),
-                              null,
-                              1,
-                            )
-                            ?.$value
-                        as bool;
-                  },
+                  (_callable) =>
+                      (bindgenNative0.NavigationNotification notification) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.annotateBridgeType(
+                                    $NavigationNotification.wrap(notification),
+                                    runtime,
+                                    _callbackType0,
+                                  ),
+                                  null,
+                                  1,
+                                )
+                                ?.$value
+                            as bool;
+                      },
                 );
               })(),
         navigatorObservers: _arg6OrNull == null
-            ? const <NavigatorObserver>[]
+            ? const <bindgenNative0.NavigatorObserver>[]
             : (TypedInterop.exportExternal(_arg6OrNull, runtime: runtime)
                       as List)
-                  .cast<NavigatorObserver>(),
+                  .cast<bindgenNative0.NavigatorObserver>(),
         initialRoute: _arg7OrNull?.$value,
         pageRouteBuilder: _arg8OrNull == null || _arg8OrNull is $null
             ? null
@@ -3187,8 +3194,11 @@ class $WidgetsApp implements $Instance {
                       ";types=$_callbackType0",
                   (_callable) =>
                       <T>(
-                        RouteSettings settings,
-                        Widget Function(BuildContext) builder,
+                        bindgenNative0.RouteSettings settings,
+                        bindgenNative1.Widget Function(
+                          bindgenNative1.BuildContext,
+                        )
+                        builder,
                       ) {
                         return _callable
                                 .call(
@@ -3208,15 +3218,18 @@ class $WidgetsApp implements $Instance {
                                   2,
                                 )
                                 ?.$value
-                            as PageRoute<T>;
+                            as bindgenNative2.PageRoute<T>;
                       },
                 );
               })(),
         home: _arg9OrNull?.$value,
         routes: _arg10OrNull == null
-            ? const <String, WidgetBuilder>{}
+            ? const <String, bindgenNative1.WidgetBuilder>{}
             : (_arg10OrNull!.$reified as Map)
-                  .cast<String, Widget Function(BuildContext)>(),
+                  .cast<
+                    String,
+                    bindgenNative1.Widget Function(bindgenNative1.BuildContext)
+                  >(),
         builder: _arg11OrNull == null || _arg11OrNull is $null
             ? null
             : (() {
@@ -3238,28 +3251,32 @@ class $WidgetsApp implements $Instance {
                   _arg11OrNull! as EvalCallable,
                   "Widget Function(BuildContext, Widget?);export=false" +
                       ";types=$_callbackType0,$_callbackType1",
-                  (_callable) => (BuildContext context, Widget? child) {
-                    return _callable
-                            .call(
-                              runtime,
-                              null,
-                              TypedInterop.annotateBridgeType(
-                                $BuildContext.wrap(context),
-                                runtime,
-                                _callbackType0,
-                              ),
-                              TypedInterop.annotateBridgeType(
-                                (child == null
-                                    ? const $null()
-                                    : $Widget.wrap(child)),
-                                runtime,
-                                _callbackType1,
-                              ),
-                              2,
-                            )
-                            ?.$value
-                        as Widget;
-                  },
+                  (_callable) =>
+                      (
+                        bindgenNative1.BuildContext context,
+                        bindgenNative1.Widget? child,
+                      ) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.annotateBridgeType(
+                                    $BuildContext.wrap(context),
+                                    runtime,
+                                    _callbackType0,
+                                  ),
+                                  TypedInterop.annotateBridgeType(
+                                    (child == null
+                                        ? const $null()
+                                        : $Widget.wrap(child)),
+                                    runtime,
+                                    _callbackType1,
+                                  ),
+                                  2,
+                                )
+                                ?.$value
+                            as bindgenNative1.Widget;
+                      },
                 );
               })(),
         title: _arg12OrNull?.$value,
@@ -3276,7 +3293,7 @@ class $WidgetsApp implements $Instance {
                   _arg13OrNull! as EvalCallable,
                   "String Function(BuildContext);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (BuildContext context) {
+                  (_callable) => (bindgenNative1.BuildContext context) {
                     return _callable
                             .call(
                               runtime,
@@ -3492,8 +3509,11 @@ class $WidgetsApp implements $Instance {
                       ";types=$_callbackType0,$_callbackType1,$_callbackType3",
                   (_callable) =>
                       (
-                        BuildContext context, {
-                        required GlobalKey<State<StatefulWidget>> key,
+                        bindgenNative1.BuildContext context, {
+                        required bindgenNative1.GlobalKey<
+                          bindgenNative1.State<bindgenNative1.StatefulWidget>
+                        >
+                        key,
                         required void Function() onPressed,
                         required String semanticsLabel,
                       }) {
@@ -3518,7 +3538,7 @@ class $WidgetsApp implements $Instance {
                                 $String(semanticsLabel),
                               ],
                             )?.$value
-                            as Widget;
+                            as bindgenNative1.Widget;
                       },
                 );
               })(),
@@ -3544,7 +3564,7 @@ class $WidgetsApp implements $Instance {
                       ";types=$_callbackType0,$_callbackType2,$_callbackType3",
                   (_callable) =>
                       (
-                        BuildContext context, {
+                        bindgenNative1.BuildContext context, {
                         required void Function() onPressed,
                         required String semanticsLabel,
                         bool usesDefaultAlignment = false,
@@ -3566,7 +3586,7 @@ class $WidgetsApp implements $Instance {
                                 $bool(usesDefaultAlignment),
                               ],
                             )?.$value
-                            as Widget;
+                            as bindgenNative1.Widget;
                       },
                 );
               })(),
@@ -3591,7 +3611,7 @@ class $WidgetsApp implements $Instance {
                       ";types=$_callbackType0,$_callbackType2,$_callbackType3",
                   (_callable) =>
                       (
-                        BuildContext context, {
+                        bindgenNative1.BuildContext context, {
                         required void Function() onPressed,
                         required bool selectionOnTapEnabled,
                         required String semanticsLabel,
@@ -3613,13 +3633,14 @@ class $WidgetsApp implements $Instance {
                                 $String(semanticsLabel),
                               ],
                             )?.$value
-                            as Widget;
+                            as bindgenNative1.Widget;
                       },
                 );
               })(),
         shortcuts: (_arg28OrNull?.$reified as Map?)
-            ?.cast<ShortcutActivator, Intent>(),
-        actions: (_arg29OrNull?.$reified as Map?)?.cast<Type, Action<Intent>>(),
+            ?.cast<bindgenNative3.ShortcutActivator, bindgenNative4.Intent>(),
+        actions: (_arg29OrNull?.$reified as Map?)
+            ?.cast<Type, bindgenNative4.Action<bindgenNative4.Intent>>(),
         restorationScopeId: _arg30OrNull?.$value,
         useInheritedMediaQuery: _arg31OrNull == null
             ? false
@@ -3686,28 +3707,32 @@ class $WidgetsApp implements $Instance {
                   _arg6OrNull! as EvalCallable,
                   "Widget Function(BuildContext, Widget?);export=false" +
                       ";types=$_callbackType0,$_callbackType1",
-                  (_callable) => (BuildContext context, Widget? child) {
-                    return _callable
-                            .call(
-                              runtime,
-                              null,
-                              TypedInterop.annotateBridgeType(
-                                $BuildContext.wrap(context),
-                                runtime,
-                                _callbackType0,
-                              ),
-                              TypedInterop.annotateBridgeType(
-                                (child == null
-                                    ? const $null()
-                                    : $Widget.wrap(child)),
-                                runtime,
-                                _callbackType1,
-                              ),
-                              2,
-                            )
-                            ?.$value
-                        as Widget;
-                  },
+                  (_callable) =>
+                      (
+                        bindgenNative1.BuildContext context,
+                        bindgenNative1.Widget? child,
+                      ) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.annotateBridgeType(
+                                    $BuildContext.wrap(context),
+                                    runtime,
+                                    _callbackType0,
+                                  ),
+                                  TypedInterop.annotateBridgeType(
+                                    (child == null
+                                        ? const $null()
+                                        : $Widget.wrap(child)),
+                                    runtime,
+                                    _callbackType1,
+                                  ),
+                                  2,
+                                )
+                                ?.$value
+                            as bindgenNative1.Widget;
+                      },
                 );
               })(),
         title: _arg7OrNull?.$value,
@@ -3724,7 +3749,7 @@ class $WidgetsApp implements $Instance {
                   _arg8OrNull! as EvalCallable,
                   "String Function(BuildContext);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (BuildContext context) {
+                  (_callable) => (bindgenNative1.BuildContext context) {
                     return _callable
                             .call(
                               runtime,
@@ -3755,22 +3780,23 @@ class $WidgetsApp implements $Instance {
                   _arg9OrNull! as EvalCallable,
                   "bool Function(NavigationNotification);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (NavigationNotification notification) {
-                    return _callable
-                            .call(
-                              runtime,
-                              null,
-                              TypedInterop.annotateBridgeType(
-                                $NavigationNotification.wrap(notification),
-                                runtime,
-                                _callbackType0,
-                              ),
-                              null,
-                              1,
-                            )
-                            ?.$value
-                        as bool;
-                  },
+                  (_callable) =>
+                      (bindgenNative0.NavigationNotification notification) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.annotateBridgeType(
+                                    $NavigationNotification.wrap(notification),
+                                    runtime,
+                                    _callbackType0,
+                                  ),
+                                  null,
+                                  1,
+                                )
+                                ?.$value
+                            as bool;
+                      },
                 );
               })(),
         textStyle: _arg10OrNull?.$value,
@@ -3971,8 +3997,11 @@ class $WidgetsApp implements $Instance {
                       ";types=$_callbackType0,$_callbackType1,$_callbackType3",
                   (_callable) =>
                       (
-                        BuildContext context, {
-                        required GlobalKey<State<StatefulWidget>> key,
+                        bindgenNative1.BuildContext context, {
+                        required bindgenNative1.GlobalKey<
+                          bindgenNative1.State<bindgenNative1.StatefulWidget>
+                        >
+                        key,
                         required void Function() onPressed,
                         required String semanticsLabel,
                       }) {
@@ -3997,7 +4026,7 @@ class $WidgetsApp implements $Instance {
                                 $String(semanticsLabel),
                               ],
                             )?.$value
-                            as Widget;
+                            as bindgenNative1.Widget;
                       },
                 );
               })(),
@@ -4023,7 +4052,7 @@ class $WidgetsApp implements $Instance {
                       ";types=$_callbackType0,$_callbackType2,$_callbackType3",
                   (_callable) =>
                       (
-                        BuildContext context, {
+                        bindgenNative1.BuildContext context, {
                         required void Function() onPressed,
                         required String semanticsLabel,
                         bool usesDefaultAlignment = false,
@@ -4045,7 +4074,7 @@ class $WidgetsApp implements $Instance {
                                 $bool(usesDefaultAlignment),
                               ],
                             )?.$value
-                            as Widget;
+                            as bindgenNative1.Widget;
                       },
                 );
               })(),
@@ -4070,7 +4099,7 @@ class $WidgetsApp implements $Instance {
                       ";types=$_callbackType0,$_callbackType2,$_callbackType3",
                   (_callable) =>
                       (
-                        BuildContext context, {
+                        bindgenNative1.BuildContext context, {
                         required void Function() onPressed,
                         required bool selectionOnTapEnabled,
                         required String semanticsLabel,
@@ -4092,13 +4121,14 @@ class $WidgetsApp implements $Instance {
                                 $String(semanticsLabel),
                               ],
                             )?.$value
-                            as Widget;
+                            as bindgenNative1.Widget;
                       },
                 );
               })(),
         shortcuts: (_arg24OrNull?.$reified as Map?)
-            ?.cast<ShortcutActivator, Intent>(),
-        actions: (_arg25OrNull?.$reified as Map?)?.cast<Type, Action<Intent>>(),
+            ?.cast<bindgenNative3.ShortcutActivator, bindgenNative4.Intent>(),
+        actions: (_arg25OrNull?.$reified as Map?)
+            ?.cast<Type, bindgenNative4.Action<bindgenNative4.Intent>>(),
         restorationScopeId: _arg26OrNull?.$value,
         useInheritedMediaQuery: _arg27OrNull == null
             ? false
@@ -4210,7 +4240,7 @@ class $WidgetsApp implements $Instance {
     Object? c,
   ) {
     WidgetsApp.defaultActions = ((r as $Value?)!.$reified as Map)
-        .cast<Type, Action<Intent>>();
+        .cast<Type, bindgenNative4.Action<bindgenNative4.Intent>>();
     return null;
   }
 
@@ -4290,7 +4320,7 @@ class $WidgetsApp implements $Instance {
                       (s as $Value?)! as EvalCallable,
                       "Widget Function(BuildContext);export=true" +
                           ";types=$_callbackType0",
-                      (_callable) => (BuildContext context) {
+                      (_callable) => (bindgenNative1.BuildContext context) {
                         return TypedInterop.exportExternal(
                               _callable.call(
                                 runtime,
@@ -4305,7 +4335,7 @@ class $WidgetsApp implements $Instance {
                               ),
                               runtime: runtime,
                             )
-                            as Widget;
+                            as bindgenNative1.Widget;
                       },
                     );
                   })(),

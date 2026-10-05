@@ -51,6 +51,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import './object.dart';
 import '../sky_engine/ui/geometry.dart';
+import 'package:flutter/src/foundation/diagnostics.dart' as bindgenNative0;
 
 /// dart_eval wrapper binding for [BoxConstraints]
 class $BoxConstraints implements $Instance {
@@ -1491,7 +1492,7 @@ class $BoxConstraints implements $Instance {
               "Iterable<DiagnosticsNode> Function();export=false",
               (_callable) => () {
                 return _callable.call(runtime, null, null, null, 0)?.$value
-                    as Iterable<DiagnosticsNode>;
+                    as Iterable<bindgenNative0.DiagnosticsNode>;
               },
             ),
     );

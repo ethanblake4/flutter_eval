@@ -46,10 +46,12 @@ import 'package:dart_eval/stdlib/typed_data.dart'
         $LongPressEndDetails;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'dart:ui';
 import '../supporting/flutter_gestures_gesture_details.dart';
 import '../sky_engine/ui/geometry.dart';
 import '../sky_engine/ui/pointer.dart';
 import './velocity_tracker.dart';
+import 'package:flutter/src/gestures/velocity_tracker.dart' as bindgenNative0;
 
 /// dart_eval wrapper binding for [LongPressDownDetails]
 class $LongPressDownDetails implements $Instance {
@@ -826,7 +828,7 @@ class $LongPressEndDetails implements $Instance {
             : (r is $Value ? r : null)!.$value,
         localPosition: (s is $Value ? s : null)?.$value,
         velocity: (c is $Value ? c : null) == null
-            ? Velocity.zero
+            ? bindgenNative0.Velocity.zero
             : (c is $Value ? c : null)!.$value,
       ),
     );

@@ -33,9 +33,12 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
+import 'dart:ui';
 import '../widgets/framework_wrappers.dart';
 import './button_style.dart';
 import './button_style_button.dart';
+import 'package:flutter/src/widgets/framework.dart' as bindgenNative0;
+import 'package:flutter/src/widgets/widget_state.dart' as bindgenNative1;
 
 /// dart_eval wrapper binding for [ElevatedButton]
 class $ElevatedButton implements $Instance {
@@ -1313,9 +1316,9 @@ class $ElevatedButton implements $Instance {
                     ";types=$_callbackType0,$_callbackType1,$_callbackType2",
                 (_callable) =>
                     (
-                      BuildContext context,
-                      Set<WidgetState> states,
-                      Widget? child,
+                      bindgenNative0.BuildContext context,
+                      Set<bindgenNative1.WidgetState> states,
+                      bindgenNative0.Widget? child,
                     ) {
                       return _callable.call(
                             runtime,
@@ -1340,7 +1343,7 @@ class $ElevatedButton implements $Instance {
                               ),
                             ],
                           )?.$value
-                          as Widget;
+                          as bindgenNative0.Widget;
                     },
               );
             })(),
@@ -1376,9 +1379,9 @@ class $ElevatedButton implements $Instance {
                     ";types=$_callbackType0,$_callbackType1,$_callbackType2",
                 (_callable) =>
                     (
-                      BuildContext context,
-                      Set<WidgetState> states,
-                      Widget? child,
+                      bindgenNative0.BuildContext context,
+                      Set<bindgenNative1.WidgetState> states,
+                      bindgenNative0.Widget? child,
                     ) {
                       return _callable.call(
                             runtime,
@@ -1403,7 +1406,7 @@ class $ElevatedButton implements $Instance {
                               ),
                             ],
                           )?.$value
-                          as Widget;
+                          as bindgenNative0.Widget;
                     },
               );
             })(),

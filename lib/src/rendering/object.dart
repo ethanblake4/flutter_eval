@@ -52,6 +52,7 @@ import 'package:dart_eval/stdlib/typed_data.dart'
         $RenderObjectWithChildMixin;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/src/foundation/diagnostics.dart' as bindgenNative0;
 
 /// dart_eval wrapper binding for [Constraints]
 class $Constraints implements $Instance {
@@ -214,7 +215,7 @@ class $Constraints implements $Instance {
               "Iterable<DiagnosticsNode> Function();export=false",
               (_callable) => () {
                 return _callable.call(runtime, null, null, null, 0)?.$value
-                    as Iterable<DiagnosticsNode>;
+                    as Iterable<bindgenNative0.DiagnosticsNode>;
               },
             ),
     );

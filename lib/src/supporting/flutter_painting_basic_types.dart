@@ -27,11 +27,11 @@ import 'package:flutter/src/painting/basic_types.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:dart_eval/stdlib/core.dart'
-    hide $VerticalDirection, $Axis, $RenderComparison;
+    hide $VerticalDirection, $Axis, $AxisDirection, $RenderComparison;
 import 'package:dart_eval/stdlib/async.dart'
-    hide $VerticalDirection, $Axis, $RenderComparison;
+    hide $VerticalDirection, $Axis, $AxisDirection, $RenderComparison;
 import 'package:dart_eval/stdlib/typed_data.dart'
-    hide $VerticalDirection, $Axis, $RenderComparison;
+    hide $VerticalDirection, $Axis, $AxisDirection, $RenderComparison;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';

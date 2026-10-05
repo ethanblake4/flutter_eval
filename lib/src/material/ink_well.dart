@@ -38,6 +38,7 @@ import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../gestures/tap.dart';
 import '../supporting/flutter_material_ink_well.dart';
+import 'package:flutter/src/gestures/tap.dart' as bindgenNative0;
 
 /// dart_eval wrapper binding for [InkWell]
 class $InkWell implements $Instance {
@@ -778,7 +779,7 @@ class $InkWell implements $Instance {
                   _arg6OrNull! as EvalCallable,
                   "void Function(TapDownDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (TapDownDetails details) {
+                  (_callable) => (bindgenNative0.TapDownDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -806,7 +807,7 @@ class $InkWell implements $Instance {
                   _arg7OrNull! as EvalCallable,
                   "void Function(TapUpDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (TapUpDetails details) {
+                  (_callable) => (bindgenNative0.TapUpDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -852,7 +853,7 @@ class $InkWell implements $Instance {
                   _arg10OrNull! as EvalCallable,
                   "void Function(TapUpDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (TapUpDetails details) {
+                  (_callable) => (bindgenNative0.TapUpDetails details) {
                     _callable.call(
                       runtime,
                       null,
@@ -880,7 +881,7 @@ class $InkWell implements $Instance {
                   _arg11OrNull! as EvalCallable,
                   "void Function(TapDownDetails);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (TapDownDetails details) {
+                  (_callable) => (bindgenNative0.TapDownDetails details) {
                     _callable.call(
                       runtime,
                       null,

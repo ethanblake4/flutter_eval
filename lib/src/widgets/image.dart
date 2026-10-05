@@ -35,6 +35,7 @@ import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import './framework_wrappers.dart';
 import '../supporting/flutter_painting_image_stream.dart';
+import 'dart:ui';
 import 'dart:io';
 import '../painting/image_provider.dart';
 import '../sky_engine/ui/painting.dart';
@@ -45,6 +46,11 @@ import '../painting/box_fit.dart';
 import '../painting/alignment.dart';
 import '../supporting/flutter_painting_decoration_image.dart';
 import '../sky_engine/ui/geometry.dart';
+import 'package:flutter/src/widgets/framework.dart' as bindgenNative0;
+import 'package:flutter/src/painting/image_stream.dart' as bindgenNative1;
+import 'package:flutter/src/painting/alignment.dart' as bindgenNative2;
+import 'package:flutter/src/painting/decoration_image.dart' as bindgenNative3;
+import 'package:flutter/src/painting/image_provider.dart' as bindgenNative4;
 
 /// dart_eval wrapper binding for [Image]
 class $Image implements $Instance {
@@ -2535,8 +2541,8 @@ class $Image implements $Instance {
                       ";types=$_callbackType0,$_callbackType1,$_callbackType2,$_callbackType3",
                   (_callable) =>
                       (
-                        BuildContext context,
-                        Widget child,
+                        bindgenNative0.BuildContext context,
+                        bindgenNative0.Widget child,
                         int? frame,
                         bool wasSynchronouslyLoaded,
                       ) {
@@ -2558,7 +2564,7 @@ class $Image implements $Instance {
                                 $bool(wasSynchronouslyLoaded),
                               ],
                             )?.$value
-                            as Widget;
+                            as bindgenNative0.Widget;
                       },
                 );
               })(),
@@ -2591,9 +2597,9 @@ class $Image implements $Instance {
                       ";types=$_callbackType0,$_callbackType1,$_callbackType2",
                   (_callable) =>
                       (
-                        BuildContext context,
-                        Widget child,
-                        ImageChunkEvent? loadingProgress,
+                        bindgenNative0.BuildContext context,
+                        bindgenNative0.Widget child,
+                        bindgenNative1.ImageChunkEvent? loadingProgress,
                       ) {
                         return _callable.call(
                               runtime,
@@ -2618,7 +2624,7 @@ class $Image implements $Instance {
                                 ),
                               ],
                             )?.$value
-                            as Widget;
+                            as bindgenNative0.Widget;
                       },
                 );
               })(),
@@ -2645,7 +2651,7 @@ class $Image implements $Instance {
                       ";types=$_callbackType0,$_callbackType1,$_callbackType2",
                   (_callable) =>
                       (
-                        BuildContext context,
+                        bindgenNative0.BuildContext context,
                         Object error,
                         StackTrace? stackTrace,
                       ) {
@@ -2672,7 +2678,7 @@ class $Image implements $Instance {
                                 ),
                               ],
                             )?.$value
-                            as Widget;
+                            as bindgenNative0.Widget;
                       },
                 );
               })(),
@@ -2687,10 +2693,10 @@ class $Image implements $Instance {
         colorBlendMode: _arg11OrNull?.$value,
         fit: _arg12OrNull?.$value,
         alignment: _arg13OrNull == null
-            ? Alignment.center
+            ? bindgenNative2.Alignment.center
             : _arg13OrNull!.$value,
         repeat: _arg14OrNull == null
-            ? ImageRepeat.noRepeat
+            ? bindgenNative3.ImageRepeat.noRepeat
             : _arg14OrNull!.$value,
         centerSlice: _arg15OrNull?.$value,
         matchTextDirection: _arg16OrNull == null
@@ -2769,8 +2775,8 @@ class $Image implements $Instance {
                       ";types=$_callbackType0,$_callbackType1,$_callbackType2,$_callbackType3",
                   (_callable) =>
                       (
-                        BuildContext context,
-                        Widget child,
+                        bindgenNative0.BuildContext context,
+                        bindgenNative0.Widget child,
                         int? frame,
                         bool wasSynchronouslyLoaded,
                       ) {
@@ -2792,7 +2798,7 @@ class $Image implements $Instance {
                                 $bool(wasSynchronouslyLoaded),
                               ],
                             )?.$value
-                            as Widget;
+                            as bindgenNative0.Widget;
                       },
                 );
               })(),
@@ -2825,9 +2831,9 @@ class $Image implements $Instance {
                       ";types=$_callbackType0,$_callbackType1,$_callbackType2",
                   (_callable) =>
                       (
-                        BuildContext context,
-                        Widget child,
-                        ImageChunkEvent? loadingProgress,
+                        bindgenNative0.BuildContext context,
+                        bindgenNative0.Widget child,
+                        bindgenNative1.ImageChunkEvent? loadingProgress,
                       ) {
                         return _callable.call(
                               runtime,
@@ -2852,7 +2858,7 @@ class $Image implements $Instance {
                                 ),
                               ],
                             )?.$value
-                            as Widget;
+                            as bindgenNative0.Widget;
                       },
                 );
               })(),
@@ -2879,7 +2885,7 @@ class $Image implements $Instance {
                       ";types=$_callbackType0,$_callbackType1,$_callbackType2",
                   (_callable) =>
                       (
-                        BuildContext context,
+                        bindgenNative0.BuildContext context,
                         Object error,
                         StackTrace? stackTrace,
                       ) {
@@ -2906,7 +2912,7 @@ class $Image implements $Instance {
                                 ),
                               ],
                             )?.$value
-                            as Widget;
+                            as bindgenNative0.Widget;
                       },
                 );
               })(),
@@ -2921,10 +2927,10 @@ class $Image implements $Instance {
         colorBlendMode: _arg12OrNull?.$value,
         fit: _arg13OrNull?.$value,
         alignment: _arg14OrNull == null
-            ? Alignment.center
+            ? bindgenNative2.Alignment.center
             : _arg14OrNull!.$value,
         repeat: _arg15OrNull == null
-            ? ImageRepeat.noRepeat
+            ? bindgenNative3.ImageRepeat.noRepeat
             : _arg15OrNull!.$value,
         centerSlice: _arg16OrNull?.$value,
         matchTextDirection: _arg17OrNull == null
@@ -2943,7 +2949,7 @@ class $Image implements $Instance {
         cacheWidth: _arg22OrNull?.$value,
         cacheHeight: _arg23OrNull?.$value,
         webHtmlElementStrategy: _arg24OrNull == null
-            ? WebHtmlElementStrategy.never
+            ? bindgenNative4.WebHtmlElementStrategy.never
             : _arg24OrNull!.$value,
       ),
     );
@@ -3009,8 +3015,8 @@ class $Image implements $Instance {
                       ";types=$_callbackType0,$_callbackType1,$_callbackType2,$_callbackType3",
                   (_callable) =>
                       (
-                        BuildContext context,
-                        Widget child,
+                        bindgenNative0.BuildContext context,
+                        bindgenNative0.Widget child,
                         int? frame,
                         bool wasSynchronouslyLoaded,
                       ) {
@@ -3032,7 +3038,7 @@ class $Image implements $Instance {
                                 $bool(wasSynchronouslyLoaded),
                               ],
                             )?.$value
-                            as Widget;
+                            as bindgenNative0.Widget;
                       },
                 );
               })(),
@@ -3059,7 +3065,7 @@ class $Image implements $Instance {
                       ";types=$_callbackType0,$_callbackType1,$_callbackType2",
                   (_callable) =>
                       (
-                        BuildContext context,
+                        bindgenNative0.BuildContext context,
                         Object error,
                         StackTrace? stackTrace,
                       ) {
@@ -3086,7 +3092,7 @@ class $Image implements $Instance {
                                 ),
                               ],
                             )?.$value
-                            as Widget;
+                            as bindgenNative0.Widget;
                       },
                 );
               })(),
@@ -3101,10 +3107,10 @@ class $Image implements $Instance {
         colorBlendMode: _arg11OrNull?.$value,
         fit: _arg12OrNull?.$value,
         alignment: _arg13OrNull == null
-            ? Alignment.center
+            ? bindgenNative2.Alignment.center
             : _arg13OrNull!.$value,
         repeat: _arg14OrNull == null
-            ? ImageRepeat.noRepeat
+            ? bindgenNative3.ImageRepeat.noRepeat
             : _arg14OrNull!.$value,
         centerSlice: _arg15OrNull?.$value,
         matchTextDirection: _arg16OrNull == null
@@ -3184,8 +3190,8 @@ class $Image implements $Instance {
                       ";types=$_callbackType0,$_callbackType1,$_callbackType2,$_callbackType3",
                   (_callable) =>
                       (
-                        BuildContext context,
-                        Widget child,
+                        bindgenNative0.BuildContext context,
+                        bindgenNative0.Widget child,
                         int? frame,
                         bool wasSynchronouslyLoaded,
                       ) {
@@ -3207,7 +3213,7 @@ class $Image implements $Instance {
                                 $bool(wasSynchronouslyLoaded),
                               ],
                             )?.$value
-                            as Widget;
+                            as bindgenNative0.Widget;
                       },
                 );
               })(),
@@ -3234,7 +3240,7 @@ class $Image implements $Instance {
                       ";types=$_callbackType0,$_callbackType1,$_callbackType2",
                   (_callable) =>
                       (
-                        BuildContext context,
+                        bindgenNative0.BuildContext context,
                         Object error,
                         StackTrace? stackTrace,
                       ) {
@@ -3261,7 +3267,7 @@ class $Image implements $Instance {
                                 ),
                               ],
                             )?.$value
-                            as Widget;
+                            as bindgenNative0.Widget;
                       },
                 );
               })(),
@@ -3277,10 +3283,10 @@ class $Image implements $Instance {
         colorBlendMode: _arg12OrNull?.$value,
         fit: _arg13OrNull?.$value,
         alignment: _arg14OrNull == null
-            ? Alignment.center
+            ? bindgenNative2.Alignment.center
             : _arg14OrNull!.$value,
         repeat: _arg15OrNull == null
-            ? ImageRepeat.noRepeat
+            ? bindgenNative3.ImageRepeat.noRepeat
             : _arg15OrNull!.$value,
         centerSlice: _arg16OrNull?.$value,
         matchTextDirection: _arg17OrNull == null
@@ -3359,8 +3365,8 @@ class $Image implements $Instance {
                       ";types=$_callbackType0,$_callbackType1,$_callbackType2,$_callbackType3",
                   (_callable) =>
                       (
-                        BuildContext context,
-                        Widget child,
+                        bindgenNative0.BuildContext context,
+                        bindgenNative0.Widget child,
                         int? frame,
                         bool wasSynchronouslyLoaded,
                       ) {
@@ -3382,7 +3388,7 @@ class $Image implements $Instance {
                                 $bool(wasSynchronouslyLoaded),
                               ],
                             )?.$value
-                            as Widget;
+                            as bindgenNative0.Widget;
                       },
                 );
               })(),
@@ -3409,7 +3415,7 @@ class $Image implements $Instance {
                       ";types=$_callbackType0,$_callbackType1,$_callbackType2",
                   (_callable) =>
                       (
-                        BuildContext context,
+                        bindgenNative0.BuildContext context,
                         Object error,
                         StackTrace? stackTrace,
                       ) {
@@ -3436,7 +3442,7 @@ class $Image implements $Instance {
                                 ),
                               ],
                             )?.$value
-                            as Widget;
+                            as bindgenNative0.Widget;
                       },
                 );
               })(),
@@ -3451,10 +3457,10 @@ class $Image implements $Instance {
         colorBlendMode: _arg11OrNull?.$value,
         fit: _arg12OrNull?.$value,
         alignment: _arg13OrNull == null
-            ? Alignment.center
+            ? bindgenNative2.Alignment.center
             : _arg13OrNull!.$value,
         repeat: _arg14OrNull == null
-            ? ImageRepeat.noRepeat
+            ? bindgenNative3.ImageRepeat.noRepeat
             : _arg14OrNull!.$value,
         centerSlice: _arg15OrNull?.$value,
         matchTextDirection: _arg16OrNull == null

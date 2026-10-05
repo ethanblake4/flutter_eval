@@ -35,6 +35,7 @@ import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import '../supporting/flutter_widgets_scroll_position.dart';
 import '../foundation/notifiers.dart';
+import 'package:flutter/src/widgets/scroll_position.dart' as bindgenNative0;
 
 /// dart_eval wrapper binding for [ScrollController]
 class $ScrollController implements $Instance {
@@ -553,7 +554,7 @@ class $ScrollController implements $Instance {
                   _arg3OrNull! as EvalCallable,
                   "void Function(ScrollPosition);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (ScrollPosition position) {
+                  (_callable) => (bindgenNative0.ScrollPosition position) {
                     _callable.call(
                       runtime,
                       null,
@@ -581,7 +582,7 @@ class $ScrollController implements $Instance {
                   _arg4OrNull! as EvalCallable,
                   "void Function(ScrollPosition);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (ScrollPosition position) {
+                  (_callable) => (bindgenNative0.ScrollPosition position) {
                     _callable.call(
                       runtime,
                       null,

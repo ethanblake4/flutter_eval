@@ -46,10 +46,12 @@ import 'package:dart_eval/stdlib/typed_data.dart'
         $DragEndDetails;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'dart:ui';
 import '../supporting/flutter_gestures_gesture_details.dart';
 import '../sky_engine/ui/geometry.dart';
 import '../sky_engine/ui/pointer.dart';
 import './velocity_tracker.dart';
+import 'package:flutter/src/gestures/velocity_tracker.dart' as bindgenNative0;
 
 /// dart_eval wrapper binding for [DragDownDetails]
 class $DragDownDetails implements $Instance {
@@ -916,7 +918,9 @@ class $DragEndDetails implements $Instance {
             ? Offset.zero
             : (r is $Value ? r : null)!.$value,
         localPosition: (s is $Value ? s : null)?.$value,
-        velocity: _arg2OrNull == null ? Velocity.zero : _arg2OrNull!.$value,
+        velocity: _arg2OrNull == null
+            ? bindgenNative0.Velocity.zero
+            : _arg2OrNull!.$value,
         primaryVelocity: _arg3OrNull?.$value,
       ),
     );

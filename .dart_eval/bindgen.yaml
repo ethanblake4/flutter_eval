@@ -95,7 +95,11 @@ libraries:
       file: foundation/diagnostics.dart
     Diagnosticable:
       file: supporting/flutter_foundation_diagnostics.dart
-      opaque: true
+      mode: both
+      mixinAdapter: true
+      methods:
+        toString:
+          include: true
     DiagnosticableTree:
       file: supporting/flutter_foundation_diagnostics.dart
       opaque: true
@@ -398,8 +402,14 @@ libraries:
       file: painting/basic_types.dart
     Axis:
       file: painting/basic_types.dart
+    AxisDirection:
+      file: painting/basic_types.dart
     RenderComparison:
       file: supporting/flutter_painting_basic_types.dart
+  functionsFile: painting/basic_types.dart
+  functions:
+    axisDirectionToAxis:
+      include: true
 - uri: package:flutter/src/painting/border_radius.dart
   outDir: lib/src
   imports: *flutterImports
@@ -701,6 +711,8 @@ libraries:
   - package:dart_eval/stdlib/async.dart
   - package:dart_eval/stdlib/typed_data.dart
   classes:
+    SemanticsAction:
+      file: sky_engine/ui/semantics.dart
     Size:
       file: sky_engine/ui/geometry.dart
     Offset:
@@ -986,6 +998,12 @@ libraries:
     Element:
       file: supporting/flutter_widgets_framework.dart
       opaque: true
+      methods:
+        markNeedsBuild:
+          include: true
+      getters:
+        dirty:
+          include: true
     InheritedElement:
       file: supporting/flutter_widgets_framework.dart
       opaque: true
@@ -1159,6 +1177,22 @@ libraries:
       imports:
       - dart:ui
       - package:flutter/foundation.dart
+- uri: package:flutter/src/widgets/scrollable.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    Scrollable:
+      file: widgets/scrollable.dart
+    ScrollableState:
+      file: widgets/scrollable.dart
+- uri: package:flutter/src/widgets/scrollable_helpers.dart
+  outDir: lib/src
+  imports: *flutterImports
+  classes:
+    ScrollIncrementDetails:
+      file: supporting/flutter_widgets_scrollable_helpers.dart
+    ScrollIncrementType:
+      file: supporting/flutter_widgets_scrollable_helpers.dart
 - uri: package:flutter/src/widgets/scroll_controller.dart
   outDir: lib/src
   imports: *flutterImports
@@ -2367,6 +2401,9 @@ libraries:
 - uri: package:flutter/src/widgets/binding.dart
   outDir: lib/src
   imports: *flutterImports
+  functions:
+    runApp: {}
+  functionsFile: supporting/flutter_widgets_binding.dart
   classes:
     WidgetsBindingObserver:
       file: supporting/flutter_widgets_binding.dart
@@ -2511,6 +2548,8 @@ libraries:
     ScrollPosition:
       file: supporting/flutter_widgets_scroll_position.dart
       opaque: true
+    ScrollPositionAlignmentPolicy:
+      file: supporting/flutter_widgets_scroll_position.dart
 - uri: package:flutter/src/widgets/shortcuts.dart
   outDir: lib/src
   imports: *flutterImports
@@ -2583,6 +2622,10 @@ plugin:
   - $MethodChannel.$declaration
   - $BinaryMessenger.$declaration
   evalSources:
+  - uri: package:flutter/src/widgets/scrollable.dart
+    file: .dart_eval/sources/scrollable.dart
+  - uri: package:flutter/src/widgets/scrollable_helpers.dart
+    file: .dart_eval/sources/scrollable_helpers.dart
   - expression: >-
       DartSource(
         sdkTypedefsSource.uri.toString(),
@@ -2608,6 +2651,8 @@ plugin:
     file: .dart_eval/sources/painting_basic_types.dart
   - uri: package:flutter/rendering.dart
     file: .dart_eval/sources/rendering.dart
+  - uri: package:flutter/src/rendering/object.dart
+    file: .dart_eval/sources/rendering_object.dart
   - uri: package:flutter/scheduler.dart
     file: .dart_eval/sources/scheduler.dart
   - uri: package:flutter/services.dart

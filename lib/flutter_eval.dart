@@ -74,6 +74,7 @@ import 'src/services/hardware_keyboard.dart';
 import 'src/services/keyboard_key.g.dart';
 import 'src/services/message_codec.dart';
 import 'src/services/method_call.dart';
+import 'src/sky_engine/ui/semantics.dart';
 import 'src/sky_engine/ui/geometry.dart';
 import 'src/sky_engine/ui/painting.dart';
 import 'src/supporting/ui.dart';
@@ -101,6 +102,8 @@ import 'src/supporting/flutter_widgets_navigator.dart';
 import 'src/supporting/flutter_widgets_overlay.dart';
 import 'src/supporting/flutter_widgets_routes.dart';
 import 'src/widgets/pages_wrappers.dart';
+import 'src/widgets/scrollable.dart';
+import 'src/supporting/flutter_widgets_scrollable_helpers.dart';
 import 'src/widgets/scroll_controller.dart';
 import 'src/widgets/scroll_view.dart';
 import 'src/supporting/flutter_widgets_scroll_view.dart';
@@ -276,7 +279,7 @@ class FlutterEvalPlugin implements EvalPlugin {
     registry.defineBridgeClass($DiagnosticsProperty.$declaration);
     registry.defineBridgeClass($DiagnosticPropertiesBuilder.$declaration);
     registry.defineBridgeClass($DiagnosticsSerializationDelegate.$declaration);
-    registry.defineBridgeClass($Diagnosticable.$declaration);
+    registry.defineBridgeClass($Diagnosticable$bridge.$declaration);
     registry.defineBridgeClass($DiagnosticableTree.$declaration);
     registry.defineBridgeClass($DiagnosticableTreeMixin.$declaration);
     registry.defineBridgeClass($Key.$declaration);
@@ -388,6 +391,7 @@ class FlutterEvalPlugin implements EvalPlugin {
     registry.defineBridgeClass($PhysicalKeyboardKey.$declaration);
     registry.defineBridgeClass($MethodCodec.$declaration);
     registry.defineBridgeClass($MethodCall.$declaration);
+    registry.defineBridgeClass($SemanticsAction.$declaration);
     registry.defineBridgeClass($Size.$declaration);
     registry.defineBridgeClass($Offset.$declaration);
     registry.defineBridgeClass($Radius.$declaration);
@@ -496,6 +500,9 @@ class FlutterEvalPlugin implements EvalPlugin {
     registry.defineBridgeClass($ModalRoute.$declaration);
     registry.defineBridgeClass($PredictiveBackRoute.$declaration);
     registry.defineBridgeClass($PageRoute$bridge.$declaration);
+    registry.defineBridgeClass($Scrollable.$declaration);
+    registry.defineBridgeClass($ScrollableState.$declaration);
+    registry.defineBridgeClass($ScrollIncrementDetails.$declaration);
     registry.defineBridgeClass($ScrollController.$declaration);
     registry.defineBridgeClass($ListView.$declaration);
     registry.defineBridgeClass($BoxScrollView.$declaration);
@@ -671,6 +678,7 @@ class FlutterEvalPlugin implements EvalPlugin {
     registry.defineBridgeEnum($MaterialTapTargetSize.$declaration);
     registry.defineBridgeEnum($VerticalDirection.$declaration);
     registry.defineBridgeEnum($Axis.$declaration);
+    registry.defineBridgeEnum($AxisDirection.$declaration);
     registry.defineBridgeEnum($RenderComparison.$declaration);
     registry.defineBridgeEnum($BorderStyle.$declaration);
     registry.defineBridgeEnum($BoxShape.$declaration);
@@ -712,6 +720,7 @@ class FlutterEvalPlugin implements EvalPlugin {
     registry.defineBridgeEnum($FocusHighlightMode.$declaration);
     registry.defineBridgeEnum($UnfocusDisposition.$declaration);
     registry.defineBridgeEnum($RoutePopDisposition.$declaration);
+    registry.defineBridgeEnum($ScrollIncrementType.$declaration);
     registry.defineBridgeEnum($ScrollViewKeyboardDismissBehavior.$declaration);
     registry.defineBridgeEnum($WidgetState.$declaration);
     registry.defineBridgeEnum($TextOverflow.$declaration);
@@ -729,13 +738,34 @@ class FlutterEvalPlugin implements EvalPlugin {
     registry.defineBridgeEnum($DismissDirection.$declaration);
     registry.defineBridgeEnum($TraversalDirection.$declaration);
     registry.defineBridgeEnum($TraversalEdgeBehavior.$declaration);
-
+    registry.defineBridgeEnum($ScrollPositionAlignmentPolicy.$declaration);
+    registry.defineBridgeTopLevelFunction($axisDirectionToAxisFn.$declaration);
+    registry.defineBridgeTopLevelFunction($runAppFn.$declaration);
     registry.defineBridgeClass($ChangeNotifier$bridge.$declaration);
     registry.defineBridgeClass($StatelessWidget$bridge.$declaration);
     registry.defineBridgeClass($StatefulWidget$bridge.$declaration);
     registry.defineBridgeClass($State$bridge.$declaration);
     registry.defineBridgeClass($MethodChannel.$declaration);
     registry.defineBridgeClass($BinaryMessenger.$declaration);
+    registry.addSource(
+      DartSource('package:flutter/src/widgets/scrollable.dart', r'''
+// SDK typedef copied from Flutter 3.47.0.
+import 'package:flutter/widgets.dart';
+import 'package:flutter/rendering.dart';
+
+typedef ViewportBuilder = Widget Function(BuildContext context, ViewportOffset position);
+
+'''),
+    );
+    registry.addSource(
+      DartSource('package:flutter/src/widgets/scrollable_helpers.dart', r'''
+// SDK typedef copied from Flutter 3.47.0.
+import 'package:flutter/widgets.dart';
+
+typedef ScrollIncrementCalculator = double Function(ScrollIncrementDetails details);
+
+'''),
+    );
     registry.addSource(
       DartSource(
         sdkTypedefsSource.uri.toString(),
@@ -1029,6 +1059,12 @@ export 'src/rendering/viewport_offset.dart';
 '''),
     );
     registry.addSource(
+      DartSource('package:flutter/src/rendering/object.dart', r'''
+export 'package:flutter/painting.dart';
+
+'''),
+    );
+    registry.addSource(
       DartSource('package:flutter/scheduler.dart', r'''
 library scheduler;
 
@@ -1087,6 +1123,8 @@ export 'src/widgets/pages.dart';
 export 'src/widgets/routes.dart';
 export 'src/widgets/spacer.dart';
 export 'src/widgets/scroll_controller.dart';
+export 'src/widgets/scrollable.dart';
+export 'src/widgets/scrollable_helpers.dart';
 export 'src/widgets/scroll_view.dart';
 export 'src/widgets/text.dart';
 export 'src/widgets/widget_state.dart';
@@ -1225,7 +1263,7 @@ export 'src/cupertino/theme.dart';
     $DiagnosticsProperty.configureForRuntime(runtime);
     $DiagnosticPropertiesBuilder.configureForRuntime(runtime);
     $DiagnosticsSerializationDelegate.configureForRuntime(runtime);
-    $Diagnosticable.configureForRuntime(runtime);
+    $Diagnosticable$bridge.configureForRuntime(runtime);
     $DiagnosticableTree.configureForRuntime(runtime);
     $DiagnosticableTreeMixin.configureForRuntime(runtime);
     $Key.configureForRuntime(runtime);
@@ -1337,6 +1375,7 @@ export 'src/cupertino/theme.dart';
     $PhysicalKeyboardKey.configureForRuntime(runtime);
     $MethodCodec.configureForRuntime(runtime);
     $MethodCall.configureForRuntime(runtime);
+    $SemanticsAction.configureForRuntime(runtime);
     $Size.configureForRuntime(runtime);
     $Offset.configureForRuntime(runtime);
     $Radius.configureForRuntime(runtime);
@@ -1448,6 +1487,9 @@ export 'src/cupertino/theme.dart';
     $ModalRoute.configureForRuntime(runtime);
     $PredictiveBackRoute.configureForRuntime(runtime);
     $PageRoute$bridge.configureForRuntime(runtime);
+    $Scrollable.configureForRuntime(runtime);
+    $ScrollableState.configureForRuntime(runtime);
+    $ScrollIncrementDetails.configureForRuntime(runtime);
     $ScrollController.configureForRuntime(runtime);
     $ListView.configureForRuntime(runtime);
     $BoxScrollView.configureForRuntime(runtime);
@@ -1619,6 +1661,7 @@ export 'src/cupertino/theme.dart';
     $MaterialTapTargetSize.configureForRuntime(runtime);
     $VerticalDirection.configureForRuntime(runtime);
     $Axis.configureForRuntime(runtime);
+    $AxisDirection.configureForRuntime(runtime);
     $RenderComparison.configureForRuntime(runtime);
     $BorderStyle.configureForRuntime(runtime);
     $BoxShape.configureForRuntime(runtime);
@@ -1660,6 +1703,7 @@ export 'src/cupertino/theme.dart';
     $FocusHighlightMode.configureForRuntime(runtime);
     $UnfocusDisposition.configureForRuntime(runtime);
     $RoutePopDisposition.configureForRuntime(runtime);
+    $ScrollIncrementType.configureForRuntime(runtime);
     $ScrollViewKeyboardDismissBehavior.configureForRuntime(runtime);
     $WidgetState.configureForRuntime(runtime);
     $TextOverflow.configureForRuntime(runtime);
@@ -1677,7 +1721,9 @@ export 'src/cupertino/theme.dart';
     $DismissDirection.configureForRuntime(runtime);
     $TraversalDirection.configureForRuntime(runtime);
     $TraversalEdgeBehavior.configureForRuntime(runtime);
-
+    $ScrollPositionAlignmentPolicy.configureForRuntime(runtime);
+    $axisDirectionToAxisFn.configureForRuntime(runtime);
+    $runAppFn.configureForRuntime(runtime);
     runtime.registerBridgeFuncRegisters(
       'package:flutter/src/foundation/change_notifier.dart',
       'ChangeNotifier.',

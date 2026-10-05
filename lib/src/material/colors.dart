@@ -34,6 +34,7 @@ import 'package:dart_eval/stdlib/typed_data.dart'
     hide $MaterialColor, $MaterialAccentColor, $Colors;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'dart:ui';
 import '../sky_engine/ui/painting.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 

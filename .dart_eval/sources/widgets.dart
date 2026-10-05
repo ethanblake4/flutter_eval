@@ -21,6 +21,8 @@ export 'src/widgets/pages.dart';
 export 'src/widgets/routes.dart';
 export 'src/widgets/spacer.dart';
 export 'src/widgets/scroll_controller.dart';
+export 'src/widgets/scrollable.dart';
+export 'src/widgets/scrollable_helpers.dart';
 export 'src/widgets/scroll_view.dart';
 export 'src/widgets/text.dart';
 export 'src/widgets/widget_state.dart';

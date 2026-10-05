@@ -34,6 +34,7 @@ import 'package:dart_eval/stdlib/typed_data.dart'
     hide $TapDownDetails, $TapUpDetails, $TapMoveDetails;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'dart:ui';
 import '../supporting/flutter_gestures_gesture_details.dart';
 import '../sky_engine/ui/geometry.dart';
 import '../sky_engine/ui/pointer.dart';

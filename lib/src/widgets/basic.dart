@@ -100,6 +100,7 @@ import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import './framework_wrappers.dart';
 import '../supporting/flutter_widgets_basic.dart';
+import 'dart:ui';
 import '../painting/border_radius.dart';
 import '../sky_engine/ui/painting.dart';
 import '../supporting/flutter_rendering_object.dart';
@@ -110,6 +111,12 @@ import '../painting/box_fit.dart';
 import '../painting/edge_insets.dart';
 import '../rendering/stack.dart';
 import '../supporting/flutter_rendering_stack.dart';
+import 'package:flutter/src/painting/alignment.dart' as bindgenNative0;
+import 'package:flutter/src/widgets/framework.dart' as bindgenNative1;
+import 'package:flutter/src/painting/border_radius.dart' as bindgenNative2;
+import 'package:flutter/src/foundation/diagnostics.dart' as bindgenNative3;
+import 'package:flutter/src/painting/box_fit.dart' as bindgenNative4;
+import 'package:flutter/src/rendering/stack.dart' as bindgenNative5;
 
 /// dart_eval wrapper binding for [Align]
 class $Align implements $Instance {
@@ -396,7 +403,7 @@ class $Align implements $Instance {
       Align(
         key: (r is $Value ? r : null)?.$value,
         alignment: (s is $Value ? s : null) == null
-            ? Alignment.center
+            ? bindgenNative0.Alignment.center
             : (s is $Value ? s : null)!.$value,
         widthFactor: _arg2OrNull?.$value,
         heightFactor: _arg3OrNull?.$value,
@@ -1340,7 +1347,7 @@ class $Builder implements $Instance {
             (s as $Value?)! as EvalCallable,
             "Widget Function(BuildContext);export=false" +
                 ";types=$_callbackType0",
-            (_callable) => (BuildContext context) {
+            (_callable) => (bindgenNative1.BuildContext context) {
               return _callable
                       .call(
                         runtime,
@@ -1354,7 +1361,7 @@ class $Builder implements $Instance {
                         1,
                       )
                       ?.$value
-                  as Widget;
+                  as bindgenNative1.Widget;
             },
           );
         })(),
@@ -1843,7 +1850,7 @@ class $Column implements $Instance {
             ? const <Widget>[]
             : (TypedInterop.exportExternal(_arg8OrNull, runtime: runtime)
                       as List)
-                  .cast<Widget>(),
+                  .cast<bindgenNative1.Widget>(),
       ),
     );
   }
@@ -2177,7 +2184,7 @@ class $ClipRRect implements $Instance {
       ClipRRect(
         key: (r is $Value ? r : null)?.$value,
         borderRadius: (s is $Value ? s : null) == null
-            ? BorderRadius.zero
+            ? bindgenNative2.BorderRadius.zero
             : (s is $Value ? s : null)!.$value,
         clipper: _arg2OrNull?.$value,
         clipBehavior: _arg3OrNull == null
@@ -3424,7 +3431,7 @@ class $Expanded implements $Instance {
     final result = self.$value.toStringShallow(
       joiner: (r is $Value ? r : null) == null ? ', ' : (r as $String).$value,
       minLevel: (s is $Value ? s : null) == null
-          ? DiagnosticLevel.debug
+          ? bindgenNative3.DiagnosticLevel.debug
           : (s is $Value ? s : null)!.$value,
     );
     return $String(result);
@@ -3449,7 +3456,7 @@ class $Expanded implements $Instance {
                   ? (c as List)[0] as $Value?
                   : null) ==
               null
-          ? DiagnosticLevel.debug
+          ? bindgenNative3.DiagnosticLevel.debug
           : (c is List && (c as List).length > 0
                     ? (c as List)[0] as $Value?
                     : null)!
@@ -3783,9 +3790,11 @@ class $FittedBox implements $Instance {
       FittedBox(
         key: (r is $Value ? r : null)?.$value,
         fit: (s is $Value ? s : null) == null
-            ? BoxFit.contain
+            ? bindgenNative4.BoxFit.contain
             : (s is $Value ? s : null)!.$value,
-        alignment: _arg2OrNull == null ? Alignment.center : _arg2OrNull!.$value,
+        alignment: _arg2OrNull == null
+            ? bindgenNative0.Alignment.center
+            : _arg2OrNull!.$value,
         clipBehavior: _arg3OrNull == null ? Clip.none : _arg3OrNull!.$value,
         child: _arg4OrNull?.$value,
       ),
@@ -4166,7 +4175,7 @@ class $FractionallySizedBox implements $Instance {
       FractionallySizedBox(
         key: (r is $Value ? r : null)?.$value,
         alignment: (s is $Value ? s : null) == null
-            ? Alignment.center
+            ? bindgenNative0.Alignment.center
             : (s is $Value ? s : null)!.$value,
         widthFactor: _arg2OrNull?.$value,
         heightFactor: _arg3OrNull?.$value,
@@ -5539,7 +5548,7 @@ class $Positioned implements $Instance {
     final result = self.$value.toStringShallow(
       joiner: (r is $Value ? r : null) == null ? ', ' : (r as $String).$value,
       minLevel: (s is $Value ? s : null) == null
-          ? DiagnosticLevel.debug
+          ? bindgenNative3.DiagnosticLevel.debug
           : (s is $Value ? s : null)!.$value,
     );
     return $String(result);
@@ -5564,7 +5573,7 @@ class $Positioned implements $Instance {
                   ? (c as List)[0] as $Value?
                   : null) ==
               null
-          ? DiagnosticLevel.debug
+          ? bindgenNative3.DiagnosticLevel.debug
           : (c is List && (c as List).length > 0
                     ? (c as List)[0] as $Value?
                     : null)!
@@ -5852,7 +5861,7 @@ class $Row implements $Instance {
             ? const <Widget>[]
             : (TypedInterop.exportExternal(_arg8OrNull, runtime: runtime)
                       as List)
-                  .cast<Widget>(),
+                  .cast<bindgenNative1.Widget>(),
       ),
     );
   }
@@ -6199,16 +6208,18 @@ class $Stack implements $Instance {
       Stack(
         key: (r is $Value ? r : null)?.$value,
         alignment: (s is $Value ? s : null) == null
-            ? AlignmentDirectional.topStart
+            ? bindgenNative0.AlignmentDirectional.topStart
             : (s is $Value ? s : null)!.$value,
         textDirection: _arg2OrNull?.$value,
-        fit: _arg3OrNull == null ? StackFit.loose : _arg3OrNull!.$value,
+        fit: _arg3OrNull == null
+            ? bindgenNative5.StackFit.loose
+            : _arg3OrNull!.$value,
         clipBehavior: _arg4OrNull == null ? Clip.hardEdge : _arg4OrNull!.$value,
         children: _arg5OrNull == null
             ? const <Widget>[]
             : (TypedInterop.exportExternal(_arg5OrNull, runtime: runtime)
                       as List)
-                  .cast<Widget>(),
+                  .cast<bindgenNative1.Widget>(),
       ),
     );
   }

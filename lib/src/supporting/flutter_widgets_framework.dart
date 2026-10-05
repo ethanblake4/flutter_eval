@@ -316,8 +316,26 @@ class $Element implements $Instance {
     ),
     constructors: {},
 
-    methods: {},
-    getters: {},
+    methods: {
+      'markNeedsBuild': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
+          namedParams: [],
+          params: [],
+        ),
+      ),
+    },
+    getters: {
+      'dirty': BridgeMethodDef(
+        BridgeFunctionDef(
+          returns: BridgeTypeAnnotation(
+            BridgeTypeRef(BridgeTypeSpec('dart:core', 'bool'), []),
+          ),
+          namedParams: [],
+          params: [],
+        ),
+      ),
+    },
     setters: {},
     fields: {},
     wrap: true,
@@ -340,7 +358,27 @@ class $Element implements $Instance {
 
   @override
   $Value? $getProperty(Runtime runtime, String identifier) {
+    switch (identifier) {
+      case 'dirty':
+        final _dirty = $value.dirty;
+        return $bool(_dirty);
+      case 'markNeedsBuild':
+        return $Closure(__markNeedsBuild.func, this);
+    }
     return _superclass.$getProperty(runtime, identifier);
+  }
+
+  static const $Function __markNeedsBuild = $Function(_markNeedsBuild);
+  static $Value? _markNeedsBuild(
+    Runtime runtime,
+    $Value? target,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
+    final self = target! as $Element;
+    self.$value.markNeedsBuild();
+    return null;
   }
 
   @override

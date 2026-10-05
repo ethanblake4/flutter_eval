@@ -99,6 +99,7 @@ import '../supporting/flutter_foundation_diagnostics.dart';
 import '../sky_engine/ui/geometry.dart';
 import '../supporting/flutter_rendering_object.dart';
 import '../foundation/diagnostics.dart';
+import 'package:flutter/src/foundation/diagnostics.dart' as bindgenNative0;
 
 /// dart_eval wrapper binding for [StatelessWidget]
 class $StatelessWidget implements StatelessWidget, $Instance {
@@ -2150,7 +2151,7 @@ class $BuildContext implements BuildContext, $Instance {
     final result = self.$value.describeElement(
       (r as $String).$value,
       style: (s is $Value ? s : null) == null
-          ? DiagnosticsTreeStyle.errorProperty
+          ? bindgenNative0.DiagnosticsTreeStyle.errorProperty
           : (s is $Value ? s : null)!.$value,
     );
     return $DiagnosticsNode.wrap(result);
@@ -2168,7 +2169,7 @@ class $BuildContext implements BuildContext, $Instance {
     final result = self.$value.describeWidget(
       (r as $String).$value,
       style: (s is $Value ? s : null) == null
-          ? DiagnosticsTreeStyle.errorProperty
+          ? bindgenNative0.DiagnosticsTreeStyle.errorProperty
           : (s is $Value ? s : null)!.$value,
     );
     return $DiagnosticsNode.wrap(result);

@@ -35,7 +35,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import './borders.dart';
 import '../sky_engine/ui/painting.dart';
+import 'dart:ui';
 import './edge_insets.dart';
+import 'package:flutter/src/painting/borders.dart' as bindgenNative0;
 
 /// dart_eval wrapper binding for [BoxBorder]
 class $BoxBorder implements $Instance {
@@ -842,13 +844,17 @@ class $BoxBorder implements $Instance {
     return $BoxBorder.wrap(
       BoxBorder.fromLTRB(
         top: (r is $Value ? r : null) == null
-            ? BorderSide.none
+            ? bindgenNative0.BorderSide.none
             : (r is $Value ? r : null)!.$value,
         right: (s is $Value ? s : null) == null
-            ? BorderSide.none
+            ? bindgenNative0.BorderSide.none
             : (s is $Value ? s : null)!.$value,
-        bottom: _arg2OrNull == null ? BorderSide.none : _arg2OrNull!.$value,
-        left: _arg3OrNull == null ? BorderSide.none : _arg3OrNull!.$value,
+        bottom: _arg2OrNull == null
+            ? bindgenNative0.BorderSide.none
+            : _arg2OrNull!.$value,
+        left: _arg3OrNull == null
+            ? bindgenNative0.BorderSide.none
+            : _arg3OrNull!.$value,
       ),
     );
   }
@@ -896,13 +902,17 @@ class $BoxBorder implements $Instance {
     return $BoxBorder.wrap(
       BoxBorder.fromSTEB(
         top: (r is $Value ? r : null) == null
-            ? BorderSide.none
+            ? bindgenNative0.BorderSide.none
             : (r is $Value ? r : null)!.$value,
         start: (s is $Value ? s : null) == null
-            ? BorderSide.none
+            ? bindgenNative0.BorderSide.none
             : (s is $Value ? s : null)!.$value,
-        end: _arg2OrNull == null ? BorderSide.none : _arg2OrNull!.$value,
-        bottom: _arg3OrNull == null ? BorderSide.none : _arg3OrNull!.$value,
+        end: _arg2OrNull == null
+            ? bindgenNative0.BorderSide.none
+            : _arg2OrNull!.$value,
+        bottom: _arg3OrNull == null
+            ? bindgenNative0.BorderSide.none
+            : _arg3OrNull!.$value,
       ),
     );
   }
@@ -939,10 +949,18 @@ class $BoxBorder implements $Instance {
       borderRadius: _arg2!.$value,
       textDirection: _arg3!.$value,
       shape: _arg4OrNull == null ? BoxShape.rectangle : _arg4OrNull!.$value,
-      top: _arg5OrNull == null ? BorderSide.none : _arg5OrNull!.$value,
-      right: _arg6OrNull == null ? BorderSide.none : _arg6OrNull!.$value,
-      bottom: _arg7OrNull == null ? BorderSide.none : _arg7OrNull!.$value,
-      left: _arg8OrNull == null ? BorderSide.none : _arg8OrNull!.$value,
+      top: _arg5OrNull == null
+          ? bindgenNative0.BorderSide.none
+          : _arg5OrNull!.$value,
+      right: _arg6OrNull == null
+          ? bindgenNative0.BorderSide.none
+          : _arg6OrNull!.$value,
+      bottom: _arg7OrNull == null
+          ? bindgenNative0.BorderSide.none
+          : _arg7OrNull!.$value,
+      left: _arg8OrNull == null
+          ? bindgenNative0.BorderSide.none
+          : _arg8OrNull!.$value,
       color: _arg9!.$value,
     );
     return null;
@@ -1780,13 +1798,17 @@ class $Border implements $Instance {
     return $Border.wrap(
       Border(
         top: (r is $Value ? r : null) == null
-            ? BorderSide.none
+            ? bindgenNative0.BorderSide.none
             : (r is $Value ? r : null)!.$value,
         right: (s is $Value ? s : null) == null
-            ? BorderSide.none
+            ? bindgenNative0.BorderSide.none
             : (s is $Value ? s : null)!.$value,
-        bottom: _arg2OrNull == null ? BorderSide.none : _arg2OrNull!.$value,
-        left: _arg3OrNull == null ? BorderSide.none : _arg3OrNull!.$value,
+        bottom: _arg2OrNull == null
+            ? bindgenNative0.BorderSide.none
+            : _arg2OrNull!.$value,
+        left: _arg3OrNull == null
+            ? bindgenNative0.BorderSide.none
+            : _arg3OrNull!.$value,
       ),
     );
   }
@@ -1806,10 +1828,10 @@ class $Border implements $Instance {
     return $Border.wrap(
       Border.symmetric(
         vertical: (r is $Value ? r : null) == null
-            ? BorderSide.none
+            ? bindgenNative0.BorderSide.none
             : (r is $Value ? r : null)!.$value,
         horizontal: (s is $Value ? s : null) == null
-            ? BorderSide.none
+            ? bindgenNative0.BorderSide.none
             : (s is $Value ? s : null)!.$value,
       ),
     );
@@ -1826,9 +1848,11 @@ class $Border implements $Instance {
             ? const Color(0xFF000000)
             : (r is $Value ? r : null)!.$value,
         width: (s is $Value ? s : null) == null ? 1.0 : (s as $double).$value,
-        style: _arg2OrNull == null ? BorderStyle.solid : _arg2OrNull!.$value,
+        style: _arg2OrNull == null
+            ? bindgenNative0.BorderStyle.solid
+            : _arg2OrNull!.$value,
         strokeAlign: _arg3OrNull == null
-            ? BorderSide.strokeAlignInside
+            ? bindgenNative0.BorderSide.strokeAlignInside
             : (_arg3OrNull as $double).$value,
       ),
     );

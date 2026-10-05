@@ -32,6 +32,7 @@ import 'package:dart_eval/stdlib/typed_data.dart' hide $FloatingActionButton;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
+import 'dart:ui';
 import '../widgets/framework_wrappers.dart';
 import '../sky_engine/ui/painting.dart';
 import '../supporting/flutter_services_mouse_cursor.dart';

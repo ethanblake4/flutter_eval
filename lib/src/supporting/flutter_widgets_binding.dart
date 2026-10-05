@@ -88,3 +88,50 @@ class $WidgetsBindingObserver implements $Instance {
     return _superclass.$setProperty(runtime, identifier, value);
   }
 }
+
+/// dart_eval function wrapper binding for [runApp]
+class $runAppFn {
+  const $runAppFn();
+
+  static void configureForRuntime(Runtime runtime) {
+    return runtime.registerBridgeFuncRegisters(
+      'package:flutter/src/widgets/binding.dart',
+      'runApp',
+      $runAppFn.callRegisters,
+    );
+  }
+
+  static const $declaration = BridgeFunctionDeclaration(
+    'package:flutter/src/widgets/binding.dart',
+    'runApp',
+    BridgeFunctionDef(
+      returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
+      namedParams: [],
+      params: [
+        BridgeParameter(
+          'app',
+          BridgeTypeAnnotation(
+            BridgeTypeRef(
+              BridgeTypeSpec(
+                'package:flutter/src/widgets/framework.dart',
+                'Widget',
+              ),
+              [],
+            ),
+          ),
+          false,
+        ),
+      ],
+    ),
+  );
+
+  static $Value? callRegisters(
+    Runtime runtime,
+    Object? r,
+    Object? s,
+    Object? c,
+  ) {
+    runApp((r as $Value?)!.$value);
+    return null;
+  }
+}

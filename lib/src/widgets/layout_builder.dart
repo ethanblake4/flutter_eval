@@ -40,6 +40,9 @@ import './framework_wrappers.dart';
 import '../rendering/box.dart';
 import '../foundation/key.dart';
 import '../foundation/diagnostics.dart';
+import 'package:flutter/src/widgets/framework.dart' as bindgenNative0;
+import 'package:flutter/src/rendering/box.dart' as bindgenNative1;
+import 'package:flutter/src/foundation/diagnostics.dart' as bindgenNative2;
 
 /// dart_eval wrapper binding for [LayoutBuilder]
 class $LayoutBuilder implements $Instance {
@@ -443,26 +446,30 @@ class $LayoutBuilder implements $Instance {
             (s as $Value?)! as EvalCallable,
             "Widget Function(BuildContext, BoxConstraints);export=false" +
                 ";types=$_callbackType0,$_callbackType1",
-            (_callable) => (BuildContext context, BoxConstraints constraints) {
-              return _callable
-                      .call(
-                        runtime,
-                        null,
-                        TypedInterop.annotateBridgeType(
-                          $BuildContext.wrap(context),
-                          runtime,
-                          _callbackType0,
-                        ),
-                        TypedInterop.annotateBridgeType(
-                          $BoxConstraints.wrap(constraints),
-                          runtime,
-                          _callbackType1,
-                        ),
-                        2,
-                      )
-                      ?.$value
-                  as Widget;
-            },
+            (_callable) =>
+                (
+                  bindgenNative0.BuildContext context,
+                  bindgenNative1.BoxConstraints constraints,
+                ) {
+                  return _callable
+                          .call(
+                            runtime,
+                            null,
+                            TypedInterop.annotateBridgeType(
+                              $BuildContext.wrap(context),
+                              runtime,
+                              _callbackType0,
+                            ),
+                            TypedInterop.annotateBridgeType(
+                              $BoxConstraints.wrap(constraints),
+                              runtime,
+                              _callbackType1,
+                            ),
+                            2,
+                          )
+                          ?.$value
+                      as bindgenNative0.Widget;
+                },
           );
         })(),
       ),
@@ -554,7 +561,7 @@ class $LayoutBuilder implements $Instance {
     final result = self.$value.toStringShallow(
       joiner: (r is $Value ? r : null) == null ? ', ' : (r as $String).$value,
       minLevel: (s is $Value ? s : null) == null
-          ? DiagnosticLevel.debug
+          ? bindgenNative2.DiagnosticLevel.debug
           : (s is $Value ? s : null)!.$value,
     );
     return $String(result);
@@ -579,7 +586,7 @@ class $LayoutBuilder implements $Instance {
                   ? (c as List)[0] as $Value?
                   : null) ==
               null
-          ? DiagnosticLevel.debug
+          ? bindgenNative2.DiagnosticLevel.debug
           : (c is List && (c as List).length > 0
                     ? (c as List)[0] as $Value?
                     : null)!

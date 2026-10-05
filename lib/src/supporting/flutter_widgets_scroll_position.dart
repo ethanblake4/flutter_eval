@@ -26,12 +26,16 @@ import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/src/widgets/scroll_position.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:dart_eval/stdlib/core.dart' hide $ScrollPosition;
-import 'package:dart_eval/stdlib/async.dart' hide $ScrollPosition;
-import 'package:dart_eval/stdlib/typed_data.dart' hide $ScrollPosition;
+import 'package:dart_eval/stdlib/core.dart'
+    hide $ScrollPosition, $ScrollPositionAlignmentPolicy;
+import 'package:dart_eval/stdlib/async.dart'
+    hide $ScrollPosition, $ScrollPositionAlignmentPolicy;
+import 'package:dart_eval/stdlib/typed_data.dart'
+    hide $ScrollPosition, $ScrollPositionAlignmentPolicy;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import './flutter_rendering_viewport_offset.dart';
+import 'package:dart_eval/src/eval/runtime/runtime.dart';
 
 /// dart_eval wrapper binding for [ScrollPosition]
 class $ScrollPosition implements $Instance {
@@ -118,6 +122,122 @@ class $ScrollPosition implements $Instance {
   /// Wrap a [ScrollPosition] in a [$ScrollPosition]
   $ScrollPosition.wrap(this.$value)
     : _superclass = $ViewportOffset.wrap($value);
+
+  @override
+  int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);
+
+  @override
+  $Value? $getProperty(Runtime runtime, String identifier) {
+    return _superclass.$getProperty(runtime, identifier);
+  }
+
+  @override
+  void $setProperty(Runtime runtime, String identifier, $Value value) {
+    return _superclass.$setProperty(runtime, identifier, value);
+  }
+}
+
+/// dart_eval enum wrapper binding for [ScrollPositionAlignmentPolicy]
+class $ScrollPositionAlignmentPolicy implements $Instance {
+  /// Configure this enum for use in a [Runtime]
+  static void configureForRuntime(Runtime runtime) {
+    runtime.registerBridgeEnumValues(
+      'package:flutter/src/widgets/scroll_position.dart',
+      'ScrollPositionAlignmentPolicy',
+      $ScrollPositionAlignmentPolicy._$values,
+    );
+
+    runtime.registerBridgeFuncRegisters(
+      'package:flutter/src/widgets/scroll_position.dart',
+      'ScrollPositionAlignmentPolicy.values*g',
+      $ScrollPositionAlignmentPolicy.$values,
+    );
+  }
+
+  /// Configure this enum for use during compilation
+  static void configureForCompile(BridgeDeclarationRegistry registry) {
+    registry.defineBridgeEnum($declaration);
+  }
+
+  /// Compile-time type specification of [$ScrollPositionAlignmentPolicy]
+  static const $spec = BridgeTypeSpec(
+    'package:flutter/src/widgets/scroll_position.dart',
+    'ScrollPositionAlignmentPolicy',
+  );
+
+  /// Compile-time type declaration of [$ScrollPositionAlignmentPolicy]
+  static const $type = BridgeTypeRef($spec);
+
+  /// Compile-time class declaration of [$ScrollPositionAlignmentPolicy]
+  static const $declaration = BridgeEnumDef(
+    $type,
+
+    values: ['explicit', 'keepVisibleAtEnd', 'keepVisibleAtStart'],
+
+    methods: {},
+    getters: {},
+    setters: {},
+    fields: {
+      'values': BridgeFieldDef(
+        BridgeTypeAnnotation(
+          BridgeTypeRef(BridgeTypeSpec('dart:core', 'List'), [
+            BridgeTypeAnnotation(
+              BridgeTypeRef(
+                BridgeTypeSpec(
+                  'package:flutter/src/widgets/scroll_position.dart',
+                  'ScrollPositionAlignmentPolicy',
+                ),
+                [],
+              ),
+            ),
+          ]),
+        ),
+        isStatic: true,
+      ),
+    },
+  );
+
+  static final _$values = {
+    'explicit': $ScrollPositionAlignmentPolicy.wrap(
+      ScrollPositionAlignmentPolicy.explicit,
+    ),
+    'keepVisibleAtEnd': $ScrollPositionAlignmentPolicy.wrap(
+      ScrollPositionAlignmentPolicy.keepVisibleAtEnd,
+    ),
+    'keepVisibleAtStart': $ScrollPositionAlignmentPolicy.wrap(
+      ScrollPositionAlignmentPolicy.keepVisibleAtStart,
+    ),
+  };
+
+  /// Wrapper for the [ScrollPositionAlignmentPolicy.values] getter
+  static $Value? $values(Runtime runtime, Object? r, Object? s, Object? c) {
+    final value = ScrollPositionAlignmentPolicy.values;
+    return $List.view(
+      value,
+      (e) => $ScrollPositionAlignmentPolicy.wrap(e),
+      runtime: runtime,
+      runtimeTypeId: runtime.internParameterizedType(CoreTypes.list, [
+        runtime.lookupType(
+          BridgeTypeSpec(
+            'package:flutter/src/widgets/scroll_position.dart',
+            'ScrollPositionAlignmentPolicy',
+          ),
+        ),
+      ]),
+    );
+  }
+
+  final $Instance _superclass;
+
+  @override
+  final ScrollPositionAlignmentPolicy $value;
+
+  @override
+  ScrollPositionAlignmentPolicy get $reified => $value;
+
+  /// Wrap a [ScrollPositionAlignmentPolicy] in a [$ScrollPositionAlignmentPolicy]
+  $ScrollPositionAlignmentPolicy.wrap(this.$value)
+    : _superclass = $Object($value);
 
   @override
   int $getRuntimeType(Runtime runtime) => runtime.lookupType($spec);

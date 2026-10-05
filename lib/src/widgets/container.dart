@@ -31,6 +31,7 @@ import 'package:dart_eval/stdlib/async.dart' hide $Container;
 import 'package:dart_eval/stdlib/typed_data.dart' hide $Container;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'dart:ui';
 import './framework_wrappers.dart';
 import '../painting/alignment.dart';
 import '../painting/edge_insets.dart';

@@ -65,6 +65,7 @@ import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import './routes.dart';
 import './overlay.dart';
+import 'dart:ui';
 import '../supporting/flutter_widgets_navigator.dart';
 import './framework_wrappers.dart';
 import '../supporting/flutter_widgets_focus_traversal.dart';
@@ -75,6 +76,7 @@ import '../supporting/flutter_widgets_overlay.dart';
 import '../foundation/notifiers.dart';
 import '../scheduler/ticker.dart';
 import '../foundation/diagnostics.dart';
+import 'package:flutter/src/widgets/framework.dart' as bindgenNative0;
 
 /// dart_eval wrapper binding for [Navigator]
 class $Navigator implements $Instance {
@@ -703,6 +705,7 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -756,6 +759,7 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -807,12 +811,14 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
             'TO': BridgeGenericParam(
               $extends: BridgeTypeRef(
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -872,12 +878,14 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
             'TO': BridgeGenericParam(
               $extends: BridgeTypeRef(
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -935,12 +943,14 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
             'TO': BridgeGenericParam(
               $extends: BridgeTypeRef(
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -1000,12 +1010,14 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
             'TO': BridgeGenericParam(
               $extends: BridgeTypeRef(
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -1063,6 +1075,7 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -1150,6 +1163,7 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -1235,6 +1249,7 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -1285,6 +1300,7 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -1376,12 +1392,14 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
             'TO': BridgeGenericParam(
               $extends: BridgeTypeRef(
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -1438,12 +1456,14 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
             'TO': BridgeGenericParam(
               $extends: BridgeTypeRef(
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -1541,6 +1561,7 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -1625,6 +1646,7 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -1750,6 +1772,7 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -1810,6 +1833,7 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -1915,6 +1939,7 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -1975,6 +2000,7 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -2106,6 +2132,7 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -2150,6 +2177,7 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -2246,6 +2274,7 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -2318,6 +2347,7 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -2370,6 +2400,7 @@ class $Navigator implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -3368,28 +3399,29 @@ class $Navigator implements $Instance {
           (s as $Value?)! as EvalCallable,
           "Route<T> Function(BuildContext, Object?);export=false" +
               ";types=$_callbackType0,$_callbackType1",
-          (_callable) => (BuildContext context, Object? arguments) {
-            return _callable
-                    .call(
-                      runtime,
-                      null,
-                      TypedInterop.annotateBridgeType(
-                        $BuildContext.wrap(context),
-                        runtime,
-                        _callbackType0,
-                      ),
-                      TypedInterop.annotateBridgeType(
-                        (arguments == null
-                            ? const $null()
-                            : $Object(arguments)),
-                        runtime,
-                        _callbackType1,
-                      ),
-                      2,
-                    )
-                    ?.$value
-                as Route<dynamic>;
-          },
+          (_callable) =>
+              (bindgenNative0.BuildContext context, Object? arguments) {
+                return _callable
+                        .call(
+                          runtime,
+                          null,
+                          TypedInterop.annotateBridgeType(
+                            $BuildContext.wrap(context),
+                            runtime,
+                            _callbackType0,
+                          ),
+                          TypedInterop.annotateBridgeType(
+                            (arguments == null
+                                ? const $null()
+                                : $Object(arguments)),
+                            runtime,
+                            _callbackType1,
+                          ),
+                          2,
+                        )
+                        ?.$value
+                    as Route<dynamic>;
+              },
         );
       })(),
       arguments:
@@ -3455,28 +3487,29 @@ class $Navigator implements $Instance {
           (s as $Value?)! as EvalCallable,
           "Route<T> Function(BuildContext, Object?);export=false" +
               ";types=$_callbackType0,$_callbackType1",
-          (_callable) => (BuildContext context, Object? arguments) {
-            return _callable
-                    .call(
-                      runtime,
-                      null,
-                      TypedInterop.annotateBridgeType(
-                        $BuildContext.wrap(context),
-                        runtime,
-                        _callbackType0,
-                      ),
-                      TypedInterop.annotateBridgeType(
-                        (arguments == null
-                            ? const $null()
-                            : $Object(arguments)),
-                        runtime,
-                        _callbackType1,
-                      ),
-                      2,
-                    )
-                    ?.$value
-                as Route<dynamic>;
-          },
+          (_callable) =>
+              (bindgenNative0.BuildContext context, Object? arguments) {
+                return _callable
+                        .call(
+                          runtime,
+                          null,
+                          TypedInterop.annotateBridgeType(
+                            $BuildContext.wrap(context),
+                            runtime,
+                            _callbackType0,
+                          ),
+                          TypedInterop.annotateBridgeType(
+                            (arguments == null
+                                ? const $null()
+                                : $Object(arguments)),
+                            runtime,
+                            _callbackType1,
+                          ),
+                          2,
+                        )
+                        ?.$value
+                    as Route<dynamic>;
+              },
         );
       })(),
       result:
@@ -3561,28 +3594,29 @@ class $Navigator implements $Instance {
           (s as $Value?)! as EvalCallable,
           "Route<T> Function(BuildContext, Object?);export=false" +
               ";types=$_callbackType0,$_callbackType1",
-          (_callable) => (BuildContext context, Object? arguments) {
-            return _callable
-                    .call(
-                      runtime,
-                      null,
-                      TypedInterop.annotateBridgeType(
-                        $BuildContext.wrap(context),
-                        runtime,
-                        _callbackType0,
-                      ),
-                      TypedInterop.annotateBridgeType(
-                        (arguments == null
-                            ? const $null()
-                            : $Object(arguments)),
-                        runtime,
-                        _callbackType1,
-                      ),
-                      2,
-                    )
-                    ?.$value
-                as Route<dynamic>;
-          },
+          (_callable) =>
+              (bindgenNative0.BuildContext context, Object? arguments) {
+                return _callable
+                        .call(
+                          runtime,
+                          null,
+                          TypedInterop.annotateBridgeType(
+                            $BuildContext.wrap(context),
+                            runtime,
+                            _callbackType0,
+                          ),
+                          TypedInterop.annotateBridgeType(
+                            (arguments == null
+                                ? const $null()
+                                : $Object(arguments)),
+                            runtime,
+                            _callbackType1,
+                          ),
+                          2,
+                        )
+                        ?.$value
+                    as Route<dynamic>;
+              },
         );
       })(),
       (() {
@@ -3657,28 +3691,29 @@ class $Navigator implements $Instance {
           _arg2! as EvalCallable,
           "Route<T> Function(BuildContext, Object?);export=false" +
               ";types=$_callbackType0,$_callbackType1",
-          (_callable) => (BuildContext context, Object? arguments) {
-            return _callable
-                    .call(
-                      runtime,
-                      null,
-                      TypedInterop.annotateBridgeType(
-                        $BuildContext.wrap(context),
-                        runtime,
-                        _callbackType0,
-                      ),
-                      TypedInterop.annotateBridgeType(
-                        (arguments == null
-                            ? const $null()
-                            : $Object(arguments)),
-                        runtime,
-                        _callbackType1,
-                      ),
-                      2,
-                    )
-                    ?.$value
-                as Route<dynamic>;
-          },
+          (_callable) =>
+              (bindgenNative0.BuildContext context, Object? arguments) {
+                return _callable
+                        .call(
+                          runtime,
+                          null,
+                          TypedInterop.annotateBridgeType(
+                            $BuildContext.wrap(context),
+                            runtime,
+                            _callbackType0,
+                          ),
+                          TypedInterop.annotateBridgeType(
+                            (arguments == null
+                                ? const $null()
+                                : $Object(arguments)),
+                            runtime,
+                            _callbackType1,
+                          ),
+                          2,
+                        )
+                        ?.$value
+                    as Route<dynamic>;
+              },
         );
       })(),
       arguments:
@@ -3731,28 +3766,29 @@ class $Navigator implements $Instance {
           _arg2! as EvalCallable,
           "Route<T> Function(BuildContext, Object?);export=false" +
               ";types=$_callbackType0,$_callbackType1",
-          (_callable) => (BuildContext context, Object? arguments) {
-            return _callable
-                    .call(
-                      runtime,
-                      null,
-                      TypedInterop.annotateBridgeType(
-                        $BuildContext.wrap(context),
-                        runtime,
-                        _callbackType0,
-                      ),
-                      TypedInterop.annotateBridgeType(
-                        (arguments == null
-                            ? const $null()
-                            : $Object(arguments)),
-                        runtime,
-                        _callbackType1,
-                      ),
-                      2,
-                    )
-                    ?.$value
-                as Route<dynamic>;
-          },
+          (_callable) =>
+              (bindgenNative0.BuildContext context, Object? arguments) {
+                return _callable
+                        .call(
+                          runtime,
+                          null,
+                          TypedInterop.annotateBridgeType(
+                            $BuildContext.wrap(context),
+                            runtime,
+                            _callbackType0,
+                          ),
+                          TypedInterop.annotateBridgeType(
+                            (arguments == null
+                                ? const $null()
+                                : $Object(arguments)),
+                            runtime,
+                            _callbackType1,
+                          ),
+                          2,
+                        )
+                        ?.$value
+                    as Route<dynamic>;
+              },
         );
       })(),
       arguments:
@@ -4330,6 +4366,7 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -4367,6 +4404,7 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -4402,12 +4440,14 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
             'TO': BridgeGenericParam(
               $extends: BridgeTypeRef(
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -4451,12 +4491,14 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
             'TO': BridgeGenericParam(
               $extends: BridgeTypeRef(
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -4498,12 +4540,14 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
             'TO': BridgeGenericParam(
               $extends: BridgeTypeRef(
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -4547,12 +4591,14 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
             'TO': BridgeGenericParam(
               $extends: BridgeTypeRef(
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -4594,6 +4640,7 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -4665,6 +4712,7 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -4734,6 +4782,7 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -4768,6 +4817,7 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -4843,12 +4893,14 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
             'TO': BridgeGenericParam(
               $extends: BridgeTypeRef(
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -4889,12 +4941,14 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
             'TO': BridgeGenericParam(
               $extends: BridgeTypeRef(
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -4976,6 +5030,7 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -5044,6 +5099,7 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -5153,6 +5209,7 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -5197,6 +5254,7 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -5286,6 +5344,7 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -5330,6 +5389,7 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -5429,6 +5489,7 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(
@@ -5457,6 +5518,7 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -5521,6 +5583,7 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -5577,6 +5640,7 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -5613,6 +5677,7 @@ class $NavigatorState implements $Instance {
                 BridgeTypeSpec('dart:core', 'Object'),
                 [],
               ),
+              boundNullable: true,
             ),
           },
           returns: BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.voidType)),
@@ -6429,28 +6494,29 @@ class $NavigatorState implements $Instance {
           (r as $Value?)! as EvalCallable,
           "Route<T> Function(BuildContext, Object?);export=false" +
               ";types=$_callbackType0,$_callbackType1",
-          (_callable) => (BuildContext context, Object? arguments) {
-            return _callable
-                    .call(
-                      runtime,
-                      null,
-                      TypedInterop.annotateBridgeType(
-                        $BuildContext.wrap(context),
-                        runtime,
-                        _callbackType0,
-                      ),
-                      TypedInterop.annotateBridgeType(
-                        (arguments == null
-                            ? const $null()
-                            : $Object(arguments)),
-                        runtime,
-                        _callbackType1,
-                      ),
-                      2,
-                    )
-                    ?.$value
-                as Route<dynamic>;
-          },
+          (_callable) =>
+              (bindgenNative0.BuildContext context, Object? arguments) {
+                return _callable
+                        .call(
+                          runtime,
+                          null,
+                          TypedInterop.annotateBridgeType(
+                            $BuildContext.wrap(context),
+                            runtime,
+                            _callbackType0,
+                          ),
+                          TypedInterop.annotateBridgeType(
+                            (arguments == null
+                                ? const $null()
+                                : $Object(arguments)),
+                            runtime,
+                            _callbackType1,
+                          ),
+                          2,
+                        )
+                        ?.$value
+                    as Route<dynamic>;
+              },
         );
       })(),
       arguments:
@@ -6531,28 +6597,29 @@ class $NavigatorState implements $Instance {
           (r as $Value?)! as EvalCallable,
           "Route<T> Function(BuildContext, Object?);export=false" +
               ";types=$_callbackType0,$_callbackType1",
-          (_callable) => (BuildContext context, Object? arguments) {
-            return _callable
-                    .call(
-                      runtime,
-                      null,
-                      TypedInterop.annotateBridgeType(
-                        $BuildContext.wrap(context),
-                        runtime,
-                        _callbackType0,
-                      ),
-                      TypedInterop.annotateBridgeType(
-                        (arguments == null
-                            ? const $null()
-                            : $Object(arguments)),
-                        runtime,
-                        _callbackType1,
-                      ),
-                      2,
-                    )
-                    ?.$value
-                as Route<dynamic>;
-          },
+          (_callable) =>
+              (bindgenNative0.BuildContext context, Object? arguments) {
+                return _callable
+                        .call(
+                          runtime,
+                          null,
+                          TypedInterop.annotateBridgeType(
+                            $BuildContext.wrap(context),
+                            runtime,
+                            _callbackType0,
+                          ),
+                          TypedInterop.annotateBridgeType(
+                            (arguments == null
+                                ? const $null()
+                                : $Object(arguments)),
+                            runtime,
+                            _callbackType1,
+                          ),
+                          2,
+                        )
+                        ?.$value
+                    as Route<dynamic>;
+              },
         );
       })(),
       result:
@@ -6662,28 +6729,29 @@ class $NavigatorState implements $Instance {
           (r as $Value?)! as EvalCallable,
           "Route<T> Function(BuildContext, Object?);export=false" +
               ";types=$_callbackType0,$_callbackType1",
-          (_callable) => (BuildContext context, Object? arguments) {
-            return _callable
-                    .call(
-                      runtime,
-                      null,
-                      TypedInterop.annotateBridgeType(
-                        $BuildContext.wrap(context),
-                        runtime,
-                        _callbackType0,
-                      ),
-                      TypedInterop.annotateBridgeType(
-                        (arguments == null
-                            ? const $null()
-                            : $Object(arguments)),
-                        runtime,
-                        _callbackType1,
-                      ),
-                      2,
-                    )
-                    ?.$value
-                as Route<dynamic>;
-          },
+          (_callable) =>
+              (bindgenNative0.BuildContext context, Object? arguments) {
+                return _callable
+                        .call(
+                          runtime,
+                          null,
+                          TypedInterop.annotateBridgeType(
+                            $BuildContext.wrap(context),
+                            runtime,
+                            _callbackType0,
+                          ),
+                          TypedInterop.annotateBridgeType(
+                            (arguments == null
+                                ? const $null()
+                                : $Object(arguments)),
+                            runtime,
+                            _callbackType1,
+                          ),
+                          2,
+                        )
+                        ?.$value
+                    as Route<dynamic>;
+              },
         );
       })(),
       (() {
@@ -6768,28 +6836,29 @@ class $NavigatorState implements $Instance {
           (s as $Value?)! as EvalCallable,
           "Route<T> Function(BuildContext, Object?);export=false" +
               ";types=$_callbackType0,$_callbackType1",
-          (_callable) => (BuildContext context, Object? arguments) {
-            return _callable
-                    .call(
-                      runtime,
-                      null,
-                      TypedInterop.annotateBridgeType(
-                        $BuildContext.wrap(context),
-                        runtime,
-                        _callbackType0,
-                      ),
-                      TypedInterop.annotateBridgeType(
-                        (arguments == null
-                            ? const $null()
-                            : $Object(arguments)),
-                        runtime,
-                        _callbackType1,
-                      ),
-                      2,
-                    )
-                    ?.$value
-                as Route<dynamic>;
-          },
+          (_callable) =>
+              (bindgenNative0.BuildContext context, Object? arguments) {
+                return _callable
+                        .call(
+                          runtime,
+                          null,
+                          TypedInterop.annotateBridgeType(
+                            $BuildContext.wrap(context),
+                            runtime,
+                            _callbackType0,
+                          ),
+                          TypedInterop.annotateBridgeType(
+                            (arguments == null
+                                ? const $null()
+                                : $Object(arguments)),
+                            runtime,
+                            _callbackType1,
+                          ),
+                          2,
+                        )
+                        ?.$value
+                    as Route<dynamic>;
+              },
         );
       })(),
       arguments:
@@ -6849,28 +6918,29 @@ class $NavigatorState implements $Instance {
           (s as $Value?)! as EvalCallable,
           "Route<T> Function(BuildContext, Object?);export=false" +
               ";types=$_callbackType0,$_callbackType1",
-          (_callable) => (BuildContext context, Object? arguments) {
-            return _callable
-                    .call(
-                      runtime,
-                      null,
-                      TypedInterop.annotateBridgeType(
-                        $BuildContext.wrap(context),
-                        runtime,
-                        _callbackType0,
-                      ),
-                      TypedInterop.annotateBridgeType(
-                        (arguments == null
-                            ? const $null()
-                            : $Object(arguments)),
-                        runtime,
-                        _callbackType1,
-                      ),
-                      2,
-                    )
-                    ?.$value
-                as Route<dynamic>;
-          },
+          (_callable) =>
+              (bindgenNative0.BuildContext context, Object? arguments) {
+                return _callable
+                        .call(
+                          runtime,
+                          null,
+                          TypedInterop.annotateBridgeType(
+                            $BuildContext.wrap(context),
+                            runtime,
+                            _callbackType0,
+                          ),
+                          TypedInterop.annotateBridgeType(
+                            (arguments == null
+                                ? const $null()
+                                : $Object(arguments)),
+                            runtime,
+                            _callbackType1,
+                          ),
+                          2,
+                        )
+                        ?.$value
+                    as Route<dynamic>;
+              },
         );
       })(),
       arguments:

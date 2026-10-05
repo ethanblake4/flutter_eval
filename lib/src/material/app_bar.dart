@@ -43,6 +43,8 @@ import '../sky_engine/ui/geometry.dart';
 import '../painting/text_style.dart';
 import '../supporting/flutter_services_system_chrome.dart';
 import '../painting/edge_insets.dart';
+import 'package:flutter/src/widgets/framework.dart' as bindgenNative0;
+import 'package:flutter/src/widgets/scroll_notification.dart' as bindgenNative1;
 
 /// dart_eval wrapper binding for [AppBar]
 class $AppBar implements $Instance {
@@ -1020,7 +1022,7 @@ class $AppBar implements $Instance {
         actions:
             (TypedInterop.exportExternal(_arg4OrNull, runtime: runtime)
                     as List?)
-                ?.cast<Widget>(),
+                ?.cast<bindgenNative0.Widget>(),
         automaticallyImplyActions: _arg5OrNull == null
             ? true
             : (_arg5OrNull as $bool).$value,
@@ -1029,7 +1031,7 @@ class $AppBar implements $Instance {
         elevation: _arg8OrNull?.$value,
         scrolledUnderElevation: _arg9OrNull?.$value,
         notificationPredicate: _arg10OrNull == null
-            ? defaultScrollNotificationPredicate
+            ? bindgenNative1.defaultScrollNotificationPredicate
             : (() {
                 final _callbackType0 = runtime.lookupType(
                   BridgeTypeSpec(
@@ -1041,22 +1043,23 @@ class $AppBar implements $Instance {
                   _arg10OrNull! as EvalCallable,
                   "bool Function(ScrollNotification);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (ScrollNotification notification) {
-                    return _callable
-                            .call(
-                              runtime,
-                              null,
-                              TypedInterop.annotateBridgeType(
-                                $ScrollNotification.wrap(notification),
-                                runtime,
-                                _callbackType0,
-                              ),
-                              null,
-                              1,
-                            )
-                            ?.$value
-                        as bool;
-                  },
+                  (_callable) =>
+                      (bindgenNative1.ScrollNotification notification) {
+                        return _callable
+                                .call(
+                                  runtime,
+                                  null,
+                                  TypedInterop.annotateBridgeType(
+                                    $ScrollNotification.wrap(notification),
+                                    runtime,
+                                    _callbackType0,
+                                  ),
+                                  null,
+                                  1,
+                                )
+                                ?.$value
+                            as bool;
+                      },
                 );
               })(),
         shadowColor: _arg11OrNull?.$value,

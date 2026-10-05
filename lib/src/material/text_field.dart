@@ -32,6 +32,7 @@ import 'package:dart_eval/stdlib/typed_data.dart' hide $TextField;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
+import 'dart:ui';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import '../supporting/flutter_gestures_events.dart';
 import '../widgets/framework_wrappers.dart';
@@ -58,6 +59,14 @@ import '../supporting/flutter_services_mouse_cursor.dart';
 import '../supporting/flutter_widgets_scroll_physics.dart';
 import '../widgets/scroll_controller.dart';
 import '../supporting/flutter_widgets_undo_history.dart';
+import 'package:flutter/src/widgets/editable_text.dart' as bindgenNative0;
+import 'package:flutter/src/material/input_decorator.dart' as bindgenNative1;
+import 'package:flutter/src/services/text_input.dart' as bindgenNative2;
+import 'package:flutter/src/services/text_formatter.dart' as bindgenNative3;
+import 'package:flutter/src/painting/edge_insets.dart' as bindgenNative4;
+import 'package:flutter/src/gestures/recognizer.dart' as bindgenNative5;
+import 'package:flutter/src/gestures/events.dart' as bindgenNative6;
+import 'package:flutter/src/widgets/framework.dart' as bindgenNative7;
 
 /// dart_eval wrapper binding for [TextField]
 class $TextField implements $Instance {
@@ -2374,7 +2383,7 @@ class $TextField implements $Instance {
       TextField(
         key: (r is $Value ? r : null)?.$value,
         groupId: (s is $Value ? s : null) == null
-            ? EditableText
+            ? bindgenNative0.EditableText
             : TypedInterop.exportExternal(
                     (s is $Value ? s : null),
                     runtime: runtime,
@@ -2384,12 +2393,12 @@ class $TextField implements $Instance {
         focusNode: _arg3OrNull?.$value,
         undoController: _arg4OrNull?.$value,
         decoration: _arg5OrNull == null
-            ? const InputDecoration()
+            ? const bindgenNative1.InputDecoration()
             : _arg5OrNull!.$value,
         keyboardType: _arg6OrNull?.$value,
         textInputAction: _arg7OrNull?.$value,
         textCapitalization: _arg8OrNull == null
-            ? TextCapitalization.none
+            ? bindgenNative2.TextCapitalization.none
             : _arg8OrNull!.$value,
         style: _arg9OrNull?.$value,
         strutStyle: _arg10OrNull?.$value,
@@ -2496,7 +2505,7 @@ class $TextField implements $Instance {
         inputFormatters:
             (TypedInterop.exportExternal(_arg34OrNull, runtime: runtime)
                     as List?)
-                ?.cast<TextInputFormatter>(),
+                ?.cast<bindgenNative3.TextInputFormatter>(),
         enabled: _arg35OrNull?.$value,
         ignorePointers: _arg36OrNull?.$value,
         cursorWidth: _arg37OrNull == null
@@ -2511,10 +2520,10 @@ class $TextField implements $Instance {
         selectionWidthStyle: _arg44OrNull?.$value,
         keyboardAppearance: _arg45OrNull?.$value,
         scrollPadding: _arg46OrNull == null
-            ? const EdgeInsets.all(20.0)
+            ? const bindgenNative4.EdgeInsets.all(20.0)
             : _arg46OrNull!.$value,
         dragStartBehavior: _arg47OrNull == null
-            ? DragStartBehavior.start
+            ? bindgenNative5.DragStartBehavior.start
             : _arg47OrNull!.$value,
         enableInteractiveSelection: _arg48OrNull?.$value,
         selectAllOnFocus: _arg49OrNull?.$value,
@@ -2544,7 +2553,7 @@ class $TextField implements $Instance {
                   _arg53OrNull! as EvalCallable,
                   "void Function(PointerDownEvent);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (PointerDownEvent event) {
+                  (_callable) => (bindgenNative6.PointerDownEvent event) {
                     _callable.call(
                       runtime,
                       null,
@@ -2572,7 +2581,7 @@ class $TextField implements $Instance {
                   _arg54OrNull! as EvalCallable,
                   "void Function(PointerUpEvent);export=false" +
                       ";types=$_callbackType0",
-                  (_callable) => (PointerUpEvent event) {
+                  (_callable) => (bindgenNative6.PointerUpEvent event) {
                     _callable.call(
                       runtime,
                       null,
@@ -2614,7 +2623,7 @@ class $TextField implements $Instance {
                       ";types=$_callbackType0,$_callbackType1,$_callbackType2,$_callbackType3",
                   (_callable) =>
                       (
-                        BuildContext context, {
+                        bindgenNative7.BuildContext context, {
                         required int currentLength,
                         required bool isFocused,
                         required int? maxLength,
@@ -2635,7 +2644,7 @@ class $TextField implements $Instance {
                                     : $int(maxLength)),
                               ],
                             )?.$value
-                            as Widget?;
+                            as bindgenNative7.Widget?;
                       },
                 );
               })(),
@@ -2655,7 +2664,7 @@ class $TextField implements $Instance {
             ? true
             : (_arg63OrNull as $bool).$value,
         stylusHandwritingEnabled: _arg64OrNull == null
-            ? EditableText.defaultStylusHandwritingEnabled
+            ? bindgenNative0.EditableText.defaultStylusHandwritingEnabled
             : (_arg64OrNull as $bool).$value,
         enableIMEPersonalizedLearning: _arg65OrNull == null
             ? true
@@ -2684,8 +2693,8 @@ class $TextField implements $Instance {
                       ";types=$_callbackType0,$_callbackType1",
                   (_callable) =>
                       (
-                        BuildContext context,
-                        EditableTextState editableTextState,
+                        bindgenNative7.BuildContext context,
+                        bindgenNative0.EditableTextState editableTextState,
                       ) {
                         return _callable
                                 .call(
@@ -2704,7 +2713,7 @@ class $TextField implements $Instance {
                                   2,
                                 )
                                 ?.$value
-                            as Widget;
+                            as bindgenNative7.Widget;
                       },
                 );
               })(),

@@ -54,6 +54,9 @@ import './framework_wrappers.dart';
 import '../foundation/key.dart';
 import '../supporting/flutter_widgets_scroll_view.dart';
 import '../supporting/flutter_widgets_scroll_delegate.dart';
+import 'package:flutter/src/rendering/sliver.dart' as bindgenNative0;
+import 'package:flutter/src/widgets/framework.dart' as bindgenNative1;
+import 'package:flutter/src/foundation/key.dart' as bindgenNative2;
 
 /// dart_eval wrapper binding for [ListView]
 class $ListView implements $Instance {
@@ -1718,7 +1721,10 @@ class $ListView implements $Instance {
                   "double? Function(int, SliverLayoutDimensions);export=false" +
                       ";types=$_callbackType0,$_callbackType1",
                   (_callable) =>
-                      (int index, SliverLayoutDimensions dimensions) {
+                      (
+                        int index,
+                        bindgenNative0.SliverLayoutDimensions dimensions,
+                      ) {
                         return _callable
                                 .call(
                                   runtime,
@@ -1749,10 +1755,10 @@ class $ListView implements $Instance {
         cacheExtent: _arg14OrNull?.$value,
         scrollCacheExtent: _arg15OrNull?.$value,
         children: _arg16OrNull == null
-            ? const <Widget>[]
+            ? const <bindgenNative1.Widget>[]
             : (TypedInterop.exportExternal(_arg16OrNull, runtime: runtime)
                       as List)
-                  .cast<Widget>(),
+                  .cast<bindgenNative1.Widget>(),
         semanticChildCount: _arg17OrNull?.$value,
         dragStartBehavior: _arg18OrNull == null
             ? DragStartBehavior.start
@@ -1825,7 +1831,10 @@ class $ListView implements $Instance {
                   "double? Function(int, SliverLayoutDimensions);export=false" +
                       ";types=$_callbackType0,$_callbackType1",
                   (_callable) =>
-                      (int index, SliverLayoutDimensions dimensions) {
+                      (
+                        int index,
+                        bindgenNative0.SliverLayoutDimensions dimensions,
+                      ) {
                         return _callable
                                 .call(
                                   runtime,
@@ -1858,7 +1867,7 @@ class $ListView implements $Instance {
             _arg11! as EvalCallable,
             "Widget? Function(BuildContext, int);export=false" +
                 ";types=$_callbackType0,$_callbackType1",
-            (_callable) => (BuildContext context, int index) {
+            (_callable) => (bindgenNative1.BuildContext context, int index) {
               return _callable
                       .call(
                         runtime,
@@ -1872,7 +1881,7 @@ class $ListView implements $Instance {
                         2,
                       )
                       ?.$value
-                  as Widget?;
+                  as bindgenNative1.Widget?;
             },
           );
         })(),
@@ -1888,7 +1897,7 @@ class $ListView implements $Instance {
                 return runtime.cachedCallback(
                   _arg12OrNull! as EvalCallable,
                   "int? Function(Key);export=false" + ";types=$_callbackType0",
-                  (_callable) => (Key key) {
+                  (_callable) => (bindgenNative2.Key key) {
                     return _callable
                             .call(
                               runtime,
@@ -1984,7 +1993,7 @@ class $ListView implements $Instance {
             _arg8! as EvalCallable,
             "Widget? Function(BuildContext, int);export=false" +
                 ";types=$_callbackType0,$_callbackType1",
-            (_callable) => (BuildContext context, int index) {
+            (_callable) => (bindgenNative1.BuildContext context, int index) {
               return _callable
                       .call(
                         runtime,
@@ -1998,7 +2007,7 @@ class $ListView implements $Instance {
                         2,
                       )
                       ?.$value
-                  as Widget?;
+                  as bindgenNative1.Widget?;
             },
           );
         })(),
@@ -2014,7 +2023,7 @@ class $ListView implements $Instance {
                 return runtime.cachedCallback(
                   _arg9OrNull! as EvalCallable,
                   "int? Function(Key);export=false" + ";types=$_callbackType0",
-                  (_callable) => (Key key) {
+                  (_callable) => (bindgenNative2.Key key) {
                     return _callable
                             .call(
                               runtime,
@@ -2044,7 +2053,7 @@ class $ListView implements $Instance {
                 return runtime.cachedCallback(
                   _arg10OrNull! as EvalCallable,
                   "int? Function(Key);export=false" + ";types=$_callbackType0",
-                  (_callable) => (Key key) {
+                  (_callable) => (bindgenNative2.Key key) {
                     return _callable
                             .call(
                               runtime,
@@ -2076,7 +2085,7 @@ class $ListView implements $Instance {
             _arg11! as EvalCallable,
             "Widget Function(BuildContext, int);export=false" +
                 ";types=$_callbackType0,$_callbackType1",
-            (_callable) => (BuildContext context, int index) {
+            (_callable) => (bindgenNative1.BuildContext context, int index) {
               return _callable
                       .call(
                         runtime,
@@ -2090,7 +2099,7 @@ class $ListView implements $Instance {
                         2,
                       )
                       ?.$value
-                  as Widget;
+                  as bindgenNative1.Widget;
             },
           );
         })(),
@@ -2173,7 +2182,10 @@ class $ListView implements $Instance {
                   "double? Function(int, SliverLayoutDimensions);export=false" +
                       ";types=$_callbackType0,$_callbackType1",
                   (_callable) =>
-                      (int index, SliverLayoutDimensions dimensions) {
+                      (
+                        int index,
+                        bindgenNative0.SliverLayoutDimensions dimensions,
+                      ) {
                         return _callable
                                 .call(
                                   runtime,

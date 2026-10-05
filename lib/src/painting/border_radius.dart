@@ -34,6 +34,7 @@ import 'package:dart_eval/stdlib/typed_data.dart'
     hide $BorderRadiusGeometry, $BorderRadius;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'dart:ui';
 import '../sky_engine/ui/geometry.dart';
 import '../supporting/ui.dart';
 

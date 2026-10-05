@@ -34,6 +34,7 @@ import 'package:dart_eval/stdlib/typed_data.dart'
     hide $SnackBar, $SnackBarAction, $SnackBarClosedReason;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'dart:ui';
 import '../animation/animation_controller.dart';
 import '../widgets/framework_wrappers.dart';
 import '../sky_engine/ui/painting.dart';

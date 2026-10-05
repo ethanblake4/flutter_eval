@@ -39,6 +39,8 @@ import './button_style_button.dart';
 import './theme_data.dart';
 import '../painting/alignment.dart';
 import '../supporting/flutter_material_ink_well.dart';
+import 'package:flutter/src/widgets/framework.dart' as bindgenNative0;
+import 'package:flutter/src/widgets/widget_state.dart' as bindgenNative1;
 
 /// dart_eval wrapper binding for [ButtonStyle]
 class $ButtonStyle implements $Instance {
@@ -2040,9 +2042,9 @@ class $ButtonStyle implements $Instance {
                       ";types=$_callbackType0,$_callbackType1,$_callbackType2",
                   (_callable) =>
                       (
-                        BuildContext context,
-                        Set<WidgetState> states,
-                        Widget? child,
+                        bindgenNative0.BuildContext context,
+                        Set<bindgenNative1.WidgetState> states,
+                        bindgenNative0.Widget? child,
                       ) {
                         return _callable.call(
                               runtime,
@@ -2067,7 +2069,7 @@ class $ButtonStyle implements $Instance {
                                 ),
                               ],
                             )?.$value
-                            as Widget;
+                            as bindgenNative0.Widget;
                       },
                 );
               })(),
@@ -2105,9 +2107,9 @@ class $ButtonStyle implements $Instance {
                       ";types=$_callbackType0,$_callbackType1,$_callbackType2",
                   (_callable) =>
                       (
-                        BuildContext context,
-                        Set<WidgetState> states,
-                        Widget? child,
+                        bindgenNative0.BuildContext context,
+                        Set<bindgenNative1.WidgetState> states,
+                        bindgenNative0.Widget? child,
                       ) {
                         return _callable.call(
                               runtime,
@@ -2132,7 +2134,7 @@ class $ButtonStyle implements $Instance {
                                 ),
                               ],
                             )?.$value
-                            as Widget;
+                            as bindgenNative0.Widget;
                       },
                 );
               })(),
@@ -2474,9 +2476,9 @@ class $ButtonStyle implements $Instance {
                     ";types=$_callbackType0,$_callbackType1,$_callbackType2",
                 (_callable) =>
                     (
-                      BuildContext context,
-                      Set<WidgetState> states,
-                      Widget? child,
+                      bindgenNative0.BuildContext context,
+                      Set<bindgenNative1.WidgetState> states,
+                      bindgenNative0.Widget? child,
                     ) {
                       return _callable.call(
                             runtime,
@@ -2501,7 +2503,7 @@ class $ButtonStyle implements $Instance {
                               ),
                             ],
                           )?.$value
-                          as Widget;
+                          as bindgenNative0.Widget;
                     },
               );
             })(),
@@ -2548,9 +2550,9 @@ class $ButtonStyle implements $Instance {
                     ";types=$_callbackType0,$_callbackType1,$_callbackType2",
                 (_callable) =>
                     (
-                      BuildContext context,
-                      Set<WidgetState> states,
-                      Widget? child,
+                      bindgenNative0.BuildContext context,
+                      Set<bindgenNative1.WidgetState> states,
+                      bindgenNative0.Widget? child,
                     ) {
                       return _callable.call(
                             runtime,
@@ -2575,7 +2577,7 @@ class $ButtonStyle implements $Instance {
                               ),
                             ],
                           )?.$value
-                          as Widget;
+                          as bindgenNative0.Widget;
                     },
               );
             })(),

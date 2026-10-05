@@ -34,6 +34,7 @@ import 'package:flutter/rendering.dart';
 import '../foundation/key.dart';
 import './framework_wrappers.dart';
 import '../foundation/diagnostics.dart';
+import 'package:flutter/src/foundation/diagnostics.dart' as bindgenNative0;
 
 /// dart_eval wrapper binding for [MediaQuery]
 class $MediaQuery implements $Instance {
@@ -361,7 +362,7 @@ class $MediaQuery implements $Instance {
     final result = self.$value.toStringShallow(
       joiner: (r is $Value ? r : null) == null ? ', ' : (r as $String).$value,
       minLevel: (s is $Value ? s : null) == null
-          ? DiagnosticLevel.debug
+          ? bindgenNative0.DiagnosticLevel.debug
           : (s is $Value ? s : null)!.$value,
     );
     return $String(result);
@@ -386,7 +387,7 @@ class $MediaQuery implements $Instance {
                   ? (c as List)[0] as $Value?
                   : null) ==
               null
-          ? DiagnosticLevel.debug
+          ? bindgenNative0.DiagnosticLevel.debug
           : (c is List && (c as List).length > 0
                     ? (c as List)[0] as $Value?
                     : null)!

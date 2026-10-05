@@ -32,12 +32,14 @@ import 'package:dart_eval/stdlib/typed_data.dart' hide $TextStyle;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/typed/typed_interop.dart';
+import 'dart:ui';
 import '../sky_engine/ui/painting.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import '../sky_engine/ui/text.dart';
 import '../supporting/ui.dart';
 import './basic_types.dart';
 import '../supporting/flutter_painting_basic_types.dart';
+import 'package:flutter/src/painting/text_scaler.dart' as bindgenNative0;
 
 /// dart_eval wrapper binding for [TextStyle]
 class $TextStyle implements $Instance {
@@ -2138,7 +2140,7 @@ class $TextStyle implements $Instance {
           ? 1.0
           : (r as $double).$value,
       textScaler: (s is $Value ? s : null) == null
-          ? TextScaler.noScaling
+          ? bindgenNative0.TextScaler.noScaling
           : (s is $Value ? s : null)!.$value,
     );
     return $UiTextStyle.wrap(result);
@@ -2161,7 +2163,7 @@ class $TextStyle implements $Instance {
                   ? (c as List)[0] as $Value?
                   : null) ==
               null
-          ? TextScaler.noScaling
+          ? bindgenNative0.TextScaler.noScaling
           : (c is List && (c as List).length > 0
                     ? (c as List)[0] as $Value?
                     : null)!

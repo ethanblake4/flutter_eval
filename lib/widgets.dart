@@ -12,6 +12,8 @@ export 'src/widgets/icon_data.dart';
 export 'src/widgets/image.dart';
 export 'src/widgets/navigator.dart';
 export 'src/widgets/scroll_controller.dart';
+export 'src/widgets/scrollable.dart';
+export 'src/supporting/flutter_widgets_scrollable_helpers.dart';
 export 'src/widgets/scroll_view.dart' show $ListView;
 export 'src/widgets/spacer.dart';
 export 'src/widgets/text.dart' show $Text;

@@ -37,6 +37,7 @@ import 'package:flutter/rendering.dart';
 import 'package:dart_eval/src/eval/runtime/runtime.dart';
 import './edge_insets.dart';
 import '../sky_engine/ui/painting.dart';
+import 'dart:ui';
 
 /// dart_eval enum wrapper binding for [BorderStyle]
 class $BorderStyle implements $Instance {
